@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6646910720940282649}
   - component: {fileID: 8611187250565785764}
   m_Layer: 0
-  m_Name: Middle Road Encounter 1
+  m_Name: Low Road Encounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
