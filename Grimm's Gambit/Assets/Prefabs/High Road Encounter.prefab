@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 600530379240083439}
   - component: {fileID: 4889236670603263422}
   m_Layer: 0
-  m_Name: Encounter Space
+  m_Name: High Road Encounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
