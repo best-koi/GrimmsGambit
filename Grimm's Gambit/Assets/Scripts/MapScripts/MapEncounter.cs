@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapPlayer : MonoBehaviour
+public class MapEncounter : MonoBehaviour
 {
     [SerializeField]
-    private GameObject currentLocation;//A GameObject representing a position on the map, will be changed for eventual Encounter object 
-
-
+    private List<MapEncounter> nextLocations; 
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +17,4 @@ public class MapPlayer : MonoBehaviour
     {
         
     }
-
 }
