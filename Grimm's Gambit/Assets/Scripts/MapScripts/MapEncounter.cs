@@ -22,10 +22,18 @@ public class MapEncounter : MonoBehaviour
     //OneMouseDown() detects if an object has been clicked and is able to move to it
     private void OnMouseDown()
     {
-        if (isStartingSpace)
+        if (isStartingSpace && MapManager.GetStartingSpaceUsed() == false)
         {
+            MapManager.SetStartingSpaceUsed();
             MapManager.GetPlayer().SetPosition(gameObject.GetComponent<MapEncounter>());
             Debug.Log("ClickWorked!");
+        }
+        else
+        {
+            if (MapManager.GetPlayer().CheckLocations(this))
+            {
+                MapManager.GetPlayer().SetPosition(gameObject.GetComponent<MapEncounter>());
+            }
         }
     }
 
