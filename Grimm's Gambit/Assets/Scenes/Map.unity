@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLocation: {fileID: 0}
   yOffset: 1
+  moveSpeed: 0.009
 --- !u!4 &105773519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3056410385363963075, guid: 362b67b6d8c204f408e8e446f37e0839, type: 3}
