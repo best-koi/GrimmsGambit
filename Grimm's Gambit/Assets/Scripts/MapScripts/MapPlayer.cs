@@ -11,7 +11,7 @@ public class MapPlayer : MonoBehaviour
     private List<MapEncounter> locations;//A list representing available locations to move from
 
     [SerializeField]
-    private int yOffset;//A value to put the player above the spot, rather than shrink them into it
+    private float yOffset;//A value to put the player above the spot, rather than shrink them into it
 
 
     //SetPosition() sets the current player's location to new location
@@ -19,7 +19,7 @@ public class MapPlayer : MonoBehaviour
     public void SetPosition(MapEncounter mapEncounter)
     {
         currentLocation = mapEncounter;
-        gameObject.transform.position = currentLocation.gameObject.transform.position;
+        gameObject.transform.position = new Vector3(currentLocation.gameObject.transform.position.x, currentLocation.gameObject.transform.position.y + yOffset, currentLocation.gameObject.transform.position.z);
         locations = currentLocation.GetNextLocations();
     }
 
