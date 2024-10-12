@@ -16,7 +16,7 @@ public class Minion : MonoBehaviour
     private int currentHealth;
     
     //Affixes:
-    public List<Affixes> appliedAffixes = new List<Affixes>();
+    public Affixes[] appliedAffixes = new Affixes[1];
 
     //Ownership:
     public GameObject ownerCard;
