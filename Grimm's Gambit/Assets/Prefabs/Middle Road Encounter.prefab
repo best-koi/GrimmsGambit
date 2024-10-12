@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8160538958472854445}
   - component: {fileID: 3303901649963996877}
   - component: {fileID: 5451863520605994487}
+  - component: {fileID: 7498454365629726306}
   m_Layer: 0
   m_Name: Middle Road Encounter
   m_TagString: Untagged
@@ -107,3 +108,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7498454365629726306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500496850813299516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ffa7c43a5764334b7799824f7e37e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLocations: []
+  isStartingSpace: 0
