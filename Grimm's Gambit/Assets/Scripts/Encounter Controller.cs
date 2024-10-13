@@ -7,11 +7,13 @@ public class EncounterController : MonoBehaviour
 {
     public static Action onEncounterStarted;
 
+    // Player turn is true, enemy turn is false
     public static Action<bool> onTurnChanged;
 
+    // True if player has won
     public static Action<bool> onEncounterEnded;
 
-    //private Deck m_PlayerDeck, m_EnemyDeck;
+    [SerializeField] private Deck m_PlayerDeck, m_EnemyDeck;
 
     [SerializeField] private bool m_IsPlayerTurn;
     [SerializeField] private int m_TurnCounter;
@@ -33,8 +35,8 @@ public class EncounterController : MonoBehaviour
 
         onEncounterStarted?.Invoke();
 
-        //m_PlayerDeck.StartDeck;
-        //m_EnemyDeck.StartDeck;
+        m_PlayerDeck.StartDeck();
+        m_EnemyDeck.StartDeck();
     }
 
     private void EndTurn()
@@ -44,12 +46,15 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        if (m_IsPlayerTurn) /** m_PlayerDeck.Draw() */;
-        else /** m_EnemyDeck.Draw() */;
+        if (m_IsPlayerTurn) m_PlayerDeck.Draw();
+        else m_EnemyDeck.Draw();
     }
 
     private void EndEncounter(bool playerWin) {
     
         onEncounterEnded?.Invoke(playerWin);
+
+        if (playerWin) Debug.Log("Player won in " + m_TurnCounter + " turns.");
+        else Debug.Log("Player lost.");
     }
 }
