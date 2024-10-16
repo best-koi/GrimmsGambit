@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7498454365629726306}
   - component: {fileID: 7352763564889167882}
   - component: {fileID: 3933472818033311531}
+  - component: {fileID: 4286678844508772221}
   m_Layer: 0
   m_Name: Middle Road Encounter
   m_TagString: Untagged
@@ -125,7 +126,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!64 &3933472818033311531
 MeshCollider:
@@ -149,3 +150,24 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!135 &4286678844508772221
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500496850813299516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.03
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

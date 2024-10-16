@@ -64,18 +64,17 @@ public class MapPlayer : MonoBehaviour
         }
     }
 
-    //Checks if player has reached point
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-            if (collision.gameObject.GetComponent<MapEncounter>() != null)
-            {
-                isAtLocation = true;
-                isMoving = false;
+        if (other.gameObject.GetComponent<MapEncounter>() != null)
+        {
+            Debug.Log("MetCondition");
+            isAtLocation = true;
+            isMoving = false;
 
-            }
-        
+        }
     }
 
- 
+
 
 }
