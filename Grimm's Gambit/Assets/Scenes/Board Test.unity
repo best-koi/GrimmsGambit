@@ -394,6 +394,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227383754}
   m_CullTransparentMesh: 1
+--- !u!1 &316466290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 316466292}
+  - component: {fileID: 316466291}
+  m_Layer: 0
+  m_Name: Drag & Drop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &316466291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316466290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b26e352908fdf1438fecbfc4bc57e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SelectedObject: {fileID: 0}
+  m_DistanceFromCamera: 0.2
+  m_PickUpLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_SlotLayers:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!4 &316466292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316466290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 673.09564, y: -258.38712, z: -69.45704}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385770663
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +635,7 @@ GameObject:
   - component: {fileID: 423636997}
   - component: {fileID: 423636996}
   - component: {fileID: 423636998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,8 +703,8 @@ Transform:
   m_GameObject: {fileID: 423636995}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -793,7 +845,7 @@ GameObject:
   - component: {fileID: 776396708}
   - component: {fileID: 776396707}
   - component: {fileID: 776396709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,8 +913,8 @@ Transform:
   m_GameObject: {fileID: 776396706}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 0, z: 2.84}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -975,7 +1027,7 @@ GameObject:
   - component: {fileID: 883206650}
   - component: {fileID: 883206653}
   - component: {fileID: 883206652}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,8 +1095,8 @@ Transform:
   m_GameObject: {fileID: 883206649}
   serializedVersion: 2
   m_LocalRotation: {x: -0.8191521, y: 0, z: 0, w: 0.57357645}
-  m_LocalPosition: {x: -5.27, y: 1.2, z: -1.41}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalPosition: {x: -0.21, y: -0.021, z: 0.157}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1246,7 +1298,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 170, y: 82.91, z: 82.91}
+  m_LocalScale: {x: 8.05, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1356,7 +1408,7 @@ GameObject:
   - component: {fileID: 1039234309}
   - component: {fileID: 1039234308}
   - component: {fileID: 1039234310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,10 +1476,11 @@ Transform:
   m_GameObject: {fileID: 1039234307}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3, y: 0, z: -2.84}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: 0.2, y: 0, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1345306994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!65 &1039234310
@@ -1504,7 +1557,7 @@ GameObject:
   - component: {fileID: 1345306993}
   - component: {fileID: 1345306992}
   - component: {fileID: 1345306991}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Card (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,12 +1667,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345306990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3, y: 0, z: -2.84}
-  m_LocalScale: {x: 16, y: 16, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1039234309}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1375355015
 GameObject:
@@ -1632,7 +1685,7 @@ GameObject:
   - component: {fileID: 1375355017}
   - component: {fileID: 1375355016}
   - component: {fileID: 1375355018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1700,8 +1753,8 @@ Transform:
   m_GameObject: {fileID: 1375355015}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3, y: 0, z: 2.84}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: -0.2, y: 0, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1813,7 +1866,7 @@ Transform:
   m_GameObject: {fileID: 1377003059}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 10, z: -5}
+  m_LocalPosition: {x: 0, y: 0.66, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2107,7 +2160,7 @@ GameObject:
   - component: {fileID: 1737844765}
   - component: {fileID: 1737844764}
   - component: {fileID: 1737844766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2175,8 +2228,8 @@ Transform:
   m_GameObject: {fileID: 1737844763}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2347,7 +2400,7 @@ GameObject:
   - component: {fileID: 1928439390}
   - component: {fileID: 1928439389}
   - component: {fileID: 1928439391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card Slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,8 +2468,8 @@ Transform:
   m_GameObject: {fileID: 1928439388}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 0, z: -2.84}
-  m_LocalScale: {x: 18, y: 18, z: 1}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2727,7 +2780,7 @@ SceneRoots:
   - {fileID: 423636997}
   - {fileID: 1039234309}
   - {fileID: 883206651}
-  - {fileID: 1345306994}
   - {fileID: 385770667}
   - {fileID: 1412663304}
   - {fileID: 637037546}
+  - {fileID: 316466292}
