@@ -2381,6 +2381,10 @@ PrefabInstance:
       propertyPath: yOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: moveSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
