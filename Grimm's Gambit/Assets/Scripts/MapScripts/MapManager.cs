@@ -9,10 +9,17 @@ public class MapManager : MonoBehaviour
 
     static bool startingSpaceUsed = false;//Checks to see if the player has moved to a starting space. Prevents moving horizontally
 
+    [SerializeField]
+    private List<GameObject> mapPrefabs;
+
+    static private GameObject roundMap;
+
     //Finds the player in the scene
     void Start()
     {
         player = FindObjectOfType<MapPlayer>();
+        roundMap = Instantiate(mapPrefabs[Random.Range(0, mapPrefabs.Count)]);
+        
     }
 
     //Retrieves the player
