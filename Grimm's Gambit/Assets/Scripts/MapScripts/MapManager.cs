@@ -18,6 +18,7 @@ public class MapManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<MapPlayer>();
+        if(roundMap == null)
         roundMap = Instantiate(mapPrefabs[Random.Range(0, mapPrefabs.Count)]);
         
     }
