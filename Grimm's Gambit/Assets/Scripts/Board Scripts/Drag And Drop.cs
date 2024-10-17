@@ -36,6 +36,7 @@ public class DragAndDrop : MonoBehaviour
             {
                 m_SelectedObject = hit.transform;
                 m_SelectedObject.parent = null;
+                m_SelectedObject.localScale = Vector3.one;
             }
             else
             {
@@ -44,6 +45,7 @@ public class DragAndDrop : MonoBehaviour
                     m_SelectedObject.parent = hit.transform;
                     m_SelectedObject.localPosition = Vector3.zero;
                     m_SelectedObject.localRotation = Quaternion.identity;
+                    m_SelectedObject.localScale = Vector3.one * .9f;
                 }
 
                 m_SelectedObject = null;
