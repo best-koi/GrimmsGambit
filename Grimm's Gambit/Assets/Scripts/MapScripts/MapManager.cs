@@ -26,6 +26,7 @@ public class MapManager : MonoBehaviour
     //Retrieves the player
     public static MapPlayer GetPlayer()
     {
+        //Returns the player character
         return player; 
     }
 
