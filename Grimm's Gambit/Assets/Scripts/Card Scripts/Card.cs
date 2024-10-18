@@ -12,6 +12,12 @@ public class Card : MonoBehaviour
 
     [SerializeField] private protected bool isReversed = false;
 
+    [SerializeField] private protected Deck m_Hand;
+
+    // Index in the database
+    // Number that player has in their deck
+    [SerializeField] private protected int m_Index, m_PlayerCopies;
+
     // Creature information doesn't exist yet, I'll add it once the Unit class is made
 
     // [SerializeField]
@@ -25,17 +31,38 @@ public class Card : MonoBehaviour
         }
 
         //  if (creature is not null)
-        //      creature.doSpawn() etc
+        //      creature.DoSpawn() etc
 
-        PlayerHand hand = FindObjectOfType<PlayerHand>();
-        hand.RemoveCard(this);
+        m_Hand.Discard(0, m_Index);
         
         Destroy(gameObject);
+    }
+
+    public string GetName() 
+    { 
+        return cardName; 
     }
 
     public int GetCardCost()
     {
         return cardCost;
+    }
+
+    public int GetIndex()
+    {
+        return m_Index;
+    }
+
+    public int NumCopies
+    {
+        get
+        {
+            return m_PlayerCopies;
+        }
+        set
+        {
+            m_PlayerCopies = value;
+        }
     }
 
     public void ReverseCard()
