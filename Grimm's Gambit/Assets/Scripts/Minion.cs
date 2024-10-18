@@ -72,7 +72,7 @@ public class Minion : MonoBehaviour
     public void DamageTaken(int Damage) //Function called when damage is taken
     {
         currentHealth -= Damage;
-        if (Damage < 0)
+        if (currentHealth < 0)
         {
             Destroyed();
         }
