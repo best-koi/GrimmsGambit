@@ -13,10 +13,12 @@ public class EncounterController : MonoBehaviour
     // True if player has won
     public static Action<bool> onEncounterEnded;
 
-    [SerializeField] private Deck m_PlayerDeck, m_EnemyDeck;
+    [SerializeField] private Deck m_PlayerDeck;
 
     [SerializeField] private bool m_IsPlayerTurn;
     [SerializeField] private int m_TurnCounter;
+
+    [SerializeField] private int m_MaxResources, m_CurrentResources;
 
     private void Start()
     {
@@ -30,13 +32,13 @@ public class EncounterController : MonoBehaviour
 
     private void StartEncounter()
     {
-        m_IsPlayerTurn = true;
+        m_IsPlayerTurn = false;
         m_TurnCounter = 0;
 
         onEncounterStarted?.Invoke();
 
         m_PlayerDeck.StartDeck();
-        m_EnemyDeck.StartDeck();
+        EndTurn();
     }
 
     private void EndTurn()
@@ -46,8 +48,15 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        if (m_IsPlayerTurn) m_PlayerDeck.Draw();
-        else m_EnemyDeck.Draw();
+        if (m_IsPlayerTurn) {
+            m_PlayerDeck.Draw();
+            m_CurrentResources = m_MaxResources;
+
+            // Display the number of cards in the player's deck
+            Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
+        }
+        // Unfinished
+        else Debug.Log("Enemy minion attacks."); 
     }
 
     private void EndEncounter(bool playerWin) {
