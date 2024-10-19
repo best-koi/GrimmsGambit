@@ -7,6 +7,8 @@ public class Hand : MonoBehaviour
     [SerializeField] private Deck m_DeckController;
 
     // All of the cards in the player's hand 
+    // Can later be replaced with the actual card GameObjects
+    // [SerializeField] private List<GameObject> m_Cards;
     [SerializeField] private List<int> m_Cards;
 
     // Indice of the most recently drawn card

@@ -7,6 +7,8 @@ public class DiscardPile : MonoBehaviour
     [SerializeField] private Deck m_DeckController;
 
     // All of the cards in the player's discard pile
+    // Can later be replaced with the actual card GameObjects
+    // [SerializeField] private List<GameObject> m_Cards;
     [SerializeField] private List<int> m_Cards;
 
     // Indice of the most recently discarded card

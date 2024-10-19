@@ -14,7 +14,6 @@ public class Deck : MonoBehaviour
     
     // References database of all cards in the game
     [SerializeField] private CardDatabase m_DataBase;
-    private Card[] m_Data;
 
     [SerializeField] private int m_HandSize;
 
@@ -38,7 +37,6 @@ public class Deck : MonoBehaviour
         m_Hand.Add(nextCardID);
 
         onDraw?.Invoke(nextCardID);
-        Debug.Log("Player drew " + m_Data[nextCardID].GetName() + ".");
     }
 
     // Discard a card from hand 
@@ -61,7 +59,6 @@ public class Deck : MonoBehaviour
         m_DiscardPile.Add(nextCardID);
 
         onDiscard?.Invoke(nextCardID);
-        Debug.Log(m_Data[nextCardID].GetName() + "entered the discard pile.");
     }
 
     // Put the top card of the deck into the discard pile
@@ -74,8 +71,6 @@ public class Deck : MonoBehaviour
             int nextCardID = m_GameDeck[index];
             m_GameDeck.RemoveAt(index);
             m_DiscardPile.Add(nextCardID);
-
-            Debug.Log(m_Data[nextCardID].GetName() + "entered the discard pile.");
         }
     }
 
@@ -97,18 +92,9 @@ public class Deck : MonoBehaviour
     // Prepare the deck for the game
     public void StartDeck()
     {
-        m_Data = m_DataBase.GetData();
-
         ClearAll();
 
-        // Populate the deck based on the database
-        foreach (Card card in m_Data)
-        {
-            for (int i = 0, copies = card.NumCopies; i < copies; i++)
-            {
-                m_GameDeck.Add(card.GetIndex());
-            }
-        }
+        m_GameDeck = m_DataBase.PopulateDeck();
         
         Shuffle();
 
