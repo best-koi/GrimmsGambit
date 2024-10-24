@@ -8,38 +8,41 @@ using UnityEditor;
 
 public class UnitParty : MonoBehaviour
 {
+    #region Private Fields
+
     [SerializeField]
     private float m_DistanceBetweenMembers;
 
     private List<GameObject> m_PartyMembers;
+
+    public int PartySize
+    {
+        get
+        {
+            return m_PartyMembers.Count;
+        }
+    }
+
+    #endregion
+
+    #region MonoBehaviour Callbacks
 
     private void Start()
     {
         m_PartyMembers = new List<GameObject>();
 
         UpdatePartyList();
+        UpdatePartyPositions();
     }
 
     private void FixedUpdate()
     {
-        UpdatePartyPositions();
-
-        /*
-        int i = 0;
-
-        while (i < m_PartyMembers.Count)
-        {
-            GameObject obj = m_PartyMembers[i];
-
-            if (obj == null)
-                m_PartyMembers.RemoveAt(i);
-            else
-                i++;
-        }
-
-        PartyListSetup();
-        */
+        //UpdatePartyPositions();
     }
+
+    #endregion
+
+    #region Public Methods
 
     public GameObject GetPartyMember(int index)
     {
@@ -67,17 +70,43 @@ public class UnitParty : MonoBehaviour
             GameObject first = m_PartyMembers[firstIndex];
             GameObject second = m_PartyMembers[secondIndex];
 
-            if (CheckReference(first, methodName) && CheckReference(second, methodName))
-            {
+            if (CheckReference(first, methodName))
                 first.transform.SetSiblingIndex(secondIndex);
+            if (CheckReference(second, methodName))
                 second.transform.SetSiblingIndex(firstIndex);
 
-                m_PartyMembers.RemoveAt(firstIndex);
-                m_PartyMembers.Insert(firstIndex, second);
-                m_PartyMembers.RemoveAt(secondIndex);
-                m_PartyMembers.Insert(secondIndex, first);
-            }
+            m_PartyMembers.RemoveAt(firstIndex);
+            m_PartyMembers.Insert(firstIndex, second);
+            m_PartyMembers.RemoveAt(secondIndex);
+            m_PartyMembers.Insert(secondIndex, first);
+
+            UpdatePartyPositions();
         }
+    }
+
+    public void ShiftPartyList(int increment)
+    {
+        int length = PartySize;
+        int shift = Mathf.Abs(increment) % length;
+
+        if (shift == 0)
+            return;
+
+        int index = shift;
+        int count = length - shift;
+
+        if (increment > 0)
+        {
+            int temp = count;
+            count = index;
+            index = temp;
+        }
+
+        List<GameObject> result = m_PartyMembers.GetRange(index, count);
+        result.AddRange(m_PartyMembers.GetRange(0, index));
+        m_PartyMembers = result;
+
+        UpdatePartyPositions();
     }
 
     public void InsertMember(int index, GameObject partyMember)
@@ -96,6 +125,8 @@ public class UnitParty : MonoBehaviour
             }
 
             m_PartyMembers.Insert(index, partyMember);
+
+            UpdatePartyPositions();
         }
     }
 
@@ -115,6 +146,8 @@ public class UnitParty : MonoBehaviour
         }
 
         m_PartyMembers.Add(partyMember);
+
+        UpdatePartyPositions();
     }
 
     public GameObject RemoveMemberAt(int index)
@@ -125,7 +158,12 @@ public class UnitParty : MonoBehaviour
         {
             GameObject obj = m_PartyMembers[index];
             m_PartyMembers.RemoveAt(index);
-            obj.transform.parent = null;
+
+            if (CheckReference(obj, methodName))
+                obj.transform.parent = null;
+
+            UpdatePartyPositions();
+
             return obj;
         }
         else
@@ -136,18 +174,26 @@ public class UnitParty : MonoBehaviour
     {
         string methodName = nameof(RemoveMember);
 
-        if (CheckReference(partyMember, methodName) && m_PartyMembers.Remove(partyMember))
+        if (m_PartyMembers.Remove(partyMember))
         {
-            partyMember.transform.parent = null;
+            if (CheckReference(partyMember, methodName))
+                partyMember.transform.parent = null;
+
+            UpdatePartyPositions();
+
             return true;
         }
         else
             return false;
     }
 
+    #endregion
+
+    #region Private Methods
+
     private void UpdatePartyPositions()
     {
-        int partyCount = m_PartyMembers.Count;
+        int partyCount = PartySize;
         int halfCount = partyCount / 2;
         float distanceFromCenter = 0;
         bool isEven = partyCount % 2 == 0;
@@ -181,7 +227,7 @@ public class UnitParty : MonoBehaviour
 
     private bool CheckIndex(int index, string methodName)
     {
-        if (index < 0 || index >= m_PartyMembers.Count)
+        if (index < 0 || index >= PartySize)
         {
             Debug.LogWarning($"{methodName} for object {gameObject} was given an out-of-bounds index of {index}.");
             return false;
@@ -201,243 +247,7 @@ public class UnitParty : MonoBehaviour
         return true;
     }
 
-    /*
-    public void SetParentToMember(int index, GameObject partyMember)
-    {
-        string methodName = nameof(SetParentToMember);
-        if (CheckIndex(index, methodName))
-        {
-            Transform parent = m_PartyMemberPositions[index];
-
-            if (CheckReference(parent, methodName))
-                partyMember.transform.parent = parent;
-        }
-    }
-
-    public void SwitchPositions(int firstIndex, int secondIndex)
-    {
-        string methodName = nameof(SwitchPositions);
-
-        if (CheckIndex(firstIndex, methodName) && CheckIndex(secondIndex, methodName))
-        {
-            GameObject first = GetPartyMemberAtIndex(firstIndex);
-            GameObject second = GetPartyMemberAtIndex(secondIndex);
-
-            SetParentToMember(firstIndex, second);
-            SetParentToMember(secondIndex, first);
-        }
-    }
-
-    public GameObject GetPartyMemberAtIndex(int index)
-    {
-        return m_PartyMemberPositions[index].GetChild(0).gameObject;
-    }
-
-    public void AddPartyMember(int index, GameObject partyMember)
-    {
-        Transform partyPosition = new GameObject().transform;
-        partyPosition.parent = transform;
-        partyPosition.SetSiblingIndex(index);
-        m_PartyMemberPositions.Insert(index, partyPosition);
-
-        if (partyMember != null)
-            SetParentToMember(index, partyMember);
-    }
-
-    public void AddPartyMember(GameObject partyMember)
-    {
-        Transform partyPosition = new GameObject().transform;
-        partyPosition.parent = transform;
-
-        int latestIndex = m_PartyMemberPositions.Count;
-        m_PartyMemberPositions.Add(partyPosition);
-
-        if (partyMember != null)
-            SetParentToMember(latestIndex, partyMember);
-    }
-
-    public GameObject RemovePartyMember(int index)
-    {
-        string methodName = nameof(RemovePartyMember);
-
-        if (CheckIndex(index, methodName))
-        {
-            Transform parent = m_PartyMemberPositions[index];
-
-            if (CheckReference(parent, methodName))
-            {
-                GameObject obj = parent.GetChild(0).gameObject;
-                obj.transform.parent = null;
-                m_PartyMemberPositions.RemoveAt(index);
-                Destroy(parent);
-                return obj;
-            }
-        }
-
-        return null;
-    }
-
-    public GameObject RemovePartyMember()
-    {
-        return RemovePartyMember(m_PartyMemberPositions.Count - 1);
-    }
-
-    public void UpdatePartyPositions()
-    {
-
-    }
-
-    private bool CheckIndex(int index, string methodName)
-    {
-        if (index < 0 || index >= m_PartyMemberPositions.Count)
-        {
-            Debug.LogWarning($"{methodName} for object {gameObject} was given an out-of-bounds index of {index}.");
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool CheckReference(Object obj, string methodName)
-    {
-        if (obj == null)
-        {
-            Debug.LogWarning($"{methodName} for object {gameObject} was accessing a NULL {obj.GetType()} object.");
-            return false;
-        }
-
-        return true;
-    }
-    */
-
-    /*
-    [SerializeField]
-    private int m_InitialPartyMemberCount;
-    [SerializeField]
-    private float m_DistanceBetweenMembers;
-
-    private List<Transform> m_PartyMemberPositions;
-
-    private void Start()
-    {
-        m_PartyMemberPositions = new List<Transform>();
-
-        for (int i = 0; i < m_InitialPartyMemberCount; i++)
-            AddPartyMember(null);
-    }
-
-    private void FixedUpdate()
-    {
-        
-    }
-
-    public void SetParentToMember(int index, GameObject partyMember)
-    {
-        string methodName = nameof(SetParentToMember);
-        if (CheckIndex(index, methodName))
-        {
-            Transform parent = m_PartyMemberPositions[index];
-
-            if (CheckReference(parent, methodName))
-                partyMember.transform.parent = parent;
-        }
-    }
-
-    public void SwitchPositions(int firstIndex, int secondIndex)
-    {
-        string methodName = nameof(SwitchPositions);
-
-        if (CheckIndex(firstIndex, methodName) && CheckIndex(secondIndex, methodName))
-        {
-            GameObject first = GetPartyMemberAtIndex(firstIndex);
-            GameObject second = GetPartyMemberAtIndex(secondIndex);
-            
-            SetParentToMember(firstIndex, second);
-            SetParentToMember(secondIndex, first);
-        }
-    }
-
-    public GameObject GetPartyMemberAtIndex(int index)
-    {
-        return m_PartyMemberPositions[index].GetChild(0).gameObject;
-    }
-
-    public void AddPartyMember(int index, GameObject partyMember)
-    {
-        Transform partyPosition = new GameObject().transform;
-        partyPosition.parent = transform;
-        partyPosition.SetSiblingIndex(index);
-        m_PartyMemberPositions.Insert(index, partyPosition);
-
-        if (partyMember != null)
-            SetParentToMember(index, partyMember);
-    }
-
-    public void AddPartyMember(GameObject partyMember)
-    {
-        Transform partyPosition = new GameObject().transform;
-        partyPosition.parent = transform;
-
-        int latestIndex = m_PartyMemberPositions.Count;
-        m_PartyMemberPositions.Add(partyPosition);
-
-        if (partyMember != null)
-            SetParentToMember(latestIndex, partyMember);
-    }
-
-    public GameObject RemovePartyMember(int index)
-    {
-        string methodName = nameof(RemovePartyMember);
-
-        if (CheckIndex(index, methodName))
-        {
-            Transform parent = m_PartyMemberPositions[index];
-
-            if (CheckReference(parent, methodName))
-            {
-                GameObject obj = parent.GetChild(0).gameObject;
-                obj.transform.parent = null;
-                m_PartyMemberPositions.RemoveAt(index);
-                Destroy(parent);
-                return obj;
-            }
-        }
-
-        return null;
-    }
-
-    public GameObject RemovePartyMember()
-    {
-        return RemovePartyMember(m_PartyMemberPositions.Count - 1);
-    }
-
-    public void UpdatePartyPositions()
-    {
-        
-    }
-
-    private bool CheckIndex(int index, string methodName)
-    {
-        if (index < 0 || index >= m_PartyMemberPositions.Count)
-        {
-            Debug.LogWarning($"{methodName} for object {gameObject} was given an out-of-bounds index of {index}.");
-            return false;
-        }
-
-        return true;
-    }
-
-    private bool CheckReference(Object obj, string methodName)
-    {
-        if (obj == null)
-        {
-            Debug.LogWarning($"{methodName} for object {gameObject} was accessing a NULL {obj.GetType()} object.");
-            return false;
-        }
-
-        return true;
-    }
-    */
+    #endregion
 }
 
 #if UNITY_EDITOR
@@ -449,6 +259,8 @@ public class UnitPartyEditor : Editor
 
     private int m_FirstIndex;
     private int m_SecondIndex;
+
+    private int m_ShiftIncrementation;
 
     private int m_InsertIndex;
     private GameObject m_InsertGameObject;
@@ -481,6 +293,14 @@ public class UnitPartyEditor : Editor
 
         if (GUILayout.Button("Switch Indices"))
             tool.SwitchMemberIndices(m_FirstIndex, m_SecondIndex);
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Shift Party List Method", EditorStyles.boldLabel);
+        m_ShiftIncrementation = EditorGUILayout.IntField("Shift Incrementation: ", m_ShiftIncrementation);
+
+        if (GUILayout.Button("Shift Party List"))
+            tool.ShiftPartyList(m_ShiftIncrementation);
 
         EditorGUILayout.Space();
 
