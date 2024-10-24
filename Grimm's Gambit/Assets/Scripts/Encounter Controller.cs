@@ -54,6 +54,8 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
+        List<GameObject> party = new List<GameObject>(), enemies = new List<GameObject>();
+
         m_EndButton.interactable = !m_EndButton.interactable;
 
         if (m_IsPlayerTurn) {
@@ -63,8 +65,17 @@ public class EncounterController : MonoBehaviour
             // Display the number of cards in the player's deck
             Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
         }
-        // Unfinished
-        else Debug.Log("Enemy minion attacks."); 
+        else 
+        {
+            // Unfinished 
+            // To bo altered based upon enemy controller
+
+            foreach (GameObject enemy in enemies)
+            {
+                Minion minionController = enemy.GetComponent<Minion>();
+                Debug.Log("Enemy minion attacks.");
+            }
+        } 
     }
 
     private void EndEncounter(bool playerWin) {
