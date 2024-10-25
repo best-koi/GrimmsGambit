@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436121759}
-  - component: {fileID: 436121758}
+  - component: {fileID: 436121760}
   m_Layer: 0
   m_Name: PlayerHand
   m_TagString: Untagged
@@ -234,21 +234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &436121758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436121757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1382fb8908332654badaf7e6f82645f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand:
-  - {fileID: 921408914}
-  - {fileID: 1871140489}
 --- !u!4 &436121759
 Transform:
   m_ObjectHideFlags: 0
@@ -264,6 +249,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &436121760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436121757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce7fb39336c2194c8e01b582996bea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DeckController: {fileID: 0}
+  m_Cards: 
+  m_TopCardID: 0
 --- !u!1 &842091523
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +478,9 @@ MonoBehaviour:
   cardName: High Priestess
   cardCost: 3
   isReversed: 0
+  m_Hand: {fileID: 0}
+  m_Index: 0
+  m_PlayerCopies: 0
 --- !u!114 &921408915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +529,9 @@ MonoBehaviour:
   cardName: High Priestess
   cardCost: 3
   isReversed: 0
+  m_Hand: {fileID: 0}
+  m_Index: 0
+  m_PlayerCopies: 0
 --- !u!114 &1871140490
 MonoBehaviour:
   m_ObjectHideFlags: 0

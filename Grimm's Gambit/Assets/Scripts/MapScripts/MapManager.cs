@@ -9,15 +9,29 @@ public class MapManager : MonoBehaviour
 
     static bool startingSpaceUsed = false;//Checks to see if the player has moved to a starting space. Prevents moving horizontally
 
-    //Finds the player in the scene
+    [SerializeField]
+    private List<Color> testColors;//A list of colors to represent encounters
+
+    [SerializeField]
+    private List<POI> pois;//A list of POI characters
+
+    // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<MapPlayer>();
+        foreach(POI p in pois)
+        {
+            int color = Random.Range(0, testColors.Count);
+            p.gameObject.GetComponent<Renderer>().material.SetColor("_Color", testColors[color]);
+            testColors.RemoveAt(color);
+        }
+        
     }
 
     //Retrieves the player
     public static MapPlayer GetPlayer()
     {
+        //Returns the player character
         return player; 
     }
 
