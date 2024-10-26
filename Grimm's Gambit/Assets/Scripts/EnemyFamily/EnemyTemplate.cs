@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 //Code by Jessie Archer
 public abstract class EnemyTemplate : MonoBehaviour
 {
@@ -16,19 +17,29 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected int currentAttack;//The index representing the current attack
 
+    [SerializeField]
+    protected TMP_Text healthText, nameText, moveText;//Text to indicate the enemy's health
+
+    
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
     protected virtual void AttackPattern()
     {
-        if (currentAttack >= attacks.Count)
-            currentAttack = 0;
-
+        CheckAttackBounds();
         //Calls a method from the list of available attacks
         Invoke(attacks[currentAttack], 0f);
         //Moves onto the next attack
         currentAttack++;
+        CheckAttackBounds();
+    }
+
+    protected virtual void Update()
+    {
+        healthText.text = $"{hp}";
+        nameText.text = name;
+        moveText.text = "Upcoming Move: " + attacks[currentAttack];
     }
 
     //Sets the enemy hp
@@ -58,5 +69,10 @@ public abstract class EnemyTemplate : MonoBehaviour
         AttackPattern();
     }
 
+    protected void CheckAttackBounds()
+    {
+        if (currentAttack >= attacks.Count)
+            currentAttack = 0;
+    }
 
 }
