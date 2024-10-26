@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &362344235 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7224644498996548150, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-  m_PrefabInstance: {fileID: 8081763138285730994}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &608085421
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,17 +309,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1996594241 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1547079865206609264, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-  m_PrefabInstance: {fileID: 8081763138285730994}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8081763138285730994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339,34 +317,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: moveText
-      value: 
-      objectReference: {fileID: 362344235}
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 1996594241}
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: enemyName
-      value: Healer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: currentAttack
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: attacks.Array.data[1]
-      value: HealSelf
-      objectReference: {fileID: 0}
-    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: attacks.Array.data[2]
-      value: Defend
-      objectReference: {fileID: 0}
-    - target: {fileID: 4133276841062574726, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
-      propertyPath: m_Name
-      value: NameText
-      objectReference: {fileID: 0}
     - target: {fileID: 4636294791466361176, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
