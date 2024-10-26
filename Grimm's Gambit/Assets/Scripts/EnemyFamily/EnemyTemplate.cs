@@ -28,8 +28,11 @@ public abstract class EnemyTemplate : MonoBehaviour
         attacks[currentAttack]();
         //Moves onto the next attack
         currentAttack++;
+    }
 
-        
+    protected virtual void Attack()
+    {
+
     }
 
 }
