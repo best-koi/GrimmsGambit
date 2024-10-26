@@ -11,10 +11,11 @@ public abstract class EnemyTemplate : MonoBehaviour
     protected string enemyName;//The enemy's name
 
     [SerializeField]
-    protected List<System.Action> attacks;//A list of methods for attacks
+    protected List<string> attacks;//A list of strings mapped to methods
 
     [SerializeField]
     protected int currentAttack;//The index representing the current attack
+
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
@@ -25,14 +26,37 @@ public abstract class EnemyTemplate : MonoBehaviour
             currentAttack = 0;
 
         //Calls a method from the list of available attacks
-        attacks[currentAttack]();
+        Invoke(attacks[currentAttack], 0f);
         //Moves onto the next attack
         currentAttack++;
     }
 
+    //Sets the enemy hp
+    //Put in positive number to increase
+    //Put in negative number to decrease
+    public void AffectHP(int amount)
+    {
+        hp += amount;
+    }
+
+
+    //A method representing an attack
     protected virtual void Attack()
     {
-
+        Debug.Log("Attacked!");
     }
+
+    //A method representing a defensive move
+    protected virtual void Defend()
+    {
+        Debug.Log("Defending!");
+    }
+
+    //Testing AttackPattern
+    protected void OnMouseDown()
+    {
+        AttackPattern();
+    }
+
 
 }

@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class EnemyHealer : EnemyTemplate
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private int healingAmount;//An int representing an amount to heal by
+
+    //A method for the healer to heal itself
+    private void HealSelf()
     {
-        
+        hp += healingAmount;
     }
 
-    // Update is called once per frame
-    void Update()
+    //A method for the healer to heal other enemies
+    //Perhaps reference a list of enemies and heal them
+    //if there are no enemies, then skip to next attack
+    private void HealOther(EnemyTemplate enemy)
     {
-        
+        enemy.AffectHP(healingAmount);
     }
+
+     
 }
