@@ -20,6 +20,8 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected TMP_Text healthText, nameText, moveText;//Text to indicate the enemy's health
 
+    [SerializeField]
+    protected Color enemyColor;//A color that represents the enemy
     
 
     //AttackPattern() essentially calls the next attack from the list
