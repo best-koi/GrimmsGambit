@@ -24,7 +24,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     protected Color enemyColor;//A color that represents the enemy
 
     [SerializeField]
-    protected Renderer renderer;
+    protected Renderer renderer;//The enemy's renderer
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
@@ -45,6 +45,7 @@ public abstract class EnemyTemplate : MonoBehaviour
         renderer.material.color = enemyColor;
     }
 
+    //Shows the default text above and below enemy
     protected virtual void Update()
     {
         healthText.text = $"{hp}";
@@ -79,17 +80,20 @@ public abstract class EnemyTemplate : MonoBehaviour
         AttackPattern();
     }
 
+    //Helps prevent Index Out of Bounds Errors
     protected void CheckAttackBounds()
     {
         if (currentAttack >= attacks.Count)
             currentAttack = 0;
     }
 
+    //Returns the Enemy's Name
     public string GetEnemyName()
     {
         return enemyName;
     }
 
+    //Returns the Enemy's Color (for Intent)
     public Color GetEnemyColor()
     {
         return enemyColor;

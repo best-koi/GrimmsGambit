@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Code by Jessie Archer
+//A script representing an enemy that heals itself and other enemies
 public class EnemyHealer : EnemyTemplate
 {
     [SerializeField]
@@ -12,14 +14,16 @@ public class EnemyHealer : EnemyTemplate
     [SerializeField]
     private List<EnemyTemplate> allies = new List<EnemyTemplate>();//An array of enemies to heal
 
+    //The Healer Update() method considers how to update text in response
+    //to what action is being performed
     protected override void Update()
     {
+        //Makes sure the target exists
         if(enemyTarget == null)
             FindEnemyToHeal();
 
         healthText.text = $"{hp}";
         nameText.text = name;
-
         switch (attacks[currentAttack])
         {
             case "HealOther":
@@ -49,7 +53,6 @@ public class EnemyHealer : EnemyTemplate
             if (e == this)
                 continue;
             allies.Add(e);
-            Debug.Log(allies);
         }
         //Sets a random target to heal
         enemyTarget = allies[Random.Range(0, allies.Count)];

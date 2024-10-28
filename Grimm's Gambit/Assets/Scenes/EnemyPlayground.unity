@@ -526,6 +526,22 @@ PrefabInstance:
       propertyPath: enemyColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
+      propertyPath: attacks.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
+      propertyPath: attacks.Array.data[1]
+      value: HealSelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
+      propertyPath: attacks.Array.data[2]
+      value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
+      propertyPath: attacks.Array.data[3]
+      value: HealOther
+      objectReference: {fileID: 0}
     - target: {fileID: 4636294791466361176, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3199998

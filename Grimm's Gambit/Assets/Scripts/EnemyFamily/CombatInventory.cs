@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is likely to be replaced by a CombatManager/Turn-Based Manager
 public class CombatInventory : MonoBehaviour
 {
 
