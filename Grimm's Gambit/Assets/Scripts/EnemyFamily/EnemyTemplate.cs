@@ -39,10 +39,12 @@ public abstract class EnemyTemplate : MonoBehaviour
         CheckAttackBounds();
     }
 
+
     protected virtual void Start()
     {
         //Sets color to preset color
         renderer.material.color = enemyColor;
+        currentAttack = Random.Range(0, attacks.Count);
     }
 
     //Shows the default text above and below enemy
