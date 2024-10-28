@@ -11,7 +11,7 @@ public class CombatInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindEnemies();
     }
 
     // Update is called once per frame

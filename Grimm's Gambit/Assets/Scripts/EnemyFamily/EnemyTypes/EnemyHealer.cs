@@ -12,25 +12,6 @@ public class EnemyHealer : EnemyTemplate
     [SerializeField]
     private List<EnemyTemplate> allies = new List<EnemyTemplate>();//An array of enemies to heal
 
-
-    //Checks for available enemies and heals one
-    private void FindEnemyToHeal()
-    {
-        //Gets array of enemies in scene
-        EnemyTemplate[] enemies = CombatInventory.GetActiveEnemies();
-        //Creates a sublist of non-self enemies
-        foreach (EnemyTemplate e in enemies)
-        {
-            if (e == this)
-                continue;
-            allies.Add(e);
-            Debug.Log(allies);
-        }
-        //Sets a random target to heal
-        enemyTarget = allies[Random.Range(0, allies.Count)];
-
-    }
-
     protected override void Update()
     {
         if(enemyTarget == null)
@@ -56,6 +37,26 @@ public class EnemyHealer : EnemyTemplate
         }
 
     }
+
+    //Checks for available enemies and heals one
+    private void FindEnemyToHeal()
+    {
+        //Gets array of enemies in scene
+        EnemyTemplate[] enemies = CombatInventory.GetActiveEnemies();
+        //Creates a sublist of non-self enemies
+        foreach (EnemyTemplate e in enemies)
+        {
+            if (e == this)
+                continue;
+            allies.Add(e);
+            Debug.Log(allies);
+        }
+        //Sets a random target to heal
+        enemyTarget = allies[Random.Range(0, allies.Count)];
+
+    }
+
+
 
     //A method for the healer to heal itself
     private void HealSelf()
