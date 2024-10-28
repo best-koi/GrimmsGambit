@@ -362,6 +362,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
+      propertyPath: hp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyName
       value: Healer 3
       objectReference: {fileID: 0}
@@ -508,7 +512,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: hp
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyName
