@@ -22,7 +22,9 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     [SerializeField]
     protected Color enemyColor;//A color that represents the enemy
-    
+
+    [SerializeField]
+    protected Renderer renderer;
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
@@ -35,6 +37,12 @@ public abstract class EnemyTemplate : MonoBehaviour
         //Moves onto the next attack
         currentAttack++;
         CheckAttackBounds();
+    }
+
+    protected virtual void Start()
+    {
+        //Sets color to preset color
+        renderer.material.color = enemyColor;
     }
 
     protected virtual void Update()
@@ -77,4 +85,13 @@ public abstract class EnemyTemplate : MonoBehaviour
             currentAttack = 0;
     }
 
+    public string GetEnemyName()
+    {
+        return enemyName;
+    }
+
+    public Color GetEnemyColor()
+    {
+        return enemyColor;
+    }
 }
