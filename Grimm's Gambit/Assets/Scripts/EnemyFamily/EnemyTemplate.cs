@@ -6,7 +6,7 @@ using TMPro;
 public abstract class EnemyTemplate : MonoBehaviour
 {
     [SerializeField]
-    protected int hp;//A hit points stat for the enemy
+    protected int hp, maxHP;//Hit points stat for the enemy
 
     [SerializeField]
     protected string enemyName;//The enemy's name
@@ -48,7 +48,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     //Shows the default text above and below enemy
     protected virtual void Update()
     {
-        healthText.text = $"{hp}";
+        healthText.text = $"{hp}/ {maxHP}";
         nameText.text = name;
         moveText.text = "Upcoming Move: " + attacks[currentAttack];
     }
@@ -61,6 +61,17 @@ public abstract class EnemyTemplate : MonoBehaviour
         hp += amount;
     }
 
+    //sets HP to a fixed amount
+    public void SetHP(int amount)
+    {
+        hp = amount; 
+    }
+
+    protected void AdvanceAttack()
+    {
+        currentAttack++;
+        CheckAttackBounds();
+    }
 
     //A method representing an attack
     protected virtual void Attack()
@@ -97,5 +108,15 @@ public abstract class EnemyTemplate : MonoBehaviour
     public Color GetEnemyColor()
     {
         return enemyColor;
+    }
+
+    public int GetHP()
+    {
+        return hp;
+    }
+
+    public int GetMaxHP()
+    {
+        return maxHP; 
     }
 }

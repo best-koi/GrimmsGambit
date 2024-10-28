@@ -625,7 +625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edde488412b0482092edcdee78a79a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 1
+  maxHP: 5
   enemyName: Healer
   attacks:
   - Attack
@@ -639,3 +640,4 @@ MonoBehaviour:
   enemyColor: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 3082288189527186086}
   healingAmount: 2
+  allies: []

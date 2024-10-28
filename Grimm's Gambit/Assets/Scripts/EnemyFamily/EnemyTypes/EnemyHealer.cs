@@ -14,6 +14,10 @@ public class EnemyHealer : EnemyTemplate
     [SerializeField]
     private List<EnemyTemplate> allies = new List<EnemyTemplate>();//An array of enemies to heal
 
+    private bool canHealOthers = false;//a boolean to track ability to heal self
+    private bool canHealSelf = false;
+   
+
     //The Healer Update() method considers how to update text in response
     //to what action is being performed
     protected override void Update()
@@ -22,17 +26,32 @@ public class EnemyHealer : EnemyTemplate
         if(enemyTarget == null)
             FindEnemyToHeal();
 
-        healthText.text = $"{hp}";
+        healthText.text = $"{hp}/ {maxHP}";
         nameText.text = name;
         switch (attacks[currentAttack])
         {
             case "HealOther":
+                if (canHealOthers == false)
+                {
+                    AdvanceAttack();
+                    break;
+                }
                 moveText.text = $"Upcoming Move: Heal {enemyTarget.GetEnemyName()}";
                 moveText.color = enemyTarget.GetEnemyColor();
                 break;
             case "HealSelf":
-                moveText.text = "Upcoming Move: Heal Self";
-                moveText.color = this.GetEnemyColor();
+                if (CheckSelfHeal())
+                {
+                    moveText.text = "Upcoming Move: Heal Self";
+                    moveText.color = this.GetEnemyColor();
+
+                }
+                else
+                {
+                    AdvanceAttack();
+                    break;
+
+                }
                 break;
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
@@ -45,17 +64,23 @@ public class EnemyHealer : EnemyTemplate
     //Checks for available enemies and heals one
     private void FindEnemyToHeal()
     {
+        allies = new List<EnemyTemplate>();
         //Gets array of enemies in scene
         EnemyTemplate[] enemies = CombatInventory.GetActiveEnemies();
         //Creates a sublist of non-self enemies
         foreach (EnemyTemplate e in enemies)
         {
-            if (e == this)
+            if (e == this || e.GetHP() == e.GetMaxHP())
                 continue;
             allies.Add(e);
         }
         //Sets a random target to heal
-        enemyTarget = allies[Random.Range(0, allies.Count)];
+        if (allies.Count != 0)
+        {
+            enemyTarget = allies[Random.Range(0, allies.Count)];
+            canHealOthers = true;
+        }else
+            canHealOthers = false;
 
     }
 
@@ -64,7 +89,13 @@ public class EnemyHealer : EnemyTemplate
     //A method for the healer to heal itself
     private void HealSelf()
     {
-        hp += healingAmount;
+        //Checks if enemy can heal itself
+        //If number to heal exceeds, it become max HP
+        if (hp + healingAmount < maxHP)
+            hp += healingAmount;
+        else 
+            hp = maxHP;
+
     }
 
     //A method for the healer to heal other enemies
@@ -72,11 +103,22 @@ public class EnemyHealer : EnemyTemplate
     //if there are no enemies, then skip to next attack
     private void HealOther()
     {
+        if (enemyTarget.GetHP() + healingAmount < enemyTarget.GetMaxHP())
+            enemyTarget.AffectHP(healingAmount);
+        else
+            enemyTarget.SetHP(enemyTarget.GetMaxHP());
+
         FindEnemyToHeal();
-        enemyTarget.AffectHP(healingAmount);
     }
 
-    
+    private bool CheckSelfHeal()
+    {
+        if (hp == maxHP)
+            return false;
+        return true;
+
+    }
+
 
      
 }
