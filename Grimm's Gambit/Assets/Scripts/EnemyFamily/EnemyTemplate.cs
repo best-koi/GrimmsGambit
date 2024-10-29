@@ -26,6 +26,9 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected Renderer renderer;//The enemy's renderer
 
+    [SerializeField]
+    protected int attackValue;//The enemy's attack value
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
@@ -39,11 +42,12 @@ public abstract class EnemyTemplate : MonoBehaviour
         CheckAttackBounds();
     }
 
-
+    //A default Start() method 
     protected virtual void Start()
     {
         //Sets color to preset color
         renderer.material.color = enemyColor;
+        //Starts the enemy with a random attack
         currentAttack = Random.Range(0, attacks.Count);
     }
 
@@ -69,6 +73,8 @@ public abstract class EnemyTemplate : MonoBehaviour
         hp = amount; 
     }
 
+    //Advances past the current attack
+    //Ensures that this attack is not out of the attack pattern bounds
     protected void AdvanceAttack()
     {
         currentAttack++;
@@ -112,11 +118,13 @@ public abstract class EnemyTemplate : MonoBehaviour
         return enemyColor;
     }
 
+    //Returns the Enemy's Current Health
     public int GetHP()
     {
         return hp;
     }
 
+    //Returns the Enemy's Max Health
     public int GetMaxHP()
     {
         return maxHP; 
