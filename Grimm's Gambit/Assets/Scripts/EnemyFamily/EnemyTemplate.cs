@@ -55,7 +55,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     protected virtual void Update()
     {
         healthText.text = $"{hp}/ {maxHP}";
-        nameText.text = name;
+        nameText.text = enemyName;
         moveText.text = "Upcoming Move: " + attacks[currentAttack];
     }
 

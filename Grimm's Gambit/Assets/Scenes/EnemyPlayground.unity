@@ -401,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyName
-      value: Healer 3
+      value: Red Healer
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyColor.a
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyName
-      value: Healer 2
+      value: Green Healer
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyColor.a
@@ -657,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyName
-      value: Healer 1
+      value: Blue Healer
       objectReference: {fileID: 0}
     - target: {fileID: 1479396871211209921, guid: ed21305f2de3b4bf285c7331535ee971, type: 3}
       propertyPath: enemyColor.a

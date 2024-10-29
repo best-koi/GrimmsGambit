@@ -20,7 +20,7 @@ public class EnemyHealer : EnemyTemplate
     {
 
         healthText.text = $"{hp}/ {maxHP}";
-        nameText.text = name;
+        nameText.text = enemyName;
         switch (attacks[currentAttack])
         {
             //The function for healing another enemy
