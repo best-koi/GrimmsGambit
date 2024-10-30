@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   maxHP: 5
-  enemyName: Healer
+  enemyName: Fairy
   attacks:
   - Attack
   - HealSelf

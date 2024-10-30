@@ -20,7 +20,6 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected TMP_Text healthText, nameText, moveText;//Text to indicate the enemy's health
 
-    [SerializeField]
     protected Color enemyColor;//A color that represents the enemy
 
     [SerializeField]
@@ -64,6 +63,8 @@ public abstract class EnemyTemplate : MonoBehaviour
         attackTarget = targets[Random.Range(0, targets.Count)];
     }
 
+
+
     //A default Start() method 
     protected virtual void Start()
     {
@@ -71,6 +72,11 @@ public abstract class EnemyTemplate : MonoBehaviour
         renderer.material.color = enemyColor;
         //Starts the enemy with a random attack
         currentAttack = Random.Range(0, attacks.Count);
+    }
+
+    public void SetColor(Color c)
+    {
+        enemyColor = c;
     }
 
     //Shows the default text above and below enemy

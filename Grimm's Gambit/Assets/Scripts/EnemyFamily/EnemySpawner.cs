@@ -13,6 +13,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Color spawnerColor;//The color of the spawner for Intent
 
+    [SerializeField]
+    private Color spawnedColor;//A color for the enemy spawned 
+
     private EnemyTemplate enemy;//The enemy spawned at this location
 
     [SerializeField]
@@ -26,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
     {
         renderer.material.color = spawnerColor;
         enemy = Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Count)]);
+        enemy.SetColor(spawnedColor);
         enemy.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
     }
 
@@ -39,4 +43,6 @@ public class EnemySpawner : MonoBehaviour
         return spawnerColor;
 
     }
+
+    
 }
