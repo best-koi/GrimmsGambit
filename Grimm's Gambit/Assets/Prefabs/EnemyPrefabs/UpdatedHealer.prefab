@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 7987207555103242937}
   - component: {fileID: 1479396871211209921}
   m_Layer: 0
-  m_Name: HealerEnemy 1
+  m_Name: UpdatedHealer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
