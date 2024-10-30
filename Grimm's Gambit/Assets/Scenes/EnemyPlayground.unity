@@ -585,6 +585,10 @@ PrefabInstance:
       propertyPath: spawnerColor.r
       value: 0.47487593
       objectReference: {fileID: 0}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1479396871211209921, guid: dd227e40b25ed4f7788d756f3ce2cb1f, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition (1)
