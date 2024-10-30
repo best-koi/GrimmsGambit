@@ -33,10 +33,11 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     protected List<CharacterTemplate> targets = new List<CharacterTemplate>();
 
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
-    protected virtual void AttackPattern()
+    public virtual void AttackPattern()
     {
         CheckAttackBounds();
         //Calls a method from the list of available attacks
@@ -44,6 +45,11 @@ public abstract class EnemyTemplate : MonoBehaviour
         //Moves onto the next attack
         currentAttack++;
         CheckAttackBounds();
+    }
+
+    protected virtual void Act()
+    {
+        AttackPattern();
     }
 
     protected virtual void FindTarget()
@@ -113,11 +119,13 @@ public abstract class EnemyTemplate : MonoBehaviour
         Debug.Log("Defending!");
     }
 
+    /*
     //Testing AttackPattern
     protected void OnMouseDown()
     {
         AttackPattern();
     }
+    */
 
     //Helps prevent Index Out of Bounds Errors
     protected void CheckAttackBounds()
@@ -156,4 +164,5 @@ public abstract class EnemyTemplate : MonoBehaviour
             return false;
         return true;
     }
+
 }

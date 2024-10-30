@@ -20,55 +20,9 @@ public class EnemyHealer : EnemyTemplate
     {
         if (attackTarget == null)
             FindTarget();
-
         healthText.text = $"{hp}/ {maxHP}";
         nameText.text = enemyName;
-        switch (attacks[currentAttack])
-        {
-            //The function for healing another enemy
-            case "HealOther":
-                //Sets an enemy to heal (will not do anything if all full health)
-                if(enemyTarget == null)
-                    FindEnemyToHeal();
-                if (!CheckHealOthers())
-                    AdvanceAttack();
-                else
-                {
-                    moveText.text = $"Upcoming Move: Heal {enemyTarget.GetEnemyName()}";
-                    moveText.color = enemyTarget.GetEnemyColor();
-
-                }
-                break;
-            case "HealSelf":
-                if (!CheckSelfHeal())
-                    AdvanceAttack();
-                else
-                {
-                    moveText.text = "Upcoming Move: Heal Self";
-                    moveText.color = this.GetEnemyColor();
-                }
-                break;
-
-            case "Attack":
-                if (attackTarget == null)
-                    FindTarget();
-                if (!CanAttackTarget())
-                    AdvanceAttack();
-                else
-                {
-                    moveText.text = $"Upcoming Move: Attack {attackTarget.GetCharacterName()}";
-                    moveText.color = attackTarget.GetCharacterColor();
-
-                }
-                
-                break;
-
-            default:
-                moveText.text = "Upcoming Move: " + attacks[currentAttack];
-                moveText.color = Color.white;
-                break;
-        }
-
+        
     }
 
     //Checks for available enemies and heals one
@@ -95,7 +49,11 @@ public class EnemyHealer : EnemyTemplate
 
     }
 
-
+    public override void AttackPattern()
+    {
+        CheckCurrentAttack();
+        base.AttackPattern();
+    }
 
     //A method for the healer to heal itself
     private void HealSelf()
@@ -146,7 +104,56 @@ public class EnemyHealer : EnemyTemplate
         return false;
     }
 
-    
-    
+    //Checks current attack
+    private void CheckCurrentAttack()
+    {
+        switch (attacks[currentAttack])
+        {
+            //The function for healing another enemy
+            case "HealOther":
+                //Sets an enemy to heal (will not do anything if all full health)
+                if (enemyTarget == null)
+                    FindEnemyToHeal();
+                if (!CheckHealOthers())
+                    AdvanceAttack();
+                else
+                {
+                    moveText.text = $"Upcoming Move: Heal {enemyTarget.GetEnemyName()}";
+                    moveText.color = enemyTarget.GetEnemyColor();
+
+                }
+                break;
+            case "HealSelf":
+                if (!CheckSelfHeal())
+                    AdvanceAttack();
+                else
+                {
+                    moveText.text = "Upcoming Move: Heal Self";
+                    moveText.color = this.GetEnemyColor();
+                }
+                break;
+
+            case "Attack":
+                if (attackTarget == null)
+                    FindTarget();
+                if (!CanAttackTarget())
+                    AdvanceAttack();
+                else
+                {
+                    moveText.text = $"Upcoming Move: Attack {attackTarget.GetCharacterName()}";
+                    moveText.color = attackTarget.GetCharacterColor();
+
+                }
+
+                break;
+
+            default:
+                moveText.text = "Upcoming Move: " + attacks[currentAttack];
+                moveText.color = Color.white;
+                break;
+        }
+
+
+    }
 
 }
