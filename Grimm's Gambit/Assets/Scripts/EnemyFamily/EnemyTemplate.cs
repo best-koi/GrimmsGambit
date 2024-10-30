@@ -29,6 +29,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected int attackValue;//The enemy's attack value
 
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds

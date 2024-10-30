@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -495.84, y: -248.67}
+  m_AnchoredPosition: {x: -495.84, y: -244.546}
   m_SizeDelta: {x: 4.526, y: 1.2813}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &170162279726001888
@@ -272,7 +272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -495.84, y: -248.14}
+  m_AnchoredPosition: {x: -495.84, y: -244.016}
   m_SizeDelta: {x: 4.526, y: 1.2813}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8039337345490339798
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 7987207555103242937}
   - component: {fileID: 1479396871211209921}
   m_Layer: 0
-  m_Name: HealerEnemy
+  m_Name: HealerEnemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edde488412b0482092edcdee78a79a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 1
   maxHP: 5
   enemyName: Healer
   attacks:
@@ -637,7 +637,7 @@ MonoBehaviour:
   healthText: {fileID: 7007063830712604864}
   nameText: {fileID: 1547079865206609264}
   moveText: {fileID: 7224644498996548150}
-  enemyColor: {r: 0, g: 0, b: 0, a: 0}
+  enemyColor: {r: 0, g: 0, b: 0, a: 1}
   renderer: {fileID: 3082288189527186086}
   attackValue: 0
   healingAmount: 2
