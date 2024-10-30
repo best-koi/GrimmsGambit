@@ -22,6 +22,7 @@ public class EnemyHealer : EnemyTemplate
             FindTarget();
         healthText.text = $"{hp}/ {maxHP}";
         nameText.text = enemyName;
+        CheckCurrentAttack();
         
     }
 
