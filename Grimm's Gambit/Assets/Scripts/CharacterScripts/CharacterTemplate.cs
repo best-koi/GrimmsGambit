@@ -20,6 +20,9 @@ protected Color characterColor;//A color that represents the character
 [SerializeField]
 protected Renderer renderer;//The character's renderer
 
+[SerializeField]
+protected GameObject self;
+
 //A default Start() method 
 protected virtual void Start()
 {
@@ -30,10 +33,12 @@ protected virtual void Start()
     //Shows the default text above and below Character
     protected virtual void Update()
 {
+        if (this.hp <= 0)
+            Destroy(self);
+
     healthText.text = $"{hp}/ {maxHP}";
     nameText.text = characterName;
-    if (hp <= 0)
-       Destroy(this);
+    
 
 }
 
