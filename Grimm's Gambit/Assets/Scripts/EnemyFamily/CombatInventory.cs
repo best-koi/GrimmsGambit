@@ -82,7 +82,7 @@ public class CombatInventory : MonoBehaviour
         foreach(EnemyTemplate e in allEnemies)
         {
             e.AttackPattern();
-            StartCoroutine(MoveDelay());
+            StartCoroutine("MoveDelay");
         }
         isPlayerTurn = true;
     }

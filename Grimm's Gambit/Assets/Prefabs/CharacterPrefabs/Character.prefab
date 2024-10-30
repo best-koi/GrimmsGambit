@@ -497,4 +497,4 @@ MonoBehaviour:
   nameText: {fileID: 6481525176744876809}
   characterColor: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6253863334438364908}
-  attackValue: 0
+  self: {fileID: 6163780573869900379}
