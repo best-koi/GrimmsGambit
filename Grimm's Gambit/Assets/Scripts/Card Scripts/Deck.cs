@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.Linq;
 
 public class Deck : MonoBehaviour
 {
+    // Triggers on draw, broadcast indice of drawn card
+    public static Action<int> onDraw;
+
+    // Triggers on discard, broadcast indice of discarded card
+    public static Action<int> onDiscard;
+    
+    // References database of all cards in the game
     [SerializeField] private CardDatabase m_DataBase;
-    private Card[] data;
 
     [SerializeField] private int m_HandSize;
 
@@ -29,7 +36,7 @@ public class Deck : MonoBehaviour
         m_GameDeck.RemoveAt(index);
         m_Hand.Add(nextCardID);
 
-        Debug.Log("Player drew " + data[nextCardID].GetName() + ".");
+        onDraw?.Invoke(nextCardID);
     }
 
     // Discard a card from hand 
@@ -51,7 +58,7 @@ public class Deck : MonoBehaviour
        
         m_DiscardPile.Add(nextCardID);
 
-        Debug.Log(data[nextCardID].GetName() + "entered the discard pile.");
+        onDiscard?.Invoke(nextCardID);
     }
 
     // Put the top card of the deck into the discard pile
@@ -64,8 +71,6 @@ public class Deck : MonoBehaviour
             int nextCardID = m_GameDeck[index];
             m_GameDeck.RemoveAt(index);
             m_DiscardPile.Add(nextCardID);
-
-            Debug.Log(data[nextCardID].GetName() + "entered the discard pile.");
         }
     }
 
@@ -76,7 +81,7 @@ public class Deck : MonoBehaviour
 
         foreach (int card in temp)
         {
-            int randomNum = Random.Range(0, temp.Count());
+            int randomNum = UnityEngine.Random.Range(0, temp.Count());
             int randomCard = temp[randomNum];
 
             temp.RemoveAt(randomNum);
@@ -87,23 +92,14 @@ public class Deck : MonoBehaviour
     // Prepare the deck for the game
     public void StartDeck()
     {
-        data = m_DataBase.GetData();
-
         ClearAll();
 
-        // Populate the deck based on the database
-        foreach (Card card in data)
-        {
-            for (int i = 0, copies = card.NumCopies; i < copies; i++)
-            {
-                m_GameDeck.Add(card.GetIndex());
-            }
-        }
+        m_GameDeck = m_DataBase.PopulateDeck();
         
         Shuffle();
 
         // Draw hand
-        for (int i = 0; i < m_HandSize; i++) 
+        for (int i = 0; i < m_HandSize - 1; i++) 
         {
             Draw();
         }
@@ -114,6 +110,21 @@ public class Deck : MonoBehaviour
         m_GameDeck.Clear();
         m_Hand.Clear();
         m_DiscardPile.Clear();
+    }
+
+    public List<int> GetHand()
+    {
+        return m_Hand;
+    }
+
+    public List<int> GetDiscardPile()
+    {
+        return m_DiscardPile;
+    }
+
+    public int GetGameDeckSize()
+    {
+        return m_GameDeck.Count();
     }
 
     public bool Contains(int cardID)

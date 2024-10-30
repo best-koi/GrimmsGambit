@@ -18,20 +18,12 @@ public class Card : MonoBehaviour
     // Number that player has in their deck
     [SerializeField] private protected int m_Index, m_PlayerCopies;
 
-    // Creature information doesn't exist yet, I'll add it once the Unit class is made
-
-    // [SerializeField]
-    // private Creature creature;
-
     private void OnMouseDown()
     {
         Component[] spells = gameObject.GetComponents(typeof(SpellComponent));
         foreach(SpellComponent spell in spells) {
             spell.DoSpellEffect();
         }
-
-        //  if (creature is not null)
-        //      creature.DoSpawn() etc
 
         m_Hand.Discard(0, m_Index);
         
