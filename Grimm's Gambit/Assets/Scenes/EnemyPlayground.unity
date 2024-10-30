@@ -577,6 +577,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterName
+      value: Seamstress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.r
+      value: 0.029375792
+      objectReference: {fileID: 0}
     - target: {fileID: 5397451098032334217, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.1421556
@@ -890,6 +910,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterName
+      value: Hound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.g
+      value: 0.120423555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5397451098032334217, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.2248068
@@ -947,9 +987,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterName
+      value: Puss In Boots
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
+      propertyPath: characterColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5397451098032334217, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.805953
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 5397451098032334217, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: m_LocalPosition.y

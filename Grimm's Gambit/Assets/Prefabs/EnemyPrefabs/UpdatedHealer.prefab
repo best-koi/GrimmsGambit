@@ -639,6 +639,6 @@ MonoBehaviour:
   moveText: {fileID: 7224644498996548150}
   enemyColor: {r: 0, g: 0, b: 0, a: 1}
   renderer: {fileID: 3082288189527186086}
-  attackValue: 0
+  attackValue: -10
   healingAmount: 2
   allies: []

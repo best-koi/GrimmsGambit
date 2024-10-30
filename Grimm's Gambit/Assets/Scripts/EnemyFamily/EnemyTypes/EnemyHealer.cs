@@ -18,6 +18,8 @@ public class EnemyHealer : EnemyTemplate
     //to what action is being performed
     protected override void Update()
     {
+        if (attackTarget == null)
+            FindTarget();
 
         healthText.text = $"{hp}/ {maxHP}";
         nameText.text = enemyName;
@@ -46,6 +48,21 @@ public class EnemyHealer : EnemyTemplate
                     moveText.color = this.GetEnemyColor();
                 }
                 break;
+
+            case "Attack":
+                if (attackTarget == null)
+                    FindTarget();
+                if (!CanAttackTarget())
+                    AdvanceAttack();
+                else
+                {
+                    moveText.text = $"Upcoming Move: Attack {attackTarget.GetCharacterName()}";
+                    moveText.color = attackTarget.GetCharacterColor();
+
+                }
+                
+                break;
+
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
@@ -129,6 +146,7 @@ public class EnemyHealer : EnemyTemplate
         return false;
     }
 
+    
     
 
 }

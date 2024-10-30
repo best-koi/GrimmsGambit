@@ -32,6 +32,8 @@ protected virtual void Start()
 {
     healthText.text = $"{hp}/ {maxHP}";
     nameText.text = characterName;
+    if (hp <= 0)
+       Destroy(this);
 
 }
 

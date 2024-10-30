@@ -29,6 +29,9 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected int attackValue;//The enemy's attack value
 
+    protected CharacterTemplate attackTarget;//A character to attack
+
+    protected List<CharacterTemplate> targets = new List<CharacterTemplate>();
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
@@ -43,6 +46,18 @@ public abstract class EnemyTemplate : MonoBehaviour
         CheckAttackBounds();
     }
 
+    protected virtual void FindTarget()
+    {
+        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
+        foreach(CharacterTemplate c in characters)
+        {
+            //if (c.GetHP() <= 0)
+                //continue;
+            targets.Add(c);
+        }
+        attackTarget = targets[Random.Range(0, targets.Count)];
+    }
+
     //A default Start() method 
     protected virtual void Start()
     {
@@ -55,6 +70,9 @@ public abstract class EnemyTemplate : MonoBehaviour
     //Shows the default text above and below enemy
     protected virtual void Update()
     {
+        if (attackTarget == null)
+            FindTarget();
+
         healthText.text = $"{hp}/ {maxHP}";
         nameText.text = enemyName;
         moveText.text = "Upcoming Move: " + attacks[currentAttack];
@@ -85,7 +103,8 @@ public abstract class EnemyTemplate : MonoBehaviour
     //A method representing an attack
     protected virtual void Attack()
     {
-        Debug.Log("Attacked!");
+        attackTarget.AffectHP(attackValue);
+        FindTarget();
     }
 
     //A method representing a defensive move
@@ -129,5 +148,12 @@ public abstract class EnemyTemplate : MonoBehaviour
     public int GetMaxHP()
     {
         return maxHP; 
+    }
+
+    protected bool CanAttackTarget()
+    {
+        if (attackTarget.GetHP() <= 0)
+            return false;
+        return true;
     }
 }
