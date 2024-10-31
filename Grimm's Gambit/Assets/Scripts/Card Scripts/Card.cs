@@ -10,8 +10,6 @@ public class Card : MonoBehaviour
 
     [SerializeField] private protected int cardCost;
 
-    [SerializeField] private protected bool isReversed = false;
-
     [SerializeField] private protected Deck m_Hand;
 
     // Index in the database
@@ -55,10 +53,5 @@ public class Card : MonoBehaviour
         {
             m_PlayerCopies = value;
         }
-    }
-
-    public void ReverseCard()
-    {
-        isReversed = !isReversed;
     }
 }
