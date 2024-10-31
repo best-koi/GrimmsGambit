@@ -12,10 +12,10 @@ public class DamageMinion : SpellComponent
         requiresTarget = true;
     }
 
-    
+
 
     public override void DoSpellEffect()
     {
-        Debug.Log("Dealt " + damage + " damage");
+        target.DamageTaken(damage);
     }
 }

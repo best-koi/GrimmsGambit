@@ -32,7 +32,7 @@ public class Card : MonoBehaviour
             }
         }
 
-        if ((awaitingTarget == false) && (target == null)) {
+        if ( (awaitingTarget == false) && (target == null) ) {
             DoSpells();
         }
     }
@@ -45,7 +45,7 @@ public class Card : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
                 if (Physics.Raycast(ray, out RaycastHit hit)) {
-                    if(hit.collider.GetComponent<Minion>()) {
+                    if (hit.collider.GetComponent<Minion>()) {
 
                         target = hit.collider.GetComponent<Minion>();
                         Debug.Log("Hit Minion, Max Health " + target.maxHealth);
@@ -63,6 +63,8 @@ public class Card : MonoBehaviour
     {
         Component[] spells = gameObject.GetComponents(typeof(SpellComponent));
         foreach(SpellComponent spell in spells) {
+            if (spell.GetRequiresTarget())
+                spell.SetTarget(target);
             spell.DoSpellEffect();
         }
 
