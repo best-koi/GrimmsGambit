@@ -20,7 +20,6 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected TMP_Text healthText, nameText, moveText;//Text to indicate the enemy's health
 
-    [SerializeField]
     protected Color enemyColor;//A color that represents the enemy
 
     [SerializeField]
@@ -33,10 +32,11 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     protected List<CharacterTemplate> targets = new List<CharacterTemplate>();
 
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
-    protected virtual void AttackPattern()
+    public virtual void AttackPattern()
     {
         CheckAttackBounds();
         //Calls a method from the list of available attacks
@@ -44,6 +44,11 @@ public abstract class EnemyTemplate : MonoBehaviour
         //Moves onto the next attack
         currentAttack++;
         CheckAttackBounds();
+    }
+
+    protected virtual void Act()
+    {
+        AttackPattern();
     }
 
     protected virtual void FindTarget()
@@ -58,6 +63,8 @@ public abstract class EnemyTemplate : MonoBehaviour
         attackTarget = targets[Random.Range(0, targets.Count)];
     }
 
+
+
     //A default Start() method 
     protected virtual void Start()
     {
@@ -65,6 +72,11 @@ public abstract class EnemyTemplate : MonoBehaviour
         renderer.material.color = enemyColor;
         //Starts the enemy with a random attack
         currentAttack = Random.Range(0, attacks.Count);
+    }
+
+    public void SetColor(Color c)
+    {
+        enemyColor = c;
     }
 
     //Shows the default text above and below enemy
@@ -113,11 +125,13 @@ public abstract class EnemyTemplate : MonoBehaviour
         Debug.Log("Defending!");
     }
 
+    /*
     //Testing AttackPattern
     protected void OnMouseDown()
     {
         AttackPattern();
     }
+    */
 
     //Helps prevent Index Out of Bounds Errors
     protected void CheckAttackBounds()
@@ -156,4 +170,5 @@ public abstract class EnemyTemplate : MonoBehaviour
             return false;
         return true;
     }
+
 }
