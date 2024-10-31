@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Code by Jessie Archer
 public class MapPlayer : MonoBehaviour
@@ -21,6 +22,9 @@ public class MapPlayer : MonoBehaviour
     private bool isMoving = false;
 
     private Vector3 centerLocation;
+
+    [SerializeField]
+    private string encounterScene;
 
 
     //SetPosition() sets the current player's location to new location
@@ -72,6 +76,13 @@ public class MapPlayer : MonoBehaviour
             isAtLocation = true;
             isMoving = false;
 
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Encounter")
+        {
+            SceneManager.LoadScene(encounterScene);
         }
     }
 
