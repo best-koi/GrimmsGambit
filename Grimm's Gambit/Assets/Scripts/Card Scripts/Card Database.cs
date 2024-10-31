@@ -8,6 +8,7 @@ public class CardDatabase : MonoBehaviour
     
     // The physical representaion of the all of the cards
     // Only instantiated if the player has one or more copies
+    // Evens represent face up cards, odds are reversed
     [SerializeField] private GameObject[] m_Cards;
 
     private void Start()
@@ -26,6 +27,9 @@ public class CardDatabase : MonoBehaviour
 
         foreach (Card card in m_Data)
         {
+            // Skip reversed cards
+            if (card.GetIndex() % 2 == 1) continue;
+
             for (int i = 0, copies = card.NumCopies; i < copies; i++)
             {
                 m_PlayerDeck.Add(card.GetIndex());

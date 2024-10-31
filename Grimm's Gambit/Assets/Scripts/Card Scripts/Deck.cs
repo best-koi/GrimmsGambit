@@ -74,6 +74,50 @@ public class Deck : MonoBehaviour
         }
     }
 
+    // Takes the target card's ID in the database 
+    // Defaults to searching the hand
+    // Will search discard pile if false 
+    // Return true if successful
+    public bool ReverseCard(int cardID, bool inHand = true)
+    {
+        // Search the hand   
+        if (inHand)
+        {
+            for (int i = 0; i < m_Hand.Count; i++)
+            {
+                if (m_Hand[i] == cardID)
+                {
+                    m_Hand[i] = ReverseID(cardID);
+                    return true;
+                }
+            }
+
+            Debug.Log("Failed to find card of referenced ID in hand.");
+            return false;
+        }
+        
+        // Search the discard pile
+        for (int i = 0; i < m_DiscardPile.Count; i++)
+        {
+            if (m_DiscardPile[i] == cardID)
+            {
+                m_DiscardPile[i] = ReverseID(cardID);
+                return true;
+            }
+        }
+
+        Debug.Log("Failed to find card of referenced ID in discard pile.");
+        return false;
+    }
+
+    // Helper method for ReverseCard
+    private int ReverseID(int cardID) {
+        if (cardID % 2 == 0) cardID++;
+        else cardID--;
+        
+        return cardID;
+    }
+
     public void Shuffle()
     {
         List<int> temp = m_GameDeck;

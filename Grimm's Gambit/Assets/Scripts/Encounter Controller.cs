@@ -85,4 +85,20 @@ public class EncounterController : MonoBehaviour
         if (playerWin) Debug.Log("Player won in " + m_TurnCounter + " turns.");
         else Debug.Log("Player lost.");
     }
+
+
+    // Spend an amount of resources
+    // True if the amount is successfully spent
+    // False if current resources are insufficient 
+    public bool SpendResources(int amount)
+    {
+        if (m_CurrentResources - amount < 0)
+        {
+            Debug.Log("Insufficient resources");
+            return false;
+        }
+
+        m_CurrentResources -= amount;
+        return true;
+    }
 }

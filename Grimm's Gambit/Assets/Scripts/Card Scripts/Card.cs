@@ -18,6 +18,8 @@ public class Card : MonoBehaviour
     // Number that player has in their deck
     [SerializeField] private protected int m_Index, m_PlayerCopies;
 
+    [SerializeField] private protected EncounterController m_EncounterController;
+
     private void OnMouseDown()
     {
         Debug.Log(cardName + " selected...");
@@ -30,6 +32,8 @@ public class Card : MonoBehaviour
         }
 
         if ( (awaitingTarget == false) && (target == null) ) {
+            // Cancel the method call if the player doesn't have enough resources
+            if (!m_EncounterController.SpendResources(cardCost)) return;
             DoSpells();
         }
     }
