@@ -14,7 +14,7 @@ public class HighPriestess : Card
     }
     public HighPriestess()
     {
-        this.cardName = "High Priestess";
-        this.cardCost = 3;
+        cardName = "High Priestess";
+        cardCost = 3;
     }
 }
