@@ -7,8 +7,8 @@ public class HealSpell : SpellComponent
 {
     public HealSpell()
     {
-        this.spellName = "Heal";
-        this.spellDescription = "Heal 3 health for the heir.";
+        spellName = "Heal";
+        spellDescription = "Heal 3 health for the heir.";
     }
     public override void DoSpellEffect()
     {

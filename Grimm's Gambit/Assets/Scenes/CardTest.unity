@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &84893013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84893015}
+  - component: {fileID: 84893014}
+  m_Layer: 0
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &84893014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84893013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DataBase: {fileID: 0}
+  m_HandSize: 1
+  m_GameDeck: 
+  m_Hand: 
+  m_DiscardPile: 
+--- !u!4 &84893015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84893013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9399176, y: 0.5818727, z: -0.5344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204238831
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +420,7 @@ GameObject:
   - component: {fileID: 921408915}
   - component: {fileID: 921408914}
   m_Layer: 0
-  m_Name: High Priestess 1
+  m_Name: Damage Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,13 +521,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 921408909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec428e8fc2d96a0409a9641d449fbd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 55f0e8b146ca79e429151ca5b318deb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: High Priestess
-  cardCost: 3
+  cardName: Damage Card
+  cardCost: 2
   isReversed: 0
-  m_Hand: {fileID: 0}
+  m_Hand: {fileID: 84893014}
+  target: {fileID: 0}
+  awaitingTarget: 0
   m_Index: 0
   m_PlayerCopies: 0
 --- !u!114 &921408915
@@ -490,10 +541,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 921408909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bbe7900d25359a47984be62656af0fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1871140488
+  damage: 4
+--- !u!1 &1314420972
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,56 +553,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1871140494}
-  - component: {fileID: 1871140493}
-  - component: {fileID: 1871140492}
-  - component: {fileID: 1871140491}
-  - component: {fileID: 1871140490}
-  - component: {fileID: 1871140489}
+  - component: {fileID: 1314420977}
+  - component: {fileID: 1314420976}
+  - component: {fileID: 1314420975}
+  - component: {fileID: 1314420974}
+  - component: {fileID: 1314420973}
   m_Layer: 0
-  m_Name: High Priestess 2
+  m_Name: Minion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1871140489
+--- !u!114 &1314420973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
+  m_GameObject: {fileID: 1314420972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec428e8fc2d96a0409a9641d449fbd4e, type: 3}
+  m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: High Priestess
-  cardCost: 3
-  isReversed: 0
-  m_Hand: {fileID: 0}
-  m_Index: 0
-  m_PlayerCopies: 0
---- !u!114 &1871140490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bbe7900d25359a47984be62656af0fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1871140491
+  maxHealth: 12
+  damage: 4
+  ownerCard: {fileID: 0}
+  ownerPlayer: {fileID: 0}
+--- !u!65 &1314420974
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
+  m_GameObject: {fileID: 1314420972}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -565,13 +602,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1871140492
+--- !u!23 &1314420975
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
+  m_GameObject: {fileID: 1314420972}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -607,24 +644,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1871140493
+--- !u!33 &1314420976
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
+  m_GameObject: {fileID: 1314420972}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1871140494
+--- !u!4 &1314420977
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871140488}
+  m_GameObject: {fileID: 1314420972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: 1.93, z: -5.3}
+  m_LocalPosition: {x: 1.35, y: 1.61, z: -4.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -637,5 +674,6 @@ SceneRoots:
   - {fileID: 842091526}
   - {fileID: 204238833}
   - {fileID: 921408913}
-  - {fileID: 1871140494}
   - {fileID: 436121759}
+  - {fileID: 1314420977}
+  - {fileID: 84893015}
