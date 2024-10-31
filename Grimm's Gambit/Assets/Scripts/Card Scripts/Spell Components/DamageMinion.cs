@@ -7,12 +7,13 @@ public class DamageMinion : SpellComponent
     [SerializeField] private int damage;
     public DamageMinion()
     {
-        spellName = "Damage";
-        spellDescription = "Deal " + damage + " damage";
         requiresTarget = true;
     }
 
-
+    public void SetDamage(int dmgToSet)
+    {
+        damage = dmgToSet;
+    }
 
     public override void DoSpellEffect()
     {

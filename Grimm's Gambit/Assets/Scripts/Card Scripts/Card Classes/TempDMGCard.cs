@@ -9,6 +9,7 @@ public class TempDMGCard : Card
     void Start()
     {
         dmgMin = GetComponent<DamageMinion>();
+        dmgMin.SetDamage(4);
     }
 
     public TempDMGCard()

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_DataBase: {fileID: 0}
   m_HandSize: 1
   m_GameDeck: 
-  m_Hand: 
+  m_Hand: 01000000
   m_DiscardPile: 
 --- !u!4 &84893015
 Transform:
@@ -531,7 +531,7 @@ MonoBehaviour:
   target: {fileID: 0}
   awaitingTarget: 0
   m_Index: 0
-  m_PlayerCopies: 0
+  m_PlayerCopies: 1
 --- !u!114 &921408915
 MonoBehaviour:
   m_ObjectHideFlags: 0
