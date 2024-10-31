@@ -15,7 +15,9 @@ public class Deck : MonoBehaviour
     // References database of all cards in the game
     [SerializeField] private CardDatabase m_DataBase;
 
-    [SerializeField] private int m_HandSize;
+    // To be implemented by design 
+    [SerializeField] private int m_StartingHandSize, m_MaxHandSize;
+    [SerializeField] private int m_NumDrawsPerTurn = 1;
 
     // Lists the indices of each card in the database
     [SerializeField] private List<int> m_GameDeck, m_Hand, m_DiscardPile;
@@ -37,6 +39,17 @@ public class Deck : MonoBehaviour
         m_Hand.Add(nextCardID);
 
         onDraw?.Invoke(nextCardID);
+
+        if (m_Hand.Count > m_MaxHandSize) Discard();
+    }
+
+    // Draw cards from the top of the deck 
+    // Automatically draws one 
+    // If drawing for turn, will draw set amount
+    public void DrawAmount(bool forTurn = false, int amount = 1)
+    {
+        if (forTurn) amount = m_NumDrawsPerTurn;
+        for (int i = 0; i < amount; i++) Draw();
     }
 
     // Discard a card from hand 
@@ -61,17 +74,26 @@ public class Deck : MonoBehaviour
         onDiscard?.Invoke(nextCardID);
     }
 
+    public void DiscardHand()
+    {
+        m_DiscardPile.Concat(m_Hand).ToList();
+        m_Hand.Clear();
+    }
+
     // Put the top card of the deck into the discard pile
     // Or select a specific card from the game deck
     // Repeat any number of times
-    public void Mill(int index = 0, int numTimes = 1)
+    public void Mill(int index = 0)
     {
-        for (int i = 0; i < numTimes; i++)
-        {
-            int nextCardID = m_GameDeck[index];
-            m_GameDeck.RemoveAt(index);
-            m_DiscardPile.Add(nextCardID);
-        }
+       int nextCardID = m_GameDeck[index];
+       m_GameDeck.RemoveAt(index);
+       m_DiscardPile.Add(nextCardID);
+    }
+
+    // Mill a specificed amount of cards from the top of the deck 
+    public void MillAmount(int amount)
+    {
+        for (int i = 0; i < amount; i++) Mill();
     }
 
     // Takes the target card's ID in the database 
@@ -143,10 +165,7 @@ public class Deck : MonoBehaviour
         Shuffle();
 
         // Draw hand
-        for (int i = 0; i < m_HandSize - 1; i++) 
-        {
-            Draw();
-        }
+        DrawAmount(false, m_StartingHandSize);
     }
 
     public void ClearAll()

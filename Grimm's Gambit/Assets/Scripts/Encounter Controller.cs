@@ -59,7 +59,7 @@ public class EncounterController : MonoBehaviour
         m_EndButton.interactable = !m_EndButton.interactable;
 
         if (m_IsPlayerTurn) {
-            m_PlayerDeck.Draw();
+            m_PlayerDeck.DrawAmount(true);
             m_CurrentResources = m_MaxResources;
 
             // Display the number of cards in the player's deck
@@ -67,6 +67,7 @@ public class EncounterController : MonoBehaviour
         }
         else 
         {
+            m_PlayerDeck.DiscardHand();
             // Unfinished 
             // To bo altered based upon enemy controller
 
