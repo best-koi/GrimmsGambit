@@ -22,7 +22,7 @@ public class Card : MonoBehaviour
 
     [SerializeField] private protected EncounterController m_EncounterController;
 
-    private void OnMouseDown()
+    public void SelectCard()
     {
         Debug.Log(cardName + " selected...");
         
@@ -34,14 +34,20 @@ public class Card : MonoBehaviour
         }
 
         if ( (awaitingTarget == false) && (target == null) ) {
+            
             // Cancel the method call if the player doesn't have enough resources
             if (!m_EncounterController.SpendResources(cardCost)) return;
+         
             DoSpells();
         }
     }
 
     private void Update()
     {
+        // Pretty sure this is all UI element stuff
+        // Can be copied and added to a seperate class
+        
+        /**
         if (awaitingTarget) {
             if(Input.GetMouseButtonDown(0)) {
                 Vector3 mousePos = Input.mousePosition;
@@ -60,6 +66,7 @@ public class Card : MonoBehaviour
             }
 
         }
+        */
     }
 
     private void DoSpells()
