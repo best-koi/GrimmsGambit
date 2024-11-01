@@ -35,10 +35,11 @@ public class Minion : MonoBehaviour
     Dictionary<Affix, int> currentAffixes = new Dictionary<Affix, int>(); //Used for recording currently applied affixes without need a foreach loop
 
     //Ownership:
-    public GameObject ownerPlayer; //This one could possibly be an int? or enum?
-    private GameObject currentTurnPlayer; //This just records whose turn it is currently
+    public bool ownerPlayer; //True for player, false for enemy
+    private bool currentTurnPlayer; //This just records whose turn it is currently
     //Insert a reference to the game loop object here if there are "random" attacks so that a random target can be selected from the target options
-    
+
+
     //Activity:
     private bool usedThisTurn;
     // Start is called before the first frame update
@@ -48,8 +49,7 @@ public class Minion : MonoBehaviour
         {
             AddAffix(affix.Tag, affix.Value); //Stores each affix that was preset into the currentAffixes dictionary
         }
-        //GameData.NewTurn += EstablishNewTurn; - Adjust this code for whatever action is invoked from the game loop
-        //GameData.EndTurn += EndCurrentTurn; - Adjust this code for whatever action is invoked from the game loop
+        EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
     }
 
     // Update is called once per frame
@@ -72,29 +72,38 @@ public class Minion : MonoBehaviour
         }
     }
 
-    private void EstablishNewTurn(GameObject currentPlayer) //Function called when the signal is sent from the game logic that a new turn has started
+    private void TurnStart(bool currentPlayer)
     {
         currentTurnPlayer = currentPlayer; //Sets current player given by new turn function to be the currentTurnPlayer value
-        usedThisTurn = false;
-        if (currentTurnPlayer == ownerPlayer) //Runs start of turn affixes when the player's turn starts
+        if (currentPlayer == ownerPlayer)
         {
-            if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
+            EstablishNewTurn(); //Runs function for when a player turn starts
+        }
+        else
+        {
+            EndCurrentTurn(); //Runs function for when a player turn ends
+        }
+    }
+
+    private void EstablishNewTurn() //Function called when the signal is sent from the game logic that a new turn has started
+    {
+        usedThisTurn = false;       
+        //Runs start of turn affixes when the player's turn starts
+        if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
             {
                 currentAffixes.Remove(Affix.Block); //Removes block charges at the start of each new turn
             }
-            if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
-            {
-                DamageTaken(currentAffixes[Affix.Bleed]); //Applies damage equal to the amount of charges
-                RemoveOneCharge(Affix.Bleed); //Removes one charge
-            }
-        }
+        if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
+        {
+            DamageTaken(currentAffixes[Affix.Bleed]); //Applies damage equal to the amount of charges
+            RemoveOneCharge(Affix.Bleed); //Removes one charge
+        } 
     }
 
     private void EndCurrentTurn() //Function called when the signal is sent from the game logic that a turn has ended
     {
-        if (currentTurnPlayer == ownerPlayer) //Runs functionality for end of turn affix adjustments when the player's turn ends
-        {
-            if (currentAffixes.ContainsKey(Affix.Regen)) //Using one charge of Regen at the end of each turn
+        //Runs functionality for end of turn affix adjustments when the player's turn ends
+        if (currentAffixes.ContainsKey(Affix.Regen)) //Using one charge of Regen at the end of each turn
             {
                 int HealingToDeal = currentAffixes[Affix.Regen]/10;
                 DamageTaken(-HealingToDeal); //Heals by the tens place of the regen value
@@ -107,20 +116,20 @@ public class Minion : MonoBehaviour
                    currentAffixes.Add(Affix.Regen, newValue); //Reimplements the affix with the new value
                 }
             }
-            if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Removing one charge from Vulnerable at the end of each turn
+        if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Removing one charge from Vulnerable at the end of each turn
             {
                 RemoveOneCharge(Affix.Vulnerable);
             }
-            if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Removing one charge from Damage Reduction at the end of each turn
+        if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Removing one charge from Damage Reduction at the end of each turn
             {
                 RemoveOneCharge(Affix.DamageReduction);
             }
-            if (currentAffixes.ContainsKey(Affix.Mark)) //Removing one charge of mark at the end of each turn from the perspective of the character
+        if (currentAffixes.ContainsKey(Affix.Mark)) //Removing one charge of mark at the end of each turn from the perspective of the character
             {
                 RemoveOneCharge(Affix.Mark);
             }
-            //End of turn effects/affixes go here
-        }      
+        //End of turn effects/affixes go here
+            
     }
 
     private void RemoveOneCharge(Affix affix) //Replacing affix with one charge less, as long as the remaining amount of charges is 2 or more
