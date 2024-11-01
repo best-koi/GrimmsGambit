@@ -20,7 +20,7 @@ public class EnemyHealer : EnemyTemplate
     {
         if (attackTarget == null)
             FindTarget();
-        healthText.text = $"{hp}/ {maxHP}";
+        healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
         CheckCurrentAttack();
         
@@ -61,10 +61,10 @@ public class EnemyHealer : EnemyTemplate
     {
         //Checks if enemy can heal itself
         //If number to heal exceeds, it become max HP
-        if (hp + healingAmount < maxHP)
-            hp += healingAmount;
+        if (minion.currentHealth + healingAmount < minion.maxHealth)
+            minion.currentHealth += healingAmount;
         else 
-            hp = maxHP;
+            minion.currentHealth = minion.maxHealth;
 
     }
 
@@ -83,7 +83,7 @@ public class EnemyHealer : EnemyTemplate
     //Returns if enemy can heal itself
     private bool CheckSelfHeal()
     {
-        if (hp == maxHP)
+        if (minion.currentHealth == minion.maxHealth)
             return false;
         return true;
     }

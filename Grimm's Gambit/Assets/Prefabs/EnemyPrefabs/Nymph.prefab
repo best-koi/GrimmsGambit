@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 3082288189527186086}
   - component: {fileID: 7987207555103242937}
   - component: {fileID: 1479396871211209921}
+  - component: {fileID: 4597573077691246889}
   m_Layer: 0
   m_Name: Nymph
   m_TagString: Untagged
@@ -625,8 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edde488412b0482092edcdee78a79a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
-  maxHP: 5
+  minion: {fileID: 4597573077691246889}
   enemyName: Nymph
   attacks:
   - Attack
@@ -637,8 +637,22 @@ MonoBehaviour:
   healthText: {fileID: 7007063830712604864}
   nameText: {fileID: 1547079865206609264}
   moveText: {fileID: 7224644498996548150}
-  enemyColor: {r: 0, g: 0, b: 0, a: 1}
   renderer: {fileID: 3082288189527186086}
   attackValue: -10
   healingAmount: 2
   allies: []
+--- !u!114 &4597573077691246889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146193986863031628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 1
+  ownerPlayer: {fileID: 0}
