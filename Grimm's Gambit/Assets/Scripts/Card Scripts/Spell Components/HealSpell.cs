@@ -14,6 +14,6 @@ public class HealSpell : SpellComponent
     {
         //Debug.Log("Heal 3 Health");
         //Updated Version Added by Ryan - 11/1/2024:
-        caster.MinionUsed(target, -3); //deals damage to target character from the caster character
+        target.DamageTaken(-3); //heals character for 3 health
     }
 }

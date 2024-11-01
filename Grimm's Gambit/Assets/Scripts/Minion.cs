@@ -176,31 +176,34 @@ public class Minion : MonoBehaviour
     public void DamageTaken(int Damage) //Function called when damage is taken (Assumed logical order is mark->vulnerable->block)
     {
         int DamageToDeal = Damage;
-        if (currentAffixes.ContainsKey(Affix.Mark)) //Condition for when the character is marked
+        if (Damage > 0)
         {
-            DamageToDeal += 3; //Adds 3 damage if mark is applied
-        }
-        if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Condition for when the character is vulnerable
-        {
-            DamageToDeal = (int) (DamageToDeal * 1.5); //Increases damage dealt by 50 percent, but then casts it to int
-        }
-        if (currentAffixes.ContainsKey(Affix.Block) && DamageToDeal > 0) //Condition for when the character has block charges prepared
-        {
-            int currentBlock = currentAffixes[Affix.Block];
-            if (DamageToDeal < currentBlock) //Condition where block completely covers the damage to deal
+            if (currentAffixes.ContainsKey(Affix.Mark)) //Condition for when the character is marked
             {
-                int remainingBlock = currentBlock - DamageToDeal;
-                DamageToDeal = 0;
-                currentAffixes.Remove(Affix.Block);
-                currentAffixes.Add(Affix.Block, remainingBlock); //Replaces block value with the new remaining value
+                DamageToDeal += 3; //Adds 3 damage if mark is applied
             }
-            else //Case where there isn't any block leftover
+            if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Condition for when the character is vulnerable
             {
-                DamageToDeal -= currentBlock;
-                currentAffixes.Remove(Affix.Block); //Removes block affix since all charges are used
+                DamageToDeal = (int) (DamageToDeal * 1.5); //Increases damage dealt by 50 percent, but then casts it to int
+            }
+            if (currentAffixes.ContainsKey(Affix.Block) && DamageToDeal > 0) //Condition for when the character has block charges prepared
+            {
+                int currentBlock = currentAffixes[Affix.Block];
+                if (DamageToDeal < currentBlock) //Condition where block completely covers the damage to deal
+                {
+                    int remainingBlock = currentBlock - DamageToDeal;
+                    DamageToDeal = 0;
+                    currentAffixes.Remove(Affix.Block);
+                    currentAffixes.Add(Affix.Block, remainingBlock); //Replaces block value with the new remaining value
+                }
+                else //Case where there isn't any block leftover
+                {
+                    DamageToDeal -= currentBlock;
+                    currentAffixes.Remove(Affix.Block); //Removes block affix since all charges are used
+                }
             }
         }
-
+        
         currentHealth -= DamageToDeal;
 
         if (currentHealth < 0)
