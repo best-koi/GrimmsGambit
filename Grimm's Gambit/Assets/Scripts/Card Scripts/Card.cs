@@ -80,8 +80,6 @@ public class Card : MonoBehaviour
         }
 
         m_Hand.Discard(0, m_Index);
-        
-        Destroy(gameObject);
     }
 
     // Getters
