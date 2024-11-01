@@ -28,7 +28,7 @@ public class Minion : MonoBehaviour
 {
     //Health:
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
         
     //Affixes:
     public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
