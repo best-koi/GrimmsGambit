@@ -4,9 +4,10 @@ using UnityEngine;
 using TMPro;
 
 public abstract class CharacterTemplate : MonoBehaviour
-{ 
-[SerializeField]
-    protected int hp, maxHP;//Hit points stat 
+{
+
+    [SerializeField]
+    protected Minion minion;
 
 [SerializeField]
 protected string characterName;//The characters's name
@@ -33,10 +34,10 @@ protected virtual void Start()
     //Shows the default text above and below Character
     protected virtual void Update()
 {
-        if (this.hp <= 0)
+        if (minion.currentHealth <= 0)
             Destroy(self);
 
-    healthText.text = $"{hp}/ {maxHP}";
+    healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
     nameText.text = characterName;
     
 
@@ -47,13 +48,13 @@ protected virtual void Start()
 //Put in negative number to decrease
 public void AffectHP(int amount)
 {
-    hp += amount;
+    minion.currentHealth += amount;
 }
 
 //sets HP to a fixed amount
 public void SetHP(int amount)
 {
-    hp = amount;
+        minion.currentHealth = amount;
 }
 
 //Returns the Character's Name
@@ -71,12 +72,12 @@ public string GetCharacterName()
 //Returns the Character's Current Health
 public int GetHP()
 {
-    return hp;
+    return minion.currentHealth;
 }
 
 //Returns the Character's Max Health
 public int GetMaxHP()
 {
-    return maxHP;
+    return minion.maxHealth;
 }
 }

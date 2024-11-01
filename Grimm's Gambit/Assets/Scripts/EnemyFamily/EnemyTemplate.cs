@@ -6,7 +6,7 @@ using TMPro;
 public abstract class EnemyTemplate : MonoBehaviour
 {
     [SerializeField]
-    protected int hp, maxHP;//Hit points stat for the enemy
+    protected Minion minion;
 
     [SerializeField]
     protected string enemyName;//The enemy's name
@@ -85,7 +85,7 @@ public abstract class EnemyTemplate : MonoBehaviour
         if (attackTarget == null)
             FindTarget();
 
-        healthText.text = $"{hp}/ {maxHP}";
+        healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
         moveText.text = "Upcoming Move: " + attacks[currentAttack];
     }
@@ -95,13 +95,13 @@ public abstract class EnemyTemplate : MonoBehaviour
     //Put in negative number to decrease
     public void AffectHP(int amount)
     {
-        hp += amount;
+        minion.currentHealth += amount;
     }
 
     //sets HP to a fixed amount
     public void SetHP(int amount)
     {
-        hp = amount; 
+        minion.currentHealth = amount; 
     }
 
     //Advances past the current attack
@@ -125,13 +125,6 @@ public abstract class EnemyTemplate : MonoBehaviour
         Debug.Log("Defending!");
     }
 
-    /*
-    //Testing AttackPattern
-    protected void OnMouseDown()
-    {
-        AttackPattern();
-    }
-    */
 
     //Helps prevent Index Out of Bounds Errors
     protected void CheckAttackBounds()
@@ -155,13 +148,13 @@ public abstract class EnemyTemplate : MonoBehaviour
     //Returns the Enemy's Current Health
     public int GetHP()
     {
-        return hp;
+        return minion.currentHealth;
     }
 
     //Returns the Enemy's Max Health
     public int GetMaxHP()
     {
-        return maxHP; 
+        return minion.maxHealth; 
     }
 
     protected bool CanAttackTarget()

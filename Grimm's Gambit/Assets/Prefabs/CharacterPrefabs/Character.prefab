@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 6253863334438364908}
   - component: {fileID: 6330746937966096996}
   - component: {fileID: 4696726465575025877}
+  - component: {fileID: 5887165854426100928}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -490,11 +491,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171f3d4b507ec44a595edf4d6b126650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
-  maxHP: 30
+  minion: {fileID: 5887165854426100928}
   characterName: 
   healthText: {fileID: 8931673747312072328}
   nameText: {fileID: 6481525176744876809}
   characterColor: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
+--- !u!114 &5887165854426100928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163780573869900379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  currentHealth: 30
+  ownerPlayer: {fileID: 0}
