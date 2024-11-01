@@ -139,10 +139,10 @@ public class Minion : MonoBehaviour
     }
 
     //For the following: make DamageToDeal be -10000 to use the default damage value
-    public void MinionUsed(GameObject enemyTarget, int Damage) //Function to be called when the game logic uses this minion - It is expected that this is used even for cards that make a minion attack, if that is a thing, so that parasite and thorns function correctly
+    public void MinionUsed(Minion enemyTarget, int Damage) //Function to be called when the game logic uses this minion - It is expected that this is used even for cards that make a minion attack, if that is a thing, so that parasite and thorns function correctly
     {
         int DamageToDeal = Damage;
-        Minion targetMinion = enemyTarget.GetComponent<Minion>();
+        Minion targetMinion = enemyTarget;
         if (targetMinion != null)
         {
             if (targetMinion.currentAffixes.ContainsKey(Affix.Thorns))

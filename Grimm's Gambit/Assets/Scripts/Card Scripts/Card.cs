@@ -12,6 +12,8 @@ public class Card : MonoBehaviour
     [SerializeField] private protected Deck m_Hand;
 
     [SerializeField] private protected Minion target = null;
+
+    [SerializeField] private protected Minion caster = null; //Added by Ryan - 11/1/2024
     [SerializeField] private protected bool awaitingTarget;
 
     // Index in the database
@@ -66,6 +68,7 @@ public class Card : MonoBehaviour
         foreach(SpellComponent spell in spells) {
             if (spell.GetRequiresTarget())
                 spell.SetTarget(target);
+            spell.SetCaster(caster);
             spell.DoSpellEffect();
         }
 
