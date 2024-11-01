@@ -62,8 +62,8 @@ public class EnemyHealer : EnemyTemplate
         //Checks if enemy can heal itself
         //If number to heal exceeds, it become max HP
         if (minion.currentHealth + healingAmount < minion.maxHealth)
-            minion.currentHealth += healingAmount;
-        else 
+            minion.DamageTaken(healingAmount);
+        else
             minion.currentHealth = minion.maxHealth;
 
     }
@@ -74,7 +74,7 @@ public class EnemyHealer : EnemyTemplate
     private void HealOther()
     {
         if (enemyTarget.GetHP() + healingAmount < enemyTarget.GetMaxHP())
-            enemyTarget.AffectHP(healingAmount);
+            minion.MinionUsed(enemyTarget.GetComponent<Minion>(), healingAmount);
         else
             enemyTarget.SetHP(enemyTarget.GetMaxHP());
         FindEnemyToHeal();

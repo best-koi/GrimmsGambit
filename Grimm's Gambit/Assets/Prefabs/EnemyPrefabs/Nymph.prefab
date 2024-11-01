@@ -639,7 +639,7 @@ MonoBehaviour:
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
   attackValue: -10
-  healingAmount: 2
+  healingAmount: -2
   allies: []
 --- !u!114 &4597573077691246889
 MonoBehaviour:
