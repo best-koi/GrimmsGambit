@@ -638,7 +638,7 @@ MonoBehaviour:
   nameText: {fileID: 1547079865206609264}
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
-  attackValue: -10
+  attackValue: 10
   healingAmount: -2
   allies: []
 --- !u!114 &3878210002517620860
@@ -655,4 +655,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 1
-  ownerPlayer: {fileID: 0}
+  ownerPlayer: 0
