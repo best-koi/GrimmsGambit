@@ -153,28 +153,31 @@ public class Minion : MonoBehaviour
         int DamageToDeal = Damage;
         Minion targetMinion = enemyTarget;
         if (targetMinion != null)
-        {
-            if (targetMinion.currentAffixes.ContainsKey(Affix.Thorns))
+        {   
+            if (DamageToDeal > 0)
             {
-                DamageTaken(targetMinion.currentAffixes[Affix.Thorns]); //Deals damage equal to the stored thorns value to the one who performs an attack, by checking whether the targetted minion has thorns
-            }
-            if (targetMinion.currentAffixes.ContainsKey(Affix.Parasite))
-            {
-                DamageTaken(-targetMinion.currentAffixes[Affix.Parasite]); //Deals healing equal to the stored parasite value to the one who performs an attack, by checking whether the targetted minion has thorns
-            }
-            if (currentAffixes.ContainsKey(Affix.Strength)) //Damage Modification for if character has a Strength modifier
-            {
-                DamageToDeal += currentAffixes[Affix.Strength];
-                currentAffixes.Remove(Affix.Strength);
-            }
-            if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Damage Modification for if damage reduction is applied
-            {
-                DamageToDeal = (int) (DamageToDeal*.75); //Changes damage, reduced by 25 percent if damage reduction is currently applied
-            }
-            if (targetMinion.currentAffixes.ContainsKey(Affix.HoundCounter)) //Calculates Hounds counter after all other modifiers have been applied, since it is used on a multiplicative basis
-            {
-                DamageTaken(DamageToDeal/2); //Deals have damage to the attacker during the condition of Hound's Counter
-            }
+                if (targetMinion.currentAffixes.ContainsKey(Affix.Thorns))
+                {
+                    DamageTaken(targetMinion.currentAffixes[Affix.Thorns]); //Deals damage equal to the stored thorns value to the one who performs an attack, by checking whether the targetted minion has thorns
+                }
+                if (targetMinion.currentAffixes.ContainsKey(Affix.Parasite))
+                {
+                    DamageTaken(-targetMinion.currentAffixes[Affix.Parasite]); //Deals healing equal to the stored parasite value to the one who performs an attack, by checking whether the targetted minion has thorns
+                }
+                if (currentAffixes.ContainsKey(Affix.Strength)) //Damage Modification for if character has a Strength modifier
+                {
+                    DamageToDeal += currentAffixes[Affix.Strength];
+                    currentAffixes.Remove(Affix.Strength);
+                }
+                if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Damage Modification for if damage reduction is applied
+                {
+                    DamageToDeal = (int) (DamageToDeal*.75); //Changes damage, reduced by 25 percent if damage reduction is currently applied
+                }
+                if (targetMinion.currentAffixes.ContainsKey(Affix.HoundCounter)) //Calculates Hounds counter after all other modifiers have been applied, since it is used on a multiplicative basis
+                {
+                    DamageTaken(DamageToDeal/2); //Deals have damage to the attacker during the condition of Hound's Counter
+                }
+            }  
             
             targetMinion.DamageTaken(DamageToDeal); //Deals written damage
         }
