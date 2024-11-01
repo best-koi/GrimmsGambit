@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5391547661910353166}
   m_Layer: 0
   m_Name: Low Road Encounter
-  m_TagString: Encounter
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
