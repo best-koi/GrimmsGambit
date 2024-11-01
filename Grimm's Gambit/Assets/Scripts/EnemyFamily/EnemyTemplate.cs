@@ -115,7 +115,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     //A method representing an attack
     protected virtual void Attack()
     {
-        attackTarget.AffectHP(attackValue);
+        minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
         FindTarget();
     }
 
