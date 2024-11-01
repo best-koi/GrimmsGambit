@@ -9,6 +9,7 @@ public class SpellComponent : MonoBehaviour
     private protected string spellDescription;
     private protected bool requiresTarget = false;
     private protected Minion target = null;
+    private protected Minion caster = null; //Added by Ryan - 11/1/2024
 
     // Generic function for a spell's effect
     // Meant to be overridden by inherited SpellComponents, will print an error if no override takes place
@@ -36,5 +37,10 @@ public class SpellComponent : MonoBehaviour
     public void SetTarget(Minion newTarget)
     {
         target = newTarget;
+    }
+
+    public void SetCaster(Minion newCaster) //Function to determine caster Added by Ryan - 11/1/2024
+    {
+        caster = newCaster;
     }
 }

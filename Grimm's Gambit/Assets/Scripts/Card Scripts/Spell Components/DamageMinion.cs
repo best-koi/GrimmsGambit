@@ -17,6 +17,8 @@ public class DamageMinion : SpellComponent
 
     public override void DoSpellEffect()
     {
-        target.DamageTaken(damage);
+        //target.DamageTaken(damage);
+        //Updated Version Added by Ryan - 11/1/2024:
+        caster.MinionUsed(target, damage); //deals damage to target character from the caster character
     }
 }
