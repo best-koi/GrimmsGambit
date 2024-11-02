@@ -5,16 +5,20 @@ using UnityEngine;
 public class Conjure : SpellComponent
 {
     [SerializeField] Card m_Conjured;
+    [SerializeField] int m_Amount;
 
     public Conjure()
     {
         spellName = "Conjure";
-        spellDescription = "Conjures a card from the database into the hand.";
+        spellDescription = "Conjures an amount of cards from the database into the hand.";
     }
 
     public override void DoSpellEffect()
     {
         Deck deck = FindObjectOfType<Deck>();
-        deck.Conjure(m_Conjured.GetIndex());
+        for (int i = 0; i < m_Amount; i++)
+        {
+            deck.Conjure(m_Conjured.GetIndex());
+        }
     }
 }

@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DrawCard : SpellComponent
 {
+    [SerializeField] int m_Amount = 1;
+
     public DrawCard()
     {
         spellName = "Draw";
-        spellDescription = "Draw a random card from the deck.";
+        spellDescription = "Draw an amount of cards from the deck.";
     }
 
     public override void DoSpellEffect()
     {
         Deck deck = FindObjectOfType<Deck>();
-        deck.Draw();
+        deck.DrawAmount(false, m_Amount);
     }
 }

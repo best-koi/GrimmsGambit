@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class MillCard : SpellComponent
 {
+    [SerializeField] int m_Amount = 1;
+
     public MillCard()
     {
         spellName = "Mill";
-        spellDescription = "Mills a card from the top of the deck.";
+        spellDescription = "Mills an amount of cards from the top of the deck.";
     }
 
     public override void DoSpellEffect()
     {
         Deck deck = FindObjectOfType<Deck>();
-        deck.Mill();
+        deck.MillAmount(m_Amount);
     }
 }
