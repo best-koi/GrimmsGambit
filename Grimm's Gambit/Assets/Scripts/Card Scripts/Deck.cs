@@ -62,6 +62,19 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < amount; i++) Draw();
     }
 
+    // Conjure's a card into the hand
+    // Will be discarded if the hand would exceed the maximum
+    public void Conjure(int cardID)
+    {
+        if (m_Hand.Count() >= m_MaxHandSize)
+        {
+            m_DiscardPile.Add(cardID);
+            return;
+        }
+
+        m_Hand.Add(cardID);
+    }
+
     // Discard a card from hand 
     // Will automatically discard leftmost card
     // If the cardID is valid, will discard the card of the matching id 
