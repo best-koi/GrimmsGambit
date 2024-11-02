@@ -44,6 +44,11 @@ public class UnitParty : MonoBehaviour
 
     #region Public Methods
 
+    public List<GameObject> GetAllMembers() 
+    { 
+        return m_PartyMembers;
+    }
+
     public GameObject GetPartyMember(int index)
     {
         string methodName = nameof(GetPartyMember);
