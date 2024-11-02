@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ApplyDebuff : SpellComponent
 {
-    private Affixes[] debuffs;
+    public Affix[] debuffs;
+    public int[] values;
     public ApplyDebuff()
     {
         requiresTarget = true;
@@ -14,9 +15,9 @@ public class ApplyDebuff : SpellComponent
     {
         // Unsure of what function is called to add affixes to Minions, here is filler code
         //Updated Version Added by Ryan - 11/1/2024:
-        foreach(Affixes debuff in debuffs) 
+        for(int i = 0; i < debuffs.Length; i++) 
         {
-            target.AddAffix(debuff.Tag, debuff.Value);
+            target.AddAffix(debuffs[i], values[i]);
         }
     }
 }
