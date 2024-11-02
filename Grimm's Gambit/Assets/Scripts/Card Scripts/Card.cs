@@ -22,6 +22,10 @@ public class Card : MonoBehaviour
 
     [SerializeField] private protected EncounterController m_EncounterController;
 
+    // If the card is not intended to be part of the deck
+    // Applicable to once keyword
+    private protected bool m_IsEphemeral = false;
+
     public void SelectCard()
     {
         Debug.Log(cardName + " selected...");
@@ -79,6 +83,15 @@ public class Card : MonoBehaviour
             spell.DoSpellEffect();
         }
 
+        if (m_IsEphemeral)
+        {
+            // Unfinished
+            // Reference the deck object 
+            // Remove from the game
+
+            return;
+        }
+
         m_Hand.Discard(0, m_Index);
     }
 
@@ -114,5 +127,10 @@ public class Card : MonoBehaviour
         {
             m_PlayerCopies = value;
         }
+    }
+
+    public void MakeEphemeral()
+    {
+        m_IsEphemeral = true;
     }
 }
