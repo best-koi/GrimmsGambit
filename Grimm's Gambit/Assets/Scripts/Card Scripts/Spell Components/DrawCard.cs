@@ -7,7 +7,7 @@ public class DrawCard : SpellComponent
     public DrawCard()
     {
         spellName = "Draw";
-        spellDescription = "Draw a random card  from the deck.";
+        spellDescription = "Draw a random card from the deck.";
     }
 
     public override void DoSpellEffect()
