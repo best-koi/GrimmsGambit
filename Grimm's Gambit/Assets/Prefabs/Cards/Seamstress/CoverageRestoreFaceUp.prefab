@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6357840917223928021}
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 4843019133385101523}
-  - component: {fileID: -218695319141243565}
+  - component: {fileID: 3791844564983098855}
   m_Layer: 7
-  m_Name: SeamstressDefendFaceUp
+  m_Name: CoverageRestoreFaceUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,16 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Defend
+  cardName: Coverage Restore
   cardCost: 1
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   caster: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
-  awaitingTarget: 1
-  m_Index: 14
+  awaitingTarget: 0
+  m_Index: 30
   m_PlayerCopies: 2
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &-218695319141243565
+--- !u!114 &3791844564983098855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18795dbded9d28a4aaf5b28b5b1520b1, type: 3}
+  m_Script: {fileID: 11500000, guid: b6d4183cfd75907479aeb59d46ea83f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 01000000
-  values: 05000000
+  m_Amount: -3
