@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   caster: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
-  awaitingTarget: 1
+  awaitingTarget: 0
   m_Index: 14
   m_PlayerCopies: 2
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}

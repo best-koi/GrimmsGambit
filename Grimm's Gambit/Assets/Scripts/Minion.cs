@@ -15,7 +15,8 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     Strength, //Complete in "Minion Used" function - second number determines amount of stacks
     Bleed, //Complete in "Establish New Turn" function - second number determines amount of stacks
     Mark, //Complete in "Damage Taken" function - second number determines amount of stacks
-    HoundCounter //Complete in "Minion Used" function - second number is irrelevant
+    HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
+    Threaded //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -132,6 +133,10 @@ public class Minion : MonoBehaviour
         {
             RemoveOneCharge(Affix.Mark);
         }
+        if (currentAffixes.ContainsKey(Affix.Threaded)) //Removing threaded at turn end
+        {
+            RemoveOneCharge(Affix.Threaded);
+        }
         //End of turn effects/affixes go here
             
     }
@@ -156,7 +161,7 @@ public class Minion : MonoBehaviour
     {
         int DamageToDeal = Damage;
         Minion targetMinion = enemyTarget;
-        if (targetMinion != null)
+        if (targetMinion != null && !currentAffixes.ContainsKey(Affix.Threaded)) //Ensures target is valid and minion is not threaded
         {   
             if (DamageToDeal > 0)
             {
