@@ -68,8 +68,9 @@ public class EncounterController : MonoBehaviour
         else 
         {
             m_PlayerDeck.DiscardHand();
+            
             // Unfinished 
-            // To bo altered based upon enemy controller
+            // To be altered based upon enemy controller
 
             foreach (GameObject enemy in enemies)
             {

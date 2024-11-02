@@ -99,6 +99,11 @@ public class Card : MonoBehaviour
         return m_Index;
     }
 
+    public Minion GetCaster()
+    {
+        return caster;
+    }
+
     public int NumCopies
     {
         get

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    /**
+     Like overlaps with UI scripts
+     Can be removed later
+     */
+
     [SerializeField] private Deck m_DeckController;
 
     // All of the cards in the player's hand 

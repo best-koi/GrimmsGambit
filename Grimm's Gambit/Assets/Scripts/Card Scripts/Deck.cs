@@ -26,6 +26,15 @@ public class Deck : MonoBehaviour
     // Alternatively draw specific card from the deck
     public void Draw(int index = 0)
     {
+        // If the player's current hand size is greater than or equal the max hand size
+        // Will put the top card of the deck in the discard pile instead of drawing it 
+        if (m_Hand.Count() >= m_MaxHandSize)
+        {
+            Mill();
+            Debug.Log("Exceeded maximum hand size. Drawn card will placed in the discard pile.");
+            return;
+        }
+
         // Shuffle the discard pile into the game deck if it is empty
         if(m_GameDeck.Count() == 0)
         {
@@ -34,6 +43,7 @@ public class Deck : MonoBehaviour
             Shuffle();
         }
         
+        // Add a card to the hand
         int nextCardID = m_GameDeck[index];
         m_GameDeck.RemoveAt(index);
         m_Hand.Add(nextCardID);
@@ -82,7 +92,6 @@ public class Deck : MonoBehaviour
 
     // Put the top card of the deck into the discard pile
     // Or select a specific card from the game deck
-    // Repeat any number of times
     public void Mill(int index = 0)
     {
        int nextCardID = m_GameDeck[index];
@@ -103,13 +112,21 @@ public class Deck : MonoBehaviour
     public bool ReverseCard(int cardID, bool inHand = true)
     {
         // Search the hand   
+        int reverse = ReverseID(cardID);
+
+        if (m_DataBase.GetCard(reverse) == null)
+        {
+            Debug.Log("Card of reversed ID has no reversed component.");
+            return false;
+        }
+
         if (inHand)
         {
             for (int i = 0; i < m_Hand.Count; i++)
             {
                 if (m_Hand[i] == cardID)
-                {
-                    m_Hand[i] = ReverseID(cardID);
+                { 
+                    m_Hand[i] = reverse;
                     return true;
                 }
             }
@@ -123,7 +140,7 @@ public class Deck : MonoBehaviour
         {
             if (m_DiscardPile[i] == cardID)
             {
-                m_DiscardPile[i] = ReverseID(cardID);
+                m_DiscardPile[i] = reverse;
                 return true;
             }
         }
@@ -138,6 +155,28 @@ public class Deck : MonoBehaviour
         else cardID--;
         
         return cardID;
+    }
+
+    // Remove all cards owned by a specific party member from the deck object
+    public void RemoveCards(Minion owner)
+    {
+        for (int i = m_DiscardPile.Count() - 1; i >= 0; i--)
+        {
+            Card current = m_DataBase.GetCard(m_DiscardPile[i]);
+            if (current.GetCaster() == owner) m_DiscardPile.RemoveAt(i);
+        }
+
+        for (int i = m_GameDeck.Count() - 1; i >= 0; i--)
+        {
+            Card current = m_DataBase.GetCard(m_GameDeck[i]);
+            if (current.GetCaster() == owner) m_GameDeck.RemoveAt(i);
+        }
+
+        for (int i = m_Hand.Count() - 1; i >= 0; i--)
+        {
+            Card current = m_DataBase.GetCard(m_Hand[i]);
+            if (current.GetCaster() == owner) m_Hand.RemoveAt(i);
+        }
     }
 
     public void Shuffle()
@@ -168,7 +207,7 @@ public class Deck : MonoBehaviour
         DrawAmount(false, m_StartingHandSize);
     }
 
-    public void ClearAll()
+    private void ClearAll()
     {
         m_GameDeck.Clear();
         m_Hand.Clear();
@@ -190,8 +229,9 @@ public class Deck : MonoBehaviour
         return m_GameDeck.Count();
     }
 
+    // Check if the player has a card of cardID in the deck, hand or discard pile
     public bool Contains(int cardID)
     {
-        return m_GameDeck.Contains(cardID);
+        return m_GameDeck.Contains(cardID) || m_Hand.Contains(cardID) || m_DiscardPile.Contains(cardID);
     }
 }

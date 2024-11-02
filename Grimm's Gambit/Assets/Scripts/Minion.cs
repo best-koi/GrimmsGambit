@@ -232,6 +232,9 @@ public class Minion : MonoBehaviour
     {
         //Implement This Later depending on game logic
         //Maybe have death effect here if present
+        Deck deck = FindObjectOfType<Deck>();
+        deck.RemoveCards(this);
+
         Destroy(gameObject);
     }
 }
