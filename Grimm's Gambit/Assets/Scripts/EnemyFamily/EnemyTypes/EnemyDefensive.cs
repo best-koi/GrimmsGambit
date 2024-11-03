@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDefensive : EnemyTemplate
+public class EnemyDefensive : EnemyAggressiveRandom
 {
     // Start is called before the first frame update
     void Start()

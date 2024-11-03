@@ -623,7 +623,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9146193986863031628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5edde488412b0482092edcdee78a79a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fb0af184513541e7a64318cb26c8971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 4597573077691246889}
@@ -638,10 +638,10 @@ MonoBehaviour:
   nameText: {fileID: 1547079865206609264}
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
-  attackValue: 10
+  attackValue: 2
   hasPositionTarget: 0
   position: 0
-  healingAmount: -2
+  healingAmount: 0
   allies: []
 --- !u!114 &4597573077691246889
 MonoBehaviour:

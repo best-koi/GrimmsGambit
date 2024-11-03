@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 3082288189527186086}
   - component: {fileID: 7987207555103242937}
   - component: {fileID: 3878210002517620860}
-  - component: {fileID: -8822082364862180150}
+  - component: {fileID: 1634300097215933525}
   m_Layer: 0
   m_Name: Berserker
   m_TagString: Untagged
@@ -629,7 +629,7 @@ MonoBehaviour:
   maxHealth: 30
   currentHealth: 30
   ownerPlayer: 0
---- !u!114 &-8822082364862180150
+--- !u!114 &1634300097215933525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9146193986863031628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57b097c669db4090a346dbe8394a123, type: 3}
+  m_Script: {fileID: 11500000, guid: a648d43f1b9aa4afe8c8b8c6a42e93f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 3878210002517620860}
@@ -651,6 +651,5 @@ MonoBehaviour:
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
   attackValue: 12
-  hasPositionTarget: 1
-  position: 1
   buffValue: 0
+  position: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 //Code by Jessie Archer
 //A script representing an enemy that heals itself and other enemies
-public class EnemyHealer : EnemyTemplate
+public class EnemyHealer : EnemyRandomTarget
 {
     [SerializeField]
     private int healingAmount;//An int representing an amount to heal by

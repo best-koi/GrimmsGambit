@@ -28,19 +28,8 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected int attackValue;//The enemy's attack value
 
-    protected CharacterTemplate attackTarget;//A character to attack
-
-    protected List<CharacterTemplate> targets = new List<CharacterTemplate>();//a list of all available targets, for random attacks
-
-
     [SerializeField]
-    protected bool hasPositionTarget;//A boolean used to determine if this enemy only locks onto one type of player, based on position
-
-    protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
-
-    [SerializeField]
-    protected int position;//A position to search for to attack
-
+    protected int buffValue;//A value to apply a buff by
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
@@ -59,42 +48,6 @@ public abstract class EnemyTemplate : MonoBehaviour
     {
         AttackPattern();
     }
-
-    protected virtual void FindTarget()
-    {
-        GetAllActiveCharacters();
-        attackTarget = targets[Random.Range(0, targets.Count)];
-        
-    }
-
-    protected void GetAllActiveCharacters()
-    {
-        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
-        foreach (CharacterTemplate c in characters)
-        {
-            if (c.GetHP() <= 0)
-                continue;
-            targets.Add(c);
-        }
-    }
-
-    //Looks for a target, given a numerical position
-    //1 - front; 2 - middle; 3 - back
-    //Saves this target to attack
-    protected virtual void FindPositionedTarget(int p)
-    {
-        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
-        foreach (CharacterTemplate c in characters)
-        {
-            if (c.GetCharacterPosition() == p)
-            {
-                positionTarget = c;
-                return;
-            }
-
-        }
-    }
-
 
 
     //A default Start() method 
@@ -115,8 +68,6 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (attackTarget == null)
-            FindTarget();
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
         CheckCurrentAttack();
@@ -146,11 +97,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     }
 
     //A method representing an attack
-    protected virtual void Attack()
-    {
-        minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
-        FindTarget();
-    }
+    protected abstract void Attack();
 
     //A method representing a defensive move
     protected virtual void Defend()
@@ -190,23 +137,12 @@ public abstract class EnemyTemplate : MonoBehaviour
         return minion.maxHealth; 
     }
 
-    protected virtual bool CanAttackTarget()
+    protected void Strength()
     {
-        if (hasPositionTarget)
-        {
-            if (positionTarget.GetHP() <= 0)
-                return false;
-
-        }
-        else
-        {
-            if (attackTarget.GetHP() <= 0)
-                return false;
-
-        }
-        
-        return true;
+        minion.AddAffix(Affix.Strength, buffValue);
     }
+
+    protected abstract bool CanAttackTarget();
 
     protected virtual void CheckCurrentAttack()
     {
