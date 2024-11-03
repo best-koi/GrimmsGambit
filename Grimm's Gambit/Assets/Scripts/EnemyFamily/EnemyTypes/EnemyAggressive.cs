@@ -77,12 +77,18 @@ public class EnemyAggressive : EnemyTemplate
                 {
                     if (!hasPositionTarget)
                     {
-                        moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                        if(minion.currentAffixes.ContainsKey(Affix.Strength))
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
+                        else
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                         moveText.color = attackTarget.GetCharacterColor();
                     }
                     else
                     {
-                        moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
+                        if (minion.currentAffixes.ContainsKey(Affix.Strength))
+                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
+                        else
+                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
                         moveText.color = positionTarget.GetCharacterColor();
 
                     }
