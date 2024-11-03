@@ -14,17 +14,6 @@ public class EnemyHealer : EnemyTemplate
     [SerializeField]
     private List<EnemyTemplate> allies = new List<EnemyTemplate>();//An array of enemies to heal
 
-    //The Healer Update() method considers how to update text in response
-    //to what action is being performed
-    protected override void Update()
-    {
-        if (attackTarget == null)
-            FindTarget();
-        healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
-        nameText.text = enemyName;
-        CheckCurrentAttack();
-        
-    }
 
     //Checks for available enemies and heals one
     private void FindEnemyToHeal()
@@ -106,7 +95,7 @@ public class EnemyHealer : EnemyTemplate
     }
 
     //Checks current attack
-    private void CheckCurrentAttack()
+    protected override void CheckCurrentAttack()
     {
         switch (attacks[currentAttack])
         {

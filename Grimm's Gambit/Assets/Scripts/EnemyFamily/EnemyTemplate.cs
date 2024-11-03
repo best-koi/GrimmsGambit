@@ -30,7 +30,16 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     protected CharacterTemplate attackTarget;//A character to attack
 
-    protected List<CharacterTemplate> targets = new List<CharacterTemplate>();
+    protected List<CharacterTemplate> targets = new List<CharacterTemplate>();//a list of all available targets, for random attacks
+
+
+    [SerializeField]
+    protected bool hasPositionTarget;//A boolean used to determine if this enemy only locks onto one type of player, based on position
+
+    protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
+
+    [SerializeField]
+    protected int position;//A position to search for to attack
 
 
     //AttackPattern() essentially calls the next attack from the list
@@ -63,6 +72,23 @@ public abstract class EnemyTemplate : MonoBehaviour
         attackTarget = targets[Random.Range(0, targets.Count)];
     }
 
+    //Looks for a target, given a numerical position
+    //1 - front; 2 - middle; 3 - back
+    //Saves this target to attack
+    protected virtual void FindPositionedTarget(int p)
+    {
+        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
+        foreach (CharacterTemplate c in characters)
+        {
+            if (c.GetCharacterPosition() == p)
+            {
+                positionTarget = c;
+                return;
+            }
+
+        }
+    }
+
 
 
     //A default Start() method 
@@ -80,14 +106,15 @@ public abstract class EnemyTemplate : MonoBehaviour
     }
 
     //Shows the default text above and below enemy
+
     protected virtual void Update()
     {
         if (attackTarget == null)
             FindTarget();
-
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
-        moveText.text = "Upcoming Move: " + attacks[currentAttack];
+        CheckCurrentAttack();
+
     }
 
     //Sets the enemy hp
@@ -163,5 +190,23 @@ public abstract class EnemyTemplate : MonoBehaviour
             return false;
         return true;
     }
+
+    protected virtual void CheckCurrentAttack()
+    {
+        switch (attacks[currentAttack])
+        {
+            default:
+                moveText.text = "Upcoming Move: " + attacks[currentAttack];
+                moveText.color = Color.white;
+                break;
+        }
+
+
+    }
+
+
+
+
+
 
 }
