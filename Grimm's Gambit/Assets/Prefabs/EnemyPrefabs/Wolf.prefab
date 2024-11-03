@@ -652,6 +652,4 @@ MonoBehaviour:
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
   attackValue: 4
-  hasPositionTarget: 0
-  position: 1
   buffValue: 2

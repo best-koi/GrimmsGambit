@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Inherit from this class if the enemy targets a specific player position
+//For example, the Berserker targets the front position and moves backward
+
 public class EnemyPositionTarget : EnemyTemplate
 {
     protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
@@ -11,6 +14,7 @@ public class EnemyPositionTarget : EnemyTemplate
     [SerializeField]
     protected int position;//A position to search for to attack
 
+    //Orders characters at the beginning 
     protected override void Start()
     {
         base.Start();
@@ -69,7 +73,9 @@ public class EnemyPositionTarget : EnemyTemplate
 
     }
 
-
+    //Checks if the original position's character was destroyed
+    //If it was, move onto the next and return true.
+    //If no one is left, return false
     protected override bool CanAttackTarget()
     {
         if (positionTarget.GetDestroyed())
@@ -83,6 +89,7 @@ public class EnemyPositionTarget : EnemyTemplate
 
     
     //Finds a new target and returns a value based on whether a new target was found
+    //Skips an enemy who is the same as the original position or has no hp
     protected bool SeekNewTargetInOrder()
     {
         foreach (CharacterTemplate c in orderedCharacters)
@@ -104,6 +111,8 @@ public class EnemyPositionTarget : EnemyTemplate
         return false;
     }
 
+    //Adapts attacking pattern to find a positioned target.
+    //Each string represents a move. 
     protected override void CheckCurrentAttack()
     {
         switch (attacks[currentAttack])
@@ -121,7 +130,7 @@ public class EnemyPositionTarget : EnemyTemplate
                 }
                 else
                 {
-                   
+                   //Text display for buffs; second if is for non-buff
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
                         else

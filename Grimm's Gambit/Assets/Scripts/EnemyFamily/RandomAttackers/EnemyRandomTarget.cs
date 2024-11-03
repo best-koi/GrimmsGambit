@@ -34,6 +34,7 @@ public class EnemyRandomTarget : EnemyTemplate
         return true;
     }
 
+    //Gets a list of all active characters from CombatInventory
     protected void GetAllActiveCharacters()
     {
         CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
@@ -45,6 +46,7 @@ public class EnemyRandomTarget : EnemyTemplate
         }
     }
 
+    //Adjusts CurrentAttack() for finding a random target 
     protected override void CheckCurrentAttack()
     {
         switch (attacks[currentAttack])
@@ -56,7 +58,10 @@ public class EnemyRandomTarget : EnemyTemplate
 
                 if (!CanAttackTarget())
                 {
-                   AdvanceAttack();
+                    if (attacks.Count == 1)
+                        moveText.text = "Done Acting.";
+                    else
+                        AdvanceAttack();
                 }
                 else
                 {

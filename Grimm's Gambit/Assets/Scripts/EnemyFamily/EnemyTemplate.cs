@@ -6,7 +6,7 @@ using TMPro;
 public abstract class EnemyTemplate : MonoBehaviour
 {
     [SerializeField]
-    protected Minion minion;
+    protected Minion minion;//A minion assigned to this enemy
 
     [SerializeField]
     protected string enemyName;//The enemy's name
@@ -44,11 +44,6 @@ public abstract class EnemyTemplate : MonoBehaviour
         CheckAttackBounds();
     }
 
-    protected virtual void Act()
-    {
-        AttackPattern();
-    }
-
 
     //A default Start() method 
     protected virtual void Start()
@@ -59,13 +54,13 @@ public abstract class EnemyTemplate : MonoBehaviour
         currentAttack = Random.Range(0, attacks.Count);
     }
 
+    //Sets the enemy's color 
     public void SetColor(Color c)
     {
         enemyColor = c;
     }
 
     //Shows the default text above and below enemy
-
     protected virtual void Update()
     {
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
@@ -137,13 +132,17 @@ public abstract class EnemyTemplate : MonoBehaviour
         return minion.maxHealth; 
     }
 
+    //A method for a strength buff
     protected void Strength()
     {
         minion.AddAffix(Affix.Strength, buffValue);
     }
 
+    //An abstract method for attacking targets (to be implemented by children)
     protected abstract bool CanAttackTarget();
 
+    //A method for checking attacks; has a basic functionality for now, but
+    //is meant to be defined by children 
     protected virtual void CheckCurrentAttack()
     {
         switch (attacks[currentAttack])
