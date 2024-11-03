@@ -11,6 +11,34 @@ public class EnemyPositionTarget : EnemyTemplate
     [SerializeField]
     protected int position;//A position to search for to attack
 
+    protected override void Start()
+    {
+        base.Start();
+        OrderCharacters();
+    }
+
+    //A way to get characters in an order by position
+    //From 1 to 3 (front to back)
+    protected void OrderCharacters()
+    {
+        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
+        for (int i = 1; i < 4; i++)
+        {
+            foreach (CharacterTemplate c in characters)
+            {
+                if (c.GetCharacterPosition() == i)
+                {
+                    orderedCharacters.Add(c);
+                    break;
+
+                }
+
+            }
+
+        }
+
+    }
+
     //Looks for a target, given a numerical position
     //1 - front; 2 - middle; 3 - back
     //Saves this target to attack
@@ -53,7 +81,7 @@ public class EnemyPositionTarget : EnemyTemplate
         return true;
     }
 
-
+    
     //Finds a new target and returns a value based on whether a new target was found
     protected bool SeekNewTargetInOrder()
     {
