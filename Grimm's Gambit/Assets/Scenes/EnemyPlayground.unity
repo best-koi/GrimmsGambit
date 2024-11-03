@@ -697,12 +697,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
       objectReference: {fileID: -8822082364862180150, guid: 9d702b143d39843c4b3ac1a6e9fca4da, type: 3}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: -8822082364862180150, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition (1)
@@ -1578,7 +1582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: characterColor.g
-      value: 0.120423555
+      value: 0.9241464
       objectReference: {fileID: 0}
     - target: {fileID: 4696726465575025877, guid: 71fcc0450840e46fe962a9ca856d21c0, type: 3}
       propertyPath: characterColor.r
@@ -1981,7 +1985,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: spawnedColor.a
@@ -2009,12 +2013,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
       objectReference: {fileID: -8822082364862180150, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: -8822082364862180150, guid: 9d702b143d39843c4b3ac1a6e9fca4da, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition
