@@ -6,8 +6,8 @@ using TMPro;
 public abstract class CharacterTemplate : MonoBehaviour
 {
 
-    [SerializeField]
-    protected Minion minion;
+ [SerializeField]
+ protected Minion minion;
 
 [SerializeField]
 protected string characterName;//The characters's name
@@ -22,7 +22,10 @@ protected Color characterColor;//A color that represents the character
 protected Renderer renderer;//The character's renderer
 
 [SerializeField]
-protected GameObject self;
+protected GameObject self;//The entire gameobject
+
+    [SerializeField]
+    protected Position position;//The position the character is at
 
 //A default Start() method 
 protected virtual void Start()
@@ -80,4 +83,25 @@ public int GetMaxHP()
 {
     return minion.maxHealth;
 }
+
+public int GetCharacterPosition()
+    {
+        switch (position.GetPosition())
+        {
+            case "Front":
+                return 1;
+               
+            case "Middle":
+                return 2;
+                
+            case "Back":
+                return 3;
+               
+            default:
+                return -1;
+               
+        }
+        
+    }
+
 }
