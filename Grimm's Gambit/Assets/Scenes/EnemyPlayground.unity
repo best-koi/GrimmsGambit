@@ -696,9 +696,13 @@ PrefabInstance:
       value: 0.47487593
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 1479396871211209921, guid: dd227e40b25ed4f7788d756f3ce2cb1f, type: 3}
+      objectReference: {fileID: -8822082364862180150, guid: 9d702b143d39843c4b3ac1a6e9fca4da, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition (1)
@@ -1975,6 +1979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: spawnedColor.a
       value: 1

@@ -654,4 +654,4 @@ MonoBehaviour:
   attackValue: 4
   hasPositionTarget: 0
   position: 1
-  buffValue: 0
+  buffValue: 2

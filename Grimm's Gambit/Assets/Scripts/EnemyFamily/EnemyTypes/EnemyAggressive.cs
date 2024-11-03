@@ -61,18 +61,15 @@ public class EnemyAggressive : EnemyTemplate
         switch (attacks[currentAttack])
         {
             case "Attack":
-                if (hasPositionTarget == false)
+                if (attackTarget == null && hasPositionTarget == false)
                     FindTarget();
-                else
+                else 
                     FindPositionedTarget(position);
 
                 if (!CanAttackTarget())
                 {
-                    if(!SeekNewTargetInOrder())
-                    {
+                    if(attacks.Count == 1)
                         moveText.text = "Done Acting.";
-
-                    }
                     else
                         AdvanceAttack();
                 }
@@ -94,6 +91,11 @@ public class EnemyAggressive : EnemyTemplate
 
                 break;
 
+            case "Strength":
+                moveText.text = $"Applying {buffValue} Strength to Self";
+                moveText.color = this.GetEnemyColor();
+                break;
+
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
@@ -103,17 +105,15 @@ public class EnemyAggressive : EnemyTemplate
 
     }
 
+    //Checks if enemy is capable of attacking
     protected override bool CanAttackTarget()
     {
+        if (attackTarget.GetHP() <= 0)
+            return false;
+
         if (hasPositionTarget && positionTarget.GetDestroyed())
         {
             return SeekNewTargetInOrder();
-
-        }
-        else
-        {
-            if (attackTarget.GetHP() <= 0)
-                return false;
 
         }
 
