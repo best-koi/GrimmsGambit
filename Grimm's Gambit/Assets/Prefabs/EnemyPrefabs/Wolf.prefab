@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 3878210002517620860}
   - component: {fileID: -8822082364862180150}
   m_Layer: 0
-  m_Name: Berserker
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,8 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
+  maxHealth: 35
+  currentHealth: 35
   ownerPlayer: 0
 --- !u!114 &-8822082364862180150
 MonoBehaviour:
@@ -642,14 +642,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 3878210002517620860}
-  enemyName: Berserker
+  enemyName: Wolf
   attacks:
+  - Strength
   - Attack
   currentAttack: 0
   healthText: {fileID: 7007063830712604864}
   nameText: {fileID: 1547079865206609264}
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
-  attackValue: 12
-  hasPositionTarget: 1
+  attackValue: 4
+  hasPositionTarget: 0
   position: 1

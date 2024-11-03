@@ -14,7 +14,6 @@ public class EnemyHealer : EnemyTemplate
     [SerializeField]
     private List<EnemyTemplate> allies = new List<EnemyTemplate>();//An array of enemies to heal
 
-
     //Checks for available enemies and heals one
     private void FindEnemyToHeal()
     {
@@ -77,6 +76,7 @@ public class EnemyHealer : EnemyTemplate
         return true;
     }
 
+
     //Returns if enemy can heal any others
     //Bases this off of the current state of all enemies
     private bool CheckHealOthers()
@@ -102,16 +102,14 @@ public class EnemyHealer : EnemyTemplate
             //The function for healing another enemy
             case "HealOther":
                 //Sets an enemy to heal (will not do anything if all full health)
+                FindEnemyToHeal();
                 if (enemyTarget == null)
-                    FindEnemyToHeal();
-                if (!CheckHealOthers())
                     AdvanceAttack();
-                else
-                {
+                else{
                     moveText.text = $"Upcoming Move: Heal {enemyTarget.GetEnemyName()}";
                     moveText.color = enemyTarget.GetEnemyColor();
 
-                }
+        }
                 break;
             case "HealSelf":
                 if (!CheckSelfHeal())

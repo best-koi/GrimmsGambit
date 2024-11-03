@@ -62,14 +62,20 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     protected virtual void FindTarget()
     {
+        GetAllActiveCharacters();
+        attackTarget = targets[Random.Range(0, targets.Count)];
+        
+    }
+
+    protected void GetAllActiveCharacters()
+    {
         CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
-        foreach(CharacterTemplate c in characters)
+        foreach (CharacterTemplate c in characters)
         {
-            //if (c.GetHP() <= 0)
-                //continue;
+            if (c.GetHP() <= 0)
+                continue;
             targets.Add(c);
         }
-        attackTarget = targets[Random.Range(0, targets.Count)];
     }
 
     //Looks for a target, given a numerical position
@@ -184,10 +190,21 @@ public abstract class EnemyTemplate : MonoBehaviour
         return minion.maxHealth; 
     }
 
-    protected bool CanAttackTarget()
+    protected virtual bool CanAttackTarget()
     {
-        if (attackTarget.GetHP() <= 0)
-            return false;
+        if (hasPositionTarget)
+        {
+            if (positionTarget.GetHP() <= 0)
+                return false;
+
+        }
+        else
+        {
+            if (attackTarget.GetHP() <= 0)
+                return false;
+
+        }
+        
         return true;
     }
 
@@ -205,6 +222,7 @@ public abstract class EnemyTemplate : MonoBehaviour
     }
 
 
+    
 
 
 

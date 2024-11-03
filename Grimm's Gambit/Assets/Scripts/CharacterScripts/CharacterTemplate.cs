@@ -27,6 +27,13 @@ protected GameObject self;//The entire gameobject
     [SerializeField]
     protected Position position;//The position the character is at
 
+    private bool isDestroyed = false;
+
+public bool GetDestroyed()
+    {
+        return isDestroyed;
+    }
+
 //A default Start() method 
 protected virtual void Start()
 {
@@ -38,7 +45,12 @@ protected virtual void Start()
     protected virtual void Update()
 {
         if (minion.currentHealth <= 0)
+        {
+            isDestroyed = true;
             Destroy(self);
+
+        }
+            
 
     healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
     nameText.text = characterName;
