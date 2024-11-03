@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -639,6 +639,8 @@ MonoBehaviour:
   moveText: {fileID: 7224644498996548150}
   renderer: {fileID: 3082288189527186086}
   attackValue: 10
+  hasPositionTarget: 0
+  position: 0
   healingAmount: -2
   allies: []
 --- !u!114 &4597573077691246889

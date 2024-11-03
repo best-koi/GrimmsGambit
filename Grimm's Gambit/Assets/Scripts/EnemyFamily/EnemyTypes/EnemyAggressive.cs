@@ -80,12 +80,12 @@ public class EnemyAggressive : EnemyTemplate
                 {
                     if (!hasPositionTarget)
                     {
-                        moveText.text = $"Upcoming Move: Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                        moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                         moveText.color = attackTarget.GetCharacterColor();
                     }
                     else
                     {
-                        moveText.text = $"Upcoming Move: Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
+                        moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
                         moveText.color = positionTarget.GetCharacterColor();
 
                     }

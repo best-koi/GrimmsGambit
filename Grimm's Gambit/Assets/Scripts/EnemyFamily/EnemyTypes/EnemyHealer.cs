@@ -106,7 +106,7 @@ public class EnemyHealer : EnemyTemplate
                 if (enemyTarget == null)
                     AdvanceAttack();
                 else{
-                    moveText.text = $"Upcoming Move: Heal {enemyTarget.GetEnemyName()}";
+                    moveText.text = $"Heal {enemyTarget.GetEnemyName()} for {healingAmount} HP";
                     moveText.color = enemyTarget.GetEnemyColor();
 
         }
@@ -116,7 +116,7 @@ public class EnemyHealer : EnemyTemplate
                     AdvanceAttack();
                 else
                 {
-                    moveText.text = "Upcoming Move: Heal Self";
+                    moveText.text = $"Heal Self for {healingAmount} HP";
                     moveText.color = this.GetEnemyColor();
                 }
                 break;
@@ -128,7 +128,7 @@ public class EnemyHealer : EnemyTemplate
                     AdvanceAttack();
                 else
                 {
-                    moveText.text = $"Upcoming Move: Attack {attackTarget.GetCharacterName()}";
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
 
                 }
