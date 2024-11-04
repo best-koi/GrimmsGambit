@@ -6,33 +6,27 @@ using TMPro;
 //This is likely to be replaced by a CombatManager/Turn-Based Manager
 public class CombatInventory : MonoBehaviour
 {
-
     private static EnemyTemplate[] allEnemies;
     private static CharacterTemplate[] allCharacters;
-
-    [SerializeField]
-    private TMP_Text turnText;
-
-    /*[SerializeField]
-    private GameObject turnButton;
-    */
-
-    private static bool isPlayerTurn = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Commenting out as I think this part is defunct for now 
+        
+        /**
         FindEnemies();
         FindCharacters();
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        FindEnemies();
-        FindCharacters();
-        //SetTurnUI();
-
+        /**
+         FindEnemies();
+         FindCharacters();
+         */
     }
 
     //Retrieves all active enemies
@@ -57,27 +51,6 @@ public class CombatInventory : MonoBehaviour
         return allCharacters;
     }
 
-    public static void SetPlayerTurnOver(bool currentTurn)
-    {
-        isPlayerTurn = currentTurn;
-    }
-
-    private void SetTurnUI()
-    {
-        if(isPlayerTurn)
-        {
-            //turnButton.SetActive(true);
-            turnText.text = "Player Turn";
-  
-        }
-        else
-        {
-            //turnButton.SetActive(false);
-            turnText.text = "Enemy Turn";
-            EnemyTurn();
-        }
-    }
-
     private void EnemyTurn()
     {
         foreach(EnemyTemplate e in allEnemies)
@@ -85,7 +58,6 @@ public class CombatInventory : MonoBehaviour
             e.AttackPattern();
             StartCoroutine("MoveDelay");
         }
-        isPlayerTurn = true;
     }
 
     IEnumerator MoveDelay()

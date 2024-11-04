@@ -1071,7 +1071,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816788993}
-  - component: {fileID: 816788992}
   - component: {fileID: 816788994}
   m_Layer: 0
   m_Name: EncounterController
@@ -1080,19 +1079,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &816788992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816788991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea80c35a40fc4cf69b1679b67dcbb2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnText: {fileID: 1102464437}
 --- !u!4 &816788993
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,7 +1088,7 @@ Transform:
   m_GameObject: {fileID: 816788991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7043752, y: 1.4405103, z: -3.0014017}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1126,6 +1112,7 @@ MonoBehaviour:
   m_MaxResources: 0
   m_CurrentResources: 0
   m_EndButton: {fileID: 1724735635}
+  m_TurnText: {fileID: 0}
 --- !u!1 &980798441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1842,7 @@ Transform:
   m_GameObject: {fileID: 1938038132}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.328, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
