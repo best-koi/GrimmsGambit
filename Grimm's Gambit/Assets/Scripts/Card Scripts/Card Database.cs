@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class CardDatabase : MonoBehaviour
 {
-    [SerializeField] private Card[] m_Data;
-    
-    // The physical representaion of the all of the cards
+
     // Only instantiated if the player has one or more copies
     // Evens represent face up cards, odds are reversed
-    [SerializeField] private GameObject[] m_Cards;
+    [SerializeField] private Card[] m_Data;
 
     private void Start()
     {
@@ -34,8 +32,7 @@ public class CardDatabase : MonoBehaviour
             {
                 m_PlayerDeck.Add(card.GetIndex());
                 
-                // Unfinished
-                // Instantiate the card GameObject into the scene
+                Instantiate(card);
             }
         }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 
 public class EncounterController : MonoBehaviour
@@ -23,6 +24,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private int m_MaxResources, m_CurrentResources;
 
     [SerializeField] private Button m_EndButton;
+    [SerializeField] private TMP_Text m_TurnText;
 
     private void Start()
     {
@@ -56,11 +58,13 @@ public class EncounterController : MonoBehaviour
 
         List<GameObject> party = new List<GameObject>(), enemies = new List<GameObject>();
 
-        m_EndButton.interactable = !m_EndButton.interactable;
+        m_EndButton.interactable = m_IsPlayerTurn;
 
         if (m_IsPlayerTurn) {
             m_PlayerDeck.DrawAmount(true);
             m_CurrentResources = m_MaxResources;
+
+            m_TurnText.text = "Player Turn";
 
             // Display the number of cards in the player's deck
             Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
@@ -68,9 +72,11 @@ public class EncounterController : MonoBehaviour
         else 
         {
             m_PlayerDeck.DiscardHand();
-            
+
             // Unfinished 
             // To be altered based upon enemy controller
+
+            m_TurnText.text = "Enemy Turn";
 
             foreach (GameObject enemy in enemies)
             {
