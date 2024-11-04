@@ -14,9 +14,12 @@ public class EnemyPositionTarget : EnemyTemplate
     [SerializeField]
     protected int position;//A position to search for to attack
 
+    protected EncounterController controller;
+
     //Orders characters at the beginning 
     protected override void Start()
     {
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
         base.Start();
         OrderCharacters();
     }
@@ -25,14 +28,14 @@ public class EnemyPositionTarget : EnemyTemplate
     //From 1 to 3 (front to back)
     protected void OrderCharacters()
     {
-        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
+        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
         for (int i = 1; i < 4; i++)
         {
-            foreach (CharacterTemplate c in characters)
+            foreach (GameObject c in characters)
             {
-                if (c.GetCharacterPosition() == i)
+                if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == i)
                 {
-                    orderedCharacters.Add(c);
+                    orderedCharacters.Add(c.GetComponent<CharacterTemplate>());
                     break;
 
                 }
@@ -48,12 +51,12 @@ public class EnemyPositionTarget : EnemyTemplate
     //Saves this target to attack
     protected virtual void FindPositionedTarget(int p)
     {
-        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
-        foreach (CharacterTemplate c in characters)
+        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
+        foreach (GameObject c in characters)
         {
-            if (c.GetCharacterPosition() == p)
+            if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == p)
             {
-                positionTarget = c;
+                positionTarget = c.GetComponent<CharacterTemplate>();
                 return;
             }
 

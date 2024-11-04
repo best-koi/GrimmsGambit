@@ -28,6 +28,16 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
 
+    public UnitParty GetEnemyInventory()
+    {
+        return m_EnemyInventory;
+    }
+
+    public UnitParty GetPlayerInventory()
+    {
+        return m_PlayerInventory;
+    }
+
     private void Start()
     {
         
@@ -81,7 +91,7 @@ public class EncounterController : MonoBehaviour
 
             foreach (GameObject enemy in enemies)
             {
-                EnemyTemplate enemyController = enemy.GetComponent<EnemyTemplate>();
+                EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
             }
         } 
