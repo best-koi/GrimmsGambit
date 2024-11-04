@@ -26,8 +26,12 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private Button m_EndButton;
     [SerializeField] private TMP_Text m_TurnText;
 
+    [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
+
     private void Start()
     {
+        
+        
         m_EndButton.onClick.AddListener(EndTurn);
     }
 
@@ -56,7 +60,7 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        List<GameObject> party = new List<GameObject>(), enemies = new List<GameObject>();
+        List<GameObject> party = m_PlayerInventory.GetAllMembers(), enemies = m_EnemyInventory.GetAllMembers();
 
         m_EndButton.interactable = m_IsPlayerTurn;
 
@@ -73,15 +77,12 @@ public class EncounterController : MonoBehaviour
         {
             m_PlayerDeck.DiscardHand();
 
-            // Unfinished 
-            // To be altered based upon enemy controller
-
             m_TurnText.text = "Enemy Turn";
 
             foreach (GameObject enemy in enemies)
             {
-                Minion minionController = enemy.GetComponent<Minion>();
-                Debug.Log("Enemy minion attacks.");
+                EnemyTemplate enemyController = enemy.GetComponent<EnemyTemplate>();
+                enemyController.AttackPattern();
             }
         } 
     }
