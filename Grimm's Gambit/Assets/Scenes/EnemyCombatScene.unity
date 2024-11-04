@@ -877,7 +877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnText: {fileID: 1102464437}
-  turnButton: {fileID: 1724735633}
 --- !u!4 &816788993
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1246,7 @@ PrefabInstance:
       objectReference: {fileID: 1724735635}
     - target: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
       propertyPath: m_TurnCounter
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

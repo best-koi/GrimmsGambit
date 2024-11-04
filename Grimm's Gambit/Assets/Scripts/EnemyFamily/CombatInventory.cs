@@ -13,8 +13,9 @@ public class CombatInventory : MonoBehaviour
     [SerializeField]
     private TMP_Text turnText;
 
-    [SerializeField]
+    /*[SerializeField]
     private GameObject turnButton;
+    */
 
     private static bool isPlayerTurn = true;
 
@@ -30,7 +31,7 @@ public class CombatInventory : MonoBehaviour
     {
         FindEnemies();
         FindCharacters();
-        SetTurnUI();
+        //SetTurnUI();
 
     }
 
@@ -65,13 +66,13 @@ public class CombatInventory : MonoBehaviour
     {
         if(isPlayerTurn)
         {
-            turnButton.SetActive(true);
+            //turnButton.SetActive(true);
             turnText.text = "Player Turn";
   
         }
         else
         {
-            turnButton.SetActive(false);
+            //turnButton.SetActive(false);
             turnText.text = "Enemy Turn";
             EnemyTurn();
         }
