@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_MaxResources: 0
   m_CurrentResources: 0
   m_EndButton: {fileID: 1724735635}
-  m_TurnText: {fileID: 0}
+  m_TurnText: {fileID: 29370205}
 --- !u!1 &980798441
 GameObject:
   m_ObjectHideFlags: 0
