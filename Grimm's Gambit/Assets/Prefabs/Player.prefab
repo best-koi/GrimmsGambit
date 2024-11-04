@@ -121,3 +121,4 @@ MonoBehaviour:
   currentLocation: {fileID: 0}
   yOffset: 1
   moveSpeed: 0.009
+  encounterScene: EnemyCombatScene
