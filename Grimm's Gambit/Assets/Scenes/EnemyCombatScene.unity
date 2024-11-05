@@ -1512,6 +1512,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlaytestDeck
       objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[6]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+      propertyPath: m_GameDeck.Array.data[7]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

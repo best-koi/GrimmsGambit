@@ -18,6 +18,9 @@ public class DragAndDrop : MonoBehaviour
 
     private Camera m_MainCamera;
 
+    private Transform m_SelectedObjectParent;
+    private int m_SelectedChildIndex;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,6 +40,9 @@ public class DragAndDrop : MonoBehaviour
             if (m_SelectedObject == null && Physics.Raycast(ray, out hit, 1000, m_PickUpLayers))
             {
                 m_SelectedObject = hit.transform;
+                m_SelectedChildIndex = m_SelectedObject.GetSiblingIndex();
+                m_SelectedObjectParent = m_SelectedObject.parent;
+
                 m_SelectedObject.parent = null;
                 m_SelectedObject.localScale = Vector3.one;
             }
@@ -46,11 +52,16 @@ public class DragAndDrop : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers))
                 {
                     m_SelectedObject.parent = hit.transform;
-                    m_SelectedObject.localPosition = Vector3.zero;
-                    m_SelectedObject.localRotation = Quaternion.identity;
-                    m_SelectedObject.localScale = Vector3.one * .9f;
+                }
+                else
+                {
+                    m_SelectedObject.parent = m_SelectedObjectParent;
+                    m_SelectedObject.SetSiblingIndex(m_SelectedChildIndex);
                 }
 
+                m_SelectedObject.localPosition = Vector3.zero;
+                m_SelectedObject.localRotation = Quaternion.identity;
+                m_SelectedObject.localScale = Vector3.one * .9f;
                 m_SelectedObject = null;
             }
         }
@@ -59,7 +70,7 @@ public class DragAndDrop : MonoBehaviour
         if (m_SelectedObject != null)
         {
             m_SelectedObject.position = ray.GetPoint(m_DistanceFromCamera);
-            m_SelectedObject.rotation = m_MainCamera.transform.rotation * Quaternion.Euler(180, 0, 0);
+            m_SelectedObject.rotation = m_MainCamera.transform.rotation;
         }
     }
 }

@@ -32,12 +32,17 @@ public class CardHand : MonoBehaviour
     {
         if (m_CardHolder == null)
             return;
-        
+
+        List<CardDisplay> cards = new List<CardDisplay>();
+        cards.AddRange(GetComponentsInChildren<CardDisplay>());
+        /*
         List<Transform> cardTransforms = new List<Transform>();
         cardTransforms.AddRange(GetComponentsInChildren<Transform>());
         cardTransforms.Remove(m_CardHolder);
+        */
 
-        int cardNum = cardTransforms.Count;
+        //int cardNum = cardTransforms.Count;
+        int cardNum = cards.Count;
         float firstAngle = m_CardAngleBounds.x;
         float secondAngle = m_CardAngleBounds.y;
         float totalAngle = Mathf.Abs(firstAngle - secondAngle);
@@ -55,13 +60,18 @@ public class CardHand : MonoBehaviour
         if (cardNum == 1 || cardNum % 2 == 0)
             currentAngle += angleBetweenCards / 2;
 
-        foreach (Transform t in cardTransforms)
+        //foreach (Transform t in cardTransforms)
+        foreach (CardDisplay c in cards)
         {
+            Transform t = c.transform;
+
             if (t != m_CardHolder)
             {
                 Quaternion rotation = Quaternion.Euler(0f, 0f, currentAngle);
                 Vector3 displacement = rotation * m_DisplacementFromHolderCenter;
 
+                //t.rotation = rotation * transform.rotation;
+                //t.position = displacement + transform.position;
                 t.localRotation = rotation;
                 t.localPosition = displacement;
                 currentAngle += angleBetweenCards;
