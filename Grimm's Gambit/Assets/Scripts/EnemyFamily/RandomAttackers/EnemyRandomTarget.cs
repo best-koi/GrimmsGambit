@@ -8,6 +8,15 @@ public class EnemyRandomTarget : EnemyTemplate
 
     protected List<CharacterTemplate> targets = new List<CharacterTemplate>();//a list of all available targets, for random attacks
 
+    protected EncounterController controller;
+
+
+    protected override void Start()
+    {
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
+        base.Start();
+
+    }
     //An Attack method to be used for honing in on specific positioned players
     protected override void Attack()
     {
@@ -37,12 +46,12 @@ public class EnemyRandomTarget : EnemyTemplate
     //Gets a list of all active characters from CombatInventory
     protected void GetAllActiveCharacters()
     {
-        CharacterTemplate[] characters = CombatInventory.GetActiveCharacters();
-        foreach (CharacterTemplate c in characters)
+        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
+        foreach (GameObject c in characters)
         {
-            if (c.GetHP() <= 0)
+            if (c.GetComponent<CharacterTemplate>().GetHP() <= 0)
                 continue;
-            targets.Add(c);
+            targets.Add(c.GetComponent<CharacterTemplate>());
         }
     }
 

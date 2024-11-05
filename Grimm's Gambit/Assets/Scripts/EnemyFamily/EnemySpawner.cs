@@ -38,6 +38,11 @@ public class EnemySpawner : MonoBehaviour
         return enemyOrder;
     }
 
+    public EnemyTemplate GetEnemy()
+    {
+        return enemy;
+    }
+
     public Color GetColor()
     {
         return spawnerColor;
