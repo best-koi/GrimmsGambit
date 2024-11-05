@@ -13,6 +13,7 @@ public class UnitParty : MonoBehaviour
     [SerializeField]
     private float m_DistanceBetweenMembers;
 
+    [SerializeField]
     private List<GameObject> m_PartyMembers;
 
     public int PartySize
@@ -30,14 +31,17 @@ public class UnitParty : MonoBehaviour
     private void Start()
     {
         m_PartyMembers = new List<GameObject>();
-
-        UpdatePartyList();
-        UpdatePartyPositions();
     }
 
     private void FixedUpdate()
     {
-        //UpdatePartyPositions();
+        UpdatePartyList();
+        UpdatePartyPositions();
+
+        foreach (GameObject member in m_PartyMembers)
+        {
+            Debug.Log(member);
+        }
     }
 
     #endregion
