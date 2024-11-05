@@ -27,9 +27,11 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // Get ray from camera to point from mouse position
         Ray ray = m_MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        // Activake when clicking LMB button
         if (Input.GetMouseButtonDown(0))
         {
             if (m_SelectedObject == null && Physics.Raycast(ray, out hit, 1000, m_PickUpLayers))
@@ -40,6 +42,7 @@ public class DragAndDrop : MonoBehaviour
             }
             else
             {
+                // Insert card gameObject into slot gameObject through parenting and local transformations
                 if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers))
                 {
                     m_SelectedObject.parent = hit.transform;
@@ -52,6 +55,7 @@ public class DragAndDrop : MonoBehaviour
             }
         }
 
+        // Drag card around when selected by system
         if (m_SelectedObject != null)
         {
             m_SelectedObject.position = ray.GetPoint(m_DistanceFromCamera);

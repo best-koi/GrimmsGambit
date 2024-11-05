@@ -37,11 +37,6 @@ public class UnitParty : MonoBehaviour
     {
         UpdatePartyList();
         UpdatePartyPositions();
-
-        foreach (GameObject member in m_PartyMembers)
-        {
-            Debug.Log(member);
-        }
     }
 
     #endregion
