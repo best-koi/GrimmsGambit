@@ -30,8 +30,6 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
-        
-        
         m_EndButton.onClick.AddListener(EndTurn);
     }
 
