@@ -1437,6 +1437,118 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: awaitingTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023420364443008711, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: AttackCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659261918732185314, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: DefendCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030945723242310164, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: EncourageCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378354645820542586, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: CoverageCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Inspire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: awaitingTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Encourage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062063131279236033, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: InspireCard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
