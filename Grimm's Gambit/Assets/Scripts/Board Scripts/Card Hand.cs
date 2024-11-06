@@ -18,9 +18,10 @@ public class CardHand : MonoBehaviour
         Arrangecards();
     }
 
-    public void AddCard()
+    public void AddCard(CardDisplay card)
     {
-
+        //Makes the hand the parent to the card
+        card.transform.parent = this.transform;
     }
 
     public void RemoveCard()
