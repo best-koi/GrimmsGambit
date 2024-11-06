@@ -65,7 +65,7 @@ public class EncounterController : MonoBehaviour
 
     private void EndTurn()
     {
-        m_IsPlayerTurn = !m_IsPlayerTurn;
+        //m_IsPlayerTurn = !m_IsPlayerTurn;
         m_TurnCounter++;
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
@@ -75,8 +75,9 @@ public class EncounterController : MonoBehaviour
         m_EndButton.interactable = m_IsPlayerTurn;
 
         if (m_IsPlayerTurn) {
-            m_PlayerDeck.DrawAmount(true);
             m_CurrentResources = m_MaxResources;
+            m_PlayerDeck.DrawAmount(true);
+            
 
             m_TurnText.text = "Player Turn";
 
