@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 
 public class EncounterController : MonoBehaviour
@@ -23,6 +24,21 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private int m_MaxResources, m_CurrentResources;
 
     [SerializeField] private Button m_EndButton;
+    [SerializeField] private TMP_Text m_TurnText, m_ResourceText;
+
+    [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
+
+    [SerializeField] private CardHand m_CardHand;
+
+    public UnitParty GetEnemyInventory()
+    {
+        return m_EnemyInventory;
+    }
+
+    public UnitParty GetPlayerInventory()
+    {
+        return m_PlayerInventory;
+    }
 
     private void Start()
     {
@@ -31,7 +47,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
     private void StartEncounter()
@@ -54,27 +70,39 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        List<GameObject> party = new List<GameObject>(), enemies = new List<GameObject>();
+        List<GameObject> party = m_PlayerInventory.GetAllMembers(), enemies = m_EnemyInventory.GetAllMembers();
 
-        m_EndButton.interactable = !m_EndButton.interactable;
+        //m_EndButton.interactable = m_IsPlayerTurn;
 
         if (m_IsPlayerTurn) {
-            m_PlayerDeck.Draw();
+
             m_CurrentResources = m_MaxResources;
+
+            m_PlayerDeck.DrawAmount(true);
+            
+
+            m_TurnText.text = "Player Turn";
 
             // Display the number of cards in the player's deck
             Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
         }
         else 
         {
-            // Unfinished 
-            // To bo altered based upon enemy controller
+            m_PlayerDeck.DiscardHand();
+
+
+            m_TurnText.text = "Enemy Turn";
 
             foreach (GameObject enemy in enemies)
             {
-                Minion minionController = enemy.GetComponent<Minion>();
-                Debug.Log("Enemy minion attacks.");
+                EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
+                enemyController.AttackPattern();
+
             }
+            //m_IsPlayerTurn = true;
+            m_TurnText.text = "Enemy Turn";
+            //m_EndButton.interactable = m_IsPlayerTurn;
+
         } 
     }
 
@@ -84,5 +112,21 @@ public class EncounterController : MonoBehaviour
 
         if (playerWin) Debug.Log("Player won in " + m_TurnCounter + " turns.");
         else Debug.Log("Player lost.");
+    }
+
+
+    // Spend an amount of resources
+    // True if the amount is successfully spent
+    // False if current resources are insufficient 
+    public bool SpendResources(int amount)
+    {
+        if (m_CurrentResources - amount < 0)
+        {
+            Debug.Log("Insufficient resources");
+            return false;
+        }
+
+        m_CurrentResources -= amount;
+        return true;
     }
 }

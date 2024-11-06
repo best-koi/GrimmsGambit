@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CardDatabase : MonoBehaviour
 {
-    [SerializeField] private Card[] m_Data;
-    
-    // The physical representaion of the all of the cards
+
     // Only instantiated if the player has one or more copies
-    [SerializeField] private GameObject[] m_Cards;
+    // Evens represent face up cards, odds are reversed
+    [SerializeField] private Card[] m_Data;
+    [SerializeField] private GameObject[] m_Prefabs;
 
     private void Start()
     {
@@ -26,12 +26,15 @@ public class CardDatabase : MonoBehaviour
 
         foreach (Card card in m_Data)
         {
+            // Skip reversed cards
+            if (card.GetIndex() % 2 == 1) continue;
+
             for (int i = 0, copies = card.NumCopies; i < copies; i++)
             {
                 m_PlayerDeck.Add(card.GetIndex());
-                
-                // Unfinished
-                // Instantiate the card GameObject into the scene
+
+                Debug.Log("Spawning Card");
+                Instantiate(card.gameObject);
             }
         }
 
@@ -41,6 +44,11 @@ public class CardDatabase : MonoBehaviour
     public Card GetCard(int index)
     {
         return m_Data[index];
+    }
+
+    public GameObject GetPrefab(int index) 
+    {
+        return m_Prefabs[index];
     }
 
     public void AddCard(int index, int numTimes = 1)

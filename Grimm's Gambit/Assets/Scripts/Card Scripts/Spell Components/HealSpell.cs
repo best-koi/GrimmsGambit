@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class HealSpell : SpellComponent
 {
+    [SerializeField] int m_Amount = -3;
+
     public HealSpell()
     {
         spellName = "Heal";
-        spellDescription = "Heal 3 health for the heir.";
+        spellDescription = "Heal an amount for a target.";
     }
     public override void DoSpellEffect()
     {
-        Debug.Log("Heal 3 Health");
+        target.DamageTaken(m_Amount); 
     }
 }

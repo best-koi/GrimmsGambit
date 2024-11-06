@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 4286678844508772221}
   m_Layer: 0
   m_Name: Middle Road Encounter
-  m_TagString: Untagged
+  m_TagString: Encounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
