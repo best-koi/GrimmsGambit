@@ -52,9 +52,9 @@ public class DragAndDrop : MonoBehaviour
             else if (m_SelectedObject != null)
             {
                 // Insert card gameObject into slot gameObject through parenting and local transformations
-                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers))
+                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers) && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()))
                 {
-                    if(controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()))
+                   
                         m_SelectedObject.parent = hit.transform;
                 }
                 else
