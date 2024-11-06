@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EnemyPositionTarget : EnemyTemplate
 {
-    protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
+    [SerializeField]    protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
 
     protected List<CharacterTemplate> orderedCharacters = new List<CharacterTemplate>();//A list of ordered characters 
 
@@ -22,6 +22,7 @@ public class EnemyPositionTarget : EnemyTemplate
         controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
         base.Start();
         OrderCharacters();
+        //FindPositionedTarget(position);
     }
 
     //A way to get characters in an order by position
@@ -54,7 +55,7 @@ public class EnemyPositionTarget : EnemyTemplate
         List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
         foreach (GameObject c in characters)
         {
-            if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == p)
+            if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == p && c != null)
             {
                 positionTarget = c.GetComponent<CharacterTemplate>();
                 return;
@@ -69,7 +70,9 @@ public class EnemyPositionTarget : EnemyTemplate
     {
       
             FindPositionedTarget(position);
-            if (!positionTarget.GetDestroyed())
+            if (positionTarget == null)
+                SeekNewTargetInOrder();
+            else
                 minion.MinionUsed(positionTarget.GetComponent<Minion>(), attackValue);
 
         
@@ -81,7 +84,7 @@ public class EnemyPositionTarget : EnemyTemplate
     //If no one is left, return false
     protected override bool CanAttackTarget()
     {
-        if (positionTarget.GetDestroyed())
+        if (positionTarget == null) //positionTarget.GetDestroyed())
         {
             return SeekNewTargetInOrder();
 

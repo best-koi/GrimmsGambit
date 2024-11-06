@@ -91,7 +91,12 @@ public class EncounterController : MonoBehaviour
             {
                 EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
+
             }
+            m_IsPlayerTurn = true;
+            m_TurnText.text = "Player Turn";
+            m_EndButton.interactable = m_IsPlayerTurn;
+
         } 
     }
 
