@@ -21,6 +21,9 @@ public class DragAndDrop : MonoBehaviour
     private Transform m_SelectedObjectParent;
     private int m_SelectedChildIndex;
 
+    [SerializeField]
+    private EncounterController controller; 
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -46,7 +49,7 @@ public class DragAndDrop : MonoBehaviour
                 m_SelectedObject.parent = null;
                 m_SelectedObject.localScale = Vector3.one;
             }
-            else if (m_SelectedObject != null)
+            else if (m_SelectedObject != null && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()))
             {
                 // Insert card gameObject into slot gameObject through parenting and local transformations
                 if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers))
