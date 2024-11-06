@@ -99,7 +99,7 @@ public class EncounterController : MonoBehaviour
 
             }
             //m_IsPlayerTurn = true;
-            m_TurnText.text = "Player Turn";
+            m_TurnText.text = "Enemy Turn";
             //m_EndButton.interactable = m_IsPlayerTurn;
 
         } 
