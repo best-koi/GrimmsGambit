@@ -1519,7 +1519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: awaitingTarget
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: caster
