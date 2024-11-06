@@ -1481,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_PlayerCopies
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5448717484234942762, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Database
+      value: 
+      objectReference: {fileID: 1445344849}
     - target: {fileID: 6023420364443008711, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_Name
       value: AttackCard
@@ -1519,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: awaitingTarget
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: caster
@@ -1985,6 +1989,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+--- !u!114 &1445344849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+  m_PrefabInstance: {fileID: 490169111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e785c551284a84449baed5d9c38ae0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1548673249 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9040213274531582302, guid: 2c893e7cb425d48edaed6d27f59edaac, type: 3}
