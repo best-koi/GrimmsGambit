@@ -13,19 +13,28 @@ public class CardHand : MonoBehaviour
     [SerializeField]
     private Vector3 m_DisplacementFromHolderCenter;
 
+    [SerializeField]
+    private List<CardDisplay> cardsToReturn;
+
     private void Update()
     {
         Arrangecards();
     }
 
-    public void AddCard()
+    public void AddCard(CardDisplay card)
     {
-
+        //Makes the hand the parent to the card
+        card.transform.parent = this.transform;
     }
 
     public void RemoveCard()
     {
 
+    }
+
+    public void ResetCards()
+    {
+        
     }
 
     private void Arrangecards()
