@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
 public class CardHand : MonoBehaviour
 {
+    [SerializeField] private CardDatabase m_Database;
     [SerializeField]
     private Transform m_CardHolder;
 
@@ -19,11 +21,18 @@ public class CardHand : MonoBehaviour
     private void Update()
     {
         Arrangecards();
+        
     }
 
-    public void AddCard(CardDisplay card)
+    private void Start()
+    {
+        Deck.onDraw += AddCard;
+    }
+
+    public void AddCard(int cardIndex)
     {
         //Makes the hand the parent to the card
+        GameObject card = m_Database.GetObject(cardIndex);
         card.transform.parent = this.transform;
     }
 
