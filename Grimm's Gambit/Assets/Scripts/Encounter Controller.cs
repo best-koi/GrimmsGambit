@@ -45,7 +45,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
+        
     }
 
     private void StartEncounter()
@@ -124,6 +124,7 @@ public class EncounterController : MonoBehaviour
         }
 
         m_CurrentResources -= amount;
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
         return true;
     }
 }
