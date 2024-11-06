@@ -70,11 +70,14 @@ public class EncounterController : MonoBehaviour
 
         List<GameObject> party = m_PlayerInventory.GetAllMembers(), enemies = m_EnemyInventory.GetAllMembers();
 
-        m_EndButton.interactable = m_IsPlayerTurn;
+        //m_EndButton.interactable = m_IsPlayerTurn;
 
         if (m_IsPlayerTurn) {
-            m_PlayerDeck.DrawAmount(true);
+
             m_CurrentResources = m_MaxResources;
+
+            m_PlayerDeck.DrawAmount(true);
+            
 
             m_TurnText.text = "Player Turn";
 
@@ -93,9 +96,9 @@ public class EncounterController : MonoBehaviour
                 enemyController.AttackPattern();
 
             }
-            m_IsPlayerTurn = true;
-            m_TurnText.text = "Player Turn";
-            m_EndButton.interactable = m_IsPlayerTurn;
+            //m_IsPlayerTurn = true;
+            m_TurnText.text = "Enemy Turn";
+            //m_EndButton.interactable = m_IsPlayerTurn;
 
         } 
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1437,6 +1437,122 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: awaitingTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015753861021471339, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361119781285085774, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448717484234942762, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Database
+      value: 
+      objectReference: {fileID: 1445344849}
+    - target: {fileID: 6023420364443008711, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: AttackCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659261918732185314, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: DefendCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030945723242310164, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: EncourageCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378354645820542586, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: CoverageCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Inspire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7768180492617135981, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: awaitingTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Index
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: cardName
+      value: Encourage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619355897806243512, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_PlayerCopies
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062063131279236033, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Name
+      value: InspireCard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1727,34 +1843,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlaytestDeck
       objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[2]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[5]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[6]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-      propertyPath: m_GameDeck.Array.data[7]
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1901,6 +1989,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+--- !u!114 &1445344849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+  m_PrefabInstance: {fileID: 490169111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e785c551284a84449baed5d9c38ae0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1548673249 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9040213274531582302, guid: 2c893e7cb425d48edaed6d27f59edaac, type: 3}
