@@ -13,6 +13,9 @@ public class CardHand : MonoBehaviour
     [SerializeField]
     private Vector3 m_DisplacementFromHolderCenter;
 
+    [SerializeField]
+    private List<CardDisplay> cardsToReturn;
+
     private void Update()
     {
         Arrangecards();
@@ -27,6 +30,11 @@ public class CardHand : MonoBehaviour
     public void RemoveCard()
     {
 
+    }
+
+    public void ResetCards()
+    {
+        
     }
 
     private void Arrangecards()
