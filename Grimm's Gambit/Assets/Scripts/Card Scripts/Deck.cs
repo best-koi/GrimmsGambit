@@ -38,8 +38,6 @@ public class Deck : MonoBehaviour
         // Shuffle the discard pile into the game deck if it is empty
         if(m_GameDeck.Count() == 0)
         {
-            m_GameDeck = m_DiscardPile;
-            m_DiscardPile.Clear();
             Shuffle();
         }
         
@@ -194,10 +192,10 @@ public class Deck : MonoBehaviour
 
     public void Shuffle()
     {
-        List<int> temp = m_GameDeck;
-        m_GameDeck.Clear();
+        List<int> temp = m_DiscardPile;
+        m_DiscardPile.Clear();
 
-        foreach (int card in temp)
+        for (int i = temp.Count - 1; i >= 0; i--)
         {
             int randomNum = UnityEngine.Random.Range(0, temp.Count());
             int randomCard = temp[randomNum];

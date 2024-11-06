@@ -75,6 +75,7 @@ public class EncounterController : MonoBehaviour
         if (m_IsPlayerTurn) {
 
             m_CurrentResources = m_MaxResources;
+            m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
             m_PlayerDeck.DrawAmount(true);
             
@@ -96,9 +97,7 @@ public class EncounterController : MonoBehaviour
                 enemyController.AttackPattern();
 
             }
-            //m_IsPlayerTurn = true;
             m_TurnText.text = "Enemy Turn";
-            //m_EndButton.interactable = m_IsPlayerTurn;
 
         } 
     }
