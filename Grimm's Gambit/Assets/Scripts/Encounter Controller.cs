@@ -78,7 +78,7 @@ public class EncounterController : MonoBehaviour
 
             m_CurrentResources = m_MaxResources;
 
-            //m_PlayerDeck.DrawAmount(true);
+            m_PlayerDeck.DrawAmount(true);
             
 
             m_TurnText.text = "Player Turn";
