@@ -28,6 +28,8 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
 
+    [SerializeField] private CardHand m_CardHand;
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -45,7 +47,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
     private void StartEncounter()
@@ -89,6 +91,7 @@ public class EncounterController : MonoBehaviour
         {
             m_PlayerDeck.DiscardHand();
 
+
             m_TurnText.text = "Enemy Turn";
 
             foreach (GameObject enemy in enemies)
@@ -123,7 +126,6 @@ public class EncounterController : MonoBehaviour
         }
 
         m_CurrentResources -= amount;
-        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
         return true;
     }
 }

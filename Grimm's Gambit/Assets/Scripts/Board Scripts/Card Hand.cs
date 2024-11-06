@@ -26,19 +26,31 @@ public class CardHand : MonoBehaviour
 
     private void Start()
     {
-        Deck.onDraw += AddCard;
+        Deck.onDraw += AddCardFromIndex;
+        Deck.onDiscard += RemoveCardFromIndex;
     }
 
-    public void AddCard(int cardIndex)
+    public void AddCardFromIndex(int cardIndex)
     {
-        //Makes the hand the parent to the card
-        GameObject card = m_Database.GetObject(cardIndex);
+        GameObject card = Instantiate(m_Database.GetPrefab(cardIndex));
+        AddCard(card);
+    }
+
+    public void AddCard(GameObject card)
+    {
         card.transform.parent = this.transform;
     }
 
-    public void RemoveCard()
+    public void RemoveCardFromIndex(int cardIndex)
     {
+        Debug.Log(cardIndex);
+        RemoveCard(transform.GetChild(cardIndex).gameObject);
+    }
 
+    public void RemoveCard(GameObject card)
+    {
+        card.transform.parent = null;
+        Destroy(card);
     }
 
     public void ResetCards()

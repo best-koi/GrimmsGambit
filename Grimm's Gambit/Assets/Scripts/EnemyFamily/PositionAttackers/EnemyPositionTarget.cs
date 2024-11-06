@@ -55,12 +55,11 @@ public class EnemyPositionTarget : EnemyTemplate
         List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
         foreach (GameObject c in characters)
         {
-            if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == p && c != null)
+            if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetCharacterPosition() == p)
             {
                 positionTarget = c.GetComponent<CharacterTemplate>();
                 return;
             }
-
         }
     }
 

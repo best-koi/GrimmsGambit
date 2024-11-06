@@ -91,14 +91,13 @@ public class Deck : MonoBehaviour
         }
        
         m_DiscardPile.Add(nextCardID);
-
-        onDiscard?.Invoke(nextCardID);
+        onDiscard?.Invoke(index);
     }
 
     public void DiscardHand()
     {
-        m_DiscardPile.Concat(m_Hand).ToList();
-        m_Hand.Clear();
+        int count = m_Hand.Count;
+        for (int i = 0; i < count; i++) Discard();
     }
 
     // Put the top card of the deck into the discard pile
@@ -203,6 +202,18 @@ public class Deck : MonoBehaviour
             temp.RemoveAt(randomNum);
             m_GameDeck.Add(randomCard);
         } 
+    }
+
+    public void EmptyShuffle(){
+        
+        foreach (int card in m_DiscardPile)
+        {
+            int randomNum = UnityEngine.Random.Range(0, m_DiscardPile.Count());
+            int randomCard = m_DiscardPile[randomNum];
+            m_GameDeck.Add(randomCard);
+        } 
+        m_DiscardPile.Clear();
+
     }
 
     // Prepare the deck for the game
