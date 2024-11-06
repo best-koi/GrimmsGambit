@@ -24,7 +24,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private int m_MaxResources, m_CurrentResources;
 
     [SerializeField] private Button m_EndButton;
-    [SerializeField] private TMP_Text m_TurnText;
+    [SerializeField] private TMP_Text m_TurnText, m_ResourceText;
 
     [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
 
@@ -47,7 +47,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
     private void StartEncounter()
