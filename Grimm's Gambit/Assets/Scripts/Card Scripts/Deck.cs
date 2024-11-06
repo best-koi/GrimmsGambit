@@ -38,9 +38,9 @@ public class Deck : MonoBehaviour
         // Shuffle the discard pile into the game deck if it is empty
         if(m_GameDeck.Count() == 0)
         {
-            m_GameDeck = m_DiscardPile;
-            m_DiscardPile.Clear();
-            Shuffle();
+            //m_GameDeck = m_DiscardPile;
+            //m_DiscardPile.Clear();
+            EmptyShuffle();
         }
         
         // Add a card to the hand
@@ -204,6 +204,18 @@ public class Deck : MonoBehaviour
             temp.RemoveAt(randomNum);
             m_GameDeck.Add(randomCard);
         } 
+    }
+
+    public void EmptyShuffle(){
+        
+        foreach (int card in m_DiscardPile)
+        {
+            int randomNum = UnityEngine.Random.Range(0, m_DiscardPile.Count());
+            int randomCard = m_DiscardPile[randomNum];
+            m_GameDeck.Add(randomCard);
+        } 
+        m_DiscardPile.Clear();
+
     }
 
     // Prepare the deck for the game
