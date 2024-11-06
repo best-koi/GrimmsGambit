@@ -28,6 +28,8 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
 
+    [SerializeField] private CardHand m_CardHand;
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -87,6 +89,7 @@ public class EncounterController : MonoBehaviour
         else 
         {
             m_PlayerDeck.DiscardHand();
+
 
             m_TurnText.text = "Enemy Turn";
 

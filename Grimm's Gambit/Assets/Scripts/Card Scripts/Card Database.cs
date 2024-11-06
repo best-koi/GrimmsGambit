@@ -8,7 +8,7 @@ public class CardDatabase : MonoBehaviour
     // Only instantiated if the player has one or more copies
     // Evens represent face up cards, odds are reversed
     [SerializeField] private Card[] m_Data;
-    [SerializeField] private GameObject[] m_Objects;
+    [SerializeField] private GameObject[] m_Prefabs;
 
     private void Start()
     {
@@ -32,8 +32,9 @@ public class CardDatabase : MonoBehaviour
             for (int i = 0, copies = card.NumCopies; i < copies; i++)
             {
                 m_PlayerDeck.Add(card.GetIndex());
-                
-                Instantiate(card);
+
+                Debug.Log("Spawning Card");
+                Instantiate(card.gameObject);
             }
         }
 
@@ -45,9 +46,9 @@ public class CardDatabase : MonoBehaviour
         return m_Data[index];
     }
 
-    public GameObject GetObject(int index) 
+    public GameObject GetPrefab(int index) 
     {
-        return m_Objects[index];
+        return m_Prefabs[index];
     }
 
     public void AddCard(int index, int numTimes = 1)
