@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 4843019133385101523}
   - component: {fileID: -3769996071614770348}
+  - component: {fileID: 6604492304983800169}
   m_Layer: 7
   m_Name: HeirAttackReverse
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &6604492304983800169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da5e28c33387b340ba1f8aa7b910413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CardReference: {fileID: 0}
+  m_CardCostText: {fileID: 0}
+  m_CardNameText: {fileID: 0}
+  m_CardOwnerNameText: {fileID: 0}
+  m_CardSprite: {fileID: 0}
