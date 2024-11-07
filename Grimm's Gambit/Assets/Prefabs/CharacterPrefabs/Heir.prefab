@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 2342188337957900912}
   - component: {fileID: 4929419567420065671}
   m_Layer: 6
-  m_Name: SpriteRenderer
+  m_Name: Card Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,4 +635,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 30
+  m_CardContainer: {fileID: 2079953859674068573}
   ownerPlayer: 1

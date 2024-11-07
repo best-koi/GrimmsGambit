@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -43,8 +44,12 @@ public class CardHand : MonoBehaviour
 
     public void RemoveCardFromIndex(int cardIndex)
     {
-        Debug.Log(cardIndex);
-        RemoveCard(transform.GetChild(cardIndex).gameObject);
+        try {
+            Debug.Log(cardIndex);
+            RemoveCard(transform.GetChild(cardIndex).gameObject);
+        } catch (Exception e) {
+            Debug.Log("Out of Bounds Exception: CardHand::RemoveCardFromIndex()");
+        }
     }
 
     public void RemoveCard(GameObject card)

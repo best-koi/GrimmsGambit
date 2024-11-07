@@ -40,7 +40,7 @@ public class Card : MonoBehaviour
         if ( (awaitingTarget == false) && (target == null) ) {
             
             // Cancel the method call if the player doesn't have enough resources
-            if (!m_EncounterController.SpendResources(cardCost)) return;
+            //if (!m_EncounterController.SpendResources(cardCost)) return;
          
             DoSpells();
         }
@@ -73,7 +73,7 @@ public class Card : MonoBehaviour
         */
     }
 
-    private void DoSpells()
+    public void DoSpells()
     {
         Component[] spells = gameObject.GetComponents(typeof(SpellComponent));
         foreach(SpellComponent spell in spells) {
@@ -92,7 +92,7 @@ public class Card : MonoBehaviour
             return;
         }
 
-        m_Hand.Discard(0, m_Index);
+        //m_Hand.Discard(0, m_Index);
     }
 
     // Getters
@@ -132,5 +132,10 @@ public class Card : MonoBehaviour
     public void MakeEphemeral()
     {
         m_IsEphemeral = true;
+    }
+
+    public void SetTarget(Minion newTarget)
+    {
+        target = newTarget;
     }
 }

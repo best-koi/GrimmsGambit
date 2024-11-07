@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 5707082808535824532}
   m_Layer: 7
   m_Name: KatzeDefendReverse
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,6 +8,7 @@ TagManager:
   - Boss
   - Recruit
   - Shop
+  - Card
   layers:
   - Default
   - TransparentFX
