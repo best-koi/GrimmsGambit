@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.AI;
+using System.Data;
 
 public class EncounterController : MonoBehaviour
 {
@@ -89,6 +91,7 @@ public class EncounterController : MonoBehaviour
         else 
         {
             m_PlayerDeck.DiscardHand();
+            ExecuteCards();
 
 
             m_TurnText.text = "Enemy Turn";
@@ -128,5 +131,23 @@ public class EncounterController : MonoBehaviour
 
         m_CurrentResources -= amount;
         return true;
+    }
+
+    private void ExecuteCards()
+    {
+        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
+        foreach (GameObject o in cards) {
+            if(o.transform.parent != null) {
+                Card card = o.GetComponent<Card>();
+
+                // Looks messy, but o.transform.parent.parent.gameObject is the Minion being targeted
+                Minion target = o.transform.parent.parent.gameObject.GetComponent<Minion>();
+
+                card.SetTarget(target);
+                card.DoSpells();
+                
+                Destroy(o);
+            }
+        }
     }
 }

@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 8979271296299292535}
   m_Layer: 7
   m_Name: SeamstressDefendFaceUp
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
