@@ -24,6 +24,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Renderer renderer;//The enemy spawner's color
 
+    private GameObject m_SpawnedEnemy; // Reference to spawned enemy
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
         enemy = Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Count)]);
         enemy.SetColor(spawnedColor);
         enemy.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
+        m_SpawnedEnemy = enemy.gameObject;
     }
 
     public int GetEnemyOrder()
@@ -49,5 +52,8 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    
+    public GameObject GetSpawnedEnemy()
+    {
+        return m_SpawnedEnemy;
+    }
 }
