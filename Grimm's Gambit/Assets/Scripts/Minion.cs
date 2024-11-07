@@ -30,6 +30,9 @@ public class Minion : MonoBehaviour
     //Health:
     public int maxHealth;
     public int currentHealth;
+
+    [SerializeField]
+    private GameObject m_CardContainer;
         
     //Affixes:
     public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
@@ -235,6 +238,43 @@ public class Minion : MonoBehaviour
         {
             currentHealth = maxHealth; //Caps health to max out at the originally given max health value
         }
+    }
+
+    public Card GetCardInContainer()
+    {
+        if (m_CardContainer != null)
+        {
+            Transform parent = m_CardContainer.transform;
+
+            if (parent.childCount > 0 && parent.GetChild(0).TryGetComponent<Card>(out Card c))
+                return c;
+        }
+
+        return null;
+    }
+
+    public bool AssignSelfToCardTarget()
+    {
+        Card c = GetCardInContainer();
+
+        if (c != null)
+        {
+            c.SetTarget(this);
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void ConsumeCard()
+    {
+        if (!AssignSelfToCardTarget())
+            return;
+
+        Card c = GetCardInContainer();
+
+        c.DoSpells();
+        Destroy(c.gameObject);
     }
 
     private void Destroyed() //Function for when this character has been defeated

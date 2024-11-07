@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 478671420793795688}
   - component: {fileID: 3361506731429250280}
   m_Layer: 6
-  m_Name: SpriteRenderer
+  m_Name: Card Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,8 +709,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43475515, y: 0.30661348, z: 0.41650373}
-  m_Center: {x: -0.13737771, y: 0.14405963, z: 0.15117154}
+  m_Size: {x: 0.43475515, y: 0.78488725, z: 0.41650373}
+  m_Center: {x: -0.13737771, y: 0.33177975, z: 0.15117154}
 --- !u!1 &9146193986863031628
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 35
   currentHealth: 35
+  m_CardContainer: {fileID: 7786072958281973414}
   ownerPlayer: 0
 --- !u!114 &-8822082364862180150
 MonoBehaviour:
