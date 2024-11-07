@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.AI;
+using System.Data;
 
 public class EncounterController : MonoBehaviour
 {
@@ -138,11 +139,14 @@ public class EncounterController : MonoBehaviour
         foreach (GameObject o in cards) {
             if(o.transform.parent != null) {
                 Card card = o.GetComponent<Card>();
-                Debug.Log(o.transform.parent.parent.gameObject);
+
+                // Looks messy, but o.transform.parent.parent.gameObject is the Minion being targeted
                 Minion target = o.transform.parent.parent.gameObject.GetComponent<Minion>();
-                Debug.Log(target);
+
                 card.SetTarget(target);
                 card.DoSpells();
+                
+                Destroy(o);
             }
         }
     }
