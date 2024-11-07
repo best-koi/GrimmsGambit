@@ -135,19 +135,12 @@ public class EncounterController : MonoBehaviour
 
     private void ExecuteCards()
     {
-        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
-        foreach (GameObject o in cards) {
-            if(o.transform.parent != null) {
-                Card card = o.GetComponent<Card>();
+        foreach (GameObject player in m_PlayerInventory.GetAllMembers())
+            if (player.TryGetComponent<Minion>(out Minion m))
+                m.ConsumeCard();
 
-                // Looks messy, but o.transform.parent.parent.gameObject is the Minion being targeted
-                Minion target = o.transform.parent.parent.gameObject.GetComponent<Minion>();
-
-                card.SetTarget(target);
-                card.DoSpells();
-                
-                Destroy(o);
-            }
-        }
+        foreach (GameObject enemy in m_EnemyInventory.GetAllMembers())
+            if (enemy.TryGetComponent<EnemySpawner>(out EnemySpawner es))
+                es.GetSpawnedEnemy().GetComponent<Minion>().ConsumeCard();
     }
 }

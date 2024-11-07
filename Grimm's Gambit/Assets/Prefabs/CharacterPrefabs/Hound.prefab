@@ -514,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 30
+  m_CardContainer: {fileID: 7657946014366121618}
   ownerPlayer: 1
 --- !u!1 &7657946014366121618
 GameObject:
@@ -528,7 +529,7 @@ GameObject:
   - component: {fileID: 8566301709269441304}
   - component: {fileID: 396185124124948943}
   m_Layer: 6
-  m_Name: SpriteRenderer
+  m_Name: Card Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
