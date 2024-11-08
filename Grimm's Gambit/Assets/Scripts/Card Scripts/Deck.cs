@@ -196,7 +196,8 @@ public class Deck : MonoBehaviour
 
         for (int i = temp.Count - 1; i >= 0; i--)
         {
-            int randomNum = UnityEngine.Random.Range(0, temp.Count());
+            System.Random rnd = new System.Random();
+            int randomNum = rnd.Next(0, temp.Count());
             int randomCard = temp[randomNum];
 
             temp.RemoveAt(randomNum);
