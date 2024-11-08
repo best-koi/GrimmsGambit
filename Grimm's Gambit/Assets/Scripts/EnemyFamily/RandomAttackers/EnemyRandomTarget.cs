@@ -88,6 +88,10 @@ public class EnemyRandomTarget : EnemyTemplate
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
                 break;
+            case "RandomAttack":
+                moveText.text = $"Randomly Attacking";
+                moveText.color = this.GetEnemyColor();
+                break;
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];

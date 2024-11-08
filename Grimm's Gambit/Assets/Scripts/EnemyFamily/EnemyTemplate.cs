@@ -31,6 +31,14 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
     protected int buffValue;//A value to apply a buff by
 
+    [SerializeField]
+    protected int blockValue;//A value to apply block
+
+    [SerializeField]
+protected List<string> randomAttacks;//A list of random attacks to pull from (for RandomAttack() method)
+
+protected string randomAttackName;//The name of the planned random attack
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
@@ -156,6 +164,10 @@ public abstract class EnemyTemplate : MonoBehaviour
 
     }
 
+//Randomly attacks based on attacks in randomAttacks list. 
+protected void RandomAttack(){
+        Invoke(randomAttacks[Random.Range(0, randomAttacks.Count)], 0f);
+    }
 
     
 
