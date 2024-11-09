@@ -37,6 +37,9 @@ public abstract class EnemyTemplate : MonoBehaviour
     [SerializeField]
 protected List<string> randomAttacks;//A list of random attacks to pull from (for RandomAttack() method)
 
+[SerializeField]
+protected List<string> combinedAttacks;//A list of random attacks to pull from (for RandomAttack() method)
+
 protected string randomAttackName;//The name of the planned random attack
 
     //AttackPattern() essentially calls the next attack from the list
@@ -174,6 +177,12 @@ protected void RandomAttack(){
         string plannedAttack = randomAttacks[Random.Range(0, randomAttacks.Count)];
         randomAttackName = plannedAttack;
         Invoke(plannedAttack, 0f);
+    }
+
+//Executes multiple moves at once
+    protected void CombinedAttack(){
+        foreach(string s in combinedAttacks)
+            Invoke(s, 0f);
     }
 
     
