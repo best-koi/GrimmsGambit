@@ -89,7 +89,7 @@ public class EnemyRandomTarget : EnemyTemplate
                 moveText.color = this.GetEnemyColor();
                 break;
             case "RandomAttack":
-                moveText.text = $"Randomly Attacking";
+                moveText.text = $"{randomAttackName}";
                 moveText.color = this.GetEnemyColor();
                 break;
 

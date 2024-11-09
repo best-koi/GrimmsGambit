@@ -146,6 +146,11 @@ protected string randomAttackName;//The name of the planned random attack
         minion.AddAffix(Affix.Strength, buffValue);
     }
 
+    protected void Block()
+    {
+        minion.AddAffix(Affix.Block, blockValue);
+    }
+
     //An abstract method for attacking targets (to be implemented by children)
     protected abstract bool CanAttackTarget();
 
@@ -166,7 +171,9 @@ protected string randomAttackName;//The name of the planned random attack
 
 //Randomly attacks based on attacks in randomAttacks list. 
 protected void RandomAttack(){
-        Invoke(randomAttacks[Random.Range(0, randomAttacks.Count)], 0f);
+        string plannedAttack = randomAttacks[Random.Range(0, randomAttacks.Count)];
+        randomAttackName = plannedAttack;
+        Invoke(plannedAttack, 0f);
     }
 
     
