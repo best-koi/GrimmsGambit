@@ -839,3 +839,6 @@ MonoBehaviour:
   renderer: {fileID: 3082288189527186086}
   attackValue: 4
   buffValue: 2
+  blockValue: 0
+  randomAttacks: []
+  combinedAttacks: []
