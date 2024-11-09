@@ -1491,7 +1491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
@@ -1501,6 +1501,10 @@ PrefabInstance:
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
       objectReference: {fileID: 1634300097215933525, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 6772667100608871505, guid: 6ef88a461a7ec42cc9493571e7fec676, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition (1)
@@ -3230,7 +3234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
@@ -3240,6 +3244,10 @@ PrefabInstance:
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
       objectReference: {fileID: -8822082364862180150, guid: 9d702b143d39843c4b3ac1a6e9fca4da, type: 3}
+    - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 6772667100608871505, guid: 6ef88a461a7ec42cc9493571e7fec676, type: 3}
     - target: {fileID: 6360101078298516605, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: m_Name
       value: EnemySpawnPosition
