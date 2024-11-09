@@ -150,11 +150,21 @@ public class EnemyPositionTarget : EnemyTemplate
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
                 break;
+            case "Block":
+                moveText.text = $"Blocking for {blockValue}";
+                moveText.color = this.GetEnemyColor();
+                break;
 
             case "CombinedAttack":
                 string display = "Planning to ";
-                foreach(string s in combinedAttacks)
-                    display += $"{s} and ";
+                for(int i = 0; i < combinedAttacks.Count; i++){
+                    if(i == combinedAttacks.Count - 1)
+                        display += $"{combinedAttacks[i]}";
+                    else
+                        display += $"{combinedAttacks[i]} and ";
+
+                }
+                    
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
                 break;

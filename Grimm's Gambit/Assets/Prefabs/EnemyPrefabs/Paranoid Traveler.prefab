@@ -747,6 +747,7 @@ MonoBehaviour:
   attacks:
   - Block
   - Attack
+  - CombinedAttack
   currentAttack: 0
   healthText: {fileID: 7007063830712604864}
   nameText: {fileID: 1547079865206609264}
