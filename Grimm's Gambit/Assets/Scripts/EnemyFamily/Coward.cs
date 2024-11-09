@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Coward : EnemyPositionTarget
+{
+
+
+//Finds the weakest target in group
+    protected override void FindPositionedTarget(int p)
+    {
+        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
+        CharacterTemplate weakest = characters[0].GetComponent<CharacterTemplate>();
+        foreach (GameObject c in characters)
+        {
+            if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetHP() < weakest.GetHP())
+            {
+                positionTarget = c.GetComponent<CharacterTemplate>();
+                return;
+            }
+        }
+    }
+
+    protected override bool SeekNewTargetInOrder()
+    {
+        foreach (CharacterTemplate c in orderedCharacters)
+        {
+            if (c == positionTarget)
+                continue;
+            else if (c.GetHP() > 0)
+            {
+                positionTarget = c;
+                return true;
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+        return false;
+    }
+}

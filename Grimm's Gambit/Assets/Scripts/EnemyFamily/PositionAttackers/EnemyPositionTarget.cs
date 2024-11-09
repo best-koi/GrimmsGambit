@@ -95,7 +95,7 @@ public class EnemyPositionTarget : EnemyTemplate
     
     //Finds a new target and returns a value based on whether a new target was found
     //Skips an enemy who is the same as the original position or has no hp
-    protected bool SeekNewTargetInOrder()
+    protected virtual bool SeekNewTargetInOrder()
     {
         foreach (CharacterTemplate c in orderedCharacters)
         {
@@ -148,6 +148,24 @@ public class EnemyPositionTarget : EnemyTemplate
 
             case "Strength":
                 moveText.text = $"Applying {buffValue} Strength to Self";
+                moveText.color = this.GetEnemyColor();
+                break;
+            case "Block":
+                moveText.text = $"Blocking for {blockValue}";
+                moveText.color = this.GetEnemyColor();
+                break;
+
+            case "CombinedAttack":
+                string display = "Planning to ";
+                for(int i = 0; i < combinedAttacks.Count; i++){
+                    if(i == combinedAttacks.Count - 1)
+                        display += $"{combinedAttacks[i]}";
+                    else
+                        display += $"{combinedAttacks[i]} and ";
+
+                }
+                    
+                moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
                 break;
 
