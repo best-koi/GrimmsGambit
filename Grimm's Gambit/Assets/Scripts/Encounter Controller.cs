@@ -49,6 +49,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
+        // Can theoritcally be removed later if no bugs 
         m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
