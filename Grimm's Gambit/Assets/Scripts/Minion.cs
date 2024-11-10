@@ -74,7 +74,10 @@ public class Minion : MonoBehaviour
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
-            currentAffixes.Add(affix, currentValue+value);
+            if (currentValue + value > 0) //Allows for this function to have negative values for stacking affixes
+            {
+                currentAffixes.Add(affix, currentValue+value);
+            }
         }
     }
 
@@ -346,5 +349,43 @@ public class Minion : MonoBehaviour
         {
             currentAffixes.Remove(Affix.Exploit);
         }
+    }
+
+    public List<Affix> RetrieveBuffs()
+    {
+        List<Affix> Returnable = new List<Affix>();
+        if (currentAffixes.ContainsKey(Affix.Taunt)) 
+        {
+            Returnable.Add(Affix.Taunt);
+        }
+        if (currentAffixes.ContainsKey(Affix.Block)) 
+        {
+            Returnable.Add(Affix.Block);
+        }
+        if (currentAffixes.ContainsKey(Affix.Thorns)) 
+        {
+            Returnable.Add(Affix.Thorns);
+        }
+        if (currentAffixes.ContainsKey(Affix.Regen)) 
+        {
+            Returnable.Add(Affix.Regen);
+        }
+        if (currentAffixes.ContainsKey(Affix.Parasite)) 
+        {
+            Returnable.Add(Affix.Parasite);
+        }
+        if (currentAffixes.ContainsKey(Affix.Strength)) 
+        {
+            Returnable.Add(Affix.Strength);
+        }
+        if (currentAffixes.ContainsKey(Affix.HoundCounter)) 
+        {
+            Returnable.Add(Affix.HoundCounter);
+        }
+        if (currentAffixes.ContainsKey(Affix.Naturopath)) 
+        {
+            Returnable.Add(Affix.Naturopath);
+        }
+        return Returnable;
     }
 }
