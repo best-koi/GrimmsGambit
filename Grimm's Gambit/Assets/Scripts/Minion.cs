@@ -17,7 +17,8 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     Mark, //Complete in "Damage Taken" function - second number determines amount of stacks
     HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
     Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
-    Naturopath //Complete in "Damage Taken" function - second number is value to add to the heal
+    Naturopath, //Complete in "Damage Taken" function - second number is value to add to the heal
+    Exploit //Complete in "Minion Used" function - second number is value of stacks
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -69,7 +70,7 @@ public class Minion : MonoBehaviour
         {
             currentAffixes.Add(affix, value);
         }
-        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
+        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
@@ -181,6 +182,16 @@ public class Minion : MonoBehaviour
                 {
                     DamageToDeal += currentAffixes[Affix.Strength];
                     currentAffixes.Remove(Affix.Strength);
+                }
+                if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
+                {
+                    int currentExploitStacks = currentAffixes[Affix.Exploit];
+                    DamageToDeal += currentExploitStacks; //Adds current stacks
+                    currentAffixes.Remove(Affix.Exploit); //Removes current stack value
+                    if (currentExploitStacks >= 2)
+                    {
+                        currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
+                    }
                 }
                 if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Damage Modification for if damage reduction is applied
                 {

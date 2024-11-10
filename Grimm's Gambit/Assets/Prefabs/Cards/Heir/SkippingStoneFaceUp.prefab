@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: -4845071747994481194}
   - component: {fileID: 8423664552441109436}
   m_Layer: 7
-  m_Name: StoneTossFaceUp
+  m_Name: SkippingStoneFaceUp
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Stone Toss
+  cardName: Skipping Stone
   cardCost: 0
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
