@@ -18,7 +18,7 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
     Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
     Naturopath, //Complete in "Damage Taken" function - second number is value to add to the heal
-    Exploit //Complete in "Minion Used" function - second number is value of stacks
+    Exploit //Complete in "Damage Taken" function - second number is value of stacks
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -183,16 +183,6 @@ public class Minion : MonoBehaviour
                     DamageToDeal += currentAffixes[Affix.Strength];
                     currentAffixes.Remove(Affix.Strength);
                 }
-                if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
-                {
-                    int currentExploitStacks = currentAffixes[Affix.Exploit];
-                    DamageToDeal += currentExploitStacks; //Adds current stacks
-                    currentAffixes.Remove(Affix.Exploit); //Removes current stack value
-                    if (currentExploitStacks >= 2)
-                    {
-                        currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
-                    }
-                }
                 if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Damage Modification for if damage reduction is applied
                 {
                     DamageToDeal = (int) (DamageToDeal*.75); //Changes damage, reduced by 25 percent if damage reduction is currently applied
@@ -217,6 +207,16 @@ public class Minion : MonoBehaviour
             if (currentAffixes.ContainsKey(Affix.Mark)) //Condition for when the character is marked
             {
                 DamageToDeal += 3; //Adds 3 damage if mark is applied
+            }
+            if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
+            {
+                int currentExploitStacks = currentAffixes[Affix.Exploit];
+                DamageToDeal += currentExploitStacks; //Adds current stacks
+                currentAffixes.Remove(Affix.Exploit); //Removes current stack value
+                if (currentExploitStacks >= 2)
+                {
+                    currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
+                }
             }
             if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Condition for when the character is vulnerable
             {
@@ -318,5 +318,33 @@ public class Minion : MonoBehaviour
         int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
         currentAffixes.Remove(Affix.Bleed); //Removes bleed
         currentAffixes.Add(Affix.Bleed, currentBleedStacks * 2); //Reimplements bleed with a doubled amount of stacks
+    }
+
+    public void Cleanse() //Public function to remove all negative affixes
+    {
+        if (currentAffixes.ContainsKey(Affix.DamageReduction)) 
+        {
+            currentAffixes.Remove(Affix.DamageReduction);
+        }
+        if (currentAffixes.ContainsKey(Affix.Vulnerable)) 
+        {
+            currentAffixes.Remove(Affix.Vulnerable);
+        }
+        if (currentAffixes.ContainsKey(Affix.Bleed)) 
+        {
+            currentAffixes.Remove(Affix.Bleed);
+        }
+        if (currentAffixes.ContainsKey(Affix.Mark)) 
+        {
+            currentAffixes.Remove(Affix.Mark);
+        }
+        if (currentAffixes.ContainsKey(Affix.Threaded)) 
+        {
+            currentAffixes.Remove(Affix.Threaded);
+        }
+        if (currentAffixes.ContainsKey(Affix.Exploit)) 
+        {
+            currentAffixes.Remove(Affix.Exploit);
+        }
     }
 }
