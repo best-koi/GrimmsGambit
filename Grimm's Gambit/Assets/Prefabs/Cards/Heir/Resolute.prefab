@@ -519,9 +519,10 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 7487279576734146463}
+  - component: {fileID: 9163395691850662022}
+  - component: {fileID: -6798944301018543359}
   m_Layer: 7
-  m_Name: EmergencySupplies
+  m_Name: Resolute
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -648,13 +649,13 @@ MonoBehaviour:
   cardName: Emergency Supplies
   cardCost: 1
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
-  target: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
+  target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
-  awaitingTarget: 0
+  awaitingTarget: 1
   m_Index: 18
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &7487279576734146463
+--- !u!114 &9163395691850662022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,7 +664,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2ff255f797b734899d54723d4cfdc9, type: 3}
+  m_Script: {fileID: 11500000, guid: eb9c14fdde394ed4da3da6fa2ddf9312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Amount: 3
+--- !u!114 &-6798944301018543359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27529e393a911ed4e9a8500fe1889fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

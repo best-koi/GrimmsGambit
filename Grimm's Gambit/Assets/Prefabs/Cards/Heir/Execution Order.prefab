@@ -519,9 +519,9 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 7487279576734146463}
+  - component: {fileID: -701008197865183778}
   m_Layer: 7
-  m_Name: EmergencySupplies
+  m_Name: Execution Order
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,8 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Emergency Supplies
-  cardCost: 1
+  cardName: Execution Order
+  cardCost: 2
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
   caster: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Index: 18
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &7487279576734146463
+--- !u!114 &-701008197865183778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,7 +663,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2ff255f797b734899d54723d4cfdc9, type: 3}
+  m_Script: {fileID: 11500000, guid: d0f373c0c9f549349b9892c29f411182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Amount: 3
+  TargetingFriendlies: 1
+  debuffs: 07000000
+  values: 05000000

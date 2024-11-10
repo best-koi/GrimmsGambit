@@ -13,9 +13,20 @@ public class AOEHeal : SpellComponent
     }
     public override void DoSpellEffect()
     {
-        List<GameObject> party = FindObjectOfType<UnitParty>().GetAllMembers();
-
-        foreach (GameObject member in party)
+        //The following assumes that only two parties exist and characters have properly labeled owners.
+        //This is used to ensure that the friendly party is healed
+        List<GameObject> friendlyParty;
+        UnitParty[] parties = FindObjectsOfType<UnitParty>();
+        List<GameObject> currentParty = parties[0].GetAllMembers();   
+        if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
+        {
+            friendlyParty = currentParty;
+        }
+        else
+        {
+            friendlyParty = parties[1].GetAllMembers();
+        }
+        foreach (GameObject member in friendlyParty)
         {
             target = member.GetComponent<Minion>();
             target.DamageTaken(m_Amount);
