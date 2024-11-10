@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
   - component: {fileID: -4923707591809985156}
+  - component: {fileID: 7062656551720678307}
   m_Layer: 7
   m_Name: MercenaryPushThrough
   m_TagString: Card
@@ -645,8 +646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Follow Through
-  cardCost: 1
+  cardName: Push Through
+  cardCost: 0
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 62c534803496b0b48b9a518befcab131, type: 3}
@@ -667,3 +668,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
+--- !u!114 &7062656551720678307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78e5da4f270b2b4b868b7a415b41b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3

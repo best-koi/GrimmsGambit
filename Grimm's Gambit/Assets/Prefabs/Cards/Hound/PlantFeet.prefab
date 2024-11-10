@@ -519,10 +519,9 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: -4923707591809985156}
-  - component: {fileID: 8027110689378889151}
+  - component: {fileID: 6019512946585296951}
   m_Layer: 7
-  m_Name: MercenaryEuphoricBlow
+  m_Name: PlantFeet
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,29 +645,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Euphoric Blow
-  cardCost: 2
+  cardName: Plant Feet
+  cardCost: 1
   m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
-  caster: {fileID: 5887165854426100928, guid: 62c534803496b0b48b9a518befcab131, type: 3}
+  caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
   awaitingTarget: 1
-  m_Index: 0
+  m_Index: 27
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &-4923707591809985156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6378898911713981695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 17
---- !u!114 &8027110689378889151
+--- !u!114 &6019512946585296951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,4 +667,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debuffs: 01000000
-  values: 08000000
+  values: 0a000000
