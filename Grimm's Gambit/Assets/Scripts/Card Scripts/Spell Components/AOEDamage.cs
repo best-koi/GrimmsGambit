@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AOEHeal : SpellComponent
+public class AOEDamage : SpellComponent
 {
-    [SerializeField] int m_Amount = 3;
+    [SerializeField] int m_Amount;
 
-    public AOEHeal()
+    public AOEDamage()
     {
-        spellName = "Heal";
-        spellDescription = "Heal an amount for the party.";
+        spellName = "AOE Attack";
+        spellDescription = "Deal an amount of damage to the enemy party.";
     }
     public override void DoSpellEffect()
     {
@@ -18,7 +18,7 @@ public class AOEHeal : SpellComponent
         foreach (GameObject member in party)
         {
             target = member.GetComponent<Minion>();
-            target.DamageTaken(-m_Amount);
+            target.DamageTaken(m_Amount);
         }
     }
 }
