@@ -66,7 +66,7 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
-        if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
+        if (!currentAffixes.ContainsKey(affix) && value > 0) //Adds affixes that are not currently present
         {
             currentAffixes.Add(affix, value);
         }
@@ -74,7 +74,7 @@ public class Minion : MonoBehaviour
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
-            if (currentValue + value > 0) //Allows for this function to have negative values for stacking affixes
+            if (currentValue + value > 0 && affix != Affix.Bleed) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
             {
                 currentAffixes.Add(affix, currentValue+value);
             }
@@ -104,8 +104,12 @@ public class Minion : MonoBehaviour
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
         {
-            DamageTaken(currentAffixes[Affix.Bleed]); //Applies damage equal to the amount of charges
-            RemoveOneCharge(Affix.Bleed); //Removes one charge
+            int currentBleed = currentAffixes[Affix.Bleed];
+            if (currentBleed > 0) //If bleed stacks are negative, it works as a bleed shield
+            {
+                DamageTaken(currentBleed); //Applies damage equal to the amount of charges
+                RemoveOneCharge(Affix.Bleed); //Removes one charge
+            }
         } 
         if (currentAffixes.ContainsKey(Affix.Taunt)) //Removing of a Bleed charge at the start of each new turn
         {
@@ -316,11 +320,11 @@ public class Minion : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Gouge() //Public function to double bleed stacks on minion, doing the gouge effect
+    public void Gouge(int Factor = 2) //Public function to double bleed stacks on minion, doing the gouge effect
     {
         int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
         currentAffixes.Remove(Affix.Bleed); //Removes bleed
-        currentAffixes.Add(Affix.Bleed, currentBleedStacks * 2); //Reimplements bleed with a doubled amount of stacks
+        currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
     }
 
     public void Cleanse() //Public function to remove all negative affixes
@@ -348,6 +352,20 @@ public class Minion : MonoBehaviour
         if (currentAffixes.ContainsKey(Affix.Exploit)) 
         {
             currentAffixes.Remove(Affix.Exploit);
+        }
+    }
+
+    public bool HasADebuff() //Returns a true if this minion has a debuff
+    {
+        if (currentAffixes.ContainsKey(Affix.DamageReduction) || currentAffixes.ContainsKey(Affix.Vulnerable ) ||
+        currentAffixes.ContainsKey(Affix.Bleed) || currentAffixes.ContainsKey(Affix.Mark)||
+        currentAffixes.ContainsKey(Affix.Threaded) || currentAffixes.ContainsKey(Affix.Exploit))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

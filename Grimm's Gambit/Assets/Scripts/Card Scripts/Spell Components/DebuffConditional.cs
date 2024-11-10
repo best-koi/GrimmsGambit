@@ -6,6 +6,7 @@ public class DebuffConditional : SpellComponent
 {
     public Affix conditionDebuff;
     public int spiritGain;
+    public int cardDraw = 0;
     public Affix[] resultantDebuffs;
     public int[] resultantValues;
     public DebuffConditional()
@@ -19,9 +20,17 @@ public class DebuffConditional : SpellComponent
     {
         if (target.currentAffixes.ContainsKey(conditionDebuff))
         {
-            EncounterController encounterController = FindObjectOfType<EncounterController>();
-            // Spending negative resources adds additional resources 
-            encounterController.SpendResources(-1 * spiritGain);
+            if (spiritGain > 0)
+            {
+                EncounterController encounterController = FindObjectOfType<EncounterController>();
+                // Spending negative resources adds additional resources 
+                encounterController.SpendResources(-1 * spiritGain);
+            }
+            if (cardDraw > 0)
+            {
+                Deck deck = FindObjectOfType<Deck>();
+                deck.DrawAmount(false, cardDraw);
+            }
             for(int i = 0; i < resultantDebuffs.Length; i++) 
             {
                 target.AddAffix(resultantDebuffs[i], resultantValues[i]);
