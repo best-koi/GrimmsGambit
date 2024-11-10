@@ -16,7 +16,8 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     Bleed, //Complete in "Establish New Turn" function - second number determines amount of stacks
     Mark, //Complete in "Damage Taken" function - second number determines amount of stacks
     HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
-    Threaded //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
+    Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
+    Naturopath //Complete in "Damage Taken" function - second number is value to add to the heal
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -68,7 +69,7 @@ public class Minion : MonoBehaviour
         {
             currentAffixes.Add(affix, value);
         }
-        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
+        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
@@ -227,6 +228,20 @@ public class Minion : MonoBehaviour
                 }
             }
         }
+        else //Heal condition
+        {
+            if (currentAffixes.ContainsKey(Affix.Naturopath)) //Condition for naturopath
+            {
+                int HealModifier = currentAffixes[Affix.Naturopath];
+                int RemainingCharges = currentHealth - (DamageToDeal - HealModifier);
+                DamageToDeal -= currentAffixes[Affix.Naturopath]; //Adds stored value to healing amount
+                currentAffixes.Remove(Affix.Naturopath); //Consumes all naturopath stacks
+                if (RemainingCharges > 0)
+                {
+                    currentAffixes.Add(Affix.Naturopath, RemainingCharges); //Adds back remaining charges to prevent overheal, if possible
+                }
+            }
+        }
         
         currentHealth -= DamageToDeal;
 
@@ -285,5 +300,12 @@ public class Minion : MonoBehaviour
         deck.RemoveCards(this);
 
         Destroy(gameObject);
+    }
+
+    public void Gouge() //Public function to double bleed stacks on minion, doing the gouge effect
+    {
+        int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
+        currentAffixes.Remove(Affix.Bleed); //Removes bleed
+        currentAffixes.Add(Affix.Bleed, currentBleedStacks * 2); //Reimplements bleed with a doubled amount of stacks
     }
 }
