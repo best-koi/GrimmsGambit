@@ -1211,12 +1211,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 1634300097215933525, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
+      objectReference: {fileID: 1634300097215933525, guid: 6f7ed8366a63941c5bdf4c1928c71dda, type: 3}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
@@ -2306,7 +2306,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682190480}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 26b6e6fe07ef54295983075706a2c2e2, type: 3}
