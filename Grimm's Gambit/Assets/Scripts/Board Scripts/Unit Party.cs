@@ -65,6 +65,11 @@ public class UnitParty : MonoBehaviour
             m_PartyMembers.Add(transform.GetChild(i).gameObject);
     }
 
+    public int IndexOf(GameObject obj)
+    {
+        return m_PartyMembers.IndexOf(obj);
+    }
+
     public void SwitchMemberIndices(int firstIndex, int secondIndex)
     {
         string methodName = nameof(SwitchMemberIndices);
@@ -86,6 +91,31 @@ public class UnitParty : MonoBehaviour
 
             UpdatePartyPositions();
         }
+    }
+
+    public void SwitchMembers(GameObject firstUnit, GameObject secondUnit)
+    {
+        string methodName = nameof(SwitchMemberIndices);
+
+        int firstIndex = IndexOf(firstUnit);
+        if (!CheckIndex(firstIndex, methodName))
+            return;
+
+        int secondIndex = IndexOf(secondUnit);
+        if (!CheckIndex(secondIndex, methodName))
+            return;
+
+        if (CheckReference(firstUnit, methodName))
+            secondUnit.transform.SetSiblingIndex(firstIndex);
+        if (CheckReference(secondUnit, methodName))
+            firstUnit.transform.SetSiblingIndex(secondIndex);
+
+        m_PartyMembers.RemoveAt(firstIndex);
+        m_PartyMembers.Insert(firstIndex, secondUnit);
+        m_PartyMembers.RemoveAt(secondIndex);
+        m_PartyMembers.Insert(secondIndex, firstUnit);
+
+        UpdatePartyPositions();
     }
 
     public void ShiftPartyList(int increment)
@@ -261,8 +291,13 @@ public class UnitPartyEditor : Editor
 {
     private int m_GetIndex;
 
+    private GameObject m_GetObject;
+
     private int m_FirstIndex;
     private int m_SecondIndex;
+
+    private GameObject m_FirstObject;
+    private GameObject m_SecondObject;
 
     private int m_ShiftIncrementation;
 
@@ -291,12 +326,29 @@ public class UnitPartyEditor : Editor
 
         EditorGUILayout.Space();
 
+        EditorGUILayout.LabelField("Get Index Method", EditorStyles.boldLabel);
+        m_GetObject = (GameObject)EditorGUILayout.ObjectField("Insert GameObject: ", m_GetObject, typeof(GameObject), true);
+
+        if (GUILayout.Button("Get Index"))
+            Debug.Log(tool.IndexOf(m_GetObject));
+
+        EditorGUILayout.Space();
+
         EditorGUILayout.LabelField("Switch Indices Method", EditorStyles.boldLabel);
         m_FirstIndex = EditorGUILayout.IntField("First Index: ", m_FirstIndex);
         m_SecondIndex = EditorGUILayout.IntField("Second Index: ", m_SecondIndex);
 
         if (GUILayout.Button("Switch Indices"))
             tool.SwitchMemberIndices(m_FirstIndex, m_SecondIndex);
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Switch GameObject Placements Method", EditorStyles.boldLabel);
+        m_FirstObject = (GameObject)EditorGUILayout.ObjectField("First GameObject: ", m_FirstObject, typeof(GameObject), true);
+        m_SecondObject = (GameObject)EditorGUILayout.ObjectField("Second GameObject: ", m_SecondObject, typeof(GameObject), true);
+
+        if (GUILayout.Button("Switch Indices"))
+            tool.SwitchMembers(m_FirstObject, m_SecondObject);
 
         EditorGUILayout.Space();
 
