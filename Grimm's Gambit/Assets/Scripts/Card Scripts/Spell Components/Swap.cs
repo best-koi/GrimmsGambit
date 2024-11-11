@@ -11,6 +11,18 @@ public class Swap : SpellComponent
     }
     public override void DoSpellEffect() //Swaps positions of caster and target
     {
+        UnitParty friendlyUnitParty;
+        UnitParty[] parties = FindObjectsOfType<UnitParty>();
+        List<GameObject> currentParty = parties[0].GetAllMembers();
+        if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
+            friendlyUnitParty = parties[0];
+        else
+            friendlyUnitParty = parties[1];
+
+        //Performs swap with determined index values
+        friendlyUnitParty.SwitchMembers(target.gameObject, caster.gameObject);
+
+        /*
         //Retrieves unit friendly unit party reference
         List<GameObject> friendlyParty;
         UnitParty friendlyUnitParty;
@@ -42,5 +54,6 @@ public class Swap : SpellComponent
         }
         //Performs swap with determined index values
         friendlyUnitParty.SwitchMemberIndices(targetIndex, casterIndex);
+        */
     }
 }
