@@ -27,6 +27,7 @@ public class CardDatabase : MonoBehaviour
         for (int i = 0; i < m_Prefabs.Length; i++)
         {
             Card card = GetCard(i);
+            card.SetIndex(i);
 
             // Skip reversed cards
             if (card.GetIndex() % 2 == 1) continue;

@@ -32,6 +32,8 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private CardHand m_CardHand;
 
+    private bool Tired = false; //Variable to control whether the player is tired
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -49,6 +51,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
+        // Can theoritcally be removed later if no bugs 
         m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
@@ -79,6 +82,11 @@ public class EncounterController : MonoBehaviour
         if (m_IsPlayerTurn) {
 
             m_CurrentResources = m_MaxResources;
+            if (Tired) //Implemented by Ryan on 11/9/2024 to allow cards to let player become tired
+            {
+                m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
+                Tired = false; //Removes tired status
+            }
             m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
             m_PlayerDeck.DrawAmount(true);
@@ -141,5 +149,10 @@ public class EncounterController : MonoBehaviour
         foreach (GameObject enemy in m_EnemyInventory.GetAllMembers())
             if (enemy.TryGetComponent<EnemySpawner>(out EnemySpawner es))
                 es.GetSpawnedEnemy().GetComponent<Minion>().ConsumeCard();
+    }
+
+    public void BecomeTired() //Function to make player tired
+    {
+        Tired = true;
     }
 }

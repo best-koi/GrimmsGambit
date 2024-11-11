@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HealSpell : SpellComponent
 {
-    [SerializeField] int m_Amount = -3;
+    [SerializeField] int m_Amount = 3;
 
     public HealSpell()
     {
@@ -14,6 +14,6 @@ public class HealSpell : SpellComponent
     }
     public override void DoSpellEffect()
     {
-        target.DamageTaken(m_Amount); 
+        target.DamageTaken(-m_Amount); 
     }
 }

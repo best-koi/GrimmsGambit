@@ -16,7 +16,9 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     Bleed, //Complete in "Establish New Turn" function - second number determines amount of stacks
     Mark, //Complete in "Damage Taken" function - second number determines amount of stacks
     HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
-    Threaded //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
+    Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
+    Naturopath, //Complete in "Damage Taken" function - second number is value to add to the heal
+    Exploit //Complete in "Damage Taken" function - second number is value of stacks
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -64,15 +66,18 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
-        if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
+        if (!currentAffixes.ContainsKey(affix) && value > 0) //Adds affixes that are not currently present
         {
             currentAffixes.Add(affix, value);
         }
-        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
+        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
-            currentAffixes.Add(affix, currentValue+value);
+            if (currentValue + value > 0 && affix != Affix.Bleed) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
+            {
+                currentAffixes.Add(affix, currentValue+value);
+            }
         }
     }
 
@@ -99,8 +104,12 @@ public class Minion : MonoBehaviour
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
         {
-            DamageTaken(currentAffixes[Affix.Bleed]); //Applies damage equal to the amount of charges
-            RemoveOneCharge(Affix.Bleed); //Removes one charge
+            int currentBleed = currentAffixes[Affix.Bleed];
+            if (currentBleed > 0) //If bleed stacks are negative, it works as a bleed shield
+            {
+                DamageTaken(currentBleed); //Applies damage equal to the amount of charges
+                RemoveOneCharge(Affix.Bleed); //Removes one charge
+            }
         } 
         if (currentAffixes.ContainsKey(Affix.Taunt)) //Removing of a Bleed charge at the start of each new turn
         {
@@ -206,6 +215,16 @@ public class Minion : MonoBehaviour
             {
                 DamageToDeal += 3; //Adds 3 damage if mark is applied
             }
+            if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
+            {
+                int currentExploitStacks = currentAffixes[Affix.Exploit];
+                DamageToDeal += currentExploitStacks; //Adds current stacks
+                currentAffixes.Remove(Affix.Exploit); //Removes current stack value
+                if (currentExploitStacks >= 2)
+                {
+                    currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
+                }
+            }
             if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Condition for when the character is vulnerable
             {
                 DamageToDeal = (int) (DamageToDeal * 1.5); //Increases damage dealt by 50 percent, but then casts it to int
@@ -224,6 +243,20 @@ public class Minion : MonoBehaviour
                 {
                     DamageToDeal -= currentBlock;
                     currentAffixes.Remove(Affix.Block); //Removes block affix since all charges are used
+                }
+            }
+        }
+        else //Heal condition
+        {
+            if (currentAffixes.ContainsKey(Affix.Naturopath)) //Condition for naturopath
+            {
+                int HealModifier = currentAffixes[Affix.Naturopath];
+                int RemainingCharges = currentHealth - (DamageToDeal - HealModifier);
+                DamageToDeal -= currentAffixes[Affix.Naturopath]; //Adds stored value to healing amount
+                currentAffixes.Remove(Affix.Naturopath); //Consumes all naturopath stacks
+                if (RemainingCharges > 0)
+                {
+                    currentAffixes.Add(Affix.Naturopath, RemainingCharges); //Adds back remaining charges to prevent overheal, if possible
                 }
             }
         }
@@ -285,5 +318,92 @@ public class Minion : MonoBehaviour
         deck.RemoveCards(this);
 
         Destroy(gameObject);
+    }
+
+    public void Gouge(int Factor = 2) //Public function to double bleed stacks on minion, doing the gouge effect
+    {
+        int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
+        currentAffixes.Remove(Affix.Bleed); //Removes bleed
+        currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
+    }
+
+    public void Cleanse() //Public function to remove all negative affixes
+    {
+        if (currentAffixes.ContainsKey(Affix.DamageReduction)) 
+        {
+            currentAffixes.Remove(Affix.DamageReduction);
+        }
+        if (currentAffixes.ContainsKey(Affix.Vulnerable)) 
+        {
+            currentAffixes.Remove(Affix.Vulnerable);
+        }
+        if (currentAffixes.ContainsKey(Affix.Bleed)) 
+        {
+            currentAffixes.Remove(Affix.Bleed);
+        }
+        if (currentAffixes.ContainsKey(Affix.Mark)) 
+        {
+            currentAffixes.Remove(Affix.Mark);
+        }
+        if (currentAffixes.ContainsKey(Affix.Threaded)) 
+        {
+            currentAffixes.Remove(Affix.Threaded);
+        }
+        if (currentAffixes.ContainsKey(Affix.Exploit)) 
+        {
+            currentAffixes.Remove(Affix.Exploit);
+        }
+    }
+
+    public bool HasADebuff() //Returns a true if this minion has a debuff
+    {
+        if (currentAffixes.ContainsKey(Affix.DamageReduction) || currentAffixes.ContainsKey(Affix.Vulnerable ) ||
+        currentAffixes.ContainsKey(Affix.Bleed) || currentAffixes.ContainsKey(Affix.Mark)||
+        currentAffixes.ContainsKey(Affix.Threaded) || currentAffixes.ContainsKey(Affix.Exploit))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public List<Affix> RetrieveBuffs()
+    {
+        List<Affix> Returnable = new List<Affix>();
+        if (currentAffixes.ContainsKey(Affix.Taunt)) 
+        {
+            Returnable.Add(Affix.Taunt);
+        }
+        if (currentAffixes.ContainsKey(Affix.Block)) 
+        {
+            Returnable.Add(Affix.Block);
+        }
+        if (currentAffixes.ContainsKey(Affix.Thorns)) 
+        {
+            Returnable.Add(Affix.Thorns);
+        }
+        if (currentAffixes.ContainsKey(Affix.Regen)) 
+        {
+            Returnable.Add(Affix.Regen);
+        }
+        if (currentAffixes.ContainsKey(Affix.Parasite)) 
+        {
+            Returnable.Add(Affix.Parasite);
+        }
+        if (currentAffixes.ContainsKey(Affix.Strength)) 
+        {
+            Returnable.Add(Affix.Strength);
+        }
+        if (currentAffixes.ContainsKey(Affix.HoundCounter)) 
+        {
+            Returnable.Add(Affix.HoundCounter);
+        }
+        if (currentAffixes.ContainsKey(Affix.Naturopath)) 
+        {
+            Returnable.Add(Affix.Naturopath);
+        }
+        return Returnable;
     }
 }
