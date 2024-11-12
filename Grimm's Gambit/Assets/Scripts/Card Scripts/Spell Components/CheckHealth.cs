@@ -5,19 +5,19 @@ using UnityEngine;
 public class CheckHealth : SpellComponent
 {
     private protected float m_HealthGate;
-    private protected bool m_CheckingTarget;
+    private protected bool m_CheckingSelf;
 
     public CheckHealth()
     {
         spellName = "Check Health";
         spellDescription = "Check if the health of the target or the caster is below the health gate.";
 
-        if (m_CheckingTarget) requiresTarget = true;
+        if (!m_CheckingSelf) requiresTarget = true;
     }
 
     public bool CheckGate()
     {
-        if (m_CheckingTarget) return (target.currentHealth / target.maxHealth) <= m_HealthGate;
+        if (!m_CheckingSelf) return (target.currentHealth / target.maxHealth) <= m_HealthGate;
         return (caster.currentHealth / caster.maxHealth) <= m_HealthGate;
     }
 

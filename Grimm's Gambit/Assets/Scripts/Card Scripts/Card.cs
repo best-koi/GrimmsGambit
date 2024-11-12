@@ -117,6 +117,11 @@ public class Card : MonoBehaviour
         return caster;
     }
 
+    public Minion GetTarget()
+    {
+        return target;
+    }
+
     public int NumCopies
     {
         get

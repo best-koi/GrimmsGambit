@@ -109,7 +109,6 @@ public class EncounterController : MonoBehaviour
             {
                 EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
-
             }
             m_TurnText.text = "Enemy Turn";
 
