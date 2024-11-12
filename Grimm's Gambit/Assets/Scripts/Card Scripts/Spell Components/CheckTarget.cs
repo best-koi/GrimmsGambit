@@ -35,9 +35,7 @@ public class CheckTarget : SpellComponent
 
         foreach (GameObject member in enemyParty)
         {
-            // Unfinished
-            // Check if that member is targeting minionToCheck
-            if (member.GetComponent<EnemyTemplate>())
+            if (member.GetComponent<EnemyTemplate>().GetAttackTarget() == minionToCheck)
             {
                 m_IsBeingTargeted = true;
                 break;

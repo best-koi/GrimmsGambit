@@ -188,7 +188,7 @@ protected void RandomAttack(){
     }
 
 //Returns the character who is being targeted
-protected Minion GetAttackTarget(){
+public Minion GetAttackTarget(){
     return attackTarget.GetComponent<Minion>();
 }
 
