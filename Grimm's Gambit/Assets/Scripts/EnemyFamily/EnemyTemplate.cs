@@ -40,6 +40,8 @@ protected List<string> randomAttacks;//A list of random attacks to pull from (fo
 [SerializeField]
 protected List<string> combinedAttacks;//A list of random attacks to pull from (for RandomAttack() method)
 
+protected CharacterTemplate attackTarget;//A character to attack
+
 protected string randomAttackName;//The name of the planned random attack
 
     //AttackPattern() essentially calls the next attack from the list
@@ -184,6 +186,11 @@ protected void RandomAttack(){
         foreach(string s in combinedAttacks)
             Invoke(s, 0f);
     }
+
+//Returns the character who is being targeted
+protected Minion GetAttackTarget(){
+    return attackTarget.GetComponent<Minion>();
+}
 
     
 

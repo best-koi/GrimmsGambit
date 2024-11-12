@@ -15,7 +15,7 @@ public class Coward : EnemyPositionTarget
         {
             if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetHP() < weakest.GetHP())
             {
-                positionTarget = c.GetComponent<CharacterTemplate>();
+                attackTarget = c.GetComponent<CharacterTemplate>();
                 return;
             }
         }
@@ -25,11 +25,11 @@ public class Coward : EnemyPositionTarget
     {
         foreach (CharacterTemplate c in orderedCharacters)
         {
-            if (c == positionTarget)
+            if (c == attackTarget)
                 continue;
             else if (c.GetHP() > 0)
             {
-                positionTarget = c;
+                attackTarget = c;
                 return true;
             }
             else

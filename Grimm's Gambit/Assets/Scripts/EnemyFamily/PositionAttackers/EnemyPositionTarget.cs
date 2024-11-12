@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class EnemyPositionTarget : EnemyTemplate
 {
-    [SerializeField]    protected CharacterTemplate positionTarget;//A character to target based on position, if necessary
 
     protected List<CharacterTemplate> orderedCharacters = new List<CharacterTemplate>();//A list of ordered characters 
 
@@ -57,7 +56,7 @@ public class EnemyPositionTarget : EnemyTemplate
         {
             if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetCharacterPosition() == p)
             {
-                positionTarget = c.GetComponent<CharacterTemplate>();
+                attackTarget = c.GetComponent<CharacterTemplate>();
                 return;
             }
         }
@@ -69,10 +68,10 @@ public class EnemyPositionTarget : EnemyTemplate
     {
       
             FindPositionedTarget(position);
-            if (positionTarget == null)
+            if (attackTarget == null)
                 SeekNewTargetInOrder();
             else
-                minion.MinionUsed(positionTarget.GetComponent<Minion>(), attackValue);
+                minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
 
         
 
@@ -83,7 +82,7 @@ public class EnemyPositionTarget : EnemyTemplate
     //If no one is left, return false
     protected override bool CanAttackTarget()
     {
-        if (positionTarget == null) //positionTarget.GetDestroyed())
+        if (attackTarget == null) //positionTarget.GetDestroyed())
         {
             return SeekNewTargetInOrder();
 
@@ -104,7 +103,7 @@ public class EnemyPositionTarget : EnemyTemplate
             else if (c.GetHP() > 0)
             {
                 position = c.GetCharacterPosition();
-                positionTarget = c;
+                attackTarget = c;
                 return true;
             }
             else
@@ -123,7 +122,7 @@ public class EnemyPositionTarget : EnemyTemplate
         switch (attacks[currentAttack])
         {
             case "Attack":
-                if (positionTarget == null)
+                if (attackTarget == null)
                     FindPositionedTarget(position);
 
                 if (!CanAttackTarget())
@@ -137,10 +136,10 @@ public class EnemyPositionTarget : EnemyTemplate
                 {
                    //Text display for buffs; second if is for non-buff
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
-                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
                         else
-                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
-                        moveText.color = positionTarget.GetCharacterColor();
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                        moveText.color = attackTarget.GetCharacterColor();
 
                 }
 

@@ -8,8 +8,12 @@ public class AoEEnemy : EnemyPositionTarget
     //An Attack method to be used for honing in on specific positioned players
     protected override void Attack()
     {
-            foreach(CharacterTemplate c in orderedCharacters)
+            foreach(CharacterTemplate c in orderedCharacters){
+                if(c == null)
+                    continue;
                 minion.MinionUsed(c.GetComponent<Minion>(), attackValue);
+            }
+                
         
     }
 
