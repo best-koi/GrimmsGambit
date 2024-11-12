@@ -17,7 +17,7 @@ public class DireWolf : EnemyRandomTarget
         foreach(EnemyTemplate e in enemies){
             if(e == this)
                 continue;
-            else if(e.GetEnemyName() == "Wolf"){
+            else if(e.GetEnemyName().Contains("Wolf")){
                 e.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
             }
         }
