@@ -406,4 +406,11 @@ public class Minion : MonoBehaviour
         }
         return Returnable;
     }
+
+    public int RemoveAffixAndCount(Affix AffixToRemove)
+    {
+        int currentCount = currentAffixes[AffixToRemove]; //Counts current count
+        currentAffixes.Remove(AffixToRemove); //Removes affix
+        return currentCount;
+    }
 }
