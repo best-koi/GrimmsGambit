@@ -9,6 +9,7 @@ public class DebuffConditional : SpellComponent
     public int cardDraw = 0;
     public Affix[] resultantDebuffs;
     public int[] resultantValues;
+
     public DebuffConditional()
     {
         requiresTarget = true;
