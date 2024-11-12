@@ -17,10 +17,9 @@ public class CheckTarget : SpellComponent
 
     public override void DoSpellEffect()
     {
-        Card thisCard = GetComponent<Card>();
         Minion minionToCheck;
-        if (requiresTarget) minionToCheck = thisCard.GetTarget();
-        else minionToCheck = thisCard.GetCaster();
+        if (requiresTarget) minionToCheck = caster;
+        else minionToCheck = target;
 
         List<GameObject> enemyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
@@ -37,9 +36,8 @@ public class CheckTarget : SpellComponent
         foreach (GameObject member in enemyParty)
         {
             // Unfinished
-            // Likely will be changed from minion
             // Check if that member is targeting minionToCheck
-            if (member.GetComponent<Minion>())
+            if (member.GetComponent<EnemyTemplate>())
             {
                 m_IsBeingTargeted = true;
                 break;

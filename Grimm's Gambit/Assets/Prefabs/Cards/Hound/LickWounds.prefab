@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
+  - component: {fileID: 7334718976771888110}
   m_Layer: 7
   m_Name: LickWounds
   m_TagString: Card
@@ -653,3 +654,19 @@ MonoBehaviour:
   m_Index: 3
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
+--- !u!114 &7334718976771888110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3961b7cc677b7c147b4da69eda19731f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuff: 1
+  m_TargetingSelf: 0
+  m_AmountMultiplier: 0.5
+  m_HealTarget: 1
