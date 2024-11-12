@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyRandomTarget : EnemyTemplate
 {
-    protected CharacterTemplate attackTarget;//A character to attack
-
     protected List<CharacterTemplate> targets = new List<CharacterTemplate>();//a list of all available targets, for random attacks
 
     protected EncounterController controller;

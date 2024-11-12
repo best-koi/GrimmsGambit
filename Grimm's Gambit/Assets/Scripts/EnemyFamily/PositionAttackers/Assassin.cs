@@ -12,10 +12,10 @@ protected override void Attack()
     {
       
             FindPositionedTarget(position);
-            if (positionTarget == null)
+            if (attackTarget == null)
                 SeekNewTargetInOrder();
             else
-                minion.MinionUsed(positionTarget.GetComponent<Minion>(), attackValue);
+                minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
 
         
     }
@@ -24,10 +24,10 @@ protected override void Attack()
     {
       
             FindPositionedTarget(position);
-            if (positionTarget == null)
+            if (attackTarget == null)
                 SeekNewTargetInOrder();
             else
-                minion.MinionUsed(positionTarget.GetComponent<Minion>(), secondaryAttackValue);
+                minion.MinionUsed(attackTarget.GetComponent<Minion>(), secondaryAttackValue);
 
         
 
@@ -35,13 +35,13 @@ protected override void Attack()
     
     protected void AttackBleed(){
         SecondaryAttack();
-        positionTarget.GetComponent<Minion>().AddAffix(Affix.Bleed, buffValue);
+        attackTarget.GetComponent<Minion>().AddAffix(Affix.Bleed, buffValue);
 
     }
 
     protected void AttackGouge(){
         SecondaryAttack();
-        //positionTarget.GetComponent<Minion>().AddAffix(Affix.Gouge, buffValue);
+        //attackTarget.GetComponent<Minion>().AddAffix(Affix.Gouge, buffValue);
     }
 
      protected override void CheckCurrentAttack()
@@ -49,7 +49,7 @@ protected override void Attack()
         switch (attacks[currentAttack])
         {
             case "Attack":
-                if (positionTarget == null)
+                if (attackTarget == null)
                     FindPositionedTarget(position);
 
                 if (!CanAttackTarget())
@@ -63,10 +63,10 @@ protected override void Attack()
                 {
                    //Text display for buffs; second if is for non-buff
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
-                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
                         else
-                            moveText.text = $"Attack {positionTarget.GetCharacterName()} for {attackValue} DMG";
-                        moveText.color = positionTarget.GetCharacterColor();
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                        moveText.color = attackTarget.GetCharacterColor();
 
                 }
 
@@ -77,15 +77,15 @@ protected override void Attack()
                 moveText.color = this.GetEnemyColor();
                 break;
              case "AttackBleed":
-             if (positionTarget == null)
+             if (attackTarget == null)
                     FindPositionedTarget(position);
-                moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Bleed to {positionTarget.GetCharacterName()}";
+                moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Bleed to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
                 break;
             case "AttackGouge":
-            if (positionTarget == null)
+            if (attackTarget == null)
                     FindPositionedTarget(position);
-                moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Gouge to {positionTarget.GetCharacterName()}";
+                moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Gouge to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
                 break;
             case "Block":
