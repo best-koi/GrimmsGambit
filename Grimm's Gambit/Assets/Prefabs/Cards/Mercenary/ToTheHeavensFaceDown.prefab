@@ -519,8 +519,10 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 9182783928574888670}
   - component: {fileID: 6482157133095232551}
+  - component: {fileID: 8514470596739543518}
+  - component: {fileID: 51082485830380586}
+  - component: {fileID: 4505225703642399232}
   m_Layer: 7
   m_Name: ToTheHeavensFaceDown
   m_TagString: Card
@@ -655,19 +657,6 @@ MonoBehaviour:
   m_Index: 0
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &9182783928574888670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6378898911713981695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
 --- !u!114 &6482157133095232551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,3 +670,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &8514470596739543518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0539a92e0b7288349a06c7f708f4517d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuffs: 07000000
+  values: 02000000
+  m_CheckingSelf: 1
+--- !u!114 &51082485830380586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+--- !u!114 &4505225703642399232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3961b7cc677b7c147b4da69eda19731f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuff: 7
+  m_TargetingSelf: 1
+  m_AmountMultiplier: 0
+  m_HealTarget: 0
