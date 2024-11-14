@@ -13,14 +13,14 @@ public class Swap : SpellComponent
     {
         UnitParty friendlyUnitParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();
+        List<Transform> currentParty = parties[0].GetAll();
         if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
             friendlyUnitParty = parties[0];
         else
             friendlyUnitParty = parties[1];
 
         //Performs swap with determined index values
-        friendlyUnitParty.SwitchMembers(target.gameObject, caster.gameObject);
+        friendlyUnitParty.SwitchChildren(target.transform, caster.transform);
 
         /*
         //Retrieves unit friendly unit party reference

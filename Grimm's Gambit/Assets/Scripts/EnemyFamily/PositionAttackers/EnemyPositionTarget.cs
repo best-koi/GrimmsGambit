@@ -28,10 +28,10 @@ public class EnemyPositionTarget : EnemyTemplate
     //From 1 to 3 (front to back)
     protected void OrderCharacters()
     {
-        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
+        List<Transform> characters = controller.GetPlayerInventory().GetAll();
         for (int i = 1; i < 4; i++)
         {
-            foreach (GameObject c in characters)
+            foreach (Transform c in characters)
             {
                 if (c.GetComponent<CharacterTemplate>().GetCharacterPosition() == i)
                 {
@@ -39,11 +39,8 @@ public class EnemyPositionTarget : EnemyTemplate
                     break;
 
                 }
-
             }
-
         }
-
     }
 
     //Looks for a target, given a numerical position
@@ -51,8 +48,8 @@ public class EnemyPositionTarget : EnemyTemplate
     //Saves this target to attack
     protected virtual void FindPositionedTarget(int p)
     {
-        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
-        foreach (GameObject c in characters)
+        List<Transform> characters = controller.GetPlayerInventory().GetAll();
+        foreach (Transform c in characters)
         {
             if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetCharacterPosition() == p)
             {
@@ -66,15 +63,11 @@ public class EnemyPositionTarget : EnemyTemplate
     //An Attack method to be used for honing in on specific positioned players
     protected override void Attack()
     {
-      
-            FindPositionedTarget(position);
-            if (attackTarget == null)
-                SeekNewTargetInOrder();
-            else
-                minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
-
-        
-
+        FindPositionedTarget(position);
+        if (attackTarget == null)
+            SeekNewTargetInOrder();
+        else
+            minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
     }
 
     //Checks if the original position's character was destroyed
@@ -85,7 +78,6 @@ public class EnemyPositionTarget : EnemyTemplate
         if (attackTarget == null) //positionTarget.GetDestroyed())
         {
             return SeekNewTargetInOrder();
-
         }
 
         return true;

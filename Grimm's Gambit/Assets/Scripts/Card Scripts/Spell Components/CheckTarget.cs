@@ -21,19 +21,19 @@ public class CheckTarget : SpellComponent
         if (requiresTarget) minionToCheck = caster;
         else minionToCheck = target;
 
-        List<GameObject> enemyParty;
+        List<Transform> enemyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();
+        List<Transform> currentParty = parties[0].GetAll();
         if (minionToCheck.ownerPlayer != currentParty[0].GetComponent<Minion>().ownerPlayer)
         {
             enemyParty = currentParty;
         }
         else
         {
-            enemyParty = parties[1].GetAllMembers();
+            enemyParty = parties[1].GetAll();
         }
 
-        foreach (GameObject member in enemyParty)
+        foreach (Transform member in enemyParty)
         {
             if (member.GetComponent<EnemyTemplate>().GetAttackTarget() == minionToCheck)
             {
