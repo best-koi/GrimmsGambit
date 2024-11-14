@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,7 +401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceBetweenMembers: 3
-  m_PartyMembers: []
+  m_RowArrangeThreshold: 3
+  m_DistanceBetweenRows: 1
 --- !u!4 &290980548
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,7 +1058,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceBetweenMembers: 4.5
-  m_PartyMembers: []
+  m_RowArrangeThreshold: 3
+  m_DistanceBetweenRows: 1.5
 --- !u!4 &613970854
 Transform:
   m_ObjectHideFlags: 0
@@ -1577,7 +1579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_Size.y
-      value: 0.6611576
+      value: 0.3310163
       objectReference: {fileID: 0}
     - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_Center.x
@@ -1585,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_Center.y
-      value: 7.295579
+      value: 1.3249294
       objectReference: {fileID: 0}
     - target: {fileID: 2393857477294652435, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_Name
@@ -1609,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3173837563165420495, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 3173837563165420495, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
       propertyPath: m_LocalPosition.z

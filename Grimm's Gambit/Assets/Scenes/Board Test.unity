@@ -279,7 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceBetweenMembers: 2
-  m_PartyMembers: []
+  m_RowArrangeThreshold: 3
+  m_DistanceBetweenRows: 1
 --- !u!4 &145302071
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,7 +1235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DistanceBetweenMembers: 2
-  m_PartyMembers: []
+  m_RowArrangeThreshold: 0
+  m_DistanceBetweenRows: 0
 --- !u!4 &1280631641
 Transform:
   m_ObjectHideFlags: 0
