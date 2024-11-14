@@ -89,7 +89,10 @@ public class EncounterController : MonoBehaviour
             }
             m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
-            m_PlayerDeck.DrawAmount(true);
+            if(m_PlayerDeck.GetGameDeckSize() == 0)
+                m_PlayerDeck.EmptyShuffle();
+            else
+                m_PlayerDeck.DrawAmount(true);
             
 
             m_TurnText.text = "Player Turn";
