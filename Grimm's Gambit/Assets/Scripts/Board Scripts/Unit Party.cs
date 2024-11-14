@@ -58,8 +58,6 @@ public class UnitParty : ObjectContainer
             SetChildLocalPosition(m_ChildTransforms[leftIndex - i], new Vector3(-distanceFromCenter, 0f, isEven ? -rowDistanceFromCenter : rowDistanceFromCenter));
             SetChildLocalPosition(m_ChildTransforms[rightIndex + i], new Vector3(distanceFromCenter, 0f, rowDistanceFromCenter));
 
-            //SetChildLocalPosition(m_ChildTransforms[leftIndex - i], Vector3.left * distanceFromCenter);
-            //SetChildLocalPosition(m_ChildTransforms[rightIndex + i], Vector3.right * distanceFromCenter);
             distanceFromCenter += distanceBetweenMembers;
             rowDistanceFromCenter *= -1;
         }
