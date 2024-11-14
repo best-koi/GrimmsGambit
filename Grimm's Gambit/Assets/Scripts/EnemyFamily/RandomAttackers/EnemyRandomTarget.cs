@@ -8,7 +8,6 @@ public class EnemyRandomTarget : EnemyTemplate
 
     protected EncounterController controller;
 
-
     protected override void Start()
     {
         controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
@@ -44,8 +43,8 @@ public class EnemyRandomTarget : EnemyTemplate
     //Gets a list of all active characters from CombatInventory
     protected void GetAllActiveCharacters()
     {
-        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
-        foreach (GameObject c in characters)
+        List<Transform> characters = controller.GetPlayerInventory().GetAll();
+        foreach (Transform c in characters)
         {
             if (c.GetComponent<CharacterTemplate>().GetHP() <= 0)
                 continue;
@@ -101,10 +100,5 @@ public class EnemyRandomTarget : EnemyTemplate
                 moveText.color = Color.white;
                 break;
         }
-
-
     }
-
-
-
 }
