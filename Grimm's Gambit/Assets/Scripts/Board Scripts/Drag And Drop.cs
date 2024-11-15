@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -52,10 +51,20 @@ public class DragAndDrop : MonoBehaviour
             else if (m_SelectedObject != null)
             {
                 // Insert card gameObject into slot gameObject through parenting and local transformations
-                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers) && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()))
+                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers) && (controller == null || controller != null && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost())))
                 {
-                   
-                        m_SelectedObject.parent = hit.transform;
+                    //m_SelectedObject.parent = hit.transform;
+                    Card c = m_SelectedObject.GetComponent<Card>();
+                    Minion hitMinion = hit.transform.parent.GetComponent<Minion>();
+                    if (hitMinion != null) {
+                        hitMinion.ConsumeCard(c);
+                    } else {
+                        controller.SpendResources(-m_SelectedObject.GetComponent<Card>().GetCardCost());
+                    }
+                    //m_SelectedObject.parent = m_SelectedObjectParent;
+                    //m_SelectedObject.SetSiblingIndex(m_SelectedChildIndex);
+                    Destroy(m_SelectedObject.gameObject);
+
                 }
                 else
                 {

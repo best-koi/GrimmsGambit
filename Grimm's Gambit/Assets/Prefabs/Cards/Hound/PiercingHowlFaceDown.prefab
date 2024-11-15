@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 3378193322623738659}
+  - component: {fileID: 3083138472017689625}
   m_Layer: 7
   m_Name: PiercingHowlFaceDown
   m_TagString: Card
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Index: 3
   m_PlayerCopies: 0
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &3378193322623738659
+--- !u!114 &3083138472017689625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18795dbded9d28a4aaf5b28b5b1520b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 06a1b2d3b4b459e41a74094703a985b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debuffs: 000000000a000000

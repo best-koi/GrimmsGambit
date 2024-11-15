@@ -357,8 +357,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43475515, y: 0.30661348, z: 0.41650373}
-  m_Center: {x: -0.13737771, y: 0.14405963, z: 0.15117154}
+  m_Size: {x: 0.43475515, y: 0.8665465, z: 0.41650373}
+  m_Center: {x: -0.13737771, y: 0.424026, z: 0.15117154}
 --- !u!1 &4133276841062574726
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,5 +841,4 @@ MonoBehaviour:
   blockValue: 0
   randomAttacks: []
   combinedAttacks: []
-  positionTarget: {fileID: 0}
   position: 1

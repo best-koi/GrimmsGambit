@@ -667,4 +667,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debuffs: 01000000
-  values: 05000000
+  value: 05000000

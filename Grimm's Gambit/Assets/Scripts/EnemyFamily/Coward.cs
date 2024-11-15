@@ -9,9 +9,9 @@ public class Coward : EnemyPositionTarget
 //Finds the weakest target in group
     protected override void FindPositionedTarget(int p)
     {
-        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
+        List<Transform> characters = controller.GetPlayerInventory().GetAll();
         CharacterTemplate weakest = characters[0].GetComponent<CharacterTemplate>();
-        foreach (GameObject c in characters)
+        foreach (Transform c in characters)
         {
             if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetHP() < weakest.GetHP())
             {

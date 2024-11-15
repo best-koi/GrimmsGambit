@@ -75,7 +75,7 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        List<GameObject> party = m_PlayerInventory.GetAllMembers(), enemies = m_EnemyInventory.GetAllMembers();
+        List<Transform> party = m_PlayerInventory.GetAll(), enemies = m_EnemyInventory.GetAll();
 
         //m_EndButton.interactable = m_IsPlayerTurn;
 
@@ -108,7 +108,7 @@ public class EncounterController : MonoBehaviour
 
             m_TurnText.text = "Enemy Turn";
 
-            foreach (GameObject enemy in enemies)
+            foreach (Transform enemy in enemies)
             {
                 EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
@@ -144,11 +144,11 @@ public class EncounterController : MonoBehaviour
 
     private void ExecuteCards()
     {
-        foreach (GameObject player in m_PlayerInventory.GetAllMembers())
+        foreach (Transform player in m_PlayerInventory.GetAll())
             if (player.TryGetComponent<Minion>(out Minion m))
                 m.ConsumeCard();
 
-        foreach (GameObject enemy in m_EnemyInventory.GetAllMembers())
+        foreach (Transform enemy in m_EnemyInventory.GetAll())
             if (enemy.TryGetComponent<EnemySpawner>(out EnemySpawner es))
                 es.GetSpawnedEnemy().GetComponent<Minion>().ConsumeCard();
     }

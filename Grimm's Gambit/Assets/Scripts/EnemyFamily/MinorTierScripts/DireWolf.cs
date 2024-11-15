@@ -8,16 +8,17 @@ public class DireWolf : EnemyRandomTarget
 [SerializeField] protected List<EnemyTemplate> enemies;
 //Finds enemies to buff who are wolves
     private void Howl(){
-        List<GameObject> spawners = controller.GetEnemyInventory().GetAllMembers();
-        foreach(GameObject s in spawners){
+        List<Transform> spawners = controller.GetEnemyInventory().GetAll();
+        foreach(Transform s in spawners)
+        {
             enemies.Add(s.GetComponent<EnemySpawner>().GetSpawnedEnemy().GetComponent<EnemyTemplate>());
-
         }
         
-        foreach(EnemyTemplate e in enemies){
+        foreach(EnemyTemplate e in enemies)
+        {
             if(e == this)
                 continue;
-            else if(e.GetEnemyName() == "Wolf"){
+            else if(e.GetEnemyName().Contains("Wolf")){
                 e.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
             }
         }
@@ -70,8 +71,5 @@ public class DireWolf : EnemyRandomTarget
                 moveText.color = Color.white;
                 break;
         }
-
-
     }
-
 }

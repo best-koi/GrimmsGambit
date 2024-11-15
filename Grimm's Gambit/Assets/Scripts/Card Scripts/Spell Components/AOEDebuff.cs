@@ -18,24 +18,24 @@ public class AOEDebuff : SpellComponent
     {
         //The following assumes that only two parties exist and characters have properly labeled owners.
         //This is used to register both the friendly and enemy parties for aoe usage
-        List<GameObject> friendlyParty, hostileParty;
+        List<Transform> friendlyParty, hostileParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();   
+        List<Transform> currentParty = parties[0].GetAll();   
         if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
         {
             friendlyParty = currentParty;
-            hostileParty = parties[1].GetAllMembers();
+            hostileParty = parties[1].GetAll();
         }
         else
         {
             hostileParty = currentParty;
-            friendlyParty = parties[1].GetAllMembers();
+            friendlyParty = parties[1].GetAll();
         }
 
         
         if (TargetingFriendlies) //Version for when targetting friendly party
         {
-            foreach (GameObject member in friendlyParty)
+            foreach (Transform member in friendlyParty)
             {
                 target = member.GetComponent<Minion>();
                 for(int i = 0; i < debuffs.Length; i++) 
@@ -46,7 +46,7 @@ public class AOEDebuff : SpellComponent
         }
         else //Condition for targetting enemy party
         {
-            foreach (GameObject member in hostileParty)
+            foreach (Transform member in hostileParty)
             {
                 target = member.GetComponent<Minion>();
                 for(int i = 0; i < debuffs.Length; i++) 
