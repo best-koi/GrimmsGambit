@@ -24,12 +24,15 @@ public class CardDatabase : MonoBehaviour
     {
         List<int> m_PlayerDeck = new List<int>();
 
-        foreach (Card card in m_Data)
+        for (int i = 0; i < m_Prefabs.Length; i++)
         {
+            Card card = GetCard(i);
+            card.SetIndex(i);
+
             // Skip reversed cards
             if (card.GetIndex() % 2 == 1) continue;
 
-            for (int i = 0, copies = card.NumCopies; i < copies; i++)
+            for (int j = 0, copies = card.NumCopies; j < copies; j++)
             {
                 m_PlayerDeck.Add(card.GetIndex());
 
@@ -43,7 +46,8 @@ public class CardDatabase : MonoBehaviour
 
     public Card GetCard(int index)
     {
-        return m_Data[index];
+        //return m_Data[index];
+        return GetPrefab(index).GetComponent<Card>();
     }
 
     public GameObject GetPrefab(int index) 

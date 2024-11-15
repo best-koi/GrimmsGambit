@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class EnemyRandomTarget : EnemyTemplate
 {
-    protected CharacterTemplate attackTarget;//A character to attack
-
     protected List<CharacterTemplate> targets = new List<CharacterTemplate>();//a list of all available targets, for random attacks
 
     protected EncounterController controller;
-
 
     protected override void Start()
     {
@@ -46,8 +43,8 @@ public class EnemyRandomTarget : EnemyTemplate
     //Gets a list of all active characters from CombatInventory
     protected void GetAllActiveCharacters()
     {
-        List<GameObject> characters = controller.GetPlayerInventory().GetAllMembers();
-        foreach (GameObject c in characters)
+        List<Transform> characters = controller.GetPlayerInventory().GetAll();
+        foreach (Transform c in characters)
         {
             if (c.GetComponent<CharacterTemplate>().GetHP() <= 0)
                 continue;
@@ -88,16 +85,20 @@ public class EnemyRandomTarget : EnemyTemplate
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
                 break;
+            case "Block":
+                moveText.text = $"Blocking for {blockValue}";
+                moveText.color = this.GetEnemyColor();
+                break;
+            case "RandomAttack":
+                moveText.text = $"{randomAttackName}";
+                moveText.color = this.GetEnemyColor();
+                break;
+                
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
                 break;
         }
-
-
     }
-
-
-
 }

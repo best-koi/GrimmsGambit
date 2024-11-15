@@ -18,7 +18,7 @@ public class Card : MonoBehaviour
 
     // Index in the database
     // Number that player has in their deck
-    [SerializeField] private protected int m_Index, m_PlayerCopies;
+    [SerializeField] private protected int m_Index = -1, m_PlayerCopies;
 
     [SerializeField] private protected EncounterController m_EncounterController;
 
@@ -117,6 +117,11 @@ public class Card : MonoBehaviour
         return caster;
     }
 
+    public Minion GetTarget()
+    {
+        return target;
+    }
+
     public int NumCopies
     {
         get
@@ -137,5 +142,19 @@ public class Card : MonoBehaviour
     public void SetTarget(Minion newTarget)
     {
         target = newTarget;
+    }
+
+    // Assign index an index value to the card
+    // Returns false if the card already has an index value
+    // Returns true if successfully assigned
+    public bool SetIndex(int i)
+    {
+        if (m_Index != -1)
+        {
+            Debug.Log("Card already has assigned index value.");
+            return false;
+        }
+        m_Index = i;
+        return true;
     }
 }

@@ -32,6 +32,8 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private CardHand m_CardHand;
 
+    private bool Tired = false; //Variable to control whether the player is tired
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -49,6 +51,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
+        // Can theoritcally be removed later if no bugs 
         m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
     }
 
@@ -72,13 +75,19 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        List<GameObject> party = m_PlayerInventory.GetAllMembers(), enemies = m_EnemyInventory.GetAllMembers();
+        List<Transform> party = m_PlayerInventory.GetAll(), enemies = m_EnemyInventory.GetAll();
 
         //m_EndButton.interactable = m_IsPlayerTurn;
 
         if (m_IsPlayerTurn) {
 
             m_CurrentResources = m_MaxResources;
+            if (Tired) //Implemented by Ryan on 11/9/2024 to allow cards to let player become tired
+            {
+                m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
+                Tired = false; //Removes tired status
+            }
+            m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
             m_PlayerDeck.DrawAmount(true);
             
@@ -96,15 +105,12 @@ public class EncounterController : MonoBehaviour
 
             m_TurnText.text = "Enemy Turn";
 
-            foreach (GameObject enemy in enemies)
+            foreach (Transform enemy in enemies)
             {
                 EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
-
             }
-            //m_IsPlayerTurn = true;
             m_TurnText.text = "Enemy Turn";
-            //m_EndButton.interactable = m_IsPlayerTurn;
 
         } 
     }
@@ -135,19 +141,17 @@ public class EncounterController : MonoBehaviour
 
     private void ExecuteCards()
     {
-        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
-        foreach (GameObject o in cards) {
-            if(o.transform.parent != null) {
-                Card card = o.GetComponent<Card>();
+        foreach (Transform player in m_PlayerInventory.GetAll())
+            if (player.TryGetComponent<Minion>(out Minion m))
+                m.ConsumeCard();
 
-                // Looks messy, but o.transform.parent.parent.gameObject is the Minion being targeted
-                Minion target = o.transform.parent.parent.gameObject.GetComponent<Minion>();
+        foreach (Transform enemy in m_EnemyInventory.GetAll())
+            if (enemy.TryGetComponent<EnemySpawner>(out EnemySpawner es))
+                es.GetSpawnedEnemy().GetComponent<Minion>().ConsumeCard();
+    }
 
-                card.SetTarget(target);
-                card.DoSpells();
-                
-                Destroy(o);
-            }
-        }
+    public void BecomeTired() //Function to make player tired
+    {
+        Tired = true;
     }
 }

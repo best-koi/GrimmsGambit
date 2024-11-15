@@ -1,32 +1,27 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 
-public class CardHand : MonoBehaviour
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+public class CardHand : ObjectContainer
 {
     [SerializeField] private CardDatabase m_Database;
-    [SerializeField]
-    private Transform m_CardHolder;
 
     [SerializeField]
-    private Vector2 m_CardAngleBounds;
+    private Vector2 m_AngleBounds;
 
     [SerializeField]
-    private Vector3 m_DisplacementFromHolderCenter;
+    private Vector3 m_DisplacementFromContainerCenter;
 
     [SerializeField]
     private List<CardDisplay> cardsToReturn;
 
-    private void Update()
+    protected override void Start()
     {
-        Arrangecards();
-        
-    }
+        base.Start();
 
-    private void Start()
-    {
         Deck.onDraw += AddCardFromIndex;
         Deck.onDiscard += RemoveCardFromIndex;
     }
@@ -34,47 +29,25 @@ public class CardHand : MonoBehaviour
     public void AddCardFromIndex(int cardIndex)
     {
         GameObject card = Instantiate(m_Database.GetPrefab(cardIndex));
-        AddCard(card);
-    }
-
-    public void AddCard(GameObject card)
-    {
-        card.transform.parent = this.transform;
+        Add(card.transform);
     }
 
     public void RemoveCardFromIndex(int cardIndex)
     {
-        try {
-            Debug.Log(cardIndex);
-            RemoveCard(transform.GetChild(cardIndex).gameObject);
-        } catch (Exception e) {
-            Debug.Log("Out of Bounds Exception: CardHand::RemoveCardFromIndex()");
-        }
+        Transform t = Remove(cardIndex);
+
+        if (t != null)
+            Destroy(t.gameObject);
     }
 
-    public void RemoveCard(GameObject card)
+    #region Object Container Callbacks
+
+    public override void UpdatePositions()
     {
-        card.transform.parent = null;
-        Destroy(card);
-    }
-
-    public void ResetCards()
-    {
-        
-    }
-
-    private void Arrangecards()
-    {
-        if (m_CardHolder == null)
-            return;
-
-        List<CardDisplay> cards = new List<CardDisplay>();
-        cards.AddRange(GetComponentsInChildren<CardDisplay>());
-
         // Calculate angle between cards
-        int cardNum = cards.Count;
-        float firstAngle = m_CardAngleBounds.x;
-        float secondAngle = m_CardAngleBounds.y;
+        int cardNum = m_ChildTransforms.Count;
+        float firstAngle = m_AngleBounds.x;
+        float secondAngle = m_AngleBounds.y;
         float totalAngle = Mathf.Abs(firstAngle - secondAngle);
 
         int angleSpaceCount = (cardNum % 2 == 0 ? cardNum : cardNum - 1);
@@ -91,21 +64,27 @@ public class CardHand : MonoBehaviour
             currentAngle += angleBetweenCards / 2;
 
         // Apply transformations to all cards
-        foreach (CardDisplay c in cards)
+        foreach (Transform t in m_ChildTransforms)
         {
-            Transform t = c.transform;
+            Quaternion rotation = Quaternion.Euler(0f, 0f, currentAngle);
+            Vector3 displacement = rotation * m_DisplacementFromContainerCenter;
 
-            if (t != m_CardHolder)
-            {
-                Quaternion rotation = Quaternion.Euler(0f, 0f, currentAngle);
-                Vector3 displacement = rotation * m_DisplacementFromHolderCenter;
+            SetChildLocalRotation(t, rotation);
+            SetChildLocalPosition(t, displacement);
 
-                t.localRotation = rotation;
-                t.localPosition = displacement;
-
-                // Increment angle for each card
-                currentAngle += angleBetweenCards;
-            }
+            // Increment angle for each card
+            currentAngle += angleBetweenCards;
         }
     }
+
+    #endregion
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(CardHand))]
+[CanEditMultipleObjects]
+public class CardHandEditor : ObjectContainerEditor
+{
+
+}
+#endif
