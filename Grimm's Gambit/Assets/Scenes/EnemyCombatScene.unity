@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2575,7 +2575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1682190481
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3308,20 +3308,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 927799705933170717, guid: f6fc45fd9698a426789cb9e742104082, type: 3}
+      objectReference: {fileID: 5894105497711996225, guid: dbe94d69477b4422e9235faa79a9f122, type: 3}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 1634300097215933525, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
+      objectReference: {fileID: 927799705933170717, guid: f6fc45fd9698a426789cb9e742104082, type: 3}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 5894105497711996225, guid: dbe94d69477b4422e9235faa79a9f122, type: 3}
+      objectReference: {fileID: 1634300097215933525, guid: 5d5349c10c5094128877f5e8183a57fb, type: 3}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[3]
       value: 
