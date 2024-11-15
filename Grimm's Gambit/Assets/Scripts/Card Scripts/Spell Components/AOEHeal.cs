@@ -15,18 +15,18 @@ public class AOEHeal : SpellComponent
     {
         //The following assumes that only two parties exist and characters have properly labeled owners.
         //This is used to ensure that the friendly party is healed
-        List<GameObject> friendlyParty;
+        List<Transform> friendlyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();   
+        List<Transform> currentParty = parties[0].GetAll();   
         if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
         {
             friendlyParty = currentParty;
         }
         else
         {
-            friendlyParty = parties[1].GetAllMembers();
+            friendlyParty = parties[1].GetAll();
         }
-        foreach (GameObject member in friendlyParty)
+        foreach (Transform member in friendlyParty)
         {
             target = member.GetComponent<Minion>();
             target.DamageTaken(-m_Amount);
