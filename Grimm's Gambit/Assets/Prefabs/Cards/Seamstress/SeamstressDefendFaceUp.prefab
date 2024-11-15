@@ -666,5 +666,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18795dbded9d28a4aaf5b28b5b1520b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 0100000001000000010000000100000001000000010000000100000001000000
-  values: 050000000500000005000000
+  debuffs: 01000000
+  value: 05000000

@@ -38,6 +38,8 @@ public class Minion : MonoBehaviour
         
     //Affixes:
     public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
+
+    [SerializeField] 
     public Dictionary<Affix, int> currentAffixes = new Dictionary<Affix, int>(); //Used for recording currently applied affixes without need a foreach loop
 
     //Ownership:
@@ -66,8 +68,10 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
+        Debug.Log("Affix Adding");
         if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
         {
+            Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
         }
         else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
@@ -100,7 +104,8 @@ public class Minion : MonoBehaviour
         //Runs start of turn affixes when the player's turn starts
         if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
         {
-            currentAffixes.Remove(Affix.Block); //Removes block charges at the start of each new turn
+            Debug.Log("Block Amount: " + currentAffixes[Affix.Block]);
+            currentAffixes[Affix.Block]--; //Removes block charges at the start of each new turn
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
         {
@@ -232,6 +237,7 @@ public class Minion : MonoBehaviour
             if (currentAffixes.ContainsKey(Affix.Block) && DamageToDeal > 0) //Condition for when the character has block charges prepared
             {
                 int currentBlock = currentAffixes[Affix.Block];
+                Debug.Log("Block Amount: " + currentBlock);
                 if (DamageToDeal < currentBlock) //Condition where block completely covers the damage to deal
                 {
                     int remainingBlock = currentBlock - DamageToDeal;
