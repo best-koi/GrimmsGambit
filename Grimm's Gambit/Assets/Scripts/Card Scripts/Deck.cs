@@ -98,7 +98,6 @@ public class Deck : MonoBehaviour
     public void Discard(Card c)
     {
         int index = c.GetIndex();
-        Debug.Log(index);
         m_DiscardPile.Add(index);
         m_Hand.Remove(index);
         onDiscard?.Invoke(index);
@@ -201,7 +200,7 @@ public class Deck : MonoBehaviour
 
     public void Shuffle()
     {
-        List<int> temp = m_DiscardPile;
+        List<int> temp = new List<int>(m_DiscardPile);
         m_DiscardPile.Clear();
 
         for (int i = temp.Count - 1; i >= 0; i--)
