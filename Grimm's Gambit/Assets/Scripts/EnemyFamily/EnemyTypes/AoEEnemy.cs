@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoEEnemy : EnemyPositionTarget
+public class AoEEnemy : EnemyRandomTarget
 {
 
     //An Attack method to be used for honing in on specific positioned players
     protected override void Attack()
     {
-            foreach(CharacterTemplate c in orderedCharacters){
+            foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
                 minion.MinionUsed(c.GetComponent<Minion>(), attackValue);
@@ -22,6 +22,9 @@ public class AoEEnemy : EnemyPositionTarget
         switch (attacks[currentAttack])
         {
             case "Attack":
+
+            if (attackTarget == null)
+                    FindTarget();
                 moveText.text = $"Attacking party for {attackValue} DMG";
 
                 break;
