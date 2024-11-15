@@ -49,7 +49,7 @@ public class Deck : MonoBehaviour
 
         onDraw?.Invoke(nextCardID);
 
-        if (m_Hand.Count > m_MaxHandSize) Discard();
+        if (m_Hand.Count > m_MaxHandSize) Discard(m_DataBase.GetCard(nextCardID));
     }
 
     // Draw cards from the top of the deck 
@@ -74,27 +74,6 @@ public class Deck : MonoBehaviour
         m_Hand.Add(cardID);
     }
 
-    // Discard a card from hand 
-    // Will automatically discard leftmost card
-    // If the cardID is valid, will discard the card of the matching id 
-    public void Discard(int index = 0, int cardID = -1)
-    {
-        int nextCardID = m_Hand[index];
-
-        if (cardID >= 0)
-        {
-            nextCardID = cardID;
-            m_Hand.Remove(cardID);
-        }
-        else
-        {
-            m_Hand.RemoveAt(index);
-        }
-       
-        m_DiscardPile.Add(nextCardID);
-        onDiscard?.Invoke(index);
-    }
-
     public void Discard(Card c)
     {
         int index = c.GetIndex();
@@ -105,8 +84,12 @@ public class Deck : MonoBehaviour
 
     public void DiscardHand()
     {
-        int count = m_Hand.Count;
-        for (int i = 0; i < count; i++) Discard();
+        for (int i = m_Hand.Count - 1; i > 0; i++)
+        {
+            m_DiscardPile.Add(m_Hand[i]);
+            onDiscard?.Invoke(m_Hand[i]);
+            m_Hand.Remove(m_Hand[i]);
+        }
     }
 
     // Put the top card of the deck into the discard pile
@@ -128,9 +111,11 @@ public class Deck : MonoBehaviour
     // Defaults to searching the hand
     // Will search discard pile if false 
     // Return true if successful
-    public bool ReverseCard(int cardID, bool inHand = true)
+    public Card ReverseCard(int cardID, bool inHand = true)
     {
-        // Search the hand   
+        return null;
+
+        /**
         int reverse = ReverseID(cardID);
 
         if (m_DataBase.GetCard(reverse) == null)
@@ -166,6 +151,7 @@ public class Deck : MonoBehaviour
 
         Debug.Log("Failed to find card of referenced ID in discard pile.");
         return false;
+        */
     }
 
     // Helper method for ReverseCard
