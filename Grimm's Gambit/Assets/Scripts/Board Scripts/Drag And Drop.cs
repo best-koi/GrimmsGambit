@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -58,8 +59,11 @@ public class DragAndDrop : MonoBehaviour
                     if (hitMinion != null) {
                         hitMinion.ConsumeCard(c);
                     } else {
-                        m_SelectedObject = null;
+                        controller.SpendResources(-m_SelectedObject.GetComponent<Card>().GetCardCost());
                     }
+                    //m_SelectedObject.parent = m_SelectedObjectParent;
+                    //m_SelectedObject.SetSiblingIndex(m_SelectedChildIndex);
+                    Destroy(m_SelectedObject.gameObject);
 
                 }
                 else

@@ -66,7 +66,7 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
-        if (!currentAffixes.ContainsKey(affix) && value > 0) //Adds affixes that are not currently present
+        if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
         {
             currentAffixes.Add(affix, value);
         }
@@ -314,7 +314,9 @@ public class Minion : MonoBehaviour
     {
         c.SetTarget(this);
         c.DoSpells();
-        Destroy(c.gameObject);
+        Deck deck = FindObjectOfType<Deck>();
+        deck.Discard(c);
+        //Destroy(c.gameObject);
     }
 
     private void Destroyed() //Function for when this character has been defeated

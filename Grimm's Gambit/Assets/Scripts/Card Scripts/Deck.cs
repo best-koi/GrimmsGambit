@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class Deck : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class Deck : MonoBehaviour
         }
 
         // Shuffle the discard pile into the game deck if it is empty
-        if(m_GameDeck.Count() == 0)
+        if(m_GameDeck.Count() <= 0)
         {
             Shuffle();
         }
@@ -91,6 +92,15 @@ public class Deck : MonoBehaviour
         }
        
         m_DiscardPile.Add(nextCardID);
+        onDiscard?.Invoke(index);
+    }
+
+    public void Discard(Card c)
+    {
+        int index = c.GetIndex();
+        Debug.Log(index);
+        m_DiscardPile.Add(index);
+        m_Hand.Remove(index);
         onDiscard?.Invoke(index);
     }
 
