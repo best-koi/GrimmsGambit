@@ -37,7 +37,7 @@ public class Minion : MonoBehaviour
     private GameObject m_CardContainer;
         
     //Affixes:
-    public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
+    //public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
 
     [SerializeField] 
     public Dictionary<Affix, int> currentAffixes = new Dictionary<Affix, int>(); //Used for recording currently applied affixes without need a foreach loop
@@ -53,11 +53,14 @@ public class Minion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         foreach (Affixes affix in appliedAffixes)
         {
             AddAffix(affix.Tag, affix.Value); //Stores each affix that was preset into the currentAffixes dictionary
         }
+        */
         EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
+        
     }
 
     // Update is called once per frame
