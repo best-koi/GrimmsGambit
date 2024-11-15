@@ -16,21 +16,21 @@ public class ApplyAffixToLowestHPCard : SpellComponent
 
     public override void DoSpellEffect()
     {
-        List<GameObject> friendlyParty;
+        List<Transform> friendlyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();
+        List<Transform> currentParty = parties[0].GetAll();
         if (currentParty[0].GetComponent<Minion>().ownerPlayer == true)
         {
             friendlyParty = currentParty;
         }
         else
         {
-            friendlyParty = parties[1].GetAllMembers();
+            friendlyParty = parties[1].GetAll();
         }
 
         target = friendlyParty[0].GetComponent<Minion>();
 
-        foreach (GameObject member in friendlyParty)
+        foreach (Transform member in friendlyParty)
         {
             if (member.GetComponent<Minion>().currentHealth < target.currentHealth) target = member.GetComponent<Minion>();
         }

@@ -22,23 +22,23 @@ public class AddAffixPerTarget : SpellComponent
     {
         //The following assumes that only two parties exist and characters have properly labeled owners.
         //This is used to ensure that the friendly party is healed
-        List<GameObject> enemyParty;
+        List<Transform> enemyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();
-        List<GameObject> currentParty = parties[0].GetAllMembers();
+        List<Transform> currentParty = parties[0].GetAll();
         if (!currentParty[0].GetComponent<Minion>().ownerPlayer)
         {
             enemyParty = currentParty;
         }
         else
         {
-            enemyParty = parties[1].GetAllMembers();
+            enemyParty = parties[1].GetAll();
         }
 
         Minion minionToCheck;
         if (requiresTarget) minionToCheck = caster;
         else minionToCheck = target;
 
-        foreach (GameObject member in enemyParty)
+        foreach (Transform member in enemyParty)
         {
             if (member.GetComponent<EnemyTemplate>().GetAttackTarget() == minionToCheck && m_IsTargetting) AddAffix(minionToCheck);
             else if (member.GetComponent<EnemyTemplate>().GetAttackTarget() != minionToCheck && !m_IsTargetting) AddAffix(minionToCheck);
