@@ -310,6 +310,13 @@ public class Minion : MonoBehaviour
         Destroy(c.gameObject);
     }
 
+    public void ConsumeCard(Card c)
+    {
+        c.SetTarget(this);
+        c.DoSpells();
+        Destroy(c.gameObject);
+    }
+
     private void Destroyed() //Function for when this character has been defeated
     {
         //Implement This Later depending on game logic
