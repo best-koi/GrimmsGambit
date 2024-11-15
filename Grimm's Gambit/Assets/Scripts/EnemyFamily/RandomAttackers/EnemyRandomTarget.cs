@@ -17,16 +17,23 @@ public class EnemyRandomTarget : EnemyTemplate
     //An Attack method to be used for honing in on specific positioned players
     protected override void Attack()
     {
-      
+        
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue);
        FindTarget();
-        
-       
     }
 
     protected virtual void FindTarget()
     {
         GetAllActiveCharacters();
+        //Checks for Taunt Affix
+        foreach(CharacterTemplate t in targets){
+            if(t.GetComponent<Minion>().currentAffixes.ContainsKey(Affix.Taunt)){
+                attackTarget = t;
+                return;
+
+            }
+
+        }
         attackTarget = targets[Random.Range(0, targets.Count)];
 
     }

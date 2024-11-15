@@ -7,8 +7,8 @@ public class DebuffConditional : SpellComponent
     public Affix conditionDebuff;
     public int spiritGain;
     public int cardDraw = 0;
-    public Affix[] resultantDebuffs;
-    public int[] resultantValues;
+    public Affix resultantDebuff;
+    public int resultantValue;
 
     public DebuffConditional()
     {
@@ -32,10 +32,7 @@ public class DebuffConditional : SpellComponent
                 Deck deck = FindObjectOfType<Deck>();
                 deck.DrawAmount(false, cardDraw);
             }
-            for(int i = 0; i < resultantDebuffs.Length; i++) 
-            {
-                target.AddAffix(resultantDebuffs[i], resultantValues[i]);
-            }
+            target.AddAffix(resultantDebuff, resultantValue);
         }
     }
 }

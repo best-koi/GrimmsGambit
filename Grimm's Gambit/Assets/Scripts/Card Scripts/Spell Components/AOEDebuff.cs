@@ -6,8 +6,8 @@ using UnityEngine;
 public class AOEDebuff : SpellComponent
 {
     public bool TargetingFriendlies;
-    public Affix[] debuffs;
-    public int[] values;
+    public Affix debuff;
+    public int value;
 
     public AOEDebuff()
     {
@@ -38,10 +38,7 @@ public class AOEDebuff : SpellComponent
             foreach (Transform member in friendlyParty)
             {
                 target = member.GetComponent<Minion>();
-                for(int i = 0; i < debuffs.Length; i++) 
-                {
-                    target.AddAffix(debuffs[i], values[i]);
-                }
+                target.AddAffix(debuff, value);
             }
         }
         else //Condition for targetting enemy party
@@ -49,10 +46,7 @@ public class AOEDebuff : SpellComponent
             foreach (Transform member in hostileParty)
             {
                 target = member.GetComponent<Minion>();
-                for(int i = 0; i < debuffs.Length; i++) 
-                {
-                    target.AddAffix(debuffs[i], values[i]);
-                }
+                target.AddAffix(debuff, value);
             }
         }
     }

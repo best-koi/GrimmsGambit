@@ -61,8 +61,6 @@ public class DragAndDrop : MonoBehaviour
                     } else {
                         controller.SpendResources(-m_SelectedObject.GetComponent<Card>().GetCardCost());
                     }
-                    //m_SelectedObject.parent = m_SelectedObjectParent;
-                    //m_SelectedObject.SetSiblingIndex(m_SelectedChildIndex);
                     Destroy(m_SelectedObject.gameObject);
 
                 }
