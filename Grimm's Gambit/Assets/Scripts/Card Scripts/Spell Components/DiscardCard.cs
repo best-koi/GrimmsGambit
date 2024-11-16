@@ -13,6 +13,7 @@ public class DiscardCard : SpellComponent
     public override void DoSpellEffect()
     {
         Deck deck = FindObjectOfType<Deck>();
-        deck.Discard();
+        // To fix
+        //deck.Discard();
     }
 }
