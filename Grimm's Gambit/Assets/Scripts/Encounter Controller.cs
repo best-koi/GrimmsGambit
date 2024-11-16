@@ -66,7 +66,7 @@ public class EncounterController : MonoBehaviour
 
         //m_EndButton.interactable = false;
 
-        m_PlayerDeck.ShuffleStart();
+        m_PlayerDeck.ShuffleDeck();
         EndTurn();
     }
 
@@ -93,8 +93,8 @@ public class EncounterController : MonoBehaviour
 
             if(m_PlayerDeck.GetGameDeckSize() == 0)
                 m_PlayerDeck.EmptyShuffle();
-            else
-                m_PlayerDeck.DrawAmount(true);
+            
+            m_PlayerDeck.DrawAmount(true);
             
 
             m_TurnText.text = "Player Turn";

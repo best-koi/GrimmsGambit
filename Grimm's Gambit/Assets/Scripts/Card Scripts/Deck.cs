@@ -214,7 +214,7 @@ public class Deck : MonoBehaviour
         } 
     }
 
-    public void ShuffleStart()
+    public void ShuffleDeck()
     {
         List<int> temp = new List<int>(m_GameDeck);
         m_GameDeck.Clear();
@@ -240,22 +240,6 @@ public class Deck : MonoBehaviour
         } 
         m_DiscardPile.Clear();
 
-    }
-
-    // Prepare the deck for the game
-    public void StartDeck()
-    {
-        // ClearAll();
-
-        // m_GameDeck = m_DataBase.PopulateDeck();
-        
-        // Shuffle();
-
-        // // Draw hand
-        // DrawAmount(false, m_StartingHandSize);
-
-        ShuffleStart();
-        //DrawAmount(true);
     }
 
     private void ClearAll()
