@@ -9,8 +9,6 @@ public class Card : MonoBehaviour
 
     [SerializeField] private protected int cardCost;
 
-    [SerializeField] private protected Deck m_Hand;
-
     [SerializeField] private protected Minion target = null;
 
     [SerializeField] private protected Minion caster = null; //Added by Ryan - 11/1/2024
@@ -19,6 +17,8 @@ public class Card : MonoBehaviour
     // Index in the database
     // Number that player has in their deck
     [SerializeField] private protected int m_Index = -1, m_PlayerCopies;
+
+    [SerializeField] private protected Card m_ReverseVersion;
 
     [SerializeField] private protected EncounterController m_EncounterController;
 
@@ -91,8 +91,6 @@ public class Card : MonoBehaviour
 
             return;
         }
-
-        //m_Hand.Discard(0, m_Index);
     }
 
     // Getters

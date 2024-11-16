@@ -51,10 +51,17 @@ public class EnemyPositionTarget : EnemyTemplate
         List<Transform> characters = controller.GetPlayerInventory().GetAll();
         foreach (Transform c in characters)
         {
-            if (c != null && c.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct) && ct.GetCharacterPosition() == p)
-            {
-                attackTarget = c.GetComponent<CharacterTemplate>();
+            if (c != null && c.gameObject.TryGetComponent<CharacterTemplate>(out CharacterTemplate ct)){
+            if(ct.GetComponent<Minion>().currentAffixes.ContainsKey(Affix.Taunt)){
+                attackTarget = ct;
                 return;
+
+            }
+            else if(ct.GetCharacterPosition() == p)
+            {
+                attackTarget = ct;
+                return;
+            }
             }
         }
     }
