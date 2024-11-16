@@ -75,13 +75,15 @@ public class EncounterController : MonoBehaviour
 
         List<Transform> party = m_PlayerInventory.GetAll(), enemies = m_EnemyInventory.GetAll();
 
+        m_CurrentResources = m_MaxResources;
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
+
         if (m_IsPlayerTurn) {
             if (Tired) //Implemented by Ryan on 11/9/2024 to allow cards to let player become tired
             {
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
                 Tired = false; //Removes tired status
             }
-            m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
             // Overlaps with draw function
             /**
@@ -98,7 +100,6 @@ public class EncounterController : MonoBehaviour
         }
         else 
         {
-            m_CurrentResources = m_MaxResources;
             m_PlayerDeck.DiscardHand();
             ExecuteCards();
 

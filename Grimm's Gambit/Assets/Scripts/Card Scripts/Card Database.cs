@@ -31,7 +31,7 @@ public class CardDatabase : MonoBehaviour
             card.SetIndex(i);
 
             // Skip reversed cards
-            // if (card.GetIndex() % 2 == 1) continue;
+            if (card.GetIndex() % 2 == 1) continue;
 
             for (int j = 0, copies = card.NumCopies; j < copies; j++)
             {
