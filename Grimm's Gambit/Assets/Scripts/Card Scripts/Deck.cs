@@ -84,10 +84,10 @@ public class Deck : MonoBehaviour
 
     public void DiscardHand()
     {
-        for (int i = m_Hand.Count - 1; i > 0; i++)
+        for (int i = m_Hand.Count - 1; i >= 0; i--)
         {
             m_DiscardPile.Add(m_Hand[i]);
-            onDiscard?.Invoke(m_Hand[i]);
+            onDiscard?.Invoke(i);
             m_Hand.Remove(m_Hand[i]);
         }
     }
