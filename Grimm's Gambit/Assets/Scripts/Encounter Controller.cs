@@ -47,6 +47,8 @@ public class EncounterController : MonoBehaviour
     private void Start()
     {
         m_EndButton.onClick.AddListener(EndTurn);
+        StartEncounter();
+        
     }
 
     private void Update()
@@ -60,11 +62,11 @@ public class EncounterController : MonoBehaviour
         m_IsPlayerTurn = false;
         m_TurnCounter = 0;
 
-        onEncounterStarted?.Invoke();
+        //onEncounterStarted?.Invoke();
 
-        m_EndButton.interactable = false;
+        //m_EndButton.interactable = false;
 
-        m_PlayerDeck.StartDeck();
+        m_PlayerDeck.ShuffleStart();
         EndTurn();
     }
 

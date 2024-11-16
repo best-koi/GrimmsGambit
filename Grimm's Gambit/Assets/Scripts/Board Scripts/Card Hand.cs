@@ -18,9 +18,9 @@ public class CardHand : ObjectContainer
     [SerializeField]
     private List<CardDisplay> cardsToReturn;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         Deck.onDraw += AddCardFromIndex;
         Deck.onDiscard += RemoveCardFromIndex;

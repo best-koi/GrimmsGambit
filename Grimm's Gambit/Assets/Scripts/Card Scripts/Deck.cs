@@ -214,6 +214,22 @@ public class Deck : MonoBehaviour
         } 
     }
 
+    public void ShuffleStart()
+    {
+        List<int> temp = new List<int>(m_GameDeck);
+        m_GameDeck.Clear();
+
+        for (int i = temp.Count - 1; i >= 0; i--)
+        {
+            System.Random rnd = new System.Random();
+            int randomNum = rnd.Next(0, temp.Count());
+            int randomCard = temp[randomNum];
+
+            temp.RemoveAt(randomNum);
+            m_GameDeck.Add(randomCard);
+        } 
+    }
+
     public void EmptyShuffle(){
         
         foreach (int card in m_DiscardPile)
@@ -229,14 +245,17 @@ public class Deck : MonoBehaviour
     // Prepare the deck for the game
     public void StartDeck()
     {
-        ClearAll();
+        // ClearAll();
 
-        m_GameDeck = m_DataBase.PopulateDeck();
+        // m_GameDeck = m_DataBase.PopulateDeck();
         
-        Shuffle();
+        // Shuffle();
 
-        // Draw hand
-        DrawAmount(false, m_StartingHandSize);
+        // // Draw hand
+        // DrawAmount(false, m_StartingHandSize);
+
+        ShuffleStart();
+        //DrawAmount(true);
     }
 
     private void ClearAll()

@@ -23,7 +23,7 @@ public abstract class ObjectContainer : MonoBehaviour
 
     #region MonoBehaviour Callbacks
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         m_ChildTransforms = new List<Transform>();
     }
