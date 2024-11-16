@@ -1,3 +1,4 @@
+//Ryan Lockie - Updated 11/16/2024
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -107,8 +108,7 @@ public class Minion : MonoBehaviour
         //Runs start of turn affixes when the player's turn starts
         if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
         {
-            Debug.Log("Block Amount: " + currentAffixes[Affix.Block]);
-            currentAffixes[Affix.Block]--; //Removes block charges at the start of each new turn
+            currentAffixes.Remove(Affix.Block); //Removes block charges at the start of each new turn
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
         {
