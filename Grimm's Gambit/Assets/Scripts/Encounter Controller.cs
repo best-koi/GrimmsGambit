@@ -120,7 +120,6 @@ public class EncounterController : MonoBehaviour
         else Debug.Log("Player lost.");
     }
 
-
     // Spend an amount of resources
     // True if the amount is successfully spent
     // False if current resources are insufficient 
