@@ -21,7 +21,7 @@ public class Deck : MonoBehaviour
     [SerializeField] private int m_NumDrawsPerTurn = 1;
 
     // Lists the indices of each card in the database
-    [SerializeField] private List<int> m_GameDeck, m_Hand, m_DiscardPile;
+    [SerializeField] private List<int> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
     // Draw a card from the top of the deck
     // Alternatively draw specific card from the deck
@@ -92,6 +92,14 @@ public class Deck : MonoBehaviour
         }
     }
 
+    // Removes card to a special zone
+    public void RemoveCard(Card c)
+    {
+        int index = c.GetIndex();
+        m_RemovedZone.Add(index);
+        m_Hand.Remove(index);
+    }
+
     // Put the top card of the deck into the discard pile
     // Or select a specific card from the game deck
     public void Mill(int index = 0)
@@ -107,11 +115,9 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < amount; i++) Mill();
     }
 
-    // Takes the target card's ID in the database 
-    // Defaults to searching the hand
-    // Will search discard pile if false 
-    // Return true if successful
-    public Card ReverseCard(int cardID, bool inHand = true)
+    // Set for change
+    // Unfinished
+    public Card ReverseCard(Card card)
     {
         return null;
 
@@ -216,6 +222,7 @@ public class Deck : MonoBehaviour
         } 
     }
 
+    /**
     public void EmptyShuffle(){
         
         foreach (int card in m_DiscardPile)
@@ -227,6 +234,7 @@ public class Deck : MonoBehaviour
         m_DiscardPile.Clear();
 
     }
+    */
 
     private void ClearAll()
     {

@@ -16,7 +16,8 @@ public class Card : MonoBehaviour
 
     // Index in the database
     // Number that player has in their deck
-    [SerializeField] private protected int m_Index = -1, m_PlayerCopies;
+    private protected int m_Index = -1;
+    [SerializeField ] private protected int m_PlayerCopies = 0;
 
     [SerializeField] private protected Card m_ReverseVersion;
 
@@ -82,15 +83,6 @@ public class Card : MonoBehaviour
             spell.SetCaster(caster);
             spell.DoSpellEffect();
         }
-
-        if (m_IsEphemeral)
-        {
-            // Unfinished
-            // Reference the deck object 
-            // Remove from the game
-
-            return;
-        }
     }
 
     // Getters
@@ -110,6 +102,11 @@ public class Card : MonoBehaviour
         return m_Index;
     }
 
+    public bool CheckEphemeral()
+    {
+        return m_IsEphemeral;
+    }
+
     public Minion GetCaster()
     {
         return caster;
@@ -118,6 +115,11 @@ public class Card : MonoBehaviour
     public Minion GetTarget()
     {
         return target;
+    }
+
+    public Card GetReverse()
+    {
+        return m_ReverseVersion;
     }
 
     public int NumCopies

@@ -20,7 +20,8 @@ public class CardDatabase : MonoBehaviour
         
     }
 
-    public List<int> PopulateDeck()
+    
+    public List<int> PopulateDeck(bool instantiate = true)
     {
         List<int> m_PlayerDeck = new List<int>();
 
@@ -30,14 +31,17 @@ public class CardDatabase : MonoBehaviour
             card.SetIndex(i);
 
             // Skip reversed cards
-            if (card.GetIndex() % 2 == 1) continue;
+            // if (card.GetIndex() % 2 == 1) continue;
 
             for (int j = 0, copies = card.NumCopies; j < copies; j++)
             {
                 m_PlayerDeck.Add(card.GetIndex());
 
-                Debug.Log("Spawning Card");
-                Instantiate(card.gameObject);
+                if (instantiate)
+                {
+                    Debug.Log($"Spawning Card: {card.GetName()}");
+                    Instantiate(card.gameObject);
+                }
             }
         }
 

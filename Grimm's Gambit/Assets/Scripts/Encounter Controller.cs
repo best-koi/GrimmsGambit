@@ -48,13 +48,11 @@ public class EncounterController : MonoBehaviour
     {
         m_EndButton.onClick.AddListener(EndTurn);
         StartEncounter();
-        
     }
 
     private void Update()
     {
-        // Can theoritcally be removed later if no bugs 
-        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
+        
     }
 
     private void StartEncounter()
@@ -62,9 +60,7 @@ public class EncounterController : MonoBehaviour
         m_IsPlayerTurn = false;
         m_TurnCounter = 0;
 
-        //onEncounterStarted?.Invoke();
-
-        //m_EndButton.interactable = false;
+        onEncounterStarted?.Invoke();
 
         m_PlayerDeck.ShuffleDeck();
         EndTurn();
@@ -79,11 +75,7 @@ public class EncounterController : MonoBehaviour
 
         List<Transform> party = m_PlayerInventory.GetAll(), enemies = m_EnemyInventory.GetAll();
 
-        //m_EndButton.interactable = m_IsPlayerTurn;
-
         if (m_IsPlayerTurn) {
-
-            m_CurrentResources = m_MaxResources;
             if (Tired) //Implemented by Ryan on 11/9/2024 to allow cards to let player become tired
             {
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
@@ -91,12 +83,14 @@ public class EncounterController : MonoBehaviour
             }
             m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
+            // Overlaps with draw function
+            /**
             if(m_PlayerDeck.GetGameDeckSize() == 0)
                 m_PlayerDeck.EmptyShuffle();
+            */
             
             m_PlayerDeck.DrawAmount(true);
             
-
             m_TurnText.text = "Player Turn";
 
             // Display the number of cards in the player's deck
@@ -104,9 +98,9 @@ public class EncounterController : MonoBehaviour
         }
         else 
         {
+            m_CurrentResources = m_MaxResources;
             m_PlayerDeck.DiscardHand();
             ExecuteCards();
-
 
             m_TurnText.text = "Enemy Turn";
 
@@ -115,8 +109,6 @@ public class EncounterController : MonoBehaviour
                 EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
                 enemyController.AttackPattern();
             }
-            m_TurnText.text = "Enemy Turn";
-
         } 
     }
 
@@ -141,6 +133,8 @@ public class EncounterController : MonoBehaviour
         }
 
         m_CurrentResources -= amount;
+        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
+
         return true;
     }
 

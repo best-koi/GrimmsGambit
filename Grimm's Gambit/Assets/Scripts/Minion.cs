@@ -324,8 +324,13 @@ public class Minion : MonoBehaviour
         c.SetTarget(this);
         c.DoSpells();
         Deck deck = FindObjectOfType<Deck>();
+        if (c.CheckEphemeral())
+        {
+            deck.RemoveCard(c);
+            return;
+        }
+        
         deck.Discard(c);
-        //Destroy(c.gameObject);
     }
 
     private void Destroyed() //Function for when this character has been defeated
