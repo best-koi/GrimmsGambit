@@ -1406,12 +1406,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.size
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 927799705933170717, guid: f6fc45fd9698a426789cb9e742104082, type: 3}
+      objectReference: {fileID: 1634932973480332502, guid: 395c1795b53b04e429d58aa8d0084ca1, type: 3}
     - target: {fileID: 5468736551298159999, guid: 280965209892641b5880c88894ef37de, type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 

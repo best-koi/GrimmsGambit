@@ -115,7 +115,7 @@ protected string randomAttackName;//The name of the planned random attack
 
 
     //Helps prevent Index Out of Bounds Errors
-    protected void CheckAttackBounds()
+    protected virtual void CheckAttackBounds()
     {
         if (currentAttack >= attacks.Count)
             currentAttack = 0;

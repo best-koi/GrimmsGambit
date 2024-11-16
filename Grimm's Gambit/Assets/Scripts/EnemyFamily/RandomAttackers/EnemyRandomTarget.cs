@@ -34,7 +34,10 @@ public class EnemyRandomTarget : EnemyTemplate
             }
 
         }
-        attackTarget = targets[Random.Range(0, targets.Count)];
+        if(targets.Count == 0)
+            Debug.Log("Done");
+        else
+            attackTarget = targets[Random.Range(0, targets.Count)];
 
     }
 
@@ -51,9 +54,10 @@ public class EnemyRandomTarget : EnemyTemplate
     protected void GetAllActiveCharacters()
     {
         List<Transform> characters = controller.GetPlayerInventory().GetAll();
+        targets.Clear();
         foreach (Transform c in characters)
         {
-            if (c.GetComponent<CharacterTemplate>().GetHP() <= 0)
+            if (c.GetComponent<CharacterTemplate>().GetHP() <= 0 || c == null)
                 continue;
             targets.Add(c.GetComponent<CharacterTemplate>());
         }
