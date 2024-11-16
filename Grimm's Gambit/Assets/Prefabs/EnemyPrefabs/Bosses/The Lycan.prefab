@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
-  currentHealth: 80
+  currentHealth: 150
   m_CardContainer: {fileID: 3982847542765660800}
   ownerPlayer: 0
 --- !u!114 &1634932973480332502
