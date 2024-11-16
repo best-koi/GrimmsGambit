@@ -20,7 +20,7 @@ public class CardDatabase : MonoBehaviour
         
     }
 
-    
+
     public List<int> PopulateDeck(bool instantiate = true)
     {
         List<int> m_PlayerDeck = new List<int>();
@@ -31,7 +31,7 @@ public class CardDatabase : MonoBehaviour
             card.SetIndex(i);
 
             // Skip reversed cards
-            if (card.GetIndex() % 2 == 1) continue;
+            if (card.GetIndex() % 2 == 1 || card == null) continue;
 
             for (int j = 0, copies = card.NumCopies; j < copies; j++)
             {
