@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1342,6 +1342,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Katze
       objectReference: {fileID: 0}
+    - target: {fileID: 8752361557292120880, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.086
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752361557292120880, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249.348
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1560,6 +1568,18 @@ PrefabInstance:
     - target: {fileID: 6163780573869900379, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
       propertyPath: m_Name
       value: Seamstress
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178515899435757505, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.108
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178515899435757505, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -499.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178515899435757505, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249.3398
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2485,6 +2505,14 @@ PrefabInstance:
     - target: {fileID: 6163780573869900379, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
       propertyPath: m_Name
       value: Hound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965282014940282237, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965282014940282237, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -249.37405
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
