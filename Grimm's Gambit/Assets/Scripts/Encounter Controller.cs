@@ -20,7 +20,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private Deck m_PlayerDeck;
 
     [SerializeField] private bool m_IsPlayerTurn;
-    [SerializeField] private int m_TurnCounter;
+    [SerializeField] public int m_TurnCounter; //Made public so katze can determine when to conjure coordinate strikes - Ryan 11/16/24
 
     // Max resource value to be implemented by design
     [SerializeField] private int m_MaxResources, m_CurrentResources;
