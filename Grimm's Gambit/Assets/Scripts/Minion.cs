@@ -36,8 +36,6 @@ public class Minion : MonoBehaviour
 
     [SerializeField]
     private GameObject m_CardContainer;
-
-    private AffixDisplay affixDisplay;
         
     //Affixes:
     //public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
@@ -62,7 +60,6 @@ public class Minion : MonoBehaviour
             AddAffix(affix.Tag, affix.Value); //Stores each affix that was preset into the currentAffixes dictionary
         }
         */
-        affixDisplay = new AffixDisplay(); //Creates an AffixDisplay object to send affixes to display when necessary
         EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
         
     }
@@ -80,7 +77,6 @@ public class Minion : MonoBehaviour
         {
             Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
-            affixDisplay.AddAffix(affix); //Adds visual display of affix
         }
         else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
@@ -112,7 +108,7 @@ public class Minion : MonoBehaviour
         //Runs start of turn affixes when the player's turn starts
         if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
         {
-            RemoveAffix(Affix.Block); //Removes block charges at the start of each new turn
+            currentAffixes.Remove(Affix.Block); //Removes block charges at the start of each new turn
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) //Removing of a Bleed charge at the start of each new turn
         {
@@ -144,10 +140,6 @@ public class Minion : MonoBehaviour
                 int newValue = HealingToDeal * 10 + onesPlace; //Multiplies the tens place by ten then adds the ones place back in
                 currentAffixes.Add(Affix.Regen, newValue); //Reimplements the affix with the new value
             }
-            else
-            {
-                affixDisplay.RemoveAffix(Affix.Regen); //Removes affix from display is replacement doesn't occur
-            }
         }
         if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Removing one charge from Vulnerable at the end of each turn
         {
@@ -177,10 +169,6 @@ public class Minion : MonoBehaviour
         {
             currentAffixes.Add(affix, currentCharges-1);
         }
-        else
-        {
-            affixDisplay.RemoveAffix(affix); //Removes visual portion of affix if charges are zeroed out
-        }
     }
 
     public bool CanBePlayed() //Function to be called from game logic to know if this minion can be used right now
@@ -208,7 +196,7 @@ public class Minion : MonoBehaviour
                 if (currentAffixes.ContainsKey(Affix.Strength)) //Damage Modification for if character has a Strength modifier
                 {
                     DamageToDeal += currentAffixes[Affix.Strength];
-                    RemoveAffix(Affix.Strength);
+                    currentAffixes.Remove(Affix.Strength);
                 }
                 if (currentAffixes.ContainsKey(Affix.DamageReduction)) //Damage Modification for if damage reduction is applied
                 {
@@ -244,10 +232,6 @@ public class Minion : MonoBehaviour
                 {
                     currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
                 }
-                else
-                {
-                    affixDisplay.RemoveAffix(Affix.Exploit); //Removes visual portion
-                }
             }
             if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Condition for when the character is vulnerable
             {
@@ -267,7 +251,7 @@ public class Minion : MonoBehaviour
                 else //Case where there isn't any block leftover
                 {
                     DamageToDeal -= currentBlock;
-                    RemoveAffix(Affix.Block); //Removes block affix since all charges are used
+                    currentAffixes.Remove(Affix.Block); //Removes block affix since all charges are used
                 }
             }
         }
@@ -282,10 +266,6 @@ public class Minion : MonoBehaviour
                 if (RemainingCharges > 0)
                 {
                     currentAffixes.Add(Affix.Naturopath, RemainingCharges); //Adds back remaining charges to prevent overheal, if possible
-                }
-                else
-                {
-                    affixDisplay.RemoveAffix(Affix.Naturopath); //Removes visual portion of affix
                 }
             }
         }
@@ -369,34 +349,28 @@ public class Minion : MonoBehaviour
     {
         if (currentAffixes.ContainsKey(Affix.DamageReduction)) 
         {
-            RemoveAffix(Affix.DamageReduction);
+            currentAffixes.Remove(Affix.DamageReduction);
         }
         if (currentAffixes.ContainsKey(Affix.Vulnerable)) 
         {
-            RemoveAffix(Affix.Vulnerable);
+            currentAffixes.Remove(Affix.Vulnerable);
         }
         if (currentAffixes.ContainsKey(Affix.Bleed)) 
         {
-            RemoveAffix(Affix.Bleed);
+            currentAffixes.Remove(Affix.Bleed);
         }
         if (currentAffixes.ContainsKey(Affix.Mark)) 
         {
-            RemoveAffix(Affix.Mark);
+            currentAffixes.Remove(Affix.Mark);
         }
         if (currentAffixes.ContainsKey(Affix.Threaded)) 
         {
-            RemoveAffix(Affix.Threaded);
+            currentAffixes.Remove(Affix.Threaded);
         }
         if (currentAffixes.ContainsKey(Affix.Exploit)) 
         {
-            RemoveAffix(Affix.Exploit);
+            currentAffixes.Remove(Affix.Exploit);
         }
-    }
-
-    private void RemoveAffix(Affix affixToRemove)
-    {
-        currentAffixes.Remove(affixToRemove);
-        affixDisplay.RemoveAffix(affixToRemove);
     }
 
     public bool HasADebuff() //Returns a true if this minion has a debuff
@@ -456,7 +430,7 @@ public class Minion : MonoBehaviour
         if (currentAffixes.ContainsKey(AffixToRemove))
         {
             int currentCount = currentAffixes[AffixToRemove]; //Counts current count
-            RemoveAffix(AffixToRemove); //Removes affix
+            currentAffixes.Remove(AffixToRemove); //Removes affix
             return currentCount;
         }
         return -1; //If affix isnt on minion
