@@ -21,46 +21,46 @@ public class AffixDisplay : MonoBehaviour
         switch (newAffix) //Adds an image depending on the added affix to display
         {
             case Affix.Taunt:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Taunt.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Taunt"));
                 break;
             case Affix.Block:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Block.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Block"));
                 break;
             case Affix.Vulnerable:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Vulnerable.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Vulnerable"));
                 break;
             case Affix.DamageReduction:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/DamageReduction.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/DamageReduction"));
                 break;
             case Affix.Thorns:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Thorns.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Thorns"));
                 break;
             case Affix.Regen:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Regen.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Regen"));
                 break;
             case Affix.Parasite:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Parasite.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Parasite"));
                 break;
             case Affix.Strength:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Strength.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Strength"));
                 break;
             case Affix.Bleed:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Bleed.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Bleed"));
                 break;
             case Affix.Mark:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Mark.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Mark"));
                 break;
             case Affix.HoundCounter:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/HoundCounter.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/HoundCounter"));
                 break;
             case Affix.Threaded:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Threaded.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Threaded"));
                 break;
             case Affix.Naturopath:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Naturopath.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Naturopath"));
                 break;
             case Affix.Exploit:
-                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Assets/Art/AffixSprites/Exploit.png"));
+                imageDictionary.Add(newAffix, Resources.Load<Sprite>("Art/AffixSprites/Exploit"));
                 break;
             default:
                 break;
