@@ -37,7 +37,7 @@ public class Minion : MonoBehaviour
     [SerializeField]
     private GameObject m_CardContainer;
 
-    private AffixDisplay affixDisplay;
+    public AffixDisplay affixDisplay;
         
     //Affixes:
     //public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
@@ -62,7 +62,7 @@ public class Minion : MonoBehaviour
             AddAffix(affix.Tag, affix.Value); //Stores each affix that was preset into the currentAffixes dictionary
         }
         */
-        affixDisplay = new AffixDisplay(); //Creates an AffixDisplay object to send affixes to display when necessary
+        affixDisplay = GetComponentInChildren<AffixDisplay>(); //Initializes correct affixDisplay object
         EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
         
     }
