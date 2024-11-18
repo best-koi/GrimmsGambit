@@ -648,12 +648,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: FunnyFlask
   cardCost: 2
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 7b4ced3a9b5836949936abe02835a1ee, type: 3}
   awaitingTarget: 1
   m_Index: 18
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &-6689728368833000045
 MonoBehaviour:
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
+  damage: 9
 --- !u!114 &6602938820164923522
 MonoBehaviour:
   m_ObjectHideFlags: 0
