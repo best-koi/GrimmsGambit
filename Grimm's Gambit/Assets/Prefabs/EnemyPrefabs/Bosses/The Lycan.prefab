@@ -179,11 +179,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 391424227411787336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82a000e7b99be04682870ed6722d07d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 1959875069820740660}
-  pixelWidth: 50
+  pixelWidth: 5
 --- !u!1 &1350356531609003392
 GameObject:
   m_ObjectHideFlags: 0
