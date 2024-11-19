@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CheckTarget : SpellComponent
 {
-    private protected bool m_CheckingSelf;
-    private protected bool m_IsBeingTargeted = false;
+    [SerializeField] private protected bool m_CheckingSelf;
 
     public CheckTarget()
     {
@@ -37,15 +36,21 @@ public class CheckTarget : SpellComponent
         {
             if (member.GetComponent<EnemyTemplate>().GetAttackTarget() == minionToCheck)
             {
-                m_IsBeingTargeted = true;
-                break;
+                DoTrueEffect();
+                return;
             }
         }
 
+        DoFalseEffect();
     }
 
-    public virtual void DoRealEffect()
+    public virtual void DoTrueEffect()
     {
-        Debug.Log("Augment another spell");
+        Debug.Log("Do the effect where where the condition is met.");
+    }
+
+    public virtual void DoFalseEffect()
+    {
+        Debug.Log("Do the effect where where the condition is not met.");
     }
 }
