@@ -64,7 +64,7 @@ public class Deck : MonoBehaviour
         if (forTurn) amount = m_NumDrawsPerTurn;
         for (int i = 0; i < amount; i++) Draw();
 
-        m_MaxCountThisTurn = m_Hand.Count(); //Counts after this since this includes katze's bonus card which will have been added earlier
+        if (forTurn) m_MaxCountThisTurn = m_Hand.Count(); //Counts after this since this includes katze's bonus card which will have been added earlier
     }
 
     //Function to return current hand count for card functionality
@@ -83,6 +83,7 @@ public class Deck : MonoBehaviour
             return;
         }
 
+        onDraw?.Invoke(cardID); //Added for debugging reasons - Ryan Lockie 11/19/2024
         m_Hand.Add(cardID);
     }
 
