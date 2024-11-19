@@ -20,6 +20,9 @@ public class Deck : MonoBehaviour
     [SerializeField] private int m_StartingHandSize, m_MaxHandSize;
     [SerializeField] private int m_NumDrawsPerTurn = 1;
 
+    //These refences are needed for the Deadly Elegance and Trinity Strike spells to function - Added Ryan Lockie 11/19/2024
+    public int m_MaxCountThisTurn;
+
     // Lists the indices of each card in the database
     [SerializeField] private List<int> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
@@ -60,6 +63,14 @@ public class Deck : MonoBehaviour
     {
         if (forTurn) amount = m_NumDrawsPerTurn;
         for (int i = 0; i < amount; i++) Draw();
+
+        m_MaxCountThisTurn = m_Hand.Count(); //Counts after this since this includes katze's bonus card which will have been added earlier
+    }
+
+    //Function to return current hand count for card functionality
+    public int CurrentCardCount() 
+    {
+        return m_Hand.Count();
     }
 
     // Conjure's a card into the hand
