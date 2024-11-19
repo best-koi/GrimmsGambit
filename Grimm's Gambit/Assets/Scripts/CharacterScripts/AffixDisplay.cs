@@ -11,7 +11,7 @@ using UnityEngine;
 public class AffixDisplay : MonoBehaviour
 {
     public Dictionary<Affix, Sprite> imageDictionary = new Dictionary<Affix, Sprite>();
-    public AffixImageLibrary affixImageLibrary;
+    private AffixImageLibrary affixImageLibrary;
 
     public Transform imageContainer; //Container for images to be stored within
     public int pixelWidth = 5; //Assumes default pixel with of visuals to be 50
