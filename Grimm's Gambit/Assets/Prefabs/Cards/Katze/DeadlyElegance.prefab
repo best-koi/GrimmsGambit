@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
   - component: {fileID: -4841381591758422586}
+  - component: {fileID: -1683521984874827272}
   m_Layer: 7
   m_Name: DeadlyElegance
   m_TagString: Card
@@ -647,12 +648,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Deadly Elegance
   cardCost: 5
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
   awaitingTarget: 1
-  m_Index: 22
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &-4841381591758422586
 MonoBehaviour:
@@ -667,3 +667,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 17
+--- !u!114 &-1683521984874827272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378898911713981695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b367814f56aeeb468ed6e9c988f506d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
