@@ -519,9 +519,9 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 8802551861005370511}
+  - component: {fileID: 5526482676760773032}
   m_Layer: 7
-  m_Name: ToTheHeavensFaceUp
+  m_Name: YourMine
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_PlayerCopies: 0
   m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &8802551861005370511
+--- !u!114 &5526482676760773032
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,8 +662,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c294c73fd92bfb45ab09631433ad021, type: 3}
+  m_Script: {fileID: 11500000, guid: be69a98a266de524a87a634b653baecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DirectAmount: 18
-  m_AOEAmount: 9
+  m_Amount: 10
+  debuff: 7
+  value: 2

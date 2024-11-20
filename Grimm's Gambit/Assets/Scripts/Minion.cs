@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
 {
@@ -52,7 +53,7 @@ public class Minion : MonoBehaviour
 
     //Activity:
     private bool usedThisTurn;
-    // public static Action<Minion> onDeath; //Added by Dawson, displays this minion when it dies (currently doesn't compile, looking for alternative solution)
+    public static Action<Minion> onDeath; //Added by Dawson for Check target death
 
     // Start is called before the first frame update
     void Start()
@@ -361,7 +362,7 @@ public class Minion : MonoBehaviour
         Deck deck = FindObjectOfType<Deck>();
         deck.RemoveCards(this);
 
-        // onDeath?.Invoke(this); // See line 55
+        onDeath?.Invoke(this); // See line 55
 
         Destroy(gameObject);
     }
