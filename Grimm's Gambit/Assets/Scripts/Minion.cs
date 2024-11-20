@@ -45,6 +45,7 @@ public class Minion : MonoBehaviour
     private bool currentTurnPlayer; //This just records whose turn it is currently
     //Insert a reference to the game loop object here if there are "random" attacks so that a random target can be selected from the target options
 
+    public Animator Animator;
 
     //Activity:
     private bool usedThisTurn;

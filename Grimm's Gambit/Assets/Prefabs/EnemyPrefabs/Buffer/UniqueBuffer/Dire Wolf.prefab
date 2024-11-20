@@ -815,6 +815,7 @@ MonoBehaviour:
   currentHealth: 35
   m_CardContainer: {fileID: 7786072958281973414}
   ownerPlayer: 0
+  Animator: {fileID: 0}
 --- !u!114 &6772667100608871505
 MonoBehaviour:
   m_ObjectHideFlags: 0
