@@ -98,14 +98,14 @@ protected override void Attack()
 //A method for applying a weak amount of Shred to characters
     protected virtual void WeakShred()
     {
-       minion.AddAffix(Affix.Mark, weakShredValue);
+       minion.AddAffix(Affix.Vulnerable, weakShredValue);
        FindTarget();
     }
 
 //A method for applying a strong amount of Shred to characters
  protected virtual void StrongShred()
     {
-       minion.AddAffix(Affix.Mark, strongShredValue);
+       minion.AddAffix(Affix.Vulnerable, strongShredValue);
        FindTarget();
     }
 
@@ -218,7 +218,7 @@ protected virtual void FirstAttackPhase(){
                     AdvanceAttack();
                 }
                 else{
-                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {strongShredValue} Mark";
+                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {strongShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
                 }
                 break;
@@ -231,7 +231,7 @@ protected virtual void FirstAttackPhase(){
                     AdvanceAttack();
                 }
             else{
-                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {weakShredValue} Mark";
+                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {weakShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
             }
                 break;
