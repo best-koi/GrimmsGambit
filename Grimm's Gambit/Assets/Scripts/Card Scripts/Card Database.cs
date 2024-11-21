@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CardDatabase : MonoBehaviour
 {
+
     // Only instantiated if the player has one or more copies
     // Evens represent face up cards, odds are reversed
+    [SerializeField] private Card[] m_Data;
     [SerializeField] private GameObject[] m_Prefabs;
 
     private void Start()
@@ -48,6 +50,7 @@ public class CardDatabase : MonoBehaviour
 
     public Card GetCard(int index)
     {
+        //return m_Data[index];
         return GetPrefab(index).GetComponent<Card>();
     }
 
@@ -58,6 +61,6 @@ public class CardDatabase : MonoBehaviour
 
     public void AddCard(int index, int numTimes = 1)
     {
-        GetPrefab(index).GetComponent<Card>().NumCopies += numTimes;
+        m_Data[index].NumCopies += numTimes;
     }
 }
