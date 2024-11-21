@@ -28,6 +28,8 @@ public class CardHand : ObjectContainer
 
     public void AddCardFromIndex(int cardIndex)
     {
+        if(cardIndex < 0)
+            return;
         GameObject card = Instantiate(m_Database.GetPrefab(cardIndex));
         Add(card.transform);
     }

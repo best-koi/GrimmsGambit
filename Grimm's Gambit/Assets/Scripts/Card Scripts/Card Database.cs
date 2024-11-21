@@ -48,6 +48,7 @@ public class CardDatabase : MonoBehaviour
 
     public Card GetCard(int index)
     {
+        
         return GetPrefab(index).GetComponent<Card>();
     }
 
