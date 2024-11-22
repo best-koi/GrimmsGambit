@@ -102,7 +102,7 @@ public class Deck : MonoBehaviour
             m_DiscardPile.Add(m_Hand[i]);
             
             // Invoke I
-            onDiscard?.Invoke(m_Hand[i]);
+            onDiscard?.Invoke(i);
 
             m_Hand.Remove(m_Hand[i]);
         }
