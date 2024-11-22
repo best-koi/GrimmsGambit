@@ -80,6 +80,8 @@ public override void AttackPattern()
 protected virtual void WeakAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), weakAttackValue);
+       minion.AddAffix(Affix.Vulnerable, strongShredValue);
+
        FindTarget();
     }
 
@@ -93,22 +95,26 @@ protected override void Attack()
  protected virtual void StrongAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), strongAttackValue);
+       minion.AddAffix(Affix.Vulnerable, weakShredValue);
        FindTarget();
     }
 //A method for applying a weak amount of Shred to characters
+/*
     protected virtual void WeakShred()
     {
-       minion.AddAffix(Affix.Mark, weakShredValue);
+       minion.AddAffix(Affix.Vulnerable, weakShredValue);
        FindTarget();
     }
+    */
 
 //A method for applying a strong amount of Shred to characters
+/*
  protected virtual void StrongShred()
     {
-       minion.AddAffix(Affix.Mark, strongShredValue);
+       minion.AddAffix(Affix.Vulnerable, strongShredValue);
        FindTarget();
     }
-
+*/
 //A value to defend by
 protected override void Defend(){
     if(isSecondPhase)
@@ -126,7 +132,7 @@ protected void AoEAttack(){
     foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
-                minion.MinionUsed(c.GetComponent<Minion>(), attackValue);
+                minion.MinionUsed(c.GetComponent<Minion>(), aoeAttackValue);
             }
 }
 
@@ -176,7 +182,7 @@ protected virtual void FirstAttackPhase(){
                 }
                 else
                 {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {strongAttackValue} DMG";
+                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {strongAttackValue} DMG and Applying {weakShredValue} Vulnerable";
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
@@ -192,7 +198,7 @@ protected virtual void FirstAttackPhase(){
                 }
                 else
                 {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {weakAttackValue} DMG";
+                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {weakAttackValue} DMG and Applying {strongShredValue} Vulnerable";
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
@@ -218,7 +224,7 @@ protected virtual void FirstAttackPhase(){
                     AdvanceAttack();
                 }
                 else{
-                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {strongShredValue} Mark";
+                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {strongShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
                 }
                 break;
@@ -231,7 +237,7 @@ protected virtual void FirstAttackPhase(){
                     AdvanceAttack();
                 }
             else{
-                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {weakShredValue} Mark";
+                moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {weakShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
             }
                 break;

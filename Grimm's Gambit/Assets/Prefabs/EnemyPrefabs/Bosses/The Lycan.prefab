@@ -182,7 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 1959875069820740660}
   pixelWidth: 5
 --- !u!1 &1350356531609003392
@@ -884,10 +883,8 @@ MonoBehaviour:
   enemyName: The Lycan
   attacks:
   - StrongAttack
-  - WeakShred
   - Defend
   - WeakAttack
-  - StrongShred
   currentAttack: 0
   healthText: {fileID: 7007063830712604864}
   nameText: {fileID: 1547079865206609264}
@@ -899,15 +896,16 @@ MonoBehaviour:
   randomAttacks: []
   combinedAttacks: []
   secondaryAttacks:
-  - Attack
   - ChargingUp
   - AoEAttack
   - Defend
+  - Attack
+  - Attack
   weakAttackValue: 5
-  strongAttackValue: 12
+  strongAttackValue: 10
   weakShredValue: 5
   strongShredValue: 10
-  aoeAttackValue: 30
+  aoeAttackValue: 10
   switchPhaseHealth: 75
   firstDefend: 30
   secondDefend: 45
