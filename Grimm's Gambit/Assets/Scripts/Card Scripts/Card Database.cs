@@ -10,7 +10,7 @@ public class CardDatabase : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
