@@ -17,6 +17,7 @@ public class Card : MonoBehaviour
     // Index in the database
     // Number that player has in their deck
     [SerializeField] private protected int m_Index = -1;
+    // private protected int m_Index = -1;
     [SerializeField ] private protected int m_PlayerCopies = 0;
 
     [SerializeField] private protected Card m_ReverseVersion;
