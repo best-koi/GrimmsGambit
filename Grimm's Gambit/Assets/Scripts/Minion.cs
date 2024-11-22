@@ -88,7 +88,7 @@ public class Minion : MonoBehaviour
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
-            if (currentValue + value > 0 && affix != Affix.Bleed) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
+            if (currentValue + value > 0 || (currentValue + value < 0 && affix != Affix.Bleed)) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
             {
                 currentAffixes.Add(affix, currentValue+value);
             }
