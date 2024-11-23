@@ -8,7 +8,7 @@ public class CardDatabase : MonoBehaviour
     // Evens represent face up cards, odds are reversed
     [SerializeField] private GameObject[] m_Prefabs;
 
-    [SerializeField] private TwoDArray <GameObject> m_Data = new TwoDArray<GameObject>();
+    [SerializeField] private TwoDArray m_Data;
 
     private void Start()
     {

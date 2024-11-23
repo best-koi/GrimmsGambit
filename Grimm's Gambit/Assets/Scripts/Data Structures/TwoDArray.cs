@@ -2,13 +2,28 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class TwoDArrayRow<T>
+public class TwoDArrayRow
 {
-    [SerializeField] public T[] row;
+    [SerializeField] internal GameObject[] row;
+
+    internal TwoDArrayRow (int cols)
+    {
+        row = new GameObject[cols];
+    }
 }
 
 [Serializable]
-public class TwoDArray<T>
+public class TwoDArray
 {
-    [SerializeField] private TwoDArrayRow<T>[] rows;
+    [SerializeField] private TwoDArrayRow[] Arr;
+
+    public TwoDArray (int rows, int cols)
+    {
+        Arr = new TwoDArrayRow[rows];
+
+        for (int i = 0; i < rows; i++)
+        {
+            Arr[i] = new TwoDArrayRow(cols);
+        }
+    }
 }
