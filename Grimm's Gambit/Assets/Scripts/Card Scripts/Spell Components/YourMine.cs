@@ -9,7 +9,7 @@ public class YourMine : CheckTargetDeath
     [SerializeField] private Affix debuff;
     [SerializeField] private int value;
 
-    public virtual void DoTrueEffect()
+    public override void DoTrueEffect()
     {
         caster.DamageTaken(-m_Amount);
         caster.AddAffix(debuff, value);

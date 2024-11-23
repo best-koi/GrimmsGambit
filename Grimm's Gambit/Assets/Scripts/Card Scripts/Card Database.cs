@@ -8,6 +8,9 @@ public class CardDatabase : MonoBehaviour
     // Evens represent face up cards, odds are reversed
     [SerializeField] private GameObject[] m_Prefabs;
 
+    [SerializeField] private TwoDArray <int> m_Data = new TwoDArray<int>(1, 1);
+    [SerializeField] private int m_Rows, m_Columns; 
+
     private void Start()
     {
 
@@ -18,6 +21,11 @@ public class CardDatabase : MonoBehaviour
         
     }
 
+    private void OnValidate()
+    {
+        // Ensure arrays match the set dimensions
+        m_Data.Resize(m_Rows, m_Columns);
+    }
 
     public List<int> PopulateDeck(bool instantiate = true)
     {
