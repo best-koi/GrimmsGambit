@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class TwoDArrayRow
+internal class TwoDArrayRow
 {
     [SerializeField] internal GameObject[] row;
 

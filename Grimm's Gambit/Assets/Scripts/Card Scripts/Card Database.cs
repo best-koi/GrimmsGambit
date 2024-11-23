@@ -21,11 +21,6 @@ public class CardDatabase : MonoBehaviour
         
     }
 
-    private void OnValidate()
-    {
-        //m_Data.Resize(m_Rows, m_Columns);
-    }
-
     public List<int> PopulateDeck(bool instantiate = true)
     {
         List<int> m_PlayerDeck = new List<int>();

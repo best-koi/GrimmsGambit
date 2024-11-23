@@ -50,7 +50,7 @@ public class Deck : MonoBehaviour
         m_GameDeck.RemoveAt(index);
         m_Hand.Add(nextCardID);
 
-        // Index?
+        // Compatible with AddCard
         onDraw?.Invoke(nextCardID);
 
         if (m_Hand.Count > m_MaxHandSize) Discard(m_DataBase.GetCard(nextCardID));
@@ -80,13 +80,18 @@ public class Deck : MonoBehaviour
         if (m_Hand.Count() >= m_MaxHandSize)
         {
             m_DiscardPile.Add(cardID);
+            onDiscard?.Invoke(cardID); // Not compatible with Remove function
+            Debug.Log("Exceeded maximum hand size. Conjuered card will placed in the discard pile.");
             return;
         }
 
-        onDraw?.Invoke(cardID); //Added for debugging reasons - Ryan Lockie 11/19/2024
+        onDraw?.Invoke(cardID); // Compatible with AddCard
         m_Hand.Add(cardID);
     }
 
+    // Invokes index in database not hand 
+    // Do not use with William's remove function
+    // Will cause bugs
     public void Discard(Card c)
     {
         int index = c.GetIndex();
@@ -100,8 +105,9 @@ public class Deck : MonoBehaviour
         for (int i = m_Hand.Count - 1; i >= 0; i--)
         {
             m_DiscardPile.Add(m_Hand[i]);
-            
-            // Invoke I
+
+            // Invoke the index in the hand
+            // Compatible with remove function of Object Container
             onDiscard?.Invoke(i);
 
             m_Hand.Remove(m_Hand[i]);
@@ -206,6 +212,7 @@ public class Deck : MonoBehaviour
         }
     }
 
+    // Used by draw function
     public void Shuffle()
     {
         List<int> temp = new List<int>(m_DiscardPile);
@@ -222,6 +229,7 @@ public class Deck : MonoBehaviour
         } 
     }
 
+    // Used by encounter controller
     public void ShuffleDeck()
     {
         List<int> temp = new List<int>(m_GameDeck);
@@ -238,20 +246,7 @@ public class Deck : MonoBehaviour
         } 
     }
 
-    /**
-    public void EmptyShuffle(){
-        
-        foreach (int card in m_DiscardPile)
-        {
-            int randomNum = UnityEngine.Random.Range(0, m_DiscardPile.Count());
-            int randomCard = m_DiscardPile[randomNum];
-            m_GameDeck.Add(randomCard);
-        } 
-        m_DiscardPile.Clear();
-
-    }
-    */
-
+    // Not in use
     private void ClearAll()
     {
         m_GameDeck.Clear();

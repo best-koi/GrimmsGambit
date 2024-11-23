@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class GenericPair<T, T2>
+internal class GenericPair<T, T2>
 {
    [SerializeField] internal T key;
    [SerializeField] private T2 value;
