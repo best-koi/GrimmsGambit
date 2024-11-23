@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CardDatabase : MonoBehaviour
 {
-
     // Only instantiated if the player has one or more copies
     // Evens represent face up cards, odds are reversed
-    [SerializeField] private Card[] m_Data;
     [SerializeField] private GameObject[] m_Prefabs;
+
+    [SerializeField] private TwoDArray <GameObject> m_Data = new TwoDArray<GameObject>();
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
@@ -20,6 +20,10 @@ public class CardDatabase : MonoBehaviour
         
     }
 
+    private void OnValidate()
+    {
+        //m_Data.Resize(m_Rows, m_Columns);
+    }
 
     public List<int> PopulateDeck(bool instantiate = true)
     {
@@ -50,7 +54,7 @@ public class CardDatabase : MonoBehaviour
 
     public Card GetCard(int index)
     {
-        //return m_Data[index];
+        
         return GetPrefab(index).GetComponent<Card>();
     }
 
@@ -61,6 +65,6 @@ public class CardDatabase : MonoBehaviour
 
     public void AddCard(int index, int numTimes = 1)
     {
-        m_Data[index].NumCopies += numTimes;
+        GetPrefab(index).GetComponent<Card>().NumCopies += numTimes;
     }
 }

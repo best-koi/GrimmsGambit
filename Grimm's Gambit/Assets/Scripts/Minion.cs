@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
 {
@@ -50,9 +51,10 @@ public class Minion : MonoBehaviour
     private bool currentTurnPlayer; //This just records whose turn it is currently
     //Insert a reference to the game loop object here if there are "random" attacks so that a random target can be selected from the target options
 
-
     //Activity:
     private bool usedThisTurn;
+    public static Action<Minion> onDeath; //Added by Dawson for Check target death
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,7 +88,7 @@ public class Minion : MonoBehaviour
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
-            if (currentValue + value > 0 && affix != Affix.Bleed) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
+            if (currentValue + value > 0 || (currentValue + value < 0 && affix != Affix.Bleed)) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
             {
                 currentAffixes.Add(affix, currentValue+value);
             }
@@ -292,7 +294,7 @@ public class Minion : MonoBehaviour
         
         currentHealth -= DamageToDeal;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Destroyed(); 
         }
@@ -359,6 +361,8 @@ public class Minion : MonoBehaviour
         //Maybe have death effect here if present
         Deck deck = FindObjectOfType<Deck>();
         deck.RemoveCards(this);
+
+        onDeath?.Invoke(this); // See line 55
 
         Destroy(gameObject);
     }

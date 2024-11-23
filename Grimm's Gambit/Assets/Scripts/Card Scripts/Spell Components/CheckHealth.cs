@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CheckHealth : SpellComponent
 {
-    private protected float m_HealthGate;
-    private protected bool m_CheckingSelf;
+    [SerializeField] private protected float m_HealthGate;
+    [SerializeField] private protected bool m_CheckingSelf;
 
     public CheckHealth()
     {
@@ -17,16 +17,22 @@ public class CheckHealth : SpellComponent
 
     public bool CheckGate()
     {
-        if (!m_CheckingSelf) return (target.currentHealth / target.maxHealth) <= m_HealthGate;
-        return (caster.currentHealth / caster.maxHealth) <= m_HealthGate;
+        if (!m_CheckingSelf) return (target.currentHealth / target.maxHealth) < m_HealthGate;
+        return (caster.currentHealth / caster.maxHealth) < m_HealthGate;
     }
 
     public override void DoSpellEffect()
     {
-        if (CheckGate()) DoRealEffect();
+        if (CheckGate()) DoTrueEffect();
+        else DoFalseEffect();
     }
 
-    public virtual void DoRealEffect() {
-        Debug.Log("Augment another spell");
+    public virtual void DoTrueEffect() {
+        Debug.Log("Do the effect where where the condition is met.");
+    }
+
+    public virtual void DoFalseEffect()
+    {
+        Debug.Log("Do the effect where where the condition is not met.");
     }
 }

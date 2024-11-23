@@ -50,6 +50,7 @@ public class Deck : MonoBehaviour
         m_GameDeck.RemoveAt(index);
         m_Hand.Add(nextCardID);
 
+        // Index?
         onDraw?.Invoke(nextCardID);
 
         if (m_Hand.Count > m_MaxHandSize) Discard(m_DataBase.GetCard(nextCardID));
@@ -99,7 +100,10 @@ public class Deck : MonoBehaviour
         for (int i = m_Hand.Count - 1; i >= 0; i--)
         {
             m_DiscardPile.Add(m_Hand[i]);
+            
+            // Invoke I
             onDiscard?.Invoke(i);
+
             m_Hand.Remove(m_Hand[i]);
         }
     }

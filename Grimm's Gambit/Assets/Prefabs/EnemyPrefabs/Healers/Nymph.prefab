@@ -168,6 +168,7 @@ RectTransform:
   - {fileID: 1027994197157065806}
   - {fileID: 2840590071009483456}
   - {fileID: 3558662746027177489}
+  - {fileID: 4634615298171216762}
   m_Father: {fileID: 4636294791466361176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -627,6 +628,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.43475515, y: 0.30661348, z: 0.41650373}
   m_Center: {x: -0.13737771, y: 0.14405963, z: 0.15117154}
+--- !u!1 &9033463931705216237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4634615298171216762}
+  - component: {fileID: 7034899465023169463}
+  m_Layer: 5
+  m_Name: AffixDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4634615298171216762
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033463931705216237}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4647614208199563501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -495.1089, y: -247.254}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7034899465023169463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033463931705216237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageContainer: {fileID: 4634615298171216762}
+  pixelWidth: 5
 --- !u!1 &9146193986863031628
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,4 +811,5 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 1
   m_CardContainer: {fileID: 5713650420272970941}
+  affixDisplay: {fileID: 0}
   ownerPlayer: 0
