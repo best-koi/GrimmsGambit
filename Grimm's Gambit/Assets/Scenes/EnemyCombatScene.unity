@@ -1075,6 +1075,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Rows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Columns
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.columns
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.data.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.data[0].row.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.data[1].row.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.data[2].row.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.data[3].row.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_Data.rows.Array.data[4].row.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8870974378909321240, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
       propertyPath: m_Name
       value: PlaytestCardDatabase
@@ -1602,7 +1646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -32.2, y: -4}
+  m_AnchoredPosition: {x: -32.19995, y: -4}
   m_SizeDelta: {x: 71.9617, y: 71.9617}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &713512397
@@ -1875,6 +1919,58 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+--- !u!1 &758180984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 758180985}
+  - component: {fileID: 758180986}
+  m_Layer: 0
+  m_Name: TestDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &758180985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758180984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9899998, y: -0.95, z: 0.19999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758180986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758180984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d590fa8e9021fc54eb558e95f2d4511d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affixes:
+    DictArray:
+    - key: 0
+      value: 0
+    - key: 0
+      value: 0
+    - key: 0
+      value: 0
 --- !u!1001 &813169254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3868,3 +3964,4 @@ SceneRoots:
   - {fileID: 852761802}
   - {fileID: 361999536}
   - {fileID: 1232710144}
+  - {fileID: 758180985}
