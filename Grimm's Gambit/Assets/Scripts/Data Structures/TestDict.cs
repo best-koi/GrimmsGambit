@@ -11,7 +11,6 @@ public class TestDict : MonoBehaviour
         // Initialize the dictionary to a length of five
         affixes = new GenericDict<Affix, int>(5);
 
-        
         // Set key at index 0 to thorns
         affixes.SetKey(Affix.Thorns);
 

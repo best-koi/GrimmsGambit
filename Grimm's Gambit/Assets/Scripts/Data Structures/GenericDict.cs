@@ -28,6 +28,11 @@ public class GenericDict<T, T2>
     public GenericDict(int size) 
     {
         DictArray = new GenericPair<T, T2>[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            DictArray[i] = new GenericPair<T, T2>();
+        }
     }
 
     public T GetKey(int i = 0)
