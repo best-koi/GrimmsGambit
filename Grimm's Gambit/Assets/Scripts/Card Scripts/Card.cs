@@ -14,10 +14,15 @@ public class Card : MonoBehaviour
     [SerializeField] private protected Minion caster = null; //Added by Ryan - 11/1/2024
     [SerializeField] private protected bool awaitingTarget;
 
+    // Should replace m_Index
+    [SerializeField] private CardData m_Data; 
+
     // Index in the database
     // Number that player has in their deck
     [SerializeField] private protected int m_Index = -1;
     // private protected int m_Index = -1;
+
+
     [SerializeField ] private protected int m_PlayerCopies = 0;
 
     [SerializeField] private protected Card m_ReverseVersion;
@@ -96,6 +101,11 @@ public class Card : MonoBehaviour
     public int GetCardCost()
     {
         return cardCost;
+    }
+
+    public CardData GetData()
+    {
+        return m_Data;
     }
 
     public int GetIndex()

@@ -26,11 +26,11 @@ public class CardHand : ObjectContainer
         Deck.onDiscard += RemoveCardFromIndex;
     }
 
-    public void AddCardFromIndex(int cardIndex)
+    public void AddCardFromIndex(int owner, int cardIndex)
     {
         if(cardIndex < 0)
             return;
-        GameObject card = Instantiate(m_Database.GetPrefab(cardIndex));
+        GameObject card = Instantiate(m_Database.GetPrefab(owner, cardIndex));
         Add(card.transform);
     }
 

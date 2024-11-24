@@ -23,7 +23,7 @@ public class KatzePassive : MonoBehaviour
         if (currentTurn && encounterController.m_TurnCounter%2 == 0) //Activates when it is the player's (katze's) turn and it's an even turn
         {
             Deck deck = FindObjectOfType<Deck>();
-            deck.Conjure(coordinatedStrikes.GetIndex()); //Conjures coordinate strikes on even turns while katze is active
+            deck.Conjure(coordinatedStrikes.GetData()); //Conjures coordinate strikes on even turns while katze is active
         }
     }
 }
