@@ -3798,7 +3798,7 @@ MonoBehaviour:
   m_SlotLayers:
     serializedVersion: 2
     m_Bits: 64
-  controller: {fileID: 0}
+  controller: {fileID: 816788994}
 --- !u!4 &1363140923
 Transform:
   m_ObjectHideFlags: 0

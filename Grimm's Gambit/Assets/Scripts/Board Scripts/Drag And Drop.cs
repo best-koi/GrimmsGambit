@@ -27,6 +27,8 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         m_MainCamera = Camera.main;
+        if (controller == null)
+            controller = FindObjectOfType<EncounterController>();
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class DragAndDrop : MonoBehaviour
             else if (m_SelectedObject != null)
             {
                 // Insert card gameObject into slot gameObject through parenting and local transformations
-                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers) && (controller == null || controller != null && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost())))
+                if (Physics.Raycast(ray, out hit, 1000, m_SlotLayers) && (controller != null) && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()))
                 {
                     //m_SelectedObject.parent = hit.transform;
                     Card c = m_SelectedObject.GetComponent<Card>();
