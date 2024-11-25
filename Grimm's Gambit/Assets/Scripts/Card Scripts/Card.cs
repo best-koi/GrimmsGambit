@@ -155,9 +155,7 @@ public class Card : MonoBehaviour
         target = newTarget;
     }
 
-    // Assign index an index value to the card
-    // Returns false if the card already has an index value
-    // Returns true if successfully assigned
+    // Needs to be reworked based upon databse overhaul
     public bool SetIndex(int i)
     {
         if (m_Index != -1)

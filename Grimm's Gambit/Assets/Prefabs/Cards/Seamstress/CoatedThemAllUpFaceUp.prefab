@@ -647,12 +647,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Coverage Restore
   cardCost: 2
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   caster: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   awaitingTarget: 0
+  m_Data:
+    ownerIndex: -1
+    databaseIndex: -1
   m_Index: 30
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &-3719488379961744286
 MonoBehaviour:
@@ -667,5 +670,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetingFriendlies: 0
-  debuffs: 
-  values: 
+  debuff: 0
+  value: 0
