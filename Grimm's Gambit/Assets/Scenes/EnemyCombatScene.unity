@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1432,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
       propertyPath: m_CardPrefabs.Arr.Array.data[2].row.Array.size
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
       propertyPath: m_CardPrefabs.Arr.Array.data[0].row.Array.data[0]
@@ -1578,6 +1578,10 @@ PrefabInstance:
       propertyPath: m_CardPrefabs.Arr.Array.data[2].row.Array.data[18]
       value: 
       objectReference: {fileID: 6378898911713981695, guid: 10988ea58ab4e3e4891fac27bc49a8b9, type: 3}
+    - target: {fileID: 5874033400324516833, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
+      propertyPath: m_CardPrefabs.Arr.Array.data[2].row.Array.data[19]
+      value: 
+      objectReference: {fileID: 6378898911713981695, guid: 9760ee02e36424246a6596443ed89f4c, type: 3}
     - target: {fileID: 8870974378909321240, guid: a1b0db7823ec7cb48b02811ed0a9dccc, type: 3}
       propertyPath: m_Name
       value: PlaytestCardDatabase
