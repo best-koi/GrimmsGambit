@@ -14,6 +14,7 @@ using UnityEngine.EventSystems;
 public class AffixDisplay : MonoBehaviour
 {
     public Dictionary<Affix, Sprite> imageDictionary = new Dictionary<Affix, Sprite>();
+    public Dictionary<Affix, string> stringDictionary = new Dictionary<Affix, string>();
     private AffixImageLibrary affixImageLibrary;
 
     public Transform imageContainer; //Container for images to be stored within
@@ -22,7 +23,6 @@ public class AffixDisplay : MonoBehaviour
     //Prefab references for mouseover window - must contain:
     public GameObject tooltipPrefab;
     public Canvas parentCanvas;
-    private GameObject currentTooltip;
     
     
     public void AddAffix(Affix newAffix) //Adds an affix to display
@@ -35,45 +35,59 @@ public class AffixDisplay : MonoBehaviour
         {
             case Affix.Taunt:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[0]);
+                stringDictionary.Add(newAffix, "Taunt - Attracts enemy aggression.");
                 break;
             case Affix.Block:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[1]);
+                stringDictionary.Add(newAffix, "Block - Blocks a set amount of damage based on the amount of stacks. Removed at the end of turn.");
                 break;
             case Affix.Vulnerable:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[2]);
+                stringDictionary.Add(newAffix, "Vulnerable - Increases damage taken.");
                 break;
             case Affix.DamageReduction:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[3]);
+                stringDictionary.Add(newAffix, "DamageReduction - Reduces damage dealt.");
                 break;
             case Affix.Thorns:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[4]);
+                stringDictionary.Add(newAffix, "Thorns - deals knockback damage.");
                 break;
             case Affix.Regen:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[5]);
+                stringDictionary.Add(newAffix, "Regen - heals at the end of each turn.");
                 break;
             case Affix.Parasite:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[6]);
+                stringDictionary.Add(newAffix, "Parasite - when attacking this creature, health will be gained.");
                 break;
             case Affix.Strength:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[7]);
+                stringDictionary.Add(newAffix, "Strength - increases damage dealt on a stacking basis.");
                 break;
             case Affix.Bleed:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[8]);
+                stringDictionary.Add(newAffix, "Bleed - On unit activation, quantity of bleed stacks taken as damage.");
                 break;
             case Affix.Mark:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[9]);
+                stringDictionary.Add(newAffix, "Mark - increased damage per attack dealt to this character.");
                 break;
             case Affix.HoundCounter:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[10]);
+                stringDictionary.Add(newAffix, "HoundCounter - when this character is attacked, the attacker will take half damage in return.");
                 break;
             case Affix.Threaded:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[11]);
+                stringDictionary.Add(newAffix, "Threaded - character's turn will be skipped.");
                 break;
             case Affix.Naturopath:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[12]);
+                stringDictionary.Add(newAffix, "Naturopath - Holder adds the number of stacks to their heal.");
                 break;
             case Affix.Exploit:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[13]);
+                stringDictionary.Add(newAffix, "Exploit - Adds number of stacks to the damage of the next hit. Half of stacks rounded down removed on hit.");
                 break;
             default:
                 break;
@@ -111,63 +125,19 @@ public class AffixDisplay : MonoBehaviour
                 //Possibly change color of spriteRenderer here
             }
 
-            //Code for mouseover text descriptions: - test and debug the following
-            EventTrigger hoverEvent = newSpriteObject.AddComponent<EventTrigger>(); //Creates event detector
+            //Adds a collider for mouseover detection
+            BoxCollider2D boxCollider = newSpriteObject.AddComponent<BoxCollider2D>();
+            boxCollider.isTrigger = true; //Sets collider as a trigger so on mouse enter/exit can function properly
 
-            //THE FOLLOWING PORTION DOES NOT SEEM TO WORK - NEED TO LOOK INTO OTHER WAYS TO USE EVENT TRIGGER FOR UNITY
-            //IDEA FOR LATER: CREATE A SCRIPT THAT CAN BE ADDED TO EVERY newSpriteObject which has OnMouseEnter() and OnMouseExit() and also add a collider to the ui object so this works properly
-            EventTrigger.Entry hoverEnter = new EventTrigger.Entry
-            {
-                eventID = EventTriggerType.PointerEnter
-            };
-            hoverEnter.callback.AddListener((data) => ShowTooltip(newSpriteObject));
-            hoverEvent.triggers.Add(hoverEnter); //Adds listener to showtooltip function for hovering over the button
+            //Adds script that manages mouseover information
+            AffixDisplayDetector detector = newSpriteObject.AddComponent<AffixDisplayDetector>();
+            detector.parentObject = newSpriteObject;
+            detector.imageContainer = imageContainer;
+            detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
 
-            EventTrigger.Entry hoverExit = new EventTrigger.Entry
-            {
-                eventID = EventTriggerType.PointerExit
-            };
-            hoverExit.callback.AddListener((data) => RemoveTooltip());
-            hoverEvent.triggers.Add(hoverExit); //Adds listener to removetooltip function for when mouseover ends
+            //POSSIBLY ADD A FEATURE TO SHOW QUANTITY OF STACKS LATER ON
         }
     }
 
-    private void ShowTooltip(GameObject target)
-    {
-        //Debugging:
-        print("Mouseover Active");
-
-        // Create a new GameObject for the tooltip
-        GameObject tooltipObject = new GameObject("Tooltip");
-
-        // Add it as a child to the parent canvas
-        tooltipObject.transform.SetParent(imageContainer, false); //Uses parent of all affix display objects as the parent for this display
-
-        // Add a RectTransform component for UI positioning
-        RectTransform tooltipRect = tooltipObject.AddComponent<RectTransform>();
-        tooltipRect.sizeDelta = new Vector2(200, 50); // Set size of the tooltip ~ possibly change this depending on how clear the text is
-
-        // Add a Text component for the tooltip text
-        GameObject textObject = new GameObject("TooltipText");
-        textObject.transform.SetParent(tooltipObject.transform, false);
-
-        TextMeshProUGUI tooltipText = textObject.AddComponent<TextMeshProUGUI>();
-        tooltipText.text = "chungus"; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
-        tooltipText.fontSize = 14;
-        tooltipText.color = Color.white;
-
-        // Store reference to the tooltip
-        currentTooltip = tooltipObject;
-    }
-
-    private void RemoveTooltip()
-    {
-        //Debugging:
-        print("Mouseover Inactive");
-        if (currentTooltip != null)
-        {
-            Destroy(currentTooltip);
-            currentTooltip = null;
-        }
-    }
+    
 }
