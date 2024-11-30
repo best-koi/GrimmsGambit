@@ -32,4 +32,9 @@ public class TwoDArray
     {
         return Arr[row].row[col];
     }
+
+    public void SetValue(int row, int col, GameObject value)
+    {
+        Arr[row].row[col] = value;
+    }
 }

@@ -64,4 +64,10 @@ public class CardDatabase : MonoBehaviour
     {
         GetPrefab(owner, index).GetComponent<Card>().NumCopies += numTimes;
     }
+
+    public void ReverseCard(int owner, int index)
+    {
+        GameObject reverse = GetCard(owner, index).GetReverse().gameObject;
+        m_CardPrefabs.SetValue(owner, index, reverse);
+    }
 }

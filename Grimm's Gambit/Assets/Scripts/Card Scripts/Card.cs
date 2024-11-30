@@ -14,16 +14,10 @@ public class Card : MonoBehaviour
     [SerializeField] private protected Minion caster = null; //Added by Ryan - 11/1/2024
     [SerializeField] private protected bool awaitingTarget;
 
-    // Should replace m_Index
-    [SerializeField] private CardData m_Data; 
+    // Should replace includes the cards owner and its index in the database
+    [SerializeField] private protected CardData m_Data; 
 
-    // Index in the database
-    // Number that player has in their deck
-    [SerializeField] private protected int m_Index = -1;
-    // private protected int m_Index = -1;
-
-
-    [SerializeField ] private protected int m_PlayerCopies = 0;
+    [SerializeField] private protected int m_PlayerCopies = 1;
 
     [SerializeField] private protected Card m_ReverseVersion;
 
@@ -108,11 +102,6 @@ public class Card : MonoBehaviour
         return m_Data;
     }
 
-    public int GetIndex()
-    {
-        return m_Index;
-    }
-
     public bool CheckEphemeral()
     {
         return m_IsEphemeral;
@@ -155,15 +144,9 @@ public class Card : MonoBehaviour
         target = newTarget;
     }
 
-    // Needs to be reworked based upon databse overhaul
+    // Rework depends on scriptable objects
     public bool SetIndex(int i)
     {
-        if (m_Index != -1)
-        {
-            Debug.Log("Card already has assigned index value.");
-            return false;
-        }
-        m_Index = i;
-        return true;
+        return false;
     }
 }
