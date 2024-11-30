@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ApplyAffixToLowestHPCard : SpellComponent
 {
-    public Affix[] debuffs;
-    public int[] values;
+    [SerializeField] GenericDict<Affix, int> m_Affixes; 
 
     public ApplyAffixToLowestHPCard()
     {
@@ -35,9 +34,10 @@ public class ApplyAffixToLowestHPCard : SpellComponent
             if (member.GetComponent<Minion>().currentHealth < target.currentHealth) target = member.GetComponent<Minion>();
         }
 
-        for (int i = 0; i < debuffs.Length; i++)
+        for (int i = 0; i < m_Affixes.GetLength(); i++)
         {
-            target.AddAffix(debuffs[i], values[i]);
+            Affix key = m_Affixes.GetKey(i);
+            target.AddAffix(key, m_Affixes.GetValue(key));
         }
     }
 }

@@ -50,6 +50,11 @@ public class GenericDict<T, T2>
         return default(T2); 
     }
 
+    public int GetLength()
+    {
+        return DictArray.Length;
+    }
+
     public void SetKey(T key, int i = 0)
     {
         DictArray[i].key = key;

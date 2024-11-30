@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class ApplyAffixByFactor : SpellComponent
 {
-    [SerializeField] private Affix[] debuffs;
-
-    // Must be greater that or equal to one
-    [SerializeField] private int[] values;
+    [SerializeField] GenericDict<Affix, int> m_Affixes;
 
     [SerializeField] private bool m_TargetingSelf;
 
@@ -25,11 +22,13 @@ public class ApplyAffixByFactor : SpellComponent
         if (requiresTarget) minionToCheck = caster;
         else minionToCheck = target;
 
-        for (int i = 0; i < debuffs.Length; i++)
+        for (int i = 0; i < m_Affixes.GetLength(); i++)
         {
-            if (values[i] < 1) values[i] = 1;
+            Affix key = m_Affixes.GetKey(i);
 
-            minionToCheck.AddAffix(debuffs[i], minionToCheck.currentAffixes[debuffs[i]] * (values[i] - 1));
+            if (m_Affixes.GetValue(key) < 1) m_Affixes.SetValue(key, 1);
+
+            minionToCheck.AddAffix(key, minionToCheck.currentAffixes[key] * (m_Affixes.GetValue(key) - 1));
         }
     }
 }

@@ -653,7 +653,6 @@ MonoBehaviour:
   m_Data:
     ownerIndex: 0
     databaseIndex: 6
-  m_Index: 3
   m_PlayerCopies: 0
   m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
@@ -669,7 +668,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd4782b048e0e0d459338e942026b8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 0100000000000000
-  values: 0700000001000000
+  m_Affixes:
+    DictArray:
+    - key: 0
+      value: 1
+    - key: 1
+      value: 7
   m_IsTargetting: 0
   m_CheckingSelf: 1
