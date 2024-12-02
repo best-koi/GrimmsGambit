@@ -166,4 +166,20 @@ public class Card : MonoBehaviour
         m_Index = i;
         return true;
     }
+
+//Displays card info on right click
+    void OnMouseOver(){
+    if(Input.GetMouseButtonDown(1)){
+        Debug.Log("Right Click");
+        DescriptionPopUp.ActivateText(cardName);
+    }
 }
+
+//Hides the info popup
+void OnMouseExit(){
+    DescriptionPopUp.HidePopup();
+}
+    }
+
+
+
