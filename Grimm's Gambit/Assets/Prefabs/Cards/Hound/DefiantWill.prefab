@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Defiant Will
+  cardDescription: 'Gain 6 Block. Discard a card from your hand. '
   cardCost: 0
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}

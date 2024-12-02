@@ -37,16 +37,12 @@ public class AffixDisplayDetector : MonoBehaviour
 
         // Add a RectTransform component for UI positioning
         RectTransform tooltipRect = tooltipObject.AddComponent<RectTransform>();
-        tooltipRect.sizeDelta = new Vector2(10, 10); // Set size of the tooltip ~ possibly change this depending on how clear the text is
+        tooltipRect.sizeDelta = new Vector2(7, 10); // Set size of the tooltip ~ possibly change this depending on how clear the text is
 
-        // Add a Text component for the tooltip text
-        GameObject textObject = new GameObject("TooltipText");
-        textObject.transform.SetParent(tooltipRect, false);
-
-        TextMeshProUGUI tooltipText = textObject.AddComponent<TextMeshProUGUI>();
+        TextMeshProUGUI tooltipText = tooltipObject.AddComponent<TextMeshProUGUI>();
         tooltipText.text = Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
-        tooltipText.fontSize = 14;
-        tooltipText.color = Color.white;
+        tooltipText.fontSize = 0.5f;
+        tooltipText.color = Color.red;
 
         // Store reference to the tooltip
         currentTooltip = tooltipObject;

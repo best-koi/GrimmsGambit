@@ -647,6 +647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Trip
+  cardDescription: '(Enemy) Apply 1 Damage Reduction. If the target has Damage Reduction,
+    cast again.  '
   cardCost: 0
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}

@@ -7,6 +7,8 @@ public class Card : MonoBehaviour
 {
     [SerializeField] private protected string cardName;
 
+    [SerializeField] private protected string cardDescription;
+
     [SerializeField] private protected int cardCost;
 
     [SerializeField] private protected Minion target = null;
@@ -149,4 +151,19 @@ public class Card : MonoBehaviour
     {
         return false;
     }
+
+//Displays card info on right click
+    void OnMouseOver(){
+        DescriptionPopUp.ActivateText(cardName, cardDescription);
+   
 }
+
+//Hides the info popup
+void OnMouseExit(){
+    DescriptionPopUp.HidePopup();
+}
+
+    }
+
+
+

@@ -646,6 +646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Taunt
+  cardDescription: 'Force all enemy intents to target the current position. AoE intents
+    are unaffected. '
   cardCost: 1
   target: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
   caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
