@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Coverage Restore
+  cardName: Coated Up
   cardDescription: '(Ally) Gain 10 Block. Apply 1 Strength if HP below 50%. '
   cardCost: 2
   target: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
