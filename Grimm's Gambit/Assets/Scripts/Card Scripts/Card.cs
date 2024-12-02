@@ -171,7 +171,7 @@ public class Card : MonoBehaviour
 
 //Displays card info on right click
     void OnMouseOver(){
-        DescriptionPopUp.ActivateText(cardDescription);
+        DescriptionPopUp.ActivateText(cardName, cardDescription);
    
 }
 

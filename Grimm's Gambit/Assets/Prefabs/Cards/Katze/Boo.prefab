@@ -647,6 +647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Boo!
+  cardDescription: '(Enemy) Apply 3 Damage Reduction. If the enemy has Mark, Apply
+    1 Armor Reduction. '
   cardCost: 1
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}

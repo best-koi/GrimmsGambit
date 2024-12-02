@@ -648,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Selfless
+  cardDescription: 'Switch two party members'' places. Both gain 5 Block. '
   cardCost: 1
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}

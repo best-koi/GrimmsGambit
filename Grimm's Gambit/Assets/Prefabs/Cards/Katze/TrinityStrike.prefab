@@ -649,6 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Trinity Strike
+  cardDescription: '(Enemy) Deal 3 damage 3 times. If this would be the third ATK
+    card to be played this turn, reduce its cost to 0. '
   cardCost: 3
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}

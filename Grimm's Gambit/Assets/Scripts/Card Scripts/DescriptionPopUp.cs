@@ -25,9 +25,9 @@ public class DescriptionPopUp : MonoBehaviour
     }
 
 
-    public static void ActivateText(string description){
+    public static void ActivateText(string name, string description){
         staticPopup.SetActive(true);
-        staticText.text = description; 
+        staticText.text = $"{name}: {description}"; 
     }
 
     public static void HidePopup(){

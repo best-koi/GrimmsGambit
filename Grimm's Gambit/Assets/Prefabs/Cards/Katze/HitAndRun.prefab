@@ -647,6 +647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Hit and Run
+  cardDescription: '(Enemy) Deal 11 damage. Gain 3 Block for Bleed stack on that
+    enemy. '
   cardCost: 2
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}

@@ -646,6 +646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Imitation Talent
+  cardDescription: (Ally) Create a random attack type card. Reduce its cost by one
+    if selected Ally has a debuff.
   cardCost: 2
   target: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
