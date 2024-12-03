@@ -646,13 +646,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: PiercingHowl
+  cardDescription: All enemies will target the Hound this turn. Gain 7 Block per
+    enemy target changed.
   cardCost: 3
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
   awaitingTarget: 1
-  m_Index: 3
+  m_Data:
+    ownerIndex: 0
+    databaseIndex: 6
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &3083138472017689625
 MonoBehaviour:
@@ -666,5 +670,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a1b2d3b4b459e41a74094703a985b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 000000000a000000
-  values: 0100000001000000
+  m_Affixes:
+    DictArray:
+    - key: 0
+      value: 1
+    - key: 10
+      value: 1

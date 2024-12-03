@@ -519,10 +519,10 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 6125813645122016499}
-  - component: {fileID: 8193858881317563467}
+  - component: {fileID: -4923707591809985156}
+  - component: {fileID: 8027110689378889151}
   m_Layer: 7
-  m_Name: MercenaryPainGain
+  m_Name: EuphoricBlow
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,16 +646,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Pain Gain
-  cardCost: 1
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
+  cardName: Euphoric Blow
+  cardCost: 2
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 62c534803496b0b48b9a518befcab131, type: 3}
   awaitingTarget: 1
   m_Index: 0
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &6125813645122016499
+--- !u!114 &-4923707591809985156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -664,11 +664,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2ff255f797b734899d54723d4cfdc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 47600dfaa8f184c4c8cfd4916ad9865b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Amount: 2
---- !u!114 &8193858881317563467
+  damage: 17
+--- !u!114 &8027110689378889151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -677,7 +677,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78e5da4f270b2b4b868b7a415b41b52, type: 3}
+  m_Script: {fileID: 11500000, guid: 18795dbded9d28a4aaf5b28b5b1520b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  debuff: 0
+  value: 0

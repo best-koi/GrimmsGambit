@@ -519,9 +519,9 @@ GameObject:
   - component: {fileID: 2387793797278657767}
   - component: {fileID: 5771723920239798742}
   - component: {fileID: 5659498217672693843}
-  - component: {fileID: 3587141427848056807}
+  - component: {fileID: 8372436284220579682}
   m_Layer: 7
-  m_Name: MercenaryFollowThrough
+  m_Name: MercRest
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,15 +645,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1be632e2ab8c4ef69dee414c8963031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardName: Follow Through
+  cardName: Rest
   cardCost: 1
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 62c534803496b0b48b9a518befcab131, type: 3}
   awaitingTarget: 1
+  m_Index: -1
   m_PlayerCopies: 0
   m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
---- !u!114 &3587141427848056807
+--- !u!114 &8372436284220579682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,10 +663,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6378898911713981695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381d72da1049db945bd798c98e4e4236, type: 3}
+  m_Script: {fileID: 11500000, guid: 5955238877c2bfd4abef2f4d4e7e5d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HealthGate: 0.75
   m_CheckingSelf: 1
-  m_BuffedDamage: 11
-  m_BaseDamage: 5
+  m_BuffedHeal: 9
+  m_BaseHeal: 5
+  m_TargetingSelf: 1

@@ -6,12 +6,12 @@ public class DamageOnDeath : CheckTargetDeath
 {
     [SerializeField] private int m_DirectAmount, m_AOEAmount;
 
-    public virtual void DoTriggeredEffect()
+    public override void DoTriggeredEffect()
     {
         target.DamageTaken(m_DirectAmount);
     }
 
-    public virtual void DoTrueEffect()
+    public override void DoTrueEffect()
     {
         List<Transform> enemyParty;
         UnitParty[] parties = FindObjectsOfType<UnitParty>();

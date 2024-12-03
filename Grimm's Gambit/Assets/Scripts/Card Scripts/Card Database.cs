@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CardDatabase : MonoBehaviour
 {
-    // Only instantiated if the player has one or more copies
-    // Evens represent face up cards, odds are reversed
-    [SerializeField] private GameObject[] m_Prefabs;
+    // Array of party members
+    // Can be changed to accodomadate Unit Party or other data types
+    [SerializeField] private GameObject[] m_PartyIndex;
+
+    // New databse representing cards
+    [SerializeField] private TwoDArray m_CardPrefabs;
 
     private void Start()
     {
-
+        if (m_PartyIndex.Length != m_CardPrefabs.Arr.Length) Debug.LogWarning("Party size match database.");
     }
 
     private void Update()
@@ -18,11 +21,11 @@ public class CardDatabase : MonoBehaviour
         
     }
 
-
-    public List<int> PopulateDeck(bool instantiate = true)
+    public List<CardData> PopulateDeck(bool instantiate = false)
     {
-        List<int> m_PlayerDeck = new List<int>();
+        List<CardData> m_PlayerDeck = new List<CardData>();
 
+        /**
         for (int i = 0; i < m_Prefabs.Length; i++)
         {
             Card card = GetCard(i);
@@ -42,23 +45,29 @@ public class CardDatabase : MonoBehaviour
                 }
             }
         }
+        */
 
         return m_PlayerDeck;
     }
 
-    public Card GetCard(int index)
+    public Card GetCard(int owner, int index)
     {
-        
-        return GetPrefab(index).GetComponent<Card>();
+        return GetPrefab(owner, index).GetComponent<Card>();
     }
 
-    public GameObject GetPrefab(int index) 
+    public GameObject GetPrefab(int owner, int index) 
     {
-        return m_Prefabs[index];
+        return m_CardPrefabs.GetValue(owner, index);
     }
 
-    public void AddCard(int index, int numTimes = 1)
+    public void AddCard(int owner, int index, int numTimes = 1)
     {
-        GetPrefab(index).GetComponent<Card>().NumCopies += numTimes;
+        GetPrefab(owner, index).GetComponent<Card>().NumCopies += numTimes;
+    }
+
+    public void ReverseCard(int owner, int index)
+    {
+        GameObject reverse = GetCard(owner, index).GetReverse().gameObject;
+        m_CardPrefabs.SetValue(owner, index, reverse);
     }
 }

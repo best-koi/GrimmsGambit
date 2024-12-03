@@ -80,7 +80,7 @@ public override void AttackPattern()
 protected virtual void WeakAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), weakAttackValue);
-       minion.AddAffix(Affix.Vulnerable, strongShredValue);
+       attackTarget.GetComponent<Minion>().AddAffix(Affix.Vulnerable, strongShredValue);
 
        FindTarget();
     }
@@ -95,7 +95,7 @@ protected override void Attack()
  protected virtual void StrongAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), strongAttackValue);
-       minion.AddAffix(Affix.Vulnerable, weakShredValue);
+       attackTarget.GetComponent<Minion>().AddAffix(Affix.Vulnerable, weakShredValue);
        FindTarget();
     }
 //A method for applying a weak amount of Shred to characters

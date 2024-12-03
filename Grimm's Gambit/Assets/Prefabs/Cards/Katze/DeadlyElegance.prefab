@@ -647,10 +647,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Deadly Elegance
+  cardDescription: "(Enemy) Deal 17 Damage. Reduce this card\u2019s cost by 1 for
+    every 0-cost played in this combat. "
   cardCost: 5
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
   awaitingTarget: 1
+  m_Data:
+    ownerIndex: 2
+    databaseIndex: 4
+  m_Index: -1
   m_PlayerCopies: 0
   m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}

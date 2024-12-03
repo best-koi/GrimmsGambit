@@ -646,10 +646,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Coverage Restore
+  cardDescription: Heal 3 to the entire party.
   cardCost: 1
   target: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   caster: {fileID: 5887165854426100928, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
   awaitingTarget: 0
+  m_Data:
+    ownerIndex: 1
+    databaseIndex: 1
   m_Index: 30
   m_PlayerCopies: 2
   m_ReverseVersion: {fileID: 0}

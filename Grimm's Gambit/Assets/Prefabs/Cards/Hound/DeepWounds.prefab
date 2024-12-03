@@ -647,13 +647,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Deep Wounds
+  cardDescription: 'Deal 8 damage. Apply 5 Bleed. '
   cardCost: 1
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
   awaitingTarget: 1
+  m_Data:
+    ownerIndex: 0
+    databaseIndex: 2
   m_Index: 27
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &6019512946585296951
 MonoBehaviour:
@@ -667,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18795dbded9d28a4aaf5b28b5b1520b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 08000000
-  values: 05000000
+  debuff: 0
+  value: 0
 --- !u!114 &3007938582813959638
 MonoBehaviour:
   m_ObjectHideFlags: 0

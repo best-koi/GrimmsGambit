@@ -5,12 +5,30 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 
+[Serializable]
+public class CardData
+{
+    // Used for 2D array
+
+    [SerializeField] internal int ownerIndex, databaseIndex;
+
+    public CardData (int ownerIndex, int dataIndex)
+    {
+        this.ownerIndex = ownerIndex;
+        this.databaseIndex = dataIndex;
+    }
+}
+
+
 public class Deck : MonoBehaviour
 {
     // Triggers on draw, broadcast indice of drawn card
-    public static Action<int> onDraw;
+    // Intended to display index in database
+    public static Action<int, int> onDraw;
 
     // Triggers on discard, broadcast indice of discarded card
+    // Intended to display index in database
+    // Sometimes will display index in hand
     public static Action<int> onDiscard;
     
     // References database of all cards in the game
@@ -24,7 +42,7 @@ public class Deck : MonoBehaviour
     public int m_MaxCountThisTurn;
 
     // Lists the indices of each card in the database
-    [SerializeField] private List<int> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
+    [SerializeField] private List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
     // Draw a card from the top of the deck
     // Alternatively draw specific card from the deck
@@ -46,14 +64,14 @@ public class Deck : MonoBehaviour
         }
         
         // Add a card to the hand
-        int nextCardID = m_GameDeck[index];
+        CardData nextCardData = m_GameDeck[index];
         m_GameDeck.RemoveAt(index);
-        m_Hand.Add(nextCardID);
+        m_Hand.Add(nextCardData);
 
-        // Index?
-        onDraw?.Invoke(nextCardID);
+        // Compatible with AddCard
+        onDraw?.Invoke(nextCardData.ownerIndex, nextCardData.databaseIndex);
 
-        if (m_Hand.Count > m_MaxHandSize) Discard(m_DataBase.GetCard(nextCardID));
+        if (m_Hand.Count > m_MaxHandSize) Discard(nextCardData);
     }
 
     // Draw cards from the top of the deck 
@@ -67,32 +85,52 @@ public class Deck : MonoBehaviour
         if (forTurn) m_MaxCountThisTurn = m_Hand.Count(); //Counts after this since this includes katze's bonus card which will have been added earlier
     }
 
-    //Function to return current hand count for card functionality
-    public int CurrentCardCount() 
-    {
-        return m_Hand.Count();
-    }
-
     // Conjure's a card into the hand
     // Will be discarded if the hand would exceed the maximum
-    public void Conjure(int cardID)
+    public void Conjure(int ownerIndex, int databaseIndex)
     {
         if (m_Hand.Count() >= m_MaxHandSize)
         {
-            m_DiscardPile.Add(cardID);
+            m_DiscardPile.Add(new CardData(ownerIndex, databaseIndex));
+            onDiscard?.Invoke(databaseIndex); // Not compatible with Remove function
+            Debug.Log("Exceeded maximum hand size. Conjuered card will placed in the discard pile.");
             return;
         }
 
-        onDraw?.Invoke(cardID); //Added for debugging reasons - Ryan Lockie 11/19/2024
-        m_Hand.Add(cardID);
+        onDraw?.Invoke(ownerIndex, databaseIndex); // Compatible with AddCard
+        m_Hand.Add(new CardData(ownerIndex, databaseIndex));
     }
 
-    public void Discard(Card c)
+    public void Conjure(CardData data)
     {
-        int index = c.GetIndex();
-        m_DiscardPile.Add(index);
-        m_Hand.Remove(index);
-        onDiscard?.Invoke(index);
+        if (m_Hand.Count() >= m_MaxHandSize)
+        {
+            m_DiscardPile.Add(data);
+            onDiscard?.Invoke(data.databaseIndex); // Not compatible with Remove function
+            Debug.Log("Exceeded maximum hand size. Conjuered card will placed in the discard pile.");
+            return;
+        }
+
+        onDraw?.Invoke(data.ownerIndex, data.databaseIndex); // Compatible with AddCard
+        m_Hand.Add(data);
+    }
+
+    // Invokes index in database not hand 
+    // Do not use with William's remove function
+    // Will cause bugs
+    public void Discard(Card card)
+    {
+        CardData data = card.GetData();
+        m_DiscardPile.Add(data);
+        m_Hand.Remove(data);
+        onDiscard?.Invoke(data.databaseIndex);
+    }
+
+    public void Discard(CardData data)
+    {
+        m_DiscardPile.Add(data);
+        m_Hand.Remove(data);
+        onDiscard?.Invoke(data.databaseIndex);
     }
 
     public void DiscardHand()
@@ -100,8 +138,9 @@ public class Deck : MonoBehaviour
         for (int i = m_Hand.Count - 1; i >= 0; i--)
         {
             m_DiscardPile.Add(m_Hand[i]);
-            
-            // Invoke I
+
+            // Invoke the index in the hand
+            // Compatible with remove function of Object Container
             onDiscard?.Invoke(i);
 
             m_Hand.Remove(m_Hand[i]);
@@ -109,20 +148,20 @@ public class Deck : MonoBehaviour
     }
 
     // Removes card to a special zone
-    public void RemoveCard(Card c)
+    public void RemoveCard(Card card)
     {
-        int index = c.GetIndex();
-        m_RemovedZone.Add(index);
-        m_Hand.Remove(index);
+        CardData data = card.GetData();
+        m_RemovedZone.Add(data);
+        m_Hand.Remove(data);
     }
 
     // Put the top card of the deck into the discard pile
     // Or select a specific card from the game deck
     public void Mill(int index = 0)
     {
-       int nextCardID = m_GameDeck[index];
+       CardData nextCardData = m_GameDeck[index];
        m_GameDeck.RemoveAt(index);
-       m_DiscardPile.Add(nextCardID);
+       m_DiscardPile.Add(nextCardData);
     }
 
     // Mill a specificed amount of cards from the top of the deck 
@@ -184,74 +223,60 @@ public class Deck : MonoBehaviour
         return cardID;
     }
 
-    // Remove all cards owned by a specific party member from the deck object
+    // Needs to be changed based on database rework
     public void RemoveCards(Minion owner)
     {
         for (int i = m_DiscardPile.Count() - 1; i >= 0; i--)
         {
-            Card current = m_DataBase.GetCard(m_DiscardPile[i]);
-            if (current.GetCaster() == owner) m_DiscardPile.RemoveAt(i);
+            
         }
 
         for (int i = m_GameDeck.Count() - 1; i >= 0; i--)
         {
-            Card current = m_DataBase.GetCard(m_GameDeck[i]);
-            if (current.GetCaster() == owner) m_GameDeck.RemoveAt(i);
+            
         }
 
         for (int i = m_Hand.Count() - 1; i >= 0; i--)
         {
-            Card current = m_DataBase.GetCard(m_Hand[i]);
-            if (current.GetCaster() == owner) m_Hand.RemoveAt(i);
+            
         }
     }
 
+    // Used by draw function
     public void Shuffle()
     {
-        List<int> temp = new List<int>(m_DiscardPile);
+        List<CardData> temp = new List<CardData>(m_DiscardPile);
         m_DiscardPile.Clear();
 
         for (int i = temp.Count - 1; i >= 0; i--)
         {
             System.Random rnd = new System.Random();
             int randomNum = rnd.Next(0, temp.Count());
-            int randomCard = temp[randomNum];
+            CardData randomCard = temp[randomNum];
 
             temp.RemoveAt(randomNum);
             m_GameDeck.Add(randomCard);
         } 
     }
 
+    // Used by encounter controller
     public void ShuffleDeck()
     {
-        List<int> temp = new List<int>(m_GameDeck);
+        List<CardData> temp = new List<CardData>(m_GameDeck);
         m_GameDeck.Clear();
 
         for (int i = temp.Count - 1; i >= 0; i--)
         {
             System.Random rnd = new System.Random();
             int randomNum = rnd.Next(0, temp.Count());
-            int randomCard = temp[randomNum];
+            CardData randomCard = temp[randomNum];
 
             temp.RemoveAt(randomNum);
             m_GameDeck.Add(randomCard);
         } 
     }
 
-    /**
-    public void EmptyShuffle(){
-        
-        foreach (int card in m_DiscardPile)
-        {
-            int randomNum = UnityEngine.Random.Range(0, m_DiscardPile.Count());
-            int randomCard = m_DiscardPile[randomNum];
-            m_GameDeck.Add(randomCard);
-        } 
-        m_DiscardPile.Clear();
-
-    }
-    */
-
+    // Not in use
     private void ClearAll()
     {
         m_GameDeck.Clear();
@@ -259,24 +284,24 @@ public class Deck : MonoBehaviour
         m_DiscardPile.Clear();
     }
 
-    public List<int> GetHand()
+    public List<CardData> GetHand()
     {
         return m_Hand;
     }
 
-    public List<int> GetDiscardPile()
+    public List<CardData> GetDiscardPile()
     {
         return m_DiscardPile;
+    }
+
+    //Function to return current hand count for card functionality
+    public int CurrentCardCount()
+    {
+        return m_Hand.Count();
     }
 
     public int GetGameDeckSize()
     {
         return m_GameDeck.Count();
-    }
-
-    // Check if the player has a card of cardID in the deck, hand or discard pile
-    public bool Contains(int cardID)
-    {
-        return m_GameDeck.Contains(cardID) || m_Hand.Contains(cardID) || m_DiscardPile.Contains(cardID);
     }
 }

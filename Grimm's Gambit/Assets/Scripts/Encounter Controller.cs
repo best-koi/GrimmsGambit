@@ -84,19 +84,13 @@ public class EncounterController : MonoBehaviour
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
                 Tired = false; //Removes tired status
             }
-
-            // Overlaps with draw function
-            /**
-            if(m_PlayerDeck.GetGameDeckSize() == 0)
-                m_PlayerDeck.EmptyShuffle();
-            */
             
             m_PlayerDeck.DrawAmount(true);
             
             m_TurnText.text = "Player Turn";
 
             // Display the number of cards in the player's deck
-            Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
+            //Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
         }
         else 
         {

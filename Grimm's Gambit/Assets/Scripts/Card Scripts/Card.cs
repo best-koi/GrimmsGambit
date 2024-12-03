@@ -7,6 +7,8 @@ public class Card : MonoBehaviour
 {
     [SerializeField] private protected string cardName;
 
+    [SerializeField] private protected string cardDescription;
+
     [SerializeField] private protected int cardCost;
 
     [SerializeField] private protected Minion target = null;
@@ -14,11 +16,10 @@ public class Card : MonoBehaviour
     [SerializeField] private protected Minion caster = null; //Added by Ryan - 11/1/2024
     [SerializeField] private protected bool awaitingTarget;
 
-    // Index in the database
-    // Number that player has in their deck
-    [SerializeField] private protected int m_Index = -1;
-    // private protected int m_Index = -1;
-    [SerializeField ] private protected int m_PlayerCopies = 0;
+    // Should replace includes the cards owner and its index in the database
+    [SerializeField] private protected CardData m_Data; 
+
+    [SerializeField] private protected int m_PlayerCopies = 1;
 
     [SerializeField] private protected Card m_ReverseVersion;
 
@@ -98,9 +99,9 @@ public class Card : MonoBehaviour
         return cardCost;
     }
 
-    public int GetIndex()
+    public CardData GetData()
     {
-        return m_Index;
+        return m_Data;
     }
 
     public bool CheckEphemeral()
@@ -145,17 +146,24 @@ public class Card : MonoBehaviour
         target = newTarget;
     }
 
-    // Assign index an index value to the card
-    // Returns false if the card already has an index value
-    // Returns true if successfully assigned
+    // Rework depends on scriptable objects
     public bool SetIndex(int i)
     {
-        if (m_Index != -1)
-        {
-            Debug.Log("Card already has assigned index value.");
-            return false;
-        }
-        m_Index = i;
-        return true;
+        return false;
     }
+
+//Displays card info on right click
+    void OnMouseOver(){
+        DescriptionPopUp.ActivateText(cardName, cardDescription);
+   
 }
+
+//Hides the info popup
+void OnMouseExit(){
+    DescriptionPopUp.HidePopup();
+}
+
+    }
+
+
+

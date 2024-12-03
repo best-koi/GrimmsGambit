@@ -649,13 +649,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardName: Bravado
+  cardDescription: 'Gain 3 Spirit. Apply Tired to self. '
   cardCost: 1
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
   caster: {fileID: 5887165854426100928, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
   awaitingTarget: 0
+  m_Data:
+    ownerIndex: 2
+    databaseIndex: 1
   m_Index: 28
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &-4723397427576097541
 MonoBehaviour:

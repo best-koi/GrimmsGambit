@@ -650,12 +650,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Rest
   cardCost: 3
-  m_Hand: {fileID: 7156029452393982304, guid: 578340fddc81f0f4e87b65289eaab288, type: 3}
   target: {fileID: 0}
   caster: {fileID: 5887165854426100928, guid: 62c534803496b0b48b9a518befcab131, type: 3}
   awaitingTarget: 1
-  m_Index: 0
+  m_Data:
+    ownerIndex: 0
+    databaseIndex: 0
   m_PlayerCopies: 0
+  m_ReverseVersion: {fileID: 0}
   m_EncounterController: {fileID: 8959409189119732552, guid: c15d954a7066c824cacdf8338e1c61b1, type: 3}
 --- !u!114 &6482157133095232551
 MonoBehaviour:
@@ -669,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78e5da4f270b2b4b868b7a415b41b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  m_Damage: 0
 --- !u!114 &8514470596739543518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,9 +684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0539a92e0b7288349a06c7f708f4517d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debuffs: 07000000
-  values: 02000000
-  m_CheckingSelf: 1
+  m_Affixes:
+    DictArray:
+    - key: 7
+      value: 2
+  m_TargetingSelf: 0
 --- !u!114 &51082485830380586
 MonoBehaviour:
   m_ObjectHideFlags: 0

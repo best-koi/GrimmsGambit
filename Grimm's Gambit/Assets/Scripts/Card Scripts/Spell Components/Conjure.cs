@@ -18,7 +18,7 @@ public class Conjure : SpellComponent
         Deck deck = FindObjectOfType<Deck>();
         for (int i = 0; i < m_Amount; i++)
         {
-            deck.Conjure(m_Conjured.GetIndex());
+            deck.Conjure(m_Conjured.GetData());
         }
     }
 }

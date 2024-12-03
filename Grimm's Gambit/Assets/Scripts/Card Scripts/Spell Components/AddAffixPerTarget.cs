@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class AddAffixPerTarget : SpellComponent
 {
-    [SerializeField] private Affix[] debuffs;
-    [SerializeField] private int[] values;
+    [SerializeField] GenericDict<Affix, int> m_Affixes;
 
     // True to apply based on if the enemies are targetting
     // False if to check for the enemies that have yet to target
@@ -48,9 +47,10 @@ public class AddAffixPerTarget : SpellComponent
     // Helper method
     private void AddAffix(Minion affixTarget)
     {
-        for (int i = 0; i < debuffs.Length; i++)
+        for (int i = 0; i < m_Affixes.GetLength(); i++)
         {
-            affixTarget.AddAffix(debuffs[i], values[i]);
+            Affix key = m_Affixes.GetKey(i);
+            affixTarget.AddAffix(key, m_Affixes.GetValue(key));
         }
     }
 }
