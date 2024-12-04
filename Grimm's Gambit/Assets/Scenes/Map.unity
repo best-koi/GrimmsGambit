@@ -461,7 +461,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1023,7 +1023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.118698224, y: -0.6908189, z: 0.11653659, w: 0.70363295}
+  m_LocalRotation: {x: 0.11878413, y: -0.6902998, z: 0.11644901, w: 0.70414215}
   m_LocalPosition: {x: 27.63, y: 14.359189, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2258,7 +2258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.118698224, y: -0.6908189, z: 0.11653659, w: 0.70363295}
+  m_LocalRotation: {x: 0.11878413, y: -0.6902998, z: 0.11644901, w: 0.70414215}
   m_LocalPosition: {x: 27.63, y: 14.359189, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2829,6 +2829,10 @@ PrefabInstance:
     - target: {fileID: 3335342383909972, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817792228042700638, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: m_Size.y
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 2025773562824338651, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: m_LocalPosition.x
