@@ -51,6 +51,7 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
+        endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
         StartEncounter();
     }
