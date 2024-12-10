@@ -92,22 +92,42 @@ public class CardDisplay : MonoBehaviour
     private void Start()
     {
         if (m_CardCanvas != null)
+        {
             m_StartingDisplayScale = m_CardCanvas.transform.localScale;
+            
+        }
+            
     }
+
 
     private void Update()
     {
         if (m_CardNameText != null)
+        {
             m_CardNameText.text = m_CardReference.GetName();
+            m_CardNameText.font = PlaytestCheats.GetAllFont();
+        }
+            
         if (m_CardCostText != null)
+        {
             m_CardCostText.text = m_CardReference.GetCardCost() + "";
+            m_CardCostText.font = PlaytestCheats.GetAllFont();
+
+        }
+            
         if (m_CardDescriptionText != null)
+        {
             m_CardDescriptionText.text = m_CardReference.GetCardDescription();
+            m_CardDescriptionText.font = PlaytestCheats.GetAllFont();
+
+        }
+            
 
         if (m_CardReference.GetCaster().TryGetComponent<BasicCharacter>(out BasicCharacter character))
         {
             m_CardOwnerNameText.color = character.GetCharacterColor();
             m_CardOwnerNameText.text = character.GetCharacterName();
+            m_CardOwnerNameText.font = PlaytestCheats.GetAllFont();
         }
 
         if (m_CardCanvas != null)
