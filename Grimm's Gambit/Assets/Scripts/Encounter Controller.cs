@@ -51,7 +51,7 @@ public class EncounterController : MonoBehaviour
         return m_PlayerInventory;
     }
 
-    private void Start()
+    private void Awake()
     {
         endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
