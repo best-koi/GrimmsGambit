@@ -51,18 +51,13 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
-        endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
         StartEncounter();
     }
 
     private void Update()
     {
-        if(m_PlayerInventory.ChildListSize == 0){
-            EndEncounter(false);
-        }else if (m_EnemyInventory.ChildListSize == 0){
-            EndEncounter(true);
-        }
+        
     }
 
     private void StartEncounter()

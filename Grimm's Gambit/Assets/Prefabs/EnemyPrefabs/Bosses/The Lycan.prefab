@@ -184,8 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageContainer: {fileID: 1959875069820740660}
   pixelWidth: 5
-  tooltipPrefab: {fileID: 0}
-  parentCanvas: {fileID: 0}
 --- !u!1 &1350356531609003392
 GameObject:
   m_ObjectHideFlags: 0
