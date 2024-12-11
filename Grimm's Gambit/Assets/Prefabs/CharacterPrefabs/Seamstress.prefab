@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 9178515899435757505}
   pixelWidth: 5
 --- !u!1 &2123686106583957186
@@ -731,7 +732,7 @@ MonoBehaviour:
   characterName: The Seamstress
   healthText: {fileID: 8931673747312072328}
   nameText: {fileID: 6481525176744876809}
-  characterColor: {r: 0.023529412, g: 1, b: 0.13725491, a: 1}
+  characterColor: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
   position: {fileID: 0}
