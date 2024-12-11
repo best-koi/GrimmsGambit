@@ -953,6 +953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5206035f87a1d44f2b8770b756a32ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &391025521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2393857477294652435, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+  m_PrefabInstance: {fileID: 954606706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &402181979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5397451098032334217, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
@@ -4324,7 +4329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b26e352908fdf1438fecbfc4bc57e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HoveredObject: {fileID: 0}
   m_SelectedObject: {fileID: 0}
   m_DistanceFromCamera: 0.25
   m_PickUpLayers:
