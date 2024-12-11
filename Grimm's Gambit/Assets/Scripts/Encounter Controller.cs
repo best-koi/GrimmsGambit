@@ -35,7 +35,9 @@ public class EncounterController : MonoBehaviour
     [SerializeField]private GameObject endScreenCanvas;
 
     [SerializeField] private string winText, loseText; 
-    [SerializeField] private TMP_Text endScreenText; 
+    [SerializeField] private TMP_Text endScreenText;
+
+    private bool encounterStarted = false;  
 
     private bool Tired = false; //Variable to control whether the player is tired
 
@@ -58,21 +60,27 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        if(m_PlayerInventory.ChildListSize == 0){
+        if(encounterStarted){
+            if(m_PlayerInventory.ChildListSize == 0){
             EndEncounter(false);
         }else if (m_EnemyInventory.ChildListSize == 0){
             EndEncounter(true);
         }
+
+        }
+        
     }
 
     private void StartEncounter()
     {
         m_IsPlayerTurn = false;
         m_TurnCounter = 0;
+    
 
         onEncounterStarted?.Invoke();
 
         m_PlayerDeck.ShuffleDeck();
+        encounterStarted = true; 
         EndTurn();
     }
 
