@@ -72,7 +72,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 2
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
     value: -53
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.509434, g: 0.21736506, b: 0.093716644, a: 1}
   hueShift:
     overrideState: 0
     value: 0
