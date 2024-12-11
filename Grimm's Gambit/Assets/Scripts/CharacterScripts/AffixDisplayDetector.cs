@@ -43,6 +43,7 @@ public class AffixDisplayDetector : MonoBehaviour
         tooltipText.text = Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
         tooltipText.fontSize = 0.5f;
         tooltipText.color = Color.red;
+        tooltipText.font = PlaytestCheats.GetAllFont();
 
         // Store reference to the tooltip
         currentTooltip = tooltipObject;

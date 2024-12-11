@@ -2157,6 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae87ade68f4b4d65b33e89b35f9a348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  font: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
 --- !u!4 &630745769
 Transform:
   m_ObjectHideFlags: 0

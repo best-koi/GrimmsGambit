@@ -29,7 +29,9 @@ public class CardDisplay : MonoBehaviour
     private void Update()
     {
         m_CardCostText.text = m_CardReference.GetCardCost() + "";
+        m_CardCostText.font = PlaytestCheats.GetAllFont();
         m_CardNameText.text = m_CardReference.GetName();
+        m_CardNameText.font = PlaytestCheats.GetAllFont();
 
         if (m_CardReference.GetCaster().TryGetComponent<BasicCharacter>(out BasicCharacter character))
         {
