@@ -15,9 +15,9 @@ public class CardHand : ObjectContainer
     [SerializeField]
     private Vector3 m_DisplacementFromContainerCenter;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         Deck.onDraw += AddCardFromIndex;
         Deck.onDiscard += RemoveCardFromIndex;
