@@ -51,7 +51,7 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
-        endScreenCanvas.SetActive(false);
+        //endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
         StartEncounter();
     }
@@ -123,13 +123,13 @@ public class EncounterController : MonoBehaviour
         onEncounterEnded?.Invoke(playerWin);
 
         if (playerWin){
-            endScreenCanvas.SetActive(true);
-            endScreenText.text = winText;
+            //endScreenCanvas.SetActive(true);
+            //endScreenText.text = winText;
 
         }
         else{
-            endScreenCanvas.SetActive(true);
-            endScreenText.text = loseText; 
+            //endScreenCanvas.SetActive(true);
+            //endScreenText.text = loseText; 
 
         }
     }
