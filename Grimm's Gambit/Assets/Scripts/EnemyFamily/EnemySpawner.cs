@@ -35,6 +35,11 @@ public class EnemySpawner : MonoBehaviour
         enemy.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
         m_SpawnedEnemy = enemy.gameObject;
     }
+         void Update(){
+        if(enemy == null)
+         Destroy(gameObject);
+    }
+    
 
     public int GetEnemyOrder()
     {
