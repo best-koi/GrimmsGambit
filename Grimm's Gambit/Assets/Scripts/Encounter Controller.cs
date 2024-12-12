@@ -32,7 +32,7 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private CardHand m_CardHand;
 
-    [SerializeField]private GameObject endScreenCanvas;
+    [SerializeField] private GameObject endScreenCanvas;
 
     [SerializeField] private string winText, loseText; 
     [SerializeField] private TMP_Text endScreenText; 
@@ -51,7 +51,7 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
-        endScreenCanvas.SetActive(false);
+        //endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
         StartEncounter();
     }
@@ -63,6 +63,7 @@ public class EncounterController : MonoBehaviour
         }else if (m_EnemyInventory.ChildListSize == 0){
             EndEncounter(true);
         }
+        
     }
 
     private void StartEncounter()
@@ -122,16 +123,15 @@ public class EncounterController : MonoBehaviour
         onEncounterEnded?.Invoke(playerWin);
 
         if (playerWin){
-            endScreenCanvas.SetActive(true);
-            endScreenText.text = winText;
+            //endScreenCanvas.SetActive(true);
+            //endScreenText.text = winText;
 
         }
         else{
-            endScreenCanvas.SetActive(true);
-            endScreenText.text = loseText; 
+            //endScreenCanvas.SetActive(true);
+            //endScreenText.text = loseText; 
 
         }
-
     }
 
     // Spend an amount of resources

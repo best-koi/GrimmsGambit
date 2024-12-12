@@ -477,7 +477,7 @@ MonoBehaviour:
   characterName: Die Katze
   healthText: {fileID: 8931673747312072328}
   nameText: {fileID: 6481525176744876809}
-  characterColor: {r: 0, g: 0.8156863, b: 1, a: 1}
+  characterColor: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
   position: {fileID: 0}
@@ -764,5 +764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 8752361557292120880}
   pixelWidth: 5
