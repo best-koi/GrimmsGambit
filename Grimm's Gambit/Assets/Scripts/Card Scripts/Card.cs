@@ -99,6 +99,11 @@ public class Card : MonoBehaviour
         return cardCost;
     }
 
+    public string GetCardDescription()
+    {
+        return cardDescription;
+    }
+
     public CardData GetData()
     {
         return m_Data;
@@ -151,7 +156,7 @@ public class Card : MonoBehaviour
     {
         return false;
     }
-
+    /*
 //Displays card info on right click
     void OnMouseOver(){
         DescriptionPopUp.ActivateText(cardName, cardDescription);
@@ -162,7 +167,7 @@ public class Card : MonoBehaviour
 void OnMouseExit(){
     DescriptionPopUp.HidePopup();
 }
-
+    */
     }
 
 

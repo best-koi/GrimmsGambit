@@ -36,7 +36,7 @@ MonoBehaviour:
     value: -0.16
   color:
     overrideState: 1
-    value: {r: 1, g: 0.29011518, b: 0, a: 1}
+    value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 1.6765716, g: 0.21352564, b: 0.67744786, a: 1}
+    value: {r: 1.5660378, g: 0.55842113, b: 0.33241373, a: 1}
   hueShift:
     overrideState: 0
     value: 0
@@ -123,17 +123,17 @@ MonoBehaviour:
     overrideState: 1
     value: 1.05
   mixerRedOutRedIn:
-    overrideState: 1
-    value: 143
+    overrideState: 0
+    value: 100
   mixerRedOutGreenIn:
-    overrideState: 1
-    value: 71
+    overrideState: 0
+    value: 0
   mixerRedOutBlueIn:
-    overrideState: 1
-    value: -57
+    overrideState: 0
+    value: 0
   mixerGreenOutRedIn:
-    overrideState: 1
-    value: 6
+    overrideState: 0
+    value: 0
   mixerGreenOutGreenIn:
     overrideState: 0
     value: 100
@@ -141,23 +141,23 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
-    overrideState: 1
-    value: -62
+    overrideState: 0
+    value: 0
   mixerBlueOutGreenIn:
-    overrideState: 1
-    value: 82
+    overrideState: 0
+    value: 0
   mixerBlueOutBlueIn:
-    overrideState: 1
-    value: 89
+    overrideState: 0
+    value: 100
   lift:
     overrideState: 1
-    value: {x: 1, y: 0.92431587, z: 0.7012775, w: -0.20790029}
+    value: {x: 0.766951, y: 1, z: 0.7300663, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.9248011, y: 1, z: 0.8276845, w: 0.08316007}
+    value: {x: 0.9233081, y: 0.92149055, z: 1, w: 0}
   gain:
     overrideState: 1
-    value: {x: 0.7643037, y: 0.46609825, z: 1, w: -0.062370054}
+    value: {x: 1, y: 0.7979386, z: 0.89811015, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
     value: 1.57
   color:
     overrideState: 1
-    value: {r: 0.9433962, g: 0.515783, b: 0, a: 1}
+    value: {r: 1, g: 0.66202885, b: 0.0047169924, a: 1}
   ambientOnly:
     overrideState: 1
     value: 1
@@ -1446,19 +1446,19 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.057249546, g: 0, b: 1, a: 1}
+    value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.564
+    value: 0.49
   smoothness:
     overrideState: 1
-    value: 0.194
+    value: 0.2
   roundness:
     overrideState: 1
-    value: 0.92
+    value: 1
   rounded:
     overrideState: 1
     value: 0
