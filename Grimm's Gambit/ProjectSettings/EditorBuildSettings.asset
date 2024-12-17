@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 2a3f13128f09740eab94eb0944139409
   - enabled: 1
-    path: Assets/Scenes/EnemyCombatScene.unity
+    path: Assets/Scenes/LycanScene.unity
     guid: f88948ef1266f4a768f19868a8c458d9
   m_configObjects: {}
