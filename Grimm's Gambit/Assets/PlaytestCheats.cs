@@ -19,11 +19,11 @@ public class PlaytestCheats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if(Input.GetKeyDown("1")){
             SceneManager.LoadScene("EnemyCombatScene");
         }
-        */
+        
     }
 
     public static TMP_FontAsset GetAllFont()
