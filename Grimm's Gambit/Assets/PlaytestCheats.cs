@@ -21,7 +21,7 @@ public class PlaytestCheats : MonoBehaviour
     {
         
         if(Input.GetKeyDown("1")){
-            SceneManager.LoadScene("EnemyCombatScene");
+            SceneManager.LoadScene("BasicEnemyScene");
         }
         
     }
