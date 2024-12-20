@@ -34,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.SetColor(spawnedColor);
         enemy.transform.position = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
         m_SpawnedEnemy = enemy.gameObject;
+        m_SpawnedEnemy.transform.parent = this.transform; 
     }
          void Update(){
         if(enemy == null)

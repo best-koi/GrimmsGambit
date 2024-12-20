@@ -21,7 +21,11 @@ public class EnemyLoadouts : MonoBehaviour
 
 public static void PickLoadout(){
     int randomLoadout = Random.Range(0, availableLoadouts.Count);
-    (Instantiate (availableLoadouts[randomLoadout]) as GameObject).transform.parent = spawner.transform;
+    GameObject spawnedEncounter = Instantiate (availableLoadouts[randomLoadout]) as GameObject;
+    
+    spawnedEncounter.transform.position = spawner.transform.position; 
+    spawnedEncounter.transform.parent = spawner.transform;
+
      Debug.Log(availableLoadouts[randomLoadout]);
     availableLoadouts.RemoveAt(randomLoadout);
 }
