@@ -9,6 +9,7 @@ public class MapPlayer : MonoBehaviour
     [SerializeField]
     private MapEncounter currentLocation;//A GameObject representing a position on the map, will be changed for eventual Encounter object 
 
+[SerializeField]
     private List<MapEncounter> locations;//A list representing available locations to move from
 
     [SerializeField]

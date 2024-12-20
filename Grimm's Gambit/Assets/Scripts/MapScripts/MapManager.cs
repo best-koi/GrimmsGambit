@@ -25,6 +25,7 @@ public class MapManager : MonoBehaviour
             p.gameObject.GetComponent<Renderer>().material.SetColor("_Color", testColors[color]);
             testColors.RemoveAt(color);
         }
+        startingSpaceUsed = false; 
         
     }
 
