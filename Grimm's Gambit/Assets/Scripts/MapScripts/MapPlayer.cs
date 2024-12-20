@@ -27,6 +27,9 @@ public class MapPlayer : MonoBehaviour
     private string encounterScene;
 
     [SerializeField]
+    private string bossScene;
+
+    [SerializeField]
     private GameObject sceneObjects;
 
     public static GameObject sceneToToggle;
@@ -72,8 +75,6 @@ public class MapPlayer : MonoBehaviour
     //Slides the player to a location as long as they are not already there
     private void Update()
     {
-  
-
         if(isAtLocation == false)
         {
             isMoving = true;
@@ -98,9 +99,10 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-            
-            
-            
+        }else if (collision.gameObject.tag == "Boss"){
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(bossScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
         }
     }
 

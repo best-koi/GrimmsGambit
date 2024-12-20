@@ -13,7 +13,10 @@ public class PlaytestCheats : MonoBehaviour
     [SerializeField]
     private GameObject enemySceneItems;
 
-    static GameObject allEnemySceneItems; 
+    static GameObject allEnemySceneItems;
+
+    [SerializeField] 
+    private string enemySceneName; 
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +31,11 @@ public class PlaytestCheats : MonoBehaviour
     {
         
         if(Input.GetKeyDown("1")){
-            SceneManager.LoadScene("BasicEnemyScene");
+            SceneManager.LoadScene(enemySceneName);
         } else if (Input.GetKeyDown("2"))
         {
             allEnemySceneItems.SetActive(false);
-            SceneManager.UnloadScene("BasicEnemyScene");
+            SceneManager.UnloadScene(enemySceneName);
             MapPlayer.sceneToToggle.SetActive(true);
 
 
