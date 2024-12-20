@@ -9,6 +9,7 @@ TagManager:
   - Recruit
   - Shop
   - Card
+  - Inactive
   layers:
   - Default
   - TransparentFX

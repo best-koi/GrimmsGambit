@@ -26,6 +26,17 @@ public class MapPlayer : MonoBehaviour
     [SerializeField]
     private string encounterScene;
 
+    [SerializeField]
+    private GameObject sceneObjects;
+
+    public static GameObject sceneToToggle;
+
+    static bool isInCombat = false; 
+
+    public void Start(){
+        sceneToToggle = sceneObjects; 
+    }
+
 
     //SetPosition() sets the current player's location to new location
     //Also sets the available move locations to the player's list. 
@@ -61,6 +72,8 @@ public class MapPlayer : MonoBehaviour
     //Slides the player to a location as long as they are not already there
     private void Update()
     {
+  
+
         if(isAtLocation == false)
         {
             isMoving = true;
@@ -82,9 +95,16 @@ public class MapPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Encounter")
         {
-            SceneManager.LoadScene(encounterScene);
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+            
+            
+            
         }
     }
+
+   
 
 
 

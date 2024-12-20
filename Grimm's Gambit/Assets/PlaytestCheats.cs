@@ -10,10 +10,17 @@ public class PlaytestCheats : MonoBehaviour
 
     private static TMP_FontAsset allFont;
 
+    [SerializeField]
+    private GameObject enemySceneItems;
+
+    static GameObject allEnemySceneItems; 
+
     // Start is called before the first frame update
     void Start()
     {
         allFont = font;
+        allEnemySceneItems = enemySceneItems; 
+        
     }
 
     // Update is called once per frame
@@ -22,6 +29,13 @@ public class PlaytestCheats : MonoBehaviour
         
         if(Input.GetKeyDown("1")){
             SceneManager.LoadScene("BasicEnemyScene");
+        } else if (Input.GetKeyDown("2"))
+        {
+            allEnemySceneItems.SetActive(false);
+            SceneManager.UnloadScene("BasicEnemyScene");
+            MapPlayer.sceneToToggle.SetActive(true);
+
+
         }
         
     }
