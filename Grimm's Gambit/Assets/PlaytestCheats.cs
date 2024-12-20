@@ -30,9 +30,9 @@ public class PlaytestCheats : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKeyDown("1")){
-            SceneManager.LoadScene(enemySceneName);
-        } else if (Input.GetKeyDown("2"))
+        //if(Input.GetKeyDown("1")){
+            //SceneManager.LoadScene(enemySceneName);
+        if (Input.GetKeyDown("1"))
         {
             allEnemySceneItems.SetActive(false);
             SceneManager.UnloadSceneAsync(enemySceneName);
