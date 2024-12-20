@@ -35,7 +35,7 @@ public class PlaytestCheats : MonoBehaviour
         } else if (Input.GetKeyDown("2"))
         {
             allEnemySceneItems.SetActive(false);
-            SceneManager.UnloadScene(enemySceneName);
+            SceneManager.UnloadSceneAsync(enemySceneName);
             MapPlayer.sceneToToggle.SetActive(true);
 
 
