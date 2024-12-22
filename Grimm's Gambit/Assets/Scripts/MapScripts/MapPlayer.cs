@@ -9,6 +9,7 @@ public class MapPlayer : MonoBehaviour
     [SerializeField]
     private MapEncounter currentLocation;//A GameObject representing a position on the map, will be changed for eventual Encounter object 
 
+[SerializeField]
     private List<MapEncounter> locations;//A list representing available locations to move from
 
     [SerializeField]
@@ -25,6 +26,20 @@ public class MapPlayer : MonoBehaviour
 
     [SerializeField]
     private string encounterScene;
+
+    [SerializeField]
+    private string bossScene;
+
+    [SerializeField]
+    private GameObject sceneObjects;
+
+    public static GameObject sceneToToggle;
+
+    static bool isInCombat = false; 
+
+    public void Start(){
+        sceneToToggle = sceneObjects; 
+    }
 
 
     //SetPosition() sets the current player's location to new location
@@ -82,9 +97,17 @@ public class MapPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Encounter")
         {
-            SceneManager.LoadScene(encounterScene);
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+        }else if (collision.gameObject.tag == "Boss"){
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(bossScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
         }
     }
+
+   
 
 
 

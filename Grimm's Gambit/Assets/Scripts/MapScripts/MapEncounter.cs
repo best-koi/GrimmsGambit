@@ -22,6 +22,7 @@ public class MapEncounter : MonoBehaviour
     private void Start()
     {
         displayText.gameObject.SetActive(false);
+        
     }
 
     //GetNextLocations() returns a list of next moves to be used by the player
