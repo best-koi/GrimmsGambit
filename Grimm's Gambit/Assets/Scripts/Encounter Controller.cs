@@ -84,7 +84,7 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged?.Invoke(m_IsPlayerTurn);
 
-        List<Transform> party = m_PlayerInventory.GetAll(), enemies = m_EnemyInventory.GetAll();
+        List<Transform> party = m_PlayerInventory.GetAll();
 
         m_CurrentResources = m_MaxResources;
         m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
@@ -110,12 +110,25 @@ public class EncounterController : MonoBehaviour
 
             m_TurnText.text = "Enemy Turn";
 
-            foreach (Transform enemy in enemies)
-            {
-                EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
-                enemyController.AttackPattern();
-            }
+            StartCoroutine(EnemyTurn());
         } 
+    }
+
+//Used for slowing down enemy attacks. Each enemy performs their action. 
+    IEnumerator EnemyTurn(){
+        m_EndButton.gameObject.SetActive(false);
+
+        EnemyTemplate[] enemies = m_EnemyInventory.gameObject.GetComponentsInChildren<EnemyTemplate>();
+        foreach (EnemyTemplate enemy in enemies)
+            {
+                yield return new WaitForSeconds(1.5f);
+                //EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
+                enemy.AttackPattern();
+            }
+        
+        EndTurn();
+        m_EndButton.gameObject.SetActive(true);
+
     }
 
     private void EndEncounter(bool playerWin) {
