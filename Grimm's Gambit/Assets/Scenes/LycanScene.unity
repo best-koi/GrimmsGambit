@@ -8191,6 +8191,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: d6db71366a7054c88ab4ce12dac5c302, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7601226680800833775, guid: d6db71366a7054c88ab4ce12dac5c302, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: df31d28121b9047708e1a73e6a320ff1, type: 2}
     - target: {fileID: 919132149155446097, guid: d6db71366a7054c88ab4ce12dac5c302, type: 3}
       propertyPath: m_Name
       value: PineTree
