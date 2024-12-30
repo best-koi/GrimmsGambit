@@ -11417,7 +11417,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4752a17a01c8495dae4ef5d536b0543, type: 2}
+  - {fileID: 2100000, guid: 0f568c4090bac4fc9b11973569eaf147, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12171,7 +12171,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.78751564, g: 0, b: 1, a: 1}
+      maxColor: {r: 0.013375282, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
