@@ -173,7 +173,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   gradingMode:
     overrideState: 1
     value: 1
@@ -1490,10 +1490,10 @@ MonoBehaviour:
     value: 5
   aperture:
     overrideState: 1
-    value: 4
+    value: 32
   focalLength:
     overrideState: 1
-    value: 50
+    value: 34
   kernelSize:
     overrideState: 1
     value: 0
