@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: c3fb166cdb5b64c1bbc7ac2006dd594c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d06ebfdf4d7fe4dcd8497a98180648e8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.020375531, g: 0.25126055, b: 0.980503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4826,7 +4826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11839598, y: -0.6926391, z: 0.11684365, w: 0.7018412}
+  m_LocalRotation: {x: 0.11870903, y: -0.6907537, z: 0.11652558, w: 0.7036969}
   m_LocalPosition: {x: 23.231236, y: 11.199504, z: 0.06356096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4920,7 +4920,7 @@ Camera:
   m_GameObject: {fileID: 885613611}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.11894804, g: 0.7316111, b: 0.764151, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -14157,7 +14157,7 @@ Camera:
   m_GameObject: {fileID: 1753053071}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -14207,7 +14207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11839598, y: -0.6926391, z: 0.11684365, w: 0.7018412}
+  m_LocalRotation: {x: 0.11870903, y: -0.6907537, z: 0.11652558, w: 0.7036969}
   m_LocalPosition: {x: 23.231236, y: 11.199504, z: 0.06356096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

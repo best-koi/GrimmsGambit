@@ -22,7 +22,15 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _SampleTexture2D_0ebc704c9527436ca4d2a9d64df8e823_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4cf2d6d03ef754a229acb302504ab1b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6f26c3269aa4476da46672e349077a20_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 45a834425355c457494d08eab0ad73de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
