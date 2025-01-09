@@ -244,7 +244,7 @@ public class Minion : MonoBehaviour
             if(currentAffixes.ContainsKey(Affix.Bleed)){
                 if(animator != null && particleSystem != null){
                 animator.SetBool("isBleeding", true);
-                particleSystem.Emit(1);
+                particleSystem.Emit(100);
                 }
                 
             }
@@ -306,6 +306,7 @@ public class Minion : MonoBehaviour
         currentHealth -= DamageToDeal;
         if(animator != null)
             animator.SetBool("AnimAttacked", true);
+            
         
 
         if (currentHealth <= 0)

@@ -161,18 +161,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.1727633}
-  m_LocalScale: {x: 1, y: 0.48412088, z: 4.5332947}
+  m_LocalPosition: {x: 0, y: 0, z: -2.4211347}
+  m_LocalScale: {x: 6.6391816, y: 6.6391816, z: 6.637899}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4890767153850758576}
   - {fileID: 7102871398971922720}
   - {fileID: 7965282014940282237}
-  m_Father: {fileID: 5397451098032334217}
+  m_Father: {fileID: 903019169571591661}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 499.39597, y: 120.23286}
+  m_AnchoredPosition: {x: 3316.6428, y: 1649.9578}
   m_SizeDelta: {x: 991, y: 495.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -406,7 +406,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4369345138025172140}
-  - {fileID: 5560038645557704854}
   - {fileID: 903019169571591661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -496,6 +495,8 @@ MonoBehaviour:
   currentHealth: 30
   m_CardContainer: {fileID: 7657946014366121618}
   affixDisplay: {fileID: 0}
+  animator: {fileID: 0}
+  particleSystem: {fileID: 0}
   ownerPlayer: 1
 --- !u!1 &7657946014366121618
 GameObject:
@@ -647,7 +648,8 @@ Transform:
   m_LocalPosition: {x: -0.16, y: -0.08, z: 0.4807295}
   m_LocalScale: {x: 0.15062097, y: 0.07291875, z: 0.68294126}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5560038645557704854}
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2125479054792672360
