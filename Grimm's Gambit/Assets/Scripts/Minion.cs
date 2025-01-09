@@ -39,6 +39,10 @@ public class Minion : MonoBehaviour
     private GameObject m_CardContainer;
 
     public AffixDisplay affixDisplay;
+
+    public Animator animator; 
+    public ParticleSystem particleSystem;
+
         
     //Affixes:
     //public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
@@ -237,6 +241,13 @@ public class Minion : MonoBehaviour
             {
                 DamageToDeal += 3; //Adds 3 damage if mark is applied
             }
+            if(currentAffixes.ContainsKey(Affix.Bleed)){
+                if(animator != null && particleSystem != null){
+                animator.SetBool("isBleeding", true);
+                particleSystem.Emit(100);
+                }
+                
+            }
             if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
             {
                 int currentExploitStacks = currentAffixes[Affix.Exploit];
@@ -293,6 +304,10 @@ public class Minion : MonoBehaviour
         }
         
         currentHealth -= DamageToDeal;
+        if(animator != null)
+            animator.SetBool("AnimAttacked", true);
+            
+        
 
         if (currentHealth <= 0)
         {
@@ -302,6 +317,7 @@ public class Minion : MonoBehaviour
         {
             currentHealth = maxHealth; //Caps health to max out at the originally given max health value
         }
+        
     }
 
     public Card GetCardInContainer()

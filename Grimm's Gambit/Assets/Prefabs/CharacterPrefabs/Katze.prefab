@@ -161,18 +161,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.1727633}
-  m_LocalScale: {x: 1, y: 0.48412088, z: 4.5332947}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4483535}
+  m_LocalScale: {x: 2.7433891, y: 4.076071, z: 1.7331023}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4890767153850758576}
   - {fileID: 7102871398971922720}
   - {fileID: 8752361557292120880}
-  m_Father: {fileID: 5397451098032334217}
+  m_Father: {fileID: 2091751137204627567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 499.39597, y: 120.23286}
+  m_AnchoredPosition: {x: 1370.0923, y: 1012.3043}
   m_SizeDelta: {x: 991, y: 495.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -407,7 +407,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2740151766677798060}
-  - {fileID: 5560038645557704854}
   - {fileID: 2091751137204627567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -497,6 +496,8 @@ MonoBehaviour:
   currentHealth: 30
   m_CardContainer: {fileID: 8192427604488775473}
   affixDisplay: {fileID: 0}
+  animator: {fileID: 0}
+  particleSystem: {fileID: 0}
   ownerPlayer: 1
 --- !u!114 &-7268145389544586170
 MonoBehaviour:
@@ -661,7 +662,8 @@ Transform:
   m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.36451262, y: 0.11877145, z: 2.6157112}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5560038645557704854}
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8893786787107412914
@@ -764,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 8752361557292120880}
   pixelWidth: 5
+  tooltipPrefab: {fileID: 0}
+  parentCanvas: {fileID: 0}
