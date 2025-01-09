@@ -40,8 +40,7 @@ public class Minion : MonoBehaviour
 
     public AffixDisplay affixDisplay;
 
-    public Animator animator; 
-    public ParticleSystem particleSystem;
+    public Animator animator;
 
         
     //Affixes:
@@ -76,17 +75,28 @@ public class Minion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 
     public void AddAffix(Affix affix, int value)
     {
         Debug.Log("Affix Adding");
+
+        if (affix == Affix.Block && animator != null) //Plays block anim if Block affix is called 
+        {
+            animator.SetTrigger("Defend");
+        }
+
         if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
         {
             Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
             affixDisplay.AddAffix(affix); //Adds visual display of affix
+            if (affix == Affix.Bleed && animator != null) //Plays Bleeding anim if Bleed affix is called 
+            {
+                animator.SetTrigger("IsBleeding");
+            }
         }
         else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
@@ -128,7 +138,11 @@ public class Minion : MonoBehaviour
                 DamageTaken(currentBleed); //Applies damage equal to the amount of charges
                 RemoveOneCharge(Affix.Bleed); //Removes one charge
             }
-        } 
+            if (currentBleed == 0 && animator != null) // Disable bleed if charges are depleted
+            {
+                animator.SetTrigger("BleedStop");
+            }
+        }
         if (currentAffixes.ContainsKey(Affix.Taunt)) //Removing of a Bleed charge at the start of each new turn
         {
             RemoveOneCharge(Affix.Taunt); //Removes one charge
@@ -241,12 +255,11 @@ public class Minion : MonoBehaviour
             {
                 DamageToDeal += 3; //Adds 3 damage if mark is applied
             }
-            if(currentAffixes.ContainsKey(Affix.Bleed)){
-                if(animator != null && particleSystem != null){
-                animator.SetBool("isBleeding", true);
-                particleSystem.Emit(100);
+            if(currentAffixes.ContainsKey(Affix.Bleed))
+            {
+                if(animator != null){
+                animator.SetTrigger("IsBleeding");
                 }
-                
             }
             if (currentAffixes.ContainsKey(Affix.Exploit)) //Similar to strength but only some stacks are removed on use
             {
@@ -305,9 +318,12 @@ public class Minion : MonoBehaviour
         
         currentHealth -= DamageToDeal;
         if(animator != null)
-            animator.SetBool("AnimAttacked", true);
-            
-        
+        {
+            animator.SetTrigger("TakeDamage");
+        }
+
+
+
 
         if (currentHealth <= 0)
         {
