@@ -161,18 +161,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.8070601}
-  m_LocalScale: {x: 5.452228, y: 4.696337, z: 3.1196759}
+  m_LocalPosition: {x: 0, y: 0, z: -1.1727633}
+  m_LocalScale: {x: 1, y: 0.48412088, z: 4.5332947}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4890767153850758576}
   - {fileID: 7102871398971922720}
   - {fileID: 9178515899435757505}
-  m_Father: {fileID: 6599948957845333210}
+  m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2723.2026, y: 1163.7039}
+  m_AnchoredPosition: {x: 499.39597, y: 120.23286}
   m_SizeDelta: {x: 991, y: 495.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -267,8 +267,7 @@ Transform:
   m_LocalPosition: {x: -0.07, y: 0.2727, z: 0}
   m_LocalScale: {x: 0.18341126, y: 0.10308477, z: 1.45313}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 5560038645557704854}
+  m_Children: []
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5103148012933775301
@@ -371,10 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1478480c89aab4ff2b9a1b78b7a08895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  affixImageLibrary: {fileID: 0}
   imageContainer: {fileID: 9178515899435757505}
   pixelWidth: 5
-  tooltipPrefab: {fileID: 0}
-  parentCanvas: {fileID: 0}
 --- !u!1 &2123686106583957186
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8476724541395129124}
+  - {fileID: 5560038645557704854}
   - {fileID: 6599948957845333210}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -753,6 +752,4 @@ MonoBehaviour:
   currentHealth: 30
   m_CardContainer: {fileID: 3259801684424778679}
   affixDisplay: {fileID: 0}
-  animator: {fileID: 0}
-  particleSystem: {fileID: 0}
   ownerPlayer: 1
