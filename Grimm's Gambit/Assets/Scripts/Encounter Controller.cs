@@ -37,6 +37,9 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private string winText, loseText; 
     [SerializeField] private TMP_Text endScreenText; 
 
+[SerializeField]
+private EnemyTemplate[] enemies; 
+
     private bool Tired = false; //Variable to control whether the player is tired
 
     public UnitParty GetEnemyInventory()
@@ -118,12 +121,25 @@ public class EncounterController : MonoBehaviour
     IEnumerator EnemyTurn(){
         m_EndButton.gameObject.SetActive(false);
 
-        EnemyTemplate[] enemies = m_EnemyInventory.gameObject.GetComponentsInChildren<EnemyTemplate>();
-        foreach (EnemyTemplate enemy in enemies)
+        enemies = m_EnemyInventory.gameObject.GetComponentsInChildren<EnemyTemplate>();
+        
+        List <EnemyTemplate> filteredEnemies = new List<EnemyTemplate>();
+        foreach(EnemyTemplate e in enemies){
+            if(e.gameObject != null)
+                filteredEnemies.Add(e);
+                Debug.Log("Filtering");
+
+        }
+        Debug.Log(filteredEnemies.Count);
+
+        foreach (EnemyTemplate enemy in filteredEnemies)
             {
+                Debug.Log("Attacking");
+                if(enemy.gameObject != null)
+                    enemy.AttackPattern();
                 yield return new WaitForSeconds(1.5f);
                 //EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();
-                enemy.AttackPattern();
+                
             }
         
         EndTurn();
