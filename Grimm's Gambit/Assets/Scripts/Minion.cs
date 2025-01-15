@@ -391,8 +391,9 @@ public class Minion : MonoBehaviour
     {
         //Implement This Later depending on game logic
         //Maybe have death effect here if present
-        Deck deck = FindObjectOfType<Deck>();
-        deck.RemoveCards(this);
+        
+        //Deck deck = FindObjectOfType<Deck>();
+        //deck.RemoveCards(this);
 
         onDeath?.Invoke(this); // See line 55
 
