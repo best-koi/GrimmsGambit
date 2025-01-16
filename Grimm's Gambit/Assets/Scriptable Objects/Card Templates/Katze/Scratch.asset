@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Scratch
+  m_EditorClassIdentifier: 
+  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+  _cardName: Scratch
+  _cardDescription: 'Deal 3 damage. Apply 1 Bleed. Once. '
+  _cardCost: 0
+  _data:
+    ownerIndex: 2
+    databaseIndex: 14
+  _playerCopyCount: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 4695933157482168321
+  - rid: 4695933157482168322
+  references:
+    version: 2
+    RefIds:
+    - rid: 4695933157482168321
+      type: {class: DamageSelfEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Damage: 3
+    - rid: 4695933157482168322
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 8
+        _value: 1

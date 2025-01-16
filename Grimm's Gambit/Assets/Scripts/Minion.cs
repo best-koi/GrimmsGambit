@@ -387,6 +387,20 @@ public class Minion : MonoBehaviour
         deck.Discard(c);
     }
 
+    public void ConsumeCard(CardV2 c)
+    {
+        c.DoSpells(this);
+        Deck deck = FindObjectOfType<Deck>();
+
+        if (c.IsEphemeral)
+        {
+            deck.RemoveCard(c);
+            return;
+        }
+
+        deck.Discard(c);
+    }
+
     private void Destroyed() //Function for when this character has been defeated
     {
         //Implement This Later depending on game logic

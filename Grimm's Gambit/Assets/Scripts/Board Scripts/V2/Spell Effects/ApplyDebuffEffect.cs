@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [System.Serializable]
-public class ApplyEffect : SpellEffect
+public class ApplyDebuffEffect : SpellEffect
 {
     [SerializeField] private Affix _debuff;
     [SerializeField] private int _value;
 
-    public ApplyEffect()
+    public ApplyDebuffEffect()
     {
         _requiresTarget = true;
     }
