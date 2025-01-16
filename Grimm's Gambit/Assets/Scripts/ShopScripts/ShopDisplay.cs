@@ -88,7 +88,6 @@ public class ShopDisplay : MonoBehaviour
     public void CycleMenu(){
         if(cycleIndex < numberOfPages)
             cycleIndex++;
-            
         else 
             cycleIndex = 0;
         Debug.Log(cycleIndex);
