@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class DragAndDropV2 : MonoBehaviour
 {
-    #region Private Fields
+    #region Serialized Fields
 
     [Header("Hover/Pick-Up/Drop Fields")]
-    [SerializeField]
-    private Transform m_HoveredObject;
-    [SerializeField]
-    private Transform m_SelectedObject;
-    [SerializeField]
-    private float m_DistanceFromCamera;
+    [SerializeField] private float _distanceFromCamera = .25f;
 
     [Header("Pick-Up/Drop Layers")]
-    [SerializeField]
-    private LayerMask m_PickUpLayers;
-    [SerializeField]
-    private LayerMask m_SlotLayers;
+    [SerializeField] private LayerMask _pickUpLayers;
+    [SerializeField] private LayerMask _slotLayers;
 
-    private Camera m_MainCamera;
+    [Header("References")]
+    [SerializeField] private EncounterController _controller;
 
-    private Transform m_SelectedObjectParent;
-    private int m_SelectedChildIndex;
+    #endregion
 
-    [SerializeField]
-    private EncounterController controller;
+    #region Private Fields
+
+    private Camera _mainCamera;
+
+    private Transform _hoveredObject;
+    private Transform _selectedObject;
+
+    private Transform _selectedObjectParent;
+    private int _selectedChildIndex;
 
     #endregion
 
@@ -33,15 +33,15 @@ public class DragAndDropV2 : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        m_MainCamera = Camera.main;
-        if (controller == null)
-            controller = FindObjectOfType<EncounterController>();
+        _mainCamera = Camera.main;
+        if (_controller == null)
+            _controller = FindObjectOfType<EncounterController>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        Ray ray = m_MainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Input.GetMouseButtonUp(0))
             ManageClickInteraction(ray);
@@ -58,13 +58,13 @@ public class DragAndDropV2 : MonoBehaviour
     private void ManageSelectedObject(Ray ray)
     {
         // Drag card around when selected by system
-        if (m_SelectedObject != null)
+        if (_selectedObject != null)
         {
-            Ray center = new Ray(m_MainCamera.transform.position, m_MainCamera.transform.forward);
+            Ray center = new Ray(_mainCamera.transform.position, _mainCamera.transform.forward);
             float angle = Vector3.Angle(center.direction, ray.direction);
 
-            m_SelectedObject.position = ray.GetPoint(m_DistanceFromCamera / Mathf.Cos(angle * Mathf.Deg2Rad));
-            m_SelectedObject.rotation = m_MainCamera.transform.rotation;
+            _selectedObject.position = ray.GetPoint(_distanceFromCamera / Mathf.Cos(angle * Mathf.Deg2Rad));
+            _selectedObject.rotation = _mainCamera.transform.rotation;
         }
     }
 
@@ -72,74 +72,72 @@ public class DragAndDropV2 : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (m_SelectedObject == null && Physics.Raycast(ray, out hit, 1000, m_PickUpLayers))
+        if (_selectedObject == null && Physics.Raycast(ray, out hit, 1000, _pickUpLayers))
         {
-            m_SelectedObject = hit.transform;
-            m_SelectedChildIndex = m_SelectedObject.GetSiblingIndex();
-            m_SelectedObjectParent = m_SelectedObject.parent;
+            _selectedObject = hit.transform;
+            _selectedChildIndex = _selectedObject.GetSiblingIndex();
+            _selectedObjectParent = _selectedObject.parent;
 
-            m_SelectedObject.parent = null;
-            m_SelectedObject.localScale = Vector3.one;
+            _selectedObject.parent = null;
+            _selectedObject.localScale = Vector3.one;
 
-            if (m_HoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject != null && _hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
             {
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one;
                 cd.CardDisplayDisplacement = Vector3.zero;
             }
         }
-        else if (m_SelectedObject != null)
+        else if (_selectedObject != null)
         {
             // Insert card gameObject into slot gameObject through parenting and local transformations
-            if (controller != null && controller.SpendResources(m_SelectedObject.GetComponent<Card>().GetCardCost()) && Physics.Raycast(ray, out hit, 1000, m_SlotLayers))
+            if (_controller != null && Physics.Raycast(ray, out hit, 1000, _slotLayers))
             {
-                //m_SelectedObject.parent = hit.transform;
-                Card c = m_SelectedObject.GetComponent<Card>();
+                int cardCost = _selectedObject.GetComponent<CardV2>().CardCost;
                 Minion hitMinion = hit.transform.parent.GetComponent<Minion>();
 
-                if (hitMinion != null)
-                    hitMinion.ConsumeCard(c);
-                else
-                    controller.SpendResources(-m_SelectedObject.GetComponent<Card>().GetCardCost());
-
-                Destroy(m_SelectedObject.gameObject);
-
+                if (hitMinion != null && _controller.SpendResources(cardCost))
+                {
+                    //m_SelectedObject.parent = hit.transform;
+                    hitMinion.ConsumeCard(_selectedObject.GetComponent<CardV2>());
+                    Destroy(_selectedObject.gameObject);
+                }
             }
             else
             {
-                m_SelectedObject.parent = m_SelectedObjectParent;
-                m_SelectedObject.SetSiblingIndex(m_SelectedChildIndex);
+                _selectedObject.parent = _selectedObjectParent;
+                _selectedObject.SetSiblingIndex(_selectedChildIndex);
             }
 
-            m_SelectedObject.localPosition = Vector3.zero;
-            m_SelectedObject.localRotation = Quaternion.identity;
-            m_SelectedObject.localScale = Vector3.one * .9f;
-            m_SelectedObject = null;
+            _selectedObject.localPosition = Vector3.zero;
+            _selectedObject.localRotation = Quaternion.identity;
+            _selectedObject.localScale = Vector3.one * .9f;
+            _selectedObject = null;
         }
     }
 
     private void ManageHoverInteraction(Ray ray)
     {
         RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit, 1000, m_PickUpLayers);
+        bool hasHit = Physics.Raycast(ray, out hit, 1000, _pickUpLayers);
 
-        if (m_HoveredObject != null && (!hasHit || m_HoveredObject != hit.transform))
+        if (_hoveredObject != null && (!hasHit || _hoveredObject != hit.transform))
         {
-            if (m_HoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
             {
-                if (m_HoveredObject != m_SelectedObject)
+                if (_hoveredObject != _selectedObject)
                     cd.OrderLayer = 0;
                 cd.CardDisplayScale = Vector3.one;
                 cd.CardDisplayDisplacement = Vector3.zero;
             }
 
-            m_HoveredObject = null;
+            _hoveredObject = null;
         }
-        else if (hasHit && m_SelectedObject == null)
+        else if (hasHit && _selectedObject == null)
         {
-            m_HoveredObject = hit.transform;
+            _hoveredObject = hit.transform;
 
-            if (m_HoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
             {
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one * 1.1f;

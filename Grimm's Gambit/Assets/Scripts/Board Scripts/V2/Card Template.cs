@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card Template", menuName = "Spawners/Card Template", order = 0)]
@@ -15,7 +16,7 @@ public class CardTemplate : ScriptableObject
     [SerializeField] private CardData _data;
     [SerializeField] private int _playerCopyCount = 1;
     [SerializeField] private CardTemplate _reverseTemplate;
-    [SerializeField] private SpellEffect[] _spells;
+    [SerializeReference, SubclassSelector] private List<SpellEffect> _spells;
 
     #endregion
 
@@ -25,9 +26,9 @@ public class CardTemplate : ScriptableObject
     public string CardDescription { get => _cardDescription; }
     public int CardCost { get => _cardCost; }
     public CardData Data { get => _data; }
-    public int PlayerCopyCount { get => _playerCopyCount; }
+    public int PlayerCopyCount { get => _playerCopyCount; set => _playerCopyCount = value; }
     public CardTemplate ReverseTemplate { get => _reverseTemplate; }
-    public SpellEffect[] Spells { get => _spells; }
+    public List<SpellEffect> Spells { get => _spells; }
 
     #endregion
 
