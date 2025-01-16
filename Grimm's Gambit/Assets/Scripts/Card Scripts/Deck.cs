@@ -32,7 +32,7 @@ public class Deck : MonoBehaviour
     public static Action<int> onDiscard;
     
     // References database of all cards in the game
-    [SerializeField] private CardDatabase m_DataBase;
+    //[SerializeField] private CardDatabase m_DataBase;
 
     // To be implemented by design 
     [SerializeField] private int m_StartingHandSize, m_MaxHandSize;
@@ -126,6 +126,14 @@ public class Deck : MonoBehaviour
         onDiscard?.Invoke(data.databaseIndex);
     }
 
+    public void Discard(CardV2 card)
+    {
+        CardData data = card.Data;
+        m_DiscardPile.Add(data);
+        m_Hand.Remove(data);
+        onDiscard?.Invoke(data.databaseIndex);
+    }
+
     public void Discard(CardData data)
     {
         m_DiscardPile.Add(data);
@@ -151,6 +159,13 @@ public class Deck : MonoBehaviour
     public void RemoveCard(Card card)
     {
         CardData data = card.GetData();
+        m_RemovedZone.Add(data);
+        m_Hand.Remove(data);
+    }
+
+    public void RemoveCard(CardV2 card)
+    {
+        CardData data = card.Data;
         m_RemovedZone.Add(data);
         m_Hand.Remove(data);
     }
