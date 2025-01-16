@@ -268,9 +268,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 527112033}
     m_Modifications:
+    - target: {fileID: 1585273823404071636, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+      propertyPath: m_Name
+      value: HairText
+      objectReference: {fileID: 0}
     - target: {fileID: 4349791182599601078, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Name
-      value: LootBacking (1)
+      value: Hair
       objectReference: {fileID: 0}
     - target: {fileID: 7020992457155867342, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Pivot.x
@@ -424,6 +428,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
   m_PrefabInstance: {fileID: 326442056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &334673678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334673680}
+  - component: {fileID: 334673679}
+  m_Layer: 0
+  m_Name: ShopDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &334673679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334673678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b4ca12f0ccf411da2b3a727509da6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeText: {fileID: 1486283533}
+  hairText: {fileID: 1548280030}
+  tongueText: {fileID: 816117578}
+  eyeCount: 1
+  hairCount: 1
+  tongueCount: 3
+  commonCards:
+  - {fileID: 5844518738909692656, guid: b13f27b2c8c7c4b4e80a497e5282dd8d, type: 3}
+  heirlooms:
+  - {fileID: 3434311032479566249, guid: d704dabf749784250bca6ed7e859f1eb, type: 3}
+  arcana:
+  - {fileID: 3138771135567904780, guid: 8bc47aa20761b4c5289629d53494da80, type: 3}
+  cardImage: {fileID: 0}
+  heirloomImage: {fileID: 0}
+  arcanaImage: {fileID: 0}
+  cardText: {fileID: 0}
+  heirloomText: {fileID: 0}
+  arcanaText: {fileID: 0}
+  cycleIndex: 0
+--- !u!4 &334673680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334673678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 330.2068, y: 179.99094, z: 20.340675}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527112029
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +905,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666294167}
   m_CullTransparentMesh: 1
+--- !u!114 &816117578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8631111823997977686, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+  m_PrefabInstance: {fileID: 1322057795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &937252603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,9 +1094,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 527112033}
     m_Modifications:
+    - target: {fileID: 1585273823404071636, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+      propertyPath: m_Name
+      value: TongueText
+      objectReference: {fileID: 0}
     - target: {fileID: 4349791182599601078, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Name
-      value: LootBacking (2)
+      value: Tongue
       objectReference: {fileID: 0}
     - target: {fileID: 7020992457155867342, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Pivot.x
@@ -1141,6 +1223,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527112033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486283533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8631111823997977686, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+  m_PrefabInstance: {fileID: 316690077538496763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1548280030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8631111823997977686, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+  m_PrefabInstance: {fileID: 95393604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1582981522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,9 +1374,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 527112033}
     m_Modifications:
+    - target: {fileID: 1585273823404071636, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
+      propertyPath: m_Name
+      value: EyeText
+      objectReference: {fileID: 0}
     - target: {fileID: 4349791182599601078, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Name
-      value: LootBacking
+      value: Eye
       objectReference: {fileID: 0}
     - target: {fileID: 7020992457155867342, guid: 3eaf4e51399504ff8b53e1f06baf0be6, type: 3}
       propertyPath: m_Pivot.x
@@ -1424,3 +1532,4 @@ SceneRoots:
   - {fileID: 592305123}
   - {fileID: 527112033}
   - {fileID: 937252606}
+  - {fileID: 334673680}
