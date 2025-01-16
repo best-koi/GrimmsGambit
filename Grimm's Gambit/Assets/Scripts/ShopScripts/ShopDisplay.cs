@@ -16,26 +16,22 @@ public class ShopDisplay : MonoBehaviour
    private List<ShopItem> commonCards, heirlooms, arcana;
 
    [SerializeField]
-   private Image cardImage, heirloomImage, arcanaImage;
+   private Image cardImage, heirloomImage, arcanaImage, defaultImage;
 
    [SerializeField]
-   private TMP_Text cardText, heirloomText, arcanaText;
+   private TMP_Text cardText, heirloomText, arcanaText, defaultText;
 
    [SerializeField]
    private int cycleIndex; 
+
+   [SerializeField]
+   private int numberOfPages; 
 
     // Start is called before the first frame update
     void Start()
     {
 
-        cardImage = commonCards[cycleIndex].GetIcon();
-        cardText.text = commonCards[cycleIndex].GetName();
-
-        heirloomImage = heirlooms[cycleIndex].GetIcon();
-        heirloomText.text = heirlooms[cycleIndex].GetName();
-
-        arcanaImage = arcana[cycleIndex].GetIcon();
-        arcanaText.text = arcana[cycleIndex].GetName();
+        DisplayShopItems();
 
         
     }
@@ -46,5 +42,27 @@ public class ShopDisplay : MonoBehaviour
         eyeText.text = $"{eyeCount}";
         hairText.text = $"{hairCount}";
         tongueText.text = $"{tongueCount}";
+
+        DisplayShopItems();
+    }
+
+    public void DisplayShopItems(){
+  
+        cardImage = commonCards[cycleIndex].GetIcon();
+        cardText.text = commonCards[cycleIndex].GetName();
+
+        heirloomImage = heirlooms[cycleIndex].GetIcon();
+        heirloomText.text = heirlooms[cycleIndex].GetName();
+
+        arcanaImage = arcana[cycleIndex].GetIcon();
+        arcanaText.text = arcana[cycleIndex].GetName();
+
+    }
+
+    public void CycleMenu(){
+        if(cycleIndex > numberOfPages)
+            cycleIndex = 0;
+        else 
+            cycleIndex++;
     }
 }
