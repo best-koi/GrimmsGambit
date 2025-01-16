@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwapPlaces : SpellEffect
+[System.Serializable]
+public class SwapEffect : SpellEffect
 {
-    public SwapPlaces()
+    public SwapEffect()
     {
-        _spellName = "Swap Places";
+        _spellName = "Swap Effect";
         _spellDescription = "When this card is played, position is swapped with the target character.";
     }
     public override void DoSpellEffect(Minion caster, Minion target) //Swaps positions of caster and target

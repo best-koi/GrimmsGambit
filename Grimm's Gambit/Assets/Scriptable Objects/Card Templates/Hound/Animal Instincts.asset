@@ -10,18 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Scratch Face Up
+  m_Name: Animal Instincts
   m_EditorClassIdentifier: 
   _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
-  _cardName: Scratch
-  _cardDescription: '(Enemy) Deal 3 damage. Apply 1 Bleed. Once. '
-  _cardCost: 0
+  _cardName: 'Animal Instincts '
+  _cardDescription: 'Deal 6 damage. Gain 7 Block. '
+  _cardCost: 1
   _data:
     ownerIndex: 0
     databaseIndex: 0
-  _playerCopyCount: 1
+  _playerCopyCount: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - _spellName: Damage
-    _spellDescription: Deals certain amount of damage
-    _requiresTarget: 1
+  - rid: 4695933079036100614
+  - rid: 4695933079036100615
+  references:
+    version: 2
+    RefIds:
+    - rid: 4695933079036100614
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 1
+        _value: 7
+    - rid: 4695933079036100615
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 6
