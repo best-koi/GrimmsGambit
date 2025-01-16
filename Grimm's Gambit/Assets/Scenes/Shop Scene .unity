@@ -169,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.597259
+      value: 133
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -466,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.597259
+      value: 131
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1428,7 +1428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 308, y: 10}
+  m_AnchoredPosition: {x: 308, y: 119}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582981524
@@ -1645,10 +1645,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 527112033}
     m_Modifications:
-    - target: {fileID: 1612408348765640479, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
-      propertyPath: m_Name
-      value: CommonDesc
-      objectReference: {fileID: 0}
     - target: {fileID: 2685972336416925849, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_Name
       value: CommonCardItem
@@ -1659,7 +1655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.597259
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
