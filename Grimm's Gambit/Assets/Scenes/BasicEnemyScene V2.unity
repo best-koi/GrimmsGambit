@@ -9126,7 +9126,7 @@ MonoBehaviour:
   m_PlayerDeck: {fileID: 1790341145}
   m_IsPlayerTurn: 0
   m_TurnCounter: 0
-  m_MaxResources: 3
+  m_MaxResources: 5
   m_CurrentResources: 0
   m_EndButton: {fileID: 1724735635}
   m_TurnText: {fileID: 1102464437}
