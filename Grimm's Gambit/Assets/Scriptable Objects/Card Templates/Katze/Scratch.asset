@@ -22,15 +22,15 @@ MonoBehaviour:
   _playerCopyCount: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4695933157482168321
+  - rid: 1396538477204209665
   - rid: 4695933157482168322
   references:
     version: 2
     RefIds:
-    - rid: 4695933157482168321
+    - rid: 1396538477204209665
       type: {class: DamageSelfEffect, ns: , asm: Assembly-CSharp}
       data:
-        m_Damage: 3
+        m_Damage: 0
     - rid: 4695933157482168322
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:

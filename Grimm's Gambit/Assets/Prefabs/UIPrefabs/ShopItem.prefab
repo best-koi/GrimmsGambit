@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2729840476451750852}
   - component: {fileID: 5999426555923743832}
   - component: {fileID: 2778651531419339310}
-  - component: {fileID: 6961589896024033120}
   m_Layer: 5
   m_Name: CommonIcon
   m_TagString: Untagged
@@ -76,19 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6961589896024033120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390763544820140427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c76051a17984c7e963c0324c0d1317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  descriptionMenu: {fileID: 8352585295550027038}
 --- !u!1 &1612408348765640479
 GameObject:
   m_ObjectHideFlags: 0
