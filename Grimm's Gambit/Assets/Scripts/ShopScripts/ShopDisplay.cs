@@ -19,7 +19,10 @@ public class ShopDisplay : MonoBehaviour
    private Image cardImage, heirloomImage, arcanaImage, defaultImage;
 
    [SerializeField]
-   private TMP_Text cardText, heirloomText, arcanaText, defaultText;
+   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;
+   
+   [SerializeField]
+   private string defaultText; 
 
    [SerializeField]
    private int cycleIndex; 
@@ -47,22 +50,47 @@ public class ShopDisplay : MonoBehaviour
     }
 
     public void DisplayShopItems(){
+
+        if(cycleIndex < commonCards.Count){
+            cardImage = commonCards[cycleIndex].GetIcon();
+            cardName.text = commonCards[cycleIndex].GetName();
+            cardDesc.text = commonCards[cycleIndex].GetDescription();
+        }else{
+            cardImage = defaultImage;
+            cardName.text = defaultText;
+            cardDesc.text = defaultText; 
+
+        }
   
-        cardImage = commonCards[cycleIndex].GetIcon();
-        cardText.text = commonCards[cycleIndex].GetName();
+         if(cycleIndex < heirlooms.Count){
+            heirloomImage = heirlooms[cycleIndex].GetIcon();
+            heirloomName.text = heirlooms[cycleIndex].GetName();
+            heirloomDesc.text = heirlooms[cycleIndex].GetDescription();
+         }else{
+            heirloomImage = defaultImage;
+            heirloomName.text = defaultText;
+            heirloomDesc.text = defaultText; 
 
-        heirloomImage = heirlooms[cycleIndex].GetIcon();
-        heirloomText.text = heirlooms[cycleIndex].GetName();
+         }
+         if(cycleIndex < arcana.Count){
+            arcanaImage = arcana[cycleIndex].GetIcon();
+            arcanaName.text = arcana[cycleIndex].GetName();
+            arcanaDesc.text = arcana[cycleIndex].GetDescription(); 
+         }else{
+            arcanaImage = defaultImage;
+            arcanaName.text = defaultText;
+            arcanaDesc.text = defaultText; 
 
-        arcanaImage = arcana[cycleIndex].GetIcon();
-        arcanaText.text = arcana[cycleIndex].GetName();
+         }
 
     }
 
     public void CycleMenu(){
-        if(cycleIndex > numberOfPages)
-            cycleIndex = 0;
-        else 
+        if(cycleIndex < numberOfPages)
             cycleIndex++;
+            
+        else 
+            cycleIndex = 0;
+        Debug.Log(cycleIndex);
     }
 }
