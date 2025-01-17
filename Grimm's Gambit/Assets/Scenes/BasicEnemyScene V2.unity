@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16786,7 +16786,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1452475742}
   - component: {fileID: 1452475744}
-  - component: {fileID: 1452475743}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -16809,14 +16808,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1558088977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1452475743
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452475741}
-  m_Enabled: 1
 --- !u!20 &1452475744
 Camera:
   m_ObjectHideFlags: 0
@@ -27795,6 +27786,8 @@ MonoBehaviour:
     databaseIndex: 14
   - ownerIndex: 2
     databaseIndex: 14
+  - ownerIndex: 3
+    databaseIndex: 0
   m_Hand: []
   m_DiscardPile: []
   m_RemovedZone: []
@@ -35070,6 +35063,8 @@ MonoBehaviour:
       - {fileID: 11400000, guid: b60ab3f42ab5d8f4b84132981e0442e2, type: 2}
       - {fileID: 11400000, guid: b60ab3f42ab5d8f4b84132981e0442e2, type: 2}
       - {fileID: 11400000, guid: b60ab3f42ab5d8f4b84132981e0442e2, type: 2}
+    - _row:
+      - {fileID: 11400000, guid: 365cbf998302c485aa4cec1100e83c59, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

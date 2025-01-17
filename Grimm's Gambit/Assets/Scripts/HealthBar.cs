@@ -40,8 +40,8 @@ public class HealthBar : MonoBehaviour
 
     void HealthUpdate()
     {
-        currentHealth = self.GetComponent<BasicCharacter>().GetHP();
-        maxHealth = self.GetComponent<BasicCharacter>().GetMaxHP();
+        currentHealth = self.GetComponent<Minion>().currentHealth;
+        maxHealth = self.GetComponent<Minion>().maxHealth;
     }
 
     void SetColor(Color c)
