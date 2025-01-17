@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4890767153850758576}
   - component: {fileID: 2213588676202623649}
   - component: {fileID: 8931673747312072328}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7967882489818454807}
   - component: {fileID: 3300948500081996684}
   - component: {fileID: 254580483439896412}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 983480383102192162}
   - component: {fileID: 1034681769595151446}
   - component: {fileID: 6476362610970769023}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5213,7 +5213,7 @@ GameObject:
   - component: {fileID: 7102871398971922720}
   - component: {fileID: 5109818671152195443}
   - component: {fileID: 6481525176744876809}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10180,6 +10180,7 @@ GameObject:
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
   - component: {fileID: -7268145389544586170}
+  - component: {fileID: 1003782881571704649}
   m_Layer: 0
   m_Name: Katze
   m_TagString: Untagged
@@ -10308,6 +10309,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinatedStrikes: {fileID: 5659498217672693843, guid: 88e4b9a39f82ce84285defba748a40ae, type: 3}
+--- !u!114 &1003782881571704649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163780573869900379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91d3f91067ffbf4087deee3e3e71eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 6163780573869900379}
+  healthFill: {fileID: 7993567479634307802}
+  full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
+  mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
+  low: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7993567479634307802
 GameObject:
   m_ObjectHideFlags: 0
@@ -10319,7 +10337,7 @@ GameObject:
   - component: {fileID: 234322585792351871}
   - component: {fileID: 7002471701861519724}
   - component: {fileID: 267844764629731227}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10638,8 +10656,8 @@ GameObject:
   - component: {fileID: 8372579020213323385}
   - component: {fileID: 8505854711233931967}
   - component: {fileID: 4747407844789485507}
-  m_Layer: 5
-  m_Name: Panel
+  m_Layer: 3
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10714,7 +10732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8752361557292120880}
   - component: {fileID: 2111377452816252854}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
