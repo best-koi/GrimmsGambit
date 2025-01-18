@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: HiddenBlade
+  m_EditorClassIdentifier: 
+  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+  _cardName: Hidden Blade
+  _cardDescription: Deal 8 damage. If the enemy has Mark, gain a Spirit and apply
+    2 Bleed.
+  _cardCost: 1
+  _data:
+    ownerIndex: 2
+    databaseIndex: 0
+  _playerCopyCount: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 1396538504836808708
+  - rid: 1396538504836808707
+  references:
+    version: 2
+    RefIds:
+    - rid: 1396538504836808707
+      type: {class: DebuffConditionalEffect, ns: , asm: Assembly-CSharp}
+      data:
+        conditionDebuff: 9
+        spiritGain: 1
+        cardDraw: 0
+        resultantDebuff: 8
+        resultantValue: 2
+    - rid: 1396538504836808708
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 8
