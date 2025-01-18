@@ -15,9 +15,6 @@ public class CardHandV2 : ObjectContainer
     [SerializeField]
     private Vector3 _displacementFromContainerCenter;
 
-    //[SerializeField]
-    //private List<CardDisplay> _cardsToReturn;
-
     protected override void Awake()
     {
         base.Awake();
@@ -30,7 +27,7 @@ public class CardHandV2 : ObjectContainer
     {
         if(cardIndex < 0)
             return;
-        GameObject card = _dataBase.GetCardInstance(owner, cardIndex);
+        GameObject card = _dataBase.SpawnCardObject(owner, cardIndex);
         Add(card.transform);
     }
 
