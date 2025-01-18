@@ -125,17 +125,19 @@ private EnemyTemplate[] enemies;
         
         List <EnemyTemplate> filteredEnemies = new List<EnemyTemplate>();
         foreach(EnemyTemplate e in enemies){
-            if(e.gameObject != null)
+            if(e != null)
                 filteredEnemies.Add(e);
                 Debug.Log("Filtering");
 
         }
+        
         Debug.Log(filteredEnemies.Count);
+        enemies = filteredEnemies.ToArray(); 
 
-        foreach (EnemyTemplate enemy in filteredEnemies)
+        foreach (EnemyTemplate enemy in enemies)
             {
                 Debug.Log("Attacking");
-                if(enemy.gameObject != null)
+                if(enemy != null)
                     enemy.AttackPattern();
                 yield return new WaitForSeconds(1.5f);
                 //EnemyTemplate enemyController = enemy.GetComponent<EnemySpawner>().GetEnemy();

@@ -23,17 +23,16 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933079036100614
-  - rid: 4695933079036100616
+  - rid: 1396538503740784641
   references:
     version: 2
     RefIds:
+    - rid: 1396538503740784641
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 8
     - rid: 4695933079036100614
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 8
         _value: 5
-    - rid: 4695933079036100616
-      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
-      data:
-        m_Amount: 8
-        m_TargetingSelf: 0

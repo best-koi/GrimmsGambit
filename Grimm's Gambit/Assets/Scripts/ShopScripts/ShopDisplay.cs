@@ -19,7 +19,10 @@ public class ShopDisplay : MonoBehaviour
    private Image cardImage, heirloomImage, arcanaImage, defaultImage;
 
    [SerializeField]
-   private TMP_Text cardText, heirloomText, arcanaText, defaultText;
+   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;
+   
+   [SerializeField]
+   private string defaultText; 
 
    [SerializeField]
    private int cycleIndex; 
@@ -31,7 +34,7 @@ public class ShopDisplay : MonoBehaviour
     void Start()
     {
 
-        DisplayShopItems();
+        DisplayAllCycledItems(); 
 
         
     }
@@ -43,26 +46,63 @@ public class ShopDisplay : MonoBehaviour
         hairText.text = $"{hairCount}";
         tongueText.text = $"{tongueCount}";
 
-        DisplayShopItems();
+        //DisplayAllCycledItems(); 
+
+
+        
     }
 
-    public void DisplayShopItems(){
+//Displays items by a given index. If the index exceeds the provided list, then blank text is used 
+//Takes the following parameters
+//int index - represents the current index to display by
+//Image image - the image slot of the item
+//TMP_Text name - the name text of the item to set
+//TMP_Text desc - the description text of the item to set
+//List<ShopItem> items - a list of ShopItems to use 
+    private void DisplayShopItems(int index, Image image, TMP_Text name, TMP_Text desc, List<ShopItem> items){
+
+        if(index < items.Count){
+            image = items[index].GetIcon();
+            name.text = items[index].GetName();
+            desc.text = items[index].GetDescription();
+        }else{
+            image = defaultImage;
+            name.text = defaultText;
+            desc.text = defaultText; 
+
+        }
   
-        cardImage = commonCards[cycleIndex].GetIcon();
-        cardText.text = commonCards[cycleIndex].GetName();
-
-        heirloomImage = heirlooms[cycleIndex].GetIcon();
-        heirloomText.text = heirlooms[cycleIndex].GetName();
-
-        arcanaImage = arcana[cycleIndex].GetIcon();
-        arcanaText.text = arcana[cycleIndex].GetName();
-
     }
 
+
+
+//Updates all Displays 
+    private void DisplayAllCycledItems(){
+        DisplayShopItems(cycleIndex, cardImage, cardName, cardDesc, commonCards);
+        DisplayShopItems(cycleIndex, heirloomImage, heirloomName, heirloomDesc, heirlooms);
+        DisplayShopItems(cycleIndex, arcanaImage, arcanaName, arcanaDesc, arcana);
+    }
+
+//Cycles the menu forward 1 
     public void CycleMenu(){
-        if(cycleIndex > numberOfPages)
-            cycleIndex = 0;
-        else 
+        if(cycleIndex < numberOfPages)
             cycleIndex++;
+        else 
+            cycleIndex = 0;
+        Debug.Log(cycleIndex);
+        DisplayAllCycledItems();
+    }
+    
+
+//Produces a random lineup of 3 Items in the Shop
+    public void Reroll(){
+        int randomCommon = Random.Range(0, commonCards.Count);
+        int randomHeirloom = Random.Range(0, heirlooms.Count);
+        int randomArcana = Random.Range(0, heirlooms.Count);
+
+        DisplayShopItems(randomCommon, cardImage, cardName, cardDesc, commonCards);
+        DisplayShopItems(randomHeirloom, heirloomImage, heirloomName, heirloomDesc, heirlooms);
+        DisplayShopItems(randomArcana, arcanaImage, arcanaName, arcanaDesc, arcana); 
+
     }
 }

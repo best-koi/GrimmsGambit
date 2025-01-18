@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4579082354073276111}
   - component: {fileID: 3138771135567904780}
   m_Layer: 0
-  m_Name: RareCard
+  m_Name: ArcanaItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
