@@ -22,17 +22,17 @@ MonoBehaviour:
   _playerCopyCount: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4695933079036100614
+  - rid: 5427119459010609152
   - rid: 4695933079036100615
   references:
     version: 2
     RefIds:
-    - rid: 4695933079036100614
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 1
-        _value: 7
     - rid: 4695933079036100615
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
         _damage: 6
+    - rid: 5427119459010609152
+      type: {class: ApplyDebuffEffectToSelf, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 1
+        _value: 7
