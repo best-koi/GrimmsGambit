@@ -103,6 +103,10 @@ public class AffixDisplay : MonoBehaviour
 
     private void UpdateVisuals() //This function updates visuals every time an affix is added or removed
     {
+        if(imageContainer == null)
+        {
+            return; //Skips function if character has been destroyed
+        }
         //UI code for displaying the imageDictionary should go here:
         foreach (Transform child in imageContainer)
         {
