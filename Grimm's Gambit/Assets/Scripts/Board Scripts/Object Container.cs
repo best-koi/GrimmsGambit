@@ -9,7 +9,7 @@ public abstract class ObjectContainer : MonoBehaviour
 {
     #region Private Fields
 
-    protected List<Transform> m_ChildTransforms;
+    [SerializeField] protected List<Transform> m_ChildTransforms;
 
     public int ChildListSize
     {

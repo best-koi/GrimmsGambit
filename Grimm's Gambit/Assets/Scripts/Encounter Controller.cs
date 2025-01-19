@@ -37,8 +37,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private string winText, loseText; 
     [SerializeField] private TMP_Text endScreenText; 
 
-[SerializeField]
-private EnemyTemplate[] enemies; 
+    [SerializeField] private EnemyTemplate[] enemies; 
 
     private bool Tired = false; //Variable to control whether the player is tired
 
@@ -152,6 +151,8 @@ private EnemyTemplate[] enemies;
     private void EndEncounter(bool playerWin) {
     
         onEncounterEnded?.Invoke(playerWin);
+
+        Debug.Log($"Has player won?: {playerWin}");
 
         if (playerWin){
             //endScreenCanvas.SetActive(true);
