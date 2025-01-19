@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.AI;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 public class EncounterController : MonoBehaviour
 {
@@ -37,8 +38,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private string winText, loseText; 
     [SerializeField] private TMP_Text endScreenText; 
 
-[SerializeField]
-private EnemyTemplate[] enemies; 
+    [SerializeField] private EnemyTemplate[] enemies; 
 
     private bool Tired = false; //Variable to control whether the player is tired
 
@@ -150,19 +150,10 @@ private EnemyTemplate[] enemies;
     }
 
     private void EndEncounter(bool playerWin) {
-    
+
+        SceneManager.LoadScene("TestEndEncounter");
+        Debug.Log("Ended");
         onEncounterEnded?.Invoke(playerWin);
-
-        if (playerWin){
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = winText;
-
-        }
-        else{
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = loseText; 
-
-        }
     }
 
     // Spend an amount of resources
