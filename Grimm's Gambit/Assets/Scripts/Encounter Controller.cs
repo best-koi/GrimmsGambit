@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.AI;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 public class EncounterController : MonoBehaviour
 {
@@ -149,21 +150,10 @@ public class EncounterController : MonoBehaviour
     }
 
     private void EndEncounter(bool playerWin) {
-    
+
+        SceneManager.LoadScene("TestEndEncounter");
+        Debug.Log("Ended");
         onEncounterEnded?.Invoke(playerWin);
-
-        Debug.Log($"Has player won?: {playerWin}");
-
-        if (playerWin){
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = winText;
-
-        }
-        else{
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = loseText; 
-
-        }
     }
 
     // Spend an amount of resources

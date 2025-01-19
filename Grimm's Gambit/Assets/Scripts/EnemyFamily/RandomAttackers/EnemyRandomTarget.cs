@@ -37,6 +37,7 @@ public class EnemyRandomTarget : EnemyTemplate
         if(targets.Count == 0)
            //Commented out by Dawson for flooding the console after game over 
            //Debug.Log("Done");
+           return;
         else
             attackTarget = targets[Random.Range(0, targets.Count)];
 
