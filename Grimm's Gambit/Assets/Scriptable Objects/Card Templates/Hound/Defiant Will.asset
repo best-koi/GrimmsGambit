@@ -19,7 +19,7 @@ MonoBehaviour:
   _data:
     ownerIndex: 0
     databaseIndex: 3
-  _playerCopyCount: 0
+  _playerCopyCount: 2
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933079036100614
