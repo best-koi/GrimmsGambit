@@ -15,6 +15,7 @@ public class AffixDisplay : MonoBehaviour
 {
     public Dictionary<Affix, Sprite> imageDictionary = new Dictionary<Affix, Sprite>();
     public Dictionary<Affix, string> stringDictionary = new Dictionary<Affix, string>();
+    public Dictionary<Affix, int> stackDictionary = new Dictionary<Affix, int>(); //Used to store stack quantities of each affix
     private AffixImageLibrary affixImageLibrary;
 
     public Transform imageContainer; //Container for images to be stored within
@@ -25,12 +26,13 @@ public class AffixDisplay : MonoBehaviour
     public Canvas parentCanvas;
     
     
-    public void AddAffix(Affix newAffix) //Adds an affix to display
+    public void AddAffix(Affix newAffix, int currentStacks) //Adds an affix to display
     {
         if (affixImageLibrary == null)
         {
             affixImageLibrary = FindAnyObjectByType<AffixImageLibrary>();
         }
+        stackDictionary.Add(newAffix, currentStacks);
         switch (newAffix) //Adds an image depending on the added affix to display
         {
             case Affix.Taunt:
@@ -95,10 +97,18 @@ public class AffixDisplay : MonoBehaviour
         UpdateVisuals();
     }
 
+    public void UpdateStacks(Affix updatedAffix, int currentStacks)
+    {
+        stackDictionary.Remove(updatedAffix);
+        stackDictionary.Add(updatedAffix, currentStacks); //Replaces affix with new value of stacks
+        UpdateVisuals(); //Not optional if you want to display stacks
+    }
+
     public void RemoveAffix(Affix removedAffix) //Removes an affix from display
     {
         imageDictionary.Remove(removedAffix); //Removes visual from dictionary and updates visual display
-        UpdateVisuals();
+        stackDictionary.Remove(removedAffix); //Removes all stacks of a removed affix
+        UpdateVisuals(); //Still called when character is destroyed, so null check is needed at the start of it
     }
 
     private void UpdateVisuals() //This function updates visuals every time an affix is added or removed
@@ -138,6 +148,7 @@ public class AffixDisplay : MonoBehaviour
             detector.parentObject = newSpriteObject;
             detector.imageContainer = imageContainer;
             detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
+            detector.Stacks = stackDictionary[affixImage.Key]; //Uses specific stack count
 
             //POSSIBLY ADD A FEATURE TO SHOW QUANTITY OF STACKS LATER ON
         }

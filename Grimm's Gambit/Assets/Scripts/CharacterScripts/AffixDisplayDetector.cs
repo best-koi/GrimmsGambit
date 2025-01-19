@@ -10,6 +10,7 @@ public class AffixDisplayDetector : MonoBehaviour
     public GameObject parentObject;
     public string Description; 
     public Transform imageContainer;
+    public int Stacks;
 
     private GameObject currentTooltip;
 
@@ -40,7 +41,7 @@ public class AffixDisplayDetector : MonoBehaviour
         tooltipRect.sizeDelta = new Vector2(7, 10); // Set size of the tooltip ~ possibly change this depending on how clear the text is
 
         TextMeshProUGUI tooltipText = tooltipObject.AddComponent<TextMeshProUGUI>();
-        tooltipText.text = Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
+        tooltipText.text = Stacks.ToString() + " " + Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
         tooltipText.fontSize = 0.5f;
         tooltipText.color = Color.red;
         tooltipText.font = PlaytestCheats.GetAllFont();

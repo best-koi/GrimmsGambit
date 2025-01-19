@@ -92,7 +92,7 @@ public class Minion : MonoBehaviour
         {
             Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
-            affixDisplay.AddAffix(affix); //Adds visual display of affix
+            affixDisplay.AddAffix(affix, value); //Adds visual display of affix
             if (affix == Affix.Bleed && animator != null) //Plays Bleeding anim if Bleed affix is called 
             {
                 animator.SetTrigger("IsBleeding");
@@ -105,6 +105,7 @@ public class Minion : MonoBehaviour
             if (currentValue + value > 0 || (currentValue + value < 0 && affix != Affix.Bleed)) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
             {
                 currentAffixes.Add(affix, currentValue+value);
+                affixDisplay.UpdateStacks(affix, currentValue+value); //Updates count
             }
         }
     }
@@ -163,6 +164,7 @@ public class Minion : MonoBehaviour
             {
                 int newValue = HealingToDeal * 10 + onesPlace; //Multiplies the tens place by ten then adds the ones place back in
                 currentAffixes.Add(Affix.Regen, newValue); //Reimplements the affix with the new value
+                affixDisplay.UpdateStacks(Affix.Regen, newValue); //Updates count
             }
             else
             {
@@ -196,6 +198,7 @@ public class Minion : MonoBehaviour
         if (currentCharges > 1)
         {
             currentAffixes.Add(affix, currentCharges-1);
+            affixDisplay.UpdateStacks(affix, currentCharges-1); //Updates Count
         }
         else
         {
@@ -269,6 +272,7 @@ public class Minion : MonoBehaviour
                 if (currentExploitStacks >= 2)
                 {
                     currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
+                    
                 }
                 else
                 {
@@ -308,6 +312,7 @@ public class Minion : MonoBehaviour
                 if (RemainingCharges > 0)
                 {
                     currentAffixes.Add(Affix.Naturopath, RemainingCharges); //Adds back remaining charges to prevent overheal, if possible
+                    affixDisplay.UpdateStacks(Affix.Naturopath, RemainingCharges); //Updates count
                 }
                 else
                 {
@@ -419,6 +424,7 @@ public class Minion : MonoBehaviour
         int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
         currentAffixes.Remove(Affix.Bleed); //Removes bleed
         currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
+        affixDisplay.UpdateStacks(Affix.Bleed, currentBleedStacks * Factor); //Updates count
     }
 
     public void Cleanse() //Public function to remove all negative affixes
