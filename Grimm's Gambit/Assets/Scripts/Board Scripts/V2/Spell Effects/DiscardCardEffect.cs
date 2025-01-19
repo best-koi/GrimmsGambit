@@ -12,7 +12,6 @@ public class DiscardCardEffect : SpellEffect
     public override void DoSpellEffect(Minion caster = null, Minion target = null)
     {
         Deck deck = GameObject.FindObjectOfType<Deck>();
-        // To fix
-        //deck.Discard();
+        deck.DiscardRandomInHand(); //Discards a random card from the hand
     }
 }

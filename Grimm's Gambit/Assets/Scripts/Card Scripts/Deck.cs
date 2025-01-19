@@ -141,6 +141,16 @@ public class Deck : MonoBehaviour
         onDiscard?.Invoke(data.databaseIndex);
     }
 
+    public void DiscardRandomInHand()
+    {
+        System.Random randomObject = new System.Random();
+        int randomIndex = randomObject.Next(0, m_Hand.Count-1); //Chooses random int between 0 and final card in hand currently
+        //Removes card from randomly selected index
+        m_DiscardPile.Add(m_Hand[randomIndex]);
+        onDiscard?.Invoke(randomIndex);
+        m_Hand.Remove(m_Hand[randomIndex]);
+    }
+
     public void DiscardHand()
     {
         for (int i = m_Hand.Count - 1; i >= 0; i--)
