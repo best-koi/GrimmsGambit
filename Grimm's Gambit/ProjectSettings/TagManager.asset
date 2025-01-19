@@ -10,6 +10,8 @@ TagManager:
   - Shop
   - Card
   - Inactive
+  - Lycan
+  - Sisters
   layers:
   - Default
   - TransparentFX
