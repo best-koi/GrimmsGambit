@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
+
 
 //using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
@@ -108,6 +110,7 @@ public class AffixDisplay : MonoBehaviour
     {
         imageDictionary.Remove(removedAffix); //Removes visual from dictionary and updates visual display
         stackDictionary.Remove(removedAffix); //Removes all stacks of a removed affix
+        stringDictionary.Remove(removedAffix); //Need to do this to prevent null error
         UpdateVisuals(); //Still called when character is destroyed, so null check is needed at the start of it
     }
 
@@ -122,7 +125,8 @@ public class AffixDisplay : MonoBehaviour
         {
             Destroy(child.gameObject); //Destroys current instances of images before creating new ones and reformatting
         }
-
+        int index = 0; //Used for visual formatting
+        int imagesPerRow = 4;
         foreach (var affixImage in imageDictionary)
         {
             GameObject newSpriteObject = new GameObject(affixImage.Key.ToString()); //Labels object for image with the name of its' affix
@@ -132,6 +136,11 @@ public class AffixDisplay : MonoBehaviour
             RectTransform rectTransform = newSpriteObject.AddComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(pixelWidth, pixelWidth); //Creates transform to store image in
 
+            int row = index/imagesPerRow; //Calculates row number
+            int column = index % imagesPerRow; //Calculates column number
+            rectTransform.anchoredPosition = new Vector2(column * .33f, -row * .33f); //Shifts by .33, adjust value if needed
+            index++; //increments index for next entry
+            
             SpriteRenderer imageComponent = newSpriteObject.AddComponent<SpriteRenderer>();
             if (affixImage.Value != null)
             {
@@ -150,7 +159,6 @@ public class AffixDisplay : MonoBehaviour
             detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
             detector.Stacks = stackDictionary[affixImage.Key]; //Uses specific stack count
 
-            //POSSIBLY ADD A FEATURE TO SHOW QUANTITY OF STACKS LATER ON
         }
     }
 
