@@ -9,6 +9,7 @@ public class EndDisplay : MonoBehaviour
 
     public void SetDisplay(bool win)
     {
-
+        if (win) endScreenText.text = winText;
+        else endScreenText.text = loseText;
     }
 }
