@@ -34,9 +34,7 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private CardHand m_CardHand;
 
     [SerializeField] private GameObject endScreenCanvas;
-
-    [SerializeField] private string winText, loseText; 
-    [SerializeField] private TMP_Text endScreenText; 
+    [SerializeField] private GameObject sceneParent;
 
     [SerializeField] private EnemyTemplate[] enemies; 
 
@@ -150,10 +148,16 @@ public class EncounterController : MonoBehaviour
     }
 
     private void EndEncounter(bool playerWin) {
-
-        SceneManager.LoadScene("TestEndEncounter");
         Debug.Log("Ended");
         onEncounterEnded?.Invoke(playerWin);
+        MakeEnd(playerWin);
+        sceneParent.SetActive(false);
+    }
+
+    private void MakeEnd(bool win)
+    {
+        endScreenCanvas.SetActive(true);
+        //endCanvas.GetComponent<EndDisplay>().SetDisplay(win);
     }
 
     // Spend an amount of resources
