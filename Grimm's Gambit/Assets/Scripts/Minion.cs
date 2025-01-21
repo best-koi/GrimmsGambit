@@ -421,10 +421,13 @@ public class Minion : MonoBehaviour
 
     public void Gouge(int Factor = 2) //Public function to double bleed stacks on minion, doing the gouge effect
     {
-        int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
-        currentAffixes.Remove(Affix.Bleed); //Removes bleed
-        currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
-        affixDisplay.UpdateStacks(Affix.Bleed, currentBleedStacks * Factor); //Updates count
+        if (currentAffixes.ContainsKey(Affix.Bleed))
+        {
+            int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
+            currentAffixes.Remove(Affix.Bleed); //Removes bleed
+            currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
+            affixDisplay.UpdateStacks(Affix.Bleed, currentBleedStacks * Factor); //Updates count
+        }
     }
 
     public void Cleanse() //Public function to remove all negative affixes
