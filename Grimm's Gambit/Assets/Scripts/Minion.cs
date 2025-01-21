@@ -112,14 +112,17 @@ public class Minion : MonoBehaviour
 
     private void TurnStart(bool currentPlayer)
     {
-        currentTurnPlayer = currentPlayer; //Sets current player given by new turn function to be the currentTurnPlayer value
-        if (currentPlayer == ownerPlayer)
+        if (gameObject != null) //Prevents minion from being accessed if game object is null
         {
-            EstablishNewTurn(); //Runs function for when a player turn starts
-        }
-        else
-        {
-            EndCurrentTurn(); //Runs function for when a player turn ends
+            currentTurnPlayer = currentPlayer; //Sets current player given by new turn function to be the currentTurnPlayer value
+            if (currentPlayer == ownerPlayer)
+            {
+                EstablishNewTurn(); //Runs function for when a player turn starts
+            }
+            else
+            {
+                EndCurrentTurn(); //Runs function for when a player turn ends
+            }
         }
     }
 
@@ -414,9 +417,14 @@ public class Minion : MonoBehaviour
         //Deck deck = FindObjectOfType<Deck>();
         //deck.RemoveCards(this);
 
+        EncounterController.onTurnChanged -= TurnStart; //Unsubscribes this minion from the turn changed action upon minion being destroyed
+
         onDeath?.Invoke(this); // See line 55
 
-        Destroy(gameObject);
+        if (gameObject != null) //Safety check for null error
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Gouge(int Factor = 2) //Public function to double bleed stacks on minion, doing the gouge effect
