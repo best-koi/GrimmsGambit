@@ -6,7 +6,6 @@ using TMPro;
 using System;
 using UnityEngine.AI;
 using System.Data;
-using UnityEngine.SceneManagement;
 
 public class EncounterController : MonoBehaviour
 {
