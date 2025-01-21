@@ -9139,8 +9139,8 @@ MonoBehaviour:
   m_CardHand: {fileID: 903263243}
   endScreenCanvas: {fileID: 1753314491}
   sceneParent: {fileID: 1558088976}
-  winText: You defeated the Lycan...
-  loseText: You were slain...
+  winText: 
+  loseText: 
   endScreenText: {fileID: 1140021319}
   enemies: []
 --- !u!1 &821711496
