@@ -44,6 +44,12 @@ public class Deck : MonoBehaviour
     // Lists the indices of each card in the database
     [SerializeField] private List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
+    private void Start()
+    {
+        onDraw = null;
+        onDiscard = null;
+    }
+
     // Draw a card from the top of the deck
     // Alternatively draw specific card from the deck
     public void Draw(int index = 0)

@@ -74,6 +74,8 @@ public class EncounterController : MonoBehaviour
         m_IsPlayerTurn = false;
         m_TurnCounter = 0;
 
+        onTurnChanged = null;
+
         onEncounterStarted?.Invoke();
 
         m_PlayerDeck.ShuffleDeck();
