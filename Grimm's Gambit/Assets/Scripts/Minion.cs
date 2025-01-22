@@ -411,11 +411,9 @@ public class Minion : MonoBehaviour
 
     private void Destroyed() //Function for when this character has been defeated
     {
-        //Implement This Later depending on game logic
-        //Maybe have death effect here if present
-        
-        //Deck deck = FindObjectOfType<Deck>();
-        //deck.RemoveCards(this);
+        Deck deck = FindObjectOfType<Deck>();
+        UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
+        deck.RemoveCards(party.IndexOf(this.GetComponent<Transform>())); // Needs to be index in party
 
         EncounterController.onTurnChanged -= TurnStart; //Unsubscribes this minion from the turn changed action upon minion being destroyed
 

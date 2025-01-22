@@ -254,22 +254,36 @@ public class Deck : MonoBehaviour
         return cardID;
     }
 
-    // Needs to be changed based on database rework
-    public void RemoveCards(Minion owner)
+    // Fixed
+    public void RemoveCards(int owner)
     {
+        Debug.Log($"{owner}: Called");
+
         for (int i = m_DiscardPile.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_DiscardPile[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_DiscardPile[i]);
+                m_DiscardPile.RemoveAt(i);
+            }
         }
 
         for (int i = m_GameDeck.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_GameDeck[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_GameDeck[i]);
+                m_GameDeck.RemoveAt(i);
+            }
         }
 
         for (int i = m_Hand.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_Hand[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_Hand[i]);
+                m_Hand.RemoveAt(i);
+            }
         }
     }
 
