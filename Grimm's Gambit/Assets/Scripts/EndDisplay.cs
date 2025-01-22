@@ -17,6 +17,12 @@ public class EndDisplay : MonoBehaviour
         else endScreenText.text = loseText;
     }
 
+    private void Start()
+    {
+        endCamera.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         endCamera.SetActive(true);
