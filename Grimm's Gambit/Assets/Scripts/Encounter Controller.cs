@@ -149,7 +149,6 @@ public class EncounterController : MonoBehaviour
     }
 
     private void EndEncounter(bool playerWin) {
-        Debug.Log("Ended");
         onEncounterEnded?.Invoke(playerWin);
         MakeEnd(playerWin);
         sceneParent.SetActive(false);
@@ -158,7 +157,7 @@ public class EncounterController : MonoBehaviour
     private void MakeEnd(bool win)
     {
         endScreenCanvas.SetActive(true);
-        //endCanvas.GetComponent<EndDisplay>().SetDisplay(win);
+        endScreenCanvas.GetComponent<EndDisplay>().SetDisplay(win);
     }
 
     // Spend an amount of resources

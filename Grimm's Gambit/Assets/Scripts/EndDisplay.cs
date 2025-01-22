@@ -10,6 +10,7 @@ public class EndDisplay : MonoBehaviour
 
     public void SetDisplay(bool win)
     {
+        Debug.Log("Called");
         if (win) endScreenText.text = winText;
         else endScreenText.text = loseText;
     }
