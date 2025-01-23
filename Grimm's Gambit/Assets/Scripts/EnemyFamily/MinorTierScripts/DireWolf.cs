@@ -8,19 +8,11 @@ public class DireWolf : EnemyRandomTarget
 [SerializeField] protected List<EnemyTemplate> enemies;
 //Finds enemies to buff who are wolves
     private void Howl(){
-        List<Transform> spawners = controller.GetEnemyInventory().GetAll();
-        foreach(Transform s in spawners)
-        {
-            enemies.Add(s.GetComponent<EnemySpawner>().GetSpawnedEnemy().GetComponent<EnemyTemplate>());
-        }
+        EnemyTemplate[] allies = GameObject.FindObjectsOfType<EnemyTemplate>();
         
-        foreach(EnemyTemplate e in enemies)
+        foreach(EnemyTemplate a in allies)
         {
-            if(e == this)
-                continue;
-            else if(e.GetEnemyName().Contains("Wolf")){
-                e.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
-            }
+            a.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
         }
 
     }
@@ -59,12 +51,34 @@ public class DireWolf : EnemyRandomTarget
                 moveText.color = this.GetEnemyColor();
                 break;
             case "RandomAttack":
+                if(hasChosenRandomAttack != true)
+                    randomAttackName = randomAttacks[Random.Range(0, randomAttacks.Count)];
+                if(randomAttackName == "Block")
+                    hasChosenRandomAttack = true; 
+
                 if(randomAttackName == "Block")
                     moveText.text = $"Blocking for {blockValue}";
                 else
-                    moveText.text = $"Attacking for {attackValue}";
+                {
+
+                    
+                    if(hasChosenRandomAttack != true){
+                        FindTarget();
+                    }
+                    hasChosenRandomAttack = true; 
+                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue}";
+                    
+                }
+                    
                 moveText.color = this.GetEnemyColor();
                 break;
+            case "Howl":
+                moveText.text = "Applying Strength to Allies";
+                moveText.color = new Color(1.0f, 0.64f, 0.0f);
+
+            
+
+            break;
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
