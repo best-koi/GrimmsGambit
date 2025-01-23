@@ -92,7 +92,7 @@ public class Minion : MonoBehaviour
         {
             Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
-            affixDisplay.AddAffix(affix); //Adds visual display of affix
+            affixDisplay.AddAffix(affix, value); //Adds visual display of affix
             if (affix == Affix.Bleed && animator != null) //Plays Bleeding anim if Bleed affix is called 
             {
                 animator.SetTrigger("IsBleeding");
@@ -105,20 +105,24 @@ public class Minion : MonoBehaviour
             if (currentValue + value > 0 || (currentValue + value < 0 && affix != Affix.Bleed)) //Allows for this function to have negative values for stacking affixes - bleed is allowed to have negative stacks though
             {
                 currentAffixes.Add(affix, currentValue+value);
+                affixDisplay.UpdateStacks(affix, currentValue+value); //Updates count
             }
         }
     }
 
     private void TurnStart(bool currentPlayer)
     {
-        currentTurnPlayer = currentPlayer; //Sets current player given by new turn function to be the currentTurnPlayer value
-        if (currentPlayer == ownerPlayer)
+        if (gameObject != null) //Prevents minion from being accessed if game object is null
         {
-            EstablishNewTurn(); //Runs function for when a player turn starts
-        }
-        else
-        {
-            EndCurrentTurn(); //Runs function for when a player turn ends
+            currentTurnPlayer = currentPlayer; //Sets current player given by new turn function to be the currentTurnPlayer value
+            if (currentPlayer == ownerPlayer)
+            {
+                EstablishNewTurn(); //Runs function for when a player turn starts
+            }
+            else
+            {
+                EndCurrentTurn(); //Runs function for when a player turn ends
+            }
         }
     }
 
@@ -163,6 +167,7 @@ public class Minion : MonoBehaviour
             {
                 int newValue = HealingToDeal * 10 + onesPlace; //Multiplies the tens place by ten then adds the ones place back in
                 currentAffixes.Add(Affix.Regen, newValue); //Reimplements the affix with the new value
+                affixDisplay.UpdateStacks(Affix.Regen, newValue); //Updates count
             }
             else
             {
@@ -196,6 +201,7 @@ public class Minion : MonoBehaviour
         if (currentCharges > 1)
         {
             currentAffixes.Add(affix, currentCharges-1);
+            affixDisplay.UpdateStacks(affix, currentCharges-1); //Updates Count
         }
         else
         {
@@ -269,6 +275,7 @@ public class Minion : MonoBehaviour
                 if (currentExploitStacks >= 2)
                 {
                     currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
+                    
                 }
                 else
                 {
@@ -308,6 +315,7 @@ public class Minion : MonoBehaviour
                 if (RemainingCharges > 0)
                 {
                     currentAffixes.Add(Affix.Naturopath, RemainingCharges); //Adds back remaining charges to prevent overheal, if possible
+                    affixDisplay.UpdateStacks(Affix.Naturopath, RemainingCharges); //Updates count
                 }
                 else
                 {
@@ -403,22 +411,29 @@ public class Minion : MonoBehaviour
 
     private void Destroyed() //Function for when this character has been defeated
     {
-        //Implement This Later depending on game logic
-        //Maybe have death effect here if present
-        
-        //Deck deck = FindObjectOfType<Deck>();
-        //deck.RemoveCards(this);
+        Deck deck = FindObjectOfType<Deck>();
+        UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
+        deck.RemoveCards(party.IndexOf(this.GetComponent<Transform>())); // Needs to be index in party
+
+        EncounterController.onTurnChanged -= TurnStart; //Unsubscribes this minion from the turn changed action upon minion being destroyed
 
         onDeath?.Invoke(this); // See line 55
 
-        Destroy(gameObject);
+        if (gameObject != null) //Safety check for null error
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Gouge(int Factor = 2) //Public function to double bleed stacks on minion, doing the gouge effect
     {
-        int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
-        currentAffixes.Remove(Affix.Bleed); //Removes bleed
-        currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
+        if (currentAffixes.ContainsKey(Affix.Bleed))
+        {
+            int currentBleedStacks = currentAffixes[Affix.Bleed]; //Stores current stacks
+            currentAffixes.Remove(Affix.Bleed); //Removes bleed
+            currentAffixes.Add(Affix.Bleed, currentBleedStacks * Factor); //Reimplements bleed with a doubled amount of stacks
+            affixDisplay.UpdateStacks(Affix.Bleed, currentBleedStacks * Factor); //Updates count
+        }
     }
 
     public void Cleanse() //Public function to remove all negative affixes

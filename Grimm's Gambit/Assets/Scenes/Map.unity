@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d06ebfdf4d7fe4dcd8497a98180648e8, type: 2}
   m_HaloStrength: 0.5
@@ -6920,7 +6920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11878492, y: -0.6902949, z: 0.11644818, w: 0.704147}
+  m_LocalRotation: {x: 0.11849153, y: -0.6920647, z: 0.116746746, w: 0.7024076}
   m_LocalPosition: {x: 23.231236, y: 11.199504, z: 0.06356096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11224,6 +11224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point of Interest Spot
       objectReference: {fileID: 0}
+    - target: {fileID: 703411948876604009, guid: 8d153497537aa488d9b9cf702435bbbf, type: 3}
+      propertyPath: m_TagString
+      value: Sisters
+      objectReference: {fileID: 0}
     - target: {fileID: 7761869422026811968, guid: 8d153497537aa488d9b9cf702435bbbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.685741
@@ -11384,7 +11388,7 @@ PrefabInstance:
       objectReference: {fileID: 1529303501}
     - target: {fileID: 6873473926179740389, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: m_TagString
-      value: Boss
+      value: Lycan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18108,7 +18112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11878492, y: -0.6902949, z: 0.11644818, w: 0.704147}
+  m_LocalRotation: {x: 0.11849153, y: -0.6920647, z: 0.116746746, w: 0.7024076}
   m_LocalPosition: {x: 23.231236, y: 11.199504, z: 0.06356096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25468,9 +25472,17 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: lycanScene
+      value: LycanScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: sceneObjects
       value: 
       objectReference: {fileID: 831641081}
+    - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: sistersScene
+      value: SistersScene
+      objectReference: {fileID: 0}
     - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: encounterScene
       value: BasicEnemyScene V2

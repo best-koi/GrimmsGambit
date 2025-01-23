@@ -18,7 +18,10 @@ public class CardHandV2 : ObjectContainer
     protected override void Awake()
     {
         base.Awake();
+    }
 
+    private void Start()
+    {
         Deck.onDraw += AddCardFromIndex;
         Deck.onDiscard += RemoveCardFromIndex;
     }

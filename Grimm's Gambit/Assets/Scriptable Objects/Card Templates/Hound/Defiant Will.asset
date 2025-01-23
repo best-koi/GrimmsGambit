@@ -19,11 +19,11 @@ MonoBehaviour:
   _data:
     ownerIndex: 0
     databaseIndex: 3
-  _playerCopyCount: 0
+  _playerCopyCount: 2
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933079036100614
-  - rid: 4695933079036100616
+  - rid: 5427119477131051008
   references:
     version: 2
     RefIds:
@@ -32,8 +32,6 @@ MonoBehaviour:
       data:
         _debuff: 1
         _value: 6
-    - rid: 4695933079036100616
-      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
-      data:
-        m_Amount: 8
-        m_TargetingSelf: 0
+    - rid: 5427119477131051008
+      type: {class: DiscardCardEffect, ns: , asm: Assembly-CSharp}
+      data: 

@@ -44,6 +44,12 @@ public class Deck : MonoBehaviour
     // Lists the indices of each card in the database
     [SerializeField] private List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
+    private void Awake()
+    {
+        onDraw = null;
+        onDiscard = null;
+    }
+
     // Draw a card from the top of the deck
     // Alternatively draw specific card from the deck
     public void Draw(int index = 0)
@@ -139,6 +145,16 @@ public class Deck : MonoBehaviour
         m_DiscardPile.Add(data);
         m_Hand.Remove(data);
         onDiscard?.Invoke(data.databaseIndex);
+    }
+
+    public void DiscardRandomInHand()
+    {
+        System.Random randomObject = new System.Random();
+        int randomIndex = randomObject.Next(0, m_Hand.Count-1); //Chooses random int between 0 and final card in hand currently
+        //Removes card from randomly selected index
+        m_DiscardPile.Add(m_Hand[randomIndex]);
+        onDiscard?.Invoke(randomIndex);
+        m_Hand.Remove(m_Hand[randomIndex]);
     }
 
     public void DiscardHand()
@@ -238,22 +254,36 @@ public class Deck : MonoBehaviour
         return cardID;
     }
 
-    // Needs to be changed based on database rework
-    public void RemoveCards(Minion owner)
+    // Fixed
+    public void RemoveCards(int owner)
     {
+        Debug.Log($"{owner}: Called");
+
         for (int i = m_DiscardPile.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_DiscardPile[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_DiscardPile[i]);
+                m_DiscardPile.RemoveAt(i);
+            }
         }
 
         for (int i = m_GameDeck.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_GameDeck[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_GameDeck[i]);
+                m_GameDeck.RemoveAt(i);
+            }
         }
 
         for (int i = m_Hand.Count() - 1; i >= 0; i--)
         {
-            
+            if (m_Hand[i].ownerIndex == owner)
+            {
+                m_RemovedZone.Add(m_Hand[i]);
+                m_Hand.RemoveAt(i);
+            }
         }
     }
 

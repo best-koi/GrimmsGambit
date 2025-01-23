@@ -28,7 +28,7 @@ public class MapPlayer : MonoBehaviour
     private string encounterScene;
 
     [SerializeField]
-    private string bossScene;
+    private string lycanScene, sistersScene;
 
     [SerializeField]
     private GameObject sceneObjects;
@@ -100,9 +100,13 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-        }else if (collision.gameObject.tag == "Boss"){
+        }else if (collision.gameObject.tag == "Lycan"){
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(bossScene, LoadSceneMode.Additive);
+            SceneManager.LoadScene(lycanScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+        }else if (collision.gameObject.tag == "Sisters"){
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(sistersScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
         }
     }

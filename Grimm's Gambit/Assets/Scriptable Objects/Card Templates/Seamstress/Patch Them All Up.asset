@@ -18,8 +18,8 @@ MonoBehaviour:
   _cardCost: 1
   _data:
     ownerIndex: 1
-    databaseIndex: 0
-  _playerCopyCount: 1
+    databaseIndex: 3
+  _playerCopyCount: 2
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808737

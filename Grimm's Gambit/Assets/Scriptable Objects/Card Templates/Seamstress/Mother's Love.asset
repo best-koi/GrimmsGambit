@@ -18,21 +18,22 @@ MonoBehaviour:
   _cardCost: 3
   _data:
     ownerIndex: 1
-    databaseIndex: 0
-  _playerCopyCount: 1
+    databaseIndex: 1
+  _playerCopyCount: 2
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808739
-  - rid: 1396538504836808738
+  - rid: 1396538550011559936
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808738
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 1
-        _value: 15
     - rid: 1396538504836808739
       type: {class: AOEHealEffect, ns: , asm: Assembly-CSharp}
       data:
         _amount: 5
+    - rid: 1396538550011559936
+      type: {class: AOEDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        TargetingFriendlies: 1
+        debuff: 1
+        value: 15

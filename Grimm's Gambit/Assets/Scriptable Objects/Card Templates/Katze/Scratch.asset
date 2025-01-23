@@ -18,7 +18,7 @@ MonoBehaviour:
   _cardCost: 0
   _data:
     ownerIndex: 2
-    databaseIndex: 14
+    databaseIndex: 1
   _playerCopyCount: 1
   _reverseTemplate: {fileID: 0}
   _spells:

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BasicEnemyScene V2.unity
     guid: 23ba14bd82c42c641960349d0de7edee
+  - enabled: 1
+    path: Assets/Scenes/SistersScene.unity
+    guid: d01af83a54a434529a9e20e4aedb50c0
   m_configObjects: {}

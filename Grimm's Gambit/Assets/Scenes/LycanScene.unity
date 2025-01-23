@@ -1176,6 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb956d643ff03994eafdc1811fac8e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChildTransforms: []
   m_DistanceBetweenMembers: 3
   m_RowArrangeThreshold: 3
   m_DistanceBetweenRows: 1
@@ -1795,7 +1796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0139543fb2b344b3dba1e15460529b5d, type: 2}
+  - {fileID: 2100000, guid: 459b26fcc8e29498a848ab496d213190, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3316,6 +3317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb956d643ff03994eafdc1811fac8e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ChildTransforms: []
   m_DistanceBetweenMembers: 4.5
   m_RowArrangeThreshold: 3
   m_DistanceBetweenRows: 1.5
@@ -4542,6 +4544,7 @@ MonoBehaviour:
   winText: You defeated the Lycan...
   loseText: You were slain...
   endScreenText: {fileID: 1140021319}
+  enemies: []
 --- !u!1 &830605222
 GameObject:
   m_ObjectHideFlags: 0

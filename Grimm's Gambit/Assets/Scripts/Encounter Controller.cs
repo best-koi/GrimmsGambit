@@ -33,12 +33,9 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private CardHand m_CardHand;
 
     [SerializeField] private GameObject endScreenCanvas;
+    [SerializeField] private GameObject sceneParent;
 
-    [SerializeField] private string winText, loseText; 
-    [SerializeField] private TMP_Text endScreenText; 
-
-[SerializeField]
-private EnemyTemplate[] enemies; 
+    [SerializeField] private EnemyTemplate[] enemies; 
 
     private bool Tired = false; //Variable to control whether the player is tired
 
@@ -73,6 +70,8 @@ private EnemyTemplate[] enemies;
     {
         m_IsPlayerTurn = false;
         m_TurnCounter = 0;
+
+        onTurnChanged = null;
 
         onEncounterStarted?.Invoke();
 
@@ -150,19 +149,15 @@ private EnemyTemplate[] enemies;
     }
 
     private void EndEncounter(bool playerWin) {
-    
         onEncounterEnded?.Invoke(playerWin);
+        MakeEnd(playerWin);
+        sceneParent.SetActive(false);
+    }
 
-        if (playerWin){
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = winText;
-
-        }
-        else{
-            //endScreenCanvas.SetActive(true);
-            //endScreenText.text = loseText; 
-
-        }
+    private void MakeEnd(bool win)
+    {
+        endScreenCanvas.SetActive(true);
+        endScreenCanvas.GetComponent<EndDisplay>().SetDisplay(win);
     }
 
     // Spend an amount of resources
