@@ -44,6 +44,8 @@ protected CharacterTemplate attackTarget;//A character to attack
 
 protected string randomAttackName;//The name of the planned random attack
 
+protected bool hasChosenRandomAttack = false; 
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
@@ -176,9 +178,8 @@ protected string randomAttackName;//The name of the planned random attack
 
 //Randomly attacks based on attacks in randomAttacks list. 
 protected void RandomAttack(){
-        string plannedAttack = randomAttacks[Random.Range(0, randomAttacks.Count)];
-        randomAttackName = plannedAttack;
-        Invoke(plannedAttack, 0f);
+        Invoke(randomAttackName, 0f);
+        hasChosenRandomAttack = false; 
     }
 
 //Executes multiple moves at once

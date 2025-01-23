@@ -59,10 +59,25 @@ public class DireWolf : EnemyRandomTarget
                 moveText.color = this.GetEnemyColor();
                 break;
             case "RandomAttack":
+                if(hasChosenRandomAttack != true)
+                    randomAttackName = randomAttacks[Random.Range(0, randomAttacks.Count)];
+                if(randomAttackName == "Block")
+                    hasChosenRandomAttack = true; 
+
                 if(randomAttackName == "Block")
                     moveText.text = $"Blocking for {blockValue}";
                 else
-                    moveText.text = $"Attacking for {attackValue}";
+                {
+
+                    
+                    if(hasChosenRandomAttack != true){
+                        FindTarget();
+                    }
+                    hasChosenRandomAttack = true; 
+                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue}";
+                    
+                }
+                    
                 moveText.color = this.GetEnemyColor();
                 break;
 
