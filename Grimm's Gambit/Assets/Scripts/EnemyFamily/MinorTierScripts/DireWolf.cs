@@ -74,7 +74,7 @@ public class DireWolf : EnemyRandomTarget
                 break;
             case "Howl":
                 moveText.text = "Applying Strength to Allies";
-                moveText.color = Color.white;
+                moveText.color = new Color(1.0f, 0.64f, 0.0f);
 
             
 
