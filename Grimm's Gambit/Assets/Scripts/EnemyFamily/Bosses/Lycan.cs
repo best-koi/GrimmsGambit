@@ -128,7 +128,7 @@ protected override void Defend(){
  
 
 //A version of attack for AoE Damage
-protected void AoEAttack(){
+protected virtual void AoEAttack(){
     foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
