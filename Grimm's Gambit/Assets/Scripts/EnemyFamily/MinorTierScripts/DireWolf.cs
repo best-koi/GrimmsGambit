@@ -8,19 +8,11 @@ public class DireWolf : EnemyRandomTarget
 [SerializeField] protected List<EnemyTemplate> enemies;
 //Finds enemies to buff who are wolves
     private void Howl(){
-        List<Transform> spawners = controller.GetEnemyInventory().GetAll();
-        foreach(Transform s in spawners)
-        {
-            enemies.Add(s.GetComponent<EnemySpawner>().GetSpawnedEnemy().GetComponent<EnemyTemplate>());
-        }
+        EnemyTemplate[] allies = GameObject.FindObjectsOfType<EnemyTemplate>();
         
-        foreach(EnemyTemplate e in enemies)
+        foreach(EnemyTemplate a in allies)
         {
-            if(e == this)
-                continue;
-            else if(e.GetEnemyName().Contains("Wolf")){
-                e.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
-            }
+            a.GetComponent<Minion>().AddAffix(Affix.Strength, buffValue);
         }
 
     }
@@ -80,6 +72,13 @@ public class DireWolf : EnemyRandomTarget
                     
                 moveText.color = this.GetEnemyColor();
                 break;
+            case "Howl":
+                moveText.text = "Applying Strength to Allies";
+                moveText.color = Color.white;
+
+            
+
+            break;
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
