@@ -318,7 +318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.8}
+  m_AnchoredPosition: {x: 0, y: -0.58}
   m_SizeDelta: {x: 5.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5072461391854282328
@@ -681,7 +681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2}
+  m_AnchoredPosition: {x: 0, y: -2.02}
   m_SizeDelta: {x: 2, y: 0.25}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2009305318325423638
@@ -756,7 +756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.21999979}
   m_SizeDelta: {x: 4.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3682479350444625104
@@ -973,7 +973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.931, y: -50.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &8337958724183788753
@@ -1137,10 +1137,10 @@ MonoBehaviour:
   strongAttackValue: 10
   weakShredValue: 5
   strongShredValue: 10
-  aoeAttackValue: 10
-  switchPhaseHealth: 75
   firstDefend: 30
   secondDefend: 45
+  aoeAttackValue: 10
+  switchPhaseHealth: 75
 --- !u!114 &5403767391624381218
 MonoBehaviour:
   m_ObjectHideFlags: 0
