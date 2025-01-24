@@ -272,7 +272,7 @@ protected virtual void FirstAttackPhase(){
                 }
    
                 moveText.text = display; 
-                moveText.color = this.GetEnemyColor();
+                moveText.color = Color.white;
                 break;
 
             default:
@@ -386,9 +386,8 @@ protected virtual void SecondAttackPhase(){
             case "Defend":
                 if(isSecondPhase)
                     moveText.text = $"Defending for {secondDefend}";
-                else
-                    moveText.text = $"Defending for {firstDefend}";
-                moveText.color = this.GetEnemyColor();
+ 
+                moveText.color = Color.white;
                 break;
 
             case "CombinedAttack":
