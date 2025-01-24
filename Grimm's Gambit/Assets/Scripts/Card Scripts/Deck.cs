@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
-using Unity.VisualScripting;
 
 [Serializable]
 public class CardData
@@ -95,16 +93,7 @@ public class Deck : MonoBehaviour
     // Will be discarded if the hand would exceed the maximum
     public void Conjure(int ownerIndex, int databaseIndex)
     {
-        if (m_Hand.Count() >= m_MaxHandSize)
-        {
-            m_DiscardPile.Add(new CardData(ownerIndex, databaseIndex));
-            onDiscard?.Invoke(databaseIndex); // Not compatible with Remove function
-            Debug.Log("Exceeded maximum hand size. Conjuered card will placed in the discard pile.");
-            return;
-        }
-
-        onDraw?.Invoke(ownerIndex, databaseIndex); // Compatible with AddCard
-        m_Hand.Add(new CardData(ownerIndex, databaseIndex));
+        Conjure(new CardData(ownerIndex, databaseIndex));
     }
 
     public void Conjure(CardData data)
@@ -121,36 +110,24 @@ public class Deck : MonoBehaviour
         m_Hand.Add(data);
     }
 
+    public void Discard(CardData data)
+    {
+        m_DiscardPile.Add(data);
+        m_Hand.Remove(data);
+        onDiscard?.Invoke(data.databaseIndex);
+    }
+
     // Invokes index in database not hand 
     // Do not use with William's remove function
     // Will cause bugs
     public void Discard(Card card)
     {
         Discard(card.GetData());
-        /*
-        CardData data = card.GetData();
-        m_DiscardPile.Add(data);
-        m_Hand.Remove(data);
-        onDiscard?.Invoke(data.databaseIndex);
-        */
     }
 
     public void Discard(CardV2 card)
     {
         Discard(card.Data);
-        /*
-        CardData data = card.Data;
-        m_DiscardPile.Add(data);
-        m_Hand.Remove(data);
-        onDiscard?.Invoke(data.databaseIndex);
-        */
-    }
-
-    public void Discard(CardData data)
-    {
-        m_DiscardPile.Add(data);
-        m_Hand.Remove(data);
-        onDiscard?.Invoke(data.databaseIndex);
     }
 
     public void DiscardRandomInHand()
