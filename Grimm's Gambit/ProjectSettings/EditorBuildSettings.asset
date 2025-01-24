@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SistersScene.unity
     guid: d01af83a54a434529a9e20e4aedb50c0
+  - enabled: 1
+    path: Assets/LycanSceneV2.unity
+    guid: 9d99811ff0d0c470f93e495044734962
+  - enabled: 1
+    path: Assets/SistersSceneV2.unity
+    guid: bf043fa8cf79c4c6d8d62f1f4c6c29d6
   m_configObjects: {}
