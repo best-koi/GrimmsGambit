@@ -126,18 +126,24 @@ public class Deck : MonoBehaviour
     // Will cause bugs
     public void Discard(Card card)
     {
+        Discard(card.GetData());
+        /*
         CardData data = card.GetData();
         m_DiscardPile.Add(data);
         m_Hand.Remove(data);
         onDiscard?.Invoke(data.databaseIndex);
+        */
     }
 
     public void Discard(CardV2 card)
     {
+        Discard(card.Data);
+        /*
         CardData data = card.Data;
         m_DiscardPile.Add(data);
         m_Hand.Remove(data);
         onDiscard?.Invoke(data.databaseIndex);
+        */
     }
 
     public void Discard(CardData data)
