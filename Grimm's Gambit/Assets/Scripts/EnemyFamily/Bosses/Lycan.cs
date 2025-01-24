@@ -19,8 +19,13 @@ public class Lycan : AoEEnemy
     -firstDefend is the value the Lycan defends for in the first phase
     -secondDefend is the value the Lycan defends for in the second phase
 */
+[Header("Lycan-Specific Attack Values")]
     [SerializeField]
-    protected int weakAttackValue, strongAttackValue, weakShredValue, strongShredValue, aoeAttackValue, switchPhaseHealth, firstDefend, secondDefend;
+    private int weakAttackValue, strongAttackValue, weakShredValue, strongShredValue, firstDefend, secondDefend;
+
+[Header("General Attack Values")]
+    [SerializeField]
+    protected int aoeAttackValue, switchPhaseHealth;
 
     protected bool isSecondPhase = false;//A bool indicating whether the Lycan is in its second phase of attacks
 
@@ -128,7 +133,7 @@ protected override void Defend(){
  
 
 //A version of attack for AoE Damage
-protected void AoEAttack(){
+protected virtual void AoEAttack(){
     foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
