@@ -102,6 +102,11 @@ public class DragAndDropV2 : MonoBehaviour
                     hitMinion.ConsumeCard(_selectedObject.GetComponent<CardV2>());
                     Destroy(_selectedObject.gameObject);
                 }
+                else
+                {
+                    _selectedObject.parent = _selectedObjectParent;
+                    _selectedObject.SetSiblingIndex(_selectedChildIndex);
+                }
             }
             else
             {
