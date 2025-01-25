@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MiddleRoadShader
+  m_Name: CombatShader
   m_Shader: {fileID: 4800000, guid: 596493d9d40574b29bf71c8fc2c26bef, type: 3}
-  m_Parent: {fileID: 2100000, guid: 07761c106c8604c838d7a6ede73212b8, type: 2}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -24,7 +24,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _BackingSize: 0
+    - _Shades: 6.3
     m_Colors:
-    - _ObjectColor: {r: 0.20624185, g: 1, b: 0, a: 1}
+    - _BackingColor: {r: 1, g: 1, b: 1, a: 0}
+    - _ObjectColor: {r: 0.48476315, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
