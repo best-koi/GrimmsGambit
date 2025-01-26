@@ -13,6 +13,9 @@ public class Sister : Lycan
     [SerializeField]
     protected int sisterBlock, tripleAttackValue;
 
+    [SerializeField]
+    protected bool canGenerateStartIndex; 
+
 [Header("Sister 2 - Phase 1 Values")]
     [SerializeField]
     protected int sisterHeal, sisterStrength;//Amounts to block and heal by 
@@ -26,11 +29,25 @@ A static variable will be used to ensure both sisters start on the same attack n
     protected override void Start()
     {
         controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
-        randomStartAttack = Random.Range(0, attacks.Count);
-        currentAttack = randomStartAttack;
+        if(canGenerateStartIndex == true){
+            randomStartAttack = Random.Range(0, attacks.Count);
+            Sister[] theSisters = FindObjectsOfType<Sister>();
+            foreach(Sister s in theSisters){
+                s.SetStartingIndex(randomStartAttack);
+        }
+        }
+
+        
         
     }
     
+    protected virtual int GetStartingIndex(){
+        return currentAttack;
+    }
+
+    protected virtual void SetStartingIndex(int value){
+        currentAttack = value;
+    }
 
    protected override void Update()
     {
@@ -125,12 +142,19 @@ public override void AttackPattern()
             if(s.gameObject == this.gameObject){
                 continue;
 
-            }else  
-                s.GetComponent<Minion>().currentHealth += sisterHeal;
+            }else  {
+                Minion sisterMinion = s.GetComponent<Minion>();
+                if (sisterMinion.currentHealth + sisterHeal < sisterMinion.maxHealth)
+                    sisterMinion.currentHealth += sisterHeal;
+                else
+                    sisterMinion.currentHealth = sisterMinion.maxHealth;
+                    }
+
             }
 
         }
 
+       
         
 
 

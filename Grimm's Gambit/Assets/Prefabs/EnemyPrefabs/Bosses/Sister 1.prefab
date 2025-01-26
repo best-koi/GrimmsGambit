@@ -163,6 +163,7 @@ MonoBehaviour:
   switchPhaseHealth: 0
   sisterBlock: 10
   tripleAttackValue: 3
+  canGenerateStartIndex: 1
   sisterHeal: 0
   sisterStrength: 0
 --- !u!1 &2603903735442293538
