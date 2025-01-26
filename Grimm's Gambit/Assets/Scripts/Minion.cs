@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using System.Diagnostics;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
 {
@@ -81,7 +82,7 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
-        Debug.Log("Affix Adding");
+        UnityEngine.Debug.Log("Affix Adding");
 
         if (affix == Affix.Block && animator != null) //Plays block anim if Block affix is called 
         {
@@ -90,7 +91,7 @@ public class Minion : MonoBehaviour
 
         if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
         {
-            Debug.Log("Added " + affix + " at value " + value);
+            UnityEngine.Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
             affixDisplay.AddAffix(affix, value); //Adds visual display of affix
             if (affix == Affix.Bleed && animator != null) //Plays Bleeding anim if Bleed affix is called 
@@ -289,7 +290,7 @@ public class Minion : MonoBehaviour
             if (currentAffixes.ContainsKey(Affix.Block) && DamageToDeal > 0) //Condition for when the character has block charges prepared
             {
                 int currentBlock = currentAffixes[Affix.Block];
-                Debug.Log("Block Amount: " + currentBlock);
+                UnityEngine.Debug.Log("Block Amount: " + currentBlock);
                 if (DamageToDeal < currentBlock) //Condition where block completely covers the damage to deal
                 {
                     int remainingBlock = currentBlock - DamageToDeal;
@@ -412,9 +413,13 @@ public class Minion : MonoBehaviour
     private void Destroyed() //Function for when this character has been defeated
     {
         Deck deck = FindObjectOfType<Deck>();
-        UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
-        deck.RemoveCards(party.IndexOf(this.GetComponent<Transform>())); // Needs to be index in party
-
+        CardDatabaseV2 database = FindObjectOfType<CardDatabaseV2>();
+        int minionIndex = database.RetrieveIndexFromMinion(this);
+        /*UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
+        int minionIndex = party.IndexOf(this.GetComponent<Transform>());
+        minionIndex = Math.Abs(minionIndex-2); //Inverts value of index because the index values in the database are opposite of that of the transforms*/
+        deck.RemoveCards(minionIndex);// Needs to be index in party
+  
         EncounterController.onTurnChanged -= TurnStart; //Unsubscribes this minion from the turn changed action upon minion being destroyed
 
         onDeath?.Invoke(this); // See line 55
