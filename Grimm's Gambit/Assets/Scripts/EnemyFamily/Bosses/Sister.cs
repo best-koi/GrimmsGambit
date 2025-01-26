@@ -25,6 +25,7 @@ A static variable will be used to ensure both sisters start on the same attack n
     // Start here is used to sync up the sister attack patterns
     protected override void Start()
     {
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
         randomStartAttack = Random.Range(0, attacks.Count);
         currentAttack = randomStartAttack;
         
@@ -106,6 +107,18 @@ public override void AttackPattern()
 
         }
 
+    protected virtual void Strengthen(){
+        Sister[] theSisters = FindObjectsOfType<Sister>();
+        foreach(Sister s in theSisters){
+            if(s.gameObject == this.gameObject){
+                continue;
+
+            }else  
+                s.GetComponent<Minion>().AddAffix(Affix.Strength, sisterStrength);
+            }
+
+        }
+
     protected virtual void HealTwin(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
         foreach(Sister s in theSisters){
@@ -151,7 +164,11 @@ public override void AttackPattern()
                 break;
 
         case "Protect":
-                moveText.text = $"Protecting Sister 3 times for {sisterBlock}";
+                moveText.text = $"Protecting Sister for {sisterBlock}";
+                moveText.color = Color.white;
+                break;
+        case "Strengthen":
+                moveText.text = $"Strengthening Sister for {sisterStrength}";
                 moveText.color = Color.white;
                 break;
 
@@ -171,6 +188,10 @@ public override void AttackPattern()
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
+                break;
+        case "HealTwin":
+                moveText.text = $"Healing Sister for {sisterHeal}";
+                moveText.color = Color.white;
                 break;
 
             default:
