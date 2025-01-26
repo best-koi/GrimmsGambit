@@ -72,4 +72,16 @@ public class CardDatabaseV2 : MonoBehaviour
         Object reverse = GetTemplate(owner, index).ReverseTemplate;
         _cardPrefabs.SetValue(owner, index, reverse);
     }
+
+    public int RetrieveIndexFromMinion(Minion minion) //The purpose of this function is to determine the database index of a minion as it is destroyed
+    {
+        for (int i = 0; i < _partyIndex.Length; i++)
+        {
+            if (_partyIndex[i] == minion)
+            {
+                return i;
+            }
+        }
+        return -1; //Should never occur
+    }
 }

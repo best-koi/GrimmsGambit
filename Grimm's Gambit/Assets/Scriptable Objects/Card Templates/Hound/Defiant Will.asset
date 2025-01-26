@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: Defiant Will
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: Defiant Will
   _cardDescription: 'Gain 6 Block. Discard a card from your hand. '
   _cardCost: 0
-  _data:
-    ownerIndex: 0
-    databaseIndex: 3
   _playerCopyCount: 2
+  _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933079036100614

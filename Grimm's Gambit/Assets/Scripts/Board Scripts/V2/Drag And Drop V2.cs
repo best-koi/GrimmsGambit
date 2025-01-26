@@ -96,7 +96,7 @@ public class DragAndDropV2 : MonoBehaviour
                 int cardCost = _selectedObject.GetComponent<CardV2>().CardCost;
                 Minion hitMinion = hit.transform.parent.GetComponent<Minion>();
 
-                if (hitMinion != null && _controller.SpendResources(cardCost))
+                if (hitMinion != null && _controller.SpendResources(cardCost) && _selectedObject.GetComponent<CardV2>().TargetsEnemies != hitMinion.ownerPlayer) //The third statement in this conditional statement makes sure that cards who target enemies can be used on on ownerPlayers that are false and vice versa
                 {
                     //m_SelectedObject.parent = hit.transform;
                     hitMinion.ConsumeCard(_selectedObject.GetComponent<CardV2>());
