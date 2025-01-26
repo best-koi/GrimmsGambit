@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: LickWounds
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: Lick Wounds
   _cardDescription: Remove all Block on a party member. Heal half of the Block that
     was removed, rounding up.
   _cardCost: 2
-  _data:
-    ownerIndex: 0
-    databaseIndex: 0
   _playerCopyCount: 2
+  _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808742

@@ -20,6 +20,7 @@ public class CardV2 : MonoBehaviour
     public int CardCost { get => _cardTemplate.CardCost; }
     public CardData Data { get => _cardTemplate.Data; }
     public int PlayerCopyCount { get => _cardTemplate.PlayerCopyCount; set => _cardTemplate.PlayerCopyCount = value; }
+    public bool TargetsEnemies { get => _cardTemplate.TargetsEnemies; }
     public CardTemplate ReverseTemplate { get => _cardTemplate.ReverseTemplate; }
     public List<SpellEffect> Spells { get => _cardTemplate.Spells; }
     public Minion Caster { get => _caster; set => _caster = value; }
