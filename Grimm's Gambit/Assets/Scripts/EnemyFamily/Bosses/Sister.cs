@@ -8,6 +8,9 @@ public class Sister : Lycan
     protected bool isBelowHealthThreshold;//A boolean value to be accessed by the other sister
 
     protected static bool isSecondPhaseB;
+
+    protected static Color sister1Color = new Color(255,255,0);
+    protected static Color sister2Color = new Color(255,0,255);
     
 [Header("Sister 1 - Phase 1 Values")]
     [SerializeField]
@@ -188,12 +191,12 @@ public override void AttackPattern()
                 break;
 
         case "Protect":
-                moveText.text = $"Protecting Sister for {sisterBlock}";
-                moveText.color = Color.white;
+                moveText.text = $"Protecting Sister 2 for {sisterBlock}";
+                moveText.color = sister2Color;
                 break;
         case "Strengthen":
-                moveText.text = $"Strengthening Sister for {sisterStrength}";
-                moveText.color = Color.white;
+                moveText.text = $"Strengthening Sister 1 for {sisterStrength}";
+                moveText.color = sister1Color;
                 break;
 
             
@@ -214,8 +217,8 @@ public override void AttackPattern()
                 }
                 break;
         case "HealTwin":
-                moveText.text = $"Healing Sister for {sisterHeal}";
-                moveText.color = Color.white;
+                moveText.text = $"Healing Sister 1 for {sisterHeal}";
+                moveText.color = sister1Color;
                 break;
 
             default:
