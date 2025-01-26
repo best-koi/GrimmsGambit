@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
 {
@@ -406,8 +407,14 @@ public class Minion : MonoBehaviour
             deck.RemoveCard(c);
             return;
         }
-
-        deck.Discard(c);
+        if (c.Spells.Any(spell => spell is RemoveInsteadOfDiscard)) //IRemoves cards instead of discarding them if they have the "RemoveInsteadOfDiscard" spell as a flag for this functionality (Scratch is the only one with this as of 1/25/2025)
+        {
+            deck.RemoveCard(c);
+        }
+        else
+        {
+            deck.Discard(c);
+        }
     }
 
     private void Destroyed() //Function for when this character has been defeated
