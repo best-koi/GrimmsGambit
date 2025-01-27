@@ -19,6 +19,7 @@ public class Sister : Lycan
     private string sisterToDefendName;
 
     private bool usedOneTimeAttack = false; 
+    private static bool hasResetStatus = false;
 
 
     
@@ -46,6 +47,8 @@ public class Sister : Lycan
 [Header("Sister 2 - Phase 2B Values")]
 [SerializeField]
     protected int bAttack, healBothValue, secondProtect, secondStrength;
+
+
 
     
 /*The Sister Script will function similar to the Lycan with some adjustments
@@ -88,8 +91,17 @@ A static variable will be used to ensure both sisters start on the same attack n
         if(theSisters.Length != 2){
             if(isSecondPhaseB){
                 sisterToDefendName = GetEnemyName();
-            }else
+            }else{
                 isSecondPhase = true;
+                if(hasResetStatus != true){
+                    minion.RemoveAllAffixes(); 
+                    hasResetStatus = true; 
+
+                }
+                
+
+            }
+                
         }else{
 
         int sistersBelowHP = 0;
@@ -101,6 +113,16 @@ A static variable will be used to ensure both sisters start on the same attack n
         }
         if(sistersBelowHP == 2){
             isSecondPhaseB = true; 
+            if(hasResetStatus == false){
+                foreach(Sister s in theSisters){
+                    
+                    s.GetComponent<Minion>().RemoveAllAffixes();
+
+            }
+                
+        }
+        hasResetStatus = true;
+
         }
         }
 
@@ -251,9 +273,6 @@ protected override void CheckAttackBounds()
 
         
     
-    protected virtual void ResetSisterAffixes(){
-
-    }
 
        
 
@@ -288,7 +307,7 @@ protected virtual void AoECurse(){
     foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
-                c.GetComponent<Minion>().AddAffix(Affix.Thorns, curseValue);
+                c.GetComponent<Minion>().AddAffix(Affix.Curse, curseValue);
             }
         usedOneTimeAttack = true;
 }
