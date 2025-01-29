@@ -27378,6 +27378,18 @@ MonoBehaviour:
     databaseIndex: 8
   - ownerIndex: 2
     databaseIndex: 8
+  - ownerIndex: 2
+    databaseIndex: 9
+  - ownerIndex: 2
+    databaseIndex: 9
+  - ownerIndex: 2
+    databaseIndex: 10
+  - ownerIndex: 2
+    databaseIndex: 10
+  - ownerIndex: 2
+    databaseIndex: 11
+  - ownerIndex: 2
+    databaseIndex: 11
   m_Hand: []
   m_DiscardPile: []
   m_RemovedZone: []
@@ -34689,6 +34701,9 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 700c4851d7de24b5cae2291cac943c30, type: 2}
       - {fileID: 11400000, guid: 10f80b6f54805473891bbc785420410c, type: 2}
       - {fileID: 11400000, guid: 25d1712b372ea4f428362403b2367553, type: 2}
+      - {fileID: 11400000, guid: 7b4aff4db22058840b87a72842d4b8c2, type: 2}
+      - {fileID: 11400000, guid: f16cae900826725469c8842bc8036328, type: 2}
+      - {fileID: 11400000, guid: 3d2466cda7101e948a5438889f7fb98e, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
