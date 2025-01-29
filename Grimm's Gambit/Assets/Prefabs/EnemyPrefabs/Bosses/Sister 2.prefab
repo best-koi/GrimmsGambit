@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
-  currentHealth: 150
+  maxHealth: 65
+  currentHealth: 65
   m_CardContainer: {fileID: 3099138516739903215}
   affixDisplay: {fileID: 0}
   animator: {fileID: 0}
@@ -137,30 +137,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 7378162868551159290}
-  enemyName: Sister 1
+  enemyName: Sister 2
   attacks:
+  - HealTwin
   - Attack
+  - Strengthen
   currentAttack: 0
   healthText: {fileID: 7658034873001553474}
   nameText: {fileID: 5212626007146351978}
   moveText: {fileID: 252007717784763461}
   renderer: {fileID: 0}
   attackValue: 8
-  buffValue: 0
-  blockValue: 0
+  buffValue: 3
+  blockValue: 10
   randomAttacks: []
-  combinedAttacks: []
-  secondaryAttacks: []
+  combinedAttacks:
+  - SecondAttack
+  - Block
+  secondaryAttacks:
+  - AoECurse
+  - AoEAttack
+  - Strength
+  - CombinedAttack
   weakAttackValue: 0
   strongAttackValue: 0
   weakShredValue: 0
   strongShredValue: 0
   firstDefend: 0
   secondDefend: 0
-  aoeAttackValue: 0
-  switchPhaseHealth: 0
-  sisterBlock: 0
+  aoeAttackValue: 6
+  switchPhaseHealth: 26
+  phaseBAttacks:
+  - HealBothTwins
+  - Protect
+  - BAttack
+  - Strengthen
+  sisterToDefendName: Sister 1
+  sisterBlock: 8
   tripleAttackValue: 0
+  canGenerateStartIndex: 0
+  sisterHeal: 7
+  sisterStrength: 2
+  curseValue: 3
+  secondAttackValue: 5
+  doubleAttackValue: 0
+  bAttack: 8
+  healBothValue: 6
+  secondProtect: 8
+  secondStrength: 2
 --- !u!1 &2603903735442293538
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.6300001}
+  m_SizeDelta: {x: 4.5, y: 0.6431}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7538225690830677681
 CanvasRenderer:
@@ -332,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2}
+  m_AnchoredPosition: {x: 0, y: -1.18}
   m_SizeDelta: {x: 2, y: 0.25}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5965676247010721701
@@ -708,7 +732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.8}
+  m_AnchoredPosition: {x: 0, y: 0.02000022}
   m_SizeDelta: {x: 5.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &99323571492460632
@@ -908,7 +932,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6860575788702897709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -916,7 +940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.21, y: -49.82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &3842017112798267340
@@ -961,8 +985,8 @@ Transform:
   m_GameObject: {fileID: 7574536821797195870}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44, y: 1.2046, z: 0.42844033}
-  m_LocalScale: {x: 0.1922728, y: 0.21596463, z: 0.25974232}
+  m_LocalPosition: {x: -0.2433, y: 1.84, z: 0.42844033}
+  m_LocalScale: {x: 0.16168702, y: 0.18161006, z: 0.21842383}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7734909664229479930}
@@ -1008,7 +1032,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 01e1c7705d5ba413d911be90ad9b1fed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf56310a3f9c84d3db39b6063090c5cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -4,18 +4,51 @@ using UnityEngine;
 
 public class Sister : Lycan
 {
+    [SerializeField]
+    protected List<string> phaseBAttacks;//A list of strings mapped to methods
+
     protected static int randomStartAttack;//A static variable that should match for both sisters 
     protected bool isBelowHealthThreshold;//A boolean value to be accessed by the other sister
 
     protected static bool isSecondPhaseB;
+
+    protected static Color sister1Color = new Color(255,255,0);
+    protected static Color sister2Color = new Color(255,0,255);
+
+    [SerializeField]
+    private string sisterToDefendName;
+
+    private bool usedOneTimeAttack = false; 
+    private static bool hasResetStatus = false;
+
+
     
 [Header("Sister 1 - Phase 1 Values")]
     [SerializeField]
     protected int sisterBlock, tripleAttackValue;
 
+    [SerializeField]
+    protected bool canGenerateStartIndex; 
+
 [Header("Sister 2 - Phase 1 Values")]
     [SerializeField]
     protected int sisterHeal, sisterStrength;//Amounts to block and heal by 
+
+[Header("Phase 2A Values")]
+[SerializeField]
+    protected int curseValue, secondAttackValue;
+
+
+[Header("Sister 1 - Phase 2B Values")]
+[SerializeField]
+    protected int doubleAttackValue;
+
+
+[Header("Sister 2 - Phase 2B Values")]
+[SerializeField]
+    protected int bAttack, healBothValue, secondProtect, secondStrength;
+
+
 
     
 /*The Sister Script will function similar to the Lycan with some adjustments
@@ -25,11 +58,28 @@ A static variable will be used to ensure both sisters start on the same attack n
     // Start here is used to sync up the sister attack patterns
     protected override void Start()
     {
-        randomStartAttack = Random.Range(0, attacks.Count);
-        currentAttack = randomStartAttack;
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
+        if(canGenerateStartIndex == true){
+            randomStartAttack = Random.Range(0, attacks.Count);
+            Sister[] theSisters = FindObjectsOfType<Sister>();
+            foreach(Sister s in theSisters){
+                s.SetStartingIndex(randomStartAttack);
+                if(s.gameObject == this.gameObject)
+                    continue;
+        }
+        }
+
+        
         
     }
     
+    protected virtual int GetStartingIndex(){
+        return currentAttack;
+    }
+
+    protected virtual void SetStartingIndex(int value){
+        currentAttack = value;
+    }
 
    protected override void Update()
     {
@@ -37,17 +87,43 @@ A static variable will be used to ensure both sisters start on the same attack n
             isBelowHealthThreshold = true; 
 
         Sister[] theSisters = FindObjectsOfType<Sister>();
+        //For determining who to protect (enemy intent display)
+        if(theSisters.Length != 2){
+            if(isSecondPhaseB){
+                sisterToDefendName = GetEnemyName();
+            }else{
+                isSecondPhase = true;
+                if(hasResetStatus != true){
+                    minion.RemoveAllAffixes(); 
+                    hasResetStatus = true; 
+
+                }
+                
+
+            }
+                
+        }else{
+
         int sistersBelowHP = 0;
         foreach(Sister s in theSisters){
             if(s.GetIsBelowHealthThreshold() == true){
                 sistersBelowHP++;
-
             }
 
         }
-
         if(sistersBelowHP == 2){
             isSecondPhaseB = true; 
+            if(hasResetStatus == false){
+                foreach(Sister s in theSisters){
+                    
+                    s.GetComponent<Minion>().RemoveAllAffixes();
+
+            }
+                
+        }
+        hasResetStatus = true;
+
+        }
         }
 
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
@@ -57,20 +133,35 @@ A static variable will be used to ensure both sisters start on the same attack n
         
     }
 
+    protected override void CheckCurrentAttack()
+    {
+        if(isSecondPhase)
+            SecondAttackPhase();
+        else if (isSecondPhaseB){
+            SecondAttackPhaseB();
+
+        }else   
+            FirstAttackPhase();
+
+    }
+
 public override void AttackPattern()
     {
         if(isSecondPhaseB == true){
         CheckAttackBounds();
         //Calls a method from the list of available attacks
-        Invoke(secondaryAttacks[currentAttack], 0f);
+        Invoke(phaseBAttacks[currentAttack], 0f);
         //Moves onto the next attack
         currentAttack++;
         CheckAttackBounds();
 
         }else if(isSecondPhase){
-
-
-
+            CheckAttackBounds();
+        //Calls a method from the list of available attacks
+        Invoke(secondaryAttacks[currentAttack], 0f);
+        //Moves onto the next attack
+        currentAttack++;
+        CheckAttackBounds();
         }  
         else {
         CheckAttackBounds();
@@ -82,6 +173,25 @@ public override void AttackPattern()
         }
     }
 
+
+protected override void CheckAttackBounds()
+    {
+        if(isSecondPhase == true){
+            //Checks bounds of secondary attacks list
+            if (currentAttack >= secondaryAttacks.Count)
+                currentAttack = 0;
+        else if (isSecondPhaseB == true){
+            if (currentAttack >= phaseBAttacks.Count)
+                currentAttack = 0;
+        }
+        }else{
+            //Checks bounds of regular attacks list
+            if (currentAttack >= attacks.Count)
+                currentAttack = 0;
+
+        }
+        
+    }
 
 
 
@@ -96,12 +206,35 @@ public override void AttackPattern()
 
     protected virtual void Protect(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
+        if(theSisters.Length != 2)
+            minion.AddAffix(Affix.Block, secondProtect);
+
         foreach(Sister s in theSisters){
             if(s.gameObject == this.gameObject){
                 continue;
 
             }else  
-                s.GetComponent<Minion>().AddAffix(Affix.Block, sisterBlock);
+                if(isSecondPhaseB)
+                    s.GetComponent<Minion>().AddAffix(Affix.Block, secondProtect);
+                else
+                    s.GetComponent<Minion>().AddAffix(Affix.Block, sisterBlock);
+            }
+
+        }
+
+    protected virtual void Strengthen(){
+        Sister[] theSisters = FindObjectsOfType<Sister>();
+        if(theSisters.Length != 2)
+            minion.AddAffix(Affix.Strength, secondStrength);
+
+        foreach(Sister s in theSisters){
+            if(s.gameObject == this.gameObject){
+                continue;
+            }else  
+                if(isSecondPhaseB)
+                 s.GetComponent<Minion>().AddAffix(Affix.Strength, secondStrength);
+                else
+                    s.GetComponent<Minion>().AddAffix(Affix.Strength, sisterStrength);
             }
 
         }
@@ -112,21 +245,72 @@ public override void AttackPattern()
             if(s.gameObject == this.gameObject){
                 continue;
 
-            }else  
-                s.GetComponent<Minion>().currentHealth += sisterHeal;
+            }else  {
+                Minion sisterMinion = s.GetComponent<Minion>();
+                if (sisterMinion.currentHealth + sisterHeal < sisterMinion.maxHealth)
+                    sisterMinion.currentHealth += sisterHeal;
+                else
+                    sisterMinion.currentHealth = sisterMinion.maxHealth;
+                    }
+
             }
 
         }
 
+//For use in Phase 2B
+    protected virtual void HealBothTwins(){
+        Sister[] theSisters = FindObjectsOfType<Sister>();
+        foreach(Sister s in theSisters){
+            Minion sisterMinion = s.GetComponent<Minion>();
+            if (sisterMinion.currentHealth + healBothValue < sisterMinion.maxHealth)
+                sisterMinion.currentHealth += healBothValue;
+            else
+                sisterMinion.currentHealth = sisterMinion.maxHealth;
+                }
+            usedOneTimeAttack = true;
+
+            }
+
         
-
-
     
 
+       
+
+//For use in Phase 2A
+    protected virtual void SecondAttack()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), secondAttackValue);
+       FindTarget();
+    }
+
+    //For use in Phase 2B
+    protected virtual void BAttack()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), bAttack);
+       FindTarget();
+    }
+
+//For use in Phase 2b
+    protected virtual void DoubleAttack(){
+        minion.MinionUsed(attackTarget.GetComponent<Minion>(), doubleAttackValue * 2);
+        FindTarget();
+    }
+
+//For use in Phase 1
     protected virtual void TripleAttack(){
         minion.MinionUsed(attackTarget.GetComponent<Minion>(), tripleAttackValue * 3);
         FindTarget();
     }
+
+//For use in Phase 2A and 2B
+protected virtual void AoECurse(){
+    foreach(CharacterTemplate c in targets){
+                if(c == null)
+                    continue;
+                c.GetComponent<Minion>().AddAffix(Affix.Curse, curseValue);
+            }
+        usedOneTimeAttack = true;
+}
 
 
 
@@ -151,8 +335,12 @@ public override void AttackPattern()
                 break;
 
         case "Protect":
-                moveText.text = $"Protecting Sister 3 times for {sisterBlock}";
-                moveText.color = Color.white;
+                moveText.text = $"Protecting {sisterToDefendName} for {sisterBlock}";
+                moveText.color = sister2Color;
+                break;
+        case "Strengthen":
+                moveText.text = $"Strengthening {sisterToDefendName} for {sisterStrength}";
+                moveText.color = sister1Color;
                 break;
 
             
@@ -172,6 +360,70 @@ public override void AttackPattern()
    
                 }
                 break;
+        case "HealTwin":
+                moveText.text = $"Healing {sisterToDefendName} for {sisterHeal}";
+                moveText.color = sister1Color;
+                break;
+
+            default:
+                moveText.text = "Upcoming Move: " + attacks[currentAttack];
+                moveText.color = Color.white;
+                break;
+        }
+  
+}
+
+//Phase 2A
+protected virtual void SecondAttackPhase(){
+    switch (secondaryAttacks[currentAttack])
+        {
+            case "SecondAttack":
+                if (attackTarget == null)
+                    FindTarget();
+                
+
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {secondAttackValue} DMG";
+                    moveText.color = attackTarget.GetCharacterColor();
+   
+                }
+                break;
+            case "AoECurse":
+                
+            if (attackTarget == null)
+                    FindTarget();
+
+                if(usedOneTimeAttack)
+                    AdvanceAttack();
+                else
+                    moveText.text = $"Cursing party for {curseValue}";
+                break;
+
+            case "AoEAttack":
+            if (attackTarget == null)
+                    FindTarget();
+                moveText.text = $"Attacking party for {aoeAttackValue} DMG";
+                break;
+
+            case "Strength":
+                moveText.text = $"Applying {buffValue} Strength to Self";
+                moveText.color = this.GetEnemyColor();
+                break;
+            case "Block":
+                moveText.text = $"Blocking for {blockValue}";
+                moveText.color = this.GetEnemyColor();
+                break;
+
+            case "CombinedAttack":
+                if (attackTarget == null)
+                    FindTarget();
+                moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {secondAttackValue} and Defending for {blockValue}";
+                break;
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
@@ -179,9 +431,117 @@ public override void AttackPattern()
                 break;
         }
 
+}
 
+protected virtual void SecondAttackPhaseB(){
+    switch (phaseBAttacks[currentAttack])
+        {
+            case "BAttack":
+                if (attackTarget == null)
+                    FindTarget();
+                
 
-
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {bAttack} DMG";
+                    moveText.color = attackTarget.GetCharacterColor();
    
+                }
+                break;
+            case "DoubleAttack":
+                if (attackTarget == null)
+                    FindTarget();
+                
+
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} 2 times for {doubleAttackValue} DMG";
+                    moveText.color = attackTarget.GetCharacterColor();
+   
+                }
+                break;
+            case "AoECurse":
+            if (attackTarget == null)
+                    FindTarget();
+                if(usedOneTimeAttack)
+                    AdvanceAttack();
+                else
+                moveText.text = $"Cursing party for {curseValue}";
+                break;
+
+            case "AoEAttack":
+            if (attackTarget == null)
+                    FindTarget();
+                moveText.text = $"Attacking party for {aoeAttackValue} DMG";
+                break;
+
+            case "Protect":
+                moveText.text = $"Protecting {sisterToDefendName} for {sisterBlock}";
+
+                if(sisterToDefendName == "Sister 1")
+                    moveText.color = sister1Color;
+                else    
+                    moveText.color = sister2Color;
+                break;
+
+            case "Strengthen":
+                moveText.text = $"Strengthening {sisterToDefendName} for {sisterStrength}";
+                if(sisterToDefendName == "Sister 1")
+                    moveText.color = sister1Color;
+                else    
+                    moveText.color = sister2Color;
+
+                break;
+
+            case "Block":
+                moveText.text = $"Blocking for {blockValue}";
+                moveText.color = this.GetEnemyColor();
+                break;
+            case "HealBothTwins":
+                if(usedOneTimeAttack)
+                    AdvanceAttack();
+                else
+                    moveText.text = $"Healing Both Sisters for {healBothValue}";
+                    moveText.color = sister1Color;
+                break;
+
+            default:
+                moveText.text = "Upcoming Move: " + attacks[currentAttack];
+                moveText.color = Color.white;
+                break;
+        }
+
 }
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

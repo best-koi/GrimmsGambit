@@ -258,7 +258,7 @@ protected virtual void FirstAttackPhase(){
 
             case "Defend":
                 moveText.text = $"Defending for {firstDefend}";
-                moveText.color = Color.white;
+                moveText.color = this.GetEnemyColor();
                 break;
 
             case "CombinedAttack":
@@ -272,12 +272,12 @@ protected virtual void FirstAttackPhase(){
                 }
    
                 moveText.text = display; 
-                moveText.color = Color.white;
+                moveText.color = this.GetEnemyColor();
                 break;
 
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
-                moveText.color = Color.white;
+                moveText.color = this.GetEnemyColor();
                 break;
         }
 
@@ -387,7 +387,7 @@ protected virtual void SecondAttackPhase(){
                 if(isSecondPhase)
                     moveText.text = $"Defending for {secondDefend}";
  
-                moveText.color = Color.white;
+                moveText.color = this.GetEnemyColor();
                 break;
 
             case "CombinedAttack":
