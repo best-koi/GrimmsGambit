@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: No Mercy
   _cardDescription: Deal 11 Damage. If the target has Damage Reduction, recast again.
-  _cardCost: 0
+  _cardCost: 2
   _playerCopyCount: 2
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
