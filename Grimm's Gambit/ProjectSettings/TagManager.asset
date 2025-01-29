@@ -12,6 +12,10 @@ TagManager:
   - Inactive
   - Lycan
   - Sisters
+  - Campfire
+  - CanonEvent
+  - Narrative
+  - Tutorial
   layers:
   - Default
   - TransparentFX

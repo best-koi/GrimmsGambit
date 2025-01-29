@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: Scratch
   _cardDescription: 'Deal 3 damage. Apply 1 Bleed. Once. '
   _cardCost: 0
-  _data:
-    ownerIndex: 2
-    databaseIndex: 1
   _playerCopyCount: 1
+  _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538503740784640
   - rid: 4695933157482168322
+  - rid: 5427119620769710082
   references:
     version: 2
     RefIds:
@@ -36,3 +34,6 @@ MonoBehaviour:
       data:
         _debuff: 8
         _value: 1
+    - rid: 5427119620769710082
+      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
+      data: 

@@ -13,6 +13,9 @@ public class Sister : Lycan
     [SerializeField]
     protected int sisterBlock, tripleAttackValue;
 
+    [SerializeField]
+    protected bool canGenerateStartIndex; 
+
 [Header("Sister 2 - Phase 1 Values")]
     [SerializeField]
     protected int sisterHeal, sisterStrength;//Amounts to block and heal by 
@@ -25,11 +28,26 @@ A static variable will be used to ensure both sisters start on the same attack n
     // Start here is used to sync up the sister attack patterns
     protected override void Start()
     {
-        randomStartAttack = Random.Range(0, attacks.Count);
-        currentAttack = randomStartAttack;
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
+        if(canGenerateStartIndex == true){
+            randomStartAttack = Random.Range(0, attacks.Count);
+            Sister[] theSisters = FindObjectsOfType<Sister>();
+            foreach(Sister s in theSisters){
+                s.SetStartingIndex(randomStartAttack);
+        }
+        }
+
+        
         
     }
     
+    protected virtual int GetStartingIndex(){
+        return currentAttack;
+    }
+
+    protected virtual void SetStartingIndex(int value){
+        currentAttack = value;
+    }
 
    protected override void Update()
     {
@@ -106,18 +124,37 @@ public override void AttackPattern()
 
         }
 
-    protected virtual void HealTwin(){
+    protected virtual void Strengthen(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
         foreach(Sister s in theSisters){
             if(s.gameObject == this.gameObject){
                 continue;
 
             }else  
-                s.GetComponent<Minion>().currentHealth += sisterHeal;
+                s.GetComponent<Minion>().AddAffix(Affix.Strength, sisterStrength);
             }
 
         }
 
+    protected virtual void HealTwin(){
+        Sister[] theSisters = FindObjectsOfType<Sister>();
+        foreach(Sister s in theSisters){
+            if(s.gameObject == this.gameObject){
+                continue;
+
+            }else  {
+                Minion sisterMinion = s.GetComponent<Minion>();
+                if (sisterMinion.currentHealth + sisterHeal < sisterMinion.maxHealth)
+                    sisterMinion.currentHealth += sisterHeal;
+                else
+                    sisterMinion.currentHealth = sisterMinion.maxHealth;
+                    }
+
+            }
+
+        }
+
+       
         
 
 
@@ -151,7 +188,11 @@ public override void AttackPattern()
                 break;
 
         case "Protect":
-                moveText.text = $"Protecting Sister 3 times for {sisterBlock}";
+                moveText.text = $"Protecting Sister for {sisterBlock}";
+                moveText.color = Color.white;
+                break;
+        case "Strengthen":
+                moveText.text = $"Strengthening Sister for {sisterStrength}";
                 moveText.color = Color.white;
                 break;
 
@@ -171,6 +212,10 @@ public override void AttackPattern()
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
+                break;
+        case "HealTwin":
+                moveText.text = $"Healing Sister for {sisterHeal}";
+                moveText.color = Color.white;
                 break;
 
             default:

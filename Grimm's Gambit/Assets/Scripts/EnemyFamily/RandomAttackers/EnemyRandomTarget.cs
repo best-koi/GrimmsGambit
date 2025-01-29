@@ -53,7 +53,7 @@ public class EnemyRandomTarget : EnemyTemplate
     }
 
     //Gets a list of all active characters from CombatInventory
-    protected void GetAllActiveCharacters()
+    protected virtual void GetAllActiveCharacters()
     {
         List<Transform> characters = controller.GetPlayerInventory().GetAll();
         targets.Clear();

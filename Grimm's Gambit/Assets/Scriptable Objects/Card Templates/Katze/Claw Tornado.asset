@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: Claw Tornado
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: Claw Tornado
   _cardDescription: Create 3 Scratch in hand.
   _cardCost: 1
-  _data:
-    ownerIndex: 2
-    databaseIndex: 0
   _playerCopyCount: 2
+  _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933157482168323

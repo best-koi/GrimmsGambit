@@ -4541,9 +4541,7 @@ MonoBehaviour:
   m_EnemyInventory: {fileID: 613970853}
   m_CardHand: {fileID: 903263243}
   endScreenCanvas: {fileID: 1753314491}
-  winText: You defeated the Lycan...
-  loseText: You were slain...
-  endScreenText: {fileID: 1140021319}
+  sceneParent: {fileID: 0}
   enemies: []
 --- !u!1 &830605222
 GameObject:
@@ -7321,11 +7319,6 @@ Transform:
   - {fileID: 470694222}
   - {fileID: 1363140923}
   - {fileID: 901972457}
-  - {fileID: 1926193547}
-  - {fileID: 1630592580}
-  - {fileID: 2085531182}
-  - {fileID: 813169255}
-  - {fileID: 428953505}
   - {fileID: 1682190482}
   - {fileID: 630745769}
   - {fileID: 1232710144}
@@ -7335,9 +7328,14 @@ Transform:
   - {fileID: 405645834}
   - {fileID: 1995506745}
   - {fileID: 510670973}
+  - {fileID: 1926193547}
+  - {fileID: 1630592580}
+  - {fileID: 2085531182}
+  - {fileID: 813169255}
+  - {fileID: 428953505}
+  - {fileID: 2000716799}
   - {fileID: 1753314495}
   - {fileID: 329028008}
-  - {fileID: 2000716799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682190480

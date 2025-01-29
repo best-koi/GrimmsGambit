@@ -11,6 +11,7 @@ public class CardTemplate : ScriptableObject
     [SerializeField] private string _cardDescription;
     [SerializeField] private int _cardCost;
     [SerializeField] private int _playerCopyCount = 1;
+    [SerializeField] private bool _targetsEnemies = true;
     [SerializeField] private CardTemplate _reverseTemplate;
     [SerializeReference, SubclassSelector] private List<SpellEffect> _spells;
 
@@ -29,6 +30,7 @@ public class CardTemplate : ScriptableObject
     public int CardCost { get => _cardCost; }
     public CardData Data { get => _data; set => _data = value; }
     public int PlayerCopyCount { get => _playerCopyCount; set => _playerCopyCount = value; }
+    public bool TargetsEnemies { get => _targetsEnemies; }
     public CardTemplate ReverseTemplate { get => _reverseTemplate; }
     public List<SpellEffect> Spells { get => _spells; }
 

@@ -100,8 +100,8 @@ public class Deck : MonoBehaviour
     {
         if (m_Hand.Count() >= m_MaxHandSize)
         {
-            m_DiscardPile.Add(data);
-            onDiscard?.Invoke(data.databaseIndex); // Not compatible with Remove function
+            /*m_DiscardPile.Add(data);
+            onDiscard?.Invoke(data.databaseIndex); // Not compatible with Remove function*/ //Changes on 1/25/25 By Ryan Lockie so that cards which are conjured are not added to the discard pile if over capped.
             Debug.Log("Exceeded maximum hand size. Conjuered card will placed in the discard pile.");
             return;
         }

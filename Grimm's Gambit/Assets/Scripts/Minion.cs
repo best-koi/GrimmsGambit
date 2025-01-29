@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using System.Diagnostics;
+using System.Linq;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
 {
@@ -20,7 +22,8 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     HoundCounter, //Complete in "Minion Used" function - second number is irrelevant
     Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
     Naturopath, //Complete in "Damage Taken" function - second number is value to add to the heal
-    Exploit //Complete in "Damage Taken" function - second number is value of stacks
+    Exploit, //Complete in "Damage Taken" function - second number is value of stacks
+    Curse //Debuff that does scaling damage starting at 3
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -81,7 +84,7 @@ public class Minion : MonoBehaviour
 
     public void AddAffix(Affix affix, int value)
     {
-        Debug.Log("Affix Adding");
+        UnityEngine.Debug.Log("Affix Adding");
 
         if (affix == Affix.Block && animator != null) //Plays block anim if Block affix is called 
         {
@@ -90,7 +93,7 @@ public class Minion : MonoBehaviour
 
         if (!currentAffixes.ContainsKey(affix)) //Adds affixes that are not currently present
         {
-            Debug.Log("Added " + affix + " at value " + value);
+            UnityEngine.Debug.Log("Added " + affix + " at value " + value);
             currentAffixes.Add(affix, value);
             affixDisplay.AddAffix(affix, value); //Adds visual display of affix
             if (affix == Affix.Bleed && animator != null) //Plays Bleeding anim if Bleed affix is called 
@@ -151,6 +154,13 @@ public class Minion : MonoBehaviour
         {
             RemoveOneCharge(Affix.Taunt); //Removes one charge
         } 
+        if (currentAffixes.ContainsKey(Affix.Curse))
+        {
+            int currentCurse = currentAffixes[Affix.Curse];
+            currentAffixes.Remove(Affix.Curse);
+            currentAffixes.Add(Affix.Curse, currentCurse+1);
+            affixDisplay.UpdateStacks(Affix.Curse, currentCurse+1); //Updates count
+        }
     }
 
     private void EndCurrentTurn() //Function called when the signal is sent from the game logic that a turn has ended
@@ -173,6 +183,10 @@ public class Minion : MonoBehaviour
             {
                 affixDisplay.RemoveAffix(Affix.Regen); //Removes affix from display is replacement doesn't occur
             }
+        }
+        if (currentAffixes.ContainsKey(Affix.Curse))
+        {
+            DamageTaken(currentAffixes[Affix.Curse]); //Deals current curse dmg
         }
         if (currentAffixes.ContainsKey(Affix.Vulnerable)) //Removing one charge from Vulnerable at the end of each turn
         {
@@ -289,7 +303,7 @@ public class Minion : MonoBehaviour
             if (currentAffixes.ContainsKey(Affix.Block) && DamageToDeal > 0) //Condition for when the character has block charges prepared
             {
                 int currentBlock = currentAffixes[Affix.Block];
-                Debug.Log("Block Amount: " + currentBlock);
+                UnityEngine.Debug.Log("Block Amount: " + currentBlock);
                 if (DamageToDeal < currentBlock) //Condition where block completely covers the damage to deal
                 {
                     int remainingBlock = currentBlock - DamageToDeal;
@@ -405,16 +419,26 @@ public class Minion : MonoBehaviour
             deck.RemoveCard(c);
             return;
         }
-
-        deck.Discard(c);
+        if (c.Spells.Any(spell => spell is RemoveInsteadOfDiscard)) //IRemoves cards instead of discarding them if they have the "RemoveInsteadOfDiscard" spell as a flag for this functionality (Scratch is the only one with this as of 1/25/2025)
+        {
+            deck.RemoveCard(c);
+        }
+        else
+        {
+            deck.Discard(c);
+        }
     }
 
     private void Destroyed() //Function for when this character has been defeated
     {
         Deck deck = FindObjectOfType<Deck>();
-        UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
-        deck.RemoveCards(party.IndexOf(this.GetComponent<Transform>())); // Needs to be index in party
-
+        CardDatabaseV2 database = FindObjectOfType<CardDatabaseV2>();
+        int minionIndex = database.RetrieveIndexFromMinion(this);
+        /*UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
+        int minionIndex = party.IndexOf(this.GetComponent<Transform>());
+        minionIndex = Math.Abs(minionIndex-2); //Inverts value of index because the index values in the database are opposite of that of the transforms*/
+        deck.RemoveCards(minionIndex);// Needs to be index in party
+  
         EncounterController.onTurnChanged -= TurnStart; //Unsubscribes this minion from the turn changed action upon minion being destroyed
 
         onDeath?.Invoke(this); // See line 55
@@ -438,6 +462,7 @@ public class Minion : MonoBehaviour
 
     public void Cleanse() //Public function to remove all negative affixes
     {
+        //Curse is not here on purpose
         if (currentAffixes.ContainsKey(Affix.DamageReduction)) 
         {
             RemoveAffix(Affix.DamageReduction);
@@ -464,6 +489,14 @@ public class Minion : MonoBehaviour
         }
     }
 
+    public void RemoveAllAffixes()
+    {
+        foreach (Affix affix in currentAffixes.Keys)
+        {
+            RemoveAffix(affix);//Removes all affixes and updates affix display accordingly
+        }
+    }
+
     private void RemoveAffix(Affix affixToRemove)
     {
         currentAffixes.Remove(affixToRemove);
@@ -474,7 +507,7 @@ public class Minion : MonoBehaviour
     {
         if (currentAffixes.ContainsKey(Affix.DamageReduction) || currentAffixes.ContainsKey(Affix.Vulnerable ) ||
         currentAffixes.ContainsKey(Affix.Bleed) || currentAffixes.ContainsKey(Affix.Mark)||
-        currentAffixes.ContainsKey(Affix.Threaded) || currentAffixes.ContainsKey(Affix.Exploit))
+        currentAffixes.ContainsKey(Affix.Threaded) || currentAffixes.ContainsKey(Affix.Exploit) || currentAffixes.ContainsKey(Affix.Curse))
         {
             return true;
         }

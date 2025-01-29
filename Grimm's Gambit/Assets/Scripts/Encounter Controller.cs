@@ -96,6 +96,7 @@ public class EncounterController : MonoBehaviour
             {
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
                 Tired = false; //Removes tired status
+                m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}"; //Updates Visual for Spirit
             }
             
             m_PlayerDeck.DrawAmount(true);
