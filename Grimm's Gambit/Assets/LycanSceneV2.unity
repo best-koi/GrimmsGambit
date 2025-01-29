@@ -33840,7 +33840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLoadouts:
-  - {fileID: 9146193986863031628, guid: 395c1795b53b04e429d58aa8d0084ca1, type: 3}
+  - {fileID: 5677028748466764126, guid: 8f657857a54df4db685e5b40067ba969, type: 3}
 --- !u!1 &2109772153
 GameObject:
   m_ObjectHideFlags: 0

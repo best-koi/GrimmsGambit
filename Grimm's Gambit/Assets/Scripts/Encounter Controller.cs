@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.AI;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 public class EncounterController : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private CardHand m_CardHand;
 
-    [SerializeField] private GameObject endScreenCanvas;
+    [SerializeField] private EndDisplay endScreenCanvas;
     [SerializeField] private GameObject sceneParent;
 
     [SerializeField] private EnemyTemplate[] enemies; 
@@ -151,14 +152,10 @@ public class EncounterController : MonoBehaviour
 
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
-        MakeEnd(playerWin);
-        sceneParent.SetActive(false);
-    }
-
-    private void MakeEnd(bool win)
-    {
-        endScreenCanvas.SetActive(true);
-        endScreenCanvas.GetComponent<EndDisplay>().SetDisplay(win);
+        //SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("TestEndEncounter"));
+        //SceneManager.LoadSceneAsync("TestEndEncounter");
+        endScreenCanvas = FindObjectOfType<EndDisplay>();
+        endScreenCanvas.SetDisplay(playerWin);
     }
 
     // Spend an amount of resources

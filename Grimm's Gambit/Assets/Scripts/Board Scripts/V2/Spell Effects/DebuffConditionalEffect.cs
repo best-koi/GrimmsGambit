@@ -6,6 +6,7 @@ public class DebuffConditionalEffect : SpellEffect
     public Affix conditionDebuff;
     public int spiritGain;
     public int cardDraw = 0;
+    public int damage = 0;
     public Affix resultantDebuff;
     public int resultantValue;
 
@@ -30,6 +31,11 @@ public class DebuffConditionalEffect : SpellEffect
             {
                 Deck deck = GameObject.FindObjectOfType<Deck>();
                 deck.DrawAmount(false, cardDraw);
+            }
+
+            if (damage > 0)
+            {
+                caster.MinionUsed(target, damage);
             }
 
             target.AddAffix(resultantDebuff, resultantValue);

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: NoMercy
+  m_EditorClassIdentifier: 
+  _cardName: No Mercy
+  _cardDescription: Deal 11 Damage. If the target has Damage Reduction, recast again.
+  _cardCost: 2
+  _playerCopyCount: 2
+  _targetsEnemies: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 1265900286819696641
+  - rid: 1265900286819696642
+  references:
+    version: 2
+    RefIds:
+    - rid: 1265900286819696641
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 11
+    - rid: 1265900286819696642
+      type: {class: DebuffConditionalEffect, ns: , asm: Assembly-CSharp}
+      data:
+        conditionDebuff: 3
+        spiritGain: 0
+        cardDraw: 0
+        damage: 11
+        resultantDebuff: 0
+        resultantValue: 0
