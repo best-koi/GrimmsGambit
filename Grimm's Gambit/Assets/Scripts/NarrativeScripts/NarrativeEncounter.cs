@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Narrative Encounter", menuName = "NarrativeEncounters", order = 0)]
+[CreateAssetMenu(fileName = "New Narrative Encounter", menuName = "NarrativeEncounters/Two-Choice Encounter", order = 0)]
 public class NarrativeEncounter : ScriptableObject
 {
-    [SerializeField] private string encounterName;
+    [SerializeField] protected string encounterName;
 
-    [SerializeField] private string description;
-    [SerializeField] private string choice1;
+    [SerializeField] protected string description;
+    [SerializeField] protected string choice1, choice2; 
 
-    [SerializeField] private string choice2; 
+    [SerializeField]protected string choice1Outcome, choice2Outcome;
 
     public string GetEncounterName(){
         return encounterName;
