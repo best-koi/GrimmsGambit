@@ -116,7 +116,7 @@ public class DragAndDropV2 : MonoBehaviour
 
             _selectedObject.localPosition = Vector3.zero;
             _selectedObject.localRotation = Quaternion.identity;
-            _selectedObject.localScale = Vector3.one * .9f;
+            _selectedObject.localScale = Vector3.one;
             _selectedObject = null;
         }
     }
@@ -146,7 +146,7 @@ public class DragAndDropV2 : MonoBehaviour
             {
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one * 1.1f;
-                cd.CardDisplayDisplacement = Vector3.up * .07f;
+                cd.CardDisplayDisplacement = Vector3.up * .4f;
             }
         }
     }
