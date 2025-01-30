@@ -61,7 +61,7 @@ public class MapPlayer : MonoBehaviour
     //Checks to see if there are valid locations to move to
     public bool CheckLocations(MapEncounter encounter)
     {
-        Debug.Log(isMoving);
+        //Debug.Log(isMoving);
         //Makes sure the player is not actively moving
         if (isMoving == false)
         {
