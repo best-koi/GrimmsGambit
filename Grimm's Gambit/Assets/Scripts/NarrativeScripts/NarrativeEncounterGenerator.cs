@@ -69,7 +69,7 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             
 
 
-        }else{
+        }else {
             twoChoiceUI.SetActive(true);
             //The Text
             twoTitle.text = currentEncounterSelected.GetEncounterName();
@@ -88,9 +88,12 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             twoChoice2Button.onClick.AddListener(delegate { currentEncounterSelected.Choice2(); });
 
         }
+
+        
         narrativeEncounters.RemoveAt(encounterToRemove);
 
     }
+
 
     public void CloseThreeChoice(){
         threeChoiceUI.SetActive(false);
@@ -110,6 +113,15 @@ public class NarrativeEncounterGenerator : MonoBehaviour
         threeChoice1Button.onClick.RemoveAllListeners();
         threeChoice2Button.onClick.RemoveAllListeners();
         threeChoice3Button.onClick.RemoveAllListeners();
+    }
+
+    
+
+    private void Update(){
+        if(currentEncounterSelected is Fisherman){
+            twoChoiceOutcome1.text = currentEncounterSelected.GetChoice1Outcome(); 
+
+        }
     }
 
 

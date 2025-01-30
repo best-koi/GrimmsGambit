@@ -10,7 +10,13 @@ public class Fisherman : NarrativeEncounter
 
     [SerializeField]
     private List<string> outcomeTypes; 
+
+ 
   
+  private void Start(){
+        
+
+  }
     //Picks a random outcome for the positive choice
     protected virtual int CoinFlip(){
         return Random.Range(0,2);
@@ -19,8 +25,8 @@ public class Fisherman : NarrativeEncounter
 
     public override void Choice1(){
         int outcome = CoinFlip();
-        choice1 = outcomeTexts[outcome];
+        choice1Outcome = $"{choice1Outcome}  {outcomeTexts[outcome]}";
         choice1Type = outcomeTypes[outcome];
-
+       
     }
 }

@@ -23,26 +23,523 @@ MonoBehaviour:
     happened.''  "''Could be a trap. Or some ripe fool trying to have a laugh at
     others'' expense. But maybe that''s just my skepticism talking. What would you
     have us do?'' comments Die Katze." '
-  choice1: '<Free the flounder>  '
+  choice1: <Free the flounder>
   choice2: '<Ignore the flounder> '
-  choice1Outcome: 
+  choice1Outcome: '"You unhook the note from the fish and gently release it into
+    the river. As it swims out of sight, you also notice a length of fishing line
+    tied to the flounder''s tail. Following the line to its origin, you find..." 
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]   "a small bottle, filled with a clear liquid. It seems as
+    though your seemingly mundane act has yielded a reward after all."   "a small
+    bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."  "a small bell atop a tree, which rings out clearly
+    as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings out
+    clearly as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings out
+    clearly as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."   "a small bottle, filled with a clear liquid. It seems as though your
+    seemingly mundane act has yielded a reward after all."  "a small bell atop a
+    tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."   "a small bottle, filled with a clear liquid. It
+    seems as though your seemingly mundane act has yielded a reward after all." 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."   "a small bottle, filled with a clear liquid. It seems as though your
+    seemingly mundane act has yielded a reward after all."   "a small bottle, filled
+    with a clear liquid. It seems as though your seemingly mundane act has yielded
+    a reward after all."   "a small bottle, filled with a clear liquid. It seems
+    as though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings out
+    clearly as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all." 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]   "a small bottle, filled with a clear liquid. It seems as
+    though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all."  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."   "a small bottle, filled with a clear liquid. It
+    seems as though your seemingly mundane act has yielded a reward after all."  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."   "a small bottle, filled with a
+    clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."  "a small bell atop a tree, which rings out clearly
+    as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter] 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."   "a small bottle, filled with a clear liquid. It seems as though your
+    seemingly mundane act has yielded a reward after all."   "a small bottle, filled
+    with a clear liquid. It seems as though your seemingly mundane act has yielded
+    a reward after all."   "a small bottle, filled with a clear liquid. It seems
+    as though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all." 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."   "a small bottle, filled with a
+    clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."   "a small bottle, filled with a clear liquid. It
+    seems as though your seemingly mundane act has yielded a reward after all." 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."   "a small bottle, filled with a
+    clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]   "a small bottle, filled with a clear liquid. It seems as
+    though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings out
+    clearly as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."   "a small bottle, filled with a
+    clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]  "a small bell atop a tree, which rings out clearly as it falls.
+    The sound echoes through the woods and appears to have attracted some unsavory
+    sorts. Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."  "a small bell atop a tree, which rings out clearly
+    as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]  "a small bell atop a tree, which rings out
+    clearly as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."  "a small bell atop a tree, which rings
+    out clearly as it falls. The sound echoes through the woods and appears to have
+    attracted some unsavory sorts. Nothing for it but to battle, it seems. ''Would
+    that I had been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."   "a small bottle, filled with a
+    clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."   "a small bottle,
+    filled with a clear liquid. It seems as though your seemingly mundane act has
+    yielded a reward after all."  "a small bell atop a tree, which rings out clearly
+    as it falls. The sound echoes through the woods and appears to have attracted
+    some unsavory sorts. Nothing for it but to battle, it seems. ''Would that I had
+    been more insistent...'' bemoans Die Katze.''" [Enter combat encounter]   "a
+    small bottle, filled with a clear liquid. It seems as though your seemingly mundane
+    act has yielded a reward after all."   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all." 
+    "a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."  "a small bell atop a tree, which rings out clearly as it falls. The sound
+    echoes through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear
+    liquid. It seems as though your seemingly mundane act has yielded a reward after
+    all."   "a small bottle, filled with a clear liquid. It seems as though your
+    seemingly mundane act has yielded a reward after all."  "a small bell atop a
+    tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]   "a small bottle, filled with a clear liquid. It seems as
+    though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all."  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all."  "a small bell atop a tree, which
+    rings out clearly as it falls. The sound echoes through the woods and appears
+    to have attracted some unsavory sorts. Nothing for it but to battle, it seems.
+    ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter combat
+    encounter]  "a small bell atop a tree, which rings out clearly as it falls. The
+    sound echoes through the woods and appears to have attracted some unsavory sorts.
+    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
+    bemoans Die Katze.''" [Enter combat encounter]   "a small bottle, filled with
+    a clear liquid. It seems as though your seemingly mundane act has yielded a reward
+    after all."   "a small bottle, filled with a clear liquid. It seems as though
+    your seemingly mundane act has yielded a reward after all."  "a small bell atop
+    a tree, which rings out clearly as it falls. The sound echoes through the woods
+    and appears to have attracted some unsavory sorts. Nothing for it but to battle,
+    it seems. ''Would that I had been more insistent...'' bemoans Die Katze.''" [Enter
+    combat encounter]   "a small bottle, filled with a clear liquid. It seems as
+    though your seemingly mundane act has yielded a reward after all."  "a small
+    bell atop a tree, which rings out clearly as it falls. The sound echoes through
+    the woods and appears to have attracted some unsavory sorts. Nothing for it but
+    to battle, it seems. ''Would that I had been more insistent...'' bemoans Die
+    Katze.''" [Enter combat encounter]   "a small bottle, filled with a clear liquid.
+    It seems as though your seemingly mundane act has yielded a reward after all."  
+    "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all." '
   choice2Outcome: '"You decide to leave the fish where it is, for some other forest-bound
     philosopher to stumble upon." "''Mm, good choice. No good deed goes unpunished
     and all that. But then by that logic, your ''villainous act'' deserves a little
     something, too.'' Die Katze palms a card into your hand from somewhere unseen." 
     [Card choice: Die Katze''s deck] '
-  choice1Type: 
+  choice1Type: Heirloom
   choice2Type: 
   outcomeTexts:
-  - '"You unhook the note from the fish and gently release it into the river. As
-    it swims out of sight, you also notice a length of fishing line tied to the flounder''s
-    tail. Following the line to its origin, you find..."  Positive: "a small bottle,
-    filled with a clear liquid. It seems as though your seemingly mundane act has
-    yielded a reward after all." [Gain "Miracle Water" heirloom] '
-  - 'Negative: "a small bell atop a tree, which rings out clearly as it falls. The
-    sound echoes through the woods and appears to have attracted some unsavory sorts.
-    Nothing for it but to battle, it seems. ''Would that I had been more insistent...''
-    bemoans Die Katze.''" [Enter combat encounter] '
+  - ' "a small bottle, filled with a clear liquid. It seems as though your seemingly
+    mundane act has yielded a reward after all." '
+  - '"a small bell atop a tree, which rings out clearly as it falls. The sound echoes
+    through the woods and appears to have attracted some unsavory sorts. Nothing
+    for it but to battle, it seems. ''Would that I had been more insistent...'' bemoans
+    Die Katze.''" [Enter combat encounter] '
   outcomeTypes:
   - Heirloom
   - Encounter
