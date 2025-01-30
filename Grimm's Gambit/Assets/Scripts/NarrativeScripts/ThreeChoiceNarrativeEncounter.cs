@@ -14,7 +14,7 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
     }
 
     public string GetChoice3Outcome(){
-        return choice3;
+        return choice3Outcome;
     }
 
 

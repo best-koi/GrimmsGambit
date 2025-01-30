@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05af0141d0b9f4d2aa3b42a006d6795a, type: 3}
+  m_Name: HanselAndGretel
+  m_EditorClassIdentifier: 
+  encounterName: Hansel & Gretel
+  description: "\u201CAs you walk down the path you begin to smell something sweet
+    in the air\u2026 like pie and candied apples. You stumble into a small house
+    off the side of the road with smoke coming from the chimney. As you get close
+    the door opens and an old woman with a cheery expression and plump soft cheeks.
+    She welcomes you inside, urging you to try a piece of her pie. Before you can
+    say no she grabs you by the arm with unforeseen strength. She sits you down urging
+    you to try one of her pies. Reluctantly you nibble a piece of the pie\u2026 
+    Before this can continue further Die Katze jumps forward, drawing their weapon.\u201D 
+    \u2018Okay, everything about this seems suspicious. We're leaving, and you\u2019re
+    not going to stop us,\u201D Die Katze threatens towards the old lady.  \u201CShe
+    pleads innocence, letting you walk out the door. As you walk away you look over
+    your shoulder and see that cheery smile almost becomes a malicious smirk. Strangely,
+    it feels as though you are forgetting something\u2026  Choose one thing to lose\u201D "
+  choice1: '<Discard 3 cards at random from your deck> '
+  choice2: <Discard a Heirloom>
+  choice1Outcome: 
+  choice2Outcome: 
+  choice3: <All Party Members lose 5 Max HP>
+  choice3Outcome: 

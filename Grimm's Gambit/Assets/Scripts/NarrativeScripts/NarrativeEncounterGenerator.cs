@@ -11,24 +11,29 @@ public class NarrativeEncounterGenerator : MonoBehaviour
     [SerializeField]
     private GameObject twoChoiceUI;
 
-    [Header("General UI Elements")]
+    private NarrativeEncounter currentEncounterSelected;
+
+    [Header("Two-Choice UI Elements")]
     [SerializeField]
     private TMP_Text twoTitle, twoDesc, twoChoice1, twoChoice2, twoChoiceOutcome1, twoChoiceOutcome2;
 
-    private NarrativeEncounter currentEncounterSelected;
+    
 
-
+[Header("Three-Choice UI Elements")]
     [SerializeField]
     private GameObject threeChoiceUI;
 
-    [Header("Three Choice UI Elements")]
+
     [SerializeField]
     private TMP_Text threeChoiceTitle, threeChoiceDesc, threeChoice1, threeChoice2, threeChoice3, threeChoiceOutcome1, threeChoiceOutcome2, threeChoiceOutcome3;
-
+    
 
     public void GetRandomNarrativeEncounter(){
+
         int encounterToRemove = Random.Range(0, narrativeEncounters.Count);
+
         currentEncounterSelected = narrativeEncounters[encounterToRemove];
+
         if(currentEncounterSelected is ThreeChoiceNarrativeEncounter){
             ThreeChoiceNarrativeEncounter currentThree = currentEncounterSelected as ThreeChoiceNarrativeEncounter;
 
@@ -68,6 +73,17 @@ public class NarrativeEncounterGenerator : MonoBehaviour
         }
         narrativeEncounters.RemoveAt(encounterToRemove);
 
+    }
+
+    public void CloseThreeChoice(){
+        threeChoiceUI.SetActive(false);
+
+
+    }
+
+    public void CloseTwoChoice(){
+        twoChoiceUI.SetActive(false);
+        
     }
 
 

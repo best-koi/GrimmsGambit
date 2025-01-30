@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05af0141d0b9f4d2aa3b42a006d6795a, type: 3}
+  m_Name: AllKindsOfFur
+  m_EditorClassIdentifier: 
+  encounterName: All Kinds of Fur
+  description: "\u201CMoving through the trees you begin to hear barking in the distance.
+    As you come closer you see a woman  hiding in a tree wearing a thick cloak of
+    several layers made from the furs of several different animals. At the base of
+    the tree looks to be an elderly dog who is barking up at the figure in the tree.
+    She spots your approach before the dog does.   At the sight of this all three
+    of your party look as if they want to jump at the opportunity to take action.\u201D 
+    Who should take the lead? "
+  choice1: '<Let the Seamstress talk down the girl> '
+  choice2: <Let Die Katze distract the dog>
+  choice1Outcome: "\u201CThe seamstress walks calmly up to the girl in the tree.
+    \u2018Are you alright, dear?\u2019 The Seamstress says beaming a weary smile
+    towards the girl. \u201CDie Katze rolls their eyes, looking clearly annoyed and
+    anxious at The Seamstress\u2019 boldness.  This old dog immediately turns its
+    attention towards the Seamstress and begins to growl and bite at the Seamstress.
+    She withdraws a small cloth doll from her basket and throws it in the opposite
+    direction. The dog moves to go fetch the doll. The Seamstress puts out a hand
+    to assist the girl and she begins to slowly descend from the tree. This girl
+    covered in various furs hugs the Seamstress, handing her one of her fur pelts
+    to wipe the bite mark of blood before running into the forest.  You push forward
+    having successfully freed the girl.\u201D "
+  choice2Outcome: "\u201CDie Katze approaches the old dog, drawing their weapon.\u201D 
+    \u2018Come now, doggie. Leave the girl alone.\u2019 Die Katze flaunts, tapping
+    the dog with the flat side of their blade.  \u201CThe Seamstress looks away,
+    placing her face into her palm. Without warning the dog jumps on Die Katze knocking
+    them to the ground, snatching their hat and running away. The Seamstress takes
+    this opportunity to assist the girl down from the tree. She quickly thanks you
+    before disappearing into the forest. A few moments later Die Katze returns slightly
+    disheveled but having retrieved their hat.   You push forward having successfully
+    freed the girl.\u201D "
+  choice3: '<Let the Hound confront the dog> '
+  choice3Outcome: "\u201CThe Hound approaches the dog and begins to match its barking.
+    The two bark back and the Hound places itself between the older dog and the tree,
+    getting ready to defend this figure. The two wrestle for a few minutes before
+    the older dog, seeing its loss, begins to run away from the tree. The Hound stands
+    triumphantly barking at the older dog as it flees. The rest of your party helps
+    the girl down from the tree. She leans down smiling and petting the Hound as
+    thanks for his bravery. She stands, smiles, and thanks your group for helping
+    her, and walks into the forest before disappearing among the trees.  You push
+    forward having successfully freed the girl.\u201D "

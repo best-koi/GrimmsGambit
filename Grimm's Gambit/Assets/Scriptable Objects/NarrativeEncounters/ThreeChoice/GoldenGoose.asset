@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05af0141d0b9f4d2aa3b42a006d6795a, type: 3}
+  m_Name: GoldenGoose
+  m_EditorClassIdentifier: 
+  encounterName: Golden Goose
+  description: "\u201CStumbling through the woods you find what appears to be an
+    inn. Smoke rises from the chimney and glowing firelight shines through the windows.
+    Outside of the Inn you see an animal pen inside is a Golden Goose sitting atop
+    an egg of solid gold.  You approach the pen. The Goose appears to be sleeping.
+    You are enthralled by the golden shimmer of both the Goose and its egg.\u201D "
+  choice1: <Steal the Egg>
+  choice2: <Steal the Goose>
+  choice1Outcome: 'The Goose honks in anger as you attempt to steal its egg. You
+    and your party are able to flee but not before it lands a few hits... '
+  choice2Outcome: The Goose honks in anger fighting you as you attempt to shove it
+    into a satchel.
+  choice3: <Leave the Goose Alone>
+  choice3Outcome: "\u201CYou are able to shake off the greed and walk away leaving
+    the goose and its eggs unharmed\u2026\u201D"
