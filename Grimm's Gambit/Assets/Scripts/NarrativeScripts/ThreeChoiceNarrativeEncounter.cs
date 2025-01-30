@@ -10,7 +10,11 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
     [SerializeField]private string choice3Outcome;
 
     public string GetChoice3(){
-        return choice2;
+        return choice3;
+    }
+
+    public string GetChoice3Outcome(){
+        return choice3;
     }
 
 

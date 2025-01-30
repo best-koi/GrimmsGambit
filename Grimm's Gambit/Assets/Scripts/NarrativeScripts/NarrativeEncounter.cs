@@ -28,6 +28,15 @@ public class NarrativeEncounter : ScriptableObject
         return choice2;
     }
 
+    public string GetChoice1Outcome(){
+        return choice1Outcome;
+    }
+
+
+    public string GetChoice2Outcome(){
+        return choice2Outcome;
+    }
+
 
 
     
