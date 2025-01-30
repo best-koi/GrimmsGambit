@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Leader's Might
+  m_EditorClassIdentifier: 
+  _cardName: Leader's Might
+  _cardDescription: 'Party will gain 20 Block. '
+  _cardCost: 4
+  _playerCopyCount: 1
+  _targetsEnemies: 0
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 4695933482567467026
+  references:
+    version: 2
+    RefIds:
+    - rid: 4695933482567467026
+      type: {class: AOEDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        TargetingFriendlies: 1
+        debuff: 1
+        value: 20

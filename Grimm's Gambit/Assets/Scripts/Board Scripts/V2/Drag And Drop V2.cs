@@ -6,6 +6,8 @@ public class DragAndDropV2 : MonoBehaviour
 
     [Header("Hover/Pick-Up/Drop Fields")]
     [SerializeField] private float _distanceFromCamera = .25f;
+    [SerializeField] private float _hoverScale = 1.1f;
+    [SerializeField] private float _hoverPopDistance = 1f;
 
     [Header("Pick-Up/Drop Layers")]
     [SerializeField] private LayerMask _pickUpLayers;
@@ -145,8 +147,8 @@ public class DragAndDropV2 : MonoBehaviour
             if (_hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
             {
                 cd.OrderLayer = 1;
-                cd.CardDisplayScale = Vector3.one * 1.1f;
-                cd.CardDisplayDisplacement = Vector3.up * .4f;
+                cd.CardDisplayScale = Vector3.one * _hoverScale;
+                cd.CardDisplayDisplacement = Vector3.up * _hoverPopDistance;
             }
         }
     }
