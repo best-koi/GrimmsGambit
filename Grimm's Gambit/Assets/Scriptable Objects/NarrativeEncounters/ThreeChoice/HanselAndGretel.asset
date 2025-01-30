@@ -30,5 +30,7 @@ MonoBehaviour:
   choice2: <Discard a Heirloom>
   choice1Outcome: 
   choice2Outcome: 
+  choice1Type: 
+  choice2Type: 
   choice3: <All Party Members lose 5 Max HP>
   choice3Outcome: 

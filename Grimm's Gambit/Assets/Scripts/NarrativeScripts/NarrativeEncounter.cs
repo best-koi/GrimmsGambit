@@ -7,10 +7,13 @@ public class NarrativeEncounter : ScriptableObject
 {
     [SerializeField] protected string encounterName;
 
+[TextArea(15,20)]
     [SerializeField] protected string description;
     [SerializeField] protected string choice1, choice2; 
 
+[TextArea(15,20)]
     [SerializeField]protected string choice1Outcome, choice2Outcome;
+
 
     [SerializeField]protected string choice1Type, choice2Type;
 

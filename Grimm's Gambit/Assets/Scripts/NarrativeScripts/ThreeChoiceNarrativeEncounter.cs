@@ -7,6 +7,7 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
 {
     [SerializeField] private string choice3; 
 
+    [TextArea(15,20)]
     [SerializeField]private string choice3Outcome;
 
     public string GetChoice3(){
