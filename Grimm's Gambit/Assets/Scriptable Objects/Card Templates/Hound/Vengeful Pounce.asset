@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Vengeful Pounce
+  m_EditorClassIdentifier: 
+  _cardName: 'Vengeful Pounce '
+  _cardDescription: 'Deal 14 Damage. Apply 2 Armor Reduction. '
+  _cardCost: 2
+  _playerCopyCount: 1
+  _targetsEnemies: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 4695933482567467024
+  - rid: 4695933482567467025
+  references:
+    version: 2
+    RefIds:
+    - rid: 4695933482567467024
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 14
+    - rid: 4695933482567467025
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 3
+        _value: 2
