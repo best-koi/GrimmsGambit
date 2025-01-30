@@ -17,6 +17,13 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
         return choice3Outcome;
     }
 
+//To be used by buttons
+    public virtual void Choice3(){
+        Debug.Log("Chose Choice 3");
+        
+    }
+
+
 
 
 }

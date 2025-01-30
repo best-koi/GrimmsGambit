@@ -7572,7 +7572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11868358, y: -0.6909073, z: 0.116551474, w: 0.7035461}
+  m_LocalRotation: {x: 0.11856944, y: -0.6915956, z: 0.116667606, w: 0.7028695}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19969,7 +19969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11868358, y: -0.6909073, z: 0.116551474, w: 0.7035461}
+  m_LocalRotation: {x: 0.11856944, y: -0.6915956, z: 0.116667606, w: 0.7028695}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26715,6 +26715,8 @@ MonoBehaviour:
   twoChoice2: {fileID: 0}
   twoChoiceOutcome1: {fileID: 0}
   twoChoiceOutcome2: {fileID: 0}
+  twoChoice1Button: {fileID: 0}
+  twoChoice2Button: {fileID: 0}
   threeChoiceUI: {fileID: 2061567326}
   threeChoiceTitle: {fileID: 111392382}
   threeChoiceDesc: {fileID: 2073977558}
@@ -26724,6 +26726,9 @@ MonoBehaviour:
   threeChoiceOutcome1: {fileID: 1215140827}
   threeChoiceOutcome2: {fileID: 1479295686}
   threeChoiceOutcome3: {fileID: 14799601}
+  threeChoice1Button: {fileID: 1432494058}
+  threeChoice2Button: {fileID: 1877103291}
+  threeChoice3Button: {fileID: 1637509676}
 --- !u!4 &2027496247
 Transform:
   m_ObjectHideFlags: 0
@@ -27918,6 +27923,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2027496246}
         m_TargetAssemblyTypeName: NarrativeEncounterGenerator, Assembly-CSharp
         m_MethodName: CloseThreeChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2027496246}
+        m_TargetAssemblyTypeName: NarrativeEncounterGenerator, Assembly-CSharp
+        m_MethodName: UnsubscribeButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

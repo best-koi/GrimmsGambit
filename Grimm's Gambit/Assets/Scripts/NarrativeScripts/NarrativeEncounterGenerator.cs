@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+
 
 public class NarrativeEncounterGenerator : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class NarrativeEncounterGenerator : MonoBehaviour
     [SerializeField]
     private TMP_Text twoTitle, twoDesc, twoChoice1, twoChoice2, twoChoiceOutcome1, twoChoiceOutcome2;
 
+    [SerializeField]
+    public Button twoChoice1Button, twoChoice2Button;
+
     
 
 [Header("Three-Choice UI Elements")]
@@ -26,6 +31,9 @@ public class NarrativeEncounterGenerator : MonoBehaviour
 
     [SerializeField]
     private TMP_Text threeChoiceTitle, threeChoiceDesc, threeChoice1, threeChoice2, threeChoice3, threeChoiceOutcome1, threeChoiceOutcome2, threeChoiceOutcome3;
+
+    [SerializeField]
+    public Button threeChoice1Button, threeChoice2Button, threeChoice3Button;
     
 
     public void GetRandomNarrativeEncounter(){
@@ -53,6 +61,11 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             threeChoiceOutcome2.text = currentThree.GetChoice2Outcome(); 
             threeChoiceOutcome3.text = currentThree.GetChoice3Outcome(); 
 
+
+            threeChoice1Button.onClick.AddListener(delegate { currentThree.Choice1(); });
+            threeChoice2Button.onClick.AddListener(delegate { currentThree.Choice2(); });
+            threeChoice3Button.onClick.AddListener(delegate { currentThree.Choice3(); });
+
             
 
 
@@ -70,6 +83,10 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             twoChoiceOutcome1.text = currentEncounterSelected.GetChoice1Outcome(); 
             twoChoiceOutcome2.text = currentEncounterSelected.GetChoice2Outcome();
 
+
+            twoChoice1Button.onClick.AddListener(delegate { currentEncounterSelected.Choice1(); });
+            twoChoice2Button.onClick.AddListener(delegate { currentEncounterSelected.Choice2(); });
+
         }
         narrativeEncounters.RemoveAt(encounterToRemove);
 
@@ -84,6 +101,15 @@ public class NarrativeEncounterGenerator : MonoBehaviour
     public void CloseTwoChoice(){
         twoChoiceUI.SetActive(false);
         
+    }
+
+     public void UnsubscribeButtons()
+    {
+        twoChoice1Button.onClick.RemoveAllListeners();
+        twoChoice2Button.onClick.RemoveAllListeners();
+        threeChoice1Button.onClick.RemoveAllListeners();
+        threeChoice2Button.onClick.RemoveAllListeners();
+        threeChoice3Button.onClick.RemoveAllListeners();
     }
 
 
