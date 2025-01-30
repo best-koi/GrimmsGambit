@@ -5,17 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Narrative Encounter", menuName = "NarrativeEncounters/Two-Choice Encounter", order = 0)]
 public class NarrativeEncounter : ScriptableObject
 {
-    [SerializeField] protected string encounterName;
+    [SerializeField] protected string encounterName;//The name of the Encounter
 
 [TextArea(15,20)]
-    [SerializeField] protected string description;
-    [SerializeField] protected string choice1, choice2; 
+    [SerializeField] protected string description;//The description text
+    [SerializeField] protected string choice1, choice2; //The choice names
 
 [TextArea(15,20)]
-    [SerializeField]protected string choice1Outcome, choice2Outcome;
+    [SerializeField]protected string choice1Outcome, choice2Outcome;//The outcomes in text 
 
 
-    [SerializeField]protected string choice1Type, choice2Type;
+    [SerializeField]protected string choice1Type, choice2Type;//The Types of Outcomes (for a future Switch statement)
 
 //returns name of encounter
     public string GetEncounterName(){

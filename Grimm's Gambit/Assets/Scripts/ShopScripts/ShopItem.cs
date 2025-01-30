@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI; 
 
+//Could possibly be transitioned into a Scriptable Object? 
 public class ShopItem : MonoBehaviour
 {
     [SerializeField]
