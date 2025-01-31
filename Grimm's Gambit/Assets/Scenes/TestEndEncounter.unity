@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 764739697}
   - component: {fileID: 764739696}
   - component: {fileID: 764739695}
+  - component: {fileID: 764739699}
   m_Layer: 5
   m_Name: EndGameCanvas
   m_TagString: Untagged
@@ -227,6 +228,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &764739699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764739694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265359c10ebba8d4ba5a2523e19c5ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endCamera: {fileID: 1321805147}
+  winText: You defeated the enemy
+  loseText: You were slain...
+  endScreenText: {fileID: 1345418117}
 --- !u!1 &1232877519
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +464,7 @@ GameObject:
   - component: {fileID: 1321805149}
   - component: {fileID: 1321805148}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: End Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -539,7 +556,7 @@ GameObject:
   - component: {fileID: 1345418118}
   - component: {fileID: 1345418117}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: EndText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

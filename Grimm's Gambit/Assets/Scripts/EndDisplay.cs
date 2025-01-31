@@ -13,14 +13,16 @@ public class EndDisplay : MonoBehaviour
 
     public void SetDisplay(bool win)
     {
+        Debug.Log("Called");
+
         if (win) endScreenText.text = winText;
         else endScreenText.text = loseText;
     }
 
     private void Start()
     {
-        endCamera.SetActive(false);
-        gameObject.SetActive(false);
+        //endCamera.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     private void OnEnable()

@@ -40,6 +40,8 @@ public class EncounterController : MonoBehaviour
 
     private bool Tired = false; //Variable to control whether the player is tired
 
+    private bool m_Ending = false;
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -151,11 +153,24 @@ public class EncounterController : MonoBehaviour
     }
 
     private void EndEncounter(bool playerWin) {
+        
+        if (m_Ending) return;
+
+        m_Ending = true;
+
         onEncounterEnded?.Invoke(playerWin);
-        //SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("TestEndEncounter"));
-        //SceneManager.LoadSceneAsync("TestEndEncounter");
-        endScreenCanvas = FindObjectOfType<EndDisplay>();
-        endScreenCanvas.SetDisplay(playerWin);
+        SceneManager.LoadScene("TestEndEncounter", LoadSceneMode.Additive);
+        Scene otherScene = SceneManager.GetSceneByName("TestEndEncounter");
+        GameObject[] rootObjects = otherScene.GetRootGameObjects();
+        foreach (GameObject obj in rootObjects)
+        {
+            if (obj.name == "EndGameCanvas")
+            {
+                obj.GetComponent<EndDisplay>().SetDisplay(playerWin);
+                break;
+            }
+        }
+        Destroy(sceneParent); 
     }
 
     // Spend an amount of resources
