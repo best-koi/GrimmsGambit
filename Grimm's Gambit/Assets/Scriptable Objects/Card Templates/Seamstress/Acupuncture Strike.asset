@@ -10,22 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: DirtInYourEyes
+  m_Name: Acupuncture Strike
   m_EditorClassIdentifier: 
-  _cardName: Dirt in Your Eyes
-  _cardDescription: The targeted enemy this turn will gain Damage Reduction when
-    an attack card is played.
+  _cardName: Acupuncture Strike
+  _cardDescription: 'Deal 8 Damage. Draw 1 card. '
   _cardCost: 1
-  _playerCopyCount: 2
+  _playerCopyCount: 1
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1265900286819696640
+  - rid: 4695933482567467014
+  - rid: 4695933521605689345
   references:
     version: 2
     RefIds:
-    - rid: 1265900286819696640
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+    - rid: 4695933482567467014
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
-        _debuff: 3
-        _value: 1
+        _damage: 8
+    - rid: 4695933521605689345
+      type: {class: DrawCardEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 1

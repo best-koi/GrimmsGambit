@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: PlantFeet
+  m_Name: The Zone
   m_EditorClassIdentifier: 
-  _cardName: Plant Feet
-  _cardDescription: Gain 10 Block.
+  _cardName: The Zone
+  _cardDescription: Gain 2 Strength.
   _cardCost: 1
   _playerCopyCount: 2
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538504836808733
+  - rid: 1265900286819696643
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808733
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+    - rid: 1265900286819696643
+      type: {class: ApplyDebuffEffectToSelf, ns: , asm: Assembly-CSharp}
       data:
-        _debuff: 1
-        _value: 10
+        _debuff: 7
+        _value: 2

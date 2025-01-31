@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: NoMercy
+  m_Name: Breaker Bite
   m_EditorClassIdentifier: 
-  _cardName: No Mercy
-  _cardDescription: Deal 11 Damage. If the target has Damage Reduction, recast again.
-  _cardCost: 2
+  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+  _cardName: Breaker Bite
+  _cardDescription: Deal 5 damage. Apply 2 Damage Reduction to the enemy.
+  _cardCost: 1
+  _data:
+    ownerIndex: 0
+    databaseIndex: 2
   _playerCopyCount: 2
-  _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1265900286819696641
-  - rid: 1265900286819696642
+  - rid: 1396538504836808734
+  - rid: 1396538504836808735
   references:
     version: 2
     RefIds:
-    - rid: 1265900286819696641
+    - rid: 1396538504836808734
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 11
-    - rid: 1265900286819696642
-      type: {class: DebuffConditionalEffect, ns: , asm: Assembly-CSharp}
+        _damage: 5
+    - rid: 1396538504836808735
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
-        conditionDebuff: 3
-        spiritGain: 0
-        cardDraw: 0
-        damage: 11
-        resultantDebuff: 0
-        resultantValue: 0
+        _debuff: 3
+        _value: 2
