@@ -16,6 +16,7 @@ TagManager:
   - CanonEvent
   - Narrative
   - Tutorial
+  - MusicSlider
   layers:
   - Default
   - TransparentFX

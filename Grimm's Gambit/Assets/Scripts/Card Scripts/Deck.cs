@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using UnityEngine.XR;
+using Unity.VisualScripting;
 
 [Serializable]
 public class CardData
@@ -113,8 +115,13 @@ public class Deck : MonoBehaviour
     public void Discard(CardData data)
     {
         m_DiscardPile.Add(data);
-        m_Hand.Remove(data);
-        onDiscard?.Invoke(data.databaseIndex);
+        for (int i = 0; i < m_Hand.Count; i++) {
+            if((m_Hand[i].ownerIndex == data.ownerIndex) && (m_Hand[i].databaseIndex == data.databaseIndex)) {
+                m_Hand.RemoveAt(i);
+            }
+        }
+        //m_Hand.Remove(data);
+        //onDiscard?.Invoke(data.databaseIndex);
     }
 
     // Invokes index in database not hand 

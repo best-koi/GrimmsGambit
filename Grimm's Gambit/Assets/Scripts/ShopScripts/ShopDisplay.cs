@@ -13,22 +13,22 @@ public class ShopDisplay : MonoBehaviour
     private int eyeCount, hairCount, tongueCount;//Ints to test out shop values - to be taken from player loot script eventually 
 
    [SerializeField]
-   private List<ShopItem> commonCards, heirlooms, arcana;
+   private List<ShopItem> commonCards, heirlooms, arcana;//The items in the shop
 
    [SerializeField]
-   private Image cardImage, heirloomImage, arcanaImage, defaultImage;
+   private Image cardImage, heirloomImage, arcanaImage, defaultImage;//Images for each object (likely to be replaced with sprites)
 
    [SerializeField]
-   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;
+   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;//Strings for names and descriptions 
    
    [SerializeField]
-   private string defaultText; 
+   private string defaultText;//Dummy Text for Empty Items 
 
    [SerializeField]
-   private int cycleIndex; 
+   private int cycleIndex;//Current index 
 
    [SerializeField]
-   private int numberOfPages; 
+   private int numberOfPages;//Used to determine when to stop cycling 
 
     // Start is called before the first frame update
     void Start()

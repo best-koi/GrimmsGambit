@@ -25,10 +25,10 @@ public class Sister : Lycan
     
 [Header("Sister 1 - Phase 1 Values")]
     [SerializeField]
-    protected int sisterBlock, tripleAttackValue;
+    protected int sisterBlock, tripleAttackValue;//Values for the first phase for Sister 1
 
     [SerializeField]
-    protected bool canGenerateStartIndex; 
+    protected bool canGenerateStartIndex; //Syncs up the sisters at the start of the game
 
 [Header("Sister 2 - Phase 1 Values")]
     [SerializeField]
@@ -36,17 +36,17 @@ public class Sister : Lycan
 
 [Header("Phase 2A Values")]
 [SerializeField]
-    protected int curseValue, secondAttackValue;
+    protected int curseValue, secondAttackValue;//Values for either sister who is left (curse is used in Phase 2B also)
 
 
 [Header("Sister 1 - Phase 2B Values")]
 [SerializeField]
-    protected int doubleAttackValue;
+    protected int doubleAttackValue;//The value for Sister 1's Double Attack
 
 
 [Header("Sister 2 - Phase 2B Values")]
 [SerializeField]
-    protected int bAttack, healBothValue, secondProtect, secondStrength;
+    protected int bAttack, healBothValue, secondProtect, secondStrength;//The values of Sister 2 for healing both sisters, protect, and strength
 
 
 
@@ -73,14 +73,17 @@ A static variable will be used to ensure both sisters start on the same attack n
         
     }
     
+    //Returns the starting value for the sister
     protected virtual int GetStartingIndex(){
         return currentAttack;
     }
 
+//Sets the starting value for the sister (for syncing purposes)
     protected virtual void SetStartingIndex(int value){
         currentAttack = value;
     }
 
+//Checks health of sisters to determine which phase to switch to
    protected override void Update()
     {
         if(minion.currentHealth <= switchPhaseHealth)
@@ -145,6 +148,7 @@ A static variable will be used to ensure both sisters start on the same attack n
 
     }
 
+//Determines which attack pattern to utilize
 public override void AttackPattern()
     {
         if(isSecondPhaseB == true){
@@ -173,7 +177,7 @@ public override void AttackPattern()
         }
     }
 
-
+//Checks the attack boundaries for each phase's attacks
 protected override void CheckAttackBounds()
     {
         if(isSecondPhase == true){
@@ -198,12 +202,13 @@ protected override void CheckAttackBounds()
 
 
 
-
+//Returns if the sister reached the health threshold 
     protected bool GetIsBelowHealthThreshold(){
         return isBelowHealthThreshold;
     }
 
-
+//Used for each sister to protect one another
+//Accounts for if a sister is the only one left 
     protected virtual void Protect(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
         if(theSisters.Length != 2)
@@ -222,6 +227,8 @@ protected override void CheckAttackBounds()
 
         }
 
+//Used for the sister to strengthen the other 
+//Takes into account which sister is left
     protected virtual void Strengthen(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
         if(theSisters.Length != 2)
@@ -239,6 +246,7 @@ protected override void CheckAttackBounds()
 
         }
 
+//Used to heal the other sister
     protected virtual void HealTwin(){
         Sister[] theSisters = FindObjectsOfType<Sister>();
         foreach(Sister s in theSisters){
@@ -276,27 +284,27 @@ protected override void CheckAttackBounds()
 
        
 
-//For use in Phase 2A
+//For use in Phase 2A: Used for a standard attack in Phase 2A
     protected virtual void SecondAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), secondAttackValue);
        FindTarget();
     }
 
-    //For use in Phase 2B
+    //For use in Phase 2B: Deals damage to a player according to phase 2B's value
     protected virtual void BAttack()
     {
        minion.MinionUsed(attackTarget.GetComponent<Minion>(), bAttack);
        FindTarget();
     }
 
-//For use in Phase 2b
+//For use in Phase 2b: Deals damage twice to a player
     protected virtual void DoubleAttack(){
         minion.MinionUsed(attackTarget.GetComponent<Minion>(), doubleAttackValue * 2);
         FindTarget();
     }
 
-//For use in Phase 1
+//For use in Phase 1: Deals damage three times to a player
     protected virtual void TripleAttack(){
         minion.MinionUsed(attackTarget.GetComponent<Minion>(), tripleAttackValue * 3);
         FindTarget();
@@ -313,7 +321,7 @@ protected virtual void AoECurse(){
 }
 
 
-
+//Used in First Attack Phase
     protected override void FirstAttackPhase(){
     switch (attacks[currentAttack])
         {
@@ -373,7 +381,7 @@ protected virtual void AoECurse(){
   
 }
 
-//Phase 2A
+//Used in Phase 2A
 protected virtual void SecondAttackPhase(){
     switch (secondaryAttacks[currentAttack])
         {
@@ -433,6 +441,7 @@ protected virtual void SecondAttackPhase(){
 
 }
 
+//Used in Phase 2B
 protected virtual void SecondAttackPhaseB(){
     switch (phaseBAttacks[currentAttack])
         {
