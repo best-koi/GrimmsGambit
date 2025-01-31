@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe3308a3ede24ec1aa17e46f2e404ab, type: 3}
+  m_Name: IronHenry
+  m_EditorClassIdentifier: 
+  encounterName: Iron Henry
+  description: '"Along the side of the road, you come across a man in a tattered
+    coachman''s suit. His carriage long gone, the former driver appears forlorn,
+    and a series of three iron bands are bound around his torso." ''You there. Lend
+    an ear for but a moment to this poor, abandoned jockey, aye?'' ''I was once in
+    service to a very powerful prince, and a right loyal servant I was. Faithful
+    Heinrich they called me, they did. Ha ha... Those days are long gone. I''m certain
+    my liege has croaked by now, being left alone in this treacherous forest. I bear
+    these shackles about me as a reminder of him.'' "Looking closer, the man''s form
+    seems to be severely constricted by those bands. Would it be prudent to remove
+    them from him?" '
+  choice1: '<Remove shackles> '
+  choice2: '<Leave well enough alone> '
+  choice1Outcome: '"With the help of your companions, you pry the iron bands from
+    the man''s body. The effort leaves the four of you exhausted, but fulfilled nonetheless. 
+    ''Ah... so that''s how it must be. ...Leave me now, traveler. I have much to
+    consider.'' the weary man mutters toward you."  [Each party member gains +5 max
+    HP, but loses 10 HP] '
+  choice2Outcome: '"You decide to leave the man alone. If this was his choice to
+    remember on, then it''s not your place to change it." ''Thank you for listening
+    on, traveler. If you by some miracle manage to find my liege, tell him old Heinrich
+    made it out okay.'' the coachman calls after you.  [No reward, but no punishment] '

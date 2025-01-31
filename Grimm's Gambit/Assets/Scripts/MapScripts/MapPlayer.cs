@@ -9,6 +9,9 @@ public class MapPlayer : MonoBehaviour
     [SerializeField]
     private MapEncounter currentLocation;//A GameObject representing a position on the map, will be changed for eventual Encounter object 
 
+    [SerializeField]
+    private NarrativeEncounterGenerator encounterGenerator; 
+
 [SerializeField]
     private List<MapEncounter> locations;//A list representing available locations to move from
 
@@ -108,6 +111,11 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(sistersScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
+        }else if (collision.gameObject.tag == "Narrative"){
+            collision.gameObject.tag = "Inactive";
+            encounterGenerator.GetRandomNarrativeEncounter(); 
+            
+
         }
     }
 
