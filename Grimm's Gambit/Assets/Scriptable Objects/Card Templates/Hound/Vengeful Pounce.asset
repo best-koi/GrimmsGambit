@@ -31,5 +31,5 @@ MonoBehaviour:
     - rid: 4695933482567467025
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
-        _debuff: 3
+        _debuff: 2
         _value: 2

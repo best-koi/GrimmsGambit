@@ -19,7 +19,7 @@ MonoBehaviour:
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4695933482567467020
+  - rid: 4695933521605689344
   - rid: 4695933482567467019
   references:
     version: 2
@@ -27,7 +27,7 @@ MonoBehaviour:
     - rid: 4695933482567467019
       type: {class: DiscardCardEffect, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 4695933482567467020
-      type: {class: ConjureRandomKatzeCardEffect, ns: , asm: Assembly-CSharp}
+    - rid: 4695933521605689344
+      type: {class: DrawCardEffect, ns: , asm: Assembly-CSharp}
       data:
         m_Amount: 3

@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: TheZone
+  m_Name: Lick Wounds
   m_EditorClassIdentifier: 
-  _cardName: The Zone
-  _cardDescription: Gain 2 Strength.
-  _cardCost: 1
+  _cardName: Lick Wounds
+  _cardDescription: Remove all Block on a party member. Heal half of the Block that
+    was removed, rounding up.
+  _cardCost: 2
   _playerCopyCount: 2
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1265900286819696643
+  - rid: 1396538504836808742
   references:
     version: 2
     RefIds:
-    - rid: 1265900286819696643
-      type: {class: ApplyDebuffEffectToSelf, ns: , asm: Assembly-CSharp}
+    - rid: 1396538504836808742
+      type: {class: RemoveAffixAndDoEffectEffect, ns: , asm: Assembly-CSharp}
       data:
-        _debuff: 7
-        _value: 2
+        debuff: 1
+        m_TargetingSelf: 0
+        m_AmountMultiplier: 0.5
+        m_HealTarget: 1
