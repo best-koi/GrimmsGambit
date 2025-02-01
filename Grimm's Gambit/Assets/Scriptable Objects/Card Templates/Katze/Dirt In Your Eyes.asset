@@ -10,29 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: BreakerBite
+  m_Name: Dirt In Your Eyes
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
-  _cardName: Breaker Bite
-  _cardDescription: Deal 5 damage. Apply 2 Damage Reduction to the enemy.
+  _cardName: Dirt in Your Eyes
+  _cardDescription: The targeted enemy this turn will gain Damage Reduction when
+    an attack card is played.
   _cardCost: 1
-  _data:
-    ownerIndex: 0
-    databaseIndex: 2
   _playerCopyCount: 2
+  _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538504836808734
-  - rid: 1396538504836808735
+  - rid: 1265900286819696640
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808734
-      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _damage: 5
-    - rid: 1396538504836808735
+    - rid: 1265900286819696640
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 3
-        _value: 2
+        _value: 1
