@@ -127,7 +127,10 @@ public class Deck : MonoBehaviour
     // Invokes index in database not hand 
     // Do not use with William's remove function
     // Will cause bugs
-
+    public void Discard(Card card)
+    {
+        Discard(card.GetData());
+    }
 
     public void Discard(CardV2 card)
     {
@@ -158,6 +161,14 @@ public class Deck : MonoBehaviour
         }
     }
 
+    // Removes card to a special zone
+    public void RemoveCard(Card card)
+    {
+        CardData data = card.GetData();
+        m_RemovedZone.Add(data);
+        m_Hand.Remove(data);
+    }
+
     public void RemoveCard(CardV2 card)
     {
         CardData data = card.Data;
@@ -180,6 +191,50 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < amount; i++) Mill();
     }
 
+    // Set for change
+    // Unfinished
+    public Card ReverseCard(Card card)
+    {
+        return null;
+
+        /**
+        int reverse = ReverseID(cardID);
+
+        if (m_DataBase.GetCard(reverse) == null)
+        {
+            Debug.Log("Card of reversed ID has no reversed component.");
+            return false;
+        }
+
+        if (inHand)
+        {
+            for (int i = 0; i < m_Hand.Count; i++)
+            {
+                if (m_Hand[i] == cardID)
+                { 
+                    m_Hand[i] = reverse;
+                    return true;
+                }
+            }
+
+            Debug.Log("Failed to find card of referenced ID in hand.");
+            return false;
+        }
+        
+        // Search the discard pile
+        for (int i = 0; i < m_DiscardPile.Count; i++)
+        {
+            if (m_DiscardPile[i] == cardID)
+            {
+                m_DiscardPile[i] = reverse;
+                return true;
+            }
+        }
+
+        Debug.Log("Failed to find card of referenced ID in discard pile.");
+        return false;
+        */
+    }
 
     // Helper method for ReverseCard
     private int ReverseID(int cardID) {

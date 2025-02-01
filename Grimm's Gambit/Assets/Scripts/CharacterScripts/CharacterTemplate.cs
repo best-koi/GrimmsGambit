@@ -25,7 +25,7 @@ protected Renderer renderer;//The character's renderer
 protected GameObject self;//The entire gameobject
 
     [SerializeField]
-    protected string position;//The position the character is at
+    protected Position position;//The position the character is at
 
     private bool isDestroyed = false;
 
@@ -98,7 +98,7 @@ public int GetMaxHP()
 
 public int GetCharacterPosition()
     {
-        switch (position)
+        switch (position.GetPosition())
         {
             case "Front":
                 return 1;

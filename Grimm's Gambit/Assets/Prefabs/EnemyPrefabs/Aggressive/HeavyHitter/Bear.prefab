@@ -1004,8 +1004,8 @@ GameObject:
   - component: {fileID: 7481107102069837942}
   - component: {fileID: 3082288189527186086}
   - component: {fileID: 3878210002517620860}
+  - component: {fileID: 1634300097215933525}
   - component: {fileID: 7063717770109439341}
-  - component: {fileID: 3549350742566325017}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -1099,24 +1099,7 @@ MonoBehaviour:
   affixDisplay: {fileID: 0}
   animator: {fileID: 0}
   ownerPlayer: 0
---- !u!114 &7063717770109439341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9146193986863031628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a91d3f91067ffbf4087deee3e3e71eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 9146193986863031628}
-  healthFill: {fileID: 4206552529566397441}
-  full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
-  mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
-  low: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &3549350742566325017
+--- !u!114 &1634300097215933525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1143,3 +1126,20 @@ MonoBehaviour:
   randomAttacks: []
   combinedAttacks: []
   position: 1
+--- !u!114 &7063717770109439341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146193986863031628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91d3f91067ffbf4087deee3e3e71eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 9146193986863031628}
+  healthFill: {fileID: 4206552529566397441}
+  full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
+  mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
+  low: {r: 1, g: 0, b: 0, a: 1}
