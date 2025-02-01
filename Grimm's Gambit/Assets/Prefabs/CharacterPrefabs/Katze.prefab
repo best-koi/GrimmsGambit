@@ -10239,7 +10239,6 @@ GameObject:
   - component: {fileID: 6253863334438364908}
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
-  - component: {fileID: -7268145389544586170}
   - component: {fileID: 1003782881571704649}
   m_Layer: 0
   m_Name: Katze
@@ -10356,19 +10355,6 @@ MonoBehaviour:
   affixDisplay: {fileID: 0}
   animator: {fileID: 4656866732126854817}
   ownerPlayer: 1
---- !u!114 &-7268145389544586170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163780573869900379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c78fa0a84bb864686c953e546cd4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinatedStrikes: {fileID: 5659498217672693843, guid: 88e4b9a39f82ce84285defba748a40ae, type: 3}
 --- !u!114 &1003782881571704649
 MonoBehaviour:
   m_ObjectHideFlags: 0
