@@ -9,46 +9,58 @@ using UnityEngine.SceneManagement;
 public class SaveDataJSON : MonoBehaviour
 {
     private PlayerData playerData;
-    private AudioSource audioSettings;
-    private Slider musicSlider;
+
+    // Check on title screen to load save from JSON
+    [SerializeField] public bool gameStart;
+    
+    
     private string savePath = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves" + Path.AltDirectorySeparatorChar + "SavaData.json";
 
     // Start is called before the first frame update
     void Awake()
     {
         playerData = FindObjectOfType<PlayerData>();
+        if (playerData == null) {
+            playerData = new PlayerData();
+            LoadIntoPlayerData();
+        }
 
-        //DontDestroyOnLoad(this.gameObject);
-        // audioSettings = FindObjectOfType<AudioSource>();
-        // LoadData();
+        if (gameStart) {
+            LoadIntoPlayerData();
+        }
+
+        LoadFromPlayerData();
     }
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    // void OnEnable()
+    // {
+    //     SceneManager.sceneLoaded += OnSceneLoaded;
+    // }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        audioSettings = FindObjectOfType<AudioSource>();
-        LoadData();
-    }
+    // void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // {
+    //     LoadFromPlayerData();
+    // }
 
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    // void OnDisable()
+    // {
+    //     SceneManager.sceneLoaded -= OnSceneLoaded;
+    // }
 
     public void SaveData() {
         string jsonData = JsonUtility.ToJson(playerData);
-        //Debug.Log(jsonData);
+        
         using(StreamWriter writer = new StreamWriter(savePath)) {
             writer.Write(jsonData);
         }
-        //Debug.Log("Saved!!!");
     }
 
-    public void LoadData() {
+    public void LoadSettingsPage() {
+        Slider musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
+        musicSlider.value = playerData.getVolume();
+    }
+
+    public void LoadIntoPlayerData() {
         string jsonData = string.Empty;
 
         using(StreamReader reader = new StreamReader(savePath)) {
@@ -58,14 +70,16 @@ public class SaveDataJSON : MonoBehaviour
         if (jsonData == null) return;
 
         JsonUtility.FromJsonOverwrite(jsonData, playerData);
-        
-        audioSettings.volume = playerData.volume;
 
         Debug.Log("Settings Loaded!");
     }
 
-    public void LoadSettingsPage() {
-        musicSlider = GameObject.FindGameObjectWithTag("MusicSlider").GetComponent<Slider>();
-        musicSlider.value = playerData.volume;
+    public void LoadFromPlayerData() {
+        AudioSource audioSettings = FindObjectOfType<AudioSource>();
+        audioSettings.volume = playerData.getVolume();
+    }
+
+    public void setVolume(float volume) {
+        playerData.setVolume(volume);
     }
 }

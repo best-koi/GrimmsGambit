@@ -7890,7 +7890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15591687, y: -0.34361348, z: 0.057965327, w: 0.92426175}
+  m_LocalRotation: {x: 0.118895516, y: -0.68962556, z: 0.116335265, w: 0.7048025}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9527,51 +9527,6 @@ Transform:
   - {fileID: 597074615}
   - {fileID: 46994266}
   m_Father: {fileID: 501274964}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1024236087
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1024236089}
-  - component: {fileID: 1024236088}
-  m_Layer: 0
-  m_Name: Player Data
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1024236088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024236087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13cb84d6ad73894796952e72fd433b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 0.5
---- !u!4 &1024236089
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024236087}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4983637, y: 1.2358778, z: 0.6237812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1026552474
 PrefabInstance:
@@ -21987,7 +21942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15591687, y: -0.34361348, z: 0.057965327, w: 0.92426175}
+  m_LocalRotation: {x: 0.118895516, y: -0.68962556, z: 0.116335265, w: 0.7048025}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22735,7 +22690,6 @@ MonoBehaviour:
   - {r: 0.21016884, g: 0, b: 1, a: 0}
   - {r: 1, g: 0.36519504, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  pois: []
 --- !u!4 &1851537579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6316838681842813483, guid: 26f3421cdfd9347e8ae1038392279677, type: 3}
@@ -29498,8 +29452,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1024236088}
-        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+      - m_Target: {fileID: 44700907}
+        m_TargetAssemblyTypeName: SaveDataJSON, Assembly-CSharp
         m_MethodName: setVolume
         m_Mode: 0
         m_Arguments:
@@ -31211,6 +31165,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 831641082}
-  - {fileID: 1024236089}
   - {fileID: 44700908}
   - {fileID: 1384206801}

@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public float volume;
+    [SerializeField] public float volume = 0.5f;
+    [SerializeField] public int currency;
+    [SerializeField] public List<ShopItem> items;
+    //[SerializeField] public List<CardV2> cards;
 
     void Start()
     {
-        //DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
-    private PlayerData(float volume = 0.5f) {
-        this.volume = volume;
-    }
+    // private PlayerData(float volume = 0.5f) {
+    //     this.volume = volume;
+    // }
 
     public void SetPlayerData(float volume) {
         this.volume = volume;
     }
+
+    public float getVolume() {
+        return volume;
+    }
     
-    public void setVolume(float v) {
-        this.volume = v;
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
+
+    public void addItem(ShopItem i) {
+        items.Add(i);
     }
 }

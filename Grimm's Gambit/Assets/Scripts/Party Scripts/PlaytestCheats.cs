@@ -38,7 +38,8 @@ public class PlaytestCheats : MonoBehaviour
             SceneManager.UnloadSceneAsync(enemySceneName);
             MapPlayer.sceneToToggle.SetActive(true);
 
-
+            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+            save.LoadFromPlayerData();
         }
         
     }

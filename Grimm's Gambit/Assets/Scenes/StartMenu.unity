@@ -2436,6 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485e6ecf75bee249aebb043a7194bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStart: 1
 --- !u!4 &754867088
 Transform:
   m_ObjectHideFlags: 0
@@ -4121,6 +4122,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2123202140}
         m_TargetAssemblyTypeName: BasicMenu, Assembly-CSharp
         m_MethodName: LoadStartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 754867087}
+        m_TargetAssemblyTypeName: SaveDataJSON, Assembly-CSharp
+        m_MethodName: LoadIntoPlayerData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6200,8 +6213,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1962893005}
-        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+      - m_Target: {fileID: 754867087}
+        m_TargetAssemblyTypeName: SaveDataJSON, Assembly-CSharp
         m_MethodName: setVolume
         m_Mode: 0
         m_Arguments:
@@ -6242,6 +6255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0.5
+  currency: 0
+  items: []
 --- !u!4 &1962893006
 Transform:
   m_ObjectHideFlags: 0
