@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 54884528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.65, z: 0.25}
+  m_LocalPosition: {x: 0, y: -19.25, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_ChildTransforms: []
   _dataBase: {fileID: 8870974378587466512}
   _angleBounds: {x: 5, y: -5}
-  _displacementFromContainerCenter: {x: 0, y: 1.5, z: 0}
+  _displacementFromContainerCenter: {x: 0, y: 18, z: 0}
 --- !u!1 &65373940
 GameObject:
   m_ObjectHideFlags: 0
@@ -8932,14 +8932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d590fa8e9021fc54eb558e95f2d4511d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affixes:
-    DictArray:
-    - key: 0
-      value: 0
-    - key: 0
-      value: 0
-    - key: 0
-      value: 0
 --- !u!1 &816788991
 GameObject:
   m_ObjectHideFlags: 0
@@ -8994,7 +8986,6 @@ MonoBehaviour:
   m_ResourceText: {fileID: 305960275}
   m_PlayerInventory: {fileID: 290980547}
   m_EnemyInventory: {fileID: 613970853}
-  m_CardHand: {fileID: 903263243}
   endScreenCanvas: {fileID: 0}
   sceneParent: {fileID: 1558088976}
   enemies: []
@@ -9388,17 +9379,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1558088977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &903263243 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5448717484234942762, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
-  m_PrefabInstance: {fileID: 954606706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7953e55e00678444a6b797a19fd609d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &918681983
 GameObject:
   m_ObjectHideFlags: 0
@@ -9596,6 +9576,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 608085424}
     m_Modifications:
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3310163
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3249294
+      objectReference: {fileID: 0}
     - target: {fileID: 2393857477294652435, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: Card Hand
@@ -9783,22 +9779,6 @@ PrefabInstance:
     - target: {fileID: 9062063131279236033, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: InspireCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.x
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.y
-      value: 0.3310163
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.y
-      value: 1.3249294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -16306,7 +16286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffd761d8e39a2849ac4f7ecb4036c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceFromCamera: 0.25
+  _distanceFromCamera: 2
+  _hoverScale: 1.1
+  _hoverPopDistance: 0.64
   _pickUpLayers:
     serializedVersion: 2
     m_Bits: 128
