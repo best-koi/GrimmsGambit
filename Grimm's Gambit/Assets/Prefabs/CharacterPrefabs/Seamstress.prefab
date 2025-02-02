@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
   - component: {fileID: 1478120428225328914}
+  - component: {fileID: -8673000119157978017}
   m_Layer: 0
   m_Name: Seamstress
   m_TagString: Untagged
@@ -939,7 +940,7 @@ MonoBehaviour:
   characterColor: {r: 0.023584902, g: 1, b: 0.13538308, a: 1}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
-  position: {fileID: 0}
+  position: 
 --- !u!114 &5887165854426100928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +976,19 @@ MonoBehaviour:
   full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
   mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &-8673000119157978017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163780573869900379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d5fb9f34d9d914cb62feceaea336e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seamtressMinion: {fileID: 5887165854426100928}
 --- !u!1 &8207619659851298991
 GameObject:
   m_ObjectHideFlags: 0

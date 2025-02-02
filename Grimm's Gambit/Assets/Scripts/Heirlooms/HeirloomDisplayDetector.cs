@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AffixDisplayDetector : MonoBehaviour
+public class HeirloomDisplayDetector : MonoBehaviour
 {
     //Both of these values are to be set when the detector is created
     public GameObject parentObject;
     public string Description; 
     public Transform imageContainer;
-    public int Stacks;
 
     private GameObject currentTooltip;
 
@@ -32,15 +31,15 @@ public class AffixDisplayDetector : MonoBehaviour
         GameObject tooltipObject = new GameObject("Tooltip");
 
         // Add it as a child to the parent canvas
-        tooltipObject.transform.SetParent(imageContainer, false); //Uses parent of all affix display objects as the parent for this display
+        tooltipObject.transform.SetParent(imageContainer, false); //Uses parent of all heirloom display objects as the parent for this display
 
         // Add a RectTransform component for UI positioning
         RectTransform tooltipRect = tooltipObject.AddComponent<RectTransform>();
-        tooltipRect.sizeDelta = new Vector2(7, 10); // Set size of the tooltip ~ possibly change this depending on how clear the text is
+        tooltipRect.sizeDelta = new Vector2(14, 10); // Set size of the tooltip ~ possibly change this depending on how clear the text is
 
         TextMeshProUGUI tooltipText = tooltipObject.AddComponent<TextMeshProUGUI>();
-        tooltipText.text = Stacks.ToString() + " " + Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON AFFIX
-        tooltipText.fontSize = 0.5f;
+        tooltipText.text = Description; //Creates text - REPLACE THIS WITH A SPECIFIED VALUE BASED ON HEIRLOOM
+        tooltipText.fontSize = 2f;
         tooltipText.color = Color.red;
         tooltipText.font = PlaytestCheats.GetAllFont();
 

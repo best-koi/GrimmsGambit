@@ -80,8 +80,16 @@ protected bool hasChosenRandomAttack = false;
     {
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
-        CheckCurrentAttack();
-
+        //Check to see if the blindfold heirloom is going to prevent current attack from being displayed: - Implemented by Ryan Lockie on 2/2/2025
+        HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
+        if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
+        {
+            moveText.text = "Blindfold Active"; //This could be replaced with simply ""
+        }
+        else
+        {
+            CheckCurrentAttack();
+        }
     }
 
     //Sets the enemy hp

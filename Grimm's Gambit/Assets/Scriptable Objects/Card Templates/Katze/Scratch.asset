@@ -19,21 +19,14 @@ MonoBehaviour:
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538503740784640
-  - rid: 4695933157482168322
+  - rid: 6488021355996119040
   - rid: 5427119620769710082
   references:
     version: 2
     RefIds:
-    - rid: 1396538503740784640
-      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _damage: 3
-    - rid: 4695933157482168322
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 8
-        _value: 1
     - rid: 5427119620769710082
       type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6488021355996119040
+      type: {class: ScratchEffect, ns: , asm: Assembly-CSharp}
       data: 
