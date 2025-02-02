@@ -757,6 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baba9dc336d61594aa1db9d225b5f269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houndMinion: {fileID: 5887165854426100928}
 --- !u!1 &7613954021745177372
 GameObject:
   m_ObjectHideFlags: 0

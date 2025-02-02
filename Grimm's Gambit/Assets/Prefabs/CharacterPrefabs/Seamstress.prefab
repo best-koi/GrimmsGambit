@@ -988,6 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d5fb9f34d9d914cb62feceaea336e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seamtressMinion: {fileID: 5887165854426100928}
 --- !u!1 &8207619659851298991
 GameObject:
   m_ObjectHideFlags: 0
