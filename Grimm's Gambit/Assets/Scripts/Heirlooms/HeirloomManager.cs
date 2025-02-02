@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum Heirloom
 {
-    Hamelin, //FLute of Hamelin - Plus 1 Maximum Spirit and Spirit gain on turn start
+    Hamelin, //Flute of Hamelin - Plus 1 Maximum Spirit and Spirit gain on turn start
     Carnation, //Pink Carnation - Applies an additional debuff when applying debuffs - currently implemented in the minion.AddAffix 2/2/25
     Jar, //Greedy Jar - At the start of combat, draw 2 more cards
     Silk, //Faded Gold Silk - The first played card for a party member costs 0 in a combat

@@ -37,6 +37,9 @@ public class EncounterController : MonoBehaviour
     [SerializeField] private EnemyTemplate[] enemies; 
 
     private bool Tired = false; //Variable to control whether the player is tired
+    private bool Greeding = false; //Variable to control whether the greedy jar effect is active
+    private bool FirstCardFree = false; //Variable to control whether the buff for Faded Gold Silk is active
+    private HeirloomManager heirloomManager; //Reference to the heirloom manager for heirloom checks
 
     public UnitParty GetEnemyInventory()
     {
@@ -52,6 +55,7 @@ public class EncounterController : MonoBehaviour
     {
         //endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
+        heirloomManager = FindObjectOfType<HeirloomManager>(); //This is done here so it is only done once per scene runtime iteration
         StartEncounter();
     }
 
@@ -72,9 +76,23 @@ public class EncounterController : MonoBehaviour
 
         onTurnChanged = null;
 
+        if (heirloomManager.ContainsHeirloom(Heirloom.Jar)) //Activates the jar of greed if owned
+        {
+            Greeding = true;
+        }
+        if (heirloomManager.ContainsHeirloom(Heirloom.Silk)) //ACtivates the Faded Gold Silk
+        {
+            FirstCardFree = true;
+        }
+
         onEncounterStarted?.Invoke();
 
         m_PlayerDeck.ShuffleDeck();
+        //Once there is a setup for general cards - Add in the blindfold generation of Devastation here - Noted by Ryan on 2/2/2025
+        /*if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold)) //Conjures Devastation at the start of a encounter if blindfold is active
+        {
+            m_PlayerDeck.Conjure()
+        }*/
         EndTurn();
     }
 
@@ -87,6 +105,18 @@ public class EncounterController : MonoBehaviour
 
         List<Transform> party = m_PlayerInventory.GetAll();
 
+        //Implementation of the Flute of Hamelin: 2/2/25
+        //Updates the value of max resources depending on whether the flute of hamelin is active at the end of the current turn
+        if (heirloomManager.ContainsHeirloom(Heirloom.Hamelin))
+        {
+            m_MaxResources = 6;
+        }
+        else
+        {
+            m_MaxResources = 5;
+        }
+        
+        
         m_CurrentResources = m_MaxResources;
         m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
@@ -98,7 +128,14 @@ public class EncounterController : MonoBehaviour
                 m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}"; //Updates Visual for Spirit
             }
             
-            m_PlayerDeck.DrawAmount(true);
+            if (Greeding)
+            {
+                m_PlayerDeck.DrawAmount(false, 8); //Draws 8 cards instead of 6 if the greed turn is active
+            }
+            else
+            {
+                m_PlayerDeck.DrawAmount(true);
+            }
             
             m_TurnText.text = "Player Turn";
 
@@ -160,16 +197,24 @@ public class EncounterController : MonoBehaviour
     // False if current resources are insufficient 
     public bool SpendResources(int amount)
     {
-        if (m_CurrentResources - amount < 0)
+        if (FirstCardFree && amount != 0) //This logic assumes that first card free is only consumed when spirit would be spent
         {
-            Debug.Log("Insufficient resources");
-            return false;
+            FirstCardFree = false; //Consumes the first card free buff for this combat
+            return true;
         }
+        else
+        {
+            if (m_CurrentResources - amount < 0)
+            {
+                Debug.Log("Insufficient resources");
+                return false;
+            }
 
-        m_CurrentResources -= amount;
-        m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
+            m_CurrentResources -= amount;
+            m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
 
-        return true;
+            return true;
+        }
     }
 
 
