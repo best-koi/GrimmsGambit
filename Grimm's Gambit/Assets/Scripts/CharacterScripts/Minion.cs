@@ -85,6 +85,12 @@ public class Minion : MonoBehaviour
     public void AddAffix(Affix affix, int value)
     {
         UnityEngine.Debug.Log("Affix Adding");
+        //The following code is for the analysis of the Carnation heirloom:
+        HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
+        if (heirloomManager.ContainsHeirloom(Heirloom.Carnation) && !ownerPlayer && (affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Mark || affix == Affix.Threaded || affix == Affix.Exploit || affix == Affix.Curse))
+        {
+            value++; //Increments stacks if minion is an enemy, the player has the carnation, and the affix is a debuff
+        }
 
         if (affix == Affix.Block && animator != null) //Plays block anim if Block affix is called 
         {
