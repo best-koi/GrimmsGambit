@@ -19,10 +19,11 @@ public enum Heirloom
 public class HeirloomManager : MonoBehaviour
 {
     private List<Heirloom> currentHeirlooms = new List<Heirloom>(); //List to control current heirlooms
+    private HeirloomDisplay heirloomDisplay;
     
-    void Start() //For testing
+    void Start()
     {
-        
+        heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
     
     public bool ContainsHeirloom(Heirloom heirloom)//Returns whether the list contains the heirloom
@@ -35,6 +36,7 @@ public class HeirloomManager : MonoBehaviour
         if (!currentHeirlooms.Contains(heirloom))
         {
             currentHeirlooms.Add(heirloom);
+            heirloomDisplay.AddHeirloom(heirloom); //For visual aspect
         }
     }
 
@@ -43,6 +45,7 @@ public class HeirloomManager : MonoBehaviour
         if (currentHeirlooms.Contains(heirloom))
         {
             currentHeirlooms.Remove(heirloom);
+            heirloomDisplay.RemoveHeirloom(heirloom); //For visual aspect
         }
     }
 }
