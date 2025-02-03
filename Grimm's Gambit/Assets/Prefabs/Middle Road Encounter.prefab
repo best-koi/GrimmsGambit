@@ -283,6 +283,8 @@ MonoBehaviour:
   - {fileID: 0}
   isStartingSpace: 1
   displayText: {fileID: 6078153647552669250}
+  image: {fileID: 6395966108018428387}
+  icon: {fileID: 0}
   uiCanvas: {fileID: 488231170064205440}
   locationName: Encounter
 --- !u!54 &7352763564889167882

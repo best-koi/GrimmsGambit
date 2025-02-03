@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 //Code by Jessie Archer
 public class MapEncounter : MonoBehaviour
@@ -17,6 +18,12 @@ public class MapEncounter : MonoBehaviour
     private TMP_Text displayText;//The display text itself
 
     [SerializeField]
+    private Image image; 
+
+    [SerializeField]
+    private Sprite icon; 
+
+    [SerializeField]
     private GameObject uiCanvas;//A canvas to hide and show
 
     [SerializeField]
@@ -25,6 +32,7 @@ public class MapEncounter : MonoBehaviour
     private void Start()
     {
         //displayText.gameObject.SetActive(false);
+        image.sprite = icon; 
         uiCanvas.SetActive(false);
         
     }
