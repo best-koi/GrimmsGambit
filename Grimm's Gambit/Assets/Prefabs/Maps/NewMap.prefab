@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: locationName
       value: Combat
       objectReference: {fileID: 0}
+    - target: {fileID: 843740913905405608, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+      propertyPath: uiCanvas
+      value: 
+      objectReference: {fileID: 5887696549755943323}
     - target: {fileID: 1280931578573536501, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: locationName
       value: Combat
@@ -247,6 +251,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+--- !u!1 &5887696549755943323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2139883815087392153, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+  m_PrefabInstance: {fileID: 5478391655450721282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7628254039961957369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2727537111585804283, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}

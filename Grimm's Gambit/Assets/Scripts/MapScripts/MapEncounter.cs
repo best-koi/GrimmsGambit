@@ -14,14 +14,18 @@ public class MapEncounter : MonoBehaviour
     bool isStartingSpace = false;//A boolean used to determine starting spaces on the board
 
     [SerializeField]
-    private TMP_Text displayText;
+    private TMP_Text displayText;//The display text itself
 
     [SerializeField]
-    private string locationName;
+    private GameObject uiCanvas;//A canvas to hide and show
+
+    [SerializeField]
+    private string locationName;//The name of the location
 
     private void Start()
     {
-        displayText.gameObject.SetActive(false);
+        //displayText.gameObject.SetActive(false);
+        uiCanvas.SetActive(false);
         
     }
 
@@ -55,7 +59,7 @@ public class MapEncounter : MonoBehaviour
         //Checks to see if the player can view this or it's a starting location
         if ((isStartingSpace == true && MapManager.GetStartingSpaceUsed() == false) || MapManager.GetPlayer().CheckLocations(this))
         {
-            displayText.gameObject.SetActive(true);
+            uiCanvas.SetActive(true);
             displayText.text = locationName;
 
         }
@@ -65,7 +69,7 @@ public class MapEncounter : MonoBehaviour
     //Hides text when Mouse is not hovering over location
     private void OnMouseExit()
     {
-        displayText.gameObject.SetActive(false);
+        uiCanvas.gameObject.SetActive(false);
     }
 
 }
