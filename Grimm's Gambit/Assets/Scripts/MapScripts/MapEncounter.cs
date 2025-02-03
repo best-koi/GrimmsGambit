@@ -20,8 +20,8 @@ public class MapEncounter : MonoBehaviour
     [SerializeField]
     private Image image; 
 
-    [SerializeField]
-    private Sprite icon; 
+    // [SerializeField]
+    // private Sprite icon; 
 
     [SerializeField]
     private GameObject uiCanvas;//A canvas to hide and show
@@ -32,7 +32,7 @@ public class MapEncounter : MonoBehaviour
     private void Start()
     {
         //displayText.gameObject.SetActive(false);
-        image.sprite = icon; 
+        // image.sprite = icon; 
         uiCanvas.SetActive(false);
         
     }
