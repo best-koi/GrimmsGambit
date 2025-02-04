@@ -12,17 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 2a3f13128f09740eab94eb0944139409
   - enabled: 1
-    path: Assets/Scenes/LycanScene.unity
-    guid: f88948ef1266f4a768f19868a8c458d9
-  - enabled: 1
-    path: Assets/Scenes/BasicEnemyScene.unity
-    guid: 2b83c24f835e44d4fa1a4f955e8cd7e6
-  - enabled: 1
     path: Assets/Scenes/BasicEnemyScene V2.unity
     guid: 23ba14bd82c42c641960349d0de7edee
-  - enabled: 1
-    path: Assets/Scenes/SistersScene.unity
-    guid: d01af83a54a434529a9e20e4aedb50c0
   - enabled: 1
     path: Assets/Scenes/LycanSceneV2.unity
     guid: 9d99811ff0d0c470f93e495044734962
