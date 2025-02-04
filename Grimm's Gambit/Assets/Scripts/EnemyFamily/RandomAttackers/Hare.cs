@@ -13,13 +13,12 @@ public class Hare : EnemyRandomTarget
     private int currentAttackLoop = 0; 
     private bool hasRun = false; 
 
-    [SerializeField]
-    protected List<string> combinedAttacks2;//A list of random attacks to pull from (for RandomAttack() method)
 
     
 
     protected override void Start()
     {
+        controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
         //Sets color to preset color
         renderer.material.color = enemyColor;
         //Starts the enemy with a random attack
@@ -30,10 +29,15 @@ public class Hare : EnemyRandomTarget
         minion.AddAffix(Affix.Block, runBlock);
     }
 
+    private void Block2(){
+        minion.AddAffix(Affix.Block, secondBlock);
+    }
+
     protected override void CheckAttackBounds()
     {
         if(currentAttackLoop == endAttackLoop){
             //End Encounter Logic
+            moveText.text = "Running Away.";
         }
         else if (currentAttack >= attacks.Count){
             currentAttack = 0;
@@ -106,6 +110,7 @@ public class Hare : EnemyRandomTarget
                 if (attackTarget == null)
                     FindTarget();
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue} and Defending for {secondBlock}";
+                moveText.color = attackTarget.GetCharacterColor();
                 break;
 
             case "AttackAndBleed":
