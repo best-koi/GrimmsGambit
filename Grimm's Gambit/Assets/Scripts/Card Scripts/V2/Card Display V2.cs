@@ -69,6 +69,9 @@ public class CardDisplayV2 : MonoBehaviour
             _cardCanvas.transform.localScale = new Vector3(_cardDisplayScale.x * _startingDisplayScale.x, _cardDisplayScale.y * _startingDisplayScale.y, _cardDisplayScale.z * _startingDisplayScale.z);
             _cardCanvas.sortingOrder = _orderLayer;
         }
+
+        if (_cardImage != null)
+            _cardImage.sprite = CardReference.CardSprite;
     }
 
     #endregion

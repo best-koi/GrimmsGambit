@@ -10,6 +10,7 @@ public class CardTemplate : ScriptableObject
     [SerializeField] private string _cardName;
     [SerializeField] private string _cardDescription;
     [SerializeField] private int _cardCost;
+    [SerializeField] private Sprite _cardSprite;
     [SerializeField] private int _playerCopyCount = 1;
     [SerializeField] private bool _targetsEnemies = true;
     [SerializeField] private CardTemplate _reverseTemplate;
@@ -28,6 +29,7 @@ public class CardTemplate : ScriptableObject
     public string CardName { get => _cardName; }
     public string CardDescription { get => _cardDescription; }
     public int CardCost { get => _cardCost; }
+    public Sprite CardSprite { get => _cardSprite; }
     public CardData Data { get => _data; set => _data = value; }
     public int PlayerCopyCount { get => _playerCopyCount; set => _playerCopyCount = value; }
     public bool TargetsEnemies { get => _targetsEnemies; }
