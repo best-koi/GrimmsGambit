@@ -17,6 +17,16 @@ public class AoEEnemy : EnemyRandomTarget
         
     }
 
+    private void AOEDefend(){
+        EnemyTemplate[] allies = GameObject.FindObjectsOfType<EnemyTemplate>();
+        
+        foreach(EnemyTemplate a in allies)
+        {
+            a.GetComponent<Minion>().AddAffix(Affix.Block, buffValue);
+        }
+
+    }
+
      protected override void CheckCurrentAttack()
     {
         switch (attacks[currentAttack])
@@ -36,6 +46,10 @@ public class AoEEnemy : EnemyRandomTarget
             case "Block":
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+                break;
+            case "AOEDefend":
+                moveText.text = "Defending Allies";
+                moveText.color = new Color(1.0f, 0.64f, 0.0f);
                 break;
 
             case "CombinedAttack":

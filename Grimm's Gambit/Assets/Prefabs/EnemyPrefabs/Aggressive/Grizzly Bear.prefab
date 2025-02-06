@@ -214,7 +214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.8}
+  m_AnchoredPosition: {x: 0, y: 0.35000014}
   m_SizeDelta: {x: 4.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4336375936513488063
@@ -348,7 +348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.1500001}
   m_SizeDelta: {x: 4.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &9028255900733015915
@@ -736,7 +736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.733, y: -49.182}
+  m_AnchoredPosition: {x: -0.733, y: -48.601997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &9008149436052512062
@@ -856,8 +856,8 @@ Transform:
   m_GameObject: {fileID: 8108916158755709705}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.87, z: 0.42844033}
-  m_LocalScale: {x: 0.12094374, y: 0.11614917, z: 0.1557862}
+  m_LocalPosition: {x: 0.08, y: 1.18, z: 0.42844033}
+  m_LocalScale: {x: 0.2267695, y: 0.2177797, z: 0.29209912}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4636294791466361176}
@@ -903,7 +903,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9bae4ae526b914e228becf1a18335db9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b80311b3d0671433eb3146a6b697cd5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -951,7 +951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2}
+  m_AnchoredPosition: {x: 0, y: -0.85}
   m_SizeDelta: {x: 2, y: 0.25}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6409525501950461413
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 5894105497711996225}
   - component: {fileID: 383634350987910035}
   m_Layer: 0
-  m_Name: Small Golem
+  m_Name: Grizzly Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,16 +1112,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 3878210002517620860}
-  enemyName: Small Golem
+  enemyName: Grizzly Bear
   attacks:
+  - AOEDefend
   - Attack
   currentAttack: 0
   healthText: {fileID: 84583175218874345}
   nameText: {fileID: 7881692479118654021}
   moveText: {fileID: 6335892315229065891}
   renderer: {fileID: 3082288189527186086}
-  attackValue: 5
-  buffValue: 0
+  attackValue: 10
+  buffValue: 15
   blockValue: 0
   randomAttacks: []
   combinedAttacks: []
