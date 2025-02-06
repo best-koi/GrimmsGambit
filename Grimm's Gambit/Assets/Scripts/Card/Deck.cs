@@ -129,7 +129,7 @@ public class Deck : MonoBehaviour
     // Will cause bugs
 
 
-    public void Discard(CardV2 card)
+    public void Discard(Card card)
     {
         Discard(card.Data);
     }
@@ -158,7 +158,7 @@ public class Deck : MonoBehaviour
         }
     }
 
-    public void RemoveCard(CardV2 card)
+    public void RemoveCard(Card card)
     {
         CardData data = card.Data;
         m_RemovedZone.Add(data);

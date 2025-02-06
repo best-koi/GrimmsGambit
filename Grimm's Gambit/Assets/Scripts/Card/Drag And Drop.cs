@@ -83,7 +83,7 @@ public class DragAndDropV2 : MonoBehaviour
             _selectedObject.parent = null;
             _selectedObject.localScale = Vector3.one;
 
-            if (_hoveredObject != null && _hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject != null && _hoveredObject.TryGetComponent<CardDisplay>(out CardDisplay cd))
             {
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one;
@@ -95,13 +95,13 @@ public class DragAndDropV2 : MonoBehaviour
             // Insert card gameObject into slot gameObject through parenting and local transformations
             if (_controller != null && Physics.Raycast(ray, out hit, 1000, _slotLayers))
             {
-                int cardCost = _selectedObject.GetComponent<CardV2>().CardCost;
+                int cardCost = _selectedObject.GetComponent<Card>().CardCost;
                 Minion hitMinion = hit.transform.parent.GetComponent<Minion>();
 
-                if (hitMinion != null && _controller.SpendResources(cardCost) && _selectedObject.GetComponent<CardV2>().TargetsEnemies != hitMinion.ownerPlayer) //The third statement in this conditional statement makes sure that cards who target enemies can be used on on ownerPlayers that are false and vice versa
+                if (hitMinion != null && _controller.SpendResources(cardCost) && _selectedObject.GetComponent<Card>().TargetsEnemies != hitMinion.ownerPlayer) //The third statement in this conditional statement makes sure that cards who target enemies can be used on on ownerPlayers that are false and vice versa
                 {
                     //m_SelectedObject.parent = hit.transform;
-                    hitMinion.ConsumeCard(_selectedObject.GetComponent<CardV2>());
+                    hitMinion.ConsumeCard(_selectedObject.GetComponent<Card>());
                     Destroy(_selectedObject.gameObject);
                 }
                 else
@@ -130,7 +130,7 @@ public class DragAndDropV2 : MonoBehaviour
 
         if (_hoveredObject != null && (!hasHit || _hoveredObject != hit.transform))
         {
-            if (_hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject.TryGetComponent<CardDisplay>(out CardDisplay cd))
             {
                 if (_hoveredObject != _selectedObject)
                     cd.OrderLayer = 0;
@@ -144,7 +144,7 @@ public class DragAndDropV2 : MonoBehaviour
         {
             _hoveredObject = hit.transform;
 
-            if (_hoveredObject.TryGetComponent<CardDisplayV2>(out CardDisplayV2 cd))
+            if (_hoveredObject.TryGetComponent<CardDisplay>(out CardDisplay cd))
             {
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one * _hoverScale;
