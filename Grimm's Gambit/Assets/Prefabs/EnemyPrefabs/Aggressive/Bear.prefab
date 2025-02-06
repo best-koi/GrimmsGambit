@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 5894105497711996225}
   - component: {fileID: 383634350987910035}
   m_Layer: 0
-  m_Name: Black Bear
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 3878210002517620860}
-  enemyName: Black Bear
+  enemyName: Bear
   attacks:
   - Attack
   currentAttack: 0
