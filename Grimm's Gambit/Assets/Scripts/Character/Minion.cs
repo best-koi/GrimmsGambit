@@ -375,7 +375,7 @@ public class Minion : MonoBehaviour
 
     
 
-    public void ConsumeCard(CardV2 c)
+    public void ConsumeCard(Card c)
     {
         c.DoSpells(this);
         Deck deck = FindObjectOfType<Deck>();
@@ -398,7 +398,7 @@ public class Minion : MonoBehaviour
     private void Destroyed() //Function for when this character has been defeated
     {
         Deck deck = FindObjectOfType<Deck>();
-        CardDatabaseV2 database = FindObjectOfType<CardDatabaseV2>();
+        CardDatabase database = FindObjectOfType<CardDatabase>();
         int minionIndex = database.RetrieveIndexFromMinion(this);
         /*UnitParty party = GameObject.Find("PlayerParty").GetComponent<UnitParty>();
         int minionIndex = party.IndexOf(this.GetComponent<Transform>());

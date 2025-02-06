@@ -1,13 +1,12 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-public class CardHandV2 : ObjectContainer
+public class CardHand : ObjectContainer
 {
-    [SerializeField] private CardDatabaseV2 _dataBase;
+    [SerializeField] private CardDatabase _dataBase;
 
     [SerializeField]
     private Vector2 _angleBounds;
@@ -83,7 +82,7 @@ public class CardHandV2 : ObjectContainer
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(CardHandV2))]
+[CustomEditor(typeof(CardHand))]
 [CanEditMultipleObjects]
 public class CardHandV2Editor : ObjectContainerEditor
 {

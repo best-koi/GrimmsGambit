@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardDatabaseV2 : MonoBehaviour
+public class CardDatabase : MonoBehaviour
 {
     [Tooltip("The card prefab used to spawn card objects from template.")] [SerializeField] private GameObject _cardPrefab;
     [Tooltip(" Array of party members. Can be changed to accodomadate Unit Party or other data types.")] [SerializeField] private Minion[] _partyIndex;
@@ -55,7 +55,7 @@ public class CardDatabaseV2 : MonoBehaviour
         CardTemplate template = GetTemplate(owner, index);
         GameObject cardObject = Instantiate(_cardPrefab);
 
-        if (cardObject.TryGetComponent<CardV2>(out CardV2 card))
+        if (cardObject.TryGetComponent<Card>(out Card card))
         {
             card.SetCardTemplate(template);
 
