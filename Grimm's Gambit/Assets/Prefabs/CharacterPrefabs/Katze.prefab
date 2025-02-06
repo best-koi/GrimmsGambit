@@ -162,17 +162,17 @@ RectTransform:
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7433891, y: 4.076071, z: 1.7331023}
+  m_LocalScale: {x: 1, y: 0.48412088, z: 4.533295}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8372579020213323385}
   - {fileID: 7102871398971922720}
   - {fileID: 5654428081051210065}
-  m_Father: {fileID: 2091751137204627567}
+  m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.01999998, y: 0}
   m_SizeDelta: {x: 5, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -10239,7 +10239,6 @@ GameObject:
   - component: {fileID: 6253863334438364908}
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
-  - component: {fileID: -7268145389544586170}
   - component: {fileID: 1003782881571704649}
   m_Layer: 0
   m_Name: Katze
@@ -10263,6 +10262,7 @@ Transform:
   m_Children:
   - {fileID: 2740151766677798060}
   - {fileID: 2091751137204627567}
+  - {fileID: 5560038645557704854}
   - {fileID: 3739843710926244146}
   - {fileID: 2514787615182831968}
   - {fileID: 3676187501078773663}
@@ -10337,7 +10337,7 @@ MonoBehaviour:
   characterColor: {r: 0, g: 0.81421614, b: 1, a: 1}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
-  position: {fileID: 0}
+  position: 
 --- !u!114 &5887165854426100928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10356,19 +10356,6 @@ MonoBehaviour:
   affixDisplay: {fileID: 0}
   animator: {fileID: 4656866732126854817}
   ownerPlayer: 1
---- !u!114 &-7268145389544586170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163780573869900379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c78fa0a84bb864686c953e546cd4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coordinatedStrikes: {fileID: 5659498217672693843, guid: 88e4b9a39f82ce84285defba748a40ae, type: 3}
 --- !u!114 &1003782881571704649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10613,8 +10600,7 @@ Transform:
   m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 0.36451262, y: 0.11877145, z: 2.6157112}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5560038645557704854}
+  m_Children: []
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8893786787107412914

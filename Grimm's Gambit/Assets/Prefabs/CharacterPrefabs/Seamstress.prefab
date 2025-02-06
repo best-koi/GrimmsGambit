@@ -223,17 +223,17 @@ RectTransform:
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.452228, y: 4.696337, z: 3.1196759}
+  m_LocalScale: {x: 1, y: 0.48412088, z: 4.5332947}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6800378897576233547}
   - {fileID: 7102871398971922720}
   - {fileID: 3587491437083784633}
-  m_Father: {fileID: 6599948957845333210}
+  m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.06999993, y: 0.2727}
   m_SizeDelta: {x: 5, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -330,8 +330,7 @@ Transform:
   m_LocalPosition: {x: -0.07, y: 0.2727, z: 0}
   m_LocalScale: {x: 0.18341126, y: 0.10308477, z: 1.45313}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 5560038645557704854}
+  m_Children: []
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5103148012933775301
@@ -845,6 +844,7 @@ GameObject:
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
   - component: {fileID: 1478120428225328914}
+  - component: {fileID: -8673000119157978017}
   m_Layer: 0
   m_Name: Seamstress
   m_TagString: Untagged
@@ -867,6 +867,7 @@ Transform:
   m_Children:
   - {fileID: 8476724541395129124}
   - {fileID: 6599948957845333210}
+  - {fileID: 5560038645557704854}
   - {fileID: 7699654860372486422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -939,7 +940,7 @@ MonoBehaviour:
   characterColor: {r: 0.023584902, g: 1, b: 0.13538308, a: 1}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
-  position: {fileID: 0}
+  position: 
 --- !u!114 &5887165854426100928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +976,19 @@ MonoBehaviour:
   full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
   mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &-8673000119157978017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163780573869900379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d5fb9f34d9d914cb62feceaea336e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seamtressMinion: {fileID: 5887165854426100928}
 --- !u!1 &8207619659851298991
 GameObject:
   m_ObjectHideFlags: 0

@@ -161,18 +161,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048953827379750746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.6391816, y: 6.6391816, z: 6.637899}
+  m_LocalPosition: {x: 0, y: 0, z: 0.4807295}
+  m_LocalScale: {x: 1, y: 0.48412085, z: 4.533295}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 457738613908205805}
   - {fileID: 7102871398971922720}
   - {fileID: 4381524909241071547}
-  m_Father: {fileID: 903019169571591661}
+  m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.15999985, y: -0.08}
   m_SizeDelta: {x: 5, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 4696726465575025877}
   - component: {fileID: 5887165854426100928}
   - component: {fileID: 8073221023870791673}
+  - component: {fileID: 4643783722473968632}
   m_Layer: 0
   m_Name: Hound
   m_TagString: Untagged
@@ -636,6 +637,7 @@ Transform:
   m_Children:
   - {fileID: 4369345138025172140}
   - {fileID: 903019169571591661}
+  - {fileID: 5560038645557704854}
   - {fileID: 7600134996969681742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -708,7 +710,7 @@ MonoBehaviour:
   characterColor: {r: 1, g: 0, b: 0, a: 1}
   renderer: {fileID: 6253863334438364908}
   self: {fileID: 6163780573869900379}
-  position: {fileID: 0}
+  position: 
 --- !u!114 &5887165854426100928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +746,19 @@ MonoBehaviour:
   full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
   mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &4643783722473968632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6163780573869900379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baba9dc336d61594aa1db9d225b5f269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houndMinion: {fileID: 5887165854426100928}
 --- !u!1 &7613954021745177372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5784,8 +5799,7 @@ Transform:
   m_LocalPosition: {x: -0.16, y: -0.08, z: 0.4807295}
   m_LocalScale: {x: 0.15062097, y: 0.07291875, z: 0.68294126}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5560038645557704854}
+  m_Children: []
   m_Father: {fileID: 5397451098032334217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2125479054792672360
