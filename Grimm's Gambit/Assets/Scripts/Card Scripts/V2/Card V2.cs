@@ -18,6 +18,7 @@ public class CardV2 : MonoBehaviour
     public string CardName { get => _cardTemplate.CardName; }
     public string CardDescription { get => _cardTemplate.CardDescription; }
     public int CardCost { get => _cardTemplate.CardCost; }
+    public Sprite CardSprite { get => _cardTemplate.CardSprite; }
     public CardData Data { get => _cardTemplate.Data; }
     public int PlayerCopyCount { get => _cardTemplate.PlayerCopyCount; set => _cardTemplate.PlayerCopyCount = value; }
     public bool TargetsEnemies { get => _cardTemplate.TargetsEnemies; }
@@ -28,6 +29,7 @@ public class CardV2 : MonoBehaviour
 
     #endregion
 
+    #region Public Methods
 
     public void DoSpells(Minion target)
     {
@@ -41,6 +43,8 @@ public class CardV2 : MonoBehaviour
     {
         _cardTemplate = newTemplate;
     }
+
+    #endregion
 }
 
 
