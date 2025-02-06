@@ -14,7 +14,7 @@ public class ConjureRandomKatzeCardEffect : SpellEffect
     public override void DoSpellEffect(Minion caster = null, Minion target = null)
     {
         Deck deck = GameObject.FindObjectOfType<Deck>();
-        CardDatabase database = GameObject.FindObjectOfType<CardDatabase>();
+        CardDatabaseV2 database = GameObject.FindObjectOfType<CardDatabaseV2>();
         System.Random random = new System.Random();
         int randomValue = random.Next(0, 18);
         CardTemplate m_Conjured = database.GetTemplate(2, randomValue);
