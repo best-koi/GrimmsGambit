@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CardV2 : MonoBehaviour
+public class Card : MonoBehaviour
 {
     [Tooltip("Card Template that contains card stats")]
     [SerializeField] private CardTemplate _cardTemplate;
