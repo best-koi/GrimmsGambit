@@ -1,9 +1,9 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(CardV2))]
-public class CardDisplayV2 : MonoBehaviour
+[RequireComponent(typeof(Card))]
+public class CardDisplay : MonoBehaviour
 {
     #region Serialized Fields
 
@@ -24,14 +24,14 @@ public class CardDisplayV2 : MonoBehaviour
 
     #region Private Fields
 
-    private CardV2 _cardReference;
+    private Card _cardReference;
     private Vector3 _startingDisplayScale;
 
     #endregion
 
     #region Properties
 
-    public CardV2 CardReference { get => _cardReference; set => _cardReference = value; }
+    public Card CardReference { get => _cardReference; set => _cardReference = value; }
     public Vector3 CardDisplayDisplacement { get => _cardDisplayDisplacement; set => _cardDisplayDisplacement = value; }
     public Vector3 CardDisplayScale { get => _cardDisplayScale; set => _cardDisplayScale = value; }
     public int OrderLayer { get => _orderLayer; set => _orderLayer = value; }
@@ -42,7 +42,7 @@ public class CardDisplayV2 : MonoBehaviour
 
     private void Start()
     {
-        _cardReference = GetComponent<CardV2>();
+        _cardReference = GetComponent<Card>();
 
         if (_cardCanvas != null)
             _startingDisplayScale = _cardCanvas.transform.localScale;
