@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: SkippingStone
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: Skipping Stone
   _cardDescription: Deal 5 damage. Draw a card.
   _cardCost: 0
-  _data:
-    ownerIndex: 3
-    databaseIndex: 0
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 1
+  _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538503740784643

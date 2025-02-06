@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8908235, g: 0.27793398, b: 0.043407805, a: 1}
+  m_IndirectSpecularColor: {r: 0.8942224, g: 0.2777468, b: 0.043872062, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -262,6 +262,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5807996807077613828, guid: ee4de7588c4b94a79a1b2b38bfd4491a, type: 3}
   m_PrefabInstance: {fileID: 21014357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &21492653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1993850664015941620, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+  m_PrefabInstance: {fileID: 100442978}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &32289470
 PrefabInstance:
@@ -511,6 +516,14 @@ PrefabInstance:
     - target: {fileID: 2813370665679486443, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: LoadSettingsPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468828728493545358, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 329028007}
+    - target: {fileID: 5468828728493545358, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadStartScene
       objectReference: {fileID: 0}
     - target: {fileID: 8464239851349430999, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
       propertyPath: m_Pivot.x
@@ -8085,6 +8098,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 608085424}
     m_Modifications:
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3310163
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3249294
+      objectReference: {fileID: 0}
     - target: {fileID: 2393857477294652435, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: Card Hand
@@ -8272,22 +8301,6 @@ PrefabInstance:
     - target: {fileID: 9062063131279236033, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: InspireCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.x
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.y
-      value: 0.3310163
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.y
-      value: 1.3249294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -8509,6 +8522,14 @@ PrefabInstance:
     - target: {fileID: 1807409546169618321, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
       propertyPath: m_Name
       value: Header
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055399227931579202, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 21492653}
+    - target: {fileID: 2055399227931579202, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8671084846509242251, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
       propertyPath: m_Pivot.x
