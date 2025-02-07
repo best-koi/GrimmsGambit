@@ -31,7 +31,7 @@ public class EndDisplay : MonoBehaviour
         exitButton.onClick.AddListener(Exit);
     }
 
-    private void Exit()
+    public void Exit()
     {
         Debug.Log("Exit");
         Application.Quit(); //Placeholder, can be removed to load in desired scene

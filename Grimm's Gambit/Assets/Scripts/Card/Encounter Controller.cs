@@ -40,6 +40,11 @@ public class EncounterController : MonoBehaviour
     private bool FirstCardFree = false; //Variable to control whether the buff for Faded Gold Silk is active
     private HeirloomManager heirloomManager; //Reference to the heirloom manager for heirloom checks
 
+    private bool encounterEnded = false; 
+
+    [SerializeField] 
+    private string enemySceneName; 
+
     public UnitParty GetEnemyInventory()
     {
         return m_EnemyInventory;
@@ -61,9 +66,11 @@ public class EncounterController : MonoBehaviour
     {
         if(m_TurnCounter <= 1) return; //edge case
 
-        if(m_PlayerInventory.ChildListSize == 0){
+        if(m_PlayerInventory.ChildListSize == 0 && encounterEnded == false){
+            encounterEnded = true;
             EndEncounter(false);
-        }else if (enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)){
+        }else if ((enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)) && encounterEnded == false){
+            encounterEnded = true;
             EndEncounter(true);
         }
         
@@ -184,7 +191,8 @@ public class EncounterController : MonoBehaviour
 
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
-        SceneManager.LoadScene("TestEndEncounter");
+        SceneManager.UnloadSceneAsync(enemySceneName);
+        SceneManager.LoadScene("TestEndEncounter", LoadSceneMode.Additive);
     }
 
     // Spend an amount of resources
