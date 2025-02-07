@@ -31,7 +31,6 @@ public class EncounterController : MonoBehaviour
 
     [SerializeField] private UnitParty m_PlayerInventory, m_EnemyInventory;
 
-    [SerializeField] private EndDisplay endScreenCanvas;
     [SerializeField] private GameObject sceneParent;
 
     [SerializeField] private EnemyTemplate[] enemies; 
@@ -64,7 +63,7 @@ public class EncounterController : MonoBehaviour
 
         if(m_PlayerInventory.ChildListSize == 0){
             EndEncounter(false);
-        }else if (m_EnemyInventory.ChildListSize == 0){
+        }else if (enemies.Length == 0){
             EndEncounter(true);
         }
         
@@ -110,11 +109,11 @@ public class EncounterController : MonoBehaviour
         //Updates the value of max resources depending on whether the flute of hamelin is active at the end of the current turn
         if (heirloomManager.ContainsHeirloom(Heirloom.Hamelin))
         {
-            m_MaxResources = 6;
+            m_MaxResources = 5;
         }
         else
         {
-            m_MaxResources = 5;
+            m_MaxResources = 4;
         }
         
         
