@@ -63,7 +63,7 @@ public class EncounterController : MonoBehaviour
 
         if(m_PlayerInventory.ChildListSize == 0){
             EndEncounter(false);
-        }else if (enemies.Length == 0){
+        }else if (enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)){
             EndEncounter(true);
         }
         
