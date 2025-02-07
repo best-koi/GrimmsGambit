@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class EndDisplay : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class EndDisplay : MonoBehaviour
 
     [SerializeField] private EncounterData encounterData;
 
-    [SerializeField] public Button exitButton;
+    [SerializeField] public UnityEngine.UI.Button exitButton;
 
     public void SetDisplay(bool win)
     {
@@ -23,11 +24,11 @@ public class EndDisplay : MonoBehaviour
 
     private void Start()
     {
-        //if (exitButton == null) exitButton = FindObjectOfType<Button>();
+        if (exitButton == null) exitButton = FindObjectOfType<UnityEngine.UI.Button>();
 
         SetDisplay(encounterData.GetWin());
 
-        exitButton.clicked += Exit;
+        exitButton.onClick += Exit;
     }
 
     private void Exit()
