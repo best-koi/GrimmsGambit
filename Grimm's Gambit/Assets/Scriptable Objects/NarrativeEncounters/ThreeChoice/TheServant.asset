@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05af0141d0b9f4d2aa3b42a006d6795a, type: 3}
+  m_Name: TheServant
+  m_EditorClassIdentifier: 
+  encounterName: The Servant
+  description: "\u201CAs you walk through the woods, you seem to have taken a wrong
+    turn and have ended up at a dead end. A small cave lies at the end of this route,
+    but you quickly get accosted by a strange individual running out of the cave
+    with a white snake around his neck and an axe in hand.\n\u2018Stay back! Stay
+    back, you fiends! I know why you\u2019re here, you\u2019re here to take my head
+    for that devious Queen! I\u2019ve expected you all for a while now, so don\u2019t
+    think I\u2019ll make it easy to take my life!\u2019\nThe man clearly seems deranged,
+    reasoning with him may not prove fruitful. Moving in any way may also provoke
+    him to attack.\u201D\n"
+  choice1: <Fight>
+  choice2: <Try and Reason with Him>
+  choice1Outcome: "\u201CThe deranged man was tougher than he seemed, and quite accurate
+    with that axe. After killing him, you find minor supplies inside the cave before
+    finding your way back on the right road.\u201D\n[All Party Members Take 15 damage,
+    gain 5 Max HP]\n"
+  choice2Outcome: "\u201C\u2018Oh no, I know your tricks! The Queen is devious, you\u2019re
+    just trying to get me to lower my guard! I won\u2019t let you kill me!\u2019\nThe
+    deranged man charges at your party, but you quickly escape. He throws his axe
+    after you screaming about how he\u2019ll survive, leaving a nasty cut on your
+    arm.\u201D\n[All Party Members Take 5 damage]\n"
+  choice1Type: 
+  choice2Type: 
+  choice3: '<Let the Hound Intimidate Him> '
+  choice3Outcome: "\u201CThe Hound barks at the man intimidatingly, but instead of
+    fleeing or fighting he begins to lower his axe.\n\u2018Oh! I didn\u2019t realize
+    you were also victims of her schemes, my mistake! You must be on the run then,
+    correct? I would\u2019ve done the same if it weren\u2019t for\u2026 nevermind.
+    Let me give you some food, I have plenty, and it\u2019s not like I need to go
+    anywhere\u2019\nAn unexpected outcome, but a welcome one. You leave wondering
+    what exactly the Red Queen did to make a man act like that.\u201D\n[The Hound
+    gains +10 Max Hp, all Party Members gain 5 HP.]\n"

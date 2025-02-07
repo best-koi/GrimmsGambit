@@ -126,7 +126,7 @@ public class EnemyPositionTarget : EnemyTemplate
 
                 if (!CanAttackTarget())
                 {
-                    if (attacks.Count == 1)
+                    if (orderedCharacters.Count == 0)
                         moveText.text = "Done Acting.";
                     else
                         AdvanceAttack();

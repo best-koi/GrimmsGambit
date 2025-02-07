@@ -35,13 +35,15 @@ public class Hare : EnemyRandomTarget
 
     protected override void CheckAttackBounds()
     {
+        /*
         if(currentAttackLoop == endAttackLoop){
             //End Encounter Logic
             moveText.text = "Running Away.";
         }
-        else if (currentAttack >= attacks.Count){
+        */
+        if (currentAttack >= attacks.Count){
             currentAttack = 0;
-            currentAttackLoop++; 
+            //currentAttackLoop++; 
         }
         
     }
