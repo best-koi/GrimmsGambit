@@ -244,6 +244,7 @@ MonoBehaviour:
   winText: You defeated the enemy
   loseText: You were slain...
   endScreenText: {fileID: 1345418117}
+  encounterData: {fileID: 11400000, guid: 64739e6d55c288c43bd8e45d854e4d35, type: 2}
 --- !u!1 &1232877519
 GameObject:
   m_ObjectHideFlags: 0

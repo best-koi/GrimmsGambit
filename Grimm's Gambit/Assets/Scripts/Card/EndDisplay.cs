@@ -11,6 +11,8 @@ public class EndDisplay : MonoBehaviour
     [SerializeField] private string winText = "You defeated the enemy", loseText = "You were slain...";
     [SerializeField] private TMP_Text endScreenText;
 
+    [SerializeField] private EncounterData encounterData;
+
     public void SetDisplay(bool win)
     {
         Debug.Log("Called");
@@ -21,8 +23,7 @@ public class EndDisplay : MonoBehaviour
 
     private void Start()
     {
-        //endCamera.SetActive(false);
-        //gameObject.SetActive(false);
+        SetDisplay(encounterData.GetWin());
     }
 
     private void OnEnable()
