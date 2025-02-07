@@ -191,6 +191,7 @@ public class EncounterController : MonoBehaviour
 
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
+        //data.SetWin(playerWin); 
         SceneManager.UnloadSceneAsync(enemySceneName);
         SceneManager.LoadScene("TestEndEncounter", LoadSceneMode.Additive);
     }

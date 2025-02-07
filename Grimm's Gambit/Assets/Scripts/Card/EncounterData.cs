@@ -12,6 +12,6 @@ public class EncounterData : ScriptableObject
         EncounterController.onEncounterEnded += SetWin;
     }
 
-    private void SetWin(bool win) { _playerWon = win; }
+    public void SetWin(bool win) { _playerWon = win; }
     public bool GetWin() { return _playerWon; }
 }
