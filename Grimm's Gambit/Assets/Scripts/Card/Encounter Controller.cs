@@ -53,7 +53,6 @@ public class EncounterController : MonoBehaviour
 
     private void Start()
     {
-        //endScreenCanvas.SetActive(false);
         m_EndButton.onClick.AddListener(EndTurn);
         heirloomManager = FindObjectOfType<HeirloomManager>(); //This is done here so it is only done once per scene runtime iteration
         StartEncounter();
@@ -61,6 +60,8 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
+        if(m_TurnCounter == 0) return; //edge case
+
         if(m_PlayerInventory.ChildListSize == 0){
             EndEncounter(false);
         }else if (m_EnemyInventory.ChildListSize == 0){
@@ -126,7 +127,6 @@ public class EncounterController : MonoBehaviour
             {
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
                 Tired = false; //Removes tired status
-                // m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}"; //Updates Visual for Spirit
                 m_ResourceText.text = $"{m_CurrentResources}"; //changed by Danielle
             }
             
@@ -140,9 +140,6 @@ public class EncounterController : MonoBehaviour
             }
             
             m_TurnText.text = "Player Turn";
-
-            // Display the number of cards in the player's deck
-            //Debug.Log("Deck Size: " + m_PlayerDeck.GetGameDeckSize());
         }
         else 
         {
@@ -210,7 +207,6 @@ public class EncounterController : MonoBehaviour
             }
 
             m_CurrentResources -= amount;
-            // m_ResourceText.text = $"Spirit: {m_CurrentResources} / {m_MaxResources}";
             m_ResourceText.text = $"{m_CurrentResources}"; //changed by Danielle
 
 

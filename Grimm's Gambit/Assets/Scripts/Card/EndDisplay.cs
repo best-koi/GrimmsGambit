@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 public class EndDisplay : MonoBehaviour
@@ -12,7 +12,7 @@ public class EndDisplay : MonoBehaviour
 
     [SerializeField] private EncounterData encounterData;
 
-    [SerializeField] public UnityEngine.UI.Button exitButton;
+    [SerializeField] private Button exitButton;
 
     public void SetDisplay(bool win)
     {
@@ -24,15 +24,16 @@ public class EndDisplay : MonoBehaviour
 
     private void Start()
     {
-        if (exitButton == null) exitButton = FindObjectOfType<UnityEngine.UI.Button>();
+        if (exitButton == null) exitButton = FindObjectOfType<Button>();
 
         SetDisplay(encounterData.GetWin());
 
-        exitButton.onClick += Exit;
+        exitButton.onClick.AddListener(Exit);
     }
 
     private void Exit()
     {
+        Debug.Log("Exit");
         Application.Quit(); //Placeholder, can be removed to load in desired scene
     }
 }
