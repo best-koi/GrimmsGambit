@@ -60,7 +60,7 @@ public class EncounterController : MonoBehaviour
 
     private void Update()
     {
-        if(m_TurnCounter == 0) return; //edge case
+        if(m_TurnCounter <= 1) return; //edge case
 
         if(m_PlayerInventory.ChildListSize == 0){
             EndEncounter(false);
