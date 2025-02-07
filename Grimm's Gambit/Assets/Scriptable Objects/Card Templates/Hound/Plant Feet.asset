@@ -15,6 +15,7 @@ MonoBehaviour:
   _cardName: Plant Feet
   _cardDescription: Gain 10 Block.
   _cardCost: 1
+  _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 2
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
