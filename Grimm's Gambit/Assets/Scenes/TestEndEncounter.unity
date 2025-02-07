@@ -240,11 +240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265359c10ebba8d4ba5a2523e19c5ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endCamera: {fileID: 1321805147}
   winText: You defeated the enemy
   loseText: You were slain...
   endScreenText: {fileID: 1345418117}
   encounterData: {fileID: 11400000, guid: 64739e6d55c288c43bd8e45d854e4d35, type: 2}
+  exitButton: {fileID: 1290782796}
 --- !u!1 &1232877519
 GameObject:
   m_ObjectHideFlags: 0

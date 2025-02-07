@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class EndDisplay : MonoBehaviour
 {
-    [SerializeField] private GameObject endCamera;
-
     [SerializeField] private string winText = "You defeated the enemy", loseText = "You were slain...";
     [SerializeField] private TMP_Text endScreenText;
 
     [SerializeField] private EncounterData encounterData;
+
+    [SerializeField] public Button exitButton;
 
     public void SetDisplay(bool win)
     {
@@ -23,16 +23,15 @@ public class EndDisplay : MonoBehaviour
 
     private void Start()
     {
+        //if (exitButton == null) exitButton = FindObjectOfType<Button>();
+
         SetDisplay(encounterData.GetWin());
+
+        exitButton.clicked += Exit;
     }
 
-    private void OnEnable()
+    private void Exit()
     {
-        endCamera.SetActive(true);
-    }
-
-    private void OnDisable()
-    {
-        endCamera.SetActive(false);
+        Application.Quit(); //Placeholder, can be removed to load in desired scene
     }
 }
