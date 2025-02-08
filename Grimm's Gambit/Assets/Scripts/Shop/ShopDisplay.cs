@@ -6,7 +6,6 @@ using TMPro;
 
 public class ShopDisplay : MonoBehaviour
 {
-
    [SerializeField]
    private List<ShopItem> commonCards, heirlooms, arcana;//The items in the shop
 
@@ -24,25 +23,19 @@ public class ShopDisplay : MonoBehaviour
 
    [SerializeField]
    private int numberOfPages;//Used to determine when to stop cycling 
+   
+    [SerializeField] private int rerolls;
 
     // Start is called before the first frame update
     void Start()
     {
-
         DisplayAllCycledItems(); 
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-    
 
-        //DisplayAllCycledItems(); 
-
-
-        
     }
 
 //Displays items by a given index. If the index exceeds the provided list, then blank text is used 
@@ -89,6 +82,11 @@ public class ShopDisplay : MonoBehaviour
 
 //Produces a random lineup of 3 Items in the Shop
     public void Reroll(){
+
+        if (rerolls == 0) return;
+
+        rerolls--;
+
         int randomCommon = Random.Range(0, commonCards.Count);
         int randomHeirloom = Random.Range(0, heirlooms.Count);
         int randomArcana = Random.Range(0, heirlooms.Count);
