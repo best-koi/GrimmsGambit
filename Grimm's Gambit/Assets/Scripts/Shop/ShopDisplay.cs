@@ -6,19 +6,18 @@ using TMPro;
 
 public class ShopDisplay : MonoBehaviour
 {
-   [SerializeField]
-   private List<ShopItem> commonCards, heirlooms, arcana;//The items in the shop
+    private ShopItem[][] displayedItems; //The items in the shop
 
-   [SerializeField]
-   private Image cardImage, heirloomImage, arcanaImage, defaultImage;//Images for each object (likely to be replaced with sprites)
+    [SerializeField] private Sprite[] pickImages;
 
-   [SerializeField]
-   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;//Strings for names and descriptions 
+    [SerializeField] private Image defaultImage;
+
+    [SerializeField] private TMP_Text[] pickNames;
+    [SerializeField] private TMP_Text[] pickDescriptions;
 
     [SerializeField] private Button rerollButton;
 
-    [SerializeField]
-   private string defaultText;//Dummy Text for Empty Items 
+    [SerializeField] private string defaultText;//Dummy Text for Empty Items 
 
    [SerializeField]
    private int cycleIndex;//Current index 
@@ -32,6 +31,8 @@ public class ShopDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        displayedItems = new ShopItem[3][3];
+
         DisplayAllCycledItems(); 
     }
 
@@ -48,28 +49,29 @@ public class ShopDisplay : MonoBehaviour
 //TMP_Text name - the name text of the item to set
 //TMP_Text desc - the description text of the item to set
 //List<ShopItem> items - a list of ShopItems to use 
-    private void DisplayShopItems(int index, Image image, TMP_Text name, TMP_Text desc, List<ShopItem> items){
+    private void DisplayItem(int i){
+        pickImages[i] = displayedItems[cycleIndex][i].GetIcon();
+        pickNames[i].text = pickImages[cycleIndex][i].GetName();
+        pickDescriptions[i].text = pickDescriptions[cycleIndex][i].GetDescription();
+    }
 
-        if(index < items.Count){
-            image.sprite = items[index].GetIcon();
-            name.text = items[index].GetName();
-            desc.text = items[index].GetDescription();
-        }else{
-            image = defaultImage;
-            name.text = defaultText;
-            desc.text = defaultText; 
-
+    private void DisplayShopItems()
+    {
+        for (int i = 0; i < displayedItems[cycleIndex].Length; i++)
+        {
+            DisplayItem(i);
         }
-  
     }
 
 
 
 //Updates all Displays 
     private void DisplayAllCycledItems(){
+        /**
         DisplayShopItems(cycleIndex, cardImage, cardName, cardDesc, commonCards);
         DisplayShopItems(cycleIndex, heirloomImage, heirloomName, heirloomDesc, heirlooms);
         DisplayShopItems(cycleIndex, arcanaImage, arcanaName, arcanaDesc, arcana);
+        */
     }
 
 //Cycles the menu forward 1 
@@ -94,13 +96,16 @@ public class ShopDisplay : MonoBehaviour
             return;
         } 
 
-        int randomCommon = Random.Range(0, commonCards.Count);
-        int randomHeirloom = Random.Range(0, heirlooms.Count);
-        int randomArcana = Random.Range(0, heirlooms.Count);
+        int randomCommon = Random.Range(0, commonCards.Length);
+        int randomHeirloom = Random.Range(0, heirlooms.Length);
+        int randomArcana = Random.Range(0, heirlooms.Length);
 
-        DisplayShopItems(randomCommon, cardImage, cardName, cardDesc, commonCards);
-        DisplayShopItems(randomHeirloom, heirloomImage, heirloomName, heirloomDesc, heirlooms);
-        DisplayShopItems(randomArcana, arcanaImage, arcanaName, arcanaDesc, arcana); 
+        /**
 
+        DisplayShopItems(0, randomCommon, cardImage, cardName, cardDesc, displayedItems);
+        DisplayShopItems(1, randomHeirloom, heirloomImage, heirloomName, heirloomDesc, displayedItems);
+        DisplayShopItems(2, randomArcana, arcanaImage, arcanaName, arcanaDesc, displayedItems); 
+
+        */
     }
 }
