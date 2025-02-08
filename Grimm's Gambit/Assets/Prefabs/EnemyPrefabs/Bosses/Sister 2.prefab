@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 65
-  currentHealth: 65
+  maxHealth: 80
+  currentHealth: 80
   m_CardContainer: {fileID: 3099138516739903215}
   affixDisplay: {fileID: 0}
   animator: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   firstDefend: 0
   secondDefend: 0
   aoeAttackValue: 6
-  switchPhaseHealth: 26
+  switchPhaseHealth: 32
   phaseBAttacks:
   - HealBothTwins
   - Protect
