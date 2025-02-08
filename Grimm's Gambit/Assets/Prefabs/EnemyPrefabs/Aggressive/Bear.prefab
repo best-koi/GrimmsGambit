@@ -1004,8 +1004,8 @@ GameObject:
   - component: {fileID: 7481107102069837942}
   - component: {fileID: 3082288189527186086}
   - component: {fileID: 3878210002517620860}
-  - component: {fileID: 5894105497711996225}
   - component: {fileID: 383634350987910035}
+  - component: {fileID: 505703164699765169}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -1099,32 +1099,6 @@ MonoBehaviour:
   affixDisplay: {fileID: 0}
   animator: {fileID: 0}
   ownerPlayer: 0
---- !u!114 &5894105497711996225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9146193986863031628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ff35122ad9541d9aad8728ac03beb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minion: {fileID: 3878210002517620860}
-  enemyName: Bear
-  attacks:
-  - Attack
-  currentAttack: 0
-  healthText: {fileID: 84583175218874345}
-  nameText: {fileID: 7881692479118654021}
-  moveText: {fileID: 6335892315229065891}
-  renderer: {fileID: 3082288189527186086}
-  attackValue: 5
-  buffValue: 0
-  blockValue: 0
-  randomAttacks: []
-  combinedAttacks: []
 --- !u!114 &383634350987910035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,3 +1116,37 @@ MonoBehaviour:
   full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
   mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &505703164699765169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146193986863031628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfdcba53ccff41219cafa4a489cd6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minion: {fileID: 3878210002517620860}
+  enemyName: Bear
+  attacks:
+  - AttackAndBleed
+  - ProtectAndDebuff
+  - DoubleAttack
+  - HealAndStrength
+  currentAttack: 0
+  healthText: {fileID: 84583175218874345}
+  nameText: {fileID: 7881692479118654021}
+  moveText: {fileID: 6335892315229065891}
+  renderer: {fileID: 0}
+  attackValue: 6
+  buffValue: 0
+  blockValue: 10
+  randomAttacks: []
+  combinedAttacks: []
+  secondAttackValue: 5
+  bleedValue: 1
+  damageReductionValue: 1
+  healValue: 5
+  strengthValue: 2
