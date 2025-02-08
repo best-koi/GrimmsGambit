@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3615229291135600268}
   - component: {fileID: 3468050233522887321}
   - component: {fileID: 8426097182391789385}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2189331719526311936}
   - component: {fileID: 470308546575245519}
   - component: {fileID: 1374306116204261931}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1553410210667899399}
   - component: {fileID: 7271215976401587615}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 2452170175173653641}
   - component: {fileID: 8061397517802444420}
   - component: {fileID: 5589476130689275882}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 7838817564731566708}
   - component: {fileID: 3900150810496536172}
   - component: {fileID: 3056824775052026780}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 9215707990304352609}
   - component: {fileID: 51552948091283071}
   - component: {fileID: 5695735585076228919}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 6041290149684476551}
   - component: {fileID: 5505969828771913273}
   - component: {fileID: 5696543135409545960}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 3949321151785783244}
   - component: {fileID: 3633981154661589809}
   - component: {fileID: 318161952888502130}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

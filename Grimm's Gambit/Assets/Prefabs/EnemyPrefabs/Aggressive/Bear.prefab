@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 72814150524368575}
   - component: {fileID: 4940466027656684782}
   - component: {fileID: 4560523028853995344}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5101928821828324217}
   - component: {fileID: 5439730905768418369}
   - component: {fileID: 3739520491423210324}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 6376106755216946598}
   - component: {fileID: 4336375936513488063}
   - component: {fileID: 6335892315229065891}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 7286556892781462761}
   - component: {fileID: 9028255900733015915}
   - component: {fileID: 7881692479118654021}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 2405362151639988351}
   - component: {fileID: 326309041546527430}
   - component: {fileID: 84583175218874345}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7200750391684711550}
   - component: {fileID: 9008149436052512062}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 1078443788568860120}
   - component: {fileID: 8168270779748630333}
   - component: {fileID: 390502520034255833}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 5778224009280693118}
   - component: {fileID: 6409525501950461413}
   - component: {fileID: 8210951832988491939}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
