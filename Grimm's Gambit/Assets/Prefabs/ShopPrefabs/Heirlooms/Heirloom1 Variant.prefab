@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3434311032479566249, guid: d704dabf749784250bca6ed7e859f1eb, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434311032479566249, guid: d704dabf749784250bca6ed7e859f1eb, type: 3}
       propertyPath: name
       value: Heirloom 1
       objectReference: {fileID: 0}

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ShopItem : MonoBehaviour
 {
     [SerializeField]
-    private Image icon;
+    private Sprite icon;
 
     [SerializeField]
     private string name, description;
@@ -19,7 +19,7 @@ public class ShopItem : MonoBehaviour
     //Loot Type? 
     // Start is called before the first frame update
     
-    public Image GetIcon(){
+    public Sprite GetIcon(){
         return icon;
     }
 

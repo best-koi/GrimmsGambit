@@ -55,7 +55,7 @@ public class ShopDisplay : MonoBehaviour
     private void DisplayShopItems(int index, Image image, TMP_Text name, TMP_Text desc, List<ShopItem> items){
 
         if(index < items.Count){
-            image = items[index].GetIcon();
+            image.sprite = items[index].GetIcon();
             name.text = items[index].GetName();
             desc.text = items[index].GetDescription();
         }else{
