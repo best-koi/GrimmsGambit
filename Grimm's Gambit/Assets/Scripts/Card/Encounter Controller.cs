@@ -191,9 +191,9 @@ public class EncounterController : MonoBehaviour
 
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
-        //data.SetWin(playerWin); 
         SceneManager.UnloadSceneAsync(enemySceneName);
-        SceneManager.LoadScene("TestEndEncounter", LoadSceneMode.Additive);
+        if(playerWin) SceneManager.LoadScene("EncounterWin", LoadSceneMode.Additive);
+        else SceneManager.LoadScene("EncounterLoss", LoadSceneMode.Additive);
     }
 
     // Spend an amount of resources
@@ -216,7 +216,6 @@ public class EncounterController : MonoBehaviour
 
             m_CurrentResources -= amount;
             m_ResourceText.text = $"{m_CurrentResources}"; //changed by Danielle
-
 
             return true;
         }

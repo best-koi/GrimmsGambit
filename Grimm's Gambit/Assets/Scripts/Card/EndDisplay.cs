@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-//using UnityEngine.UIElements;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndDisplay : MonoBehaviour
 {
@@ -16,8 +16,6 @@ public class EndDisplay : MonoBehaviour
 
     public void SetDisplay(bool win)
     {
-        Debug.Log("Called");
-
         if (win) endScreenText.text = winText;
         else endScreenText.text = loseText;
     }
@@ -26,7 +24,8 @@ public class EndDisplay : MonoBehaviour
     {
         if (exitButton == null) exitButton = FindObjectOfType<Button>();
 
-        SetDisplay(encounterData.GetWin());
+        //SetDisplay(encounterData.GetWin());
+        SetDisplay(false);
 
         exitButton.onClick.AddListener(Exit);
     }
@@ -34,6 +33,6 @@ public class EndDisplay : MonoBehaviour
     public void Exit()
     {
         Debug.Log("Exit");
-        Application.Quit(); //Placeholder, can be removed to load in desired scene
+        SceneManager.LoadScene("StartMenu");
     }
 }
