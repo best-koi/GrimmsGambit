@@ -25,6 +25,11 @@ public class Hare : EnemyRandomTarget
         currentAttack = 0;
     }
 
+    protected virtual void DoubleAttack(){
+        minion.MinionUsed(attackTarget.GetComponent<Minion>(), attackValue * 2);
+        FindTarget();
+    }
+
     private void Run(){
         minion.AddAffix(Affix.Block, runBlock);
     }
@@ -102,6 +107,30 @@ public class Hare : EnemyRandomTarget
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
                         else
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                        moveText.color = attackTarget.GetCharacterColor();
+   
+                }
+
+                break;
+
+            case "DoubleAttack":
+                if (attackTarget == null)
+                    FindTarget();
+                
+
+                if (!CanAttackTarget())
+                {
+                    if (attacks.Count == 1)
+                        moveText.text = "Done Acting.";
+                    else
+                        AdvanceAttack();
+                }
+                else
+                {
+                        if (minion.currentAffixes.ContainsKey(Affix.Strength))
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG twice";
+                        else
+                            moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG twice";
                         moveText.color = attackTarget.GetCharacterColor();
    
                 }

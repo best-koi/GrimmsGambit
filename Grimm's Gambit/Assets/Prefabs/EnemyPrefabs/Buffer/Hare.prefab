@@ -1131,7 +1131,7 @@ MonoBehaviour:
   minion: {fileID: 3878210002517620860}
   enemyName: Hare
   attacks:
-  - CombinedAttack
+  - DoubleAttack
   - Block
   - AttackAndBleed
   currentAttack: 0
@@ -1139,14 +1139,14 @@ MonoBehaviour:
   nameText: {fileID: 6736065837938682586}
   moveText: {fileID: 4718922920820167877}
   renderer: {fileID: 0}
-  attackValue: 6
-  buffValue: 3
-  blockValue: 20
+  attackValue: 5
+  buffValue: 2
+  blockValue: 16
   randomAttacks: []
   combinedAttacks:
   - Attack
   - Block2
   secondAttackValue: 8
   secondBlock: 5
-  runBlock: 99
+  runBlock: 20
   endAttackLoop: 2

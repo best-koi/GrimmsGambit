@@ -27927,15 +27927,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLoadouts:
-  - {fileID: 5677028748466764126, guid: dc99795afe7184f92aa7497afa923684, type: 3}
-  - {fileID: 5677028748466764126, guid: c98cb03ce215045d7b3282e2279e0bc5, type: 3}
+  - {fileID: 5677028748466764126, guid: f4a19fac6e46a43a790d71aa194b686d, type: 3}
   - {fileID: 5677028748466764126, guid: cb25dcdde12bb436fa1b18435c7ade86, type: 3}
   - {fileID: 5677028748466764126, guid: c77092b4bb7884c94b3a14f7c8f6f251, type: 3}
+  - {fileID: 5677028748466764126, guid: 7fb72294aeb9243ac870567470f0ef58, type: 3}
+  - {fileID: 5677028748466764126, guid: c98cb03ce215045d7b3282e2279e0bc5, type: 3}
+  - {fileID: 5677028748466764126, guid: dc99795afe7184f92aa7497afa923684, type: 3}
   - {fileID: 5677028748466764126, guid: 9b1d437ac367b4b4f9150efc2be16722, type: 3}
   - {fileID: 5677028748466764126, guid: 9ee58de6375ad4f358e045c39d391d51, type: 3}
-  - {fileID: 5677028748466764126, guid: 4282df457b4d14bcca82c2ae28fff14f, type: 3}
   - {fileID: 5677028748466764126, guid: 91eebe0ff9fd34955af8a65751a9bff8, type: 3}
-  - {fileID: 5677028748466764126, guid: f4a19fac6e46a43a790d71aa194b686d, type: 3}
+  - {fileID: 5677028748466764126, guid: 4282df457b4d14bcca82c2ae28fff14f, type: 3}
+  - {fileID: 5677028748466764126, guid: 7f351f0f9a48a442c860310aebddfb83, type: 3}
+  - {fileID: 5677028748466764126, guid: f71f4b6b59c634ad4b75cd15e4cc6fe3, type: 3}
+  - {fileID: 5677028748466764126, guid: 01b48dcd8fb68433fbc85328944006e4, type: 3}
+  - {fileID: 5677028748466764126, guid: 35e2587cad8df4b02a090aec13752a30, type: 3}
+  - {fileID: 5677028748466764126, guid: c8d7cb25d86514f97a92eb0e0c08b9a7, type: 3}
+  - {fileID: 5677028748466764126, guid: dd1126844ed1241e9bcd4d239a3cd56c, type: 3}
 --- !u!1 &2109772153
 GameObject:
   m_ObjectHideFlags: 0
