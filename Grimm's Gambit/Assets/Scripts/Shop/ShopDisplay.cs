@@ -14,8 +14,10 @@ public class ShopDisplay : MonoBehaviour
 
    [SerializeField]
    private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;//Strings for names and descriptions 
-   
-   [SerializeField]
+
+    [SerializeField] private Button rerollButton;
+
+    [SerializeField]
    private string defaultText;//Dummy Text for Empty Items 
 
    [SerializeField]
@@ -25,6 +27,7 @@ public class ShopDisplay : MonoBehaviour
    private int numberOfPages;//Used to determine when to stop cycling 
    
     [SerializeField] private int rerolls;
+
 
     // Start is called before the first frame update
     void Start()
@@ -83,9 +86,13 @@ public class ShopDisplay : MonoBehaviour
 //Produces a random lineup of 3 Items in the Shop
     public void Reroll(){
 
-        if (rerolls == 0) return;
-
         rerolls--;
+
+        if (rerolls <= 0)
+        {
+            rerollButton.interactable = false;
+            return;
+        } 
 
         int randomCommon = Random.Range(0, commonCards.Count);
         int randomHeirloom = Random.Range(0, heirlooms.Count);
