@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: locationName
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 1654530715703589817, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+      propertyPath: m_TagString
+      value: Sisters
+      objectReference: {fileID: 0}
     - target: {fileID: 1794759050644220778, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -397,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 2593907074136120620, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599333378796218919, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+      propertyPath: m_TagString
+      value: Lycan
       objectReference: {fileID: 0}
     - target: {fileID: 2632157433909977443, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: m_LocalRotation.w
