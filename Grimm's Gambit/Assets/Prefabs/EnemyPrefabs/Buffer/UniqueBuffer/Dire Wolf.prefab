@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5096962705441144662}
   - component: {fileID: 8320574661232347473}
   - component: {fileID: 6278188774776066000}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1122415480252405691}
   - component: {fileID: 9214973560630872691}
   - component: {fileID: 8354894686520948857}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4503200342260686862}
   - component: {fileID: 4239628795905197714}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 747321561159957076}
   - component: {fileID: 7039942250630032941}
   - component: {fileID: 8220278965351036774}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 4956473899537016016}
   - component: {fileID: 2781730436324924027}
   - component: {fileID: 8446312620990840390}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 3126734259942817843}
   - component: {fileID: 8477649140376401452}
   - component: {fileID: 1065707513021649060}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 1305920745834473192}
   - component: {fileID: 6776326594387267530}
   - component: {fileID: 8859225663960552157}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 1606884358370213070}
   - component: {fileID: 7891032784000177511}
   - component: {fileID: 4688332103784179221}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

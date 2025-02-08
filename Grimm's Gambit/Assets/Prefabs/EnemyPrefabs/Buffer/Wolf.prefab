@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5771480409751580964}
   - component: {fileID: 1100007568680298992}
   - component: {fileID: 3329244507210537358}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 2491925726549719253}
   - component: {fileID: 8139746407942582018}
   - component: {fileID: 6736065837938682586}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 3276413804356599030}
   - component: {fileID: 1997555040512017873}
   - component: {fileID: 4454474372064249943}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 3608680812313099371}
   - component: {fileID: 6611005337126185406}
   - component: {fileID: 4718922920820167877}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 4689271604152543910}
   - component: {fileID: 5054883952975395593}
   - component: {fileID: 88231216420191433}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 160795958058866994}
   - component: {fileID: 368804748166458849}
   - component: {fileID: 4434780775863778388}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 8245682611475888992}
   - component: {fileID: 3659798126276106323}
   - component: {fileID: 7268382192613041496}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4853936633660599149}
   - component: {fileID: 3953233837907717044}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
