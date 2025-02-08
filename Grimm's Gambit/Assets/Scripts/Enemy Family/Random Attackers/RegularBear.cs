@@ -7,7 +7,7 @@ public class RegularBear : EnemyRandomTarget
 
     [Header("Bear Values")]
     [SerializeField]
-    private int secondAttackValue, bleedValue, damageReductionValue, healValue, strengthValue;
+    protected int secondAttackValue, bleedValue, damageReductionValue, healValue, strengthValue;
 
 
     // Update is called once per frame
