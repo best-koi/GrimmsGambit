@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Boo!
   m_EditorClassIdentifier: 
   _cardName: Boo!
-  _cardDescription: Apply 3 Damage Reduction. If the enemy has Mark, Apply 1 Armor
-    Reduction.
-  _cardCost: 0
+  _cardDescription: 'Apply 3 Damage Reduction. If the enemy has Mark, Apply 2 Armor
+    Reduction. '
+  _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 2
-        _value: 1
+        _value: 2
     - rid: 1396538504836808732
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:

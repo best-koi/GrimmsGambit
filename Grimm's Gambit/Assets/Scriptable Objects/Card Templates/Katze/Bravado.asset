@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Fetch
+  m_Name: Bravado
   m_EditorClassIdentifier: 
-  _cardName: Fetch
-  _cardDescription: 'Draw two cards. Discard one card. '
-  _cardCost: 1
-  _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
+  _cardName: Bravado
+  _cardDescription: 'Gain 3 Spirit. Apply Tired to self. '
+  _cardCost: 0
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 1
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 6488021483443453952
-  - rid: 4695933482567467033
+  - rid: 927382194915901448
+  - rid: 927382194915901449
   references:
     version: 2
     RefIds:
-    - rid: 4695933482567467033
-      type: {class: DiscardCardEffect, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 6488021483443453952
-      type: {class: DrawCardEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382194915901448
+      type: {class: AddSpiritEffect, ns: , asm: Assembly-CSharp}
       data:
-        m_Amount: 2
+        _spiritGained: 3
+    - rid: 927382194915901449
+      type: {class: TiredEffect, ns: , asm: Assembly-CSharp}
+      data: 

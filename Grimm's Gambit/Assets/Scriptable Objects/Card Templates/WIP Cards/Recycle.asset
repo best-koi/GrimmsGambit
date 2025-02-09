@@ -10,22 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Claw Tornado
+  m_Name: Recycle
   m_EditorClassIdentifier: 
-  _cardName: Claw Tornado
-  _cardDescription: Create 3 Scratch in hand.
+  _cardName: Recycle
+  _cardDescription: 'Discard the current hand and redraw your hand based on the number
+    discarded. Must be the first card played during turn.  '
   _cardCost: 1
-  _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
-  _playerCopyCount: 2
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
-  _spells:
-  - rid: 4695933157482168323
+  _spells: []
   references:
     version: 2
-    RefIds:
-    - rid: 4695933157482168323
-      type: {class: ConjureEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _conjuredTemplate: {fileID: 11400000, guid: b60ab3f42ab5d8f4b84132981e0442e2, type: 2}
-        _amount: 3
+    RefIds: []

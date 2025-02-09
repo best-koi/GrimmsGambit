@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Pinpoint Slash
+  m_Name: Muscle Sweater
   m_EditorClassIdentifier: 
-  _cardName: Pinpoint Slash
-  _cardDescription: Deal 8 Damage. Apply 1 Mark after.
+  _cardName: Muscle Sweater
+  _cardDescription: 'Gain 5 Block. Apply 1 Strength. '
   _cardCost: 1
-  _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
-  _playerCopyCount: 2
-  _targetsEnemies: 1
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
+  _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538504836808712
-  - rid: 1396538504836808713
+  - rid: 927382194915901445
+  - rid: 927382194915901450
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808712
-      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382194915901445
+      type: {class: ApplyDebuffEffectToSelf, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 8
-    - rid: 1396538504836808713
+        _debuff: 1
+        _value: 5
+    - rid: 927382194915901450
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
-        _debuff: 9
+        _debuff: 7
         _value: 1

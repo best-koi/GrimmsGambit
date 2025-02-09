@@ -22329,10 +22329,6 @@ MonoBehaviour:
     databaseIndex: 11
   - ownerIndex: 0
     databaseIndex: 11
-  - ownerIndex: 0
-    databaseIndex: 12
-  - ownerIndex: 0
-    databaseIndex: 12
   - ownerIndex: 1
     databaseIndex: 0
   - ownerIndex: 1
@@ -22369,6 +22365,14 @@ MonoBehaviour:
     databaseIndex: 8
   - ownerIndex: 1
     databaseIndex: 8
+  - ownerIndex: 1
+    databaseIndex: 9
+  - ownerIndex: 1
+    databaseIndex: 9
+  - ownerIndex: 1
+    databaseIndex: 10
+  - ownerIndex: 1
+    databaseIndex: 10
   - ownerIndex: 2
     databaseIndex: 0
   - ownerIndex: 2
@@ -22421,6 +22425,10 @@ MonoBehaviour:
     databaseIndex: 13
   - ownerIndex: 2
     databaseIndex: 13
+  - ownerIndex: 2
+    databaseIndex: 14
+  - ownerIndex: 2
+    databaseIndex: 14
   m_Hand: []
   m_DiscardPile: []
   m_RemovedZone: []
