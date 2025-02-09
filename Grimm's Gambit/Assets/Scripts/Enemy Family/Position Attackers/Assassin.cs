@@ -10,7 +10,6 @@ private int secondaryAttackValue;
 
 protected override void Attack()
     {
-      
             FindPositionedTarget(position);
             if (attackTarget == null)
                 SeekNewTargetInOrder();
@@ -54,7 +53,7 @@ protected override void Attack()
 
                 if (!CanAttackTarget())
                 {
-                    if (attacks.Count == 1)
+                    if (orderedCharacters.Count == 0)
                         moveText.text = "Done Acting.";
                     else
                         AdvanceAttack();
@@ -79,14 +78,36 @@ protected override void Attack()
              case "AttackBleed":
              if (attackTarget == null)
                     FindPositionedTarget(position);
+
+            if (!CanAttackTarget())
+                {
+                    if (orderedCharacters.Count == 0)
+                        moveText.text = "Done Acting.";
+                    else
+                        AdvanceAttack();
+                }
+                else
+                {
                 moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Bleed to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
+                }
                 break;
             case "AttackGouge":
             if (attackTarget == null)
                     FindPositionedTarget(position);
+                    
+                if (!CanAttackTarget())
+                {
+                    if (orderedCharacters.Count == 0)
+                        moveText.text = "Done Acting.";
+                    else
+                        AdvanceAttack();
+                }
+                else
+                {
                 moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Gouge to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
+                }
                 break;
             case "Block":
                 moveText.text = $"Blocking for {blockValue}";
