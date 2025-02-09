@@ -6,8 +6,10 @@ public class ApplyBasedOnAffixEffect : SpellEffect
     [SerializeField] private Affix _checkedDebuff;
     [SerializeField] private bool _checkSelf = false;
     [SerializeField] private bool _removeCheckedDebuff = false;
+    [SerializeField] private ApplyType _applyType = ApplyType.DAMAGE;
     [SerializeField] private Affix _newDebuff;
     [SerializeField] private float _amountMultiplier = 1.0f;
+    [SerializeField] private int _capValue = -1;
     [SerializeField] private bool _applyToSelf = false;
 
     public ApplyBasedOnAffixEffect()
@@ -30,9 +32,31 @@ public class ApplyBasedOnAffixEffect : SpellEffect
             return;
         }
 
-        if (_applyToSelf)
-            caster.AddAffix(_newDebuff, (int)(amount * _amountMultiplier));
-        else
-            target.AddAffix(_newDebuff, (int)(amount * _amountMultiplier));
+        Minion minionToApply = _applyToSelf ? caster : target;
+        int newAmount = (int)Mathf.Ceil(amount * _amountMultiplier);
+        if (_capValue >= 0)
+            newAmount = Mathf.Min(newAmount, _capValue);
+
+        switch (_applyType)
+        {
+            case ApplyType.DAMAGE:
+                minionToApply.DamageTaken(newAmount);
+                break;
+
+            case ApplyType.HEALTH:
+                minionToApply.DamageTaken(-newAmount);
+                break;
+
+            case ApplyType.NEW_EFFECT:
+                minionToApply.AddAffix(_newDebuff, newAmount);
+                break;
+        }
     }
+}
+
+public enum ApplyType
+{
+    DAMAGE,
+    HEALTH,
+    NEW_EFFECT
 }

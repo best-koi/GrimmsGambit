@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Mad Chomp
   _cardDescription: 'Deal 8 damage. Apply 2 Damage Reduction and 2 Armor Reduction. '
-  _cardCost: 0
+  _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 1
