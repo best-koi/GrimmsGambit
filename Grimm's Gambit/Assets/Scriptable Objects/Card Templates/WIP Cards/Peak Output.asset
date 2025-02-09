@@ -15,18 +15,24 @@ MonoBehaviour:
   _cardName: Peak Output
   _cardDescription: 'Converts the Hound''s Block to attack up to a maximum of 25. '
   _cardCost: 1
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 1
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4695933482567467031
+  - rid: 927382162900254723
+  - rid: 927382194184519680
   references:
     version: 2
     RefIds:
-    - rid: 4695933482567467031
-      type: {class: RemoveAffixAndDoEffectEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382162900254723
+      type: {class: ApplyAffixByFactorEffect, ns: , asm: Assembly-CSharp}
       data:
-        debuff: 1
+        m_Affixes:
+          DictArray: []
         m_TargetingSelf: 0
-        m_AmountMultiplier: 1
-        m_HealTarget: 0
+    - rid: 927382194184519680
+      type: {class: CappedStealEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _targetDebuff: 0
+        _limit: 0
