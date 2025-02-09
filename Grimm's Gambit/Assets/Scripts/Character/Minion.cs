@@ -463,7 +463,7 @@ public class Minion : MonoBehaviour
         }
     }
 
-    private void RemoveAffix(Affix affixToRemove)
+    public void RemoveAffix(Affix affixToRemove)
     {
         currentAffixes.Remove(affixToRemove);
         affixDisplay.RemoveAffix(affixToRemove);
@@ -530,5 +530,13 @@ public class Minion : MonoBehaviour
             return currentCount;
         }
         return -1; //If affix isnt on minion
+    }
+
+    public int GetAffixCount(Affix checkedAffix)
+    {
+        if (currentAffixes.ContainsKey(checkedAffix))
+            return currentAffixes[checkedAffix];
+        else
+            return -1;
     }
 }

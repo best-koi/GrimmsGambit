@@ -22,19 +22,26 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808708
-  - rid: 1396538504836808707
+  - rid: 927382162900254733
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808707
-      type: {class: DebuffConditionalEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382162900254733
+      type: {class: DoOnDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         conditionDebuff: 9
-        spiritGain: 1
-        cardDraw: 0
-        damage: 0
-        resultantDebuff: 8
-        resultantValue: 2
+        _spells:
+        - rid: 927382162900254734
+        - rid: 927382162900254735
+    - rid: 927382162900254734
+      type: {class: AddSpiritEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _spiritGained: 1
+    - rid: 927382162900254735
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 8
+        _value: 2
     - rid: 1396538504836808708
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:

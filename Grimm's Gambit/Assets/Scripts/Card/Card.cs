@@ -32,10 +32,13 @@ public class Card : MonoBehaviour
 
     public void DoSpells(Minion target)
     {
+        _cardTemplate.DoSpells(_caster, target);
+        /*
         foreach (SpellEffect spell in Spells)
         {
             spell.DoSpellEffect(_caster, target);
         }
+        */
     }
 
     public void SetCardTemplate(CardTemplate newTemplate)

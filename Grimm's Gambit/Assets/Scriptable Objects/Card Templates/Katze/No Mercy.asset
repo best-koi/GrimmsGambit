@@ -21,20 +21,21 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1265900286819696641
-  - rid: 1265900286819696642
+  - rid: 927382162900254736
   references:
     version: 2
     RefIds:
+    - rid: 927382162900254736
+      type: {class: DoOnDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        conditionDebuff: 3
+        _spells:
+        - rid: 927382162900254737
+    - rid: 927382162900254737
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 11
     - rid: 1265900286819696641
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
         _damage: 11
-    - rid: 1265900286819696642
-      type: {class: DebuffConditionalEffect, ns: , asm: Assembly-CSharp}
-      data:
-        conditionDebuff: 3
-        spiritGain: 0
-        cardDraw: 0
-        damage: 11
-        resultantDebuff: 0
-        resultantValue: 0
