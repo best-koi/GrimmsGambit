@@ -28,9 +28,9 @@ MonoBehaviour:
     it feels as though you are forgetting something\u2026  Choose one thing to lose\u201D "
   choice1: '<Discard 3 cards at random from your deck> '
   choice2: <Discard a Heirloom>
-  choice1Outcome: 
-  choice2Outcome: 
+  choice1Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"
+  choice2Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"
   choice1Type: 
   choice2Type: 
   choice3: <All Party Members lose 5 Max HP>
-  choice3Outcome: 
+  choice3Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"
