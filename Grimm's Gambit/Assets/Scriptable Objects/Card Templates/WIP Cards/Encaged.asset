@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Pinpoint Slash
+  m_Name: Encaged
   m_EditorClassIdentifier: 
-  _cardName: Pinpoint Slash
-  _cardDescription: Deal 8 Damage. Apply 1 Mark after.
-  _cardCost: 1
-  _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
-  _playerCopyCount: 2
+  _cardName: Encaged
+  _cardDescription: "Deal 3 damage. Skip target\u2019s next turn. Once. "
+  _cardCost: 2
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538504836808712
-  - rid: 1396538504836808713
+  - rid: 927382194915901453
+  - rid: 927382194915901454
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808712
+    - rid: 927382194915901453
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 8
-    - rid: 1396538504836808713
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 9
-        _value: 1
+        _damage: 3
+    - rid: 927382194915901454
+      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
+      data: 

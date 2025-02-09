@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mother's Love
   m_EditorClassIdentifier: 
   _cardName: Mother's Love
-  _cardDescription: Grant the party 5 HP and 15 Block.
+  _cardDescription: Grant the party 6 HP and 8 Block.
   _cardCost: 3
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 2
@@ -28,10 +28,10 @@ MonoBehaviour:
     - rid: 1396538504836808739
       type: {class: AOEHealEffect, ns: , asm: Assembly-CSharp}
       data:
-        _amount: 5
+        _amount: 6
     - rid: 1396538550011559936
       type: {class: AOEDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         TargetingFriendlies: 1
         debuff: 1
-        value: 15
+        value: 8
