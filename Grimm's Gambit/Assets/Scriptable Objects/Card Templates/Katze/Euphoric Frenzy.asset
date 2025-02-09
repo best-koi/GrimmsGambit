@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: EuphoricFrenzy
+  m_Name: Euphoric Frenzy
   m_EditorClassIdentifier: 
   _cardName: Euphoric Frenzy
-  _cardDescription: Deal 5 Damage 2 times to all enemies. If Die Katze has Strength,
+  _cardDescription: Deal 4 Damage 2 times to all enemies. If Die Katze has Strength,
     inflict bleed based on 1.5x the Strength.
   _cardCost: 3
   _cardSprite: {fileID: 0}
@@ -23,26 +23,26 @@ MonoBehaviour:
   _spells:
   - rid: 1265900286819696646
   - rid: 1265900286819696647
-  - rid: 927382162900254741
+  - rid: 927382194915901443
   references:
     version: 2
     RefIds:
-    - rid: 927382162900254741
-      type: {class: DoOnDebuffEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382194915901443
+      type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
       data:
-        conditionDebuff: 7
-        _spells:
-        - rid: 927382162900254742
-    - rid: 927382162900254742
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 8
-        _value: 2
+        _checkedDebuff: 7
+        _checkSelf: 1
+        _removeCheckedDebuff: 0
+        _applyType: 2
+        _newDebuff: 8
+        _amountMultiplier: 1.5
+        _capValue: -1
+        _applyToSelf: 0
     - rid: 1265900286819696646
       type: {class: AOEDamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        m_Amount: 5
+        m_Amount: 4
     - rid: 1265900286819696647
       type: {class: AOEDamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        m_Amount: 5
+        m_Amount: 4
