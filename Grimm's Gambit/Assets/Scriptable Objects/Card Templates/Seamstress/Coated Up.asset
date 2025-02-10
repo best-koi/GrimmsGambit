@@ -23,6 +23,7 @@ MonoBehaviour:
   _spells:
   - rid: 1396538504836808740
   - rid: 927382194915901447
+  - rid: 927382214592954369
   references:
     version: 2
     RefIds:
@@ -30,6 +31,20 @@ MonoBehaviour:
       type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
       data:
         m_Amount: 2
+        m_TargetingSelf: 0
+    - rid: 927382214592954369
+      type: {class: DoOnHealthEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_HealthGate: 0.5
+        _valueComparisonMode: 4
+        m_CheckingSelf: 0
+        _successSpells:
+        - rid: 927382214592954371
+        _failureSpells: []
+    - rid: 927382214592954371
+      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 3
         m_TargetingSelf: 0
     - rid: 1396538504836808740
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}

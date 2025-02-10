@@ -23,7 +23,7 @@ public class RemoveAffixAndDoEffectEffect : SpellEffect
         if (m_TargetingSelf) minionToEffect = caster;
         else minionToEffect = target;
 
-        int amount = minionToEffect.RemoveAffixAndCount(debuff);
+        int amount = minionToEffect.GetAffixCount(debuff);
 
         if (amount > 0)
         {

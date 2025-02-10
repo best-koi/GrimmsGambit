@@ -463,10 +463,17 @@ public class Minion : MonoBehaviour
         }
     }
 
-    public void RemoveAffix(Affix affixToRemove)
+    public void RemoveAffix(Affix affixToRemove, int amount = -1)
     {
-        currentAffixes.Remove(affixToRemove);
-        affixDisplay.RemoveAffix(affixToRemove);
+        if (amount < 0)
+        {
+            currentAffixes.Remove(affixToRemove);
+            affixDisplay.RemoveAffix(affixToRemove);
+        }
+        else
+        {
+            AddAffix(affixToRemove, -amount);
+        }
     }
 
     public bool HasADebuff() //Returns a true if this minion has a debuff
@@ -521,6 +528,7 @@ public class Minion : MonoBehaviour
         return Returnable;
     }
 
+    /*
     public int RemoveAffixAndCount(Affix AffixToRemove)
     {
         if (currentAffixes.ContainsKey(AffixToRemove))
@@ -531,6 +539,7 @@ public class Minion : MonoBehaviour
         }
         return -1; //If affix isnt on minion
     }
+    */
 
     public int GetAffixCount(Affix checkedAffix)
     {

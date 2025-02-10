@@ -21,16 +21,17 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808734
-  - rid: 1396538504836808735
+  - rid: 927382214592954372
   references:
     version: 2
     RefIds:
+    - rid: 927382214592954372
+      type: {class: ClearAffixEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _clearingType: 2
+        _affixToClear: 1
+        _amount: -1
     - rid: 1396538504836808734
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
         _damage: 5
-    - rid: 1396538504836808735
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 3
-        _value: 2
