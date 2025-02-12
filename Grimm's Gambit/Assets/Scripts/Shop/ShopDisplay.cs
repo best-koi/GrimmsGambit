@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
+[Serializable]
+internal class TextValue
+{
+    [SerializeField] internal TMP_Text txt;
+
+    internal void SetText(string val)
+    {
+        txt.text = val;
+    }
+}
 
 public class ShopDisplay : MonoBehaviour
 {
@@ -12,8 +24,7 @@ public class ShopDisplay : MonoBehaviour
 
     [SerializeField] private Image defaultImage;
 
-    [SerializeField] private TMP_Text[] pickNames;
-    [SerializeField] private TMP_Text[] pickDescriptions;
+    [SerializeField] private TextValue[] pickNames, pickDescriptions;
 
     [SerializeField] private Button rerollButton;
 
@@ -51,8 +62,8 @@ public class ShopDisplay : MonoBehaviour
 //List<ShopItem> items - a list of ShopItems to use 
     private void DisplayItem(int i){
         pickImages[i] = displayedItems[cycleIndex][i].GetIcon();
-        pickNames[i].text = pickImages[cycleIndex][i].GetName();
-        pickDescriptions[i].text = pickDescriptions[cycleIndex][i].GetDescription();
+        pickNames[i].SetText(pickImages[cycleIndex][i].GetName());  
+        pickDescriptions[i].SetText(pickDescriptions[cycleIndex][i].GetDescription());
     }
 
     private void DisplayShopItems()
@@ -96,11 +107,10 @@ public class ShopDisplay : MonoBehaviour
             return;
         } 
 
+        /**
         int randomCommon = Random.Range(0, commonCards.Length);
         int randomHeirloom = Random.Range(0, heirlooms.Length);
         int randomArcana = Random.Range(0, heirlooms.Length);
-
-        /**
 
         DisplayShopItems(0, randomCommon, cardImage, cardName, cardDesc, displayedItems);
         DisplayShopItems(1, randomHeirloom, heirloomImage, heirloomName, heirloomDesc, displayedItems);
