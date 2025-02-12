@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public enum Heirloom
 {
@@ -21,7 +22,13 @@ public class HeirloomManager : MonoBehaviour
     private List<Heirloom> currentHeirlooms = new List<Heirloom>(); //List to control current heirlooms
     private HeirloomDisplay heirloomDisplay;
     
-    void Start()
+    private void Awake()
+    {
+        // Persist across scenes
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
     {
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
@@ -47,5 +54,17 @@ public class HeirloomManager : MonoBehaviour
             currentHeirlooms.Remove(heirloom);
             heirloomDisplay.RemoveHeirloom(heirloom); //For visual aspect
         }
+    }
+
+    // Used by Shop Display 
+    public List<Heirloom> GetCurrentHeirlooms()
+    {
+        return currentHeirlooms;
+    }
+
+    // Used by Shop
+    public int GetNumHeirlooms()
+    {
+        return Enum.GetValues(typeof(Heirloom)).Length;
     }
 }

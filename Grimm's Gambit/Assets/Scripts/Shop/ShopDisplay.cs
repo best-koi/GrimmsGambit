@@ -10,6 +10,8 @@ public class ShopDisplay : MonoBehaviour
 {
     private ShopItem[,] displayedItems; //The items in the shop
 
+    [SerializeField] private HeirloomManager heirloomManager; 
+
     [SerializeField] private Image[] pickImages;
     [SerializeField] private TMP_Text[] pickNames, pickDescriptions;
 
@@ -50,7 +52,26 @@ public class ShopDisplay : MonoBehaviour
     private void LoadShopItems()
     {
         // Load in cards and arcana from the deck
-        // Load in heirlooms wherever they are stored
+        List<Heirloom> currentHeirlooms = heirloomManager.GetCurrentHeirlooms();
+        int numHeirlooms = heirloomManager.GetNumHeirlooms();
+
+        List<Heirloom> heirloomPool = new List<Heirloom>(), chosen = new List<Heirloom>();
+
+        for (int i = 0; i < numHeirlooms; i++)
+        {
+            if (currentHeirlooms.Contains((Heirloom)i)) continue;
+
+            heirloomPool.Add((Heirloom)i);
+        }
+
+        System.Random rand = new System.Random();
+
+        for (int i = 0; 0 < numberOfItems; i++)
+        {
+            int randIndex = rand.Next(0, heirloomPool.Count);
+            chosen.Add(heirloomPool[randIndex]);
+            heirloomPool.RemoveAt(randIndex);
+        }
     }
 
     private void DisplayItem(int i){
@@ -92,6 +113,7 @@ public class ShopDisplay : MonoBehaviour
             rerollButton.interactable = false;
             return;
         } 
-     
+        
+        LoadShopItems();
     }
 }
