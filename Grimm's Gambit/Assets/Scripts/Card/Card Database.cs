@@ -16,35 +16,6 @@ public class CardDatabase : MonoBehaviour
                 GetTemplate(i, j).Data = new CardData(i, j);
     }
 
-    public List<CardData> PopulateDeck(bool instantiate = false)
-    {
-        List<CardData> m_PlayerDeck = new List<CardData>();
-
-        /**
-        for (int i = 0; i < m_Prefabs.Length; i++)
-        {
-            Card card = GetCard(i);
-            card.SetIndex(i);
-
-            // Skip reversed cards
-            if (card.GetIndex() % 2 == 1 || card == null) continue;
-
-            for (int j = 0, copies = card.NumCopies; j < copies; j++)
-            {
-                m_PlayerDeck.Add(card.GetIndex());
-
-                if (instantiate)
-                {
-                    Debug.Log($"Spawning Card: {card.GetName()}");
-                    Instantiate(card.gameObject);
-                }
-            }
-        }
-        */
-
-        return m_PlayerDeck;
-    }
-
     public CardTemplate GetTemplate(int owner, int index) 
     {
         return (CardTemplate)_cardPrefabs.GetValue(owner, index);

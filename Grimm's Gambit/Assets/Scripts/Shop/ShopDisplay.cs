@@ -49,7 +49,8 @@ public class ShopDisplay : MonoBehaviour
 
     private void LoadShopItems()
     {
-
+        // Load in cards and arcana from the deck
+        // Load in heirlooms wherever they are stored
     }
 
     private void DisplayItem(int i){
