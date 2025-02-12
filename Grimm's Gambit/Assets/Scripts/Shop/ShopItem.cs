@@ -13,11 +13,6 @@ public class ShopItem : MonoBehaviour
     [SerializeField]
     private string name, description;
 
-    const int cost = 1; 
-
-
-    //Loot Type? 
-    // Start is called before the first frame update
     
     public Sprite GetIcon(){
         return icon;

@@ -3,78 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 
 public class ShopDisplay : MonoBehaviour
 {
+    private ShopItem[,] displayedItems; //The items in the shop
 
-   [SerializeField]
-   private List<ShopItem> commonCards, heirlooms, arcana;//The items in the shop
+    [SerializeField] private Image[] pickImages;
+    [SerializeField] private TMP_Text[] pickNames, pickDescriptions;
 
-   [SerializeField]
-   private Image cardImage, heirloomImage, arcanaImage, defaultImage;//Images for each object (likely to be replaced with sprites)
+    [SerializeField] private Image defaultImage;
+    [SerializeField] private string defaultText; //Dummy Text for Empty Items 
 
-   [SerializeField]
-   private TMP_Text cardName, cardDesc, heirloomName, heirloomDesc, arcanaName, arcanaDesc;//Strings for names and descriptions 
-   
-   [SerializeField]
-   private string defaultText;//Dummy Text for Empty Items 
+    [SerializeField] private Button rerollButton;
+    [SerializeField] private int rerolls;
 
-   [SerializeField]
-   private int cycleIndex;//Current index 
+    [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
-   [SerializeField]
-   private int numberOfPages;//Used to determine when to stop cycling 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
-        DisplayAllCycledItems(); 
-
-        
+        displayedItems = new ShopItem[3, 3];
+        LoadShopItems();
+        DisplayShopItems(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoadShopItems()
     {
-    
 
-        //DisplayAllCycledItems(); 
-
-
-        
     }
 
-//Displays items by a given index. If the index exceeds the provided list, then blank text is used 
-//Takes the following parameters
-//int index - represents the current index to display by
-//Image image - the image slot of the item
-//TMP_Text name - the name text of the item to set
-//TMP_Text desc - the description text of the item to set
-//List<ShopItem> items - a list of ShopItems to use 
-    private void DisplayShopItems(int index, Image image, TMP_Text name, TMP_Text desc, List<ShopItem> items){
+    private void DisplayItem(int i){
+        pickImages[i].sprite = displayedItems[cycleIndex, i].GetIcon();
 
-        if(index < items.Count){
-            image.sprite = items[index].GetIcon();
-            name.text = items[index].GetName();
-            desc.text = items[index].GetDescription();
-        }else{
-            image = defaultImage;
-            name.text = defaultText;
-            desc.text = defaultText; 
+        if (pickImages[i] == null) pickImages[i].sprite = defaultImage.sprite;
 
+        pickNames[i].text = displayedItems[cycleIndex, i].GetName();  
+        pickDescriptions[i].text = displayedItems[cycleIndex, i].GetDescription();
+    }
+
+    private void DisplayShopItems()
+    {
+        for (int i = 0; i < displayedItems.GetLength(0); i++)
+        {
+            DisplayItem(i);
         }
-  
     }
 
-
-
-//Updates all Displays 
-    private void DisplayAllCycledItems(){
-        DisplayShopItems(cycleIndex, cardImage, cardName, cardDesc, commonCards);
-        DisplayShopItems(cycleIndex, heirloomImage, heirloomName, heirloomDesc, heirlooms);
-        DisplayShopItems(cycleIndex, arcanaImage, arcanaName, arcanaDesc, arcana);
-    }
 
 //Cycles the menu forward 1 
     public void CycleMenu(){
@@ -83,19 +60,20 @@ public class ShopDisplay : MonoBehaviour
         else 
             cycleIndex = 0;
         Debug.Log(cycleIndex);
-        DisplayAllCycledItems();
+        DisplayShopItems();
     }
     
 
 //Produces a random lineup of 3 Items in the Shop
     public void Reroll(){
-        int randomCommon = Random.Range(0, commonCards.Count);
-        int randomHeirloom = Random.Range(0, heirlooms.Count);
-        int randomArcana = Random.Range(0, heirlooms.Count);
 
-        DisplayShopItems(randomCommon, cardImage, cardName, cardDesc, commonCards);
-        DisplayShopItems(randomHeirloom, heirloomImage, heirloomName, heirloomDesc, heirlooms);
-        DisplayShopItems(randomArcana, arcanaImage, arcanaName, arcanaDesc, arcana); 
+        rerolls--;
 
+        if (rerolls <= 0)
+        {
+            rerollButton.interactable = false;
+            return;
+        } 
+     
     }
 }
