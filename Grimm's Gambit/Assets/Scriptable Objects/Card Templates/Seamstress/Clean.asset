@@ -20,10 +20,13 @@ MonoBehaviour:
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4695933482567467009
+  - rid: 927382214592954368
   references:
     version: 2
     RefIds:
-    - rid: 4695933482567467009
-      type: {class: CleanseEffect, ns: , asm: Assembly-CSharp}
-      data: 
+    - rid: 927382214592954368
+      type: {class: ClearAffixEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _clearingType: 1
+        _affixToClear: 0
+        _amount: -1

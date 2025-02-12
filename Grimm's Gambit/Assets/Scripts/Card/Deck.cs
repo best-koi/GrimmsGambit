@@ -42,7 +42,7 @@ public class Deck : MonoBehaviour
     public int m_MaxCountThisTurn;
 
     // Lists the indices of each card in the database
-    [SerializeField] private List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
+    [SerializeField] public List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
 
     private void Awake()
     {

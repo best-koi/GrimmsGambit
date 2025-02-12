@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe3308a3ede24ec1aa17e46f2e404ab, type: 3}
+  m_Name: TheDwarf
+  m_EditorClassIdentifier: 
+  encounterName: The Dwarf
+  description: "\u201CWhile making your way through the woods, a small little man
+    suddenly jumps out from the nearby brush, surprising everyone.\n\u2018Hold there
+    wayward folk! The path you tread is most precarious, and you\u2019ll fall upon
+    many follies if you are not careful! Here, you must eat this root and drink no
+    water until sunset, it\u2019ll grant you the protection you need to finish your
+    journey!\u2019\nThe little man gives you the root and disappears as suddenly
+    as he came. You are left quite perplexed as to what to do with the root, as it
+    looks quite unappetizing.\u201D\n"
+  choice1: '<Eat the Root> '
+  choice2: '<Throw it Away> '
+  choice1Outcome: 'The root tastes horrid, leaving a disgusting aftertaste in your
+    mouth. You feel sick for a while, but eventually the pain passes. You wonder
+    what the root exactly did, if anything at all.
+
+
+    [All Party Members Take
+    5 damage, gain 10 Max HP]
+
+'
+  choice2Outcome: "You throw it away, what you don\u2019t eat can\u2019t hurt you
+    right?\n\n[No Reward, but No Punishments]"
+  choice1Type: 
+  choice2Type: 

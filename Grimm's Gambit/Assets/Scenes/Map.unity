@@ -24812,6 +24812,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6dbe7eb0b33b94eb88f590a2cc959f01, type: 2}
   - {fileID: 11400000, guid: 528b029e4f50f414e899430cb2597c57, type: 2}
   - {fileID: 11400000, guid: 24ff89b1bfe5e45b3a82ebfae8391d48, type: 2}
+  - {fileID: 11400000, guid: caa5eec3bc6ff4c8eb3f44f22786a865, type: 2}
   twoChoiceUI: {fileID: 1065780998}
   twoTitle: {fileID: 1417220390}
   twoDesc: {fileID: 1888048207}

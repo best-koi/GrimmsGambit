@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Coated Up
   m_EditorClassIdentifier: 
   _cardName: Coated Up
-  _cardDescription: Gain 7 Block. Apply 1 Strength.
+  _cardDescription: 'Gain 7 Block. Recover 2 HP, recover 3 more if HP is equal to
+    or less than 50% HP. '
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 2
@@ -21,17 +22,32 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1396538504836808740
-  - rid: 1396538504836808741
+  - rid: 927382194915901447
+  - rid: 927382214592954369
   references:
     version: 2
     RefIds:
+    - rid: 927382194915901447
+      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 2
+        m_TargetingSelf: 0
+    - rid: 927382214592954369
+      type: {class: DoOnHealthEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_HealthGate: 0.5
+        _valueComparisonMode: 4
+        m_CheckingSelf: 0
+        _successSpells:
+        - rid: 927382214592954371
+        _failureSpells: []
+    - rid: 927382214592954371
+      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 3
+        m_TargetingSelf: 0
     - rid: 1396538504836808740
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 1
         _value: 7
-    - rid: 1396538504836808741
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 7
-        _value: 1

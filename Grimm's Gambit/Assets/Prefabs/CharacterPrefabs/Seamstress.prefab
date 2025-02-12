@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3587491437083784633}
   - component: {fileID: 525796326530784752}
   - component: {fileID: 6341920474929905174}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: AffixDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4890767153850758576}
   - component: {fileID: 2213588676202623649}
   - component: {fileID: 8931673747312072328}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7967882489818454807}
   - component: {fileID: 3300948500081996684}
   - component: {fileID: 254580483439896412}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.06999993, y: 0.2727}
+  m_AnchoredPosition: {x: -0.06999993, y: 0.59}
   m_SizeDelta: {x: 5, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7967882489818454807
@@ -328,7 +328,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.07, y: 0.2727, z: 0}
-  m_LocalScale: {x: 0.18341126, y: 0.10308477, z: 1.45313}
+  m_LocalScale: {x: 0.165, y: 0.092736885, z: 1.3072615}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5397451098032334217}
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9520d701e910f4c4782737abe2b5e7d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c7b813954f50ff4b9e55b175cbd93fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 7102871398971922720}
   - component: {fileID: 5109818671152195443}
   - component: {fileID: 6481525176744876809}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 699420861470457046}
   - component: {fileID: 2184398636814796750}
   - component: {fileID: 3789430983188569646}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 6800378897576233547}
   - component: {fileID: 991795482179226822}
   - component: {fileID: 6753759681830727435}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 8484478927819855856}
   - component: {fileID: 2253396741793585314}
   - component: {fileID: 5690366794712523403}
-  m_Layer: 3
+  m_Layer: 5
   m_Name: HealthBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

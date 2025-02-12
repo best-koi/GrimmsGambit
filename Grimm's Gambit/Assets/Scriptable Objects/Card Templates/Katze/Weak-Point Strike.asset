@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Weak-Point Strike
+  m_EditorClassIdentifier: 
+  _cardName: Weak-Point Strike
+  _cardDescription: Deal 8 damage first, then Apply 2 Damage Reduction. If the enemy
+    has Damage Reduction, it returns one spirit and draws a card.
+  _cardCost: 1
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
+  _targetsEnemies: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 1396538504836808710
+  - rid: 927382162900254724
+  - rid: 927382162900254722
+  references:
+    version: 2
+    RefIds:
+    - rid: 927382162900254722
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 3
+        _value: 2
+    - rid: 927382162900254724
+      type: {class: DoOnDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        conditionDebuff: 3
+        _spells:
+        - rid: 927382162900254727
+        - rid: 927382162900254730
+    - rid: 927382162900254727
+      type: {class: AddSpiritEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _spiritGained: 1
+    - rid: 927382162900254730
+      type: {class: DrawCardEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 1
+    - rid: 1396538504836808710
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 8

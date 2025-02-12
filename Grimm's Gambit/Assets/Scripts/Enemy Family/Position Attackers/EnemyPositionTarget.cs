@@ -82,6 +82,7 @@ public class EnemyPositionTarget : EnemyTemplate
     //If no one is left, return false
     protected override bool CanAttackTarget()
     {
+        OrderCharacters(); 
         if (attackTarget == null) //positionTarget.GetDestroyed())
         {
             return SeekNewTargetInOrder();

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Reconstruct
+  m_EditorClassIdentifier: 
+  _cardName: Reconstruct
+  _cardDescription: Discard hand and draw the same number discarded. Preserve.
+  _cardCost: 0
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
+  _targetsEnemies: 1
+  _reverseTemplate: {fileID: 0}
+  _spells: []
+  references:
+    version: 2
+    RefIds: []

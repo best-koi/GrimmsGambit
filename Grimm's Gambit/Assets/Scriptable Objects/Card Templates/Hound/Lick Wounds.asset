@@ -21,14 +21,18 @@ MonoBehaviour:
   _targetsEnemies: 0
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1396538504836808742
+  - rid: 927382194915901440
   references:
     version: 2
     RefIds:
-    - rid: 1396538504836808742
-      type: {class: RemoveAffixAndDoEffectEffect, ns: , asm: Assembly-CSharp}
+    - rid: 927382194915901440
+      type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
       data:
-        debuff: 1
-        m_TargetingSelf: 0
-        m_AmountMultiplier: 0.5
-        m_HealTarget: 1
+        _checkedDebuff: 1
+        _checkSelf: 1
+        _removeCheckedDebuff: 1
+        _applyType: 1
+        _newDebuff: 0
+        _amountMultiplier: 0.5
+        _capValue: -1
+        _applyToSelf: 1

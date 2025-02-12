@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
+  m_Name: Encaged
+  m_EditorClassIdentifier: 
+  _cardName: Encaged
+  _cardDescription: "Deal 3 damage. Skip target\u2019s next turn. Once. "
+  _cardCost: 2
+  _cardSprite: {fileID: 0}
+  _playerCopyCount: 1
+  _targetsEnemies: 1
+  _reverseTemplate: {fileID: 0}
+  _spells:
+  - rid: 927382194915901453
+  - rid: 927382194915901454
+  references:
+    version: 2
+    RefIds:
+    - rid: 927382194915901453
+      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 3
+    - rid: 927382194915901454
+      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
+      data: 
