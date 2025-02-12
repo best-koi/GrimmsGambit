@@ -21,11 +21,28 @@ public class ShopDisplay : MonoBehaviour
 
     [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
+    [SerializeField] private int numberOfItems = 3; // Number of items to be displayed on each page
 
     // Start is called before the first frame update
     private void Start()
     {
-        displayedItems = new ShopItem[3, 3];
+        displayedItems = new ShopItem[numberOfItems, numberOfPages + 1];
+        
+        if (pickImages.Length != numberOfItems)
+        {
+            pickImages = new Image[numberOfItems];
+        }
+        
+        if (pickNames.Length != numberOfItems) 
+        { 
+            pickNames = new TMP_Text[numberOfItems]; 
+        }
+        
+        if (pickDescriptions.Length != numberOfItems)
+        {
+            pickDescriptions = new TMP_Text[numberOfItems];
+        }
+        
         LoadShopItems();
         DisplayShopItems(); 
     }
