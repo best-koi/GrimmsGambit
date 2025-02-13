@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EncounterWin.unity
     guid: 72ee6b9c1115f9244b578b782a568644
+  - enabled: 1
+    path: Assets/BasicEnemyScene V2.unity
+    guid: f75f997db1aa54cfe90e6632a20e9815
   m_configObjects: {}
