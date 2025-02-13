@@ -15,13 +15,6 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField]
     private GameObject talkButton, shopButton, party, talkPanel, dialogueWindow;
 
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -39,6 +32,14 @@ public class DialogueHandler : MonoBehaviour
         shopButton.SetActive(false);
         talkPanel.SetActive(true);
         
+
+    }
+
+    public void StartDialogue(){
+        talkPanel.SetActive(false);
+        party.SetActive(false);
+        dialogueWindow.SetActive(true); 
+
 
     }
 }
