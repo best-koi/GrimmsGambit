@@ -3769,7 +3769,7 @@ MonoBehaviour:
   houndConversations:
   - {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
   selectedConversation: {fileID: 0}
-  textSpeed: 0.1
+  textSpeed: 0.05
 --- !u!4 &1728676239
 Transform:
   m_ObjectHideFlags: 0
