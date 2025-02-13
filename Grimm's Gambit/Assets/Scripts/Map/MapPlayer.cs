@@ -28,7 +28,7 @@ public class MapPlayer : MonoBehaviour
     private Vector3 centerLocation;
 
     [SerializeField]
-    private string encounterScene;
+    private string encounterScene, campfireScene;
 
     [SerializeField]
     private string lycanScene, sistersScene;
@@ -114,7 +114,10 @@ public class MapPlayer : MonoBehaviour
         }else if (collision.gameObject.tag == "Narrative"){
             collision.gameObject.tag = "Inactive";
             encounterGenerator.GetRandomNarrativeEncounter(); 
-            
+        }else if(collision.gameObject.tag == "Campfire"){
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(campfireScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
 
         }
     }
