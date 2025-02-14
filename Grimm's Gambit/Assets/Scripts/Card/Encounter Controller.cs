@@ -82,18 +82,10 @@ public class EncounterController : MonoBehaviour
             encounterEnded = true;
             EndEncounter(false);
 
-            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
-            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
-            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
-            save.SaveData();
         }else if ((enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)) && encounterEnded == false){
             encounterEnded = true;
             EndEncounter(true);
-            
-            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
-            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
-            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
-            save.SaveData();
+        
         }
         
     }
