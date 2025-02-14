@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EncounterVictoryMenu : MonoBehaviour
 {
@@ -14,9 +15,13 @@ public class EncounterVictoryMenu : MonoBehaviour
     [SerializeField]
     private TMP_Text zeroName, zeroDesc, oneName, oneDesc, twoName, twoDesc; //These are all stored separately so that it would be easy for me to setup my scene - This portion is entirely contingent on scene setup
     private List<CardTemplate> currentData = new List<CardTemplate>(); //Current data is used for confirming selection
+    private PlayerData playerData;
     void Start()
     {
         //LOAD DECK FROM JSON FILE HERE
+        playerData = FindObjectOfType<PlayerData>();
+        currentDeck.m_GameDeck = playerData.GetPlayerDeck();
+
         InitializeBooleanLists(); //Sorts valid cards for display
         ChooseCards(); //Displays cards
     }
@@ -45,7 +50,7 @@ public class EncounterVictoryMenu : MonoBehaviour
         }
     }
 
-    //Chooses three random cards to display
+    //Chooses three random cards to display - Reload was bound to this as well, but the reload button is no longer being used
     public void ChooseCards()
     {
         for (int i = 0; i < trueCounters.Count; i++)
@@ -143,5 +148,12 @@ public class EncounterVictoryMenu : MonoBehaviour
     public void EndScene()
     {
         //Load new deck into json and close this additive scene
+        playerData.SetPlayerDeck(currentDeck.m_GameDeck);
+        SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+        save.SaveData();
+
+        //Closing of scene:
+        SceneManager.UnloadSceneAsync("Encounter Victory Scene");
+        MapPlayer.sceneToToggle.SetActive(true);
     }
 }
