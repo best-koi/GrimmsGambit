@@ -11871,10 +11871,10 @@ MonoBehaviour:
   m_NumDrawsPerTurn: 6
   m_MaxCountThisTurn: 0
   m_GameDeck:
-  - ownerIndex: 0
-    databaseIndex: 0
-  - ownerIndex: 0
-    databaseIndex: 6
+  - ownerIndex: 1
+    databaseIndex: 5
+  - ownerIndex: 2
+    databaseIndex: 4
   - ownerIndex: 0
     databaseIndex: 6
   - ownerIndex: 0

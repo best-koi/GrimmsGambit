@@ -16,6 +16,8 @@ public class AOEDamageEffect : SpellEffect
     {
         //The following assumes that only two parties exist and characters have properly labeled owners.
         //This is used to ensure that the friendly party is healed
+
+        /*
         List<Transform> enemyParty;
         UnitParty[] parties = GameObject.FindObjectsOfType<UnitParty>();
         List<Transform> currentParty = parties[0].GetAll();
@@ -27,10 +29,22 @@ public class AOEDamageEffect : SpellEffect
         {
             enemyParty = parties[1].GetAll();
         }
+
         foreach (Transform member in enemyParty)
         {
             target = member.GetComponent<Minion>();
+            Debug.Log(target);
             target.DamageTaken(m_Amount);
+        }
+        */
+
+        UnitParty[] parties = GameObject.FindObjectsOfType<UnitParty>();
+        Minion[] enemyParty = !target.ownerPlayer ? parties[1].GetComponentsInChildren<Minion>() : parties[0].GetComponentsInChildren<Minion>();
+
+        foreach (Minion member in enemyParty)
+        {
+            Debug.Log(member);
+            member.DamageTaken(m_Amount);
         }
     }
 }
