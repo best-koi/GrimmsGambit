@@ -214,7 +214,7 @@ public class EncounterController : MonoBehaviour
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
         SceneManager.UnloadSceneAsync(enemySceneName);
-        if(playerWin) SceneManager.LoadScene("EncounterWin", LoadSceneMode.Additive);
+        if(playerWin) SceneManager.LoadScene("Encounter Victory Scene", LoadSceneMode.Additive);
         else SceneManager.LoadScene("EncounterLoss", LoadSceneMode.Additive);
     }
 
