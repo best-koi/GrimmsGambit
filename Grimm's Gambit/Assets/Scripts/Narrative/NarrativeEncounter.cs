@@ -47,6 +47,14 @@ public class NarrativeEncounter : ScriptableObject
 //To be used by buttons in narrative generator
     public virtual void Choice1(){
         Debug.Log("Chose Choice 1");
+        /*
+        MaxHp = 0
+        CurrentHp = 0
+        Heirloom = "Miracle Water"
+        Card = null 
+
+        */
+
 
     }
 
