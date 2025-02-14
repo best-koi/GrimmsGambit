@@ -8,16 +8,11 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public int currency;
     [SerializeField] public List<CardData> deck;
     [SerializeField] public List<Heirloom> heirlooms;
-    //[SerializeField] public List<CardV2> cards;
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-    // private PlayerData(float volume = 0.5f) {
-    //     this.volume = volume;
-    // }
 
     public void SetPlayerData(float volume) {
         this.volume = volume;

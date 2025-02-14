@@ -14,9 +14,13 @@ public class EncounterVictoryMenu : MonoBehaviour
     [SerializeField]
     private TMP_Text zeroName, zeroDesc, oneName, oneDesc, twoName, twoDesc; //These are all stored separately so that it would be easy for me to setup my scene - This portion is entirely contingent on scene setup
     private List<CardTemplate> currentData = new List<CardTemplate>(); //Current data is used for confirming selection
+    private PlayerData playerData;
     void Start()
     {
         //LOAD DECK FROM JSON FILE HERE
+        playerData = FindObjectOfType<PlayerData>();
+        currentDeck.m_GameDeck = playerData.GetPlayerDeck();
+
         InitializeBooleanLists(); //Sorts valid cards for display
         ChooseCards(); //Displays cards
     }
@@ -143,5 +147,8 @@ public class EncounterVictoryMenu : MonoBehaviour
     public void EndScene()
     {
         //Load new deck into json and close this additive scene
+        playerData.SetPlayerDeck(currentDeck.m_GameDeck);
+        SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+        save.SaveData();
     }
 }
