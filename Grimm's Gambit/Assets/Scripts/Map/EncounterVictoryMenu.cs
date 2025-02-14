@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EncounterVictoryMenu : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class EncounterVictoryMenu : MonoBehaviour
         }
     }
 
-    //Chooses three random cards to display
+    //Chooses three random cards to display - Reload was bound to this as well, but the reload button is no longer being used
     public void ChooseCards()
     {
         for (int i = 0; i < trueCounters.Count; i++)
@@ -150,5 +151,9 @@ public class EncounterVictoryMenu : MonoBehaviour
         playerData.SetPlayerDeck(currentDeck.m_GameDeck);
         SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
         save.SaveData();
+
+        //Closing of scene:
+        SceneManager.UnloadSceneAsync("Encounter Victory Scene");
+        MapPlayer.sceneToToggle.SetActive(true);
     }
 }
