@@ -6,7 +6,8 @@ public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float volume = 0.5f;
     [SerializeField] public int currency;
-    [SerializeField] public List<ShopItem> items;
+    [SerializeField] public List<CardData> deck;
+    [SerializeField] public List<Heirloom> heirlooms;
     //[SerializeField] public List<CardV2> cards;
 
     void Start()
@@ -30,7 +31,19 @@ public class PlayerData : MonoBehaviour
         this.volume = volume;
     }
 
-    public void addItem(ShopItem i) {
-        items.Add(i);
+    public void SetPlayerDeck(List<CardData> deck) {
+        this.deck = deck;
+    }
+
+    public List<CardData> GetPlayerDeck() {
+        return deck;
+    }
+
+    public void SetPlayerHeirlooms(List<Heirloom> heirlooms) {
+        this.heirlooms = heirlooms;
+    }
+
+    public List<Heirloom> GetPlayerHeirlooms() {
+        return heirlooms;
     }
 }

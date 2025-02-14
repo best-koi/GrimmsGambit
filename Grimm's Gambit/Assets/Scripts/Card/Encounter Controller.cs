@@ -39,6 +39,7 @@ public class EncounterController : MonoBehaviour
     private bool Greeding = false; //Variable to control whether the greedy jar effect is active
     private bool FirstCardFree = false; //Variable to control whether the buff for Faded Gold Silk is active
     private HeirloomManager heirloomManager; //Reference to the heirloom manager for heirloom checks
+    private PlayerData playerData;
 
     private bool encounterEnded = false; 
 
@@ -59,6 +60,17 @@ public class EncounterController : MonoBehaviour
     {
         m_EndButton.onClick.AddListener(EndTurn);
         heirloomManager = FindObjectOfType<HeirloomManager>(); //This is done here so it is only done once per scene runtime iteration
+        playerData = FindObjectOfType<PlayerData>();
+        List<Heirloom> heirlooms = playerData.GetPlayerHeirlooms();
+        List<CardData> playerDeck = playerData.GetPlayerDeck();
+        if (playerDeck.Count > 0) {
+            m_PlayerDeck.m_GameDeck = playerDeck;
+        }
+        if (heirlooms.Count > 0) {
+            for (int i = 0; i < heirlooms.Count; i++) {
+                heirloomManager.AddHeirloom(heirlooms[i]);
+            }
+        }
         StartEncounter();
     }
 
@@ -69,9 +81,19 @@ public class EncounterController : MonoBehaviour
         if(m_PlayerInventory.ChildListSize == 0 && encounterEnded == false){
             encounterEnded = true;
             EndEncounter(false);
+
+            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
+            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
+            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+            save.SaveData();
         }else if ((enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)) && encounterEnded == false){
             encounterEnded = true;
             EndEncounter(true);
+            
+            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
+            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
+            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+            save.SaveData();
         }
         
     }

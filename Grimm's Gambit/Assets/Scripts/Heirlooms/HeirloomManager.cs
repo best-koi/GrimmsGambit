@@ -48,4 +48,9 @@ public class HeirloomManager : MonoBehaviour
             heirloomDisplay.RemoveHeirloom(heirloom); //For visual aspect
         }
     }
+
+    public List<Heirloom> GetHeirlooms()
+    {
+        return currentHeirlooms;
+    }
 }
