@@ -6408,7 +6408,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volume: 0.5
   currency: 0
-  items: []
+  deck:
+  - ownerIndex: 3
+    databaseIndex: 1
+  - ownerIndex: 2
+    databaseIndex: 3
+  - ownerIndex: 2
+    databaseIndex: 2
+  - ownerIndex: 2
+    databaseIndex: 8
+  - ownerIndex: 0
+    databaseIndex: 1
+  - ownerIndex: 0
+    databaseIndex: 8
+  - ownerIndex: 0
+    databaseIndex: 1
+  - ownerIndex: 1
+    databaseIndex: 0
+  - ownerIndex: 1
+    databaseIndex: 5
+  - ownerIndex: 1
+    databaseIndex: 8
+  heirlooms: 06000000
+  currentHPChange: 0
+  maxHPChange: 0
 --- !u!4 &1962893006
 Transform:
   m_ObjectHideFlags: 0
