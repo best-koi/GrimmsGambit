@@ -6409,8 +6409,6 @@ MonoBehaviour:
   volume: 0.5
   currency: 0
   deck:
-  - ownerIndex: 3
-    databaseIndex: 1
   - ownerIndex: 2
     databaseIndex: 3
   - ownerIndex: 2
