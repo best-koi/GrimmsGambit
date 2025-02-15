@@ -7012,7 +7012,7 @@ MonoBehaviour:
   m_EnemyInventory: {fileID: 613970853}
   sceneParent: {fileID: 1558088976}
   enemies: []
-  enemySceneName: 
+  enemySceneName: LycanSceneV2
 --- !u!1001 &861015971
 PrefabInstance:
   m_ObjectHideFlags: 0

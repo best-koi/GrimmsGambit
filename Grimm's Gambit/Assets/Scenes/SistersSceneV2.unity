@@ -7773,7 +7773,7 @@ MonoBehaviour:
   m_EnemyInventory: {fileID: 613970853}
   sceneParent: {fileID: 1558088976}
   enemies: []
-  enemySceneName: 
+  enemySceneName: SistersSceneV2
 --- !u!1001 &835207037
 PrefabInstance:
   m_ObjectHideFlags: 0
