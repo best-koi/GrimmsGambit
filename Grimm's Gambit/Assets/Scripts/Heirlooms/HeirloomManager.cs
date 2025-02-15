@@ -21,7 +21,7 @@ public class HeirloomManager : MonoBehaviour
     private List<Heirloom> currentHeirlooms = new List<Heirloom>(); //List to control current heirlooms
     private HeirloomDisplay heirloomDisplay;
     
-    void Start()
+    void Awake()
     {
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
