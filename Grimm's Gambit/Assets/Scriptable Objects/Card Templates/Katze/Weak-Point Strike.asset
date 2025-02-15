@@ -16,7 +16,7 @@ MonoBehaviour:
   _cardDescription: Deal 8 damage first, then Apply 2 Damage Reduction. If the enemy
     has Damage Reduction, it returns one spirit and draws a card.
   _cardCost: 1
-  _cardSprite: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
