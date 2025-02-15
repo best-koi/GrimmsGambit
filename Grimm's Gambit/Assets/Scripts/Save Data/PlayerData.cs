@@ -8,6 +8,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public int currency;
     [SerializeField] public List<CardData> deck;
     [SerializeField] public List<Heirloom> heirlooms;
+    [SerializeField] public int currentHPChange;
+    [SerializeField] public int maxHPChange;
 
     void Start()
     {
