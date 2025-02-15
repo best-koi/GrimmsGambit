@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8942224, g: 0.2777468, b: 0.043872062, a: 1}
+  m_IndirectSpecularColor: {r: 0.8908235, g: 0.27793398, b: 0.043407805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8098,6 +8098,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 608085424}
     m_Modifications:
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3310163
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3249294
+      objectReference: {fileID: 0}
     - target: {fileID: 2393857477294652435, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: Card Hand
@@ -8285,22 +8301,6 @@ PrefabInstance:
     - target: {fileID: 9062063131279236033, guid: 1da0d9b76592a420491ec0920e7dc196, type: 3}
       propertyPath: m_Name
       value: InspireCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.x
-      value: 0.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Size.y
-      value: 0.3310163
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 22926318778006219, guid: 5a336da47868c1d4480f174f43609fee, type: 3}
-      propertyPath: m_Center.y
-      value: 1.3249294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -9422,7 +9422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckText: {fileID: 2090063251}
   discardText: {fileID: 547910412}
-  playerDeck: {fileID: 7156029451313343015}
+  playerDeck: {fileID: 0}
 --- !u!4 &1232710144
 Transform:
   m_ObjectHideFlags: 0
@@ -20137,7 +20137,6 @@ Transform:
   - {fileID: 1749286194}
   - {fileID: 1719139418}
   - {fileID: 5415407905739730356}
-  - {fileID: 2874460408173395138}
   - {fileID: 1790341146}
   - {fileID: 1534188652}
   - {fileID: 1363140923}
@@ -31850,21 +31849,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2101908815}
   m_SourcePrefab: {fileID: 100100000, guid: d9c72c598fd7e4791bfce929b95fa299, type: 3}
---- !u!4 &2874460408173395138
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854964020507938079}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.746792, y: 0.54340506, z: 1.7113171}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1558088977}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5060958497843056816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31998,97 +31982,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df271b4fe1da6d946be7b3b46054cf41, type: 3}
---- !u!1 &6854964020507938079
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2874460408173395138}
-  - component: {fileID: 7156029451313343015}
-  m_Layer: 0
-  m_Name: PlaytestDeck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &7156029451313343015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6854964020507938079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartingHandSize: 6
-  m_MaxHandSize: 10
-  m_NumDrawsPerTurn: 6
-  m_MaxCountThisTurn: 0
-  m_GameDeck:
-  - ownerIndex: 0
-    databaseIndex: 0
-  - ownerIndex: 0
-    databaseIndex: 1
-  - ownerIndex: 0
-    databaseIndex: 2
-  - ownerIndex: 0
-    databaseIndex: 3
-  - ownerIndex: 0
-    databaseIndex: 4
-  - ownerIndex: 0
-    databaseIndex: 5
-  - ownerIndex: 0
-    databaseIndex: 6
-  - ownerIndex: 0
-    databaseIndex: 7
-  - ownerIndex: 0
-    databaseIndex: 8
-  - ownerIndex: 0
-    databaseIndex: 9
-  - ownerIndex: 0
-    databaseIndex: 10
-  - ownerIndex: 1
-    databaseIndex: 0
-  - ownerIndex: 1
-    databaseIndex: 1
-  - ownerIndex: 1
-    databaseIndex: 2
-  - ownerIndex: 1
-    databaseIndex: 3
-  - ownerIndex: 1
-    databaseIndex: 4
-  - ownerIndex: 1
-    databaseIndex: 5
-  - ownerIndex: 2
-    databaseIndex: 0
-  - ownerIndex: 2
-    databaseIndex: 1
-  - ownerIndex: 2
-    databaseIndex: 2
-  - ownerIndex: 2
-    databaseIndex: 3
-  - ownerIndex: 2
-    databaseIndex: 4
-  - ownerIndex: 2
-    databaseIndex: 5
-  - ownerIndex: 2
-    databaseIndex: 6
-  - ownerIndex: 2
-    databaseIndex: 7
-  - ownerIndex: 2
-    databaseIndex: 9
-  - ownerIndex: 2
-    databaseIndex: 10
-  m_Hand: []
-  m_DiscardPile: []
-  m_RemovedZone: []
 --- !u!1001 &7909464690631944838
 PrefabInstance:
   m_ObjectHideFlags: 0
