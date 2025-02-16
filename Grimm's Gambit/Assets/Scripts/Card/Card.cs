@@ -41,6 +41,18 @@ public class Card : MonoBehaviour
         _cardTemplate = newTemplate;
     }
 
+    public void PlaySound(AudioSource audioSource)
+    {
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f; //Resets before playing
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f; //Modifies pitch to randomly be shifted by a pentatonic semitone
+        }
+        audioSource.PlayOneShot(SoundEffect);
+    }
+
     #endregion
 }
 

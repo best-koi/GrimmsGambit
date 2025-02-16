@@ -104,8 +104,8 @@ public class DragAndDropV2 : MonoBehaviour
                     hitMinion.ConsumeCard(_selectedObject.GetComponent<Card>());
                     //Plays the audio associated with the card
                     AudioSource _audioSource;
-                    _audioSource = FindObjectOfType<AudioSource>();
-                    _audioSource.PlayOneShot(_selectedObject.GetComponent<Card>().SoundEffect);
+                    _audioSource = GetComponent<AudioSource>(); //Uses audio source within the drag and drop prefab
+                    _selectedObject.GetComponent<Card>().PlaySound(_audioSource);
 
                     Destroy(_selectedObject.gameObject);
                 }
