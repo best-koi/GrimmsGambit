@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3771,7 +3771,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
   selectedConversation: {fileID: 0}
   textSpeed: 0.05
-  SoundEffect: {fileID: 8300000, guid: a6613094f6e1b724a9c63d7a3bf8f0f1, type: 3}
+  SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
 --- !u!4 &1728676239
 Transform:
   m_ObjectHideFlags: 0
@@ -3797,7 +3797,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a6613094f6e1b724a9c63d7a3bf8f0f1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
