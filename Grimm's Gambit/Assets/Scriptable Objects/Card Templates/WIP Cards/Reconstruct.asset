@@ -18,6 +18,7 @@ MonoBehaviour:
   _cardSprite: {fileID: 0}
   _playerCopyCount: 1
   _targetsEnemies: 1
+  _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells: []
   references:

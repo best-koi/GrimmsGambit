@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
   m_Name: Animal Instincts
   m_EditorClassIdentifier: 
-  _cardPrefab: {fileID: 1434535984778797612, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
   _cardName: 'Animal Instincts '
   _cardDescription: 'Deal 6 damage. Gain 7 Block. '
   _cardCost: 1
-  _data:
-    ownerIndex: 0
-    databaseIndex: 0
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 0
+  _targetsEnemies: 1
+  _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 5427119459010609152

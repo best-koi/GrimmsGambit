@@ -102,6 +102,11 @@ public class DragAndDropV2 : MonoBehaviour
                 {
                     //m_SelectedObject.parent = hit.transform;
                     hitMinion.ConsumeCard(_selectedObject.GetComponent<Card>());
+                    //Plays the audio associated with the card
+                    AudioSource _audioSource;
+                    _audioSource = FindObjectOfType<AudioSource>();
+                    _audioSource.PlayOneShot(_selectedObject.GetComponent<Card>().SoundEffect);
+
                     Destroy(_selectedObject.gameObject);
                 }
                 else

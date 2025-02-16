@@ -25,6 +25,7 @@ public class Card : MonoBehaviour
     public List<SpellEffect> Spells { get => _cardTemplate.Spells; }
     public Minion Caster { get => _caster; set => _caster = value; }
     public bool IsEphemeral { get => m_IsEphemeral; }
+    public AudioClip SoundEffect { get => _cardTemplate.SoundEffect; }
 
     #endregion
 
