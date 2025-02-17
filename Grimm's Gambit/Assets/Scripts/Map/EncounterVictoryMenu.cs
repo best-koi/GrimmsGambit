@@ -3,148 +3,103 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EncounterVictoryMenu : MonoBehaviour
 {
     public Deck currentDeck;
     public CardDatabase cardDatabase;
-    //To be clear, the only reason I did it this way is because I wasn't sure how to make a 2D array in C# for this that could be of undefined lengths and visible in the editor for testing purposes:
-    public List<bool> rowZero = new List<bool>(); //Each list is to indicate what indices are valid encounter victory card options
-    public List<bool> rowOne = new List<bool>();
-    public List<bool> rowTwo = new List<bool>(); //Manually add another one of these if there is an additional character or card collection
-    int rowZeroCounter = 0; //These counters determine how many valid card options are available for each character
-    int rowOneCounter = 0;
-    int rowTwoCounter = 0;
+    public List<List<bool>> validPairs = new List<List<bool>>(); //Valid indices are set to true within this, invalid(in deck) are false, null are not cards at all
+    public List<int> trueCounters = new List<int>(); //This list is simply used to count how many true values exist for each character list - this is important for choosing what range to use for random values without checking validPairs
     //The following are all references for ui display elements:
     [SerializeField]
-    private TMP_Text zeroName, zeroDesc, oneName, oneDesc, twoName, twoDesc;
+    private TMP_Text zeroName, zeroDesc, oneName, oneDesc, twoName, twoDesc; //These are all stored separately so that it would be easy for me to setup my scene - This portion is entirely contingent on scene setup
+    [SerializeField]
+    private Image zeroImage, oneImage, twoImage;
     private List<CardTemplate> currentData = new List<CardTemplate>(); //Current data is used for confirming selection
+    private PlayerData playerData;
     void Start()
     {
         //LOAD DECK FROM JSON FILE HERE
+        playerData = FindObjectOfType<PlayerData>();
+        currentDeck.m_GameDeck = playerData.GetPlayerDeck();
+
         InitializeBooleanLists(); //Sorts valid cards for display
         ChooseCards(); //Displays cards
     }
 
     private void InitializeBooleanLists() //Determines which card indices can be used for the display
     {
-        //Sets all valid used database indices to true
-        for (int i = 0; i < cardDatabase._cardPrefabs.BaseArray[0].Row.Length; i++)
+        //Initializes a list for each card category
+        for (int i = 0; i < cardDatabase._cardPrefabs.BaseArray.Length; i++) //Iterates through each card owner
         {
-            rowZero.Add(true);
-            rowZeroCounter++;
-        }
-        for (int i = 0; i < cardDatabase._cardPrefabs.BaseArray[1].Row.Length; i++)
-        {
-            rowOne.Add(true);
-            rowOneCounter++;
-        }
-        for (int i = 0; i < cardDatabase._cardPrefabs.BaseArray[2].Row.Length; i++)
-        {
-            rowTwo.Add(true);
-            rowTwoCounter++;
+            validPairs.Add(new List<bool>());
+            trueCounters.Add(0); //Adds a zero value to initialize the true count
+            //Sets all valid used database indices to true
+            for (int j = 0; j < cardDatabase._cardPrefabs.BaseArray[i].Row.Length; j++)
+            {
+                validPairs[i].Add(true); //Initially sets all values to true
+                trueCounters[i] += 1;
+            }
         }
 
         //Sets values false based upon indeces in the deck
         for (int i = 0; i < currentDeck.m_GameDeck.Count; i++)
         {
             CardData currentData = currentDeck.m_GameDeck[i];
-            if (currentData.ownerIndex == 0)
-            {
-                rowZero[currentData.databaseIndex] = false;
-                rowZeroCounter--;
-            }
-            else if (currentData.ownerIndex == 1)
-            {
-                rowOne[currentData.databaseIndex] = false;
-                rowOneCounter--;
-            }
-            else //Index 2
-            {
-                rowTwo[currentData.databaseIndex] = false;
-                rowTwoCounter--;
-            }
+            validPairs[currentData.ownerIndex][currentData.databaseIndex] = false; //Sets value found in deck to false
+            trueCounters[currentData.ownerIndex] -= 1; //Decrements true count for this row
         }
     }
 
-    //Chooses three random cards to display
+    //Chooses three random cards to display - Reload was bound to this as well, but the reload button is no longer being used
     public void ChooseCards()
     {
-        if (rowZeroCounter == 0 && rowOneCounter == 0 && rowTwoCounter == 0) //Exits if there are no cards to choose from
+        for (int i = 0; i < trueCounters.Count; i++)
         {
-            EndScene();
-            return;
+            if (trueCounters[i] != 0)
+            {
+                break;
+            }
+            else if (i == trueCounters.Count-1)
+            {
+                EndScene();
+                return; //Exits if there are no cards to choose from
+            }
         }
         for (int i = 0; i < 3; i++) //Chooses three cards
         {
-            int randomMinion = Random.Range(0, 3);
+            int randomMinion = Random.Range(0, cardDatabase._cardPrefabs.BaseArray.Length);
             //Cycles index if invalid
-            if (randomMinion == 0 && rowZeroCounter == 0)
+            while(trueCounters[randomMinion] == 0)
             {
-                randomMinion++;
-            }
-            else if (randomMinion == 1 && rowOneCounter == 0)
-            {
-                randomMinion++;
-            }
-            else if (randomMinion == 2 && rowTwoCounter == 0)
-            {
-                randomMinion = 0;
+                if (randomMinion == cardDatabase._cardPrefabs.BaseArray.Length)
+                {
+                    randomMinion = 0;
+                }
+                else
+                {
+                    randomMinion++;
+                }
             }
 
             //Sets Display:
             int randomIndex = 0;
-            int j = 0;
-            if (randomMinion == 0)
+            int randomIndexPre = Random.Range(0, trueCounters[randomMinion]); //Chooses a random card for the given random minion
+            while (validPairs[randomMinion][randomIndex] == false)
             {
-                int randomIndexPre = Random.Range(0, rowZeroCounter);
-                while(rowZero[randomIndex] == false)
+                randomIndex++; //Ensures the initial value is valid
+            }
+            for (int j = 0; j < randomIndexPre; j++) //Iterates based upon random variable
+            {
+                randomIndex++; //Increments once per value generated by the random
+                while(validPairs[randomMinion][randomIndex] == false) 
                 {
-                    randomIndex++;
-                }
-                for (j = 0; j < randomIndexPre; j++) //Iterates based upon random variable
-                {
-                    randomIndex++; //Increments once per value generated by the random
-                    while(rowZero[randomIndex] == false)
-                    {
-                        randomIndex++; //Skips values that are false
-                    }
+                    randomIndex++; //Skips values that are false
                 }
             }
-            else if (randomMinion == 1)
-            {
-                int randomIndexPre = Random.Range(0, rowOneCounter);
-                while(rowOne[randomIndex] == false)
-                {
-                    randomIndex++;
-                }
-                for (j = 0; j < randomIndexPre; j++) //Iterates based upon random variable
-                {
-                    randomIndex++; //Increments once per value generated by the random
-                    while(rowOne[randomIndex] == false)
-                    {
-                        randomIndex++; //Skips values that are false
-                    }
-                }
-            }
-            else if (randomMinion == 2)
-            {
-                int randomIndexPre = Random.Range(0, rowTwoCounter);
-                while(rowTwo[randomIndex] == false)
-                {
-                    randomIndex++;
-                }
-                for (j = 0; j < randomIndexPre; j++) //Iterates based upon random variable
-                {
-                    randomIndex++; //Increments once per value generated by the random
-                    while(rowTwo[randomIndex] == false)
-                    {
-                        randomIndex++; //Skips values that are false
-                    }
-                }
-            }
-            print(randomIndex);
-            print(randomMinion);
+
             //Sets data
             if (currentData.Count <= i) //This means the current value has never been added to currentData(first iteration)
             {
@@ -159,16 +114,19 @@ public class EncounterVictoryMenu : MonoBehaviour
             {
                 zeroName.text = currentData[0].CardName;
                 zeroDesc.text = currentData[0].CardDescription;
+                zeroImage.sprite = currentData[0].CardSprite;
             }
             else if (i == 1)
             {
                 oneName.text = currentData[1].CardName;
                 oneDesc.text = currentData[1].CardDescription;
+                oneImage.sprite = currentData[1].CardSprite;
             }
             else if (i == 2)
             {
                 twoName.text = currentData[2].CardName;
                 twoDesc.text = currentData[2].CardDescription;
+                twoImage.sprite = currentData[2].CardSprite;
             }
         }
         
@@ -196,5 +154,12 @@ public class EncounterVictoryMenu : MonoBehaviour
     public void EndScene()
     {
         //Load new deck into json and close this additive scene
+        playerData.SetPlayerDeck(currentDeck.m_GameDeck);
+        SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+        save.SaveData();
+
+        //Closing of scene:
+        SceneManager.UnloadSceneAsync("Encounter Victory Scene");
+        MapPlayer.sceneToToggle.SetActive(true);
     }
 }

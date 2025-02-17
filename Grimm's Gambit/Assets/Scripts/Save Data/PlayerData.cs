@@ -1,22 +1,22 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float volume = 0.5f;
     [SerializeField] public int currency;
-    [SerializeField] public List<ShopItem> items;
-    //[SerializeField] public List<CardV2> cards;
+    [SerializeField] public List<CardData> deck;
+    [SerializeField] public List<Heirloom> heirlooms;
+    [SerializeField] public int currentHPChange;
+    [SerializeField] public int maxHPChange;
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-    // private PlayerData(float volume = 0.5f) {
-    //     this.volume = volume;
-    // }
 
     public void SetPlayerData(float volume) {
         this.volume = volume;
@@ -30,7 +30,19 @@ public class PlayerData : MonoBehaviour
         this.volume = volume;
     }
 
-    public void addItem(ShopItem i) {
-        items.Add(i);
+    public void SetPlayerDeck(List<CardData> deck) {
+        this.deck = deck;
+    }
+
+    public List<CardData> GetPlayerDeck() {
+        return new List<CardData>(deck);
+    }
+
+    public void SetPlayerHeirlooms(List<Heirloom> heirlooms) {
+        this.heirlooms = heirlooms;
+    }
+
+    public List<Heirloom> GetPlayerHeirlooms() {
+        return new List<Heirloom>(heirlooms);
     }
 }

@@ -26,10 +26,6 @@ public class HeirloomManager : MonoBehaviour
     {
         // Persist across scenes
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
     
@@ -66,5 +62,10 @@ public class HeirloomManager : MonoBehaviour
     public int GetNumHeirlooms()
     {
         return Enum.GetValues(typeof(Heirloom)).Length;
+    }
+
+    public List<Heirloom> GetHeirlooms()
+    {
+        return currentHeirlooms;
     }
 }

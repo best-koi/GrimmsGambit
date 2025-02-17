@@ -16,8 +16,10 @@ MonoBehaviour:
   _cardDescription: "Deal 20 Damage. Reduce this card\u2019s cost by 1 for every
     0-cost played in this combat."
   _cardCost: 5
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 2
   _targetsEnemies: 1
+  _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1265900286819696649
