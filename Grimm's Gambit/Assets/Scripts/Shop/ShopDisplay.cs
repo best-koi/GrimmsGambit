@@ -156,6 +156,6 @@ public class ShopDisplay : MonoBehaviour
             return;
         } 
         
-        LoadShopItems();
+        LoadShopPool();
     }
 }
