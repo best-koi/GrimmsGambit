@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -415,6 +415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4ca12f0ccf411da2b3a727509da6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
+  shopDeck: {fileID: 1534177246}
+  heirloomManager: {fileID: 0}
   pickImages: []
   pickNames: []
   pickDescriptions: []
@@ -424,6 +427,9 @@ MonoBehaviour:
   rerolls: 3
   cycleIndex: 0
   numberOfPages: 2
+  numberOfItems: 3
+  partySize: 3
+  maxCharacterCards: 15
 --- !u!4 &334673680
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,6 +1816,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5257c582981784da300918f1833b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1534177244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534177245}
+  - component: {fileID: 1534177246}
+  m_Layer: 0
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534177245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534177244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1303.5033, y: 760.46454, z: 5.074576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534177246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534177244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartingHandSize: 0
+  m_MaxHandSize: 0
+  m_NumDrawsPerTurn: 1
+  m_MaxCountThisTurn: 0
+  m_GameDeck: []
+  m_Hand: []
+  m_DiscardPile: []
+  m_RemovedZone: []
 --- !u!1 &1542796933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,3 +2715,4 @@ SceneRoots:
   - {fileID: 937252606}
   - {fileID: 334673680}
   - {fileID: 1496843605}
+  - {fileID: 1534177245}

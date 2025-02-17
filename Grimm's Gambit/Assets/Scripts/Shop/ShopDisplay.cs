@@ -10,7 +10,9 @@ public class ShopDisplay : MonoBehaviour
 {
     private ShopItem[,] displayedItems; //The items in the shop
 
-    [SerializeField] private HeirloomManager heirloomManager; 
+    [SerializeField] private Deck shopDeck;
+    private PlayerData playerData;
+    private HeirloomManager heirloomManager; 
 
     [SerializeField] private Image[] pickImages;
     [SerializeField] private TMP_Text[] pickNames, pickDescriptions;
@@ -24,6 +26,8 @@ public class ShopDisplay : MonoBehaviour
     [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
     [SerializeField] private int numberOfItems = 3; // Number of items to be displayed on each page
+
+    [SerializeField] private int partySize = 3, maxCharacterCards = 15; // Party size and maximum number of cards a party member can have 
 
     // Start is called before the first frame update
     private void Start()
@@ -45,17 +49,46 @@ public class ShopDisplay : MonoBehaviour
             pickDescriptions = new TMP_Text[numberOfItems];
         }
         
-        LoadShopItems();
+        LoadShopPool();
         DisplayShopItems(); 
     }
 
-    private void LoadShopItems()
+    private void LoadShopPool()
     {
-        // Load in cards and arcana from the deck
-        List<Heirloom> currentHeirlooms = heirloomManager.GetCurrentHeirlooms();
-        int numHeirlooms = heirloomManager.GetNumHeirlooms();
+        System.Random rand = new System.Random();
 
-        List<Heirloom> heirloomPool = new List<Heirloom>(), chosen = new List<Heirloom>();
+        // Load in cards and arcana from the deck
+        playerData = FindObjectOfType<PlayerData>();
+        shopDeck.m_GameDeck = playerData.GetPlayerDeck();
+
+        List<CardData> cardPool = new List<CardData>(), temp = new List<CardData>();
+
+        for (int i = 0; i < partySize; i++)
+        {
+            for (int j = 0; j < maxCharacterCards; j++)
+            {
+                CardData currentData = new CardData(i, j);
+
+                if (shopDeck.m_GameDeck.Contains(currentData)) return;
+
+                cardPool.Add(currentData);
+            }
+        }
+
+        for(int i = 0; i < numberOfItems; i++)
+        {
+            int randIndex = rand.Next(0, cardPool.Count);
+            temp.Add(cardPool[randIndex]);
+            cardPool.RemoveAt(randIndex);
+        }
+
+        cardPool = temp;
+        temp.Clear();
+
+        // Load heirlooms from manager
+        heirloomManager = FindObjectOfType<HeirloomManager>();
+        List<Heirloom> currentHeirlooms = heirloomManager.GetCurrentHeirlooms(), heirloomPool = new List<Heirloom>();
+        int numHeirlooms = heirloomManager.GetNumHeirlooms();
 
         for (int i = 0; i < numHeirlooms; i++)
         {
@@ -64,14 +97,23 @@ public class ShopDisplay : MonoBehaviour
             heirloomPool.Add((Heirloom)i);
         }
 
-        System.Random rand = new System.Random();
+        currentHeirlooms = heirloomPool;
+        heirloomPool.Clear();
 
-        for (int i = 0; 0 < numberOfItems; i++)
+        for (int i = 0; i < numberOfItems; i++)
         {
-            int randIndex = rand.Next(0, heirloomPool.Count);
-            chosen.Add(heirloomPool[randIndex]);
-            heirloomPool.RemoveAt(randIndex);
+            int randIndex = rand.Next(0, currentHeirlooms.Count);
+            heirloomPool.Add(heirloomPool[randIndex]);
+            currentHeirlooms.RemoveAt(randIndex);
         }
+
+        LoadShopItems(cardPool, heirloomPool);
+    }
+
+    // Helper method
+    private void LoadShopItems(List<CardData> cards, List<Heirloom> heirlooms)
+    {
+
     }
 
     private void DisplayItem(int i){
