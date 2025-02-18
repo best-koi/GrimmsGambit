@@ -7,7 +7,7 @@ public class DeadlyEleganceManaEffect : SpellEffect
     public override void DoSpellEffect(Minion caster = null, Minion target = null)
     {
         Deck deck = GameObject.FindObjectOfType<Deck>();
-        int cardsUsed = deck.m_MaxCountThisTurn - deck.CurrentCardCount(); //Calculates cards used this round
+        int cardsUsed = deck.m_MaxCountThisTurn - deck.CurrentCardCount; //Calculates cards used this round
         EncounterController encounterController = GameObject.FindObjectOfType<EncounterController>();
         if (cardsUsed < 5 && cardsUsed > 0)
         {

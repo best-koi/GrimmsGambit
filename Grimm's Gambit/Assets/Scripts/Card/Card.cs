@@ -11,12 +11,14 @@ public class Card : MonoBehaviour
     [SerializeField] private bool _awaitingTarget;
 
     private protected bool m_IsEphemeral = false;
+    private int _currentCardCost;
 
     #region Properties
 
     public string CardName { get => _cardTemplate.CardName; }
     public string CardDescription { get => _cardTemplate.CardDescription; }
-    public int CardCost { get => _cardTemplate.CardCost; }
+    public int CardCost { get => _currentCardCost; set => _currentCardCost = value; }
+    public int BaseCardCost { get => _cardTemplate.CardCost; }
     public Sprite CardSprite { get => _cardTemplate.CardSprite; }
     public CardData Data { get => _cardTemplate.Data; }
     public int PlayerCopyCount { get => _cardTemplate.PlayerCopyCount; set => _cardTemplate.PlayerCopyCount = value; }
@@ -26,6 +28,15 @@ public class Card : MonoBehaviour
     public Minion Caster { get => _caster; set => _caster = value; }
     public bool IsEphemeral { get => m_IsEphemeral; }
     public AudioClip SoundEffect { get => _cardTemplate.SoundEffect; }
+
+    #endregion
+
+    #region MonoBehavior Callbacks
+
+    private void Start()
+    {
+        _currentCardCost = BaseCardCost;
+    }
 
     #endregion
 
