@@ -12,7 +12,10 @@ public class ShopDisplay : MonoBehaviour
 
     [SerializeField] private Deck shopDeck;
     private PlayerData playerData;
-    private HeirloomManager heirloomManager; 
+    private HeirloomManager heirloomManager;
+
+    [SerializeField] private GameObject shopUI;
+    [SerializeField] private GameObject deckViewUI;
 
     [SerializeField] private Image[] pickImages;
     [SerializeField] private TMP_Text[] pickNames, pickDescriptions;
@@ -87,7 +90,8 @@ public class ShopDisplay : MonoBehaviour
 
         // Load heirlooms from manager
         heirloomManager = FindObjectOfType<HeirloomManager>();
-        List<Heirloom> currentHeirlooms = heirloomManager.GetCurrentHeirlooms(), heirloomPool = new List<Heirloom>();
+        heirloomManager.SetHeirlooms(playerData.GetPlayerHeirlooms());
+        List<Heirloom> currentHeirlooms = heirloomManager.GetHeirlooms(), heirloomPool = new List<Heirloom>();
         int numHeirlooms = heirloomManager.GetNumHeirlooms();
 
         for (int i = 0; i < numHeirlooms; i++)
@@ -157,5 +161,15 @@ public class ShopDisplay : MonoBehaviour
         } 
         
         LoadShopPool();
+    }
+
+    public void DisplayDeck()
+    {
+        deckViewUI.SetActive(true);
+    }
+
+    public void ExitDeck()
+    {
+        deckViewUI.SetActive(false);
     }
 }
