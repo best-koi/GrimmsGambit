@@ -1,9 +1,7 @@
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.XR;
-using Unity.VisualScripting;
+using UnityEngine;
 
 [Serializable]
 public class CardData
@@ -17,6 +15,17 @@ public class CardData
         this.ownerIndex = ownerIndex;
         this.databaseIndex = dataIndex;
     }
+
+    public static bool operator ==(CardData data1, CardData data2) => data1.Equals(data2);
+    public static bool operator !=(CardData data1, CardData data2) => !(data1 == data2);
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        return obj is CardData b2 ? (ownerIndex == b2.ownerIndex && databaseIndex == b2.databaseIndex) : false;
+    }
+    public override int GetHashCode() => (ownerIndex, databaseIndex).GetHashCode();
 }
 
 
@@ -42,12 +51,28 @@ public class Deck : MonoBehaviour
     public int m_MaxCountThisTurn;
 
     // Lists the indices of each card in the database
-    [SerializeField] public List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
+    public List<CardData> m_GameDeck, m_Hand, m_DiscardPile, m_RemovedZone;
+
+
+    //Function to return current hand count for card functionality
+    public int CurrentCardCount { get => m_Hand.Count; }
+    public int GameDeckSize { get => m_GameDeck.Count; }
+
+
 
     private void Awake()
     {
         onDraw = null;
         onDiscard = null;
+
+        if (m_GameDeck == null)
+            m_GameDeck = new List<CardData>();
+        if (m_Hand == null)
+            m_Hand = new List<CardData>();
+        if (m_DiscardPile == null)
+            m_DiscardPile = new List<CardData>();
+        if (m_RemovedZone == null)
+            m_RemovedZone = new List<CardData>();
     }
 
     // Draw a card from the top of the deck
@@ -56,7 +81,7 @@ public class Deck : MonoBehaviour
     {
         // If the player's current hand size is greater than or equal the max hand size
         // Will put the top card of the deck in the discard pile instead of drawing it 
-        if (m_Hand.Count() >= m_MaxHandSize)
+        if (CurrentCardCount >= m_MaxHandSize)
         {
             Mill();
             Debug.Log("Exceeded maximum hand size. Drawn card will placed in the discard pile.");
@@ -77,7 +102,7 @@ public class Deck : MonoBehaviour
         // Compatible with AddCard
         onDraw?.Invoke(nextCardData.ownerIndex, nextCardData.databaseIndex);
 
-        if (m_Hand.Count > m_MaxHandSize) Discard(nextCardData);
+        if (CurrentCardCount > m_MaxHandSize) Discard(nextCardData);
     }
 
     // Draw cards from the top of the deck 
@@ -87,8 +112,7 @@ public class Deck : MonoBehaviour
     {
         if (forTurn) amount = m_NumDrawsPerTurn;
         for (int i = 0; i < amount; i++) Draw();
-
-        if (forTurn) m_MaxCountThisTurn = m_Hand.Count(); //Counts after this since this includes katze's bonus card which will have been added earlier
+        if (forTurn) m_MaxCountThisTurn = CurrentCardCount; //Counts after this since this includes katze's bonus card which will have been added earlier
     }
 
     // Conjure's a card into the hand
@@ -100,7 +124,7 @@ public class Deck : MonoBehaviour
 
     public void Conjure(CardData data)
     {
-        if (m_Hand.Count() >= m_MaxHandSize)
+        if (CurrentCardCount >= m_MaxHandSize)
         {
             /*m_DiscardPile.Add(data);
             onDiscard?.Invoke(data.databaseIndex); // Not compatible with Remove function*/ //Changes on 1/25/25 By Ryan Lockie so that cards which are conjured are not added to the discard pile if over capped.
@@ -115,13 +139,13 @@ public class Deck : MonoBehaviour
     public void Discard(CardData data)
     {
         m_DiscardPile.Add(data);
-        for (int i = 0; i < m_Hand.Count; i++) {
-            if((m_Hand[i].ownerIndex == data.ownerIndex) && (m_Hand[i].databaseIndex == data.databaseIndex)) {
+
+        for (int i = 0; i < CurrentCardCount; i++)
+            if (m_Hand[i] == data)
+            {
                 m_Hand.RemoveAt(i);
+                break;
             }
-        }
-        //m_Hand.Remove(data);
-        //onDiscard?.Invoke(data.databaseIndex);
     }
 
     // Invokes index in database not hand 
@@ -134,28 +158,25 @@ public class Deck : MonoBehaviour
         Discard(card.Data);
     }
 
+    public void DiscardFromHand(int index)
+    {
+        CardData cardToDiscard = m_Hand[index];
+        m_DiscardPile.Add(cardToDiscard);
+        onDiscard?.Invoke(index);
+        m_Hand.Remove(cardToDiscard);
+    }
+
     public void DiscardRandomInHand()
     {
         System.Random randomObject = new System.Random();
-        int randomIndex = randomObject.Next(0, m_Hand.Count-1); //Chooses random int between 0 and final card in hand currently
-        //Removes card from randomly selected index
-        m_DiscardPile.Add(m_Hand[randomIndex]);
-        onDiscard?.Invoke(randomIndex);
-        m_Hand.Remove(m_Hand[randomIndex]);
+        int randomIndex = randomObject.Next(0, CurrentCardCount); //Chooses random int between 0 and final card in hand currently
+        DiscardFromHand(randomIndex);   //Removes card from randomly selected index
     }
 
     public void DiscardHand()
     {
-        for (int i = m_Hand.Count - 1; i >= 0; i--)
-        {
-            m_DiscardPile.Add(m_Hand[i]);
-
-            // Invoke the index in the hand
-            // Compatible with remove function of Object Container
-            onDiscard?.Invoke(i);
-
-            m_Hand.Remove(m_Hand[i]);
-        }
+        for (int i = CurrentCardCount - 1; i >= 0; i--)
+            DiscardFromHand(i);
     }
 
     public void RemoveCard(Card card)
@@ -181,44 +202,44 @@ public class Deck : MonoBehaviour
     }
 
 
+    /*
     // Helper method for ReverseCard
-    private int ReverseID(int cardID) {
+    private int ReverseID(int cardID) 
+    {
         if (cardID % 2 == 0) cardID++;
         else cardID--;
         
         return cardID;
     }
+    */
 
     // Fixed
     public void RemoveCards(int owner)
     {
         Debug.Log($"{owner}: Called");
 
-        for (int i = m_DiscardPile.Count() - 1; i >= 0; i--)
-        {
-            if (m_DiscardPile[i].ownerIndex == owner)
-            {
-                m_RemovedZone.Add(m_DiscardPile[i]);
-                m_DiscardPile.RemoveAt(i);
-            }
-        }
+        _removeAllFromOwner(owner, m_DiscardPile);
+        _removeAllFromOwner(owner, m_GameDeck);
+        _removeAllFromOwner(owner, m_Hand);
+    }
 
-        for (int i = m_GameDeck.Count() - 1; i >= 0; i--)
-        {
-            if (m_GameDeck[i].ownerIndex == owner)
-            {
-                m_RemovedZone.Add(m_GameDeck[i]);
-                m_GameDeck.RemoveAt(i);
-            }
-        }
+    private void _removeCard(CardData cardData, List<CardData> listFrom)
+    {
+        m_RemovedZone.Add(cardData);
+        listFrom.Remove(cardData);
+    }
 
-        for (int i = m_Hand.Count() - 1; i >= 0; i--)
+    private void _removeCard(Card card, List<CardData> listFrom)
+    {
+        _removeCard(card.Data, listFrom);
+    }
+
+    private void _removeAllFromOwner(int ownerIndex, List<CardData> listFrom)
+    {
+        for (int i = listFrom.Count() - 1; i >= 0; i--)
         {
-            if (m_Hand[i].ownerIndex == owner)
-            {
-                m_RemovedZone.Add(m_Hand[i]);
-                m_Hand.RemoveAt(i);
-            }
+            CardData data = m_Hand[i];
+            if (data.ownerIndex == ownerIndex) _removeCard(data, listFrom);
         }
     }
 
@@ -256,6 +277,7 @@ public class Deck : MonoBehaviour
         } 
     }
 
+    /*
     // Not in use
     private void ClearAll()
     {
@@ -263,25 +285,5 @@ public class Deck : MonoBehaviour
         m_Hand.Clear();
         m_DiscardPile.Clear();
     }
-
-    public List<CardData> GetHand()
-    {
-        return m_Hand;
-    }
-
-    public List<CardData> GetDiscardPile()
-    {
-        return m_DiscardPile;
-    }
-
-    //Function to return current hand count for card functionality
-    public int CurrentCardCount()
-    {
-        return m_Hand.Count();
-    }
-
-    public int GetGameDeckSize()
-    {
-        return m_GameDeck.Count();
-    }
+    */
 }

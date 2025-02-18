@@ -23,9 +23,13 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1265900286819696649
+  - rid: 927382390012903424
   references:
     version: 2
     RefIds:
+    - rid: 927382390012903424
+      type: {class: DeadlyEleganceManaEffect, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 1265900286819696649
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:

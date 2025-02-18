@@ -9,7 +9,7 @@ public class FoolishProvocationEffect : SpellEffect
 
     public override void DoSpellEffect(Minion caster, Minion target) //Causes the player to become tired (function currently only functional for player being tired since ai attacks are controlled without spirit)
     {
-        if (target.HasADebuff())
+        if (target.HasDebuff())
         {
             caster.DamageTaken(-7); //Heals caster for 7 if the target has a debuff
         }
