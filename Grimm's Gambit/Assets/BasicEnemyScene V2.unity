@@ -6434,7 +6434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5849eb270aa5a4a924ef5c6c2dac3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerDeck: {fileID: 1413895100}
+  m_PlayerDeck: {fileID: 1790341145}
   m_IsPlayerTurn: 0
   m_TurnCounter: 0
   m_MaxResources: 5
@@ -22149,7 +22149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1790341145
 MonoBehaviour:
   m_ObjectHideFlags: 0
