@@ -16,14 +16,19 @@ MonoBehaviour:
   _cardDescription: "Deal 20 Damage. Reduce this card\u2019s cost by 1 for every
     0-cost played in this combat."
   _cardCost: 5
+  _cardSprite: {fileID: 0}
   _playerCopyCount: 2
   _targetsEnemies: 1
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 1265900286819696649
+  - rid: 927382390012903424
   references:
     version: 2
     RefIds:
+    - rid: 927382390012903424
+      type: {class: DeadlyEleganceManaEffect, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 1265900286819696649
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:

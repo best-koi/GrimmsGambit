@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEngine.AI;
-using System.Data;
 using UnityEngine.SceneManagement;
 
 public class EncounterController : MonoBehaviour
@@ -241,6 +239,11 @@ public class EncounterController : MonoBehaviour
 
             return true;
         }
+    }
+
+    public bool EnoughResources(int amount)
+    {
+        return FirstCardFree || m_CurrentResources - amount >= 0;
     }
 
 

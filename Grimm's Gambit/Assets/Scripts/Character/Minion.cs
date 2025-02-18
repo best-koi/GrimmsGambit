@@ -1,10 +1,7 @@
 //Ryan Lockie - Updated 11/16/2024
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using System;
-using System.Diagnostics;
 using System.Linq;
 
 public enum Affix //Insert affixes here that are applied from the minion perspective
@@ -72,14 +69,6 @@ public class Minion : MonoBehaviour
         */
         affixDisplay = GetComponentInChildren<AffixDisplay>(); //Initializes correct affixDisplay object
         EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
     }
 
     public void AddAffix(Affix affix, int value)
@@ -350,9 +339,6 @@ public class Minion : MonoBehaviour
             animator.SetTrigger("TakeDamage");
         }
 
-
-
-
         if (currentHealth <= 0)
         {
             HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
@@ -370,7 +356,6 @@ public class Minion : MonoBehaviour
         {
             currentHealth = maxHealth; //Caps health to max out at the originally given max health value
         }
-        
     }
 
     
@@ -385,6 +370,7 @@ public class Minion : MonoBehaviour
             deck.RemoveCard(c);
             return;
         }
+
         if (c.Spells.Any(spell => spell is RemoveInsteadOfDiscard)) //IRemoves cards instead of discarding them if they have the "RemoveInsteadOfDiscard" spell as a flag for this functionality (Scratch is the only one with this as of 1/25/2025)
         {
             deck.RemoveCard(c);
@@ -476,7 +462,7 @@ public class Minion : MonoBehaviour
         }
     }
 
-    public bool HasADebuff() //Returns a true if this minion has a debuff
+    public bool HasDebuff() //Returns true if this minion has a debuff
     {
         if (currentAffixes.ContainsKey(Affix.DamageReduction) || currentAffixes.ContainsKey(Affix.Vulnerable ) ||
         currentAffixes.ContainsKey(Affix.Bleed) || currentAffixes.ContainsKey(Affix.Mark)||
