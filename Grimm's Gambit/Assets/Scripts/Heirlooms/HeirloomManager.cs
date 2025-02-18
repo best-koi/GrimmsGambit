@@ -25,7 +25,6 @@ public class HeirloomManager : MonoBehaviour
     private void Awake()
     {
         // Persist across scenes
-        DontDestroyOnLoad(gameObject);
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
     
@@ -52,20 +51,20 @@ public class HeirloomManager : MonoBehaviour
         }
     }
 
-    // Used by Shop Display 
-    public List<Heirloom> GetCurrentHeirlooms()
-    {
-        return currentHeirlooms;
-    }
-
     // Used by Shop
     public int GetNumHeirlooms()
     {
         return Enum.GetValues(typeof(Heirloom)).Length;
     }
 
+    // Used by Shop Display 
     public List<Heirloom> GetHeirlooms()
     {
         return currentHeirlooms;
+    }
+
+    public void SetHeirlooms(List<Heirloom> heirlooms)
+    {
+        currentHeirlooms = heirlooms;
     }
 }
