@@ -10,6 +10,7 @@ public class ShopDisplay : MonoBehaviour
 {
     private ShopItem[,] displayedItems; //The items in the shop
 
+    [SerializeField] private CardDatabase cardDatabase;
     [SerializeField] private Deck shopDeck;
     private PlayerData playerData;
     private HeirloomManager heirloomManager;
@@ -29,8 +30,6 @@ public class ShopDisplay : MonoBehaviour
     [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
     [SerializeField] private int numberOfItems = 3; // Number of items to be displayed on each page
-
-    [SerializeField] private int partySize = 3, maxCharacterCards = 15; // Party size and maximum number of cards a party member can have 
 
     // Start is called before the first frame update
     private void Start()
@@ -66,9 +65,9 @@ public class ShopDisplay : MonoBehaviour
 
         List<CardData> cardPool = new List<CardData>(), temp = new List<CardData>();
 
-        for (int i = 0; i < partySize; i++)
+        for (int i = 0; i < cardDatabase._cardPrefabs.BaseArray.Length; i++)
         {
-            for (int j = 0; j < maxCharacterCards; j++)
+            for (int j = 0; j < cardDatabase._cardPrefabs.BaseArray[i].Row.Length; j++)
             {
                 CardData currentData = new CardData(i, j);
 
@@ -131,7 +130,7 @@ public class ShopDisplay : MonoBehaviour
 
     private void DisplayShopItems()
     {
-        for (int i = 0; i < displayedItems.GetLength(0); i++)
+        for (int i = 0; i < numberOfItems; i++)
         {
             DisplayItem(i);
         }
