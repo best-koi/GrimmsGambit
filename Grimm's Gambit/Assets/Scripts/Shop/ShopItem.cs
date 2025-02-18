@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
-//Could possibly be transitioned into a Scriptable Object? 
-public class ShopItem : MonoBehaviour
+[CreateAssetMenu(fileName = "Shop Item", menuName = "Shop/Shop Item")]
+public class ShopItem : ScriptableObject
 {
     [SerializeField]
     private Sprite icon;
@@ -13,6 +13,9 @@ public class ShopItem : MonoBehaviour
     [SerializeField]
     private string itemName, description;
 
+    [SerializeField] private Card cardRef;
+
+    [SerializeField] private Heirloom heirloomRef;
     
     public Sprite GetIcon(){
         return icon;
@@ -26,4 +29,13 @@ public class ShopItem : MonoBehaviour
         return description;
     }
 
+    public void StoreHeirloom(Heirloom heirloom)
+    {
+
+    }
+
+    public void StoreCard(CardTemplate card)
+    {
+
+    }
 }

@@ -116,7 +116,24 @@ public class ShopDisplay : MonoBehaviour
     // Helper method
     private void LoadShopItems(List<CardData> cards, List<Heirloom> heirlooms)
     {
+        for (int i = 0; i < numberOfPages; i++)
+        {
+            for (int j = 0; j < numberOfItems; j++)
+            {
+                ShopItem item = ScriptableObject.CreateInstance<ShopItem>();
 
+                if (i == 3)
+                {
+                    item.StoreHeirloom(heirlooms[j]);
+                }
+                else
+                {
+                    item.StoreCard(shopDeck.GetCard(cards[j]));
+                }
+
+                displayedItems[i, j] = item;
+            }
+        }
     }
 
     private void DisplayItem(int i){

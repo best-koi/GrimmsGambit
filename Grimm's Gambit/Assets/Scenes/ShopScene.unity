@@ -549,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b4ca12f0ccf411da2b3a727509da6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardDatabase: {fileID: 863319452}
   shopDeck: {fileID: 1534177246}
   shopUI: {fileID: 527112029}
   deckViewUI: {fileID: 1631528499}
@@ -562,8 +563,6 @@ MonoBehaviour:
   cycleIndex: 0
   numberOfPages: 2
   numberOfItems: 3
-  partySize: 3
-  maxCharacterCards: 15
 --- !u!4 &334673680
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,6 +1467,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791017709}
   m_CullTransparentMesh: 1
+--- !u!114 &863319452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 965584638735134514, guid: ce2fee7ecaec6c640a7482832d11b7c7, type: 3}
+  m_PrefabInstance: {fileID: 739884546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14aee4874df3de74688c15980a9b02a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &887884942
 GameObject:
   m_ObjectHideFlags: 0
