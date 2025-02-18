@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EncounterVictoryMenu : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class EncounterVictoryMenu : MonoBehaviour
     //The following are all references for ui display elements:
     [SerializeField]
     private TMP_Text zeroName, zeroDesc, oneName, oneDesc, twoName, twoDesc; //These are all stored separately so that it would be easy for me to setup my scene - This portion is entirely contingent on scene setup
+    [SerializeField]
+    private Image zeroImage, oneImage, twoImage;
     private List<CardTemplate> currentData = new List<CardTemplate>(); //Current data is used for confirming selection
     private PlayerData playerData;
     void Start()
@@ -111,16 +114,19 @@ public class EncounterVictoryMenu : MonoBehaviour
             {
                 zeroName.text = currentData[0].CardName;
                 zeroDesc.text = currentData[0].CardDescription;
+                zeroImage.sprite = currentData[0].CardSprite;
             }
             else if (i == 1)
             {
                 oneName.text = currentData[1].CardName;
                 oneDesc.text = currentData[1].CardDescription;
+                oneImage.sprite = currentData[1].CardSprite;
             }
             else if (i == 2)
             {
                 twoName.text = currentData[2].CardName;
                 twoDesc.text = currentData[2].CardDescription;
+                twoImage.sprite = currentData[2].CardSprite;
             }
         }
         

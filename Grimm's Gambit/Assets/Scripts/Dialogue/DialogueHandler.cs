@@ -24,6 +24,8 @@ public class DialogueHandler : MonoBehaviour
 
     [SerializeField]
     private float textSpeed; //The speed to advance dialogue
+    [SerializeField]
+    private AudioClip SoundEffect;
 
     private int index = 0; //An index to track conversation progress
 
@@ -106,7 +108,7 @@ private void Start(){
         foreach(char letter in selectedConversation.lines[index].ToCharArray()){
             conversationText.text += letter;
             yield return new WaitForSeconds(textSpeed);
-
+            PlayGarble();
         }
 
     }
@@ -131,6 +133,17 @@ private void Start(){
 
     }
 
-    
+    public void PlayGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(SoundEffect);
+    }
     
 }

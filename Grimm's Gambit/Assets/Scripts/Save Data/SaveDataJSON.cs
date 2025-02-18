@@ -14,6 +14,7 @@ public class SaveDataJSON : MonoBehaviour
     [SerializeField] public bool gameStart;
     
     
+    private string saveFolder = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves";
     private string savePath = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves" + Path.AltDirectorySeparatorChar + "SavaData.json";
 
     void Awake()
@@ -37,9 +38,15 @@ public class SaveDataJSON : MonoBehaviour
     // Saves playerData to JSON save file
     public void SaveData() {
         string jsonData = JsonUtility.ToJson(playerData);
+
+        if (!Directory.Exists(saveFolder)) {
+            Directory.CreateDirectory(saveFolder);
+            File.Create(savePath).Close();
+        }
         
         using(StreamWriter writer = new StreamWriter(savePath)) {
             writer.Write(jsonData);
+            writer.Close();
         }
     }
 
@@ -53,8 +60,15 @@ public class SaveDataJSON : MonoBehaviour
     public void LoadIntoPlayerData() {
         string jsonData = string.Empty;
 
+        if (!Directory.Exists(saveFolder)) {
+            Directory.CreateDirectory(saveFolder);
+            File.Create(savePath).Close();
+        }
+
         using(StreamReader reader = new StreamReader(savePath)) {
+            Debug.Log(savePath);
             jsonData = reader.ReadToEnd();
+            reader.Close();
         }
 
         if (jsonData == null) return;

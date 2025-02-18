@@ -13,6 +13,7 @@ public class CardTemplate : ScriptableObject
     [SerializeField] private Sprite _cardSprite;
     [SerializeField] private int _playerCopyCount = 1;
     [SerializeField] private bool _targetsEnemies = true;
+    [SerializeField] private AudioClip _cardSoundEffect;
     [SerializeField] private CardTemplate _reverseTemplate;
     [SerializeReference, SubclassSelector] private List<SpellEffect> _spells;
 
@@ -35,6 +36,7 @@ public class CardTemplate : ScriptableObject
     public bool TargetsEnemies { get => _targetsEnemies; }
     public CardTemplate ReverseTemplate { get => _reverseTemplate; }
     public List<SpellEffect> Spells { get => _spells; }
+    public AudioClip SoundEffect { get => _cardSoundEffect; }
 
     #endregion
 

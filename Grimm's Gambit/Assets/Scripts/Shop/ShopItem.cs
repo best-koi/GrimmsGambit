@@ -11,7 +11,7 @@ public class ShopItem : MonoBehaviour
     private Sprite icon;
 
     [SerializeField]
-    private string name, description;
+    private string itemName, description;
 
     
     public Sprite GetIcon(){
@@ -19,7 +19,7 @@ public class ShopItem : MonoBehaviour
     }
 
     public string GetName(){
-        return name;
+        return itemName;
     }
 
     public string GetDescription(){

@@ -1,5 +1,7 @@
+using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
@@ -8,6 +10,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public int currency;
     [SerializeField] public List<CardData> deck;
     [SerializeField] public List<Heirloom> heirlooms;
+    [SerializeField] public int currentHPChange;
+    [SerializeField] public int maxHPChange;
 
     void Start()
     {
@@ -31,7 +35,7 @@ public class PlayerData : MonoBehaviour
     }
 
     public List<CardData> GetPlayerDeck() {
-        return deck;
+        return new List<CardData>(deck);
     }
 
     public void SetPlayerHeirlooms(List<Heirloom> heirlooms) {
@@ -39,6 +43,6 @@ public class PlayerData : MonoBehaviour
     }
 
     public List<Heirloom> GetPlayerHeirlooms() {
-        return heirlooms;
+        return new List<Heirloom>(heirlooms);
     }
 }

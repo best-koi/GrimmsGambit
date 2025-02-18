@@ -80,18 +80,10 @@ public class EncounterController : MonoBehaviour
             encounterEnded = true;
             EndEncounter(false);
 
-            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
-            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
-            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
-            save.SaveData();
         }else if ((enemies.Length == 0 || (enemies.Length == 1 && enemies[0] == null)) && encounterEnded == false){
             encounterEnded = true;
             EndEncounter(true);
-            
-            playerData.SetPlayerDeck(m_PlayerDeck.m_GameDeck);
-            playerData.SetPlayerHeirlooms(heirloomManager.GetHeirlooms());
-            SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
-            save.SaveData();
+        
         }
         
     }
@@ -212,7 +204,7 @@ public class EncounterController : MonoBehaviour
     private void EndEncounter(bool playerWin) {
         onEncounterEnded?.Invoke(playerWin);
         SceneManager.UnloadSceneAsync(enemySceneName);
-        if(playerWin) SceneManager.LoadScene("EncounterWin", LoadSceneMode.Additive);
+        if(playerWin) SceneManager.LoadScene("Encounter Victory Scene", LoadSceneMode.Additive);
         else SceneManager.LoadScene("EncounterLoss", LoadSceneMode.Additive);
     }
 
