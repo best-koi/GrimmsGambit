@@ -238,7 +238,7 @@ public class Deck : MonoBehaviour
     {
         for (int i = listFrom.Count() - 1; i >= 0; i--)
         {
-            CardData data = m_Hand[i];
+            CardData data = listFrom[i];
             if (data.ownerIndex == ownerIndex) _removeCard(data, listFrom);
         }
     }
