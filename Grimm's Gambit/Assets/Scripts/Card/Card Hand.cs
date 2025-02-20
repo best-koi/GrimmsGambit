@@ -64,6 +64,8 @@ public class CardHand : ObjectContainer
         if (cardNum == 1 || cardNum % 2 == 0)
             currentAngle += angleBetweenCards / 2;
 
+        int orderLayer = m_ChildTransforms.Count * -1 + 1;
+
         // Apply transformations to all cards
         foreach (Transform t in m_ChildTransforms)
         {
@@ -75,6 +77,12 @@ public class CardHand : ObjectContainer
 
             // Increment angle for each card
             currentAngle += angleBetweenCards;
+
+            if (t.TryGetComponent<CardDisplay>(out CardDisplay cd))
+            {
+                cd.OrderLayer = orderLayer;
+                orderLayer++;
+            }
         }
     }
 
