@@ -24,7 +24,6 @@ public class HeirloomManager : MonoBehaviour
     
     private void Awake()
     {
-        // Persist across scenes
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
     
