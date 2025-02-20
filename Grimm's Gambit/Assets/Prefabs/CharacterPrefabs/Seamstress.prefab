@@ -953,8 +953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
+  maxHealth: 28
+  currentHealth: 28
   m_CardContainer: {fileID: 3259801684424778679}
   affixDisplay: {fileID: 0}
   animator: {fileID: 2752519545169108913}
