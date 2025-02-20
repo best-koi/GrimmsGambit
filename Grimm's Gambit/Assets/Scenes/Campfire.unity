@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4048,7 +4048,7 @@ MonoBehaviour:
   dialogueWindow: {fileID: 1423862019}
   advanceButton: {fileID: 612566452}
   seamstressConversations:
-  - {fileID: 11400000, guid: 94f8ef146b1ec4d76b20e94f75b43d84, type: 2}
+  - {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
   katzeConversations:
   - {fileID: 11400000, guid: 4d9f33c73b3904b278d0ac67776110ec, type: 2}
   houndConversations:

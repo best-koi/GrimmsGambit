@@ -10,7 +10,7 @@ public class Dialogue : ScriptableObject
     public List<string> lines;//A list of lines representing a conversation
 
     [SerializeField]
-    public List<bool> isHeirSpeaking;//A list of bools representing whether the heir is speaking or not 
+    public List<bool> isHeirSpeaking, isNarratorText;//A list of bools representing whether the heir is speaking or not 
 
     
 }

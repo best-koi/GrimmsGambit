@@ -97,6 +97,8 @@ private void Start(){
     private void SetSpeaker(int index){
         if(selectedConversation.isHeirSpeaking[index] == true){
             speakerText.text = "The Heir";
+        }else if (selectedConversation.isNarratorText[index] == true){
+            speakerText.text = " "; 
         }else{
             speakerText.text = chosenCharacter; 
         }

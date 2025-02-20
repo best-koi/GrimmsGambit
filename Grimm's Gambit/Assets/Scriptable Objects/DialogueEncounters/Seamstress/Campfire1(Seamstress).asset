@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Campfire1(Seamstress)
+  m_EditorClassIdentifier: 
+  lines:
+  - 'You approach the Seamstress. She sits by the fire weaving twine and string into
+    a beautiful pattern. '
+  - 'As you approach she glances up from her work, pausing before putting her supplies
+    away and giving you her full attention. She gives you a weary smile. '
+  - 'Good day to you! Err- evening I suppose.  '
+  - 'Good evening. I wish to speak with you. '
+  - "I\u2019d like to get to know you a little better. What can you tell me about
+    yourself? "
+  - "Well I am but a humble seamstress. Fortunately, the ascension of the Red Queen
+    hasn\u2019t tampered with people\u2019s need for clothes, granted not many want
+    to pay nor can they afford my finer talents nowadays...   "
+  - "I\u2019m sorry to hear that\u2026 "
+  - "Don\u2019t you worry your pretty head bout me or my struggles. You\u2019ve got
+    to keep your mind on your goals and that\u2019s showing that crooked Odds what
+    for.   "
+  - 'Why are you helping me? Surely there is something you wish to get out of this. '
+  - "Hmm\u2026 Well hun, to tell you the truth I have a bit of a bone to pick with
+    that old-headed Odds you seek."
+  - 'Do you have a gambit you wish to make as well? '
+  - "No. No, not really. Look, my intents with the Odds are my own. For now let\u2019s
+    just say I\u2019d like to see an end to his crooked games.   "
+  - 'And how exactly do you plan to achieve that? '
+  - "\u2026"
+  - "\u2026"
+  - "I\u2019m sure I\u2019ll know when the time is right. "
+  - "Was nice talking to you, hun. Try and get some rest, we\u2019ve got a long day
+    ahead of us."
+  isHeirSpeaking: 0000000101000100010001000100010000
+  isNarratorText: 0101000000000000000000000000000000
