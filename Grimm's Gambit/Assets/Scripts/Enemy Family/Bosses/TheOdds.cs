@@ -40,23 +40,19 @@ public class TheOdds : AoEEnemy
 
     protected override void Update()
     {
-        if(minion.currentHealth <= startFinalPhaseHealth){
-            if(phase3 == false){
-                PowerOfFateAll();
-                minion.RemoveAllAffixes(); 
-                phase3 = true;
-            }
-            isFinalPhase = true; 
+        if(minion.currentHealth <= startFinalPhaseHealth && isFinalPhase == false){
+            isFinalPhase = true;
+            minion.RemoveAllAffixes(); 
+            PowerOfFateAll();
+             
         }
             
-        else if (minion.currentHealth <= startPhase2Health){
+        else if (minion.currentHealth <= startPhase2Health && isSecondPhase == false){
             isSecondPhase = true;
-            if(phase2 == false){
-                PowerOfFateAll();
-                minion.RemoveAllAffixes();
-                phase2 = true;  
-            }
-
+            minion.RemoveAllAffixes();
+            PowerOfFateAll();
+            
+                
         }
             
         else{
@@ -119,8 +115,8 @@ public class TheOdds : AoEEnemy
             foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
-                c.GetComponent<Minion>().AddAffix(Affix.Vulnerable, (die1+die2)/2 );
-                c.GetComponent<Minion>().AddAffix(Affix.DamageReduction, (die1+die2)/2 );
+                c.GetComponent<Minion>().AddAffix(Affix.Vulnerable, (die1+die2));
+                c.GetComponent<Minion>().AddAffix(Affix.DamageReduction, (die1+die2));
             }
             
         }else if (die1 + die2 > 6){
@@ -360,6 +356,25 @@ protected virtual void FinalAttackPhase(){
                 if (attackTarget == null)
                     FindTarget();
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attack4Value} and Defending for {finalDefend}";
+                break;
+
+            case "RollTheDice":
+            moveText.text = $"Rolling the Dice";
+            if(hasRolledDice == false){
+                int randomDie1 = Random.Range(0, dice.Count);
+                int randomDie2 = Random.Range(0, dice.Count);
+
+                die1 = dice[randomDie1];
+                die2 = dice[randomDie2];
+                dieImage1.sprite = dieSprites[randomDie1];
+                dieImage2.sprite = dieSprites[randomDie2];
+
+                hasRolledDice = true;
+            }
+            break;
+
+            case "PowerOfFateGood":
+                moveText.text = $"Power of Fate";
                 break;
 
             
