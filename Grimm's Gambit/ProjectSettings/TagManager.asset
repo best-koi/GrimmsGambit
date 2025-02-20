@@ -17,6 +17,8 @@ TagManager:
   - Narrative
   - Tutorial
   - MusicSlider
+  - LadyOfLake
+  - Beldam
   layers:
   - Default
   - TransparentFX
