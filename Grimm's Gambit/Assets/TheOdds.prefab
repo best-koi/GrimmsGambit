@@ -1556,12 +1556,12 @@ MonoBehaviour:
   - RollTheDice
   dice: 010000000200000003000000040000000500000006000000
   dieSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 60217a7eaf89d4c4fad0a01f8f1ac4fd, type: 3}
+  - {fileID: 21300000, guid: e3dfb26b111cf4e5dbc5ae870eb9714f, type: 3}
+  - {fileID: 21300000, guid: cbe36a6b20c3140e09d9f02d743fcc52, type: 3}
+  - {fileID: 21300000, guid: 49167e30710c84a279d73c7bb131fbc4, type: 3}
+  - {fileID: 21300000, guid: 64c9c9d29c44446a8ab5bce43129ca8d, type: 3}
+  - {fileID: 21300000, guid: 62140dfe5af7f403bb2196dbb8bb0e08, type: 3}
   dieImage1: {fileID: 470088463977766328}
   dieImage2: {fileID: 5429749603271826645}
   dieStrength: 6
