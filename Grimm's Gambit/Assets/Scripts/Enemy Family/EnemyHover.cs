@@ -19,11 +19,11 @@ public class EnemyHover : MonoBehaviour
         EnemyMove.SetActive(false);
     }
 
-    public void OnMouseDown(){
+    public void OnMouseEnter(){
         ShowMove();
     }
 
-    public void OnMouseUp(){
+    public void OnMouseExit(){
         HideMove();
     }
 }
