@@ -136,15 +136,6 @@ public class ShopDisplay : MonoBehaviour
         }
     }
 
-    private void DisplayItem(int i){
-        pickImages[i].sprite = displayedItems[cycleIndex, i].GetIcon();
-
-        if (pickImages[i] == null) pickImages[i].sprite = defaultImage.sprite;
-
-        pickNames[i].text = displayedItems[cycleIndex, i].GetName();  
-        pickDescriptions[i].text = displayedItems[cycleIndex, i].GetDescription();
-    }
-
     private void DisplayShopItems()
     {
         for (int i = 0; i < numberOfItems; i++)
@@ -153,8 +144,19 @@ public class ShopDisplay : MonoBehaviour
         }
     }
 
+    // Helper method
+    private void DisplayItem(int i)
+    {
+        pickImages[i].sprite = displayedItems[cycleIndex, i].GetIcon();
 
-//Cycles the menu forward 1 
+        if (pickImages[i] == null) pickImages[i].sprite = defaultImage.sprite;
+
+        pickNames[i].text = displayedItems[cycleIndex, i].GetName();
+        pickDescriptions[i].text = displayedItems[cycleIndex, i].GetDescription();
+    }
+
+
+    //Cycles the menu forward 1 
     public void CycleMenu(){
         if(cycleIndex < numberOfPages)
             cycleIndex++;
