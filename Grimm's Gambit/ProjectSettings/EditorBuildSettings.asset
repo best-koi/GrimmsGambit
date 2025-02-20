@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Encounter Victory Scene.unity
     guid: de900e322caf8344ca894e2d94db6eb0
+  - enabled: 1
+    path: Assets/OddsFightV2.unity
+    guid: dc897ecc0c85d48219c569d507a0f03a
   m_configObjects: {}

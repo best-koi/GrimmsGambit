@@ -19,6 +19,7 @@ TagManager:
   - MusicSlider
   - LadyOfLake
   - Beldam
+  - Odds
   layers:
   - Default
   - TransparentFX

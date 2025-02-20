@@ -31,7 +31,7 @@ public class MapPlayer : MonoBehaviour
     private string encounterScene, campfireScene;
 
     [SerializeField]
-    private string lycanScene, sistersScene;
+    private string lycanScene, sistersScene, oddsScene;
 
     [SerializeField]
     private GameObject sceneObjects;
@@ -119,6 +119,10 @@ public class MapPlayer : MonoBehaviour
             SceneManager.LoadScene(campfireScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
 
+        }else if(collision.gameObject.tag == "Odds"){
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(oddsScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
         }
     }
 

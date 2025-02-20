@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   font: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   enemySceneItems: {fileID: 1558088976}
-  enemySceneName: BasicEnemyScene V2
+  enemySceneName: OddsFightV2
 --- !u!4 &630745769
 Transform:
   m_ObjectHideFlags: 0
@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_EnemyInventory: {fileID: 613970853}
   sceneParent: {fileID: 1558088976}
   enemies: []
-  enemySceneName: BasicEnemyScene V2
+  enemySceneName: OddsFightV2
 --- !u!1 &901972456
 GameObject:
   m_ObjectHideFlags: 0
