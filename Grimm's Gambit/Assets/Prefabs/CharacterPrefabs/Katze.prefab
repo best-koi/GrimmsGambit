@@ -10350,8 +10350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  currentHealth: 30
+  maxHealth: 33
+  currentHealth: 33
   m_CardContainer: {fileID: 8192427604488775473}
   affixDisplay: {fileID: 0}
   animator: {fileID: 4656866732126854817}
@@ -10567,8 +10567,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.43475515, y: 0.62267286, z: 0.24032496}
-  m_Center: {x: -0.13737771, y: 0.30208918, z: 0.06771742}
+  m_Size: {x: 0.43475515, y: 0.9726956, z: 0.24032496}
+  m_Center: {x: -0.13737771, y: 0.47710055, z: 0.06771742}
 --- !u!1 &8391766489449783560
 GameObject:
   m_ObjectHideFlags: 0
