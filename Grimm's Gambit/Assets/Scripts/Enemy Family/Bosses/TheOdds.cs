@@ -36,9 +36,43 @@ public class TheOdds : AoEEnemy
     [SerializeField]
     protected int aoeAttackValue1, aoeAttackValue2, aoeAttackValue3; 
 
-    private bool isSecondPhase, isFinalPhase, hasRolledDice; 
+    private bool isSecondPhase, isFinalPhase, hasRolledDice, phase1, phase2, phase3; 
 
-    // Start is called before the first frame update
+    protected override void Update()
+    {
+        if(minion.currentHealth <= startFinalPhaseHealth){
+            if(phase3 == false){
+                PowerOfFateAll();
+                minion.RemoveAllAffixes(); 
+                phase3 = true;
+            }
+            isFinalPhase = true; 
+        }
+            
+        else if (minion.currentHealth <= startPhase2Health){
+            isSecondPhase = true;
+            if(phase2 == false){
+                PowerOfFateAll();
+                minion.RemoveAllAffixes();
+                phase2 = true;  
+            }
+
+        }
+            
+        else{
+            if(phase1 == false){
+                RollTheDice();
+                phase1 = true;
+
+            }
+            
+        }
+        healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
+        nameText.text = enemyName;
+        CheckCurrentAttack();
+
+    }
+
     protected override void CheckAttackBounds()
     {
         if(isFinalPhase == true){
@@ -114,10 +148,12 @@ public class TheOdds : AoEEnemy
        FindTarget();
     }
 
-    protected virtual void Attack4()
-    {
-       minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack4Value);
+
+    protected virtual void AttackAndDefend(){
+        minion.AddAffix(Affix.Block, finalDefend);
+        minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack4Value);
        FindTarget();
+
     }
 
     protected virtual void AoEAttack(){
@@ -138,6 +174,30 @@ public class TheOdds : AoEEnemy
                 minion.MinionUsed(c.GetComponent<Minion>(), chosenAOEAttack);
             }
     
+    }
+
+    protected virtual void PowerOfFateAll(){
+        minion.AddAffix(Affix.Strength, dieStrength);
+            minion.AddAffix(Affix.Block, dieBlock);
+
+
+
+    }
+
+    protected virtual void PowerOfFateGood(){
+        
+
+    }
+
+    protected virtual void PowerOfFateBad(){
+        foreach(CharacterTemplate c in targets){
+                if(c == null)
+                    continue;
+                c.GetComponent<Minion>().AddAffix(Affix.Vulnerable, (die1+die2)/2 );
+                c.GetComponent<Minion>().AddAffix(Affix.DamageReduction, (die1+die2)/2 );
+            }
+        
+
     }
 
     protected virtual void DefendAndAttackAOE(){
@@ -239,8 +299,35 @@ protected virtual void SecondAttackPhase(){
                 }
                 break;
 
-            
+            case "DefendAndAttackAOE":
+                if (attackTarget == null)
+                    FindTarget();
+                
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attacking Party for {aoeAttackValue2} DMG and Defending for {secondAOEDefend}";
+                    moveText.color = attackTarget.GetCharacterColor();
+   
+                }
+                break;
 
+            case "PowerOfFateAll":
+                moveText.text = $"Power of Fate";
+                break;
+
+            case "PowerOfFateGood":
+                moveText.text = $"Power of Fate";
+                break;
+
+            case "PowerOfFateBad":
+                moveText.text = $"Power of Fate";
+                break;
+                
+            
             default:
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
@@ -269,21 +356,10 @@ protected virtual void FinalAttackPhase(){
                 }
                 break;
 
-            case "Attack4":
+            case "AttackAndDefend":
                 if (attackTarget == null)
                     FindTarget();
-                
-
-                if (!CanAttackTarget())
-                {
-                    AdvanceAttack();
-                }
-                else
-                {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack4Value} DMG";
-                    moveText.color = attackTarget.GetCharacterColor();
-   
-                }
+                moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attack4Value} and Defending for {finalDefend}";
                 break;
 
             

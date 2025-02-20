@@ -9,7 +9,6 @@ public class Hare : EnemyRandomTarget
     [SerializeField]
     private int secondAttackValue, secondBlock, runBlock, endAttackLoop; 
 
-
     private int currentAttackLoop = 0; 
     private bool hasRun = false; 
 
