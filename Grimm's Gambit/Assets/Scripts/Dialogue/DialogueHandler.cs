@@ -5,40 +5,40 @@ using TMPro;
 public class DialogueHandler : MonoBehaviour
 {
     [SerializeField]
-    private GameObject seamstress, hound, katze, heir; //Sprites for each character, to be toggled on and off 
+    protected GameObject seamstress, hound, katze, heir; //Sprites for each character, to be toggled on and off 
 
     [SerializeField]
-    private TMP_Text speakerText, conversationText, chosenCharacterText; //Text to display
+    protected TMP_Text speakerText, conversationText, chosenCharacterText; //Text to display
 
 [SerializeField]
-    private string chosenCharacter; // The character to generate dialogue for 
+    protected string chosenCharacter; // The character to generate dialogue for 
 
     [SerializeField]
-    private GameObject talkButton, shopButton, party, talkPanel, dialogueWindow, advanceButton;//Various items to hide and show
+    protected GameObject talkButton, shopButton, party, talkPanel, dialogueWindow, advanceButton;//Various items to hide and show
 
     [SerializeField]
     private List<Dialogue> seamstressConversations, katzeConversations, houndConversations;//The lists of conversations for each character
 
     [SerializeField]
-    private Dialogue selectedConversation; //A conversation selected at random
+    protected Dialogue selectedConversation; //A conversation selected at random
 
     [SerializeField]
-    private float textSpeed; //The speed to advance dialogue
+    protected float textSpeed; //The speed to advance dialogue
     [SerializeField]
-    private AudioClip SoundEffect;
+    protected AudioClip SoundEffect;
 
-    private int index = 0; //An index to track conversation progress
+    protected int index = 0; //An index to track conversation progress
 
     
 
-private void Start(){
+protected virtual void Start(){
     conversationText.text = string.Empty; 
 }
 
 
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         chosenCharacterText.text = chosenCharacter; 
     }
@@ -57,7 +57,7 @@ private void Start(){
 
     }
 //Sets up dialogue panel 
-    public void StartDialogue(){
+    public virtual void StartDialogue(){
         Debug.Log(chosenCharacter);
         talkPanel.SetActive(false);
         party.SetActive(false);
@@ -69,7 +69,7 @@ private void Start(){
     }
 
 //Shows the character and picks a dialogue encounter 
-    private void RevealSelectedCharacters(){
+    protected virtual void RevealSelectedCharacters(){
         switch(chosenCharacter){
             case "The Seamstress":
             seamstress.SetActive(true);
@@ -94,7 +94,7 @@ private void Start(){
 
     }
 
-    private void SetSpeaker(int index){
+    protected virtual void SetSpeaker(int index){
         if(selectedConversation.isHeirSpeaking[index] == true){
             speakerText.text = "The Heir";
         }else if (selectedConversation.isNarratorText[index] == true){
@@ -105,7 +105,7 @@ private void Start(){
 
     }
 
-    IEnumerator TypeLine(){
+    protected virtual IEnumerator TypeLine(){
         SetSpeaker(index); 
         foreach(char letter in selectedConversation.lines[index].ToCharArray()){
             conversationText.text += letter;
@@ -115,7 +115,7 @@ private void Start(){
 
     }
 
-    public void NextLine(){
+    public virtual void NextLine(){
         StopAllCoroutines();
         if(index < selectedConversation.lines.Count - 1){
             index++;
@@ -127,7 +127,7 @@ private void Start(){
         }
     }
 
-    private void CloseDialogueWindow(){
+    protected virtual void CloseDialogueWindow(){
         advanceButton.SetActive(false);
         party.SetActive(true);
         dialogueWindow.SetActive(false); 
