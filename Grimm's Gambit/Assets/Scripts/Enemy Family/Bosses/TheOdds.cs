@@ -24,13 +24,17 @@ public class TheOdds : AoEEnemy
     private int dieStrength, dieBlock;//Values to add strength and block with roll the dice 
 
     [SerializeField]
-    protected int aoeAttackValue, startPhase2Health, startFinalPhaseHealth;
+    protected int startPhase2Health, startFinalPhaseHealth;
 
     [SerializeField]
-    protected int firstDefend; 
+    protected int firstAOEDefend, secondAOEDefend, finalDefend; 
+
+    [SerializeField]
+    private int attack1Value, attack2Value, attack3Value, attack4Value; 
 
 
-
+    [SerializeField]
+    protected int aoeAttackValue1, aoeAttackValue2, aoeAttackValue3; 
 
     private bool isSecondPhase, isFinalPhase, hasRolledDice; 
 
@@ -91,13 +95,63 @@ public class TheOdds : AoEEnemy
         }
     }
 
+    protected virtual void Attack1()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack1Value);
+       FindTarget();
+    }
+
+    protected virtual void Attack2()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack2Value);
+       FindTarget();
+    }
+
+    protected virtual void Attack3()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack3Value);
+       FindTarget();
+    }
+
+    protected virtual void Attack4()
+    {
+       minion.MinionUsed(attackTarget.GetComponent<Minion>(), attack4Value);
+       FindTarget();
+    }
+
     protected virtual void AoEAttack(){
-    foreach(CharacterTemplate c in targets){
+        int chosenAOEAttack = 0;
+        if(isFinalPhase){
+            chosenAOEAttack = aoeAttackValue3;
+
+        }else if (isSecondPhase){
+            chosenAOEAttack = aoeAttackValue2;
+
+        }else{
+            chosenAOEAttack = aoeAttackValue1;
+            
+        }
+        foreach(CharacterTemplate c in targets){
                 if(c == null)
                     continue;
-                minion.MinionUsed(c.GetComponent<Minion>(), aoeAttackValue);
+                minion.MinionUsed(c.GetComponent<Minion>(), chosenAOEAttack);
             }
-}
+    
+    }
+
+    protected virtual void DefendAndAttackAOE(){
+        if (isSecondPhase){
+            minion.AddAffix(Affix.Block, secondAOEDefend);
+            AoEAttack();
+
+        }else{
+            minion.AddAffix(Affix.Block, firstAOEDefend);
+            AoEAttack();
+            
+        }
+    }
+
+   
 
 
    
@@ -105,7 +159,7 @@ public class TheOdds : AoEEnemy
     protected virtual void FirstAttackPhase(){
     switch (attacks[currentAttack])
         {
-            case "Attack":
+            case "Attack1":
                 if (attackTarget == null)
                     FindTarget();
                 
@@ -115,16 +169,30 @@ public class TheOdds : AoEEnemy
                 }
                 else
                 {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack1Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
                 break;
 
-            case "Defend":
-                moveText.text = $"Defending for {firstDefend}";
-                moveText.color = this.GetEnemyColor();
+            case "DefendAndAttackAOE":
+                if (attackTarget == null)
+                    FindTarget();
+                
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attacking Party for {aoeAttackValue1} DMG and Defending for {firstAOEDefend}";
+                    moveText.color = attackTarget.GetCharacterColor();
+   
+                }
                 break;
+
+            
+
             case "RollTheDice":
             if(hasRolledDice == false){
                 int randomDie1 = Random.Range(0, dice.Count);
@@ -136,7 +204,6 @@ public class TheOdds : AoEEnemy
                 dieImage2.sprite = dieSprites[randomDie2];
 
                 hasRolledDice = true;
-
 
             }
 
@@ -156,7 +223,7 @@ public class TheOdds : AoEEnemy
 protected virtual void SecondAttackPhase(){
     switch (secondPhaseAttacks[currentAttack])
         {
-            case "Attack":
+            case "Attack2":
                 if (attackTarget == null)
                     FindTarget();
                 
@@ -167,7 +234,7 @@ protected virtual void SecondAttackPhase(){
                 }
                 else
                 {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack2Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
@@ -186,7 +253,7 @@ protected virtual void SecondAttackPhase(){
 protected virtual void FinalAttackPhase(){
     switch (finalPhaseAttacks[currentAttack])
         {
-            case "Attack":
+            case "Attack3":
                 if (attackTarget == null)
                     FindTarget();
                 
@@ -197,7 +264,24 @@ protected virtual void FinalAttackPhase(){
                 }
                 else
                 {
-                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack3Value} DMG";
+                    moveText.color = attackTarget.GetCharacterColor();
+   
+                }
+                break;
+
+            case "Attack4":
+                if (attackTarget == null)
+                    FindTarget();
+                
+
+                if (!CanAttackTarget())
+                {
+                    AdvanceAttack();
+                }
+                else
+                {
+                    moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack4Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
    
                 }
