@@ -93,6 +93,7 @@ public class TheOdds : AoEEnemy
             //New Affix Goes Here
 
         }
+        hasRolledDice = false; 
     }
 
     protected virtual void Attack1()
@@ -191,9 +192,9 @@ public class TheOdds : AoEEnemy
                 }
                 break;
 
-            
 
             case "RollTheDice":
+            moveText.text = $"Rolling the Dice";
             if(hasRolledDice == false){
                 int randomDie1 = Random.Range(0, dice.Count);
                 int randomDie2 = Random.Range(0, dice.Count);
@@ -204,10 +205,8 @@ public class TheOdds : AoEEnemy
                 dieImage2.sprite = dieSprites[randomDie2];
 
                 hasRolledDice = true;
-
             }
-
-
+            
 
             break;
 

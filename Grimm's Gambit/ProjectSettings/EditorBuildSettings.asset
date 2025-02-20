@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Campfire.unity
     guid: 23ba14bd82c42c641960349d0de7edee
   - enabled: 1
-    path: Assets/Scenes/LycanSceneV2.unity
+    path: Assets/Scenes/TheOddsFight.unity
     guid: 9d99811ff0d0c470f93e495044734962
   - enabled: 1
     path: Assets/Scenes/SistersSceneV2.unity
