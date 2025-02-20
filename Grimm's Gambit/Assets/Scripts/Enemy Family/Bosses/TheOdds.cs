@@ -100,6 +100,33 @@ public class TheOdds : AoEEnemy
 
     }
 
+    public override void AttackPattern()
+    {
+        if(isFinalPhase == true){
+            Invoke(finalPhaseAttacks[currentAttack], 0f);
+            CheckAttackBounds();
+            currentAttack++;
+            CheckAttackBounds();
+
+        }
+        else if(isSecondPhase == true){
+        CheckAttackBounds();
+        //Calls a method from the list of available attacks
+        Invoke(secondPhaseAttacks[currentAttack], 0f);
+        //Moves onto the next attack
+        currentAttack++;
+        CheckAttackBounds();
+
+        }else{
+        CheckAttackBounds();
+        //Calls a method from the list of available attacks
+        Invoke(attacks[currentAttack], 0f);
+        //Moves onto the next attack
+        currentAttack++;
+        CheckAttackBounds();
+        }
+    }
+
     protected virtual void RollTheDice(){
 
         if(die1 + die2 == 2){
