@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1161,6 +1161,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Katze
       objectReference: {fileID: 0}
+    - target: {fileID: 8644885097298582790, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
+      propertyPath: hoverOverText
+      value: 
+      objectReference: {fileID: 2138738391}
+    - target: {fileID: 8644885097298582790, guid: 12417d4f8c7033f49bf099bb535167f7, type: 3}
+      propertyPath: hoverOverImage
+      value: 
+      objectReference: {fileID: 1919480645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1253,6 +1261,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seamstress
       objectReference: {fileID: 0}
+    - target: {fileID: 6341920474929905174, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+      propertyPath: hoverOverText
+      value: 
+      objectReference: {fileID: 2138738391}
+    - target: {fileID: 6341920474929905174, guid: 8b8e0b6f5223d124bb35099d59420f19, type: 3}
+      propertyPath: hoverOverImage
+      value: 
+      objectReference: {fileID: 1919480645}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1881,6 +1897,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 290980548}
     m_Modifications:
+    - target: {fileID: 4237179189870010365, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+      propertyPath: hoverOverText
+      value: 
+      objectReference: {fileID: 2138738391}
+    - target: {fileID: 4237179189870010365, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
+      propertyPath: hoverOverImage
+      value: 
+      objectReference: {fileID: 1919480645}
     - target: {fileID: 4696726465575025877, guid: bd4b0233937a397489a9e75997ea96e4, type: 3}
       propertyPath: position
       value: Front
@@ -2603,6 +2627,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c828c7cb048a5e24faa6de38b7a577ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1919480645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3689445469542655960, guid: 1dfb564f9d934b947baceb9c94500665, type: 3}
+  m_PrefabInstance: {fileID: 1948006134614604150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1926193546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2986,6 +3021,17 @@ MonoBehaviour:
   - {fileID: 5677028748466764126, guid: 35e2587cad8df4b02a090aec13752a30, type: 3}
   - {fileID: 5677028748466764126, guid: 8ddcf68a0849a400091a14ecd7ebed54, type: 3}
   - {fileID: 5677028748466764126, guid: f5cc41652a427480d957b5bfd35cc5da, type: 3}
+--- !u!114 &2138738391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285853218422177748, guid: 1dfb564f9d934b947baceb9c94500665, type: 3}
+  m_PrefabInstance: {fileID: 1948006134614604150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &334874285298233132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3553,7 +3599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744003330441732770, guid: 1dfb564f9d934b947baceb9c94500665, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

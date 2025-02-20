@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
@@ -12,6 +13,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 //using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class AffixDisplay : MonoBehaviour
 {
@@ -26,8 +28,31 @@ public class AffixDisplay : MonoBehaviour
     //Prefab references for mouseover window - must contain:
     public GameObject tooltipPrefab;
     public Canvas parentCanvas;
+    public UnityEngine.UI.Image hoverOverImage;
+    public TextMeshProUGUI hoverOverText;
     
-    
+    public void Start()
+    {
+        UnityEngine.UI.Image[] images = FindObjectsOfType<UnityEngine.UI.Image>();
+        foreach (UnityEngine.UI.Image image in images)
+        {
+            if (image.gameObject.name == "AffixImage")
+            {
+                hoverOverImage = image;
+                break;
+            }
+        }
+        TextMeshProUGUI[] texts = FindObjectsOfType<TextMeshProUGUI>();
+        foreach (TextMeshProUGUI text in texts)
+        {
+            if (text.gameObject.name == "AffixDescription")
+            {
+                hoverOverText = text;
+                break;
+            }
+        }
+    }
+
     public void AddAffix(Affix newAffix, int currentStacks) //Adds an affix to display
     {
         if (affixImageLibrary == null)
@@ -159,7 +184,9 @@ public class AffixDisplay : MonoBehaviour
             //Adds script that manages mouseover information
             AffixDisplayDetector detector = newSpriteObject.AddComponent<AffixDisplayDetector>();
             detector.parentObject = newSpriteObject;
-            detector.imageContainer = imageContainer;
+            detector.Image = affixImage.Value;
+            detector.displayImageLocation = hoverOverImage;
+            detector.displayTextLocation = hoverOverText;
             detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
             detector.Stacks = stackDictionary[affixImage.Key]; //Uses specific stack count
 
