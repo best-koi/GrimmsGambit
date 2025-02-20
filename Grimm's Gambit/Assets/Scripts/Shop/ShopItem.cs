@@ -13,7 +13,7 @@ public class ShopItem : ScriptableObject
     [SerializeField]
     private string itemName, description;
 
-    [SerializeField] private Card cardRef;
+    [SerializeField] private CardTemplate cardRef;
 
     [SerializeField] private Heirloom heirloomRef;
     
@@ -31,11 +31,19 @@ public class ShopItem : ScriptableObject
 
     public void StoreHeirloom(Heirloom heirloom)
     {
+        heirloomRef = heirloom;
 
+        itemName = heirloom.ToString();
+
+        // Store item description and image
     }
 
     public void StoreCard(CardTemplate card)
     {
+        cardRef = card;
 
+        itemName = card.CardName;
+        description = card.CardDescription;
+        icon = card.CardSprite;
     }
 }

@@ -138,8 +138,6 @@ public class DragAndDropV2 : MonoBehaviour
         {
             if (_hoveredObject.TryGetComponent<CardDisplay>(out CardDisplay cd))
             {
-                if (_hoveredObject != _selectedObject)
-                    cd.OrderLayer = 0;
                 cd.CardDisplayScale = Vector3.one;
                 cd.CardDisplayDisplacement = Vector3.zero;
             }
