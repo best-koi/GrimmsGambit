@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4058,12 +4058,18 @@ MonoBehaviour:
   selectedConversation: {fileID: 0}
   textSpeed: 0.05
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  seamstressSFX: {fileID: 0}
+  houndSFX: {fileID: 0}
+  katzeSFX: {fileID: 0}
+  heirSFX: {fileID: 0}
+  narratorSFX: {fileID: 0}
   boss: {fileID: 803860647}
   bossDialogue:
   - {fileID: 11400000, guid: 681644c6d09724c0c98becdefb1ad786, type: 2}
   - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
   bossName: The Odds
   selectedBossConversation: {fileID: 0}
+  bossSFX: {fileID: 8300000, guid: 0c78da5bb14a74a0e8c6ed860ecbb049, type: 3}
 --- !u!4 &2078012879
 Transform:
   m_ObjectHideFlags: 0
