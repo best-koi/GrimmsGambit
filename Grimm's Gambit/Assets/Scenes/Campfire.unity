@@ -171,6 +171,7 @@ MonoBehaviour:
   _dataBase: {fileID: 8870974378587466512}
   _angleBounds: {x: 3.5, y: -3.5}
   _displacementFromContainerCenter: {x: 0, y: 18, z: 0}
+  _depthBetweenCards: 0
 --- !u!1 &57348549
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,6 +4057,11 @@ MonoBehaviour:
   selectedConversation: {fileID: 0}
   textSpeed: 0.05
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  seamstressSFX: {fileID: 0}
+  houndSFX: {fileID: 0}
+  katzeSFX: {fileID: 0}
+  heirSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
 --- !u!4 &1728676239
 Transform:
   m_ObjectHideFlags: 0
