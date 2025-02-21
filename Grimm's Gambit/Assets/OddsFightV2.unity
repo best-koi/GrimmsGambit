@@ -1893,6 +1893,8 @@ MonoBehaviour:
   sceneParent: {fileID: 1558088976}
   enemies: []
   enemySceneName: OddsFightV2
+  encounterWinScene: Encounter Victory Scene
+  encounterLossScene: EncounterLoss
 --- !u!1 &901972456
 GameObject:
   m_ObjectHideFlags: 0
