@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3173837563165420495}
-  - component: {fileID: 5448717484234942762}
-  m_Layer: 0
+  - component: {fileID: 1009321975344456599}
+  m_Layer: 8
   m_Name: Card Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2393857477294652435}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0.2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -19.25, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &5448717484234942762
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009321975344456599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2393857477294652435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7953e55e00678444a6b797a19fd609d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f9313c72faf539489d813cb8b9cef9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Database: {fileID: 0}
-  m_AngleBounds: {x: 12, y: -12}
-  m_DisplacementFromContainerCenter: {x: 0, y: 0.5, z: 0}
-  cardsToReturn: []
+  m_ChildTransforms: []
+  _dataBase: {fileID: 0}
+  _angleBounds: {x: 3.5, y: -3.5}
+  _displacementFromContainerCenter: {x: 0, y: 18, z: 0}
+  _depthBetweenCards: 0.01
