@@ -1,6 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
+[Serializable]
+public class OutcomeChanges
+{
+    public enum heirloomEffect {
+        None,
+        Add,
+        Remove
+    }
+    [SerializeField] public int currentHPChange = 0;
+    [SerializeField] public int maxHPChange = 0;
+    [SerializeField] public heirloomEffect addHeirloom = heirloomEffect.None;
+    [SerializeField] public Heirloom heirloomChange = 0;
+    [SerializeField] public CardData cardChange = null;
+}
 
 [CreateAssetMenu(fileName = "New Narrative Encounter", menuName = "NarrativeEncounters/Two-Choice Encounter", order = 0)]
 public class NarrativeEncounter : ScriptableObject
@@ -16,6 +33,8 @@ public class NarrativeEncounter : ScriptableObject
 
 
     [SerializeField]protected string choice1Type, choice2Type;//The Types of Outcomes (for a future Switch statement)
+
+    [SerializeField] protected OutcomeChanges outcomeChange1, outcomeChange2;
 
 //returns name of encounter
     public string GetEncounterName(){
@@ -45,21 +64,29 @@ public class NarrativeEncounter : ScriptableObject
     }
 
 //To be used by buttons in narrative generator
-    public virtual void Choice1(){
-        Debug.Log("Chose Choice 1");
-        /*
-        MaxHp = 0
-        CurrentHp = 0
-        Heirloom = "Miracle Water"
-        Card = null 
+    public virtual void Choice(int outcome) {
+        OutcomeChanges outcomeChange;
 
-        */
+        outcomeChange = (outcome == 1) ? outcomeChange1 : outcomeChange2;
 
+        PlayerData playerData = FindObjectOfType<PlayerData>();
+        if (outcomeChange.currentHPChange != 0) {
+            playerData.changeCurrentHP(outcomeChange.currentHPChange);
+        }
 
-    }
+        if (outcomeChange.maxHPChange != 0) {
+            playerData.changeMaxHP(outcomeChange.maxHPChange);
+        }
 
-    public virtual void Choice2(){
-        Debug.Log("Chose Choice 2");
+        if (outcomeChange.addHeirloom == OutcomeChanges.heirloomEffect.Add) {
+            playerData.addHeirloom(outcomeChange.heirloomChange);
+        } else if (outcomeChange.addHeirloom == OutcomeChanges.heirloomEffect.Remove) {
+            playerData.removeHeirloom(outcomeChange.heirloomChange);
+        }
+
+        if (outcomeChange1.cardChange != null) {
+
+        }
     }
 
 //Going to be used to determine what the outcome type is for each choice

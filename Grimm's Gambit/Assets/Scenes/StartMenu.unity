@@ -6427,7 +6427,7 @@ MonoBehaviour:
     databaseIndex: 5
   - ownerIndex: 1
     databaseIndex: 8
-  heirlooms: 06000000
+  heirlooms: 
   currentHPChange: 0
   maxHPChange: 0
 --- !u!4 &1962893006

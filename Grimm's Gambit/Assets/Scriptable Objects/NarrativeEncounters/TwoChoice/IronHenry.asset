@@ -34,3 +34,21 @@ MonoBehaviour:
     remember on, then it''s not your place to change it." ''Thank you for listening
     on, traveler. If you by some miracle manage to find my liege, tell him old Heinrich
     made it out okay.'' the coachman calls after you.  [No reward, but no punishment] '
+  choice1Type: 
+  choice2Type: 
+  outcomeChange1:
+    currentHPChange: -10
+    maxHPChange: 5
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: 0
+      databaseIndex: 0
+  outcomeChange2:
+    currentHPChange: 0
+    maxHPChange: 0
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: 0
+      databaseIndex: 0

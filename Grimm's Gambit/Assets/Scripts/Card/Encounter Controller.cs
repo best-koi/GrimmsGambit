@@ -104,6 +104,14 @@ public class EncounterController : MonoBehaviour
             FirstCardFree = true;
         }
 
+        //m_PlayerInventory.GetComponentsInChildren<Minion>();
+        foreach (Minion minion in m_PlayerInventory.GetComponentsInChildren<Minion>()) {
+            minion.maxHealth += playerData.maxHPChange;
+            minion.currentHealth += playerData.maxHPChange;
+            minion.currentHealth += playerData.currentHPChange;
+            if (minion.currentHealth > minion.maxHealth) minion.currentHealth = minion.maxHealth;
+        }
+
         onEncounterStarted?.Invoke();
 
         m_PlayerDeck.ShuffleDeck();

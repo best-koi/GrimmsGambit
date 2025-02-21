@@ -29,10 +29,10 @@ public class Fisherman : NarrativeEncounter
         
     }
 
-    public override void Choice1(){
-        int outcome = CoinFlip();
-        choice1Outcome = $"{originalOutcome1}  {outcomeTexts[outcome]}";
-        choice1Type = outcomeTypes[outcome];
+    // public override void Choice(){
+    //     int outcome = CoinFlip();
+    //     choice1Outcome = $"{originalOutcome1}  {outcomeTexts[outcome]}";
+    //     choice1Type = outcomeTypes[outcome];
        
-    }
+    // }
 }

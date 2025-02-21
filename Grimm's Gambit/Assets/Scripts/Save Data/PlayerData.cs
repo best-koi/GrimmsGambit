@@ -45,4 +45,20 @@ public class PlayerData : MonoBehaviour
     public List<Heirloom> GetPlayerHeirlooms() {
         return new List<Heirloom>(heirlooms);
     }
+
+    public void addHeirloom(Heirloom heirloom) {
+        heirlooms.Add(heirloom);
+    }
+
+    public void removeHeirloom(Heirloom heirloom) {
+        heirlooms.Remove(heirloom);
+    }
+
+    public void changeCurrentHP(int amount) {
+        currentHPChange += amount;
+    }
+
+    public void changeMaxHP(int amount) {
+        maxHPChange += amount;
+    }
 }

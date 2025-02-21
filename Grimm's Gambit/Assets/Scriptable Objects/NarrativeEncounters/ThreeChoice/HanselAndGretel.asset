@@ -27,10 +27,34 @@ MonoBehaviour:
     your shoulder and see that cheery smile almost becomes a malicious smirk. Strangely,
     it feels as though you are forgetting something\u2026  Choose one thing to lose\u201D "
   choice1: '<Discard 3 cards at random from your deck> '
-  choice2: <Discard a Heirloom>
+  choice2: <Discard an Heirloom>
   choice1Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"
   choice2Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"
   choice1Type: 
   choice2Type: 
+  outcomeChange1:
+    currentHPChange: 0
+    maxHPChange: 0
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: 0
+      databaseIndex: 0
+  outcomeChange2:
+    currentHPChange: 0
+    maxHPChange: 0
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: 0
+      databaseIndex: 0
+  outcomeChange3:
+    currentHPChange: 0
+    maxHPChange: -5
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: 0
+      databaseIndex: 0
   choice3: <All Party Members lose 5 Max HP>
   choice3Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"

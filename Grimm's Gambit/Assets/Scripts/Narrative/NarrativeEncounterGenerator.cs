@@ -62,9 +62,9 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             threeChoiceOutcome3.text = currentThree.GetChoice3Outcome(); 
 
 
-            threeChoice1Button.onClick.AddListener(delegate { currentThree.Choice1(); });
-            threeChoice2Button.onClick.AddListener(delegate { currentThree.Choice2(); });
-            threeChoice3Button.onClick.AddListener(delegate { currentThree.Choice3(); });
+            threeChoice1Button.onClick.AddListener(delegate { currentThree.Choice(1); });
+            threeChoice2Button.onClick.AddListener(delegate { currentThree.Choice(2); });
+            threeChoice3Button.onClick.AddListener(delegate { currentThree.Choice(3); });
 
             
 
@@ -84,8 +84,8 @@ public class NarrativeEncounterGenerator : MonoBehaviour
             twoChoiceOutcome2.text = currentEncounterSelected.GetChoice2Outcome();
 
 
-            twoChoice1Button.onClick.AddListener(delegate { currentEncounterSelected.Choice1(); });
-            twoChoice2Button.onClick.AddListener(delegate { currentEncounterSelected.Choice2(); });
+            twoChoice1Button.onClick.AddListener(delegate { currentEncounterSelected.Choice(1); });
+            twoChoice2Button.onClick.AddListener(delegate { currentEncounterSelected.Choice(2); });
 
         }
 
