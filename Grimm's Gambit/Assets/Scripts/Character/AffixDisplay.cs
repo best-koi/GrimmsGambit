@@ -122,6 +122,10 @@ public class AffixDisplay : MonoBehaviour
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[6]); //Using parasite image
                 stringDictionary.Add(newAffix, "Curse - Takes damage equal to number of stacks, incrementing by one each turn.");
                 break;
+            case Affix.PowerBurst:
+                imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[7]); //Using strength image
+                stringDictionary.Add(newAffix, "Power Burst - Increases damage by the number of stacks, decreasing by one each turn.");
+                break;
             default:
                 break;
         }
