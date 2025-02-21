@@ -7,12 +7,9 @@ using UnityEditor;
 public class CardHand : ObjectContainer
 {
     [SerializeField] private CardDatabase _dataBase;
-
-    [SerializeField]
-    private Vector2 _angleBounds;
-
-    [SerializeField]
-    private Vector3 _displacementFromContainerCenter;
+    [SerializeField] private Vector2 _angleBounds;
+    [SerializeField] private Vector3 _displacementFromContainerCenter;
+    [SerializeField] private float _depthBetweenCards;
 
     protected override void Awake()
     {
@@ -64,19 +61,21 @@ public class CardHand : ObjectContainer
         if (cardNum == 1 || cardNum % 2 == 0)
             currentAngle += angleBetweenCards / 2;
 
-        int orderLayer = m_ChildTransforms.Count * -1 + 1;
+        int orderLayer = cardNum * -1 + 1;
+        float cardDepth = _depthBetweenCards * orderLayer;
 
         // Apply transformations to all cards
         foreach (Transform t in m_ChildTransforms)
         {
             Quaternion rotation = Quaternion.Euler(0f, 0f, currentAngle);
-            Vector3 displacement = rotation * _displacementFromContainerCenter;
+            Vector3 displacement = rotation * _displacementFromContainerCenter + cardDepth * Vector3.back;
 
             SetChildLocalRotation(t, rotation);
             SetChildLocalPosition(t, displacement);
 
             // Increment angle for each card
             currentAngle += angleBetweenCards;
+            cardDepth += _depthBetweenCards;
 
             if (t.TryGetComponent<CardDisplay>(out CardDisplay cd))
             {
