@@ -12,11 +12,16 @@ public class OutcomeChanges
         Add,
         Remove
     }
-    [SerializeField] public int currentHPChange = 0;
-    [SerializeField] public int maxHPChange = 0;
+    //[SerializeField] public int currentHPChange = 0;
+    //[SerializeField] public int maxHPChange = 0;
     [SerializeField] public heirloomEffect addHeirloom = heirloomEffect.None;
     [SerializeField] public Heirloom heirloomChange = 0;
-    [SerializeField] public CardData cardChange = null;
+    [SerializeField] public CardData cardChange;
+    [SerializeField] public List<HPChange> partyHealth;
+
+    void Start() {
+        cardChange.ownerIndex = -1;
+    }
 }
 
 [CreateAssetMenu(fileName = "New Narrative Encounter", menuName = "NarrativeEncounters/Two-Choice Encounter", order = 0)]
@@ -70,12 +75,12 @@ public class NarrativeEncounter : ScriptableObject
         outcomeChange = (outcome == 1) ? outcomeChange1 : outcomeChange2;
 
         PlayerData playerData = FindObjectOfType<PlayerData>();
-        if (outcomeChange.currentHPChange != 0) {
-            playerData.changeCurrentHP(outcomeChange.currentHPChange);
-        }
-
-        if (outcomeChange.maxHPChange != 0) {
-            playerData.changeMaxHP(outcomeChange.maxHPChange);
+        if (outcomeChange.partyHealth.Count > 0) {
+            //playerData.changeCurrentHP(PlayerData.PartyMember.Party, outcomeChange.currentHPChange);
+            foreach (HPChange health in outcomeChange.partyHealth) {
+                playerData.changeCurrentHP(health.partyMember, health.currentHP);
+                playerData.changeMaxHP(health.partyMember, health.maxHP);
+            }
         }
 
         if (outcomeChange.addHeirloom == OutcomeChanges.heirloomEffect.Add) {
@@ -84,7 +89,7 @@ public class NarrativeEncounter : ScriptableObject
             playerData.removeHeirloom(outcomeChange.heirloomChange);
         }
 
-        if (outcomeChange1.cardChange != null) {
+        if (outcomeChange.cardChange.ownerIndex != -1) {
 
         }
     }
