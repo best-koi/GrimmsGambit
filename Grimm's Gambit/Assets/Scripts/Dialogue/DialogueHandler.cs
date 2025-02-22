@@ -4,20 +4,36 @@ using UnityEngine;
 using TMPro;
 public class DialogueHandler : MonoBehaviour
 {
+    [Header("Character Sprites")]
     [SerializeField]
     protected GameObject seamstress, hound, katze, heir; //Sprites for each character, to be toggled on and off 
 
+[Header("Character Text")]
     [SerializeField]
     protected TMP_Text speakerText, conversationText, chosenCharacterText; //Text to display
 
 [SerializeField]
     protected string chosenCharacter; // The character to generate dialogue for 
 
+[Header("UI Elements")]
     [SerializeField]
-    protected GameObject talkButton, shopButton, party, talkPanel, dialogueWindow, advanceButton;//Various items to hide and show
+    protected GameObject talkButton, shopButton, party, talkPanel, dialogueWindow, advanceButton, finishSelectionButton;//Various items to hide and show
 
     [SerializeField]
     private List<Dialogue> seamstressConversations, katzeConversations, houndConversations;//The lists of conversations for each character
+
+    [Header("Seamstress Campfire Dialogues")]
+    [SerializeField]
+    private Dialogue seamstressDialogue1, seamstressDialogue2Good, seamstressDialogue2Bad, seamstressDialogue3Good, seamstressDialogue3Bad;
+
+    [Header("Hound Campfire Dialogues")]
+    [SerializeField]
+    private Dialogue houndDialogue1, houndDialogue2Good, houndDialogue2Bad, houndDialogue3Good, houndDialogue3Bad;
+
+    [Header("Katze Campfire Dialogues")]
+    [SerializeField]
+    private Dialogue katzeDialogue1, katzeDialogue2Good, katzeDialogue2Bad, katzeDialogue3Good, katzeDialogue3Bad;
+
 
     [SerializeField]
     protected Dialogue selectedConversation; //A conversation selected at random
@@ -29,10 +45,13 @@ public class DialogueHandler : MonoBehaviour
 
     protected int index = 0; //An index to track conversation progress
 
+    private bool canTalkSeamstress = true, canTalkHound = true, canTalkKatze = true; 
+
     
 
 protected virtual void Start(){
     conversationText.text = string.Empty; 
+    finishSelectionButton.SetActive(false);
 }
 
 
@@ -44,14 +63,29 @@ protected virtual void Start(){
     }
 
 //Sets the character upon clicking 
-    public void SetCharacter(string characterName){
-        chosenCharacter = characterName; 
+    public virtual void SetCharacter(string characterName){
+        if(characterName == "The Seamstress" && canTalkSeamstress){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
+        }
+        else if(characterName == "The Hound" && canTalkHound){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
+        }else if (characterName == "Die Katze" && canTalkKatze){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
+        }
+        
 
     }
 //Sets player choice active 
     public void ChooseTalk(){
         talkButton.SetActive(false);
         shopButton.SetActive(false);
+
         talkPanel.SetActive(true);
         
 
@@ -59,7 +93,9 @@ protected virtual void Start(){
 //Sets up dialogue panel 
     public virtual void StartDialogue(){
         Debug.Log(chosenCharacter);
+        finishSelectionButton.SetActive(false);
         talkPanel.SetActive(false);
+        advanceButton.SetActive(true);
         party.SetActive(false);
         dialogueWindow.SetActive(true); 
         RevealSelectedCharacters();
@@ -73,18 +109,77 @@ protected virtual void Start(){
         switch(chosenCharacter){
             case "The Seamstress":
             seamstress.SetActive(true);
-            selectedConversation = seamstressConversations[Random.Range(0, seamstressConversations.Count)];
+            canTalkSeamstress = false;
 
+            /*SAVE SYSTEM LOGIC HERE(SWITCH STATEMENT?)
+            switch (boolean for tracking player choices)
+            case 1:
+
+            case 2:
+            if(goodChoice)
+
+            else
+
+            case 3:
+
+            if(goodChoice2)
+
+            else
+
+
+
+            */
+            selectedConversation = seamstressDialogue1;
             break;
 
             case "The Hound":
             hound.SetActive(true);
-            selectedConversation = houndConversations[Random.Range(0, houndConversations.Count)];
+            canTalkHound = false;
+
+            /*SAVE SYSTEM LOGIC HERE(SWITCH STATEMENT?)
+            switch (boolean for tracking player choices)
+            case 1:
+
+            case 2:
+            if(goodChoice)
+
+            else
+
+            case 3:
+
+            if(goodChoice2)
+
+            else
+
+
+
+            */
+            selectedConversation = houndDialogue1;
             break;
 
             case "Die Katze":
             katze.SetActive(true);
-            selectedConversation = katzeConversations[Random.Range(0, katzeConversations.Count)];
+            canTalkKatze = false; 
+
+            /*SAVE SYSTEM LOGIC HERE(SWITCH STATEMENT?)
+            switch (boolean for tracking player choices)
+            case 1:
+
+            case 2:
+            if(goodChoice)
+
+            else
+
+            case 3:
+
+            if(goodChoice2)
+
+            else
+
+
+
+            */
+            selectedConversation = katzeDialogue1;
             break;
 
             default: 
@@ -148,10 +243,28 @@ protected virtual void Start(){
     }
 
     protected virtual void CloseDialogueWindow(){
+        //Hide all Sprites
+        heir.SetActive(false);
+        hound.SetActive(false);
+        seamstress.SetActive(false);
+        katze.SetActive(false);
+
+        //Hide and show certain buttons
         advanceButton.SetActive(false);
         party.SetActive(true);
         dialogueWindow.SetActive(false); 
         shopButton.SetActive(true);
+        //Determine if player can converse again 
+        if(canTalkHound || canTalkSeamstress || canTalkKatze){
+            talkButton.SetActive(true);
+            index = 0;
+            conversationText.text = string.Empty;
+            chosenCharacter = "";
+            chosenCharacterText.text = chosenCharacter;
+
+
+        }
+            
 
     }
 

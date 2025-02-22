@@ -12,21 +12,17 @@ public class DialogueCharacter : MonoBehaviour
     [SerializeField]
     private DialogueHandler dialogueHandler; 
 
-    [SerializeField]
-    private GameObject finishSelectionButton; 
 
 private void Start(){
-    finishSelectionButton.SetActive(false);
+    //finishSelectionButton.SetActive(false);
 }
     public void CharacterSelected(){
         Debug.Log(characterName);
         dialogueHandler.SetCharacter(characterName);
-        if(finishSelectionButton.activeSelf == false){
-            finishSelectionButton.SetActive(true);
-
-        }
+        
         
     }
+
 
     public void OnMouseDown(){
         CharacterSelected();
