@@ -9,18 +9,18 @@ public class BossDialogueHandler : DialogueHandler
     protected GameObject boss; 
 
     [SerializeField]
-    private List<BossDialogue> bossDialogue;
+    protected List<BossDialogue> bossDialogue;
 
     [SerializeField]
-    private string bossName; 
+    protected string bossName; 
 
-    private int bossIndex = 0;
+    protected int bossIndex = 0;
 
     [SerializeField]
     protected BossDialogue selectedBossConversation;
 
     [SerializeField]
-    private AudioClip bossSFX;
+    protected AudioClip bossSFX;
 
     protected override void Start(){
     conversationText.text = string.Empty; 
