@@ -42,6 +42,29 @@ MonoBehaviour:
     before disappearing into the forest. A few moments later Die Katze returns slightly
     disheveled but having retrieved their hat.   You push forward having successfully
     freed the girl.\u201D "
+  choice1Type: 
+  choice2Type: 
+  outcomeChange1:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
+  outcomeChange2:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
+  outcomeChange3:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
   choice3: '<Let the Hound confront the dog> '
   choice3Outcome: "\u201CThe Hound approaches the dog and begins to match its barking.
     The two bark back and the Hound places itself between the older dog and the tree,

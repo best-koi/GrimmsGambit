@@ -24,6 +24,29 @@ MonoBehaviour:
     and your party are able to flee but not before it lands a few hits... '
   choice2Outcome: The Goose honks in anger fighting you as you attempt to shove it
     into a satchel.
+  choice1Type: 
+  choice2Type: 
+  outcomeChange1:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
+  outcomeChange2:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
+  outcomeChange3:
+    addHeirloom: 0
+    heirloomChange: 0
+    cardChange:
+      ownerIndex: -1
+      databaseIndex: -1
+    partyHealth: []
   choice3: <Leave the Goose Alone>
   choice3Outcome: "\u201CYou are able to shake off the greed and walk away leaving
     the goose and its eggs unharmed\u2026\u201D"

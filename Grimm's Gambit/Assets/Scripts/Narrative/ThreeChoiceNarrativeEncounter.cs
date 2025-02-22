@@ -43,10 +43,6 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
         } else if (outcomeChange.addHeirloom == OutcomeChanges.heirloomEffect.Remove) {
             playerData.removeHeirloom(outcomeChange.heirloomChange);
         }
-
-        if (outcomeChange.cardChange.ownerIndex != -1) {
-
-        }
     }
 
 

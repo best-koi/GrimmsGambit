@@ -37,18 +37,19 @@ MonoBehaviour:
   choice1Type: 
   choice2Type: 
   outcomeChange1:
-    currentHPChange: -10
-    maxHPChange: 5
     addHeirloom: 0
     heirloomChange: 0
     cardChange:
       ownerIndex: 0
       databaseIndex: 0
+    partyHealth:
+    - currentHP: -10
+      maxHP: 5
+      partyMember: 0
   outcomeChange2:
-    currentHPChange: 0
-    maxHPChange: 0
     addHeirloom: 0
     heirloomChange: 0
     cardChange:
       ownerIndex: 0
       databaseIndex: 0
+    partyHealth: []
