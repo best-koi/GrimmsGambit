@@ -116,7 +116,7 @@ protected virtual void Start(){
             case 1:
 
             case 2:
-            if(goodChoice)
+            if(goodChoice) - add the sweater to heirlooms here as well
 
             else
 

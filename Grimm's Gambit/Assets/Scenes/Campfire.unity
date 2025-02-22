@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4053,10 +4053,10 @@ MonoBehaviour:
   houndConversations:
   - {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
   seamstressDialogue1: {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
-  seamstressDialogue2Good: {fileID: 0}
-  seamstressDialogue2Bad: {fileID: 0}
-  seamstressDialogue3Good: {fileID: 0}
-  seamstressDialogue3Bad: {fileID: 0}
+  seamstressDialogue2Good: {fileID: 11400000, guid: 16d08ae3e8714c04fbccaab91e951550, type: 2}
+  seamstressDialogue2Bad: {fileID: 11400000, guid: fb4cd7faaf761894eb1ca5f793f76c8c, type: 2}
+  seamstressDialogue3Good: {fileID: 11400000, guid: cfd1e4eceb54ccb4386be8a70549c403, type: 2}
+  seamstressDialogue3Bad: {fileID: 11400000, guid: 37fb036f003c32c47b6dbdd774e8a70d, type: 2}
   houndDialogue1: {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
   houndDialogue2Good: {fileID: 0}
   houndDialogue2Bad: {fileID: 0}

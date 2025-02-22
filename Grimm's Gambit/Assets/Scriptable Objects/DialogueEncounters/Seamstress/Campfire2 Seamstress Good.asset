@@ -13,33 +13,31 @@ MonoBehaviour:
   m_Name: Campfire2 Seamstress Good
   m_EditorClassIdentifier: 
   lines:
-  - 'You approach the Seamstress. She sits by the fire weaving twine and string into
-    a beautiful pattern. '
-  - 'As you approach she glances up from her work, pausing before putting her supplies
-    away and giving you her full attention. She gives you a weary smile. '
-  - 'Good day to you! Err- evening I suppose.  '
-  - 'Good evening. I wish to speak with you. '
-  - Of course! What ails you, little one?
-  - "I\u2019d like to get to know you a little better. What can you tell me about
-    yourself? "
-  - "Well I am but a humble seamstress. Fortunately, the ascension of the Red Queen
-    hasn\u2019t tampered with people\u2019s need for clothes, granted not many want
-    to pay nor can they afford my finer talents nowadays...   "
-  - "I\u2019m sorry to hear that\u2026 "
-  - "Don\u2019t you worry your pretty head bout me or my struggles. You\u2019ve got
-    to keep your mind on your goals and that\u2019s showing that crooked Odds what
-    for.   "
-  - 'Why are you helping me? Surely there is something you wish to get out of this. '
-  - "Hmm\u2026 Well hun, to tell you the truth I have a bit of a bone to pick with
-    that old-headed Odds you seek."
-  - 'Do you have a gambit you wish to make as well? '
-  - "No. No, not really. Look, my intents with the Odds are my own. For now let\u2019s
-    just say I\u2019d like to see an end to his crooked games.   "
-  - 'And how exactly do you plan to achieve that? '
-  - "\u2026"
-  - "\u2026"
-  - "I\u2019m sure I\u2019ll know when the time is right. "
-  - "Was nice talking to you, hun. Try and get some rest, we\u2019ve got a long day
-    ahead of us."
-  isHeirSpeaking: 000000010001000100010001000100010000
-  isNarratorText: 0101000000000000000000000000000000
+  - You approach the Seamstress. Ever since you stopped traveling and set up camp
+    she has been furious at work sewing something, but you are unsure as to what.
+  - You are able to step in front of her before she finally notices you.
+  - Oh! Pardon me, hun. Got a bit lost in my work for a second. Everything alright?
+  - I just wanted to check in with you. How are you feeling after our encounter with
+    the Beldam?
+  - Well... I think I'm fine. I think... No. *sigh* I'll be straight with you. I
+    don't know how I feel yet. I'm a bit lost at the moment.
+  - Does it have something to do with that doll?
+  - '*sigh* yes... That doll was supposed to be a gift for my daughter. My daughter
+    which that cheating Odds took from me.'
+  - There is a pause in her speech as you see her eyes water slightly. She takes
+    a deep breath and puts on her calm composure once more.
+  - But none of that matters anymore. I can't change the past, nor my mistakes. But
+    I can fight to make sure I don't lose what I have now. Which reminds me.
+  - She reaches down to grab what she has been working on, revealing a knitted sweater
+    seemingly handmade for you.
+  - This is for you! I know it's not much, but I've been needing to do something
+    with my hands to ease the mind and this seemed like the perfect place to put
+    my efforts.
+  - I hope it fits. I sort of eyeballed your proportions.
+  - You try on the sweater. It is warm and fuzzy and made with thick enough material
+    that you feel it will provide some protection in your journey going forward.
+  - Well. What do you think?
+  - It's wonderful. Thank you.
+  - Of course, hun. Now I think it's best if I turn in for the night. Sleep well.
+  isHeirSpeaking: 00000001000100010000000000000100
+  isNarratorText: 01010000000000010001000001000000

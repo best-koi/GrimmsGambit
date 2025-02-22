@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Campfire3 Seamstress Good
+  m_EditorClassIdentifier: 
+  lines:
+  - As you approach the Seamstress she sits seemingly lost in thought. She stares
+    upwards towards the moon with a soft smile on her face.
+  - As you sit beside her she speaks to you eyes still entrances by the beauty of
+    the night sky.
+  - I think I'm finally ready.
+  - To face the Odds?
+  - No. For everything that comes after that. For the first time in a very long time
+    I think I'm finally excited to see what the future holds in store for me. It's
+    thrilling.
+  - What is it that you want when all this is done?
+  - I'm not sure. A second chance at family I think is a good start. Someone to share
+    the nights with.
+  - A home that finally feels like home. Maybe a croissant. Really the possibilities
+    are endless.
+  - A croissant... Yes, truly endless possibilities indeed...
+  - With chocolate chips too! Heh. But in all seriousness I really don't know.
+  - All I know is that I'm ready to meet whatever life awaits me in sanctuary. Tomorrow
+    is the beginning of a new chapter.
+  - Do you still seek vengeance on the Odds?
+  - Vengeance? No, not anymore. Maybe a stern talking to and a slap across the face
+    to set his crooked heart in place, but not vengeance.
+  - Together you sit entranced by moonlight.
+  - Well, tomorrow won't come faster by staring at the moon to go down faster. I'm
+    off to get some rest. Sleep well... and thank you.
+  isHeirSpeaking: 000000010001000001000001000000
+  isNarratorText: 010100000000000000000000000100
