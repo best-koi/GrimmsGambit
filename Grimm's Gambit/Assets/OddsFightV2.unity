@@ -3038,7 +3038,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 556e38fc867644fcca954b59d038f1d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6a029ab3a33804723ab64b26ea1e5908, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4054,9 +4054,25 @@ MonoBehaviour:
   talkPanel: {fileID: 287245797}
   dialogueWindow: {fileID: 1466134099}
   advanceButton: {fileID: 465983830}
+  finishSelectionButton: {fileID: 0}
   seamstressConversations: []
   katzeConversations: []
   houndConversations: []
+  seamstressDialogue1: {fileID: 0}
+  seamstressDialogue2Good: {fileID: 0}
+  seamstressDialogue2Bad: {fileID: 0}
+  seamstressDialogue3Good: {fileID: 0}
+  seamstressDialogue3Bad: {fileID: 0}
+  houndDialogue1: {fileID: 0}
+  houndDialogue2Good: {fileID: 0}
+  houndDialogue2Bad: {fileID: 0}
+  houndDialogue3Good: {fileID: 0}
+  houndDialogue3Bad: {fileID: 0}
+  katzeDialogue1: {fileID: 0}
+  katzeDialogue2Good: {fileID: 0}
+  katzeDialogue2Bad: {fileID: 0}
+  katzeDialogue3Good: {fileID: 0}
+  katzeDialogue3Bad: {fileID: 0}
   selectedConversation: {fileID: 0}
   textSpeed: 0.05
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
@@ -4071,7 +4087,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
   bossName: The Odds
   selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 0c78da5bb14a74a0e8c6ed860ecbb049, type: 3}
+  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
 --- !u!4 &2078012879
 Transform:
   m_ObjectHideFlags: 0
