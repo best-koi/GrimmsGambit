@@ -385,7 +385,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Die Katze
   dialogueHandler: {fileID: 1728676238}
-  finishSelectionButton: {fileID: 909068169}
 --- !u!1 &183388058
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: The Hound
   dialogueHandler: {fileID: 1728676238}
-  finishSelectionButton: {fileID: 909068169}
 --- !u!1 &404633188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1762,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: The Seamstress
   dialogueHandler: {fileID: 1728676238}
-  finishSelectionButton: {fileID: 909068169}
 --- !u!1 &832350882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,12 +4045,28 @@ MonoBehaviour:
   talkPanel: {fileID: 1215754493}
   dialogueWindow: {fileID: 1423862019}
   advanceButton: {fileID: 612566452}
+  finishSelectionButton: {fileID: 909068169}
   seamstressConversations:
   - {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
   katzeConversations:
   - {fileID: 11400000, guid: 4d9f33c73b3904b278d0ac67776110ec, type: 2}
   houndConversations:
   - {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
+  seamstressDialogue1: {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
+  seamstressDialogue2Good: {fileID: 0}
+  seamstressDialogue2Bad: {fileID: 0}
+  seamstressDialogue3Good: {fileID: 0}
+  seamstressDialogue3Bad: {fileID: 0}
+  houndDialogue1: {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
+  houndDialogue2Good: {fileID: 0}
+  houndDialogue2Bad: {fileID: 0}
+  houndDialogue3Good: {fileID: 0}
+  houndDialogue3Bad: {fileID: 0}
+  katzeDialogue1: {fileID: 11400000, guid: 4d9f33c73b3904b278d0ac67776110ec, type: 2}
+  katzeDialogue2Good: {fileID: 0}
+  katzeDialogue2Bad: {fileID: 0}
+  katzeDialogue3Good: {fileID: 0}
+  katzeDialogue3Bad: {fileID: 0}
   selectedConversation: {fileID: 0}
   textSpeed: 0.05
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
