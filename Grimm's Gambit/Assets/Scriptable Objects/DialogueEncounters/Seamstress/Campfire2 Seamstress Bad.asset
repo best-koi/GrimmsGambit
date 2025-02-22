@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Campfire2 Seamstress Bad
+  m_EditorClassIdentifier: 
+  lines:
+  - You approach the Seamstress. Ever since you stopped traveling and set up camp
+    she has been furious at work sewing something, but you are unsure as to what.
+  - You are able to step in front of her before she finally notices you.
+  - Oh! Pardon me, hun. Got a bit lost in my work for a second. Everything alright?
+  - I just wanted to check in with you. How are you feeling after our encounter with
+    the Beldam?
+  - Well... I think I'm fine. I think... No. *sigh* I'll be straight with you. I
+    don't know how I feel yet. I'm a bit lost at the moment.
+  - Does it have something to do with that doll?
+  - '*sigh* yes... That doll was supposed to be a gift for my daughter. My daughter
+    which that cheating Odds took from me.'
+  - There is a pause in her speech as you see her eyes water slightly. She takes
+    a deep breath and puts on her calm composure once more.
+  - But none of that matters anymore. I can't change the past, nor my mistakes. But
+    I can fight to make sure I don't lose what I have now. Which reminds me.
+  isHeirSpeaking: 000000010001000100
+  isNarratorText: 010100000000000100
