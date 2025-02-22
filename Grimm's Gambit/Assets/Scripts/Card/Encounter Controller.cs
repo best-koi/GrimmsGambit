@@ -265,21 +265,21 @@ public class EncounterController : MonoBehaviour
 
         if (seamstress == null) {
             int max = playerData.GetHP(PlayerData.PartyMember.Seamstress).Item2;
-            playerData.SetHP(PlayerData.PartyMember.Seamstress, max);
+            playerData.SetHP(PlayerData.PartyMember.Seamstress, (int) Math.Ceiling(max*0.15));
         } else {
             playerData.SetHP(PlayerData.PartyMember.Seamstress, seamstress.GetComponent<Minion>().currentHealth);
         }
 
         if (katze == null) {
             int max = playerData.GetHP(PlayerData.PartyMember.Katze).Item2;
-            playerData.SetHP(PlayerData.PartyMember.Katze, max);
+            playerData.SetHP(PlayerData.PartyMember.Katze, (int) Math.Ceiling(max*0.15));
         } else {
             playerData.SetHP(PlayerData.PartyMember.Katze, katze.GetComponent<Minion>().currentHealth);
         }
 
         if (hound == null) {
             int max = playerData.GetHP(PlayerData.PartyMember.Hound).Item2;
-            playerData.SetHP(PlayerData.PartyMember.Hound, max);
+            playerData.SetHP(PlayerData.PartyMember.Hound, (int) Math.Ceiling(max*0.15));
         } else {
             playerData.SetHP(PlayerData.PartyMember.Hound, hound.GetComponent<Minion>().currentHealth);
         }
