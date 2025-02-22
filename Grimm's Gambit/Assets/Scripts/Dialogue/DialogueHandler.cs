@@ -73,7 +73,7 @@ protected virtual void Start(){
             chosenCharacter = characterName; 
             if(finishSelectionButton.activeSelf == false)
                 finishSelectionButton.SetActive(true);
-        }else if (characterName == "Die Katze" && canTalkKatze){
+        }else if (characterName == "Katze" && canTalkKatze){
             chosenCharacter = characterName; 
             if(finishSelectionButton.activeSelf == false)
                 finishSelectionButton.SetActive(true);
@@ -157,7 +157,7 @@ protected virtual void Start(){
             selectedConversation = houndDialogue1;
             break;
 
-            case "Die Katze":
+            case "Katze":
             katze.SetActive(true);
             canTalkKatze = false; 
 

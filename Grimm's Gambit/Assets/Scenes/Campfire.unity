@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8827b51f16b04df0a0423afa46b8fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Die Katze
+  characterName: Katze
   dialogueHandler: {fileID: 1728676238}
 --- !u!1 &183388058
 GameObject:

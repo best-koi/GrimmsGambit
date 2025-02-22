@@ -118,7 +118,7 @@ public override void StartDialogue(){
             seamstress.SetActive(false);
             break;
 
-            case "Die Katze":
+            case "Katze":
             katze.SetActive(true);
             heir.SetActive(false);
             hound.SetActive(false);
