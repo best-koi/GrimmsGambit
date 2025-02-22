@@ -20,7 +20,8 @@ public enum Affix //Insert affixes here that are applied from the minion perspec
     Threaded, //Complete in "Minion Used" function - second number is turn duration of effect (extra stacks will not increase this value)
     Naturopath, //Complete in "Damage Taken" function - second number is value to add to the heal
     Exploit, //Complete in "Damage Taken" function - second number is value of stacks
-    Curse //Debuff that does scaling damage starting at 3
+    Curse, //Debuff that does scaling damage starting at 3
+    PowerBurst //Buff, Stackable, Strength but temporary
 }
 
 public class Affixes //Allows for the storing of values associated with each affix while using the editor (these values will get added into the dictionary upon game start)
@@ -96,7 +97,7 @@ public class Minion : MonoBehaviour
                 animator.SetTrigger("IsBleeding");
             }
         }
-        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
+        else if (affix == Affix.Block || affix == Affix.Vulnerable || affix == Affix.DamageReduction || affix == Affix.Bleed || affix == Affix.Taunt || affix == Affix.Naturopath || affix == Affix.Exploit || affix == Affix.PowerBurst) //For affixes that already exist but need a value added, replaces them by adding the current value to the new one
         {
             int currentValue = currentAffixes[affix];
             currentAffixes.Remove(affix);
@@ -199,6 +200,10 @@ public class Minion : MonoBehaviour
         {
             RemoveOneCharge(Affix.Threaded);
         }
+        if (currentAffixes.ContainsKey(Affix.PowerBurst)) //Removing PowerBurst charge
+        {
+            RemoveOneCharge(Affix.PowerBurst);
+        }
         //End of turn effects/affixes go here
             
     }
@@ -239,6 +244,10 @@ public class Minion : MonoBehaviour
                 if (targetMinion.currentAffixes.ContainsKey(Affix.Parasite))
                 {
                     DamageTaken(-targetMinion.currentAffixes[Affix.Parasite]); //Deals healing equal to the stored parasite value to the one who performs an attack, by checking whether the targetted minion has thorns
+                }
+                if (currentAffixes.ContainsKey(Affix.PowerBurst))
+                {
+                    DamageToDeal += currentAffixes[Affix.PowerBurst]; //Adds damage to an attack based upon power burst
                 }
                 if (currentAffixes.ContainsKey(Affix.Strength)) //Damage Modification for if character has a Strength modifier
                 {

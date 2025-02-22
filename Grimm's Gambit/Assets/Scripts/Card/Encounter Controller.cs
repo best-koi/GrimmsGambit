@@ -41,8 +41,9 @@ public class EncounterController : MonoBehaviour
 
     private bool encounterEnded = false; 
 
+
     [SerializeField] 
-    private string enemySceneName; 
+    private string enemySceneName, encounterWinScene, encounterLossScene; 
 
     public UnitParty GetEnemyInventory()
     {
@@ -207,8 +208,8 @@ public class EncounterController : MonoBehaviour
         SaveHealthValues();
         onEncounterEnded?.Invoke(playerWin);
         SceneManager.UnloadSceneAsync(enemySceneName);
-        if(playerWin) SceneManager.LoadScene("Encounter Victory Scene", LoadSceneMode.Additive);
-        else SceneManager.LoadScene("EncounterLoss", LoadSceneMode.Additive);
+        if(playerWin) SceneManager.LoadScene(encounterWinScene, LoadSceneMode.Additive);
+        else SceneManager.LoadScene(encounterLossScene, LoadSceneMode.Additive);
     }
 
     // Spend an amount of resources

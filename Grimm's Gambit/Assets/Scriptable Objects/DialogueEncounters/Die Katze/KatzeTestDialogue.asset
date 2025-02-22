@@ -18,3 +18,4 @@ MonoBehaviour:
   - Do you think I would look good in a hat?
   - I don't have any extras...
   isHeirSpeaking: 01000100
+  isNarratorText: 00000000

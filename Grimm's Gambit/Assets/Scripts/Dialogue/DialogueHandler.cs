@@ -25,7 +25,7 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField]
     protected float textSpeed; //The speed to advance dialogue
     [SerializeField]
-    protected AudioClip SoundEffect;
+    protected AudioClip SoundEffect, seamstressSFX, houndSFX, katzeSFX, heirSFX, narratorSFX;
 
     protected int index = 0; //An index to track conversation progress
 
@@ -110,7 +110,27 @@ protected virtual void Start(){
         foreach(char letter in selectedConversation.lines[index].ToCharArray()){
             conversationText.text += letter;
             yield return new WaitForSeconds(textSpeed);
-            PlayGarble();
+            switch(speakerText.text){
+                case "The Heir":
+                PlayGarble();
+                break;
+
+                case "The Seamstress":
+                PlayGarble();
+                break;
+
+                case "The Hound":
+                PlayGarble();
+                break;
+
+                case "Die Katze":
+                PlayGarble();
+                break;
+
+                default:
+                PlayNarratorGarble();
+                break;
+            }
         }
 
     }
@@ -146,6 +166,70 @@ protected virtual void Start(){
             audioSource.pitch *= 1.059463f;
         }
         audioSource.PlayOneShot(SoundEffect);
+    }
+
+    public void PlayHeirGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(heirSFX);
+    }
+
+    public void PlaySeamstressGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(seamstressSFX);
+    }
+    public void PlayHoundGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(houndSFX);
+    }
+
+    public void PlayKatzeGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(katzeSFX);
+    }
+
+    public void PlayNarratorGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(narratorSFX);
     }
     
 }

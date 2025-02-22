@@ -5,7 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
@@ -121,6 +121,10 @@ public class AffixDisplay : MonoBehaviour
             case Affix.Curse:
                 imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[6]); //Using parasite image
                 stringDictionary.Add(newAffix, "Curse - Takes damage equal to number of stacks, incrementing by one each turn.");
+                break;
+            case Affix.PowerBurst:
+                imageDictionary.Add(newAffix, affixImageLibrary.spriteLibrary[7]); //Using strength image
+                stringDictionary.Add(newAffix, "Power Burst - Increases damage by the number of stacks, decreasing by one each turn.");
                 break;
             default:
                 break;

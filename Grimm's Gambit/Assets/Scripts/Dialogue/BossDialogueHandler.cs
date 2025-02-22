@@ -19,6 +19,9 @@ public class BossDialogueHandler : DialogueHandler
     [SerializeField]
     protected BossDialogue selectedBossConversation;
 
+    [SerializeField]
+    private AudioClip bossSFX;
+
     protected override void Start(){
     conversationText.text = string.Empty; 
     selectedBossConversation = bossDialogue[bossIndex];
@@ -44,12 +47,33 @@ public override void StartDialogue(){
 
     }
 
-    protected virtual IEnumerator TypeLine(){
+    protected override IEnumerator TypeLine(){
         SetSpeaker(index); 
         foreach(char letter in selectedBossConversation.lines[index].ToCharArray()){
             conversationText.text += letter;
             yield return new WaitForSeconds(textSpeed);
-            PlayGarble();
+            switch(speakerText.text){
+                case "The Heir":
+                PlayGarble();
+                break;
+
+                case "The Seamstress":
+                PlayGarble();
+                break;
+
+                case "The Hound":
+                PlayGarble();
+                break;
+
+                case "Die Katze":
+                PlayGarble();
+                break;
+
+                default:
+                PlayBossGarble();
+                break;
+            }
+            
         }
 
     }
@@ -119,6 +143,19 @@ public override void StartDialogue(){
         advanceButton.SetActive(false);
         dialogueWindow.SetActive(false); 
 
+    }
+
+    public void PlayBossGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+        for (int i = 0; i < Semitones[random]; i++)
+        {
+            audioSource.pitch *= 1.059463f;
+        }
+        audioSource.PlayOneShot(bossSFX);
     }
 
 
