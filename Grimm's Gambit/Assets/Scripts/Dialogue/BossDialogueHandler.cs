@@ -65,7 +65,7 @@ public override void StartDialogue(){
                 PlayGarble();
                 break;
 
-                case "Die Katze":
+                case "Katze":
                 PlayGarble();
                 break;
 

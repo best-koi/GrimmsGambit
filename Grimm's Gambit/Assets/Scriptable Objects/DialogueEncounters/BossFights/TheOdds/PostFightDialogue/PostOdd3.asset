@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PostOdd3
   m_EditorClassIdentifier: 
   lines:
-  - No more lies. No more tricks. I see your face deceiver.
-  - This is all a misunderstanding. What if we...
-  isBossSpeaking: 0001
+  - 'You understand what happens when you lose a bet, don''t you, gambler? '
+  - As if you haven't lost a bounty head before.
+  - "Besides, I have a simply irresistible\_deal for you lot..."
+  isBossSpeaking: 000101
   speakerName: Katze

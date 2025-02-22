@@ -661,8 +661,9 @@ MonoBehaviour:
   narratorSFX: {fileID: 0}
   boss: {fileID: 334348672}
   bossDialogue:
-  - {fileID: 11400000, guid: 681644c6d09724c0c98becdefb1ad786, type: 2}
-  - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
+  - {fileID: 11400000, guid: 15389fb56964b41e2a65942aca296baa, type: 2}
+  - {fileID: 11400000, guid: 30aaef595bd264361920a4eb57ae35ad, type: 2}
+  - {fileID: 11400000, guid: ea255ba41e2004e41a97fa4899396625, type: 2}
   bossName: The Odds
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
