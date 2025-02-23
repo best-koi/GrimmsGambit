@@ -181,6 +181,11 @@ public class ShopDisplay : MonoBehaviour
         LoadShopPool();
     }
 
+    public void Acquire()
+    {
+        Debug.Log("Acquired");
+    }
+
     public void DisplayDeck()
     {
         deckViewUI.SetActive(true);
