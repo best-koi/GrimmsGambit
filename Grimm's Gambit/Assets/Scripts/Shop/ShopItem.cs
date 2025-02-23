@@ -46,4 +46,14 @@ public class ShopItem : ScriptableObject
         description = card.CardDescription;
         icon = card.CardSprite;
     }
+
+    public CardTemplate GetCard()
+    {
+        return cardRef;
+    }
+
+    public Heirloom GetHeirloom()
+    {
+        return heirloomRef;
+    }
 }

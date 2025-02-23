@@ -27,6 +27,8 @@ public class ShopDisplay : MonoBehaviour
     [SerializeField] private Button rerollButton;
     [SerializeField] private int rerolls;
 
+    [SerializeField] private Button[] itemButtons;
+
     [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
     [SerializeField] private int numberOfItems = 3; // Number of items to be displayed on each page
@@ -49,6 +51,11 @@ public class ShopDisplay : MonoBehaviour
         if (pickDescriptions.Length != numberOfItems)
         {
             pickDescriptions = new TMP_Text[numberOfItems];
+        }
+
+        for(int i = 0; i < numberOfItems; i++)
+        {
+            itemButtons[i].onClick.AddListener(() => Acquire(i));
         }
         
         LoadShopPool();
@@ -181,9 +188,19 @@ public class ShopDisplay : MonoBehaviour
         LoadShopPool();
     }
 
-    public void Acquire()
+    public void Acquire(int index)
     {
-        Debug.Log("Acquired");
+        CardTemplate cardRef = displayedItems[cycleIndex, index].GetCard();
+
+        if (cardRef == null)
+        {
+            Heirloom heirloomRef = displayedItems[cycleIndex, index].GetHeirloom();
+            heirloomManager.AddHeirloom(heirloomRef);
+        }
+        else
+        {
+            shopDeck.AddCard(cardRef);
+        }
     }
 
     public void DisplayDeck()
