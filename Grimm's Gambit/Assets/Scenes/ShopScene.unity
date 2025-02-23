@@ -621,6 +621,10 @@ MonoBehaviour:
   defaultText: Nothing Here
   rerollButton: {fileID: 1883045180}
   rerolls: 3
+  itemButtons:
+  - {fileID: 1115091060}
+  - {fileID: 1653027025}
+  - {fileID: 2053134351}
   cycleIndex: 0
   numberOfPages: 2
   numberOfItems: 3
@@ -1908,6 +1912,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017718152}
   m_CullTransparentMesh: 1
+--- !u!114 &1115091060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+  m_PrefabInstance: {fileID: 2510631301073463663}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1143678716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2739,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1653027025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+  m_PrefabInstance: {fileID: 23007463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693191081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,6 +3408,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011922971}
   m_CullTransparentMesh: 1
+--- !u!114 &2053134351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+  m_PrefabInstance: {fileID: 326442056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2510631301073463663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3393,6 +3430,22 @@ PrefabInstance:
     - target: {fileID: 2685972336416925849, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_Name
       value: CommonCardItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: f9b4ca12f0ccf411da2b3a727509da6c, type: 3}
+    - target: {fileID: 7657283508514161332, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.x
