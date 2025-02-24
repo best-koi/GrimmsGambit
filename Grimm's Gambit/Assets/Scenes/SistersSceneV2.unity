@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.89077723, g: 0.27780628, b: 0.04340545, a: 1}
+  m_IndirectSpecularColor: {r: 0.8908235, g: 0.27793398, b: 0.043407805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7309,12 +7309,12 @@ GameObject:
   - component: {fileID: 629314125}
   - component: {fileID: 629314124}
   m_Layer: 5
-  m_Name: Boss
+  m_Name: Sister1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &629314124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7362,16 +7362,15 @@ RectTransform:
   m_GameObject: {fileID: 629314123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54041, y: 0.54041, z: 0.54041}
+  m_LocalScale: {x: 0.2142337, y: 0.2142337, z: 0.2142337}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1538307603}
-  m_Father: {fileID: 1318572118}
+  m_Children: []
+  m_Father: {fileID: 1538307603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -23.000008}
-  m_SizeDelta: {x: 475.8985, y: 475.8985}
+  m_AnchoredPosition: {x: -61.056618, y: -0.8569331}
+  m_SizeDelta: {x: 550.15, y: 831.8975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &630745767
 GameObject:
@@ -14912,7 +14911,7 @@ RectTransform:
   - {fileID: 385177951}
   - {fileID: 1712334510}
   - {fileID: 1129682580}
-  - {fileID: 629314126}
+  - {fileID: 1538307603}
   - {fileID: 693342801}
   m_Father: {fileID: 119299904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15641,7 +15640,7 @@ MonoBehaviour:
   katzeSFX: {fileID: 0}
   heirSFX: {fileID: 0}
   narratorSFX: {fileID: 0}
-  boss: {fileID: 629314123}
+  boss: {fileID: 1538307602}
   bossDialogue:
   - {fileID: 11400000, guid: 681644c6d09724c0c98becdefb1ad786, type: 2}
   - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
@@ -16048,12 +16047,12 @@ GameObject:
   - component: {fileID: 1538307605}
   - component: {fileID: 1538307604}
   m_Layer: 5
-  m_Name: Sister2
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1538307603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16061,17 +16060,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538307602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.6678, y: 4.6678, z: 4.6678}
+  m_LocalScale: {x: 2.5225258, y: 2.5225258, z: 2.5225258}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 629314126}
+  m_Children:
+  - {fileID: 629314126}
+  m_Father: {fileID: 1318572118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: -0.000090084}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 271, y: 15}
+  m_SizeDelta: {x: 115.4167, y: 170.6328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538307604
 MonoBehaviour:
