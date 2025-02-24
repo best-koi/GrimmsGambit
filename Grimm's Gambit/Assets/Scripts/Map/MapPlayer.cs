@@ -31,7 +31,7 @@ public class MapPlayer : MonoBehaviour
     private string encounterScene, campfireScene;
 
     [SerializeField]
-    private string lycanScene, sistersScene, oddsScene;
+    private string lycanScene, sistersScene, oddsScene, beldamScene, ladyScene;
 
     [SerializeField]
     private GameObject sceneObjects;
@@ -127,6 +127,20 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(oddsScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
+            break;
+
+            case "LadyOfLake":
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(ladyScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+            RenderSettings.fog = false;
+            break;
+
+            case "Beldam":
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(beldamScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+            RenderSettings.fog = false;
             break;
             
             default:

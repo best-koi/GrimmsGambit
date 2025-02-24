@@ -88,7 +88,9 @@ public void StartBadDialogue(){
                 StartCoroutine(TypeLine());
 
             }else{
-                //CloseDialogueWindow(); 
+                EndPostDialogue();
+                
+                
             }
             
 
@@ -110,13 +112,21 @@ public void StartBadDialogue(){
                 RevealSelectedCharacters(); 
                 StartCoroutine(TypeLine());
 
-            }else{
-                //CloseDialogueWindow(); 
+            }else{ 
+                EndPostDialogue();
             }
             
 
         }
     }
 
+    private void EndPostDialogue(){
+                RenderSettings.fog = true;
+                SceneManager.UnloadSceneAsync(endingScene);
+                MapPlayer.sceneToToggle.SetActive(true);
+                SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+                save.LoadFromPlayerData();
+
+    }
 
 }
