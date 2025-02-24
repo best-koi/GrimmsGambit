@@ -17,3 +17,5 @@ MonoBehaviour:
   - This is all a misunderstanding. What if we...
   isBossSpeaking: 0001
   speakerName: The Seamstress
+  isNarratorText: 0000
+  isSpeakerHidden: 0000

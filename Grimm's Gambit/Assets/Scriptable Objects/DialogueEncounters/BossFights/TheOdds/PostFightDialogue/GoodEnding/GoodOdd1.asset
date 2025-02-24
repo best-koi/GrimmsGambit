@@ -16,3 +16,5 @@ MonoBehaviour:
   - So that is your choice...
   isBossSpeaking: 01
   speakerName: The Heir
+  isNarratorText: 00
+  isSpeakerHidden: 00

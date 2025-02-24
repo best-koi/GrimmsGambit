@@ -13,4 +13,7 @@ public class BossDialogue : ScriptableObject
 
     [SerializeField]
     public string speakerName; 
+
+    [SerializeField]
+    public List<bool> isNarratorText, isSpeakerHidden;//A list of bools representing whether the heir is speaking or not 
 }

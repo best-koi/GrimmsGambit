@@ -17,3 +17,5 @@ MonoBehaviour:
   - "You\u2019ve lost. "
   isBossSpeaking: 0100
   speakerName: The Heir
+  isNarratorText: 0000
+  isSpeakerHidden: 0000

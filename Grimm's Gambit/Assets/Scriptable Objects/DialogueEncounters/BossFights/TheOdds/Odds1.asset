@@ -17,3 +17,5 @@ MonoBehaviour:
   - Enough of your nonsense
   isBossSpeaking: 0100
   speakerName: Katze
+  isNarratorText: 0000
+  isSpeakerHidden: 0000

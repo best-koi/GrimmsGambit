@@ -18,3 +18,5 @@ MonoBehaviour:
   - "Besides, I have a simply irresistible\_deal for you lot..."
   isBossSpeaking: 000101
   speakerName: Katze
+  isNarratorText: 000000
+  isSpeakerHidden: 000000

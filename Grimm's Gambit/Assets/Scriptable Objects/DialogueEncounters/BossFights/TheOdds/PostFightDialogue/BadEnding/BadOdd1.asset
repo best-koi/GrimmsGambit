@@ -16,3 +16,5 @@ MonoBehaviour:
   - You won't regret this...
   isBossSpeaking: 01
   speakerName: The Heir
+  isNarratorText: 00
+  isSpeakerHidden: 00

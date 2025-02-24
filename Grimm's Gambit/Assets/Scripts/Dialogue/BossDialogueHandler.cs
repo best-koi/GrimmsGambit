@@ -39,10 +39,15 @@ public override void StartDialogue(){
     }
 
     protected override void SetSpeaker(int index){
-        if(selectedBossConversation.isBossSpeaking[index] == true){
+        if(selectedBossConversation.isBossSpeaking[index] == true && selectedBossConversation.isSpeakerHidden[index] == false){
             speakerText.text = bossName;
+        }else if (selectedBossConversation.isNarratorText[index] == true){
+            speakerText.text = " ";
+        }else if (selectedBossConversation.isSpeakerHidden[index] == true){
+            speakerText.text = "???";
         }else{
             speakerText.text = selectedBossConversation.speakerName; 
+
         }
 
     }
@@ -133,6 +138,7 @@ public override void StartDialogue(){
             break;
 
             default: 
+            PlayNarratorGarble();
             break;
         }
         boss.SetActive(true);
