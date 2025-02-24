@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Sisters1
+  m_EditorClassIdentifier: 
+  lines:
+  - You stumble through a thicket and bramble, spotting a large tower in the distance.
+  - The day grows late and needing a place to rest for the evening you and your group
+    decide that would be the best place to head.
+  - "You arrive at the base of the tower and can\u2019t help but feel you\u2019re
+    being watched."
+  - 'A strange location for a tower. '
+  isBossSpeaking: 00000000
+  speakerName: The Heir
+  isNarratorText: 01010100
+  isSpeakerHidden: 00000000

@@ -15639,11 +15639,10 @@ MonoBehaviour:
   houndSFX: {fileID: 0}
   katzeSFX: {fileID: 0}
   heirSFX: {fileID: 0}
-  narratorSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   boss: {fileID: 1538307602}
   bossDialogue:
-  - {fileID: 11400000, guid: 681644c6d09724c0c98becdefb1ad786, type: 2}
-  - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
+  - {fileID: 11400000, guid: 398be7949756b49f2ae863180d19e361, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
