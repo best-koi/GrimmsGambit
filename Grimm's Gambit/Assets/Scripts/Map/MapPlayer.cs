@@ -98,32 +98,47 @@ public class MapPlayer : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Encounter")
-        {
+        switch(collision.gameObject.tag){
+            case "Encounter":
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-        }else if (collision.gameObject.tag == "Lycan"){
-            collision.gameObject.tag = "Inactive";
+            break;
+            case "Lycan":
+             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(lycanScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-        }else if (collision.gameObject.tag == "Sisters"){
-            collision.gameObject.tag = "Inactive";
+            break;
+            case "Sisters":
+             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(sistersScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-        }else if (collision.gameObject.tag == "Narrative"){
+            break;
+            case "Narrative":
             collision.gameObject.tag = "Inactive";
             encounterGenerator.GetRandomNarrativeEncounter(); 
-        }else if(collision.gameObject.tag == "Campfire"){
-            collision.gameObject.tag = "Inactive";
+            break;
+            case "Campfire":
+             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(campfireScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-
-        }else if(collision.gameObject.tag == "Odds"){
+            break;
+            case "Odds":
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(oddsScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
+            break;
+            
+            default:
+            break; 
+
+
+
+
+
+
         }
+      
     }
 
    
