@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewMapLayout
       objectReference: {fileID: 0}
+    - target: {fileID: 3750936671588914846, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
+      propertyPath: m_TagString
+      value: Beldam
+      objectReference: {fileID: 0}
     - target: {fileID: 3925676130013591585, guid: 3bf166d8e716c4052b1031328cdc771e, type: 3}
       propertyPath: locationName
       value: Combat
