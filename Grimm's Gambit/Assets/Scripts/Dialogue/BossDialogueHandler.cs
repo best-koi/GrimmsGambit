@@ -60,27 +60,33 @@ public override void StartDialogue(){
             yield return new WaitForSeconds(textSpeed);
             switch(speakerText.text){
                 case "The Heir":
+                CheckBossVisibility();
                 PlayGarble();
-                //boss.GetComponent<Image>().color = new Color(0f,0f,0f, 0.2f); 
+                
                 break;
 
                 case "The Seamstress":
+                CheckBossVisibility();
                 PlayGarble();
                 break;
 
                 case "The Hound":
+                CheckBossVisibility();
                 PlayGarble();
                 break;
 
                 case "Katze":
+                CheckBossVisibility();
                 PlayGarble();
                 break;
 
                 case " ":
+                CheckBossVisibility();
                 PlayNarratorGarble(); 
                 break;
 
                 default:
+                CheckBossVisibility();
                 PlayBossGarble();
                 break;
             }
@@ -168,6 +174,13 @@ public override void StartDialogue(){
             audioSource.pitch *= 1.059463f;
         }
         audioSource.PlayOneShot(bossSFX);
+    }
+
+    private void CheckBossVisibility(){
+        if (selectedBossConversation.isSpeakerHidden[index] == true)
+                    boss.GetComponent<Image>().color = new Color(0,0,0, 255); 
+                else
+                    boss.GetComponent<Image>().color = new Color(255,255,255, 255); 
     }
 
 
