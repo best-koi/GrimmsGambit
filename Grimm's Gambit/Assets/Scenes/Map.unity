@@ -27203,6 +27203,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Odds
       objectReference: {fileID: 0}
+    - target: {fileID: 5005411519229715030, guid: 06706e35ee87e4031915881481ae104d, type: 3}
+      propertyPath: m_TagString
+      value: Beldam
+      objectReference: {fileID: 0}
     - target: {fileID: 6897426607932915286, guid: 06706e35ee87e4031915881481ae104d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32287073
@@ -27242,6 +27246,10 @@ PrefabInstance:
     - target: {fileID: 6897426607932915286, guid: 06706e35ee87e4031915881481ae104d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649489814851267228, guid: 06706e35ee87e4031915881481ae104d, type: 3}
+      propertyPath: m_TagString
+      value: LadyOfLake
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -15643,6 +15643,8 @@ MonoBehaviour:
   boss: {fileID: 1538307602}
   bossDialogue:
   - {fileID: 11400000, guid: 398be7949756b49f2ae863180d19e361, type: 2}
+  - {fileID: 11400000, guid: 2a61d849941b44cb1929dd3538c706ba, type: 2}
+  - {fileID: 11400000, guid: 85b9f750e545a45de92fee5d70c0e4d4, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
