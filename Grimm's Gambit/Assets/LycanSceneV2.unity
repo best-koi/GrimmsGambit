@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24418,8 +24418,9 @@ MonoBehaviour:
   narratorSFX: {fileID: 0}
   boss: {fileID: 2126669530}
   bossDialogue:
-  - {fileID: 11400000, guid: 681644c6d09724c0c98becdefb1ad786, type: 2}
-  - {fileID: 11400000, guid: db8963175e85a46609f3cba51ad63256, type: 2}
+  - {fileID: 11400000, guid: 099a968a1b249fc499685322f862ebb3, type: 2}
+  - {fileID: 11400000, guid: f3096856bbd0dd04ba59ae922c6ab89c, type: 2}
+  - {fileID: 11400000, guid: cb08325292d1c8844bd8dfef5365194b, type: 2}
   bossName: The Lycan
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}

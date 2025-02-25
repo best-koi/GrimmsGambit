@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Lycan Dialogue 1
   m_EditorClassIdentifier: 
   lines:
-  - As you near the edge of the forest, the path descends into a hollow. The trees
-    grow thickly above, leaving little moonlight to illuminate the dark path. Movement
-    along the brush however catches your eye.
+  - 'As you near the edge of the forest, the path descends into a hollow. The trees
+    grow thickly above, leaving little moonlight to illuminate the dark path. '
+  - Movement along the brush however catches your eye.
   - (Growls and barks in the direction of the movement.)
-  isBossSpeaking: 0000
-  speakerName: Hound
-  isNarratorText: 0100
-  isSpeakerHidden: 0000
+  isBossSpeaking: 000000
+  speakerName: The Hound
+  isNarratorText: 010100
+  isSpeakerHidden: 000000

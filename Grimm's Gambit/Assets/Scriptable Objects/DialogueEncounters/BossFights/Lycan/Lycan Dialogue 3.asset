@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Lycan Dialogue 3
   m_EditorClassIdentifier: 
   lines:
-  - "\u201CNot so fast you vile beast!\""
-  - "\"You face Katze, merciless mercenary and roguish rapscallion extraordinaire!\u201D"
-  - "\u201CI\u2019ve been hunting you for a season now, for someone you shouldn\u2019t
+  - Not so fast you vile beast!
+  - You face Katze, merciless mercenary and roguish rapscallion extraordinaire!
+  - "I\u2019ve been hunting you for a season now, for someone you shouldn\u2019t
     have wronged now wishes for your demise."
-  - "\"Today I shall end your terrible scourge upon innocent souls!\u201D"
-  - '"Aaahh! No! Stay away from us!"'
+  - Today I shall end your terrible scourge upon innocent souls!
+  - Aaahh! No! Stay away from us!
   isBossSpeaking: 0000000001
   speakerName: Katze
   isNarratorText: 0000000000
