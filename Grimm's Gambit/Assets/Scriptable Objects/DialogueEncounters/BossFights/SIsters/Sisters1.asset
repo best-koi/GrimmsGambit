@@ -22,4 +22,4 @@ MonoBehaviour:
   isBossSpeaking: 00000000
   speakerName: The Heir
   isNarratorText: 01010100
-  isSpeakerHidden: 00000000
+  isSpeakerHidden: 01000000

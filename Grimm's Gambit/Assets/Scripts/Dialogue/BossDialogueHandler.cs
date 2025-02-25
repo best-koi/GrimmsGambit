@@ -178,7 +178,7 @@ public override void StartDialogue(){
 
     private void CheckBossVisibility(){
         if (selectedBossConversation.isSpeakerHidden[index] == true)
-                    boss.GetComponent<Image>().color = new Color(0,0,0, 255); 
+                    boss.GetComponent<Image>().color = Color.grey;
                 else
                     boss.GetComponent<Image>().color = new Color(255,255,255, 255); 
     }
