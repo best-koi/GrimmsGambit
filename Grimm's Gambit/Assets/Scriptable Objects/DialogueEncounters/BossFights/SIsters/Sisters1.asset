@@ -19,7 +19,7 @@ MonoBehaviour:
   - "You arrive at the base of the tower and can\u2019t help but feel you\u2019re
     being watched."
   - 'A strange location for a tower. '
-  isBossSpeaking: 00000001
+  isBossSpeaking: 00000000
   speakerName: The Heir
   isNarratorText: 01010100
   isSpeakerHidden: 01000000

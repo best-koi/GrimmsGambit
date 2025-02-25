@@ -86,6 +86,11 @@ public override void StartDialogue(){
                 break;
 
                 case " ":
+                HideListener(heir);
+                HideListener(seamstress);
+                HideListener(katze);
+                HideListener(hound);
+                HideListener(boss);
                 PlayNarratorGarble(); 
                 break;
 

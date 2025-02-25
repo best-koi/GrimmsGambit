@@ -15647,7 +15647,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85b9f750e545a45de92fee5d70c0e4d4, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  bossSFX: {fileID: 8300000, guid: 1bb7498c17de84370be173e9b5f8db6f, type: 3}
 --- !u!4 &1437419156
 Transform:
   m_ObjectHideFlags: 0

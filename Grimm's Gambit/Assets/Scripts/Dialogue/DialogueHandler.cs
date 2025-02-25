@@ -235,6 +235,10 @@ protected virtual void Start(){
                 break;
 
                 default:
+                HideListener(heir);
+                HideListener(seamstress);
+                HideListener(katze);
+                HideListener(hound);
                 PlayNarratorGarble();
                 break;
             }
