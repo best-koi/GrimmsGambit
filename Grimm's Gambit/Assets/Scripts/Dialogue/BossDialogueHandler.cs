@@ -60,33 +60,41 @@ public override void StartDialogue(){
             yield return new WaitForSeconds(textSpeed);
             switch(speakerText.text){
                 case "The Heir":
-                CheckBossVisibility();
+                ShowSpeaker(heir);
+                HideListener(boss);
                 PlayGarble();
                 
                 break;
 
                 case "The Seamstress":
-                CheckBossVisibility();
+                ShowSpeaker(seamstress);
+                HideListener(boss);
                 PlayGarble();
+                
                 break;
 
                 case "The Hound":
-                CheckBossVisibility();
+                ShowSpeaker(hound);
+                HideListener(boss);
                 PlayGarble();
                 break;
 
                 case "Katze":
-                CheckBossVisibility();
+                ShowSpeaker(katze);
+                HideListener(boss);
                 PlayGarble();
                 break;
 
                 case " ":
-                CheckBossVisibility();
                 PlayNarratorGarble(); 
                 break;
 
                 default:
-                CheckBossVisibility();
+                HideListener(seamstress);
+                HideListener(heir);
+                HideListener(katze);
+                HideListener(hound);
+                ShowSpeaker(boss);
                 PlayBossGarble();
                 break;
             }
@@ -150,6 +158,7 @@ public override void StartDialogue(){
             break;
 
             default: 
+            
             PlayNarratorGarble();
             break;
         }
@@ -176,12 +185,8 @@ public override void StartDialogue(){
         audioSource.PlayOneShot(bossSFX);
     }
 
-    private void CheckBossVisibility(){
-        if (selectedBossConversation.isSpeakerHidden[index] == true)
-                    boss.GetComponent<Image>().color = Color.grey;
-                else
-                    boss.GetComponent<Image>().color = new Color(255,255,255, 255); 
-    }
+
+   
 
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class DialogueHandler : MonoBehaviour
 {
@@ -207,18 +208,29 @@ protected virtual void Start(){
             yield return new WaitForSeconds(textSpeed);
             switch(speakerText.text){
                 case "The Heir":
+                ShowSpeaker(heir);
+                HideListener(seamstress);
+                HideListener(katze);
+                HideListener(hound);
+
                 PlayGarble();
                 break;
 
                 case "The Seamstress":
+                ShowSpeaker(seamstress);
+                HideListener(heir);
                 PlayGarble();
                 break;
 
                 case "The Hound":
+                ShowSpeaker(hound);
+                HideListener(heir);
                 PlayGarble();
                 break;
 
-                case "Die Katze":
+                case "Katze":
+                ShowSpeaker(katze);
+                HideListener(heir);
                 PlayGarble();
                 break;
 
@@ -343,6 +355,13 @@ protected virtual void Start(){
             audioSource.pitch *= 1.059463f;
         }
         audioSource.PlayOneShot(narratorSFX);
+    }
+
+     protected void HideListener(GameObject character){
+        character.GetComponent<Image>().color = Color.grey;
+    }
+    protected void ShowSpeaker(GameObject character){
+        character.GetComponent<Image>().color = Color.white;
     }
     
 }
