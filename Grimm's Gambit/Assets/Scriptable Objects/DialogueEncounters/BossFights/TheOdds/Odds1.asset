@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Odds1
   m_EditorClassIdentifier: 
   lines:
-  - 'I''ve been expecting you. '
-  - Enough of your nonsense
-  isBossSpeaking: 0100
-  speakerName: Katze
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  - As you exit the forest tree line and step out into the chilly air you stand before
+    the mountain pass.
+  - Beyond these mountains lies sanctuary. A slight movement catches the attention
+    of the Hound.
+  - '*Growls in the direction of the strange sound*'
+  - Hmm. It would appear this story wasnt cut short. Tell me. Is it fate or foolishness
+    that permits you to stand before me?
+  isBossSpeaking: 00000001
+  speakerName: The Hound
+  isNarratorText: 01010000
+  isSpeakerHidden: 00000000

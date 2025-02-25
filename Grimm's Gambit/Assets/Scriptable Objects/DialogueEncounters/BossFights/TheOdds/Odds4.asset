@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Odds2
+  m_Name: Odds4
   m_EditorClassIdentifier: 
   lines:
-  - Got that a little twisted. That is, we're here to stand against you.
+  - Why am I not surprised you're helping the Red Queen. Once a charlatan, always
+    a charlatan. Guess we don't have a choice in the matter...
   isBossSpeaking: 00
-  speakerName: Katze
+  speakerName: The Seamstress
   isNarratorText: 00
   isSpeakerHidden: 00
