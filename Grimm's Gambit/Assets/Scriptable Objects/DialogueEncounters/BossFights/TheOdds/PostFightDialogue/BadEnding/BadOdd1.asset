@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BadOdd1
   m_EditorClassIdentifier: 
   lines:
-  - You won't regret this...
+  - Wise decision. You won't regret this...
   isBossSpeaking: 01
   speakerName: The Heir
   isNarratorText: 00

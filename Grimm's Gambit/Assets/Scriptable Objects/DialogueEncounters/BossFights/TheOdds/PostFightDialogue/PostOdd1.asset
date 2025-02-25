@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PostOdd1
   m_EditorClassIdentifier: 
   lines:
-  - Well this is an unexpected outcome.
-  - "You\u2019ve lost. "
+  - Well, this is... unexpected, to say the least. Not that it will deter me, though.
+  - '*The Hound stands above the Odds. Holding him in place and giving him an intimidating
+    glare*'
   isBossSpeaking: 0100
-  speakerName: The Heir
+  speakerName: The Hound
   isNarratorText: 0000
   isSpeakerHidden: 0000

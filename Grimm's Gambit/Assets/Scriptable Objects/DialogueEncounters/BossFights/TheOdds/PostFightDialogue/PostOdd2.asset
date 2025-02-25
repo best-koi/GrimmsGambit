@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: PostOdd2
   m_EditorClassIdentifier: 
   lines:
-  - No more lies. No more tricks. I see your face deceiver.
-  - This is all a misunderstanding. What if we...
-  isBossSpeaking: 0001
+  - What now? No fixing the game without your cheap tricks. GIve up already.
+  isBossSpeaking: 00
   speakerName: The Seamstress
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  isNarratorText: 00
+  isSpeakerHidden: 00

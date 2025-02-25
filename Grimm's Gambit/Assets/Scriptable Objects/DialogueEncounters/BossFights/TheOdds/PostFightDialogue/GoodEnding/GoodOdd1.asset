@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GoodOdd1
   m_EditorClassIdentifier: 
   lines:
-  - So that is your choice...
+  - FIne. So be it. Run away and never return. We will see what fate has in store
+    for you...
   isBossSpeaking: 01
   speakerName: The Heir
   isNarratorText: 00
