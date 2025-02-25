@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Beldam1
+  m_EditorClassIdentifier: 
+  lines:
+  - Moving forward you find the floor beneath you begins to become damp as the path
+    before you leads through a swampland.
+  - You travel some distance until you spot what appears to be an overgrown water
+    well built covered in moss and lichen.
+  - As you approach you can smell rot and decay drifting from the well.
+  - "You can\u2019t help but gag being in its proximity. Seemingly from nowhere a
+    woman appears behind you."
+  - Have you come to make an offering?
+  - Who goes there!
+  - Pardon my abruptness. No need to fear. The people of these lands call me the
+    Beldam.
+  - I help lost travelers find what they seek.
+  isBossSpeaking: 0000000001000101
+  speakerName: Katze
+  isNarratorText: 0101010100000000
+  isSpeakerHidden: 0000000001000000

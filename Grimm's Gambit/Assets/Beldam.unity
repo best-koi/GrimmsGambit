@@ -1006,16 +1006,12 @@ MonoBehaviour:
   narratorSFX: {fileID: 0}
   boss: {fileID: 334348672}
   bossDialogue:
-  - {fileID: 11400000, guid: 15389fb56964b41e2a65942aca296baa, type: 2}
-  - {fileID: 11400000, guid: 30aaef595bd264361920a4eb57ae35ad, type: 2}
-  - {fileID: 11400000, guid: ea255ba41e2004e41a97fa4899396625, type: 2}
+  - {fileID: 11400000, guid: dbd38bd4f74434d86b3b4974b6b2ce46, type: 2}
   bossName: The Beldam
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding:
-  - {fileID: 11400000, guid: 2f49b3d13bdf14f189683971b3f17e09, type: 2}
-  badEnding:
-  - {fileID: 11400000, guid: 399d60eebc1844c3c8f85dc1fca2df60, type: 2}
+  goodEnding: []
+  badEnding: []
   choicePanel: {fileID: 1896372323}
   goodButton: {fileID: 609665961}
   badButton: {fileID: 959178115}
