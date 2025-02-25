@@ -1003,10 +1003,16 @@ MonoBehaviour:
   houndSFX: {fileID: 0}
   katzeSFX: {fileID: 0}
   heirSFX: {fileID: 0}
-  narratorSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   boss: {fileID: 334348672}
   bossDialogue:
   - {fileID: 11400000, guid: dbd38bd4f74434d86b3b4974b6b2ce46, type: 2}
+  - {fileID: 11400000, guid: 61db80551341f4ed58748e076dc0e0b4, type: 2}
+  - {fileID: 11400000, guid: e05f8dc6481ab4254b3b02ee1ce95e77, type: 2}
+  - {fileID: 11400000, guid: c98435f9f0fa64acc84bd64e7f3947e6, type: 2}
+  - {fileID: 11400000, guid: 0859b8e51ac5740469068180e812af20, type: 2}
+  - {fileID: 11400000, guid: 014be359ccb1e4130ac6fb3d5312b2b1, type: 2}
+  - {fileID: 11400000, guid: a213ed5485ed840ed9878352f7205f7c, type: 2}
   bossName: The Beldam
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
