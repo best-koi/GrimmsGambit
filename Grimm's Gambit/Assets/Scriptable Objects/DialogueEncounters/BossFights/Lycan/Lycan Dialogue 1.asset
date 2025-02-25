@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Lycan Dialogue 1
+  m_EditorClassIdentifier: 
+  lines:
+  - As you near the edge of the forest, the path descends into a hollow. The trees
+    grow thickly above, leaving little moonlight to illuminate the dark path. Movement
+    along the brush however catches your eye.
+  - (Growls and barks in the direction of the movement.)
+  isBossSpeaking: 0000
+  speakerName: Hound
+  isNarratorText: 0100
+  isSpeakerHidden: 0000

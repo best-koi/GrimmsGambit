@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Post Lycan Dialogue 3
+  m_EditorClassIdentifier: 
+  lines:
+  - "\u201CEven so, they\u2019ve still harmed lots of people, and they\u2019re heads
+    still hold the bounty. I\u2026 I have to fulfill this bounty.\u201D"
+  - "\u201CNo! Please! Spare us! Have mercy upon us, we never meant to be evil or
+    vile!\u201D"
+  isBossSpeaking: 0001
+  speakerName: Katze
+  isNarratorText: 0000
+  isSpeakerHidden: 0000
