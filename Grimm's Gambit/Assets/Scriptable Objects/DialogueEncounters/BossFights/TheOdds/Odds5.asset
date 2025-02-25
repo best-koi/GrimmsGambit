@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Odds2
+  m_Name: Odds5
   m_EditorClassIdentifier: 
   lines:
-  - Got that a little twisted. That is, we're here to stand against you.
+  - '*The Hound bears his fangs to the Odds, standing defensively in front of the
+    Heir*'
   isBossSpeaking: 00
-  speakerName: Katze
+  speakerName: The Hound
   isNarratorText: 00
   isSpeakerHidden: 00
