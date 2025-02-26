@@ -21,13 +21,17 @@ MonoBehaviour:
   - Are you alright? You've been acting strange lately.
   - Have I? Odd. I suppose I have been feeling happier as of late, but I wouldn't
     call that strange.
-  - I have a feeling there is something wrong with that doll-
-  - You reach your hand in the direction of the doll gesturing in its direction and
-    the Seamstress jerks away from your hand defensively, tucking the doll under
-    her arm, kicking spores into the air.
-  - DON'T TOUCH!
-  - Sorry...
-  - No. No, I'm fine. It's fine. Just lost my temper is all. Everything's okay. I
-    think I shall turn in for the night. Good night, deary.
-  isHeirSpeaking: 00000001000100000100
-  isNarratorText: 01010000000001000000
+  - More that you've been distant.
+  - There is much to think about. We're only half way through our journey, but all
+    I can think about is what happens when we reach the Odds.
+  - Do you still seek an end to the Odds?
+  - I seek peace... I want to stop seeing the eyes of my daughter everytime I close
+    my eyes.
+  - But at the very same time I never want to forget them for it's all I have left
+    of her.
+  - And maybe... just maybe knowing that crooked man can never hurt anyone ever again
+    will let me see her eyes and smile. Just smile. Nothing more. That's what I want.
+  - I see...
+  - I'm going to get some rest now. You should too...
+  isHeirSpeaking: 00000001000100010000000100
+  isNarratorText: 01010000000000000000000000
