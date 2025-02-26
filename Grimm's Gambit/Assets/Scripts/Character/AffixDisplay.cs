@@ -30,7 +30,6 @@ public class AffixDisplay : MonoBehaviour
     public Canvas parentCanvas;
     public UnityEngine.UI.Image hoverOverImage;
     public TextMeshProUGUI hoverOverText;
-    public GameObject affixDescriptionBox; // added by danielle
     
     public void Start()
     {
@@ -58,9 +57,8 @@ public class AffixDisplay : MonoBehaviour
         {
             if (obj.gameObject.name == "AffixDescriptionBox")
             {
-                affixDescriptionBox = obj;
-                Debug.Log("found");
-                affixDescriptionBox.SetActive(false);
+                // Debug.Log("found");
+                obj.SetActive(false);
                 break;
             }
         }
@@ -207,7 +205,6 @@ public class AffixDisplay : MonoBehaviour
             detector.displayTextLocation = hoverOverText;
             detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
             detector.Stacks = stackDictionary[affixImage.Key]; //Uses specific stack count
-            detector.affixDisplay = affixDescriptionBox; // added by danielle
 
         }
     }
