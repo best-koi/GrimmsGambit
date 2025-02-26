@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Odds2
   m_EditorClassIdentifier: 
   lines:
-  - 'What do you want? '
-  - 'There''s one last challenge... '
-  isBossSpeaking: 0001
-  speakerName: The Heir
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  - Got that a little twisted. That is, we're here to stand against you.
+  isBossSpeaking: 00
+  speakerName: Katze
+  isNarratorText: 00
+  isSpeakerHidden: 00

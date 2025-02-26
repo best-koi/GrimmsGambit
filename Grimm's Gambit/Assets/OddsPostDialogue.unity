@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -664,6 +664,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15389fb56964b41e2a65942aca296baa, type: 2}
   - {fileID: 11400000, guid: 30aaef595bd264361920a4eb57ae35ad, type: 2}
   - {fileID: 11400000, guid: ea255ba41e2004e41a97fa4899396625, type: 2}
+  - {fileID: 11400000, guid: bfd328603555f854e8613bbfb7e51c3e, type: 2}
   bossName: The Odds
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}

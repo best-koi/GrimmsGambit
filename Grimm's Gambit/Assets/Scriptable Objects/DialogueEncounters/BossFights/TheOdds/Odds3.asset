@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Lycan Dialogue 2
+  m_Name: Odds3
   m_EditorClassIdentifier: 
   lines:
-  - "Well well well\u2026 if it isn\u2019t the Little Lost Royal. I\u2019ve been
-    looking for you for some time now."
-  - The Queen would like to have a talk with you about your disobedient behavior,
-    though she never specified if she wanted to talk to you or just your corpse!
-  isBossSpeaking: 0101
+  - 'The deal was to make it to Sanctuary, and we''re here. The question that naturally
+    follows is: why are you here?'
+  - A simple answer for a simple question, then. The game isn't through yet. There's
+    a player who won't be satisfied with this ending, to be precise.
+  isBossSpeaking: 0001
   speakerName: The Heir
   isNarratorText: 0000
   isSpeakerHidden: 0000

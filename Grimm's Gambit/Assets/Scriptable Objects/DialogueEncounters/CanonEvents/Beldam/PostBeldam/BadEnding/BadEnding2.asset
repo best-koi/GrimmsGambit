@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: BadEnding2
+  m_EditorClassIdentifier: 
+  lines:
+  - 'She looks down at the doll with hesitation. A sense of resolve washes over their
+    face as she hands the doll to the Beldam. '
+  - 'I trust you.  '
+  - The Beldam places the doll into the moss covered bucket and begins to turn the
+    crank.
+  - It descends down into the pungent murk below. Eventually the crank stops having
+    reached its limit.
+  - Sounds erupt from the bottom of the well of something strange shifting in the
+    waters below.
+  - 'The Beldam begins to wind the crank in the opposite direction. '
+  - The bucket rises above the edge of the well.
+  - Inside resides the doll now dampened by the waters below. It is returned covered
+    in spores and dull colored mushrooms.
+  - How beautiful! Now, take your prize for your bravery, deary.
+  - 'This pain will make me stronger... '
+  - With cold emotionless eyes that carry the tiredness and emptied emotions as a
+    result of bearing this pain for so long, she reaches forward grabbing the doll.
+  - The Seamstress stares blankly into its soulless lichen covered eyes.
+  - Her breathing becomes labored as a flood of emotions overcomes her.
+  - Some of the spores enter her lungs as she breathes with this doll in proximity.
+    As she does, tears begin to roll down her face.
+  - 'There we are. That is the face of someone who knows what they must do to get
+    what they want. Tell me, how does it feel? '
+  - "I don\u2019t know\u2026 I think the pain is finally gone. "
+  - And what do you feel now?
+  isBossSpeaking: 0000000000000000010000000000010001
+  speakerName: The Seamstress
+  isNarratorText: 0100010101010101000001010101000000
+  isSpeakerHidden: 0000000000000000000000000000000000

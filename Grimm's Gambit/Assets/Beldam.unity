@@ -1003,15 +1003,31 @@ MonoBehaviour:
   houndSFX: {fileID: 0}
   katzeSFX: {fileID: 0}
   heirSFX: {fileID: 0}
-  narratorSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   boss: {fileID: 334348672}
   bossDialogue:
   - {fileID: 11400000, guid: dbd38bd4f74434d86b3b4974b6b2ce46, type: 2}
+  - {fileID: 11400000, guid: 61db80551341f4ed58748e076dc0e0b4, type: 2}
+  - {fileID: 11400000, guid: e05f8dc6481ab4254b3b02ee1ce95e77, type: 2}
+  - {fileID: 11400000, guid: c98435f9f0fa64acc84bd64e7f3947e6, type: 2}
+  - {fileID: 11400000, guid: 0859b8e51ac5740469068180e812af20, type: 2}
+  - {fileID: 11400000, guid: 014be359ccb1e4130ac6fb3d5312b2b1, type: 2}
+  - {fileID: 11400000, guid: a213ed5485ed840ed9878352f7205f7c, type: 2}
   bossName: The Beldam
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding: []
-  badEnding: []
+  goodEnding:
+  - {fileID: 11400000, guid: 8d15ae769bfcb45f587733a7ea82249a, type: 2}
+  - {fileID: 11400000, guid: 5a24954c760e0426895e8984dd006016, type: 2}
+  badEnding:
+  - {fileID: 11400000, guid: 1c8377cc2c039493a91f7940e07365d0, type: 2}
+  - {fileID: 11400000, guid: 5ecfabef562f04fb3b4bc0f44a9a76f1, type: 2}
+  - {fileID: 11400000, guid: 2c539a0b9bac2451baec4e573e3b824e, type: 2}
+  - {fileID: 11400000, guid: 49b256d9a7ef648ed8e212f18d9dad85, type: 2}
+  - {fileID: 11400000, guid: 5e9480e7958cb4c9abe24f0c3b1f2201, type: 2}
+  - {fileID: 11400000, guid: 3b00ae761d63b44108e636200edb2bef, type: 2}
+  - {fileID: 11400000, guid: a938623b902824d778936b0075ad6d86, type: 2}
+  - {fileID: 11400000, guid: 9d828a3be94e54dd7a10d448fe3c7471, type: 2}
   choicePanel: {fileID: 1896372323}
   goodButton: {fileID: 609665961}
   badButton: {fileID: 959178115}
@@ -12091,7 +12107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178, y: 6}
+  m_AnchoredPosition: {x: -218, y: 6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486449819
@@ -22315,7 +22331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213, y: 6}
+  m_AnchoredPosition: {x: 197, y: 6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650921844
@@ -32536,7 +32552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take Deal
+  m_text: Enhance Doll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
@@ -32670,7 +32686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Refuse
+  m_text: Leave The Doll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}

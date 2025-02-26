@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: GoodEnding2
+  m_EditorClassIdentifier: 
+  lines:
+  - 'She looks down at the doll with hesitation. A sense of resolve washes over their
+    face as she hands the doll to the Beldam. '
+  - 'I trust you.  '
+  - The Beldam places the doll into the moss covered bucket and begins to turn the
+    crank.
+  - It descends down into the pungent murk below. Eventually the crank stops having
+    reached its limit.
+  - Sounds erupt from the bottom of the well of something strange shifting in the
+    waters below.
+  - 'The Beldam begins to wind the crank in the opposite direction. '
+  - The bucket rises above the edge of the well.
+  - Inside resides the doll now dampened by the waters below. It is returned covered
+    in spores and dull colored mushrooms.
+  - How beautiful! Now, take your prize for your bravery, deary.
+  - The Seamstress stares at the twisted and corrupted doll with a look of disgust.
+  - She turns her back to the doll and stares towards the ground blankly.
+  - "Let\u2019s leave. I don\u2019t think I can stand this place any longer."
+  - But deary, what about your prize? What about-
+  - "Stop. Just stop. You wanted me to feel pain, congratulations. You succeeded.
+    But I won\u2019t carry around that twisted idol."
+  - Not anymore
+  - "But what about the Odds? Shouldn\u2019t he feel the same pain? "
+  - "You\u2019ve taken something that was a symbol of new beginnings and turned it
+    into a reminder of fate\u2019s bitter temperance."
+  - "The Odds will get what\u2019s coming to him. That does not mean it must be done
+    with hatred in heart. "
+  - "Ragh! Fine! If you don\u2019t want my help then leave why don\u2019t you. It\u2019s
+    your grave not mine! "
+  isBossSpeaking: 00000000000000000100000001000001000001
+  speakerName: The Seamstress
+  isNarratorText: 01000101010101010001010000000000000000
+  isSpeakerHidden: 0000000000000000000000000000000000000000

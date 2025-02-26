@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: GoodOdd1
+  m_Name: Odds5
   m_EditorClassIdentifier: 
   lines:
-  - FIne. So be it. Run away and never return. We will see what fate has in store
-    for you...
-  isBossSpeaking: 01
-  speakerName: The Heir
+  - '*The Hound bears his fangs to the Odds, standing defensively in front of the
+    Heir*'
+  isBossSpeaking: 00
+  speakerName: The Hound
   isNarratorText: 00
   isSpeakerHidden: 00

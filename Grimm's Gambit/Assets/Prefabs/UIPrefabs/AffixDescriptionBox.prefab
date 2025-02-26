@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5575446653627813989}
   m_Layer: 5
   m_Name: AffixDescriptionBox
-  m_TagString: Untagged
+  m_TagString: AffixDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

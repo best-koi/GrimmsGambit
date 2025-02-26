@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Lycan Dialogue 1
+  m_Name: BadEnding8
   m_EditorClassIdentifier: 
   lines:
-  - 'As you near the edge of the forest, the path descends into a hollow. The trees
-    grow thickly above, leaving little moonlight to illuminate the dark path. '
-  - Movement along the brush however catches your eye.
-  - (Growls and barks in the direction of the movement.)
-  isBossSpeaking: 000000
-  speakerName: The Hound
-  isNarratorText: 010100
+  - "I don\u2019t need you to worry about me. Only to have my back. We\u2019re wasting
+    time. Let\u2019s go. "
+  - 'As you leave you see the Beldam too-wide of a grin. She covers her lips has
+    she lets out a chuckle. '
+  - 'Well then. Come back soon, deary. '
+  isBossSpeaking: 000001
+  speakerName: The Seamstress
+  isNarratorText: 000100
   isSpeakerHidden: 000000

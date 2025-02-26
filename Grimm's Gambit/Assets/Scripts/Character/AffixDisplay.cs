@@ -51,6 +51,18 @@ public class AffixDisplay : MonoBehaviour
                 break;
             }
         }
+        // added by danielle; to find the affix UI box and show/hide on hover
+        GameObject[] objects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in objects)
+        {
+            if (obj.gameObject.name == "AffixDescriptionBox")
+            {
+                // Debug.Log("found");
+                obj.SetActive(false);
+                break;
+            }
+        }
+
     }
 
     public void AddAffix(Affix newAffix, int currentStacks) //Adds an affix to display

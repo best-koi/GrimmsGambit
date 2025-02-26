@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: PostOdd3
   m_EditorClassIdentifier: 
   lines:
-  - 'You understand what happens when you lose a bet, don''t you, gambler? '
-  - As if you haven't lost a bounty head before.
-  - "Besides, I have a simply irresistible\_deal for you lot..."
-  isBossSpeaking: 000101
-  speakerName: Katze
-  isNarratorText: 000000
-  isSpeakerHidden: 000000
+  - You've lost.
+  - The game isn't over yet. I've always been partial to double-or-nothing.
+  isBossSpeaking: 0001
+  speakerName: The Heir
+  isNarratorText: 0000
+  isSpeakerHidden: 0000
