@@ -30,6 +30,7 @@ public class AffixDisplay : MonoBehaviour
     public Canvas parentCanvas;
     public UnityEngine.UI.Image hoverOverImage;
     public TextMeshProUGUI hoverOverText;
+    public GameObject affixDescriptionBox; // added by danielle
     
     public void Start()
     {
@@ -51,6 +52,19 @@ public class AffixDisplay : MonoBehaviour
                 break;
             }
         }
+        // added by danielle; to find the affix UI box and show/hide on hover
+        GameObject[] objects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in objects)
+        {
+            if (obj.gameObject.name == "AffixDescriptionBox")
+            {
+                affixDescriptionBox = obj;
+                Debug.Log("found");
+                affixDescriptionBox.SetActive(false);
+                break;
+            }
+        }
+
     }
 
     public void AddAffix(Affix newAffix, int currentStacks) //Adds an affix to display
@@ -193,6 +207,7 @@ public class AffixDisplay : MonoBehaviour
             detector.displayTextLocation = hoverOverText;
             detector.Description = stringDictionary[affixImage.Key]; //Uses specific affix description
             detector.Stacks = stackDictionary[affixImage.Key]; //Uses specific stack count
+            detector.affixDisplay = affixDescriptionBox; // added by danielle
 
         }
     }

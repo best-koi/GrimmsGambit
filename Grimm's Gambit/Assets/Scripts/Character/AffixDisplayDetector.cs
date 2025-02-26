@@ -13,16 +13,18 @@ public class AffixDisplayDetector : MonoBehaviour
     public UnityEngine.UI.Image displayImageLocation;
     public TextMeshProUGUI displayTextLocation;
     public int Stacks;
-
-
+    public GameObject affixDisplay;
+    
     private void OnMouseEnter()
     {
         ShowTooltip(parentObject);
+        affixDisplay.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         RemoveTooltip();
+        affixDisplay.SetActive(false);
     }
 
     //Functionality for tooltips themselves:
