@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Lady of the Lake 3
   m_EditorClassIdentifier: 
-  lines:
-  - The mysterious woman smiles. Then, she turns to you
-  - '"You, the one in charge of this group. Take good care of this one as long as
-    you remain together. I think you''ll find no companion more steadfast."'
-  isBossSpeaking: 0001
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: Heir
-  isNarratorText: 0100
-  isSpeakerHidden: 0000
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The mysterious woman smiles. Then, she turns to you.
+  - _speaker: 1
+    _speakerHidden: 1
+    _line: You, the one in charge of this group. Take good care of this one as long
+      as you remain together. I think you'll find no companion more steadfast.
