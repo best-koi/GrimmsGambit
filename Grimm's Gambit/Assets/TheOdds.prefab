@@ -6397,6 +6397,7 @@ MonoBehaviour:
   dieImage2: {fileID: 5429749603271826645}
   dieStrength: 6
   dieBlock: 12
+  powerOfFateGoodValue: 6
   startPhase2Health: 140
   startFinalPhaseHealth: 40
   firstAOEDefend: 4

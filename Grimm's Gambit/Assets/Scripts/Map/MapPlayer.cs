@@ -127,6 +127,7 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(oddsScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
+            RenderSettings.fog = false;
             break;
 
             case "LadyOfLake":
@@ -140,7 +141,7 @@ public class MapPlayer : MonoBehaviour
             collision.gameObject.tag = "Inactive";
             SceneManager.LoadScene(beldamScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
-            //RenderSettings.fog = false;
+            RenderSettings.fog = false;
             break;
             
             default:
