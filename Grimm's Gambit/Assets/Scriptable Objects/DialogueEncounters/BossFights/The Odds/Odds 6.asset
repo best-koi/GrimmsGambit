@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Odds 6
+  m_EditorClassIdentifier: 
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
+  speakerName: The Heir
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: One last bid for freedom, is it? We've made it this far, so the only thing
+      left to do is beat the odds stacked against us.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: If you're that willing to place a losing bet... go on then, make your
+      gambit.

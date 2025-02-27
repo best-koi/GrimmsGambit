@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Lycan 2
+  m_EditorClassIdentifier: 
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
+  speakerName: The Heir
+  _dialogueLines:
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "Well well well\u2026 if it isn\u2019t the Little Lost Royal. I\u2019ve
+      been looking for you for some time now."
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: The Queen would like to have a talk with you about your disobedient behavior,
+      though she never specified if she wanted to talk to you or just your corpse!
