@@ -25,7 +25,7 @@ MonoBehaviour:
   - Pardon my abruptness. No need to fear. The people of these lands call me the
     Beldam.
   - I help lost travelers find what they seek.
-  isBossSpeaking: 0000000001000101
+  isBossSpeaking: 
   isNarratorText: 0101010100000000
   isSpeakerHidden: 0000000001000000
   speakerName: Katze

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: BadEnding5
   m_EditorClassIdentifier: 
-  lines:
-  - 'Something feels off. Perhaps you should leave the doll behind. '
-  isBossSpeaking: 00
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: Katze
-  isNarratorText: 00
-  isSpeakerHidden: 00
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'Something feels off. Perhaps you should leave the doll behind. '

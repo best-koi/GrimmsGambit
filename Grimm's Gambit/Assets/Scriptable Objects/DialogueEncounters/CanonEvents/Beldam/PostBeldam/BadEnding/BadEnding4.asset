@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: BadEnding4
   m_EditorClassIdentifier: 
-  lines:
-  - 'Hatred. To be frank, of you. The Odds. The Red Queen. But none of that matters
-    now. '
-  - 'Good. Very good! '
-  isBossSpeaking: 0001
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Seamstress
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'Hatred. To be frank, of you. The Odds. The Red Queen. But none of that
+      matters now. '
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'Good. Very good! '
