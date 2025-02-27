@@ -21,7 +21,7 @@ public class TheOdds : AoEEnemy
     private int die1, die2;//2 ints represented a dice roll 
 
     [SerializeField]
-    private int dieStrength, dieBlock;//Values to add strength and block with roll the dice 
+    private int dieStrength, dieBlock, powerOfFateGoodValue;//Values to add strength and block with roll the dice 
 
     [SerializeField]
     protected int startPhase2Health, startFinalPhaseHealth;
@@ -147,7 +147,7 @@ public class TheOdds : AoEEnemy
             }
             
         }else if (die1 + die2 > 6){
-            //New Affix Goes Here
+            minion.AddAffix(Affix.PowerBurst, die1 + die2);
 
         }
         hasRolledDice = false; 
@@ -208,6 +208,7 @@ public class TheOdds : AoEEnemy
     }
 
     protected virtual void PowerOfFateGood(){
+        minion.AddAffix(Affix.PowerBurst, powerOfFateGoodValue);
         
 
     }
