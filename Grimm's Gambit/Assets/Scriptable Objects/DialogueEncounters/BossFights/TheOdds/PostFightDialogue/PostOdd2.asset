@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: PostOdd2
   m_EditorClassIdentifier: 
-  lines:
-  - What now? No fixing the game without your cheap tricks. GIve up already.
-  isBossSpeaking: 00
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Seamstress
-  isNarratorText: 00
-  isSpeakerHidden: 00
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: What now? No fixing the game without your cheap tricks. GIve up already.

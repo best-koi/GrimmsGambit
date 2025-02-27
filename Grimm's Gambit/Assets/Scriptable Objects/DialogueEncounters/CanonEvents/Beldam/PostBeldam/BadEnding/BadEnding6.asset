@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: BadEnding6
   m_EditorClassIdentifier: 
-  lines:
-  - "No. I can\u2019t. I understand now what must be done. I need it to remind me
-    why I came here in the first place. "
-  isBossSpeaking: 00
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Seamstress
-  isNarratorText: 00
-  isSpeakerHidden: 00
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "No. I can\u2019t. I understand now what must be done. I need it to remind
+      me why I came here in the first place. "

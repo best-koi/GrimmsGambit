@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: BadEnding7
   m_EditorClassIdentifier: 
-  lines:
-  - "I worry your trust is misplaced\u2026  "
-  isBossSpeaking: 00
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: Katze
-  isNarratorText: 00
-  isSpeakerHidden: 00
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "I worry your trust is misplaced\u2026  "

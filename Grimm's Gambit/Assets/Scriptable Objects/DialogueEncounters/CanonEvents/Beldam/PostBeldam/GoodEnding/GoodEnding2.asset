@@ -12,36 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: GoodEnding2
   m_EditorClassIdentifier: 
-  lines:
-  - 'She looks down at the doll with hesitation. A sense of resolve washes over their
-    face as she hands the doll to the Beldam. '
-  - 'I trust you.  '
-  - The Beldam places the doll into the moss covered bucket and begins to turn the
-    crank.
-  - It descends down into the pungent murk below. Eventually the crank stops having
-    reached its limit.
-  - Sounds erupt from the bottom of the well of something strange shifting in the
-    waters below.
-  - 'The Beldam begins to wind the crank in the opposite direction. '
-  - The bucket rises above the edge of the well.
-  - Inside resides the doll now dampened by the waters below. It is returned covered
-    in spores and dull colored mushrooms.
-  - How beautiful! Now, take your prize for your bravery, deary.
-  - The Seamstress stares at the twisted and corrupted doll with a look of disgust.
-  - She turns her back to the doll and stares towards the ground blankly.
-  - "Let\u2019s leave. I don\u2019t think I can stand this place any longer."
-  - But deary, what about your prize? What about-
-  - "Stop. Just stop. You wanted me to feel pain, congratulations. You succeeded.
-    But I won\u2019t carry around that twisted idol."
-  - Not anymore
-  - "But what about the Odds? Shouldn\u2019t he feel the same pain? "
-  - "You\u2019ve taken something that was a symbol of new beginnings and turned it
-    into a reminder of fate\u2019s bitter temperance."
-  - "The Odds will get what\u2019s coming to him. That does not mean it must be done
-    with hatred in heart. "
-  - "Ragh! Fine! If you don\u2019t want my help then leave why don\u2019t you. It\u2019s
-    your grave not mine! "
-  isBossSpeaking: 00000000000000000100000001000001000001
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Seamstress
-  isNarratorText: 01000101010101010001010000000000000000
-  isSpeakerHidden: 0000000000000000000000000000000000000000
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'She looks down at the doll with hesitation. A sense of resolve washes
+      over their face as she hands the doll to the Beldam. '
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'I trust you.  '
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The Beldam places the doll into the moss covered bucket and begins to
+      turn the crank.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: It descends down into the pungent murk below. Eventually the crank stops
+      having reached its limit.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: Sounds erupt from the bottom of the well of something strange shifting
+      in the waters below.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'The Beldam begins to wind the crank in the opposite direction. '
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The bucket rises above the edge of the well.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: Inside resides the doll now dampened by the waters below. It is returned
+      covered in spores and dull colored mushrooms.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: How beautiful! Now, take your prize for your bravery, deary.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The Seamstress stares at the twisted and corrupted doll with a look of
+      disgust.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: She turns her back to the doll and stares towards the ground blankly.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "Let\u2019s leave. I don\u2019t think I can stand this place any longer."
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: But deary, what about your prize? What about-
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "Stop. Just stop. You wanted me to feel pain, congratulations. You succeeded.
+      But I won\u2019t carry around that twisted idol."
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Not anymore
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "But what about the Odds? Shouldn\u2019t he feel the same pain? "
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "You\u2019ve taken something that was a symbol of new beginnings and turned
+      it into a reminder of fate\u2019s bitter temperance."
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "The Odds will get what\u2019s coming to him. That does not mean it must
+      be done with hatred in heart. "
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "Ragh! Fine! If you don\u2019t want my help then leave why don\u2019t
+      you. It\u2019s your grave not mine! "

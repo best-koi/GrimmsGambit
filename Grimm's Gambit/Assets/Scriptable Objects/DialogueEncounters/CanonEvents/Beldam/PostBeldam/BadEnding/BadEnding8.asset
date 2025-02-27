@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: BadEnding8
   m_EditorClassIdentifier: 
-  lines:
-  - "I don\u2019t need you to worry about me. Only to have my back. We\u2019re wasting
-    time. Let\u2019s go. "
-  - 'As you leave you see the Beldam too-wide of a grin. She covers her lips has
-    she lets out a chuckle. '
-  - 'Well then. Come back soon, deary. '
-  isBossSpeaking: 000001
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Seamstress
-  isNarratorText: 000100
-  isSpeakerHidden: 000000
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "I don\u2019t need you to worry about me. Only to have my back. We\u2019re
+      wasting time. Let\u2019s go. "
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'As you leave you see the Beldam too-wide of a grin. She covers her lips
+      has she lets out a chuckle. '
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'Well then. Come back soon, deary. '
