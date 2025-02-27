@@ -6,10 +6,6 @@ public class BossDialogue : ScriptableObject
 {
     #region Serialized Fields
 
-    [SerializeField] public List<string> lines; //A list of lines representing a conversation
-    [SerializeField] public List<bool> isBossSpeaking; 
-    [SerializeField] public List<bool> isNarratorText, isSpeakerHidden;//A list of bools representing whether the heir is speaking or not 
-
     [SerializeField] private string speakerName;
     [SerializeField] private BossDialogueLine[] _dialogueLines;
 

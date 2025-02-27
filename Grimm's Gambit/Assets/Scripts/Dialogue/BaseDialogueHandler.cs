@@ -7,11 +7,31 @@ public abstract class BaseDialogueHandler : MonoBehaviour
 {
     #region Serialized Fields
 
-    [SerializeField] protected GameObject seamstress, hound, katze, heir; //Sprites for each character, to be toggled on and off 
-    [SerializeField] protected TMP_Text speakerText, conversationText; //Text to display
-    [SerializeField] protected GameObject dialogueWindow, advanceButton;
-    [SerializeField] protected float textSpeed; //The speed to advance dialogue
-    [SerializeField] protected AudioClip SoundEffect, seamstressSFX, houndSFX, katzeSFX, heirSFX, narratorSFX;
+    [Header("Base Dialogue Variables")]
+
+    [Header("Character Sprite References")] //Sprites for each character, to be toggled on and off
+    [SerializeField] protected GameObject seamstress;
+    [SerializeField] protected GameObject hound;
+    [SerializeField] protected GameObject katze;
+    [SerializeField] protected GameObject heir;
+
+    [Header("Text UI References")] // Text to display
+    [SerializeField] protected TMP_Text speakerText;
+    [SerializeField] protected TMP_Text conversationText;
+
+    [Header("Object UI References")]
+    [SerializeField] protected GameObject dialogueWindow;
+    [SerializeField] protected Button advanceButton;
+
+    [Header("Object UI References")]
+    [SerializeField] protected AudioClip SoundEffect;
+    [SerializeField] protected AudioClip seamstressSFX;
+    [SerializeField] protected AudioClip houndSFX;
+    [SerializeField] protected AudioClip katzeSFX;
+    [SerializeField] protected AudioClip heirSFX;
+    [SerializeField] protected AudioClip narratorSFX;
+
+    [Space] [SerializeField] protected float textSpeed; //The speed to advance dialogue
 
     #endregion
 
@@ -21,85 +41,14 @@ public abstract class BaseDialogueHandler : MonoBehaviour
 
     #endregion
 
-    /*
-    public void PlayGarble()
+    #region Monobehavior Callbacks
+
+    protected virtual void Start()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(SoundEffect);
+        advanceButton.onClick.AddListener(NextLine);
     }
 
-    public void PlayHeirGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(heirSFX);
-    }
-
-    public void PlaySeamstressGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(seamstressSFX);
-    }
-
-    public void PlayHoundGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(houndSFX);
-    }
-
-    public void PlayKatzeGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(katzeSFX);
-    }
-
-    public void PlayNarratorGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(narratorSFX);
-    }
-    */
+    #endregion
 
     #region Public Methods
 

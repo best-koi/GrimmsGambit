@@ -6,6 +6,8 @@ public class BossDialogueHandler : BaseDialogueHandler
 {
     #region Serialized Fields
 
+    [Header("Boss Dialogue Variables")]
+
     [SerializeField] protected GameObject boss; 
     [SerializeField] protected List<BossDialogue> bossDialogue;
     [SerializeField] protected string bossName; 
@@ -23,8 +25,9 @@ public class BossDialogueHandler : BaseDialogueHandler
 
     #region Monobehavior Callbacks
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         conversationText.text = string.Empty; 
         selectedBossConversation = bossDialogue[bossIndex];
         StartDialogue(); 
@@ -39,36 +42,6 @@ public class BossDialogueHandler : BaseDialogueHandler
         _revealSelectedCharacters();
         StartCoroutine(_typeLine());
     }
-
-    /*
-    public override void NextLine()
-    {
-        StopAllCoroutines();
-
-        if (index < selectedBossConversation.DialogueLines.Length - 1)
-        {
-            index++;
-            conversationText.text = string.Empty;
-            StartCoroutine(TypeLine());
-        }
-        else
-        {
-            if (bossIndex < bossDialogue.Count - 1)
-            {
-                bossIndex++;
-                index = 0;
-                conversationText.text = string.Empty;
-                selectedBossConversation = bossDialogue[bossIndex];
-                RevealSelectedCharacters();
-                StartCoroutine(TypeLine());
-            }
-            else
-            {
-                CloseDialogueWindow();
-            }
-        }
-    }
-    */
 
     public override void NextLine()
     {
@@ -114,19 +87,6 @@ public class BossDialogueHandler : BaseDialogueHandler
                     speakerText.text = selectedBossConversation.SpeakerName;
             }
         }
-
-        /*
-        if(selectedBossConversation.isBossSpeaking[index] == true && selectedBossConversation.isSpeakerHidden[index] == false){
-            speakerText.text = bossName;
-        }else if (selectedBossConversation.isNarratorText[index] == true){
-            speakerText.text = " ";
-        }else if (selectedBossConversation.isSpeakerHidden[index] == true){
-            speakerText.text = "???";
-        }else{
-            speakerText.text = selectedBossConversation.speakerName; 
-
-        }
-        */
     }
 
     protected override IEnumerator _typeLine()
@@ -259,7 +219,7 @@ public class BossDialogueHandler : BaseDialogueHandler
 
     protected override void _closeDialogueWindow()
     {
-        advanceButton.SetActive(false);
+        advanceButton.gameObject.SetActive(false);
         dialogueWindow.SetActive(false); 
     }
 
