@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Beldam3
+  m_Name: Beldam 4
   m_EditorClassIdentifier: 
   lines:
-  - "You sure this isn\u2019t a trick? I\u2019d love to see some rundown well somehow
-    defeat the Odds. "
-  - 'If you wish to see it then make me an offer. I only need borrow whatever you
-    may bring for but a moment.  '
-  isBossSpeaking: 0001
-  speakerName: Katze
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  - 'Do any of us have something that matches that description? '
+  isBossSpeaking: 00
+  isNarratorText: 00
+  isSpeakerHidden: 00
+  speakerName: The Heir
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Do any of us have something that matches that description?

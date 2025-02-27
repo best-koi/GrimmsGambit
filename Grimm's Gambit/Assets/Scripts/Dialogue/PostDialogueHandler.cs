@@ -5,31 +5,55 @@ using UnityEngine.SceneManagement;
 
 public class PostDialogueHandler : BossDialogueHandler
 {
-    [SerializeField]
-    private List<BossDialogue> goodEnding, badEnding;
+    #region Serialized Fields
 
-    [SerializeField]
-    private GameObject choicePanel, goodButton, badButton;
+    [SerializeField] private List<BossDialogue> goodEnding, badEnding;
+    [SerializeField] private GameObject choicePanel, goodButton, badButton;
+    [SerializeField] private string endingScene;
 
-    [SerializeField]
-    private string endingScene; 
+    #endregion
 
-public override void StartDialogue(){
-        RevealSelectedCharacters();
-        StartCoroutine(TypeLine());
+    #region Public Methods
+
+    public override void StartDialogue()
+    {
+        _revealSelectedCharacters();
+        StartCoroutine(_typeLine());
     }
 
-private void ResetDialogue(){
-    advanceButton.SetActive(false);
-        conversationText.text = string.Empty;
-        bossIndex = 0;
-        index = 0;
-}
+    public void StartGoodDialogue()
+    {
+        _startDialogue(goodEnding);
+    }
 
-public void StartGoodDialogue(){
-        ResetDialogue();
+    public void StartBadDialogue()
+    {
+        _startDialogue(badEnding);
+    }
+
+    public override void NextLine()
+    {
+        _nextLine(bossDialogue, _turnOnChoice);
+    }
+
+    public void NextLineGood()
+    {
+        _nextLine(goodEnding, _endPostDialogue);
+    }
+
+    public void NextLineBad()
+    {
+        _nextLine(badEnding, _endPostDialogue);
+    }
+
+    #endregion
+
+    /*
+
+    public void StartGoodDialogue()
+    {
+        _resetDialogue();
         selectedBossConversation = goodEnding[bossIndex]; 
-        
 
         RevealSelectedCharacters();
         choicePanel.SetActive(false);
@@ -37,9 +61,9 @@ public void StartGoodDialogue(){
         StartCoroutine(TypeLine());
     }
 
-
-public void StartBadDialogue(){
-        ResetDialogue();
+    public void StartBadDialogue()
+    {
+        _resetDialogue();
         selectedBossConversation = badEnding[bossIndex]; 
 
         RevealSelectedCharacters();
@@ -47,7 +71,9 @@ public void StartBadDialogue(){
         badButton.SetActive(true);
         StartCoroutine(TypeLine());
     }
+    */
 
+    /*
     public void NextLine(){
         StopAllCoroutines();
         if(index < selectedBossConversation.lines.Count - 1){
@@ -67,7 +93,7 @@ public void StartBadDialogue(){
                 choicePanel.SetActive(true);
                 //CloseDialogueWindow(); 
             }
-            
+
 
         }
     }
@@ -88,11 +114,11 @@ public void StartBadDialogue(){
                 StartCoroutine(TypeLine());
 
             }else{
-                EndPostDialogue();
-                
-                
+                _endPostDialogue();
+
+
             }
-            
+
 
         }
     }
@@ -113,20 +139,48 @@ public void StartBadDialogue(){
                 StartCoroutine(TypeLine());
 
             }else{ 
-                EndPostDialogue();
+                _endPostDialogue();
             }
-            
+
 
         }
     }
+    */
 
-    private void EndPostDialogue(){
-                RenderSettings.fog = true;
-                SceneManager.UnloadSceneAsync(endingScene);
-                MapPlayer.sceneToToggle.SetActive(true);
-                SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
-                save.LoadFromPlayerData();
+    #region Private Fields
 
+    private void _resetDialogue()
+    {
+        advanceButton.SetActive(false);
+        conversationText.text = string.Empty;
+        bossIndex = 0;
+        index = 0;
     }
 
+    private void _startDialogue(List<BossDialogue> dialogueList)
+    {
+        _resetDialogue();
+        selectedBossConversation = dialogueList[bossIndex];
+
+        _revealSelectedCharacters();
+        choicePanel.SetActive(false);
+        goodButton.SetActive(true);
+        StartCoroutine(_typeLine());
+    }
+
+    private void _turnOnChoice()
+    {
+        choicePanel.SetActive(true);
+    }
+
+    private void _endPostDialogue()
+    {
+        RenderSettings.fog = true;
+        SceneManager.UnloadSceneAsync(endingScene);
+        MapPlayer.sceneToToggle.SetActive(true);
+        SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
+        save.LoadFromPlayerData();
+    }
+
+    #endregion
 }

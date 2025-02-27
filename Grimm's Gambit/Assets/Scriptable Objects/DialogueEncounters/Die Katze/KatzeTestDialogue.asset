@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: KatzeTestDialogue
   m_EditorClassIdentifier: 
-  lines:
-  - So, do you ever take your hat off?
-  - Why would I? Adds to the mystique...
-  - Do you think I would look good in a hat?
-  - I don't have any extras...
-  isHeirSpeaking: 01000100
-  isNarratorText: 00000000
+  lines: []
+  isHeirSpeaking: 
+  isNarratorText: 
+  _dialogueLines:
+  - _speaker: 1
+    _line: So, do you ever take your hat off?
+  - _speaker: 0
+    _line: Why would I? Adds to the mystique...
+  - _speaker: 1
+    _line: Do you think I would look good in a hat?
+  - _speaker: 0
+    _line: I don't have any extras...

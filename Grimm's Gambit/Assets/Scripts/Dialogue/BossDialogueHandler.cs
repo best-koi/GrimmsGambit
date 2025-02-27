@@ -1,45 +1,121 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
 
 public class BossDialogueHandler : BaseDialogueHandler
 {
+    #region Serialized Fields
 
-    [SerializeField]
-    protected GameObject boss; 
+    [SerializeField] protected GameObject boss; 
+    [SerializeField] protected List<BossDialogue> bossDialogue;
+    [SerializeField] protected string bossName; 
+    [SerializeField] protected BossDialogue selectedBossConversation;
+    [SerializeField] protected AudioClip bossSFX;
 
-    [SerializeField]
-    protected List<BossDialogue> bossDialogue;
+    #endregion
 
-    [SerializeField]
-    protected string bossName; 
+    #region Private Fields
 
     protected int bossIndex = 0;
+    protected delegate void DialogueCloser();
 
-    [SerializeField]
-    protected BossDialogue selectedBossConversation;
+    #endregion
 
-    [SerializeField]
-    protected AudioClip bossSFX;
+    #region Monobehavior Callbacks
 
-    protected override void Start(){
-    conversationText.text = string.Empty; 
-    selectedBossConversation = bossDialogue[bossIndex];
-    StartDialogue(); 
-    }
-
-public override void StartDialogue(){
-        RevealSelectedCharacters();
-        StartCoroutine(TypeLine());
-    }
-
-     protected override void Update()
+    private void Start()
     {
-        
+        conversationText.text = string.Empty; 
+        selectedBossConversation = bossDialogue[bossIndex];
+        StartDialogue(); 
     }
 
-    protected override void SetSpeaker(int index){
+    #endregion
+
+    #region Public Methods
+
+    public override void StartDialogue()
+    {
+        _revealSelectedCharacters();
+        StartCoroutine(_typeLine());
+    }
+
+    /*
+    public override void NextLine()
+    {
+        StopAllCoroutines();
+
+        if (index < selectedBossConversation.DialogueLines.Length - 1)
+        {
+            index++;
+            conversationText.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            if (bossIndex < bossDialogue.Count - 1)
+            {
+                bossIndex++;
+                index = 0;
+                conversationText.text = string.Empty;
+                selectedBossConversation = bossDialogue[bossIndex];
+                RevealSelectedCharacters();
+                StartCoroutine(TypeLine());
+            }
+            else
+            {
+                CloseDialogueWindow();
+            }
+        }
+    }
+    */
+
+    public override void NextLine()
+    {
+        _nextLine(bossDialogue, _closeDialogueWindow);
+    }
+
+    public void PlayBossGarble()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        int[] Semitones = new[] {0, 2, 4, 7, 9};
+        int random = Random.Range(0, 5);
+        audioSource.pitch = 0.75f;
+
+        for (int i = 0; i < Semitones[random]; i++)
+            audioSource.pitch *= 1.059463f;
+
+        audioSource.PlayOneShot(bossSFX);
+    }
+
+    #endregion
+
+    #region Private Fields
+
+    protected override void _setSpeaker(int index)
+    {
+        BossDialogueLine line = selectedBossConversation.DialogueLines[index];
+
+        if (line.Speaker == BossDialogueSpeaker.NARRATOR)
+        {
+            speakerText.text = " ";
+        }
+        else
+        {
+            if (line.SpeakerHidden)
+            {
+                speakerText.text = "???";
+            }
+            else
+            {
+                if (line.Speaker == BossDialogueSpeaker.BOSS)
+                    speakerText.text = bossName;
+                else
+                    speakerText.text = selectedBossConversation.SpeakerName;
+            }
+        }
+
+        /*
         if(selectedBossConversation.isBossSpeaking[index] == true && selectedBossConversation.isSpeakerHidden[index] == false){
             speakerText.text = bossName;
         }else if (selectedBossConversation.isNarratorText[index] == true){
@@ -50,89 +126,99 @@ public override void StartDialogue(){
             speakerText.text = selectedBossConversation.speakerName; 
 
         }
-
+        */
     }
 
-    protected override IEnumerator TypeLine(){
-        SetSpeaker(index); 
-        foreach(char letter in selectedBossConversation.lines[index].ToCharArray()){
+    protected override IEnumerator _typeLine()
+    {
+        _setSpeaker(index); 
+
+        foreach(char letter in selectedBossConversation.DialogueLines[index].Line.ToCharArray())
+        {
             conversationText.text += letter;
             yield return new WaitForSeconds(textSpeed);
-            switch(speakerText.text){
+
+            switch(speakerText.text)
+            {
                 case "The Heir":
-                ShowSpeaker(heir);
-                HideListener(boss);
+                _showSpeaker(heir);
+                _hideListener(boss);
                 PlayGarble();
                 
                 break;
 
                 case "The Seamstress":
-                ShowSpeaker(seamstress);
-                HideListener(boss);
+                _showSpeaker(seamstress);
+                _hideListener(boss);
                 PlayGarble();
                 
                 break;
 
                 case "The Hound":
-                ShowSpeaker(hound);
-                HideListener(boss);
+                _showSpeaker(hound);
+                _hideListener(boss);
                 PlayGarble();
                 break;
 
                 case "Katze":
-                ShowSpeaker(katze);
-                HideListener(boss);
+                _showSpeaker(katze);
+                _hideListener(boss);
                 PlayGarble();
                 break;
 
                 case " ":
-                HideListener(heir);
-                HideListener(seamstress);
-                HideListener(katze);
-                HideListener(hound);
-                HideListener(boss);
+                _hideListener(heir);
+                _hideListener(seamstress);
+                _hideListener(katze);
+                _hideListener(hound);
+                _hideListener(boss);
                 PlayNarratorGarble(); 
                 break;
 
                 default:
-                HideListener(seamstress);
-                HideListener(heir);
-                HideListener(katze);
-                HideListener(hound);
-                ShowSpeaker(boss);
+                _hideListener(seamstress);
+                _hideListener(heir);
+                _hideListener(katze);
+                _hideListener(hound);
+                _showSpeaker(boss);
                 PlayBossGarble();
                 break;
             }
-            
         }
-
     }
 
-    public override void NextLine(){
+    protected void _nextLine(List<BossDialogue> dialogueList, DialogueCloser closer)
+    {
         StopAllCoroutines();
-        if(index < selectedBossConversation.lines.Count - 1){
+
+        if (index < selectedBossConversation.DialogueLines.Length - 1)
+        {
             index++;
             conversationText.text = string.Empty;
-            StartCoroutine(TypeLine());
-        }else{
-            if(bossIndex < bossDialogue.Count - 1){
-                bossIndex++; 
-                index = 0; 
+            StartCoroutine(_typeLine());
+        }
+        else
+        {
+            if (bossIndex < dialogueList.Count - 1)
+            {
+                bossIndex++;
+                index = 0;
                 conversationText.text = string.Empty;
-                selectedBossConversation = bossDialogue[bossIndex];
-                RevealSelectedCharacters(); 
-                StartCoroutine(TypeLine());
-
-            }else{
-                CloseDialogueWindow(); 
+                selectedBossConversation = dialogueList[bossIndex];
+                _revealSelectedCharacters();
+                StartCoroutine(_typeLine());
             }
-            
-
+            else
+            {
+                closer();
+            }
         }
     }
 
-    protected override void RevealSelectedCharacters(){
-        switch(selectedBossConversation.speakerName){
+    protected override void _revealSelectedCharacters()
+    {
+        switch(selectedBossConversation.SpeakerName)
+        {
             case "The Seamstress":
             seamstress.SetActive(true);
             heir.SetActive(false);
@@ -167,31 +253,15 @@ public override void StartDialogue(){
             PlayNarratorGarble();
             break;
         }
-        boss.SetActive(true);
 
+        boss.SetActive(true);
     }
 
-    protected override void CloseDialogueWindow(){
+    protected override void _closeDialogueWindow()
+    {
         advanceButton.SetActive(false);
         dialogueWindow.SetActive(false); 
-
     }
 
-    public void PlayBossGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(bossSFX);
-    }
-
-
-   
-
-
+    #endregion
 }

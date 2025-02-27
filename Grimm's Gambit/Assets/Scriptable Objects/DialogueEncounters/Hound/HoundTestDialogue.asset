@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: HoundTestDialogue
   m_EditorClassIdentifier: 
-  lines:
-  - Who's a good boy?
-  - (Excited Barking)
-  - I am glad you are by my side.
-  isHeirSpeaking: 010001
-  isNarratorText: 000000
+  lines: []
+  isHeirSpeaking: 
+  isNarratorText: 
+  _dialogueLines:
+  - _speaker: 1
+    _line: Who's a good boy?
+  - _speaker: 0
+    _line: (Excited Barking)
+  - _speaker: 1
+    _line: I am glad you are by my side.
