@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Sisters2
+  m_Name: Sisters7
   m_EditorClassIdentifier: 
   lines: []
   isBossSpeaking: 
@@ -20,4 +20,12 @@ MonoBehaviour:
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
-    _line: 'This place is giving me the creeps. Keep your wits about you. '
+    _line: "Right\u2026 And what if we like our eyes where they are?\n"
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'They both frown and turn their attention towards Katze.
+
+'
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: There are other paths to freedom.

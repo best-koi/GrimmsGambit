@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Sisters2
+  m_Name: Sisters5
   m_EditorClassIdentifier: 
   lines: []
   isBossSpeaking: 
@@ -20,4 +20,9 @@ MonoBehaviour:
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
-    _line: 'This place is giving me the creeps. Keep your wits about you. '
+    _line: "I think we\u2019re quite alright. \n\n"
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'You all carry the burden.
+
+'
