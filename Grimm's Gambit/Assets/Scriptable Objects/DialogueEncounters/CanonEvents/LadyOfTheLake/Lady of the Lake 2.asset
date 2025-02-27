@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Lady of the Lake 2
+  m_EditorClassIdentifier: 
+  lines:
+  - Yet, despite Katze's warning, the Hound pads forward, stopping to sit at attention
+    at the water's edge. Although your loyal protector usually takes the frontlines,
+    something about him seems different. There is a sense of purpose in how he composes
+    himself.
+  - Out of the lake emerges a woman, clothed in some sort of water-resistant dress.
+    She pauses to size up your party, before turning to the Hound.
+  - '"O noble beast who would carry these travelers from harm, are you satisfied?
+    You would think your purpose of deliverance to Sanctuary just, I''m certain,
+    yet will you be able to part from these three when the journey is done?"'
+  - The woman's lilting tone sounds metered, yet sorrowful all the same. It's only
+    natural her words strike a chord with the Hound. Slowly, the dog turns toward
+    you, expectantly.
+  - (The Hound seems bewildered by your response. And yet, it does not falter in
+    turning back toward the lady in the lake, bowing its head.)
+  - '"I see. Not much for thinking ahead, hm? Then I''m sure a straight-minded beast
+    like you will be able to manage just fine."'
+  isBossSpeaking: 000001000000
+  speakerName: The Hound
+  isNarratorText: 010100010000
+  isSpeakerHidden: 000000000000
