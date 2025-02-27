@@ -15605,34 +15605,8 @@ MonoBehaviour:
   heir: {fileID: 1129682579}
   speakerText: {fileID: 1820384663}
   conversationText: {fileID: 1403424962}
-  chosenCharacterText: {fileID: 0}
-  chosenCharacter: 
-  talkButton: {fileID: 0}
-  shopButton: {fileID: 0}
-  party: {fileID: 0}
-  talkPanel: {fileID: 693342800}
   dialogueWindow: {fileID: 1318572117}
   advanceButton: {fileID: 1570835077}
-  finishSelectionButton: {fileID: 0}
-  seamstressConversations: []
-  katzeConversations: []
-  houndConversations: []
-  seamstressDialogue1: {fileID: 0}
-  seamstressDialogue2Good: {fileID: 0}
-  seamstressDialogue2Bad: {fileID: 0}
-  seamstressDialogue3Good: {fileID: 0}
-  seamstressDialogue3Bad: {fileID: 0}
-  houndDialogue1: {fileID: 0}
-  houndDialogue2Good: {fileID: 0}
-  houndDialogue2Bad: {fileID: 0}
-  houndDialogue3Good: {fileID: 0}
-  houndDialogue3Bad: {fileID: 0}
-  katzeDialogue1: {fileID: 0}
-  katzeDialogue2Good: {fileID: 0}
-  katzeDialogue2Bad: {fileID: 0}
-  katzeDialogue3Good: {fileID: 0}
-  katzeDialogue3Bad: {fileID: 0}
-  selectedConversation: {fileID: 0}
   textSpeed: 0.05
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   seamstressSFX: {fileID: 0}
@@ -15645,6 +15619,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 398be7949756b49f2ae863180d19e361, type: 2}
   - {fileID: 11400000, guid: 2a61d849941b44cb1929dd3538c706ba, type: 2}
   - {fileID: 11400000, guid: 85b9f750e545a45de92fee5d70c0e4d4, type: 2}
+  - {fileID: 11400000, guid: 60ead0743a92b4cb69b1105d1e743746, type: 2}
+  - {fileID: 11400000, guid: 57f1c1d0c8cb04806bb7d5bf4f0c1083, type: 2}
+  - {fileID: 11400000, guid: e011bcdcdf2f04b23911624b608e51f2, type: 2}
+  - {fileID: 11400000, guid: 5f5795bbf27a844d4bca202ecb2bbc5d, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 1bb7498c17de84370be173e9b5f8db6f, type: 3}

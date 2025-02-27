@@ -10,26 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Sisters1
+  m_Name: Sisters4
   m_EditorClassIdentifier: 
   lines: []
   isBossSpeaking: 
   isNarratorText: 
   isSpeakerHidden: 
-  speakerName: The Heir
+  speakerName: The Seamstress
   _dialogueLines:
   - _speaker: 2
     _speakerHidden: 0
-    _line: You stumble through a thicket and bramble, spotting a large tower in the
-      distance.
+    _line: Descending from the tower are two women in brightly colored dresses.
   - _speaker: 2
     _speakerHidden: 0
-    _line: The day grows late and needing a place to rest for the evening you and
-      your group decide that would be the best place to head.
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "You arrive at the base of the tower and can\u2019t help but feel you\u2019re
-      being watched."
+    _line: ' They bear bloody blindfolds over their eyes. They stand before you and
+      speak in tandem.
+
+'
+  - _speaker: 1
+    _speakerHidden: 1
+    _line: Visitors. Welcome.
   - _speaker: 0
     _speakerHidden: 0
-    _line: 'A strange location for a tower. '
+    _line: 'Strange. Nice to meet you I suppose.
+
+'
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'Do you seek relief?
+
+'

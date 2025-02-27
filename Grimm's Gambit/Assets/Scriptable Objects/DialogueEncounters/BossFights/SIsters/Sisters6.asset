@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Sisters1
+  m_Name: Sisters6
   m_EditorClassIdentifier: 
   lines: []
   isBossSpeaking: 
@@ -18,18 +18,29 @@ MonoBehaviour:
   isSpeakerHidden: 
   speakerName: The Heir
   _dialogueLines:
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: You stumble through a thicket and bramble, spotting a large tower in the
-      distance.
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: The day grows late and needing a place to rest for the evening you and
-      your group decide that would be the best place to head.
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "You arrive at the base of the tower and can\u2019t help but feel you\u2019re
-      being watched."
   - _speaker: 0
     _speakerHidden: 0
-    _line: 'A strange location for a tower. '
+    _line: 'The burden? What does that mean?
+
+'
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'The burden of sight. The burden, witnessing the pain of others. We can
+      free you.
+
+'
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'How exactly would you do that?
+
+'
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: They step apart and pull open a thicket of bramble revealing a path.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: ' Along the path you see a trail of blood and several eyeballs that hang,
+      having been stabbed out by the thorns.'
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'Walk through. Eyes uncovered. Return with the soul free. '

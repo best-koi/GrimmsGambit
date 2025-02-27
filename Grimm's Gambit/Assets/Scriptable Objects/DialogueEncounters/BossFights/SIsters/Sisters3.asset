@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Sisters3
   m_EditorClassIdentifier: 
-  lines:
-  - '(The Hound spots what appears to be a figure peering down from above. He barks
-    in their direction) '
-  isBossSpeaking: 00
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Hound
-  isNarratorText: 00
-  isSpeakerHidden: 00
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: '(The Hound spots what appears to be a figure peering down from above.
+      He barks in their direction) '
