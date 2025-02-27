@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: PostOdd1
   m_EditorClassIdentifier: 
-  lines:
-  - Well, this is... unexpected, to say the least. Not that it will deter me, though.
-  - '*The Hound stands above the Odds. Holding him in place and giving him an intimidating
-    glare*'
-  isBossSpeaking: 0100
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Hound
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  _dialogueLines:
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: Well, this is... unexpected, to say the least. Not that it will deter
+      me, though.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: '*The Hound stands above the Odds. Holding him in place and giving him
+      an intimidating glare*'
