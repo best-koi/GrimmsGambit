@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: PostOdd3
   m_EditorClassIdentifier: 
-  lines:
-  - You've lost.
-  - The game isn't over yet. I've always been partial to double-or-nothing.
-  isBossSpeaking: 0001
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: The Heir
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: You've lost.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: The game isn't over yet. I've always been partial to double-or-nothing.

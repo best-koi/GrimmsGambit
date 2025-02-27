@@ -12,14 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: PostOdd4
   m_EditorClassIdentifier: 
-  lines:
-  - And yet, I'm sure you understand what happens when you lose a bet. Don't you,
-    gambler?
-  - Hm, are you sure you understand what happens if I do? I'll give you one last
-    chance to make the right decision, Heir, out of respect for your spirit.
-  - Return with me to the castle and you and I will take down that wretched Red Queen
-    together. What do you say?
-  isBossSpeaking: 000101
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
   speakerName: Katze
-  isNarratorText: 000000
-  isSpeakerHidden: 000000
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: And yet, I'm sure you understand what happens when you lose a bet. Don't
+      you, gambler?
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: Hm, are you sure you understand what happens if I do? I'll give you one
+      last chance to make the right decision, Heir, out of respect for your spirit.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: Return with me to the castle and you and I will take down that wretched
+      Red Queen together. What do you say?

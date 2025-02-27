@@ -12,32 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: Campfire2 Seamstress Good
   m_EditorClassIdentifier: 
-  lines:
-  - You approach the Seamstress. Ever since you stopped traveling and set up camp
-    she has been furious at work sewing something, but you are unsure as to what.
-  - You are able to step in front of her before she finally notices you.
-  - Oh! Pardon me, hun. Got a bit lost in my work for a second. Everything alright?
-  - I just wanted to check in with you. How are you feeling after our encounter with
-    the Beldam?
-  - Well... I think I'm fine. I think... No. *sigh* I'll be straight with you. I
-    don't know how I feel yet. I'm a bit lost at the moment.
-  - Does it have something to do with that doll?
-  - '*sigh* yes... That doll was supposed to be a gift for my daughter. My daughter
-    which that cheating Odds took from me.'
-  - There is a pause in her speech as you see her eyes water slightly. She takes
-    a deep breath and puts on her calm composure once more.
-  - But none of that matters anymore. I can't change the past, nor my mistakes. But
-    I can fight to make sure I don't lose what I have now. Which reminds me.
-  - She reaches down to grab what she has been working on, revealing a knitted sweater
-    seemingly handmade for you.
-  - This is for you! I know it's not much, but I've been needing to do something
-    with my hands to ease the mind and this seemed like the perfect place to put
-    my efforts.
-  - I hope it fits. I sort of eyeballed your proportions.
-  - You try on the sweater. It is warm and fuzzy and made with thick enough material
-    that you feel it will provide some protection in your journey going forward.
-  - Well. What do you think?
-  - It's wonderful. Thank you.
-  - Of course, hun. Now I think it's best if I turn in for the night. Sleep well.
-  isHeirSpeaking: 00000001000100010000000000000100
-  isNarratorText: 01010000000000010001000001000000
+  lines: []
+  isHeirSpeaking: 
+  isNarratorText: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: You approach the Seamstress. Ever since you stopped traveling and set
+      up camp she has been furious at work sewing something, but you are unsure as
+      to what.
+  - _speaker: 2
+    _line: You are able to step in front of her before she finally notices you.
+  - _speaker: 0
+    _line: Oh! Pardon me, hun. Got a bit lost in my work for a second. Everything
+      alright?
+  - _speaker: 1
+    _line: I just wanted to check in with you. How are you feeling after our encounter
+      with the Beldam?
+  - _speaker: 0
+    _line: Well... I think I'm fine. I think... No. *sigh* I'll be straight with
+      you. I don't know how I feel yet. I'm a bit lost at the moment.
+  - _speaker: 1
+    _line: Does it have something to do with that doll?
+  - _speaker: 0
+    _line: '*sigh* yes... That doll was supposed to be a gift for my daughter. My
+      daughter which that cheating Odds took from me.'
+  - _speaker: 2
+    _line: There is a pause in her speech as you see her eyes water slightly. She
+      takes a deep breath and puts on her calm composure once more.
+  - _speaker: 0
+    _line: But none of that matters anymore. I can't change the past, nor my mistakes.
+      But I can fight to make sure I don't lose what I have now. Which reminds me.
+  - _speaker: 2
+    _line: She reaches down to grab what she has been working on, revealing a knitted
+      sweater seemingly handmade for you.
+  - _speaker: 0
+    _line: This is for you! I know it's not much, but I've been needing to do something
+      with my hands to ease the mind and this seemed like the perfect place to put
+      my efforts.
+  - _speaker: 0
+    _line: I hope it fits. I sort of eyeballed your proportions.
+  - _speaker: 2
+    _line: You try on the sweater. It is warm and fuzzy and made with thick enough
+      material that you feel it will provide some protection in your journey going
+      forward.
+  - _speaker: 0
+    _line: Well. What do you think?
+  - _speaker: 1
+    _line: It's wonderful. Thank you.
+  - _speaker: 0
+    _line: Of course, hun. Now I think it's best if I turn in for the night. Sleep
+      well.
