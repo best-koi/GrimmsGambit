@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +5,38 @@ using UnityEngine;
 
 public class Dialogue : ScriptableObject
 {
-    [SerializeField]
-    public List<string> lines;//A list of lines representing a conversation
+    #region Serialized Fields
 
-    [SerializeField]
-    public List<bool> isHeirSpeaking, isNarratorText;//A list of bools representing whether the heir is speaking or not 
+    [SerializeField] public List<string> lines;//A list of lines representing a conversation
+    [SerializeField] public List<bool> isHeirSpeaking, isNarratorText;//A list of bools representing whether the heir is speaking or not 
 
-    
+    [SerializeField] private DialogueLine[] _dialogueLines;
+
+    #endregion
+
+    #region Properties
+
+    public DialogueLine[] DialogueLines { get => _dialogueLines; }
+
+    #endregion
 }
+
+[System.Serializable]
+public struct DialogueLine
+{
+    #region Serialized Fields
+
+    [SerializeField] private DialogueSpeaker _speaker;
+    [TextArea(3, 20)] [SerializeField] private string _line;
+
+    #endregion
+
+    #region Properties
+
+    public DialogueSpeaker Speaker { get => _speaker; }
+    public string Line { get => _line; }
+
+    #endregion
+}
+
+public enum DialogueSpeaker { DEFAULT_SPEAKER, HEIR, NARRATOR }

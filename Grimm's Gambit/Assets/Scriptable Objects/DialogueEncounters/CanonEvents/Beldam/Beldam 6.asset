@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Beldam4
+  m_Name: Beldam 6
   m_EditorClassIdentifier: 
   lines:
-  - 'Do any of us have something that matches that description? '
+  - '(The Hound nuzzles up against the Seamstress, trying to ease her nerves.) '
   isBossSpeaking: 00
-  speakerName: The Heir
   isNarratorText: 00
   isSpeakerHidden: 00
+  speakerName: The Hound
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: (The Hound nuzzles up against the Seamstress, trying to ease her nerves.)

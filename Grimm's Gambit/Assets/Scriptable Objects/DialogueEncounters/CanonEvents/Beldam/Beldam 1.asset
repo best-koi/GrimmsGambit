@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Beldam1
+  m_Name: Beldam 1
   m_EditorClassIdentifier: 
   lines:
   - Moving forward you find the floor beneath you begins to become damp as the path
@@ -26,6 +26,35 @@ MonoBehaviour:
     Beldam.
   - I help lost travelers find what they seek.
   isBossSpeaking: 0000000001000101
-  speakerName: Katze
   isNarratorText: 0101010100000000
   isSpeakerHidden: 0000000001000000
+  speakerName: Katze
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: Moving forward you find the floor beneath you begins to become damp as
+      the path before you leads through a swampland.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: You travel some distance until you spot what appears to be an overgrown
+      water well built covered in moss and lichen.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: "As you approach you can smell rot and decay drifting from the well. You
+      can\u2019t help but gag being in its proximity."
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: Seemingly from nowhere a woman appears behind you
+  - _speaker: 1
+    _speakerHidden: 1
+    _line: Have you come to make an offering?
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Who goes there!?
+  - _speaker: 1
+    _speakerHidden: 1
+    _line: Pardon my abruptness. No need to fear.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: The people of these lands call me the Beldam. I help lost travelers find
+      what they seek.

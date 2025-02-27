@@ -12,34 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: Campfire1(Seamstress)
   m_EditorClassIdentifier: 
-  lines:
-  - 'You approach the Seamstress. She sits by the fire weaving twine and string into
-    a beautiful pattern. '
-  - 'As you approach she glances up from her work, pausing before putting her supplies
-    away and giving you her full attention. She gives you a weary smile. '
-  - 'Good day to you! Err- evening I suppose.  '
-  - 'Good evening. I wish to speak with you. '
-  - Of course! What ails you, little one?
-  - "I\u2019d like to get to know you a little better. What can you tell me about
-    yourself? "
-  - "Well I am but a humble seamstress. Fortunately, the ascension of the Red Queen
-    hasn\u2019t tampered with people\u2019s need for clothes, granted not many want
-    to pay nor can they afford my finer talents nowadays...   "
-  - "I\u2019m sorry to hear that\u2026 "
-  - "Don\u2019t you worry your pretty head bout me or my struggles. You\u2019ve got
-    to keep your mind on your goals and that\u2019s showing that crooked Odds what
-    for.   "
-  - 'Why are you helping me? Surely there is something you wish to get out of this. '
-  - "Hmm\u2026 Well hun, to tell you the truth I have a bit of a bone to pick with
-    that old-headed Odds you seek."
-  - 'Do you have a gambit you wish to make as well? '
-  - "No. No, not really. Look, my intents with the Odds are my own. For now let\u2019s
-    just say I\u2019d like to see an end to his crooked games.   "
-  - 'And how exactly do you plan to achieve that? '
-  - "\u2026"
-  - "\u2026"
-  - "I\u2019m sure I\u2019ll know when the time is right. "
-  - "Was nice talking to you, hun. Try and get some rest, we\u2019ve got a long day
-    ahead of us."
-  isHeirSpeaking: 000000010001000100010001000100010000
-  isNarratorText: 010100000000000000000000000000000000
+  lines: []
+  isHeirSpeaking: 
+  isNarratorText: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: 'You approach the Seamstress. She sits by the fire weaving twine and string
+      into a beautiful pattern. '
+  - _speaker: 2
+    _line: 'As you approach she glances up from her work, pausing before putting
+      her supplies away and giving you her full attention. She gives you a weary
+      smile. '
+  - _speaker: 2
+    _line: 'Good day to you! Err- evening I suppose.  '
+  - _speaker: 0
+    _line: 'Good evening. I wish to speak with you. '
+  - _speaker: 1
+    _line: Good evening. I wish to speak with you.
+  - _speaker: 0
+    _line: Of course! What ails you, little one?
+  - _speaker: 1
+    _line: "I\u2019d like to get to know you a little better. What can you tell me
+      about yourself?"
+  - _speaker: 0
+    _line: "Well I am but a humble seamstress. Fortunately, the ascension of the
+      Red Queen hasn\u2019t tampered with people\u2019s need for clothes, granted
+      not many want to pay nor can they afford my finer talents nowadays... "
+  - _speaker: 1
+    _line: "I\u2019m sorry to hear that\u2026"
+  - _speaker: 0
+    _line: "Don\u2019t you worry your pretty head about me or my struggles. You\u2019ve
+      got to keep your mind on your goals and that\u2019s showing that crooked Odds
+      what for."
+  - _speaker: 1
+    _line: Why are you helping me? Surely there is something you wish to get out
+      of this.
+  - _speaker: 0
+    _line: "Hmm\u2026 Well hun, to tell you the truth I have a bit of a bone to pick
+      with that old-headed Odds you seek."
+  - _speaker: 1
+    _line: Do you have a gambit you wish to make as well?
+  - _speaker: 0
+    _line: "No. No, not really. Look, my intents with the Odds are my own. For now
+      let\u2019s just say I\u2019d like to see an end to his crooked games."
+  - _speaker: 1
+    _line: And how exactly do you plan to achieve that?
+  - _speaker: 0
+    _line: "I\u2019m sure I\u2019ll know when the time is right."
+  - _speaker: 0
+    _line: "Was nice talking to you, hun. Try and get some rest, we\u2019ve got a
+      long day ahead of us."
