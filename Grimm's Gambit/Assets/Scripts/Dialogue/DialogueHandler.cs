@@ -3,96 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class DialogueHandler : MonoBehaviour
+public class DialogueHandler : BaseDialogueHandler
 {
-    [Header("Character Sprites")]
-    [SerializeField]
-    protected GameObject seamstress, hound, katze, heir; //Sprites for each character, to be toggled on and off 
 
-[Header("Character Text")]
+
     [SerializeField]
-    protected TMP_Text speakerText, conversationText, chosenCharacterText; //Text to display
+    protected TMP_Text chosenCharacterText; //Text to display
 
 [SerializeField]
     protected string chosenCharacter; // The character to generate dialogue for 
 
-[Header("UI Elements")]
+
     [SerializeField]
-    protected GameObject talkButton, shopButton, party, talkPanel, dialogueWindow, advanceButton, finishSelectionButton;//Various items to hide and show
+    protected GameObject talkButton, shopButton, party, talkPanel, finishSelectionButton;//Various items to hide and show
 
     [SerializeField]
     private List<Dialogue> seamstressConversations, katzeConversations, houndConversations;//The lists of conversations for each character
 
-    [Header("Seamstress Campfire Dialogues")]
     [SerializeField]
     private Dialogue seamstressDialogue1, seamstressDialogue2Good, seamstressDialogue2Bad, seamstressDialogue3Good, seamstressDialogue3Bad;
 
-    [Header("Hound Campfire Dialogues")]
+
     [SerializeField]
     private Dialogue houndDialogue1, houndDialogue2Good, houndDialogue2Bad, houndDialogue3Good, houndDialogue3Bad;
 
-    [Header("Katze Campfire Dialogues")]
+
     [SerializeField]
     private Dialogue katzeDialogue1, katzeDialogue2Good, katzeDialogue2Bad, katzeDialogue3Good, katzeDialogue3Bad;
-
 
     [SerializeField]
     protected Dialogue selectedConversation; //A conversation selected at random
 
-    [SerializeField]
-    protected float textSpeed; //The speed to advance dialogue
-    [SerializeField]
-    protected AudioClip SoundEffect, seamstressSFX, houndSFX, katzeSFX, heirSFX, narratorSFX;
-
-    protected int index = 0; //An index to track conversation progress
-
     private bool canTalkSeamstress = true, canTalkHound = true, canTalkKatze = true; 
 
-    
-
-protected virtual void Start(){
+    protected override void Start(){
     conversationText.text = string.Empty; 
     finishSelectionButton.SetActive(false);
 }
 
-
-
-    // Update is called once per frame
-    protected virtual void Update()
+protected override void Update()
     {
         chosenCharacterText.text = chosenCharacter; 
     }
 
-//Sets the character upon clicking 
-    public virtual void SetCharacter(string characterName){
-        if(characterName == "The Seamstress" && canTalkSeamstress){
-            chosenCharacter = characterName; 
-            if(finishSelectionButton.activeSelf == false)
-                finishSelectionButton.SetActive(true);
-        }
-        else if(characterName == "The Hound" && canTalkHound){
-            chosenCharacter = characterName; 
-            if(finishSelectionButton.activeSelf == false)
-                finishSelectionButton.SetActive(true);
-        }else if (characterName == "Katze" && canTalkKatze){
-            chosenCharacter = characterName; 
-            if(finishSelectionButton.activeSelf == false)
-                finishSelectionButton.SetActive(true);
-        }
-        
-
-    }
-//Sets player choice active 
-    public void ChooseTalk(){
-        talkButton.SetActive(false);
-        shopButton.SetActive(false);
-
-        talkPanel.SetActive(true);
-        
-
-    }
-//Sets up dialogue panel 
-    public virtual void StartDialogue(){
+public override void StartDialogue(){
         Debug.Log(chosenCharacter);
         finishSelectionButton.SetActive(false);
         talkPanel.SetActive(false);
@@ -105,8 +59,19 @@ protected virtual void Start(){
         
     }
 
-//Shows the character and picks a dialogue encounter 
-    protected virtual void RevealSelectedCharacters(){
+    protected override void SetSpeaker(int index){
+        if(selectedConversation.isHeirSpeaking[index] == true){
+            speakerText.text = "The Heir";
+        }else if (selectedConversation.isNarratorText[index] == true){
+            speakerText.text = " "; 
+        }else{
+            speakerText.text = chosenCharacter; 
+        }
+
+    }
+
+
+     protected override void RevealSelectedCharacters(){
         switch(chosenCharacter){
             case "The Seamstress":
             seamstress.SetActive(true);
@@ -190,18 +155,7 @@ protected virtual void Start(){
 
     }
 
-    protected virtual void SetSpeaker(int index){
-        if(selectedConversation.isHeirSpeaking[index] == true){
-            speakerText.text = "The Heir";
-        }else if (selectedConversation.isNarratorText[index] == true){
-            speakerText.text = " "; 
-        }else{
-            speakerText.text = chosenCharacter; 
-        }
-
-    }
-
-    protected virtual IEnumerator TypeLine(){
+    protected override IEnumerator TypeLine(){
         SetSpeaker(index); 
         foreach(char letter in selectedConversation.lines[index].ToCharArray()){
             conversationText.text += letter;
@@ -246,7 +200,7 @@ protected virtual void Start(){
 
     }
 
-    public virtual void NextLine(){
+    public override void NextLine(){
         StopAllCoroutines();
         if(index < selectedConversation.lines.Count - 1){
             index++;
@@ -258,7 +212,7 @@ protected virtual void Start(){
         }
     }
 
-    protected virtual void CloseDialogueWindow(){
+     protected override void CloseDialogueWindow(){
         //Hide all Sprites
         heir.SetActive(false);
         hound.SetActive(false);
@@ -283,89 +237,36 @@ protected virtual void Start(){
             
 
     }
-
-    public void PlayGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
+public virtual void SetCharacter(string characterName){
+        if(characterName == "The Seamstress" && canTalkSeamstress){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
         }
-        audioSource.PlayOneShot(SoundEffect);
-    }
-
-    public void PlayHeirGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
+        else if(characterName == "The Hound" && canTalkHound){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
+        }else if (characterName == "Katze" && canTalkKatze){
+            chosenCharacter = characterName; 
+            if(finishSelectionButton.activeSelf == false)
+                finishSelectionButton.SetActive(true);
         }
-        audioSource.PlayOneShot(heirSFX);
+        
+
     }
 
-    public void PlaySeamstressGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(seamstressSFX);
-    }
-    public void PlayHoundGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(houndSFX);
-    }
 
-    public void PlayKatzeGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(katzeSFX);
-    }
+//Sets player choice active 
+    public void ChooseTalk(){
+        talkButton.SetActive(false);
+        shopButton.SetActive(false);
 
-    public void PlayNarratorGarble()
-    {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
-        audioSource.pitch = 0.75f;
-        for (int i = 0; i < Semitones[random]; i++)
-        {
-            audioSource.pitch *= 1.059463f;
-        }
-        audioSource.PlayOneShot(narratorSFX);
-    }
+        talkPanel.SetActive(true);
+        
 
-     protected void HideListener(GameObject character){
-        character.GetComponent<Image>().color = Color.grey;
     }
-    protected void ShowSpeaker(GameObject character){
-        character.GetComponent<Image>().color = Color.white;
-    }
+//Sets up dialogue panel 
+    
     
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 
-public class BossDialogueHandler : DialogueHandler
+public class BossDialogueHandler : BaseDialogueHandler
 {
 
     [SerializeField]
@@ -108,7 +108,7 @@ public override void StartDialogue(){
 
     }
 
-    public void NextLine(){
+    public override void NextLine(){
         StopAllCoroutines();
         if(index < selectedBossConversation.lines.Count - 1){
             index++;
