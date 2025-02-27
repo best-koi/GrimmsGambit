@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Bad Ending 4
+  m_EditorClassIdentifier: 
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
+  speakerName: The Seamstress
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'Hatred. To be frank, of you. The Odds. The Red Queen. But none of that
+      matters now. '
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'Good. Very good! '

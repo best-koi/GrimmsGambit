@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Seamstress Campfire 3 (Bad)
+  m_EditorClassIdentifier: 
+  lines: []
+  isHeirSpeaking: 
+  isNarratorText: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: As you approach the Seamstress she sits seemingly lost in thought. She
+      stares upwards towards the moon. She bears a frown and seems to be deep in
+      contemplation.
+  - _speaker: 1
+    _line: Are you ready for tomorrow?
+  - _speaker: 0
+    _line: No. I don't think I ever could be ready. But I have to be. Starting tomorrow
+      all things come to a close.
+  - _speaker: 1
+    _line: You still seek revenge?
+  - _speaker: 0
+    _line: I seek peace. And if that means taking out the Odds to do it, then it
+      will be done. He'll never hurt anyone ever again.
+  - _speaker: 1
+    _line: What happens after?
+  - _speaker: 0
+    _line: I don't know. But I can't think about that right now, I'll figure that
+      out after the job is done.
+  - _speaker: 2
+    _line: Her brow furrows and she averts her gaze from the moon and turns to face
+      the campfire. She stares into the embers a few moments still deep in thought.
+  - _speaker: 0
+    _line: You should get some sleep soon, dear. I need a few minutes longer to think.
