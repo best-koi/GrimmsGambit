@@ -7,9 +7,6 @@ public class Dialogue : ScriptableObject
 {
     #region Serialized Fields
 
-    [SerializeField] public List<string> lines;//A list of lines representing a conversation
-    [SerializeField] public List<bool> isHeirSpeaking, isNarratorText;//A list of bools representing whether the heir is speaking or not 
-
     [SerializeField] private DialogueLine[] _dialogueLines;
 
     #endregion

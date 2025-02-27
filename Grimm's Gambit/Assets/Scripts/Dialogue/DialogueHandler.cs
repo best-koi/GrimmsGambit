@@ -5,19 +5,51 @@ using TMPro;
 
 public class DialogueHandler : BaseDialogueHandler
 {
+    [Header("Campfire Dialogue Variables")]
+
+    [Header("Chosen Character Variables")]
     [SerializeField] protected TMP_Text chosenCharacterText; // Text to display
     [SerializeField] protected string chosenCharacter; // The character to generate dialogue for 
-    [SerializeField] protected GameObject talkButton, shopButton, party, talkPanel, finishSelectionButton;// Various items to hide and show
-    [SerializeField] private List<Dialogue> seamstressConversations, katzeConversations, houndConversations;// The lists of conversations for each character
-    [SerializeField] private Dialogue seamstressDialogue1, seamstressDialogue2Good, seamstressDialogue2Bad, seamstressDialogue3Good, seamstressDialogue3Bad;
-    [SerializeField] private Dialogue houndDialogue1, houndDialogue2Good, houndDialogue2Bad, houndDialogue3Good, houndDialogue3Bad;
-    [SerializeField] private Dialogue katzeDialogue1, katzeDialogue2Good, katzeDialogue2Bad, katzeDialogue3Good, katzeDialogue3Bad;
+
+    [Header("UI References")] // Various items to hide and show
+    [SerializeField] protected GameObject talkButton;
+    [SerializeField] protected GameObject shopButton;
+    [SerializeField] protected GameObject party;
+    [SerializeField] protected GameObject talkPanel;
+    [SerializeField] protected GameObject finishSelectionButton;
+
+    [Header("Dialogue Lists")] // The lists of conversations for each character
+    [SerializeField] private List<Dialogue> seamstressConversations;
+    [SerializeField] private List<Dialogue> katzeConversations;
+    [SerializeField] private List<Dialogue> houndConversations;
+
+    [Header("Choice Dialogue")]
+    [SerializeField] private Dialogue seamstressDialogue1;
+    [SerializeField] private Dialogue seamstressDialogue2Good;
+    [SerializeField] private Dialogue seamstressDialogue2Bad;
+    [SerializeField] private Dialogue seamstressDialogue3Good;
+    [SerializeField] private Dialogue seamstressDialogue3Bad;
+
+    [SerializeField] private Dialogue houndDialogue1;
+    [SerializeField] private Dialogue houndDialogue2Good;
+    [SerializeField] private Dialogue houndDialogue2Bad;
+    [SerializeField] private Dialogue houndDialogue3Good;
+    [SerializeField] private Dialogue houndDialogue3Bad;
+
+    [SerializeField] private Dialogue katzeDialogue1;
+    [SerializeField] private Dialogue katzeDialogue2Good;
+    [SerializeField] private Dialogue katzeDialogue2Bad;
+    [SerializeField] private Dialogue katzeDialogue3Good;
+    [SerializeField] private Dialogue katzeDialogue3Bad;
+
+    [Header("Randomly Selected Dialogue")]
     [SerializeField] protected Dialogue selectedConversation; // A conversation selected at random
 
     private bool canTalkSeamstress = true, canTalkHound = true, canTalkKatze = true; 
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         conversationText.text = string.Empty; 
         finishSelectionButton.SetActive(false);
     }
@@ -32,7 +64,7 @@ public class DialogueHandler : BaseDialogueHandler
         Debug.Log(chosenCharacter);
         finishSelectionButton.SetActive(false);
         talkPanel.SetActive(false);
-        advanceButton.SetActive(true);
+        advanceButton.gameObject.SetActive(true);
         party.SetActive(false);
         dialogueWindow.SetActive(true); 
         _revealSelectedCharacters();
@@ -55,16 +87,6 @@ public class DialogueHandler : BaseDialogueHandler
                 speakerText.text = chosenCharacter;
                 break;
         }
-
-        /*
-        if(selectedConversation.DialogueLines.isHeirSpeaking[index]. == true){
-            speakerText.text = "The Heir";
-        }else if (selectedConversation.isNarratorText[index] == true){
-            speakerText.text = " "; 
-        }else{
-            speakerText.text = chosenCharacter; 
-        }
-        */
     }
 
 
@@ -220,7 +242,7 @@ public class DialogueHandler : BaseDialogueHandler
         }
     }
 
-     protected override void _closeDialogueWindow()
+    protected override void _closeDialogueWindow()
     {
         //Hide all Sprites
         heir.SetActive(false);
@@ -229,7 +251,7 @@ public class DialogueHandler : BaseDialogueHandler
         katze.SetActive(false);
 
         //Hide and show certain buttons
-        advanceButton.SetActive(false);
+        advanceButton.gameObject.SetActive(false);
         party.SetActive(true);
         dialogueWindow.SetActive(false); 
         shopButton.SetActive(true);
