@@ -21,9 +21,40 @@ MonoBehaviour:
   choice1: <Steal the Egg>
   choice2: <Steal the Goose>
   choice1Outcome: 'The Goose honks in anger as you attempt to steal its egg. You
-    and your party are able to flee but not before it lands a few hits... '
-  choice2Outcome: The Goose honks in anger fighting you as you attempt to shove it
-    into a satchel.
+    and your party are able to flee but not before it lands a few hits...
+
+    [All
+    Party Members Take 5 damage, gain 5 Max HP]'
+  choice2Outcome: 'The Goose honks in anger fighting you as you attempt to shove
+    it into a satchel.
+
+    [All Party Members Take 15 damage, gain 15 Max HP]'
+  choice1Type: 
+  choice2Type: 
+  outcomeChange1:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth:
+    - currentHP: -5
+      maxHP: 5
+      partyMember: 0
+    cardDraft: 0
+    randomDiscard: 0
+  outcomeChange2:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth:
+    - currentHP: -15
+      maxHP: 15
+      partyMember: 0
+    cardDraft: 0
+    randomDiscard: 0
+  outcomeChange3:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth: []
+    cardDraft: 0
+    randomDiscard: 0
   choice3: <Leave the Goose Alone>
   choice3Outcome: "\u201CYou are able to shake off the greed and walk away leaving
     the goose and its eggs unharmed\u2026\u201D"

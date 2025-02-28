@@ -203,10 +203,12 @@ public class ShopDisplay : MonoBehaviour
         {
             Heirloom heirloomRef = displayedItems[cycleIndex, index].GetHeirloom();
             heirloomManager.AddHeirloom(heirloomRef);
+            playerData.addHeirloom(heirloomRef);
         }
         else
         {
             shopDeck.AddCard(cardRef);
+            playerData.SetPlayerDeck(shopDeck.m_GameDeck);
         }
     }
 

@@ -10,10 +10,10 @@ public class CardData
 
     [SerializeField] internal int ownerIndex, databaseIndex;
 
-    public CardData (int ownerIndex, int dataIndex)
+    public CardData (int ownerIndex, int databaseIndex)
     {
         this.ownerIndex = ownerIndex;
-        this.databaseIndex = dataIndex;
+        this.databaseIndex = databaseIndex;
     }
 
     public static bool operator ==(CardData data1, CardData data2) => data1.Equals(data2);

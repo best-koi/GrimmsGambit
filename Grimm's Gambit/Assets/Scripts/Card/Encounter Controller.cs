@@ -248,6 +248,7 @@ public class EncounterController : MonoBehaviour
         Tired = true;
     }
 
+    // Find minions in scene, set their health to those stored by playerData
     private void SetHealthValues() {
         Minion seamstress = GameObject.Find("Seamstress").GetComponent<Minion>();
         Minion katze = GameObject.Find("Katze").GetComponent<Minion>();
@@ -258,6 +259,7 @@ public class EncounterController : MonoBehaviour
         (hound.currentHealth, hound.maxHealth) = playerData.GetHP(PlayerData.PartyMember.Hound);
     }
 
+    // Save health values to playerData, if character is dead then set health to 15%
     private void SaveHealthValues() {
         GameObject seamstress = GameObject.Find("Seamstress");
         GameObject katze = GameObject.Find("Katze");
