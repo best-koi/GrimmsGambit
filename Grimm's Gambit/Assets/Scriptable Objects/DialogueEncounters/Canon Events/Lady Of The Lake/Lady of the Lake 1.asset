@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Lady of the Lake 1
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: Katze
   _dialogueLines:
   - _speaker: 2

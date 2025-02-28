@@ -429,204 +429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334348672}
   m_CullTransparentMesh: 1
---- !u!1 &343700811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 343700814}
-  - component: {fileID: 343700815}
-  - component: {fileID: 343700812}
-  m_Layer: 0
-  m_Name: DialogueHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &343700812
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.6
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &343700814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 373.002, y: 244.31743, z: -10.944984}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &343700815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbbd2e3991a4449858ced5783c41f525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seamstress: {fileID: 904382473}
-  hound: {fileID: 1956932277}
-  katze: {fileID: 1216078151}
-  heir: {fileID: 1886948582}
-  speakerText: {fileID: 2120171774}
-  conversationText: {fileID: 440346916}
-  chosenCharacterText: {fileID: 0}
-  chosenCharacter: 
-  talkButton: {fileID: 0}
-  shopButton: {fileID: 0}
-  party: {fileID: 0}
-  talkPanel: {fileID: 0}
-  dialogueWindow: {fileID: 30174703}
-  advanceButton: {fileID: 897589571}
-  finishSelectionButton: {fileID: 0}
-  seamstressConversations: []
-  katzeConversations: []
-  houndConversations: []
-  seamstressDialogue1: {fileID: 0}
-  seamstressDialogue2Good: {fileID: 0}
-  seamstressDialogue2Bad: {fileID: 0}
-  seamstressDialogue3Good: {fileID: 0}
-  seamstressDialogue3Bad: {fileID: 0}
-  houndDialogue1: {fileID: 0}
-  houndDialogue2Good: {fileID: 0}
-  houndDialogue2Bad: {fileID: 0}
-  houndDialogue3Good: {fileID: 0}
-  houndDialogue3Bad: {fileID: 0}
-  katzeDialogue1: {fileID: 0}
-  katzeDialogue2Good: {fileID: 0}
-  katzeDialogue2Bad: {fileID: 0}
-  katzeDialogue3Good: {fileID: 0}
-  katzeDialogue3Bad: {fileID: 0}
-  selectedConversation: {fileID: 0}
-  textSpeed: 0.05
-  SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
-  narratorSFX: {fileID: 0}
-  boss: {fileID: 334348672}
-  bossDialogue:
-  - {fileID: 11400000, guid: 15389fb56964b41e2a65942aca296baa, type: 2}
-  - {fileID: 11400000, guid: 30aaef595bd264361920a4eb57ae35ad, type: 2}
-  - {fileID: 11400000, guid: ea255ba41e2004e41a97fa4899396625, type: 2}
-  bossName: The Lady of The Lake
-  selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding:
-  - {fileID: 11400000, guid: 2f49b3d13bdf14f189683971b3f17e09, type: 2}
-  badEnding:
-  - {fileID: 11400000, guid: 399d60eebc1844c3c8f85dc1fca2df60, type: 2}
-  choicePanel: {fileID: 1896372323}
-  goodButton: {fileID: 609665961}
-  badButton: {fileID: 959178115}
-  endingScene: LadyOfTheLake
 --- !u!1 &393879355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +865,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLineGood
         m_Mode: 1
@@ -1381,7 +1183,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -1755,7 +1557,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLineBad
         m_Mode: 1
@@ -11846,7 +11648,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: StartGoodDialogue
         m_Mode: 1
@@ -17077,7 +16879,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: StartBadDialogue
         m_Mode: 1
@@ -17889,6 +17691,177 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+--- !u!1 &1882162798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882162801}
+  - component: {fileID: 1882162800}
+  - component: {fileID: 1882162799}
+  m_Layer: 0
+  m_Name: DialogueHandler (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1882162799
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882162798}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1882162800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882162798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd2e3991a4449858ced5783c41f525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seamstress: {fileID: 904382473}
+  hound: {fileID: 1956932277}
+  katze: {fileID: 1216078151}
+  heir: {fileID: 1886948582}
+  speakerText: {fileID: 2120171774}
+  conversationText: {fileID: 440346916}
+  dialogueWindow: {fileID: 30174703}
+  advanceButton: {fileID: 897589573}
+  SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  seamstressSFX: {fileID: 0}
+  houndSFX: {fileID: 0}
+  katzeSFX: {fileID: 0}
+  heirSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
+  textSpeed: 0.05
+  boss: {fileID: 334348672}
+  bossDialogue:
+  - {fileID: 11400000, guid: 4d71ab983a573424dae25b0fa3940381, type: 2}
+  - {fileID: 11400000, guid: f599077ab734edc468f98695c661e16e, type: 2}
+  - {fileID: 11400000, guid: 488e322edeb2eb949b7faa21986981a7, type: 2}
+  - {fileID: 11400000, guid: 0e5e27c228b263d4f9d362bb35d85fd2, type: 2}
+  bossName: The Lady of the Lake
+  selectedBossConversation: {fileID: 0}
+  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  goodEnding: []
+  badEnding: []
+  choicePanel: {fileID: 1896372323}
+  _goodChoiceButton: {fileID: 1486449819}
+  _badChoiceButton: {fileID: 1650921844}
+  endingScene: Beldam
+--- !u!4 &1882162801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882162798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 373.002, y: 244.31743, z: -10.944984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886948582
 GameObject:
   m_ObjectHideFlags: 0
@@ -18756,7 +18729,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 209809839}
   - {fileID: 393879357}
-  - {fileID: 343700814}
   - {fileID: 2058606331}
   - {fileID: 413595362}
   - {fileID: 1029381279}
@@ -18770,3 +18742,4 @@ SceneRoots:
   - {fileID: 462917348}
   - {fileID: 912578094}
   - {fileID: 300437442}
+  - {fileID: 1882162801}
