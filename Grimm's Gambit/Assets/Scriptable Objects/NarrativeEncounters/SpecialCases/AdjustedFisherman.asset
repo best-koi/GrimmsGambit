@@ -27,7 +27,10 @@ MonoBehaviour:
   choice2: '<Ignore the flounder> '
   choice1Outcome: '"You unhook the note from the fish and gently release it into
     the river. As it swims out of sight, you also notice a length of fishing line
-    tied to the flounder''s tail. Following the line to its origin, you find...'
+    tied to the flounder''s tail. Following the line to its origin, you find...
+
+    [Gain
+    "Miracle Water" heirloom]'
   choice2Outcome: '"You decide to leave the fish where it is, for some other forest-bound
     philosopher to stumble upon." "''Mm, good choice. No good deed goes unpunished
     and all that. But then by that logic, your ''villainous act'' deserves a little
@@ -35,6 +38,18 @@ MonoBehaviour:
     [Card choice: Die Katze''s deck] '
   choice1Type: Encounter
   choice2Type: 
+  outcomeChange1:
+    addHeirloom: 1
+    heirloomChange: 5
+    partyHealth: []
+    cardDraft: 0
+    randomDiscard: 0
+  outcomeChange2:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth: []
+    cardDraft: 1
+    randomDiscard: 0
   originalOutcome1: '"You unhook the note from the fish and gently release it into
     the river. As it swims out of sight, you also notice a length of fishing line
     tied to the flounder''s tail. Following the line to its origin, you find...'

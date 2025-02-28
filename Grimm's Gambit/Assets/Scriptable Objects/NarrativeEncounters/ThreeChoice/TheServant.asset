@@ -38,24 +38,30 @@ MonoBehaviour:
   outcomeChange1:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange: []
     partyHealth:
     - currentHP: -15
       maxHP: 5
       partyMember: 0
+    cardDraft: 0
   outcomeChange2:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange: []
     partyHealth:
     - currentHP: -5
       maxHP: 0
       partyMember: 0
+    cardDraft: 0
   outcomeChange3:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange: []
-    partyHealth: []
+    partyHealth:
+    - currentHP: 5
+      maxHP: 0
+      partyMember: 0
+    - currentHP: 0
+      maxHP: 10
+      partyMember: 3
+    cardDraft: 0
   choice3: '<Let the Hound Intimidate Him> '
   choice3Outcome: "\u201CThe Hound barks at the man intimidatingly, but instead of
     fleeing or fighting he begins to lower his axe.\n\u2018Oh! I didn\u2019t realize

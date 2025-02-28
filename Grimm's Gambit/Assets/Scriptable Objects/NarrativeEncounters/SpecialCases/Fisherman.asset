@@ -533,6 +533,19 @@ MonoBehaviour:
     [Card choice: Die Katze''s deck] '
   choice1Type: Heirloom
   choice2Type: 
+  outcomeChange1:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth: []
+    cardDraft: 0
+    randomDiscard: 0
+  outcomeChange2:
+    addHeirloom: 0
+    heirloomChange: 0
+    partyHealth: []
+    cardDraft: 0
+    randomDiscard: 0
+  originalOutcome1: 
   outcomeTexts:
   - ' "a small bottle, filled with a clear liquid. It seems as though your seemingly
     mundane act has yielded a reward after all." '

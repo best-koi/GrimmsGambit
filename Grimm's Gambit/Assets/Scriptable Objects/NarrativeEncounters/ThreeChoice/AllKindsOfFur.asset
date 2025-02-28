@@ -32,7 +32,8 @@ MonoBehaviour:
     to assist the girl and she begins to slowly descend from the tree. This girl
     covered in various furs hugs the Seamstress, handing her one of her fur pelts
     to wipe the bite mark of blood before running into the forest.  You push forward
-    having successfully freed the girl.\u201D "
+    having successfully freed the girl.\u201D\n[Seamstress gains +10 Max Hp, Takes
+    5 damage]"
   choice2Outcome: "\u201CDie Katze approaches the old dog, drawing their weapon.\u201D 
     \u2018Come now, doggie. Leave the girl alone.\u2019 Die Katze flaunts, tapping
     the dog with the flat side of their blade.  \u201CThe Seamstress looks away,
@@ -41,30 +42,36 @@ MonoBehaviour:
     this opportunity to assist the girl down from the tree. She quickly thanks you
     before disappearing into the forest. A few moments later Die Katze returns slightly
     disheveled but having retrieved their hat.   You push forward having successfully
-    freed the girl.\u201D "
+    freed the girl.\u201D \n[Katze gains +10 Max Hp, Takes 5 damage]"
   choice1Type: 
   choice2Type: 
   outcomeChange1:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
-    partyHealth: []
+    partyHealth:
+    - currentHP: -5
+      maxHP: 10
+      partyMember: 1
+    cardDraft: 0
+    randomDiscard: 0
   outcomeChange2:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
-    partyHealth: []
+    partyHealth:
+    - currentHP: -5
+      maxHP: 10
+      partyMember: 2
+    cardDraft: 0
+    randomDiscard: 0
   outcomeChange3:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
-    partyHealth: []
+    partyHealth:
+    - currentHP: -5
+      maxHP: 10
+      partyMember: 3
+    cardDraft: 0
+    randomDiscard: 0
   choice3: '<Let the Hound confront the dog> '
   choice3Outcome: "\u201CThe Hound approaches the dog and begins to match its barking.
     The two bark back and the Hound places itself between the older dog and the tree,
@@ -74,4 +81,5 @@ MonoBehaviour:
     the girl down from the tree. She leans down smiling and petting the Hound as
     thanks for his bravery. She stands, smiles, and thanks your group for helping
     her, and walks into the forest before disappearing among the trees.  You push
-    forward having successfully freed the girl.\u201D "
+    forward having successfully freed the girl.\u201D \n[The Hound gains +10 Max
+    Hp, takes 5 damage.]"

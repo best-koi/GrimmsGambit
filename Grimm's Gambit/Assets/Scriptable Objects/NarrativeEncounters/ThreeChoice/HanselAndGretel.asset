@@ -35,26 +35,23 @@ MonoBehaviour:
   outcomeChange1:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
     partyHealth: []
+    cardDraft: 0
+    randomDiscard: 3
   outcomeChange2:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
     partyHealth: []
+    cardDraft: 0
+    randomDiscard: 0
   outcomeChange3:
     addHeirloom: 0
     heirloomChange: 0
-    cardChange:
-      ownerIndex: -1
-      databaseIndex: -1
     partyHealth:
     - currentHP: 0
       maxHP: -5
       partyMember: 0
+    cardDraft: 0
+    randomDiscard: 0
   choice3: <All Party Members lose 5 Max HP>
   choice3Outcome: "\u201CThe feeling fades and you carry on unaware of any changes.\u201D"

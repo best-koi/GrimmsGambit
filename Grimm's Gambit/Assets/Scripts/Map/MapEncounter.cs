@@ -56,6 +56,11 @@ public class MapEncounter : MonoBehaviour
         {
             if (MapManager.GetPlayer().CheckLocations(this))
             {
+                if (locationName == "Campfire") {
+                    PlayerData playerData = FindObjectOfType<PlayerData>();
+                    playerData.restoreAll();
+                }
+
                 MapManager.GetPlayer().SetPosition(gameObject.GetComponent<MapEncounter>());
             }
         }

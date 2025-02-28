@@ -2,8 +2,11 @@ using System;
 using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Transactions;
 using Unity.Collections;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -24,15 +27,27 @@ public class HPChange {
         currentHP = amount;
         maxHP = amount;
     }
+
+    public void RestoreHealth() {
+        currentHP = maxHP;
+    }
 }
 
 public class PlayerData : MonoBehaviour
 {
     [SerializeField] public float volume = 0.5f;
-    [SerializeField] public int currency;
     [SerializeField] public List<CardData> deck;
     [SerializeField] public List<Heirloom> heirlooms;
     [SerializeField] public HPChange seamstressStats, katzeStats, houndStats;
+    [SerializeField] public List<MapEncounter> visited;
+    [SerializeField] public MapEncounter position;
+
+    // Dialogue/Canon choices will be stored by a dictionary -- int ChoiceID, bool Choice
+    // ID Pattern: 1st digit - Campfire/Canon Number, 2nd Digit - Character (0: Canon Event, 1: Seamstress, 2: Katze, 3: Hound)
+    // Choice: true - good, false - bad
+    public Dictionary<int, bool> dialogueChoices;
+    [SerializeField] public List<int> dialogueChoiceKeys;
+    [SerializeField] public List<bool> dialogueChoiceValues;
 
     public enum PartyMember {
         Party,
@@ -45,23 +60,25 @@ public class PlayerData : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
 
-        seamstressStats.SetHealth(28);
-        katzeStats.SetHealth(33);
-        houndStats.SetHealth(38);
+        restoreAll();
+
+        dialogueChoices = dialogueChoiceKeys.Zip(dialogueChoiceValues, (k, v) => new {k, v}).ToDictionary(x => x.k, x => x.v);
     }
 
     public void SetPlayerData(float volume) {
         this.volume = volume;
     }
 
+    // Volume Functitons 
     public float getVolume() {
         return volume;
     }
-    
+  
     public void setVolume(float volume) {
         this.volume = volume;
     }
 
+    // Deck Functions
     public void SetPlayerDeck(List<CardData> deck) {
         this.deck = deck;
     }
@@ -70,6 +87,19 @@ public class PlayerData : MonoBehaviour
         return new List<CardData>(deck);
     }
 
+    public void addCard(CardData card) {
+        deck.Add(card);
+    }
+
+    public void randomDiscard(int quantity) {
+        for (int i = 0; i < quantity; i++) {
+            System.Random rnd = new System.Random();
+            int toRemove = rnd.Next(0, deck.Count);
+            deck.RemoveAt(toRemove);
+        }
+    }
+
+    // Heirloom Functions
     public void SetPlayerHeirlooms(List<Heirloom> heirlooms) {
         this.heirlooms = heirlooms;
     }
@@ -86,6 +116,7 @@ public class PlayerData : MonoBehaviour
         heirlooms.Remove(heirloom);
     }
 
+    // Health Functions
     private HPChange selectMember(PartyMember ms) {
         switch (ms) {
             case PartyMember.Seamstress:
@@ -113,11 +144,15 @@ public class PlayerData : MonoBehaviour
     public void changeMaxHP(PartyMember ms, int amount) {
         if (ms == PartyMember.Party) {
             seamstressStats.maxHP += amount;
+            seamstressStats.currentHP += amount;
             katzeStats.maxHP += amount;
+            katzeStats.currentHP += amount;
             houndStats.maxHP += amount;
+            houndStats.currentHP += amount;
         } else {
             HPChange toChange = selectMember(ms);
             toChange.maxHP += amount;
+            toChange.currentHP += amount;
         }
     }
 
@@ -128,6 +163,25 @@ public class PlayerData : MonoBehaviour
 
     public void SetHP(PartyMember ms, int current) {
         HPChange character = selectMember(ms);
-        character.currentHP = current;
+        character.SetHealth(current);
+    }
+
+    public void restoreAll() {
+        seamstressStats.RestoreHealth();
+        katzeStats.RestoreHealth();
+        houndStats.RestoreHealth();
+
+        Debug.Log("Restored!");
+    }
+
+    // Narrative Choice Functions
+    public void addChoice(int choiceID, bool choice) {
+        dialogueChoices.Add(choiceID, choice);
+        dialogueChoiceKeys.Add(choiceID);
+        dialogueChoiceValues.Add(choice);
+    }
+
+    public bool getChoice(int choiceID) {
+        return dialogueChoices[choiceID];
     }
 }

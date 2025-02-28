@@ -6407,7 +6407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 0.5
-  currency: 0
   deck:
   - ownerIndex: 2
     databaseIndex: 3
@@ -6428,8 +6427,20 @@ MonoBehaviour:
   - ownerIndex: 1
     databaseIndex: 8
   heirlooms: 
-  currentHPChange: 0
-  maxHPChange: 0
+  seamstressStats:
+    currentHP: 0
+    maxHP: 0
+    partyMember: 0
+  katzeStats:
+    currentHP: 0
+    maxHP: 0
+    partyMember: 0
+  houndStats:
+    currentHP: 0
+    maxHP: 0
+    partyMember: 0
+  dialogueChoiceKeys: 
+  dialogueChoiceValues: 
 --- !u!4 &1962893006
 Transform:
   m_ObjectHideFlags: 0
