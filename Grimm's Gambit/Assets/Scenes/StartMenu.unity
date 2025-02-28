@@ -6428,17 +6428,18 @@ MonoBehaviour:
     databaseIndex: 8
   heirlooms: 
   seamstressStats:
-    currentHP: 0
-    maxHP: 0
+    currentHP: 28
+    maxHP: 28
     partyMember: 0
   katzeStats:
-    currentHP: 0
-    maxHP: 0
+    currentHP: 33
+    maxHP: 33
     partyMember: 0
   houndStats:
-    currentHP: 0
-    maxHP: 0
+    currentHP: 38
+    maxHP: 38
     partyMember: 0
+  position: {x: 0, y: 0, z: 0}
   dialogueChoiceKeys: 
   dialogueChoiceValues: 
 --- !u!4 &1962893006

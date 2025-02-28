@@ -39,9 +39,13 @@ public class MapPlayer : MonoBehaviour
     public static GameObject sceneToToggle;
 
     static bool isInCombat = false; 
+    private PlayerData playerData;
+    private bool willTriggerEncounters = true;
 
     public void Start(){
         sceneToToggle = sceneObjects; 
+        playerData = FindObjectOfType<PlayerData>();
+        if (playerData.position.y != 0.0) SetPositionInstant(playerData.GetPosition());
     }
 
 
@@ -54,8 +58,25 @@ public class MapPlayer : MonoBehaviour
         centerLocation = currentLocation.GetComponent<Renderer>().bounds.center;
         isAtLocation = false;
         locations = currentLocation.GetNextLocations();
+
+        playerData.SetPosition(mapEncounter.gameObject.transform.position);
         //gameObject.transform.position = new Vector3(currentLocation.gameObject.transform.position.x, currentLocation.gameObject.transform.position.y + yOffset, currentLocation.gameObject.transform.position.z);
 
+    }
+
+    //Called upon loading Map from game start, sets player position instantly
+    public void SetPositionInstant(Vector3 startingSpot) {
+        foreach (MapEncounter obj in FindObjectsOfType<MapEncounter>()) {
+            if (obj.gameObject.transform.position == startingSpot) {
+                currentLocation = obj;
+                locations = currentLocation.GetNextLocations();
+                obj.gameObject.tag = "Inactive";
+                break;
+            }
+        }
+        willTriggerEncounters = false;
+        startingSpot.y += yOffset;
+        gameObject.transform.position = startingSpot;
     }
 
     //Checks to see if there are valid locations to move to

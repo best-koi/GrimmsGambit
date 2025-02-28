@@ -8,6 +8,7 @@ using System.Transactions;
 using Unity.Collections;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
 [Serializable]
@@ -39,8 +40,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField] public List<CardData> deck;
     [SerializeField] public List<Heirloom> heirlooms;
     [SerializeField] public HPChange seamstressStats, katzeStats, houndStats;
-    [SerializeField] public List<MapEncounter> visited;
-    [SerializeField] public MapEncounter position;
+    [SerializeField] public UnityEngine.Vector3 position;
 
     // Dialogue/Canon choices will be stored by a dictionary -- int ChoiceID, bool Choice
     // ID Pattern: 1st digit - Campfire/Canon Number, 2nd Digit - Character (0: Canon Event, 1: Seamstress, 2: Katze, 3: Hound)
@@ -170,8 +170,6 @@ public class PlayerData : MonoBehaviour
         seamstressStats.RestoreHealth();
         katzeStats.RestoreHealth();
         houndStats.RestoreHealth();
-
-        Debug.Log("Restored!");
     }
 
     // Narrative Choice Functions
@@ -183,5 +181,14 @@ public class PlayerData : MonoBehaviour
 
     public bool getChoice(int choiceID) {
         return dialogueChoices[choiceID];
+    }
+
+    // Map Functions
+    public UnityEngine.Vector3 GetPosition() {
+        return position;
+    }
+    
+    public void SetPosition(UnityEngine.Vector3 pos) {
+        position = pos;
     }
 }
