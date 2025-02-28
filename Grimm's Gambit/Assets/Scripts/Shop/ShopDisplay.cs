@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using JetBrains.Annotations;
 
 
 public class ShopDisplay : MonoBehaviour
@@ -53,10 +54,10 @@ public class ShopDisplay : MonoBehaviour
             pickDescriptions = new TMP_Text[numberOfItems];
         }
 
-        for(int i = 0; i < numberOfItems; i++)
-        {
-            itemButtons[i].onClick.AddListener(() => Acquire(i));
-        }
+        // for(int i = 0; i < numberOfItems; i++)
+        // {
+        //     itemButtons[i].onClick.AddListener(() => Acquire(i));
+        // }
         
         LoadShopPool();
         DisplayShopItems(); 
@@ -85,7 +86,7 @@ public class ShopDisplay : MonoBehaviour
             {
                 CardData currentData = new CardData(i, j);
 
-                if (shopDeck.m_GameDeck.Contains(currentData)) return;
+                if (shopDeck.m_GameDeck.Contains(currentData)) continue;
 
                 cardPool.Add(currentData);
             }
@@ -98,7 +99,7 @@ public class ShopDisplay : MonoBehaviour
             cardPool.RemoveAt(randIndex);
         }
 
-        cardPool = temp;
+        cardPool = new List<CardData>(temp);
         temp.Clear();
 
         // Load heirlooms from manager
@@ -114,13 +115,13 @@ public class ShopDisplay : MonoBehaviour
             heirloomPool.Add((Heirloom)i);
         }
 
-        currentHeirlooms = heirloomPool;
+        currentHeirlooms = new List<Heirloom>(heirloomPool);
         heirloomPool.Clear();
 
         for (int i = 0; i < numberOfItems; i++)
         {
             int randIndex = rand.Next(0, currentHeirlooms.Count);
-            heirloomPool.Add(heirloomPool[randIndex]);
+            heirloomPool.Add(currentHeirlooms[randIndex]);
             currentHeirlooms.RemoveAt(randIndex);
         }
 
@@ -136,8 +137,9 @@ public class ShopDisplay : MonoBehaviour
             {
                 ShopItem item = ScriptableObject.CreateInstance<ShopItem>();
 
-                if (i == 3)
+                if (j == (numberOfItems - 1))
                 {
+                    Debug.Log("heirloom reach");
                     item.StoreHeirloom(heirlooms[j]);
                 }
                 else
