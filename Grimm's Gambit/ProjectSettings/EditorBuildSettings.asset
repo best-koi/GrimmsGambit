@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LycanSceneV2.unity
     guid: a52a006c240f94e6dbee821e0e930437
+  - enabled: 1
+    path: Assets/Scenes/CEScenes/LadyOfTheLake.unity
+    guid: 8074fcaef4df94cb490e3d79ea59099f
+  - enabled: 1
+    path: Assets/Beldam.unity
+    guid: 722e8d808f0f94610ac2c4fb3c8c9c6c
   m_configObjects: {}

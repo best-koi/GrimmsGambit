@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1403,6 +1403,8 @@ MonoBehaviour:
   sceneParent: {fileID: 1558088976}
   enemies: []
   enemySceneName: BasicEnemyScene V2
+  encounterWinScene: Encounter Victory Scene
+  encounterLossScene: EncounterLoss
 --- !u!1 &901972456
 GameObject:
   m_ObjectHideFlags: 0

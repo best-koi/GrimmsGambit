@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Beldam 5
+  m_EditorClassIdentifier: 
+  lines:
+  - 'The Beldam turns to the Seamstress with a wicked grin.  '
+  - "You. You have something, don\u2019t you, deary? Show me. Show me the source
+    of your pain. "
+  - 'No. Of course not. Why would you even ask for such a thing? '
+  - 'I only seek to ease your pain. Turn your pain into a weapon to set you free.
+    To bring down all who have done you wrong. '
+  isBossSpeaking: 00010001
+  isNarratorText: 01000000
+  isSpeakerHidden: 00000000
+  speakerName: The Seamstress
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The Beldam turns to the Seamstress with a wicked grin.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "You. You have something, don\u2019t you, deary? Show me. Show me the
+      source of your pain."
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: No. Of course not. Why would you even ask for such a thing?
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: I only seek to ease your pain. Turn your pain into a weapon to set you
+      free. To bring down all who have done you wrong.

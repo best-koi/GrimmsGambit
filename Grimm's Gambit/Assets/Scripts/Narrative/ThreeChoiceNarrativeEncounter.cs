@@ -30,12 +30,12 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
         else outcomeChange = outcomeChange3;
 
         PlayerData playerData = FindObjectOfType<PlayerData>();
-        if (outcomeChange.currentHPChange != 0) {
-            playerData.changeCurrentHP(outcomeChange.currentHPChange);
-        }
-
-        if (outcomeChange.maxHPChange != 0) {
-            playerData.changeMaxHP(outcomeChange.maxHPChange);
+        if (outcomeChange.partyHealth.Count > 0) {
+            //playerData.changeCurrentHP(PlayerData.PartyMember.Party, outcomeChange.currentHPChange);
+            foreach (HPChange health in outcomeChange.partyHealth) {
+                playerData.changeCurrentHP(health.partyMember, health.currentHP);
+                playerData.changeMaxHP(health.partyMember, health.maxHP);
+            }
         }
 
         if (outcomeChange.addHeirloom == OutcomeChanges.heirloomEffect.Add) {
@@ -44,7 +44,7 @@ public class ThreeChoiceNarrativeEncounter : NarrativeEncounter
             playerData.removeHeirloom(outcomeChange.heirloomChange);
         }
 
-        if (outcomeChange1.cardChange != null) {
+        if (outcomeChange.cardChange.ownerIndex != -1) {
 
         }
     }

@@ -41,8 +41,9 @@ public class EncounterController : MonoBehaviour
 
     private bool encounterEnded = false; 
 
+
     [SerializeField] 
-    private string enemySceneName; 
+    private string enemySceneName, encounterWinScene, encounterLossScene; 
 
     public UnitParty GetEnemyInventory()
     {
@@ -104,13 +105,7 @@ public class EncounterController : MonoBehaviour
             FirstCardFree = true;
         }
 
-        //m_PlayerInventory.GetComponentsInChildren<Minion>();
-        foreach (Minion minion in m_PlayerInventory.GetComponentsInChildren<Minion>()) {
-            minion.maxHealth += playerData.maxHPChange;
-            minion.currentHealth += playerData.maxHPChange;
-            minion.currentHealth += playerData.currentHPChange;
-            if (minion.currentHealth > minion.maxHealth) minion.currentHealth = minion.maxHealth;
-        }
+        SetHealthValues();
 
         onEncounterStarted?.Invoke();
 
@@ -210,10 +205,11 @@ public class EncounterController : MonoBehaviour
     }
 
     private void EndEncounter(bool playerWin) {
+        SaveHealthValues();
         onEncounterEnded?.Invoke(playerWin);
         SceneManager.UnloadSceneAsync(enemySceneName);
-        if(playerWin) SceneManager.LoadScene("Encounter Victory Scene", LoadSceneMode.Additive);
-        else SceneManager.LoadScene("EncounterLoss", LoadSceneMode.Additive);
+        if(playerWin) SceneManager.LoadScene(encounterWinScene, LoadSceneMode.Additive);
+        else SceneManager.LoadScene(encounterLossScene, LoadSceneMode.Additive);
     }
 
     // Spend an amount of resources
@@ -250,5 +246,42 @@ public class EncounterController : MonoBehaviour
     public void BecomeTired() //Function to make player tired
     {
         Tired = true;
+    }
+
+    private void SetHealthValues() {
+        Minion seamstress = GameObject.Find("Seamstress").GetComponent<Minion>();
+        Minion katze = GameObject.Find("Katze").GetComponent<Minion>();
+        Minion hound = GameObject.Find("Hound").GetComponent<Minion>();
+
+        (seamstress.currentHealth, seamstress.maxHealth) = playerData.GetHP(PlayerData.PartyMember.Seamstress);
+        (katze.currentHealth, katze.maxHealth) = playerData.GetHP(PlayerData.PartyMember.Katze);
+        (hound.currentHealth, hound.maxHealth) = playerData.GetHP(PlayerData.PartyMember.Hound);
+    }
+
+    private void SaveHealthValues() {
+        GameObject seamstress = GameObject.Find("Seamstress");
+        GameObject katze = GameObject.Find("Katze");
+        GameObject hound = GameObject.Find("Hound");
+
+        if (seamstress == null) {
+            int max = playerData.GetHP(PlayerData.PartyMember.Seamstress).Item2;
+            playerData.SetHP(PlayerData.PartyMember.Seamstress, (int) Math.Ceiling(max*0.15));
+        } else {
+            playerData.SetHP(PlayerData.PartyMember.Seamstress, seamstress.GetComponent<Minion>().currentHealth);
+        }
+
+        if (katze == null) {
+            int max = playerData.GetHP(PlayerData.PartyMember.Katze).Item2;
+            playerData.SetHP(PlayerData.PartyMember.Katze, (int) Math.Ceiling(max*0.15));
+        } else {
+            playerData.SetHP(PlayerData.PartyMember.Katze, katze.GetComponent<Minion>().currentHealth);
+        }
+
+        if (hound == null) {
+            int max = playerData.GetHP(PlayerData.PartyMember.Hound).Item2;
+            playerData.SetHP(PlayerData.PartyMember.Hound, (int) Math.Ceiling(max*0.15));
+        } else {
+            playerData.SetHP(PlayerData.PartyMember.Hound, hound.GetComponent<Minion>().currentHealth);
+        }
     }
 }

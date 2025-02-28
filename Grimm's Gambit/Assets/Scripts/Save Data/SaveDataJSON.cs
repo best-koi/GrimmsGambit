@@ -37,7 +37,7 @@ public class SaveDataJSON : MonoBehaviour
 
     // Saves playerData to JSON save file
     public void SaveData() {
-        string jsonData = JsonUtility.ToJson(playerData);
+        string jsonData = JsonUtility.ToJson(playerData, true);
 
         if (!Directory.Exists(saveFolder)) {
             Directory.CreateDirectory(saveFolder);
@@ -63,6 +63,8 @@ public class SaveDataJSON : MonoBehaviour
         if (!Directory.Exists(saveFolder)) {
             Directory.CreateDirectory(saveFolder);
             File.Create(savePath).Close();
+        } else if (!File.Exists(savePath)) {
+            File.Create(savePath).Close();
         }
 
         using(StreamReader reader = new StreamReader(savePath)) {
@@ -81,7 +83,9 @@ public class SaveDataJSON : MonoBehaviour
     // Sets all relevant internal values to those held by playerData
     public void LoadFromPlayerData() {
         AudioSource audioSettings = FindObjectOfType<AudioSource>();
-        audioSettings.volume = playerData.getVolume();
+        if (audioSettings != null) {
+            audioSettings.volume = playerData.getVolume();
+        }
     }
 
     // Used by music slider to set volume

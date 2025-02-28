@@ -13,16 +13,34 @@ public class AffixDisplayDetector : MonoBehaviour
     public UnityEngine.UI.Image displayImageLocation;
     public TextMeshProUGUI displayTextLocation;
     public int Stacks;
-
+    private GameObject affixDisplay;
+    
+    private void Start()
+    {
+        GameObject[] objects = FindObjectsOfType<GameObject>(true);
+        foreach (GameObject obj in objects)
+        {
+            if (obj.gameObject.name == "AffixDescriptionBox")
+            {
+                affixDisplay = obj;
+                Debug.Log("found");
+                break;
+            }
+        }
+    }
 
     private void OnMouseEnter()
     {
+        // affixDisplay.SetActive(true); // delete
         ShowTooltip(parentObject);
+        affixDisplay.SetActive(true);
     }
 
     private void OnMouseExit()
     {
+        // affixDisplay.SetActive(false); // delete
         RemoveTooltip();
+        affixDisplay.SetActive(false);
     }
 
     //Functionality for tooltips themselves:

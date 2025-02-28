@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Beldam 7
+  m_EditorClassIdentifier: 
+  lines: []
+  isBossSpeaking: 
+  isNarratorText: 
+  isSpeakerHidden: 
+  speakerName: The Seamstress
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'The Seamstress reaches into her bag, fetching a hand sewn doll. '
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "Ooooo, yes. This reeks of suffering. Anger. Regret. Loss\u2026 Wonderful. "
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: The Beldam reaches out an open hand expectantly, waiting for the Seamstress
+      to make a decision.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'She looks to you seemingly at a loss for what to do. '
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: This was the doll I made for my child. The child that the Odds stole from
+      me.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "I had planned to give it to her but was never given the chance. I\u2019ve
+      kept it with me to remind me why I\u2019m on this journey in the first place."
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'Can this really be the right thing to do? '
