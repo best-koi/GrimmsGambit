@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopDeckDisplay : MonoBehaviour
 {
@@ -10,25 +11,60 @@ public class ShopDeckDisplay : MonoBehaviour
     [SerializeField] private Card[] displayedCards;
     [SerializeField] private Card selectedCard;
 
-    private int pageNumber;
+    [SerializeField] private Button nextButton, removeButton;
 
-    private void Awake()
-    {
-
-    }
+    private int pageNumber, totalPages;
 
     private void Start()
     {
+        int deckSize = shopDeck.m_GameDeck.Count;
+        totalPages = deckSize / 9;
+        
+        if (deckSize % 9 > 0)
+        {
+            totalPages++;
+        }
+    }
 
+    private void OnEnable()
+    {
+        pageNumber = 0;
+
+        LoadCards();
     }
 
     private void LoadCards()
     {
         List<CardTemplate> cardTemplates = new List<CardTemplate>();
 
+        for (int i = pageNumber * totalPages; i < (pageNumber + 1) * totalPages; i++)
+        {
+            cardTemplates.Add(shopDeck.GetCard(i));
+        }
+
         for (int i = 0; i < displayedCards.Length; i++)
         {
-            //displayedCards.SetCardTemplate(cardTemplates[i]);
+            if (cardTemplates[i] == null)
+            {
+                displayedCards[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                displayedCards[i].SetCardTemplate(cardTemplates[i]);
+            }
         }
+    }
+
+    public void CyclePage()
+    {
+        if (pageNumber + 1 > totalPages) pageNumber = 0;
+        else pageNumber++;
+
+        LoadCards();
+    }
+
+    public void RemoveCard()
+    {
+        removeButton.interactable = false;
     }
 }
