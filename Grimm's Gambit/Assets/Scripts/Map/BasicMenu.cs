@@ -14,6 +14,12 @@ public class BasicMenu : MonoBehaviour
         SceneManager.LoadScene(startScene);
     }
 
+    public void UnloadCampfire()
+    {
+        SceneManager.UnloadSceneAsync("Campfire");
+        MapPlayer.sceneToToggle.SetActive(true);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
