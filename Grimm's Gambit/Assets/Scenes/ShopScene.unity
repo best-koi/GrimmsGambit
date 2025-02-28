@@ -2465,9 +2465,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 334673679}
-        m_TargetAssemblyTypeName: ShopDisplay, Assembly-CSharp
-        m_MethodName: ExitDeck
+      - m_Target: {fileID: 1631528504}
+        m_TargetAssemblyTypeName: ShopDeckDisplay, Assembly-CSharp
+        m_MethodName: RemoveCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3589,7 +3589,7 @@ GameObject:
   - component: {fileID: 1631528500}
   - component: {fileID: 1631528504}
   m_Layer: 5
-  m_Name: DeckCanvas
+  m_Name: DeckDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4551,7 +4551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2073683308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1631528504}
+        m_TargetAssemblyTypeName: ShopDeckDisplay, Assembly-CSharp
+        m_MethodName: CyclePage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2073683308
 MonoBehaviour:
   m_ObjectHideFlags: 0

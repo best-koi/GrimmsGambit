@@ -12,7 +12,7 @@ public class Card : MonoBehaviour
     [SerializeField] private bool _awaitingTarget;
 
     [SerializeField] private bool inShop; // Added by Dawson, to be tuned in editor
-    public Action<CardTemplate, bool> onCardHover;
+    public Action<CardTemplate> onCardHover; // Used for shop purposes
 
     private protected bool m_IsEphemeral = false;
     private int _currentCardCost;
@@ -72,14 +72,7 @@ public class Card : MonoBehaviour
     {
         if (!inShop) return;
 
-        onCardHover?.Invoke(_cardTemplate, true);
-    }
-
-    public void OnMouserExit()
-    {
-        if (!inShop) return;
-
-        onCardHover?.Invoke(_cardTemplate, false);
+        onCardHover?.Invoke(_cardTemplate);
     }
 
     #endregion

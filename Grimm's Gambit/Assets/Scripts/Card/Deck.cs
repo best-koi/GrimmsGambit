@@ -292,6 +292,11 @@ public class Deck : MonoBehaviour
         m_GameDeck.Add(card.Data); 
     }
 
+    public void RemoveCard(CardData card)
+    {
+        m_GameDeck.Remove(card);
+    }
+
     /*
     // Not in use
     private void ClearAll()

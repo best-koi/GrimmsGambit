@@ -24,6 +24,11 @@ public class ShopDeckDisplay : MonoBehaviour
         {
             totalPages++;
         }
+
+        foreach (var card in displayedCards)
+        {
+            card.onCardHover += SelectCard;
+        }
     }
 
     private void OnEnable()
@@ -66,5 +71,14 @@ public class ShopDeckDisplay : MonoBehaviour
     public void RemoveCard()
     {
         removeButton.interactable = false;
+
+        shopDeck.RemoveCard(selectedCard.Data);
+    }
+
+    public void SelectCard(CardTemplate cardVals)
+    {
+        selectedCard.gameObject.SetActive(true);
+        removeButton.gameObject.SetActive(true);
+        selectedCard.SetCardTemplate(cardVals);
     }
 }
