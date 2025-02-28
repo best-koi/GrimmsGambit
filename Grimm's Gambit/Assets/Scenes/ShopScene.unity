@@ -597,6 +597,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -694,6 +698,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -790,6 +798,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
@@ -1044,6 +1056,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -1140,6 +1156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
@@ -3041,6 +3061,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -3459,6 +3483,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -3710,6 +3738,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 17fe862886642471f8f06159204e2298, type: 2}
@@ -3941,6 +3973,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631528503}
     m_Modifications:
+    - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
+      propertyPath: inShop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 966766032023526332, guid: ab1156970d7da464da09ce714f24d4f3, type: 3}
       propertyPath: _cardTemplate
       value: 
