@@ -18,7 +18,4 @@ public class HoverShopItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         Debug.Log("Pointer off Icon");
 
     }
-
-
-
 }

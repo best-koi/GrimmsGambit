@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour
+
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Tooltip("Card Template that contains card stats")]
     [SerializeField] private CardTemplate _cardTemplate;
@@ -68,12 +70,16 @@ public class Card : MonoBehaviour
         audioSource.PlayOneShot(SoundEffect);
     }
 
-    public void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
         if (!inShop) return;
 
-        Debug.Log("Hover");
         onCardHover?.Invoke(_cardTemplate);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        return;
     }
 
     #endregion
