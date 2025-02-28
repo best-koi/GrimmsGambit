@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: LadyGoodEnding2
+  m_EditorClassIdentifier: 
+  speakerName: The Hound
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: (The Hound seems bewildered by your response. And yet, it does not falter
+      in turning back toward the lady in the lake, bowing its head.)
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: 'I see. Not much for thinking ahead, hm? Then I''m sure a straight-minded
+      beast like you will be able to manage just fine.
+
+'
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'The mysterious woman smiles. Then, she turns to you and says:
+
+'
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: You, the one in charge of this group. Take good care of this one as long
+      as you remain together. I think you'll find no companion more steadfast.

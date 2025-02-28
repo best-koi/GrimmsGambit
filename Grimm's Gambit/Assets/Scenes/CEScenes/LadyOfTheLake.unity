@@ -17836,13 +17836,15 @@ MonoBehaviour:
   bossDialogue:
   - {fileID: 11400000, guid: 4d71ab983a573424dae25b0fa3940381, type: 2}
   - {fileID: 11400000, guid: f599077ab734edc468f98695c661e16e, type: 2}
-  - {fileID: 11400000, guid: 488e322edeb2eb949b7faa21986981a7, type: 2}
-  - {fileID: 11400000, guid: 0e5e27c228b263d4f9d362bb35d85fd2, type: 2}
   bossName: The Lady of the Lake
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding: []
-  badEnding: []
+  goodEnding:
+  - {fileID: 11400000, guid: bb4090471ec6a4e11a545224b6db0d40, type: 2}
+  - {fileID: 11400000, guid: ae2c6187150c04107ab790f96f5298ff, type: 2}
+  badEnding:
+  - {fileID: 11400000, guid: 8ebc28a5f35084cb68666c89afd44d0a, type: 2}
+  - {fileID: 11400000, guid: 0e5e27c228b263d4f9d362bb35d85fd2, type: 2}
   choicePanel: {fileID: 1896372323}
   _goodChoiceButton: {fileID: 1486449819}
   _badChoiceButton: {fileID: 1650921844}

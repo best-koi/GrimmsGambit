@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Lady of the Lake 2
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: The Hound
   _dialogueLines:
   - _speaker: 2
@@ -38,11 +34,3 @@ MonoBehaviour:
     _line: The woman's lilting tone sounds metered, yet sorrowful all the same. It's
       only natural her words strike a chord with the Hound. Slowly, the dog turns
       toward you, expectantly.
-  - _speaker: 0
-    _speakerHidden: 0
-    _line: (The Hound seems bewildered by your response. And yet, it does not falter
-      in turning back toward the lady in the lake, bowing its head.)
-  - _speaker: 1
-    _speakerHidden: 1
-    _line: I see. Not much for thinking ahead, hm? Then I'm sure a straight-minded
-      beast like you will be able to manage just fine.
