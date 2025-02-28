@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Card : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Card : MonoBehaviour
     [Header("Card Instance Variables")]
     [SerializeField] private Minion _caster = null; //Added by Ryan - 11/1/2024
     [SerializeField] private bool _awaitingTarget;
+
+    [SerializeField] private bool inShop; // Added by Dawson, to be tuned in editor
+    public Action<CardTemplate> onCardHover; // Used for shop purposes
 
     private protected bool m_IsEphemeral = false;
     private int _currentCardCost;
@@ -55,13 +59,21 @@ public class Card : MonoBehaviour
     public void PlaySound(AudioSource audioSource)
     {
         int[] Semitones = new[] {0, 2, 4, 7, 9};
-        int random = Random.Range(0, 5);
+        int random = UnityEngine.Random.Range(0, 5);
         audioSource.pitch = 0.75f; //Resets before playing
         for (int i = 0; i < Semitones[random]; i++)
         {
             audioSource.pitch *= 1.059463f; //Modifies pitch to randomly be shifted by a pentatonic semitone
         }
         audioSource.PlayOneShot(SoundEffect);
+    }
+
+    public void OnMouseEnter()
+    {
+        if (!inShop) return;
+
+        Debug.Log("Hover");
+        onCardHover?.Invoke(_cardTemplate);
     }
 
     #endregion

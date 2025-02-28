@@ -277,11 +277,24 @@ public class Deck : MonoBehaviour
         } 
     }
 
-
     public CardTemplate GetCard (CardData data)
     {
-       
         return (CardTemplate)m_DataBase._cardPrefabs.GetValue(data.ownerIndex, data.databaseIndex);
+    }
+
+    public CardTemplate GetCard (int i)
+    {
+        return (CardTemplate)m_DataBase._cardPrefabs.GetValue(m_GameDeck[i].ownerIndex, m_GameDeck[i].databaseIndex);
+    }
+
+    public void AddCard(CardTemplate card)
+    {
+        m_GameDeck.Add(card.Data); 
+    }
+
+    public void RemoveCard(CardData card)
+    {
+        m_GameDeck.Remove(card);
     }
 
     /*

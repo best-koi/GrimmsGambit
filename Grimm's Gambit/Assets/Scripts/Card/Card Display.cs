@@ -56,11 +56,14 @@ public class CardDisplay : MonoBehaviour
             _cardCostText.text = _cardReference.CardCost + "";
         if (_cardDescriptionText != null)
             _cardDescriptionText.text = _cardReference.CardDescription;
-
-        if (_cardReference.Caster.TryGetComponent<BasicCharacter>(out BasicCharacter character))
+        
+        if (_cardReference.Caster != null)
         {
-            _cardOwnerNameText.color = character.GetCharacterColor();
-            _cardOwnerNameText.text = character.GetCharacterName();
+            if (_cardReference.Caster.TryGetComponent<BasicCharacter>(out BasicCharacter character))
+            {
+                _cardOwnerNameText.color = character.GetCharacterColor();
+                _cardOwnerNameText.text = character.GetCharacterName();
+            }
         }
 
         if (_cardCanvas != null)

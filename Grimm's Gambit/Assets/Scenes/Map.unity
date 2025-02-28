@@ -5652,7 +5652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885613611}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11853139, y: -0.6918247, z: 0.11670625, w: 0.702644}
+  m_LocalRotation: {x: 0.11871327, y: -0.690728, z: 0.11652123, w: 0.7037222}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17860,7 +17860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753053071}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11853139, y: -0.6918247, z: 0.11670625, w: 0.702644}
+  m_LocalRotation: {x: 0.11871327, y: -0.690728, z: 0.11652123, w: 0.7037222}
   m_LocalPosition: {x: 23.634, y: 11.199504, z: -0.71899986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26548,6 +26548,10 @@ PrefabInstance:
       value: LycanScene
       objectReference: {fileID: 0}
     - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: ladyScene
+      value: LadyOfTheLake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: moveSpeed
       value: 0.1
       objectReference: {fileID: 0}
@@ -26558,6 +26562,10 @@ PrefabInstance:
     - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: lycanScene
       value: LycanSceneV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
+      propertyPath: beldamScene
+      value: Beldam
       objectReference: {fileID: 0}
     - target: {fileID: 7119261934380535100, guid: 8437ed21482e94ab3b35c0592048d2ef, type: 3}
       propertyPath: sceneObjects
@@ -27195,6 +27203,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Odds
       objectReference: {fileID: 0}
+    - target: {fileID: 5005411519229715030, guid: 06706e35ee87e4031915881481ae104d, type: 3}
+      propertyPath: m_TagString
+      value: Beldam
+      objectReference: {fileID: 0}
     - target: {fileID: 6897426607932915286, guid: 06706e35ee87e4031915881481ae104d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32287073
@@ -27234,6 +27246,10 @@ PrefabInstance:
     - target: {fileID: 6897426607932915286, guid: 06706e35ee87e4031915881481ae104d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649489814851267228, guid: 06706e35ee87e4031915881481ae104d, type: 3}
+      propertyPath: m_TagString
+      value: LadyOfLake
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -27,6 +27,8 @@ public class ShopDisplay : MonoBehaviour
     [SerializeField] private Button rerollButton;
     [SerializeField] private int rerolls;
 
+    [SerializeField] private Button[] itemButtons;
+
     [SerializeField] private int cycleIndex, numberOfPages; //Current page and total pages in shop
 
     [SerializeField] private int numberOfItems = 3; // Number of items to be displayed on each page
@@ -50,6 +52,11 @@ public class ShopDisplay : MonoBehaviour
         {
             pickDescriptions = new TMP_Text[numberOfItems];
         }
+
+        for(int i = 0; i < numberOfItems; i++)
+        {
+            itemButtons[i].onClick.AddListener(() => Acquire(i));
+        }
         
         LoadShopPool();
         DisplayShopItems(); 
@@ -61,6 +68,13 @@ public class ShopDisplay : MonoBehaviour
 
         // Load in cards and arcana from the deck
         playerData = FindObjectOfType<PlayerData>();
+
+        if(playerData == null)
+        {
+            Debug.LogError("No player data. Deck cannot be loaded.");
+            return;
+        }
+
         shopDeck.m_GameDeck = playerData.GetPlayerDeck();
 
         List<CardData> cardPool = new List<CardData>(), temp = new List<CardData>();
@@ -179,6 +193,21 @@ public class ShopDisplay : MonoBehaviour
         } 
         
         LoadShopPool();
+    }
+
+    public void Acquire(int index)
+    {
+        CardTemplate cardRef = displayedItems[cycleIndex, index].GetCard();
+
+        if (cardRef == null)
+        {
+            Heirloom heirloomRef = displayedItems[cycleIndex, index].GetHeirloom();
+            heirloomManager.AddHeirloom(heirloomRef);
+        }
+        else
+        {
+            shopDeck.AddCard(cardRef);
+        }
     }
 
     public void DisplayDeck()

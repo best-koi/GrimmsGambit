@@ -8,6 +8,8 @@ using System.ComponentModel;
 //using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEditor;
+
 
 
 //using Microsoft.Unity.VisualStudio.Editor;
@@ -30,8 +32,9 @@ public class AffixDisplay : MonoBehaviour
     public Canvas parentCanvas;
     public UnityEngine.UI.Image hoverOverImage;
     public TextMeshProUGUI hoverOverText;
+    private bool firstFrame = true;
     
-    public void Start()
+    public void Awake()
     {
         UnityEngine.UI.Image[] images = FindObjectsOfType<UnityEngine.UI.Image>();
         foreach (UnityEngine.UI.Image image in images)
@@ -49,6 +52,25 @@ public class AffixDisplay : MonoBehaviour
             {
                 hoverOverText = text;
                 break;
+            }
+        }
+    }
+
+    public void LateUpdate()
+    {
+        if (firstFrame)
+        {
+            firstFrame = false;
+            // added by danielle; to find the affix UI box and show/hide on hover
+            GameObject[] objects = FindObjectsOfType<GameObject>(true);
+            foreach (GameObject obj in objects)
+            {
+                if (obj.gameObject.name == "AffixDescriptionBox")
+                {
+                    // Debug.Log("found");
+                    obj.SetActive(false);
+                    break;
+                }
             }
         }
     }
