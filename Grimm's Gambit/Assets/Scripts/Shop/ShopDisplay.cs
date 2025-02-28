@@ -68,6 +68,13 @@ public class ShopDisplay : MonoBehaviour
 
         // Load in cards and arcana from the deck
         playerData = FindObjectOfType<PlayerData>();
+
+        if(playerData == null)
+        {
+            Debug.LogError("No player data. Deck cannot be loaded.");
+            return;
+        }
+
         shopDeck.m_GameDeck = playerData.GetPlayerDeck();
 
         List<CardData> cardPool = new List<CardData>(), temp = new List<CardData>();

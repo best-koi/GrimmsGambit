@@ -40,6 +40,12 @@ public class ShopDeckDisplay : MonoBehaviour
 
     private void LoadCards()
     {
+        if(shopDeck.m_GameDeck.Count == 0)
+        {
+            Debug.LogError("Shop deck is empty. Cannot load cards.");
+            return;
+        }
+
         List<CardTemplate> cardTemplates = new List<CardTemplate>();
 
         for (int i = pageNumber * totalPages; i < (pageNumber + 1) * totalPages; i++)

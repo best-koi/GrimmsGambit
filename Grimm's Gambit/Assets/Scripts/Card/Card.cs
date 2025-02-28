@@ -72,6 +72,7 @@ public class Card : MonoBehaviour
     {
         if (!inShop) return;
 
+        Debug.Log("Hover");
         onCardHover?.Invoke(_cardTemplate);
     }
 
