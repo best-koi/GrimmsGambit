@@ -8,7 +8,7 @@ public class CardData
 {
     // Used for 2D array
 
-    [SerializeField] internal int ownerIndex, databaseIndex;
+    [SerializeField] public int ownerIndex, databaseIndex;
 
     public CardData (int ownerIndex, int databaseIndex)
     {
