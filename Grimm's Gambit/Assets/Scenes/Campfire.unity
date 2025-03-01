@@ -2806,10 +2806,10 @@ MonoBehaviour:
   - {fileID: 2017383637}
   - {fileID: 1645186339}
   - {fileID: 464539825}
-  - {fileID: 885300867}
   - {fileID: 123157130}
   - {fileID: 788819963}
   - {fileID: 48148375}
+  - {fileID: 885300867}
   selectedCard: {fileID: 1535174986}
   nextButton: {fileID: 701363035}
   removeButton: {fileID: 194026634}
