@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Euphoric Frenzy
   m_EditorClassIdentifier: 
   _cardName: Euphoric Frenzy
-  _cardDescription: Deal 4 Damage 2 times to all enemies. If Die Katze has Strength,
-    inflict bleed based on 1.5x the Strength.
+  _cardDescription: Deal 4 Damage 2 times to all enemies. Inflicts bleed based on
+    1.5x of Katze's Strength.
   _cardCost: 3
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2

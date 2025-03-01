@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: DeadlyElegance
+  m_Name: Recycle
   m_EditorClassIdentifier: 
-  _cardName: Deadly Elegance
-  _cardDescription: "Deal 20 Damage. Reduce this card\u2019s cost by 1 for every
-    0-cost played in this combat."
-  _cardCost: 5
+  _cardName: Recycle
+  _cardDescription: Discard 2 cards. Gain 2 Spirit.
+  _cardCost: 1
   _cardSprite: {fileID: 0}
-  _playerCopyCount: 2
-  _targetsEnemies: 1
+  _playerCopyCount: 1
+  _targetsEnemies: 0
   _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 1265900286819696649
-  - rid: 927382390012903424
+  - rid: 4232165421192839181
+  - rid: 4232165421192839182
+  - rid: 4232165421192839183
   references:
     version: 2
     RefIds:
-    - rid: 927382390012903424
-      type: {class: DeadlyEleganceManaEffect, ns: , asm: Assembly-CSharp}
+    - rid: 4232165421192839181
+      type: {class: DiscardCardEffect, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 1265900286819696649
-      type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
+    - rid: 4232165421192839182
+      type: {class: DiscardCardEffect, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 4232165421192839183
+      type: {class: AddSpiritEffect, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 20
+        _spiritGained: 2
