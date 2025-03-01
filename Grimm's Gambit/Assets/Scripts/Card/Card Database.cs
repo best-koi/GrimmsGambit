@@ -55,4 +55,9 @@ public class CardDatabase : MonoBehaviour
         }
         return -1; //Should never occur
     }
+
+    public Minion GetMinion (int i)
+    {
+        return _partyIndex[i];
+    }
 }

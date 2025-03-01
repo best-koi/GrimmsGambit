@@ -56,6 +56,8 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void SetCardTemplate(CardTemplate newTemplate)
     {
         _cardTemplate = newTemplate;
+        _caster = FindObjectOfType<Deck>().GetOwner(Data);
+        _currentCardCost = BaseCardCost;
     }
 
     public void PlaySound(AudioSource audioSource)
