@@ -2213,15 +2213,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.89
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 135
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.102333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2512,8 +2512,8 @@ RectTransform:
   - {fileID: 850145456}
   - {fileID: 1944492519}
   - {fileID: 1446853248}
-  - {fileID: 1208127189}
   - {fileID: 452131503}
+  - {fileID: 1208127189}
   - {fileID: 1949725748}
   - {fileID: 439055370}
   - {fileID: 1936064333}
@@ -3222,15 +3222,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 250
+      value: 505
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 133
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.102333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4063,7 +4063,7 @@ MonoBehaviour:
   - {fileID: 73494038}
   - {fileID: 1662160853}
   cycleIndex: 0
-  numberOfPages: 1
+  numberOfPages: 2
   numberOfItems: 3
 --- !u!1 &909068169
 GameObject:
@@ -4645,15 +4645,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 503
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 131
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.102333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
       propertyPath: m_LocalRotation.w
