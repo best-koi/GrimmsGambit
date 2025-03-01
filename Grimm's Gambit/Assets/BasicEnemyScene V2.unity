@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2387,7 +2387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DataBase: {fileID: 0}
+  m_DataBase: {fileID: 8870974378587466512}
   m_StartingHandSize: 6
   m_MaxHandSize: 10
   m_NumDrawsPerTurn: 6

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Predator
   m_EditorClassIdentifier: 
   _cardName: Predator
-  _cardDescription: Target an enemy. Grant X Strength to the Hound for each Armor
+  _cardDescription: Grant X Strength to the Hound for each Armor Reduction & Damage
     Reduction stack on the target.
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
@@ -23,13 +23,14 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 927382194184519683
+  - rid: 927382194184519683
   references:
     version: 2
     RefIds:
     - rid: 927382194184519683
       type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
       data:
-        _checkedDebuff: 2
+        _checkedDebuff: 3
         _checkSelf: 0
         _removeCheckedDebuff: 0
         _applyType: 0

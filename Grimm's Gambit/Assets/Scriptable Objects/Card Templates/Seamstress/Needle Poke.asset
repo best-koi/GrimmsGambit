@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Needle Poke
   m_EditorClassIdentifier: 
   _cardName: Needle Poke
-  _cardDescription: 'Deal 10 Damage. 1 Bleed. '
+  _cardDescription: Deal 2 Damage. Inflict 2 Armor Reduction.
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1
@@ -22,16 +22,16 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 4695933482567467021
-  - rid: 4695933482567467022
+  - rid: 4232165421192839171
   references:
     version: 2
     RefIds:
+    - rid: 4232165421192839171
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 2
+        _value: 2
     - rid: 4695933482567467021
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 10
-    - rid: 4695933482567467022
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 8
-        _value: 1
+        _damage: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hemoglare
   m_EditorClassIdentifier: 
   _cardName: Hemoglare
-  _cardDescription: Apply 2 Bleed. Create 1 Scratch.
+  _cardDescription: Apply 1 Bleed. Create 1 Scratch.
   _cardCost: 0
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2
@@ -30,7 +30,7 @@ MonoBehaviour:
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 8
-        _value: 2
+        _value: 1
     - rid: 1396538504836808715
       type: {class: ConjureEffect, ns: , asm: Assembly-CSharp}
       data:

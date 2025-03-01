@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Hemoflow
   m_EditorClassIdentifier: 
   _cardName: Hemoflow
-  _cardDescription: Triple all Bleed.
-  _cardCost: 3
+  _cardDescription: Doubles all Bleed.
+  _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 2
   _targetsEnemies: 1
@@ -33,6 +33,6 @@ MonoBehaviour:
         _removeCheckedDebuff: 0
         _applyType: 2
         _newDebuff: 8
-        _amountMultiplier: 3
+        _amountMultiplier: 2
         _capValue: -1
         _applyToSelf: 0

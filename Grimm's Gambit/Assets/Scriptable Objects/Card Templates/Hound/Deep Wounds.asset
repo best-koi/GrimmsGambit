@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Deep Wounds
   m_EditorClassIdentifier: 
   _cardName: Deep Wounds
-  _cardDescription: Deal 6 damage. Apply 2 Bleed.
+  _cardDescription: Deal 10 damage. Apply 1 Bleed.
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2
@@ -29,9 +29,9 @@ MonoBehaviour:
     - rid: 1396538503740784641
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 6
+        _damage: 10
     - rid: 4695933079036100614
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 8
-        _value: 2
+        _value: 1

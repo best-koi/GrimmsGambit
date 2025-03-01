@@ -17848,7 +17848,7 @@ MonoBehaviour:
   choicePanel: {fileID: 1896372323}
   _goodChoiceButton: {fileID: 1486449819}
   _badChoiceButton: {fileID: 1650921844}
-  endingScene: Beldam
+  endingScene: LadyOfTheLake
 --- !u!4 &1882162801
 Transform:
   m_ObjectHideFlags: 0
