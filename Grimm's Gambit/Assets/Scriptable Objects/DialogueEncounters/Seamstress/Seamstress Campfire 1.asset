@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: Seamstress Campfire 1
   m_EditorClassIdentifier: 
-  lines: []
-  isHeirSpeaking: 
-  isNarratorText: 
   _dialogueLines:
   - _speaker: 2
     _line: 'You approach the Seamstress. She sits by the fire weaving twine and string
@@ -23,12 +20,10 @@ MonoBehaviour:
     _line: 'As you approach she glances up from her work, pausing before putting
       her supplies away and giving you her full attention. She gives you a weary
       smile. '
-  - _speaker: 2
-    _line: 'Good day to you! Err- evening I suppose.  '
   - _speaker: 0
-    _line: 'Good evening. I wish to speak with you. '
+    _line: 'Good day to you! Err- evening I suppose.  '
   - _speaker: 1
-    _line: Good evening. I wish to speak with you.
+    _line: 'Good evening. I wish to speak with you. '
   - _speaker: 0
     _line: Of course! What ails you, little one?
   - _speaker: 1
