@@ -213,6 +213,11 @@ public class ShopDisplay : MonoBehaviour
             shopDeck.AddCard(cardRef);
             playerData.SetPlayerDeck(shopDeck.m_GameDeck);
         }
+
+        foreach (var button in itemButtons)
+        {
+            button.interactable = false;
+        }
     }
 
     public void DisplayDeck()
