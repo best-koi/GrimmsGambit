@@ -195,6 +195,7 @@ public class ShopDisplay : MonoBehaviour
         } 
         
         LoadShopPool();
+        DisplayShopItems();
     }
 
     public void Acquire(int index)
