@@ -41,7 +41,7 @@ public class Deck : MonoBehaviour
     public static Action<int> onDiscard;
     
     // References database of all cards in the game
-    [SerializeField] private CardDatabase m_DataBase;
+    [SerializeField] internal CardDatabase m_DataBase;
 
     // To be implemented by design 
     [SerializeField] private int m_StartingHandSize, m_MaxHandSize;
@@ -284,6 +284,8 @@ public class Deck : MonoBehaviour
 
     public CardTemplate GetCard (int i)
     {
+        if (i >= m_GameDeck.Count) return null;
+
         return (CardTemplate)m_DataBase._cardPrefabs.GetValue(m_GameDeck[i].ownerIndex, m_GameDeck[i].databaseIndex);
     }
 
@@ -292,9 +294,14 @@ public class Deck : MonoBehaviour
         m_GameDeck.Add(card.Data); 
     }
 
-    public void RemoveCard(CardData card)
+    public void RemoveCard(CardData data)
     {
-        m_GameDeck.Remove(card);
+        m_GameDeck.Remove(data);
+    }
+
+    public Minion GetOwner(CardData data)
+    {
+        return m_DataBase.GetMinion(data.ownerIndex);
     }
 
     /*
