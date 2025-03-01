@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Post Sisters 1
   m_EditorClassIdentifier: 
-  lines:
-  - Well this is an unexpected outcome.
-  - "You\u2019ve lost. "
-  isBossSpeaking: 0100
   speakerName: The Heir
-  isNarratorText: 0000
-  isSpeakerHidden: 0000
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 
