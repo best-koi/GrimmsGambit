@@ -693,44 +693,20 @@ MonoBehaviour:
   heir: {fileID: 1886948582}
   speakerText: {fileID: 2120171774}
   conversationText: {fileID: 440346916}
-  chosenCharacterText: {fileID: 0}
-  chosenCharacter: 
-  talkButton: {fileID: 0}
-  shopButton: {fileID: 0}
-  party: {fileID: 0}
-  talkPanel: {fileID: 0}
   dialogueWindow: {fileID: 30174703}
-  advanceButton: {fileID: 897589571}
-  finishSelectionButton: {fileID: 0}
-  seamstressConversations: []
-  katzeConversations: []
-  houndConversations: []
-  seamstressDialogue1: {fileID: 0}
-  seamstressDialogue2Good: {fileID: 0}
-  seamstressDialogue2Bad: {fileID: 0}
-  seamstressDialogue3Good: {fileID: 0}
-  seamstressDialogue3Bad: {fileID: 0}
-  houndDialogue1: {fileID: 0}
-  houndDialogue2Good: {fileID: 0}
-  houndDialogue2Bad: {fileID: 0}
-  houndDialogue3Good: {fileID: 0}
-  houndDialogue3Bad: {fileID: 0}
-  katzeDialogue1: {fileID: 0}
-  katzeDialogue2Good: {fileID: 0}
-  katzeDialogue2Bad: {fileID: 0}
-  katzeDialogue3Good: {fileID: 0}
-  katzeDialogue3Bad: {fileID: 0}
-  selectedConversation: {fileID: 0}
-  textSpeed: 0.05
+  advanceButton: {fileID: 897589573}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   seamstressSFX: {fileID: 0}
   houndSFX: {fileID: 0}
   katzeSFX: {fileID: 0}
   heirSFX: {fileID: 0}
   narratorSFX: {fileID: 0}
+  textSpeed: 0.05
   boss: {fileID: 334348672}
   bossDialogue:
   - {fileID: 11400000, guid: 5ecdc7a4e5236ac4296f87da96614191, type: 2}
+  - {fileID: 11400000, guid: 8e856aad064f35b47ad315c7bf9ee37f, type: 2}
+  - {fileID: 11400000, guid: 48873d8fac64e0f4691fbb8ccf94fac7, type: 2}
   bossName: The Lycan
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
@@ -738,8 +714,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f49b3d13bdf14f189683971b3f17e09, type: 2}
   badEnding: []
   choicePanel: {fileID: 1896372323}
-  goodButton: {fileID: 609665961}
-  badButton: {fileID: 959178115}
+  _goodChoiceButton: {fileID: 0}
+  _badChoiceButton: {fileID: 0}
   endingScene: 
 --- !u!1001 &351340439
 PrefabInstance:
