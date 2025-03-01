@@ -16,4 +16,4 @@ MonoBehaviour:
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
-    _line: 
+    _line: The Text

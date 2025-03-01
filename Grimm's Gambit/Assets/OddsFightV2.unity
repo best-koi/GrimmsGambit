@@ -1880,7 +1880,7 @@ MonoBehaviour:
   sceneParent: {fileID: 1558088976}
   enemies: []
   enemySceneName: OddsFightV2
-  encounterWinScene: Encounter Victory Scene
+  encounterWinScene: OddsPostDialogue
   encounterLossScene: EncounterLoss
 --- !u!1001 &822163614
 PrefabInstance:

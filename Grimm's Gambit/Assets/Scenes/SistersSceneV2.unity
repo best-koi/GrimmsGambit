@@ -7977,7 +7977,7 @@ MonoBehaviour:
   sceneParent: {fileID: 1558088976}
   enemies: []
   enemySceneName: SistersSceneV2
-  encounterWinScene: Encounter Victory Scene
+  encounterWinScene: SistersPostDialogue
   encounterLossScene: EncounterLoss
 --- !u!1001 &835207037
 PrefabInstance:

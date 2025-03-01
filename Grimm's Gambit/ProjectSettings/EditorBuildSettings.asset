@@ -44,4 +44,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Beldam.unity
     guid: 722e8d808f0f94610ac2c4fb3c8c9c6c
+  - enabled: 1
+    path: Assets/OddsPostDialogue.unity
+    guid: 56678884f215f45e598d19092b775d5e
+  - enabled: 1
+    path: Assets/Scenes/CEScenes/SistersPostDialogue.unity
+    guid: 4e1eca60e4646164390b0dbfaa39cd4c
+  - enabled: 1
+    path: Assets/Scenes/CEScenes/LycanPostDialogue.unity
+    guid: 32dc59311aaaa2d459b8f7c02e895833
   m_configObjects: {}
