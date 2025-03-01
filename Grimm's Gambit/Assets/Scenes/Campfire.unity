@@ -2776,8 +2776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4beea05128edf49449dffacd95a43b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardDatabase: {fileID: 0}
-  shopDeck: {fileID: 0}
+  cardDatabase: {fileID: 8870974378587466512}
+  shopDeck: {fileID: 122082347}
   displayedCards:
   - {fileID: 956167631}
   - {fileID: 1814010144}
@@ -4063,7 +4063,7 @@ MonoBehaviour:
   - {fileID: 73494038}
   - {fileID: 1662160853}
   cycleIndex: 0
-  numberOfPages: 2
+  numberOfPages: 1
   numberOfItems: 3
 --- !u!1 &909068169
 GameObject:

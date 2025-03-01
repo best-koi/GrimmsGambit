@@ -55,6 +55,7 @@ public class ShopDeckDisplay : MonoBehaviour
 
         for (int i = 0; i < displayedCards.Length; i++)
         {
+            Debug.Log($"i: {i}");
             if (cardTemplates[i] == null)
             {
                 displayedCards[i].gameObject.SetActive(false);
