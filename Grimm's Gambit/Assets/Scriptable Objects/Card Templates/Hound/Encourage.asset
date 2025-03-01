@@ -10,18 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Recycle
+  m_Name: Encourage
   m_EditorClassIdentifier: 
-  _cardName: Recycle
-  _cardDescription: 'Discard the current hand and redraw your hand based on the number
-    discarded. Must be the first card played during turn.  '
-  _cardCost: 1
-  _cardSprite: {fileID: 0}
+  _cardName: Encourage
+  _cardDescription: Gain a spirit. Once.
+  _cardCost: 0
+  _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 0
   _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
-  _spells: []
+  _spells:
+  - rid: 4232165421192839186
+  - rid: 4232165421192839185
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4232165421192839185
+      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 4232165421192839186
+      type: {class: AddSpiritEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _spiritGained: 1

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Clean
   m_EditorClassIdentifier: 
   _cardName: Clean
-  _cardDescription: Cleanse a random debuff.
-  _cardCost: 3
+  _cardDescription: Cleanse a random debuff and heal 3 HP.
+  _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 0
@@ -22,6 +22,7 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 927382214592954368
+  - rid: 4232165421192839170
   references:
     version: 2
     RefIds:
@@ -31,3 +32,8 @@ MonoBehaviour:
         _clearingType: 1
         _affixToClear: 0
         _amount: -1
+    - rid: 4232165421192839170
+      type: {class: HealSpellEffect, ns: , asm: Assembly-CSharp}
+      data:
+        m_Amount: 3
+        m_TargetingSelf: 0

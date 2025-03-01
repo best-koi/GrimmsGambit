@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Lick Wounds
   m_EditorClassIdentifier: 
   _cardName: Lick Wounds
-  _cardDescription: Remove all Block on a party member. Heal half of the Block that
-    was removed, rounding up.
-  _cardCost: 2
+  _cardDescription: Remove all Block on a party member, then heal that party member
+    for half of the Block that was removed, rounding up.
+  _cardCost: 0
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 2
   _targetsEnemies: 0
@@ -30,10 +30,10 @@ MonoBehaviour:
       type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
       data:
         _checkedDebuff: 1
-        _checkSelf: 1
+        _checkSelf: 0
         _removeCheckedDebuff: 1
         _applyType: 1
         _newDebuff: 0
         _amountMultiplier: 0.5
         _capValue: -1
-        _applyToSelf: 1
+        _applyToSelf: 0
