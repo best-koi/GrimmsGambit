@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Post Lycan 2
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
-  speakerName: Seamstress
+  speakerName: The Seamstress
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
