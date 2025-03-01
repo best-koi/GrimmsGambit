@@ -546,177 +546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334348672}
   m_CullTransparentMesh: 1
---- !u!1 &343700811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 343700814}
-  - component: {fileID: 343700815}
-  - component: {fileID: 343700812}
-  m_Layer: 0
-  m_Name: DialogueHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &343700812
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.6
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &343700814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 373.002, y: 244.31743, z: -10.944984}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &343700815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343700811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbbd2e3991a4449858ced5783c41f525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seamstress: {fileID: 904382473}
-  hound: {fileID: 1956932277}
-  katze: {fileID: 1216078151}
-  heir: {fileID: 1886948582}
-  speakerText: {fileID: 2120171774}
-  conversationText: {fileID: 440346916}
-  dialogueWindow: {fileID: 30174703}
-  advanceButton: {fileID: 897589573}
-  SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
-  narratorSFX: {fileID: 0}
-  textSpeed: 0.05
-  boss: {fileID: 334348672}
-  bossDialogue:
-  - {fileID: 11400000, guid: 5ecdc7a4e5236ac4296f87da96614191, type: 2}
-  - {fileID: 11400000, guid: 8e856aad064f35b47ad315c7bf9ee37f, type: 2}
-  - {fileID: 11400000, guid: 48873d8fac64e0f4691fbb8ccf94fac7, type: 2}
-  bossName: The Lycan
-  selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding:
-  - {fileID: 11400000, guid: 2f49b3d13bdf14f189683971b3f17e09, type: 2}
-  badEnding: []
-  choicePanel: {fileID: 1896372323}
-  _goodChoiceButton: {fileID: 0}
-  _badChoiceButton: {fileID: 0}
-  endingScene: 
 --- !u!1001 &351340439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1331,7 +1160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLineGood
         m_Mode: 1
@@ -1981,7 +1810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
@@ -2328,7 +2157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: NextLineBad
         m_Mode: 1
@@ -2845,7 +2674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: StartGoodDialogue
         m_Mode: 1
@@ -2895,6 +2724,176 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486449817}
   m_CullTransparentMesh: 1
+--- !u!1 &1582315745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1582315748}
+  - component: {fileID: 1582315747}
+  - component: {fileID: 1582315746}
+  m_Layer: 0
+  m_Name: DialogueHandler (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1582315746
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582315745}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1582315747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582315745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd2e3991a4449858ced5783c41f525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seamstress: {fileID: 904382473}
+  hound: {fileID: 1956932277}
+  katze: {fileID: 1216078151}
+  heir: {fileID: 1886948582}
+  speakerText: {fileID: 2120171774}
+  conversationText: {fileID: 440346916}
+  dialogueWindow: {fileID: 30174703}
+  advanceButton: {fileID: 897589573}
+  SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  seamstressSFX: {fileID: 0}
+  houndSFX: {fileID: 0}
+  katzeSFX: {fileID: 0}
+  heirSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
+  textSpeed: 0.05
+  boss: {fileID: 334348672}
+  bossDialogue:
+  - {fileID: 11400000, guid: 5ecdc7a4e5236ac4296f87da96614191, type: 2}
+  - {fileID: 11400000, guid: 8e856aad064f35b47ad315c7bf9ee37f, type: 2}
+  - {fileID: 11400000, guid: 48873d8fac64e0f4691fbb8ccf94fac7, type: 2}
+  bossName: The Lycan
+  selectedBossConversation: {fileID: 0}
+  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  goodEnding: []
+  badEnding: []
+  choicePanel: {fileID: 1896372323}
+  _goodChoiceButton: {fileID: 1486449819}
+  _badChoiceButton: {fileID: 1650921844}
+  endingScene: LycanPostDialogue
+--- !u!4 &1582315748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582315745}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 373.002, y: 244.31743, z: -10.944984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618420811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3245,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343700815}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PostDialogueHandler, Assembly-CSharp
         m_MethodName: StartBadDialogue
         m_Mode: 1
@@ -4214,7 +4213,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 209809839}
   - {fileID: 393879357}
-  - {fileID: 343700814}
   - {fileID: 2058606331}
   - {fileID: 413595362}
   - {fileID: 255542065}
@@ -4232,3 +4230,4 @@ SceneRoots:
   - {fileID: 847956928}
   - {fileID: 369317478}
   - {fileID: 493891288}
+  - {fileID: 1582315748}
