@@ -24173,7 +24173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DataBase: {fileID: 0}
+  m_DataBase: {fileID: 8870974378587466512}
   m_StartingHandSize: 6
   m_MaxHandSize: 10
   m_NumDrawsPerTurn: 6
@@ -30237,6 +30237,10 @@ MonoBehaviour:
       - {fileID: 11400000, guid: eadda97efa864ea40b41d3aa67b3686d, type: 2}
       - {fileID: 11400000, guid: be759435246463c41a85a3dccf9705f0, type: 2}
       - {fileID: 11400000, guid: fa511d722ac2fd942bfa9c00a2e5b6ce, type: 2}
+      - {fileID: 11400000, guid: 4b5fdd771dc20fb4caa54d14893052c9, type: 2}
+      - {fileID: 11400000, guid: 6b442947957bea44ea152a63af83dda0, type: 2}
+      - {fileID: 11400000, guid: 6780f04d910d4624aa2372e76a12e4e3, type: 2}
+      - {fileID: 11400000, guid: 43e2142ceb4b4c547b5888a1f895d8d0, type: 2}
     - _row:
       - {fileID: 11400000, guid: 6c012eeddc201c74f8672e72867b62d5, type: 2}
       - {fileID: 11400000, guid: 12adb2c91bb39714ba42e76ed20a9426, type: 2}

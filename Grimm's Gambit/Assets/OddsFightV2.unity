@@ -3652,7 +3652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DataBase: {fileID: 0}
+  m_DataBase: {fileID: 8870974378587466512}
   m_StartingHandSize: 6
   m_MaxHandSize: 10
   m_NumDrawsPerTurn: 6

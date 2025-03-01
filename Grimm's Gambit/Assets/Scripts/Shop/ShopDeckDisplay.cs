@@ -62,6 +62,7 @@ public class ShopDeckDisplay : MonoBehaviour
             }
             else
             {
+                displayedCards[i].gameObject.SetActive(true);
                 displayedCards[i].SetCardTemplate(cardTemplates[i]);
             }
         }
