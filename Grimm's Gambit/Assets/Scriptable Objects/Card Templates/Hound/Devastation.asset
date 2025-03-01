@@ -30,7 +30,7 @@ MonoBehaviour:
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 14
-        _value: 0
+        _value: 1
     - rid: 1265900286819696645
       type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
       data: 
