@@ -53,7 +53,16 @@ protected override void Update()
             isSecondPhase = true; 
         healthText.text = $"{minion.currentHealth}/ {minion.maxHealth}";
         nameText.text = enemyName;
-        CheckCurrentAttack();
+        
+        HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
+        if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
+        {
+            moveText.text = "Blindfold Active"; //This could be replaced with simply ""
+        }
+        else
+        {
+            CheckCurrentAttack();
+        }
         
         
 
