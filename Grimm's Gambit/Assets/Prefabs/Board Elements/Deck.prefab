@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6289190219837066044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3840003271962376168}
+  - component: {fileID: 1946599794506594372}
+  m_Layer: 0
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3840003271962376168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289190219837066044}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.746792, y: 0.54340506, z: 1.7113171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946599794506594372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289190219837066044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afa06e296b9a6f4486cb7c98d3aa2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DataBase: {fileID: 0}
+  m_StartingHandSize: 6
+  m_MaxHandSize: 10
+  m_NumDrawsPerTurn: 6
+  m_MaxCountThisTurn: 0
+  m_GameDeck:
+  - ownerIndex: 0
+    databaseIndex: 0
+  - ownerIndex: 0
+    databaseIndex: 0
+  - ownerIndex: 0
+    databaseIndex: 1
+  - ownerIndex: 0
+    databaseIndex: 1
+  - ownerIndex: 0
+    databaseIndex: 2
+  - ownerIndex: 0
+    databaseIndex: 2
+  - ownerIndex: 0
+    databaseIndex: 3
+  - ownerIndex: 0
+    databaseIndex: 3
+  - ownerIndex: 0
+    databaseIndex: 4
+  - ownerIndex: 0
+    databaseIndex: 4
+  - ownerIndex: 0
+    databaseIndex: 5
+  - ownerIndex: 0
+    databaseIndex: 5
+  - ownerIndex: 0
+    databaseIndex: 6
+  - ownerIndex: 0
+    databaseIndex: 6
+  - ownerIndex: 0
+    databaseIndex: 7
+  - ownerIndex: 0
+    databaseIndex: 7
+  - ownerIndex: 0
+    databaseIndex: 8
+  - ownerIndex: 0
+    databaseIndex: 8
+  - ownerIndex: 0
+    databaseIndex: 9
+  - ownerIndex: 0
+    databaseIndex: 9
+  - ownerIndex: 0
+    databaseIndex: 10
+  - ownerIndex: 0
+    databaseIndex: 10
+  - ownerIndex: 0
+    databaseIndex: 11
+  - ownerIndex: 0
+    databaseIndex: 11
+  - ownerIndex: 0
+    databaseIndex: 12
+  - ownerIndex: 0
+    databaseIndex: 12
+  - ownerIndex: 0
+    databaseIndex: 13
+  - ownerIndex: 0
+    databaseIndex: 13
+  - ownerIndex: 0
+    databaseIndex: 14
+  - ownerIndex: 0
+    databaseIndex: 14
+  - ownerIndex: 0
+    databaseIndex: 15
+  - ownerIndex: 0
+    databaseIndex: 15
+  - ownerIndex: 1
+    databaseIndex: 0
+  - ownerIndex: 1
+    databaseIndex: 0
+  - ownerIndex: 1
+    databaseIndex: 1
+  - ownerIndex: 1
+    databaseIndex: 1
+  - ownerIndex: 1
+    databaseIndex: 2
+  - ownerIndex: 1
+    databaseIndex: 2
+  - ownerIndex: 1
+    databaseIndex: 3
+  - ownerIndex: 1
+    databaseIndex: 3
+  - ownerIndex: 1
+    databaseIndex: 4
+  - ownerIndex: 1
+    databaseIndex: 4
+  - ownerIndex: 1
+    databaseIndex: 5
+  - ownerIndex: 1
+    databaseIndex: 5
+  - ownerIndex: 1
+    databaseIndex: 6
+  - ownerIndex: 1
+    databaseIndex: 6
+  - ownerIndex: 1
+    databaseIndex: 7
+  - ownerIndex: 1
+    databaseIndex: 7
+  - ownerIndex: 1
+    databaseIndex: 8
+  - ownerIndex: 1
+    databaseIndex: 8
+  - ownerIndex: 1
+    databaseIndex: 9
+  - ownerIndex: 1
+    databaseIndex: 9
+  - ownerIndex: 1
+    databaseIndex: 10
+  - ownerIndex: 1
+    databaseIndex: 10
+  - ownerIndex: 1
+    databaseIndex: 11
+  - ownerIndex: 1
+    databaseIndex: 11
+  - ownerIndex: 1
+    databaseIndex: 12
+  - ownerIndex: 1
+    databaseIndex: 12
+  - ownerIndex: 1
+    databaseIndex: 13
+  - ownerIndex: 1
+    databaseIndex: 13
+  - ownerIndex: 1
+    databaseIndex: 14
+  - ownerIndex: 1
+    databaseIndex: 14
+  - ownerIndex: 2
+    databaseIndex: 0
+  - ownerIndex: 2
+    databaseIndex: 0
+  - ownerIndex: 2
+    databaseIndex: 1
+  - ownerIndex: 2
+    databaseIndex: 1
+  - ownerIndex: 2
+    databaseIndex: 1
+  - ownerIndex: 2
+    databaseIndex: 2
+  - ownerIndex: 2
+    databaseIndex: 2
+  - ownerIndex: 2
+    databaseIndex: 3
+  - ownerIndex: 2
+    databaseIndex: 3
+  - ownerIndex: 2
+    databaseIndex: 4
+  - ownerIndex: 2
+    databaseIndex: 4
+  - ownerIndex: 2
+    databaseIndex: 5
+  - ownerIndex: 2
+    databaseIndex: 5
+  - ownerIndex: 2
+    databaseIndex: 6
+  - ownerIndex: 2
+    databaseIndex: 6
+  - ownerIndex: 2
+    databaseIndex: 7
+  - ownerIndex: 2
+    databaseIndex: 7
+  - ownerIndex: 2
+    databaseIndex: 8
+  - ownerIndex: 2
+    databaseIndex: 8
+  - ownerIndex: 2
+    databaseIndex: 9
+  - ownerIndex: 2
+    databaseIndex: 9
+  - ownerIndex: 2
+    databaseIndex: 10
+  - ownerIndex: 2
+    databaseIndex: 10
+  - ownerIndex: 2
+    databaseIndex: 11
+  - ownerIndex: 2
+    databaseIndex: 11
+  - ownerIndex: 2
+    databaseIndex: 12
+  - ownerIndex: 2
+    databaseIndex: 12
+  - ownerIndex: 2
+    databaseIndex: 13
+  - ownerIndex: 2
+    databaseIndex: 13
+  - ownerIndex: 2
+    databaseIndex: 14
+  - ownerIndex: 2
+    databaseIndex: 14
+  - ownerIndex: 2
+    databaseIndex: 15
+  - ownerIndex: 2
+    databaseIndex: 15
+  m_Hand: []
+  m_DiscardPile: []
+  m_RemovedZone: []
