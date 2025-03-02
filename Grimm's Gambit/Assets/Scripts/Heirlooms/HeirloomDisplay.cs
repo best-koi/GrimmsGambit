@@ -134,7 +134,7 @@ public class HeirloomDisplay : MonoBehaviour
 
             int row = index/imagesPerRow; //Calculates row number
             int column = index % imagesPerRow; //Calculates column number
-            rectTransform.anchoredPosition = new Vector2(column * .33f, -row * .33f); //Shifts by .33, adjust value if needed
+            rectTransform.anchoredPosition = new Vector2(column * 7.5f, -row * 7.5f); //Shifts by 7.5, adjust value if needed
             index++; //increments index for next entry
             
             SpriteRenderer imageComponent = newSpriteObject.AddComponent<SpriteRenderer>();

@@ -24,6 +24,8 @@ public class HeirloomManager : MonoBehaviour
     
     private void Awake()
     {
+        AddHeirloom(Heirloom.Lycan);
+        AddHeirloom(Heirloom.Hamelin);
         heirloomDisplay = FindObjectOfType<HeirloomDisplay>();
     }
     
