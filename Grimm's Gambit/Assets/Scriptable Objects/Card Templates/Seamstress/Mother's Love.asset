@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mother's Love
   m_EditorClassIdentifier: 
   _cardName: Mother's Love
-  _cardDescription: Grant the party 6 HP and 8 Block.
+  _cardDescription: Heal the party 6 HP. Apply 8 Block to party.
   _cardCost: 3
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 2

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Lick Wounds
   m_EditorClassIdentifier: 
   _cardName: Lick Wounds
-  _cardDescription: Remove all Block on a party member, then heal that party member
-    for half of the Block that was removed, rounding up.
+  _cardDescription: Remove all Block on a party member. Heal party member for 1/2
+    of Block that was removed, rounding up.
   _cardCost: 0
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 2

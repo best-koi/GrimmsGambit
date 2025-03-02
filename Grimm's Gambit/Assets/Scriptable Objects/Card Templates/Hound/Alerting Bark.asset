@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Alerting Bark
   m_EditorClassIdentifier: 
   _cardName: Alerting Bark
-  _cardDescription: Grant 15 block. Once.
+  _cardDescription: Apply 15 Block. Once.
   _cardCost: 0
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 1

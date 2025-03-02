@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fury Swipes
   m_EditorClassIdentifier: 
   _cardName: Fury Swipes
-  _cardDescription: Deal 4 damage five times. Apply Tired to self.
+  _cardDescription: Deal 4 damage 5 times. Apply Tired to self.
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2
