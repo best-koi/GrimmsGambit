@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5214422326822830046, guid: 05dc9582c59aa3345abf282d077777c1, type: 3}
       propertyPath: m_Name
-      value: HeirloomManager Variant
+      value: HeirloomManager ProperlyPositioned
       objectReference: {fileID: 0}
     - target: {fileID: 6438412250541067196, guid: 05dc9582c59aa3345abf282d077777c1, type: 3}
       propertyPath: m_LocalPosition.x

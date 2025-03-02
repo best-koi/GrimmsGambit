@@ -20,7 +20,7 @@ public enum Heirloom
 public class HeirloomManager : MonoBehaviour
 {
     private List<Heirloom> currentHeirlooms = new List<Heirloom>(); //List to control current heirlooms
-    private HeirloomDisplay heirloomDisplay;
+    public HeirloomDisplay heirloomDisplay;
     
     private void Awake()
     {
@@ -37,7 +37,10 @@ public class HeirloomManager : MonoBehaviour
         if (!currentHeirlooms.Contains(heirloom))
         {
             currentHeirlooms.Add(heirloom);
-            heirloomDisplay.AddHeirloom(heirloom); //For visual aspect
+            if (heirloomDisplay)
+            {
+                heirloomDisplay.AddHeirloom(heirloom); //For visual aspect
+            }
         }
     }
 
@@ -46,7 +49,10 @@ public class HeirloomManager : MonoBehaviour
         if (currentHeirlooms.Contains(heirloom))
         {
             currentHeirlooms.Remove(heirloom);
-            heirloomDisplay.RemoveHeirloom(heirloom); //For visual aspect
+            if (heirloomDisplay)
+            {
+                heirloomDisplay.RemoveHeirloom(heirloom); //For visual aspect
+            }
         }
     }
 
@@ -62,8 +68,12 @@ public class HeirloomManager : MonoBehaviour
         return currentHeirlooms;
     }
 
-    public void SetHeirlooms(List<Heirloom> heirlooms)
+    public void SetHeirlooms(List<Heirloom> heirlooms) //Adjusted by ryan to properly update heirloom display
     {
         currentHeirlooms = heirlooms;
+        foreach (Heirloom heirloom in heirlooms)
+        {
+            AddHeirloom(heirloom); //Considers visual aspect as well
+        }
     }
 }

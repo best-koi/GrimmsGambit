@@ -25,8 +25,34 @@ public class HeirloomDisplay : MonoBehaviour
     //Prefab references for mouseover window - must contain:
     public GameObject tooltipPrefab;
     public Canvas parentCanvas;
+    //Identical to display code for affixes:
+    public UnityEngine.UI.Image hoverOverImage;
+    public TextMeshProUGUI hoverOverText;
     
+    public void Awake()
+    {
+        UnityEngine.UI.Image[] images = FindObjectsOfType<UnityEngine.UI.Image>();
+        foreach (UnityEngine.UI.Image image in images)
+        {
+            if (image.gameObject.name == "AffixImage")
+            {
+                hoverOverImage = image;
+                break;
+            }
+        }
+        TextMeshProUGUI[] texts = FindObjectsOfType<TextMeshProUGUI>();
+        foreach (TextMeshProUGUI text in texts)
+        {
+            if (text.gameObject.name == "AffixDescription")
+            {
+                hoverOverText = text;
+                break;
+            }
+        }
+    }
     
+    //Display object is not disabled since the affix display already accomplishes this
+
     public void AddHeirloom(Heirloom newHeirloom) //Adds an heirloom to display
     {
         if (heirloomImageLibrary == null)
@@ -127,7 +153,9 @@ public class HeirloomDisplay : MonoBehaviour
             detector.parentObject = newSpriteObject;
             detector.imageContainer = imageContainer;
             detector.Description = stringDictionary[heirloomImage.Key]; //Uses specific heirloom description
-
+            detector.displayImageLocation = hoverOverImage;
+            detector.displayTextLocation = hoverOverText;
+            detector.Image = heirloomImage.Value;
         }
     }
 
