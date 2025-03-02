@@ -6,7 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Transactions;
 using Unity.Collections;
-using Unity.PlasticSCM.Editor.WebApi;
+//using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
