@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Needle Poke
   m_EditorClassIdentifier: 
   _cardName: Needle Poke
-  _cardDescription: Deal 2 Damage. Inflict 2 Armor Reduction.
+  _cardDescription: Deal 2 Damage. Apply 2 Armor Reduction.
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1

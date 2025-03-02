@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Breaker Bite
   m_EditorClassIdentifier: 
   _cardName: Breaker Bite
-  _cardDescription: Deal 5 damage. Remove all block in the enemy.
+  _cardDescription: Deal 5 Damage. Remove all block from the target.
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2

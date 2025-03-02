@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Coated Up
   m_EditorClassIdentifier: 
   _cardName: Coated Up
-  _cardDescription: 'Gain 7 Block. Recover 2 HP, recover 3 more if HP is equal to
-    or less than 50% HP. '
+  _cardDescription: 'Gain 7 Block. Heal 2 HP. Heal 3 more HP if party member is at
+    or below 50% max health. '
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 2
