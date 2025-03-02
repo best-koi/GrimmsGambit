@@ -25,6 +25,15 @@ public class ShopDeckDisplay : MonoBehaviour
 
     private void OnEnable()
     {
+        SetMaxPageSize();
+
+        pageNumber = 0;
+
+        LoadCards();
+    }
+
+    private void SetMaxPageSize()
+    {
         int deckSize = shopDeck.m_GameDeck.Count;
         totalPages = deckSize / displayedCards.Length;
 
@@ -33,9 +42,14 @@ public class ShopDeckDisplay : MonoBehaviour
             totalPages++;
         }
 
-        pageNumber = 0;
-
-        LoadCards();
+        if(totalPages <= 1)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+            nextButton.interactable = true;
+        }
     }
 
     private void LoadCards()
@@ -70,6 +84,8 @@ public class ShopDeckDisplay : MonoBehaviour
 
     public void CyclePage()
     {
+        SetMaxPageSize();
+
         if (pageNumber + 1 >= totalPages) pageNumber = 0;
         else pageNumber++;
 
