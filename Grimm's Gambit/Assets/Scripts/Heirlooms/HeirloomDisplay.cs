@@ -63,39 +63,39 @@ public class HeirloomDisplay : MonoBehaviour
         {
             case Heirloom.Hamelin:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[0]);
-                stringDictionary.Add(newHeirloom, "Flute of Hamelin - Gain one more maximum spirit.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[0]);
                 break;
             case Heirloom.Carnation:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[1]);
-                stringDictionary.Add(newHeirloom, "Pink Carnation - Applies one more debuff stack when applying debuffs.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[1]);
                 break;
             case Heirloom.Jar:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[2]);
-                stringDictionary.Add(newHeirloom, "Greedy Jar - At the start of combat, draw 2 more cards.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[2]);
                 break;
             case Heirloom.Silk:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[3]);
-                stringDictionary.Add(newHeirloom, "Faded Gold Silk - The first card played for a party member costs 0 in combat.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[3]);
                 break;
             case Heirloom.Blindfold:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[4]);
-                stringDictionary.Add(newHeirloom, "Bloody Blindfold - Enemy intents will be hidden.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[4]);
                 break;
             case Heirloom.Miracle:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[5]);
-                stringDictionary.Add(newHeirloom, "Miracle Water - If a party member were to take fatal damage, use this water to nullify that hit.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[5]);
                 break;
             case Heirloom.Lycan:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[6]);
-                stringDictionary.Add(newHeirloom, "Lycan's Fang - Scratch cards now deal 2 more damage and apply 1 more Bleed.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[6]);
                 break;
             case Heirloom.Serpent:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[7]);
-                stringDictionary.Add(newHeirloom, "Serpent Ring - Gain 1 Strength this combat if the Hound has given at least 12 Block in a turn.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[7]);
                 break;
             case Heirloom.Sweater:
                 imageDictionary.Add(newHeirloom, heirloomImageLibrary.spriteLibrary[8]);
-                stringDictionary.Add(newHeirloom, "Durable Sweater - The Seamstress gains 4 Block at the end of a turn.");
+                stringDictionary.Add(newHeirloom, heirloomImageLibrary.descriptionLibrary[8]);
                 break;
             default:
                 break;

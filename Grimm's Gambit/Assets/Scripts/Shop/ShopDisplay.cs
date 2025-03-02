@@ -15,6 +15,7 @@ public class ShopDisplay : MonoBehaviour
     [SerializeField] private Deck shopDeck;
     private PlayerData playerData;
     private HeirloomManager heirloomManager;
+    private HeirloomImageLibrary heirloomImages;
 
     [SerializeField] private GameObject shopUI;
     [SerializeField] private GameObject deckViewUI;
@@ -39,6 +40,8 @@ public class ShopDisplay : MonoBehaviour
     {
         displayedItems = new ShopItem[numberOfItems, numberOfPages + 1];
         
+        heirloomImages = FindAnyObjectByType<HeirloomImageLibrary>();
+
         if (pickImages.Length != numberOfItems)
         {
             pickImages = new Image[numberOfItems];
@@ -140,7 +143,7 @@ public class ShopDisplay : MonoBehaviour
                 if (j == (numberOfItems - 1))
                 {
                     Debug.Log("heirloom reach");
-                    item.StoreHeirloom(heirlooms[j]);
+                    item.StoreHeirloom(heirlooms[j], heirloomImages);
                 }
                 else
                 {
