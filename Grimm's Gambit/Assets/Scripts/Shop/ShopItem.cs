@@ -29,13 +29,14 @@ public class ShopItem : ScriptableObject
         return description;
     }
 
-    public void StoreHeirloom(Heirloom heirloom)
+    public void StoreHeirloom(Heirloom heirloom, HeirloomImageLibrary library)
     {
         heirloomRef = heirloom;
 
         itemName = heirloom.ToString();
 
-        // Store item description and image
+        description = library.descriptionLibrary[(int)heirloom];
+        icon = library.spriteLibrary[(int)heirloom];
     }
 
     public void StoreCard(CardTemplate card)

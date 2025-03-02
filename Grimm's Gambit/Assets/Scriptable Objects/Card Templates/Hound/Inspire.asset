@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Inspire
   m_EditorClassIdentifier: 
   _cardName: Inspire
-  _cardDescription: "Grant a party member Hound\u2019s Counter."
+  _cardDescription: "Apply Hound\u2019s Counter."
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 1

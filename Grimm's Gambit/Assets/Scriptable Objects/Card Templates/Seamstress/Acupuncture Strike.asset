@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Acupuncture Strike
   m_EditorClassIdentifier: 
   _cardName: Acupuncture Strike
-  _cardDescription: 'Deal 8 Damage. Draw 1 card. '
+  _cardDescription: 'Deal 8 Damage. Draw 1 Card. '
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1

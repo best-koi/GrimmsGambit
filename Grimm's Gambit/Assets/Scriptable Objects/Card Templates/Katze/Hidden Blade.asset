@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hidden Blade
   m_EditorClassIdentifier: 
   _cardName: Hidden Blade
-  _cardDescription: Deal 8 damage. If the enemy has Mark, gain a Spirit and apply
+  _cardDescription: Deal 8 Damage. If the target has Mark, gain 1 Spirit and apply
     2 Bleed.
   _cardCost: 1
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}

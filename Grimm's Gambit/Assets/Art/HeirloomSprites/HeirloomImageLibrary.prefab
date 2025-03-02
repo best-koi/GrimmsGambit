@@ -54,3 +54,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 60b26fa738fd49443a8d42cff6addf75, type: 3}
   - {fileID: 21300000, guid: 67481b17b002ee143aecda8a461606e7, type: 3}
   - {fileID: 21300000, guid: b2abf6102fdb602419fe415df86d0fd2, type: 3}
+  descriptionLibrary:
+  - Flute of Hamelin - Gain one more maximum spirit.
+  - Pink Carnation - Applies one more debuff stack when applying debuffs.
+  - Greedy Jar - At the start of combat, draw 2 more cards.
+  - Faded Gold Silk - The first card played for a party member costs 0 in combat.
+  - Bloody Blindfold - Enemy intents will be hidden.
+  - Miracle Water - If a party member were to take fatal damage, use this water to
+    nullify that hit.
+  - Lycan's Fang - Scratch cards now deal 2 more damage and apply 1 more Bleed.
+  - Serpent Ring - Gain 1 Strength this combat if the Hound has given at least 12
+    Block in a turn.
+  - Durable Sweater - The Seamstress gains 4 Block at the end of a turn.

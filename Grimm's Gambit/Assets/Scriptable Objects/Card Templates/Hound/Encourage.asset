@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Encourage
   m_EditorClassIdentifier: 
   _cardName: Encourage
-  _cardDescription: Gain a spirit. Once.
+  _cardDescription: Gain 1 Spirit. Once.
   _cardCost: 0
   _cardSprite: {fileID: 21300000, guid: 2c5b6ff545b21e24d883cfcd937275f5, type: 3}
   _playerCopyCount: 1

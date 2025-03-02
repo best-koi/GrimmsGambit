@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13973070953e71340b28455cdae14748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heirloomDisplay: {fileID: 6813188483365550260}
 --- !u!1 &8287057250025804937
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
   imageContainer: {fileID: 7576976788717713271}
   pixelWidth: 1
   tooltipPrefab: {fileID: 0}
-  parentCanvas: {fileID: 0}
+  parentCanvas: {fileID: 3026462326975743653}
 --- !u!1001 &2609320573214989979
 PrefabInstance:
   m_ObjectHideFlags: 0

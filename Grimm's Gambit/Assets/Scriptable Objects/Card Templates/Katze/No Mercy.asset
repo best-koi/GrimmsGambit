@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: No Mercy
   m_EditorClassIdentifier: 
   _cardName: No Mercy
-  _cardDescription: Deal 11 Damage. If the target has Damage Reduction, recast again.
+  _cardDescription: Deal 11 Damage. If the target has Damage Reduction, cast again.
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 2
