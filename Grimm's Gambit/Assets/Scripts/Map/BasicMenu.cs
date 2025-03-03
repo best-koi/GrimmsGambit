@@ -20,6 +20,12 @@ public class BasicMenu : MonoBehaviour
         MapPlayer.sceneToToggle.SetActive(true);
     }
 
+    public void UnloadTutorialScene()
+    {
+        SceneManager.UnloadSceneAsync("TutorialScene");
+        MapPlayer.sceneToToggle.SetActive(true);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
