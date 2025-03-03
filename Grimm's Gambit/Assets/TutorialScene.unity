@@ -1071,7 +1071,7 @@ Transform:
   m_GameObject: {fileID: 613970852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20320797, y: -0.40659493, z: 1.7113171}
+  m_LocalPosition: {x: 0.20320797, y: 0.08, z: 1.7113171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1862,7 +1862,8 @@ MonoBehaviour:
   narratorSFX: {fileID: 0}
   textSpeed: 0.05
   boss: {fileID: 1710678523}
-  bossDialogue: []
+  bossDialogue:
+  - {fileID: 11400000, guid: 099a968a1b249fc499685322f862ebb3, type: 2}
   bossName: The  Heir
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 10ee822e3ebcb489d8d23fee8c4999ea, type: 3}
@@ -2237,7 +2238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00015258789, y: -0.0001373291}
+  m_AnchoredPosition: {x: -0.00012207031, y: -0.00015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106485496
@@ -2487,11 +2488,11 @@ RectTransform:
   m_Children:
   - {fileID: 895730643}
   - {fileID: 714886297}
-  m_Father: {fileID: 7294873939457627779}
+  m_Father: {fileID: 378990763694147653}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 299, y: 161}
+  m_AnchoredPosition: {x: -1, y: -2}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416388604
@@ -4055,7 +4056,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8671084846509242251, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1416388603}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
 --- !u!224 &378990763694147653 stripped
@@ -5282,7 +5286,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8255449758852184818}
-  - {fileID: 1416388603}
   - {fileID: 2126668693737067010}
   - {fileID: 1142155943}
   - {fileID: 797916829}

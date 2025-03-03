@@ -28,7 +28,7 @@ public class MapPlayer : MonoBehaviour
     private Vector3 centerLocation;
 
     [SerializeField]
-    private string encounterScene, campfireScene;
+    private string encounterScene, campfireScene, tutorialScene;
 
     [SerializeField]
     private string lycanScene, sistersScene, oddsScene, beldamScene, ladyScene;
@@ -163,6 +163,13 @@ public class MapPlayer : MonoBehaviour
             SceneManager.LoadScene(beldamScene, LoadSceneMode.Additive);
             sceneToToggle.SetActive(false);
             RenderSettings.fog = false;
+            break;
+
+            case "Tutorial":
+            collision.gameObject.tag = "Inactive";
+            SceneManager.LoadScene(tutorialScene, LoadSceneMode.Additive);
+            sceneToToggle.SetActive(false);
+            //RenderSettings.fog = false;
             break;
             
             default:

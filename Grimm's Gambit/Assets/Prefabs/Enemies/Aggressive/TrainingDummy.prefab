@@ -1097,9 +1097,9 @@ GameObject:
   - component: {fileID: 3082288189527186086}
   - component: {fileID: 3878210002517620860}
   - component: {fileID: 6502500332117604046}
-  - component: {fileID: 5210044357086839025}
+  - component: {fileID: 7006684906321554445}
   m_Layer: 0
-  m_Name: TutorialEnemy
+  m_Name: TrainingDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   full: {r: 0.03137255, g: 0.41568628, b: 0, a: 1}
   mid: {r: 0.888, g: 0.5171294, b: 0, a: 1}
   low: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &5210044357086839025
+--- !u!114 &7006684906321554445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9146193986863031628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ac7900cfda34f4097f3dcd4dd690f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 51fd2d7d2dea340aba6d961781161a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 3878210002517620860}

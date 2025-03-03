@@ -100,7 +100,7 @@ public class EnemyRandomTarget : EnemyTemplate
                 break;
             case "Block":
                 moveText.text = $"Blocking for {blockValue}";
-                moveText.color = this.GetEnemyColor();
+                moveText.color = Color.white;
                 break;
             case "RandomAttack":
                 moveText.text = $"{randomAttackName}";
