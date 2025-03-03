@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   font: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   enemySceneItems: {fileID: 1558088976}
-  enemySceneName: BasicEnemyScene V2
+  enemySceneName: TutorialScene
 --- !u!4 &630745769
 Transform:
   m_ObjectHideFlags: 0
