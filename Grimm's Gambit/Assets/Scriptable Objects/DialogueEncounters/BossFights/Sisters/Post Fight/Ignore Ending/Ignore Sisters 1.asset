@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Path Sisters
+  m_Name: Ignore Sisters 1
   m_EditorClassIdentifier: 
-  speakerName: Heir
+  speakerName: Katze
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
-    _line: "This could be the key to making to sanctuary. You think you can get the
-      idol?\r\r"
+    _line: "Wise choice. Let\u2019s leave before they can recover their strength.\r\r\r\r"
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: "Fools. Doomed to be chained forever. Slowed by the burden. The curse
+      shall be your downfall.\r\r\r\r"
