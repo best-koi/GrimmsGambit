@@ -10,29 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Sisters 4
+  m_Name: Path Sisters 3
   m_EditorClassIdentifier: 
-  speakerName: The Seamstress
+  speakerName: Katze
   _dialogueLines:
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: Descending from the tower are two women in brightly colored dresses.
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: 'They bear bloody blindfolds over their eyes. They stand before you and
-      speak in tandem.
-
-'
-  - _speaker: 1
-    _speakerHidden: 1
-    _line: Visitors. Welcome.
   - _speaker: 0
     _speakerHidden: 0
-    _line: 'Strange. Nice to meet you I suppose.
-
-'
-  - _speaker: 1
+    _line: "Whatever that is better be worth it.\r"
+  - _speaker: 2
     _speakerHidden: 0
-    _line: 'Do you seek relief?
-
-'
+    _line: "You pick up the idol. It is a golden statue of a Buck with two blood
+      red eyes.\r"
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: "As you hold it you swear you see a shadow move towards the Hound. \r"

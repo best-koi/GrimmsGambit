@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Sisters 6
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: The Heir
   _dialogueLines:
   - _speaker: 0
@@ -39,8 +35,8 @@ MonoBehaviour:
     _line: They step apart and pull open a thicket of bramble revealing a path.
   - _speaker: 2
     _speakerHidden: 0
-    _line: ' Along the path you see a trail of blood and several eyeballs that hang,
-      having been stabbed out by the thorns.'
+    _line: Along the path you see a trail of blood and several eyeballs that hang,
+      having been stabbed out by the thorns.
   - _speaker: 1
     _speakerHidden: 0
     _line: 'Walk through. Eyes uncovered. Return with the soul free. '
