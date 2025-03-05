@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8908235, g: 0.27793398, b: 0.043407805, a: 1}
+  m_IndirectSpecularColor: {r: 0.8942224, g: 0.2777468, b: 0.043872062, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2242,11 +2242,24 @@ MonoBehaviour:
   boss: {fileID: 1864007165}
   bossDialogue:
   - {fileID: 11400000, guid: 83375b74e35c20e4b8c00a81a96a95f3, type: 2}
+  - {fileID: 11400000, guid: 907877dba56c5044db5acdd70ddbeb2a, type: 2}
+  - {fileID: 11400000, guid: 30b9e8c2712c69f4284fd3fd4e30aba5, type: 2}
+  - {fileID: 11400000, guid: f14d454ba177a844b99c40291ee610c5, type: 2}
+  - {fileID: 11400000, guid: 62362527dd2300747b2cb3c73fb5181f, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
-  goodEnding: []
-  badEnding: []
+  goodEnding:
+  - {fileID: 11400000, guid: 3dce93ab991448743be30763178e2abe, type: 2}
+  - {fileID: 11400000, guid: aa8a8a50ef59340468eae4328ec34e64, type: 2}
+  - {fileID: 11400000, guid: 4d4ab7be40f35544ab6bb3dcfb1efc57, type: 2}
+  - {fileID: 11400000, guid: 4583833db4fbbd5449fec39eb971bbd4, type: 2}
+  badEnding:
+  - {fileID: 11400000, guid: 020fb7710ad99c047a9cddbf4c18d52c, type: 2}
+  - {fileID: 11400000, guid: 04d8fa2c264c58b4988b37cec49f7394, type: 2}
+  - {fileID: 11400000, guid: 95070804d4fe3e0488fb46a2c5fca85d, type: 2}
+  - {fileID: 11400000, guid: d88290ec60c4bb94aab9781157869d23, type: 2}
+  - {fileID: 11400000, guid: b3cae72877ff51246aff40db5b81fbc6, type: 2}
   choicePanel: {fileID: 1896372323}
   _goodChoiceButton: {fileID: 1486449819}
   _badChoiceButton: {fileID: 1650921844}
