@@ -92,6 +92,11 @@ public class Deck : MonoBehaviour
         if(m_GameDeck.Count() <= 0)
         {
             Shuffle();
+            if (m_GameDeck.Count() <= 0)
+            {
+                Debug.Log("Deck is empty, hand could not be filled.");
+                return;
+            }
         }
         
         // Add a card to the hand
