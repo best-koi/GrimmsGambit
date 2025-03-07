@@ -28,7 +28,6 @@ public class CardDatabase : MonoBehaviour
 
         if (cardObject.TryGetComponent<Card>(out Card card))
         {
-            Debug.Log(template);
             card.SetCardTemplate(template);
 
             Minion caster = _partyIndex[owner];

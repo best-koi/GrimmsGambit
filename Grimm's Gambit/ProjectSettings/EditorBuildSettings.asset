@@ -27,25 +27,25 @@ EditorBuildSettings:
     path: Assets/Scenes/EncounterWin.unity
     guid: 72ee6b9c1115f9244b578b782a568644
   - enabled: 1
-    path: Assets/BasicEnemyScene V2.unity
+    path: Assets/Scenes/BasicEnemyScene V2.unity
     guid: f75f997db1aa54cfe90e6632a20e9815
   - enabled: 1
     path: Assets/Scenes/Encounter Victory Scene.unity
     guid: de900e322caf8344ca894e2d94db6eb0
   - enabled: 1
-    path: Assets/OddsFightV2.unity
+    path: Assets/Scenes/OddsFightV2.unity
     guid: dc897ecc0c85d48219c569d507a0f03a
   - enabled: 1
-    path: Assets/LycanSceneV2.unity
+    path: Assets/Scenes/LycanSceneV2.unity
     guid: a52a006c240f94e6dbee821e0e930437
   - enabled: 1
     path: Assets/Scenes/CEScenes/LadyOfTheLake.unity
     guid: 8074fcaef4df94cb490e3d79ea59099f
   - enabled: 1
-    path: Assets/Beldam.unity
+    path: Assets/Scenes/Beldam.unity
     guid: 722e8d808f0f94610ac2c4fb3c8c9c6c
   - enabled: 1
-    path: Assets/OddsPostDialogue.unity
+    path: Assets/Scenes/OddsPostDialogue.unity
     guid: 56678884f215f45e598d19092b775d5e
   - enabled: 1
     path: Assets/Scenes/CEScenes/SistersPostDialogue.unity
@@ -54,6 +54,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CEScenes/LycanPostDialogue.unity
     guid: 32dc59311aaaa2d459b8f7c02e895833
   - enabled: 1
-    path: Assets/TutorialScene.unity
+    path: Assets/Scenes/TutorialScene.unity
     guid: d4f13a4619ac44119b990e6a68dd8074
   m_configObjects: {}
