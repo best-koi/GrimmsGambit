@@ -162,10 +162,10 @@ MonoBehaviour:
   dialogueWindow: {fileID: 730295147}
   advanceButton: {fileID: 1206175802}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
+  seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
+  houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
+  katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
+  heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
   narratorSFX: {fileID: 0}
   textSpeed: 0.05
   boss: {fileID: 1264242752}
@@ -5904,6 +5904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
+  mapName: Map
 --- !u!1001 &1122045262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8400,10 +8401,10 @@ MonoBehaviour:
   dialogueWindow: {fileID: 1423862019}
   advanceButton: {fileID: 1963830400}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
+  seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
+  houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
+  katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
+  heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
   narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   textSpeed: 0.05
   chosenCharacterText: {fileID: 1655038208}

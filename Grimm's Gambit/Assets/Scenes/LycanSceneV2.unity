@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24147,10 +24147,10 @@ MonoBehaviour:
   dialogueWindow: {fileID: 1223269026}
   advanceButton: {fileID: 717791113}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
+  seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
+  houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
+  katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
+  heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
   narratorSFX: {fileID: 0}
   textSpeed: 0.05
   boss: {fileID: 2126669530}
@@ -24160,7 +24160,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb08325292d1c8844bd8dfef5365194b, type: 2}
   bossName: The Lycan
   selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  bossSFX: {fileID: 8300000, guid: d58e63ef2006c4563be56f675416653b, type: 3}
 --- !u!4 &1779372840
 Transform:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8942224, g: 0.2777468, b: 0.043872062, a: 1}
+  m_IndirectSpecularColor: {r: 0.8908235, g: 0.27793398, b: 0.043407805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2233,10 +2233,10 @@ MonoBehaviour:
   dialogueWindow: {fileID: 30174703}
   advanceButton: {fileID: 897589573}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
+  seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
+  houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
+  katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
+  heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
   narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   textSpeed: 0.05
   boss: {fileID: 1864007165}
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62362527dd2300747b2cb3c73fb5181f, type: 2}
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  bossSFX: {fileID: 8300000, guid: 1bb7498c17de84370be173e9b5f8db6f, type: 3}
   goodEnding:
   - {fileID: 11400000, guid: 3dce93ab991448743be30763178e2abe, type: 2}
   - {fileID: 11400000, guid: aa8a8a50ef59340468eae4328ec34e64, type: 2}
@@ -5107,7 +5107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 264cd468ed2de4ffca3e7c304578ddc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbad2069282bb4aa184b7ff88a8e6cb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5141,8 +5141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193, y: -26}
-  m_SizeDelta: {x: 155.7637, y: 230.2821}
+  m_AnchoredPosition: {x: 205, y: -18}
+  m_SizeDelta: {x: 145.996, y: 172.7803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1884105855
 PrefabInstance:
@@ -6400,6 +6400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
+  mapName: Map
 --- !u!4 &2100020152
 Transform:
   m_ObjectHideFlags: 0

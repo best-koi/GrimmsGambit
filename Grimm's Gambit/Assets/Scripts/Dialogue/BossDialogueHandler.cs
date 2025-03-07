@@ -103,27 +103,27 @@ public class BossDialogueHandler : BaseDialogueHandler
                 case "The Heir":
                 _showSpeaker(heir);
                 _hideListener(boss);
-                PlayGarble();
+                PlayHeirGarble();
                 
                 break;
 
                 case "The Seamstress":
                 _showSpeaker(seamstress);
                 _hideListener(boss);
-                PlayGarble();
+                PlaySeamstressGarble();
                 
                 break;
 
                 case "The Hound":
                 _showSpeaker(hound);
                 _hideListener(boss);
-                PlayGarble();
+                PlayHoundGarble();
                 break;
 
                 case "Katze":
                 _showSpeaker(katze);
                 _hideListener(boss);
-                PlayGarble();
+                PlayKatzeGarble();
                 break;
 
                 case " ":

@@ -972,10 +972,10 @@ MonoBehaviour:
   dialogueWindow: {fileID: 30174703}
   advanceButton: {fileID: 9007198955163610532}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
-  seamstressSFX: {fileID: 0}
-  houndSFX: {fileID: 0}
-  katzeSFX: {fileID: 0}
-  heirSFX: {fileID: 0}
+  seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
+  houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
+  katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
+  heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
   narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   textSpeed: 0.05
   boss: {fileID: 334348672}
@@ -989,7 +989,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a213ed5485ed840ed9878352f7205f7c, type: 2}
   bossName: The Beldam
   selectedBossConversation: {fileID: 0}
-  bossSFX: {fileID: 8300000, guid: 90dee5b7b01ed45fabadf526f352daba, type: 3}
+  bossSFX: {fileID: 8300000, guid: bbd8b9d5c95a946f9b139b065541a26b, type: 3}
   goodEnding:
   - {fileID: 11400000, guid: 8d15ae769bfcb45f587733a7ea82249a, type: 2}
   - {fileID: 11400000, guid: 5a24954c760e0426895e8984dd006016, type: 2}
@@ -1259,6 +1259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
+  mapName: Map
 --- !u!4 &805788714
 Transform:
   m_ObjectHideFlags: 0
