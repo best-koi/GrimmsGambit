@@ -110,6 +110,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    // Ugly default deck function, will fix later
     public void SetDefaultCards() {
         deck.Clear();
         deck.Add(new CardData(2,3));

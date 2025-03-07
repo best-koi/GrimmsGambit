@@ -7,7 +7,7 @@ public class CardDatabase : MonoBehaviour
     [Tooltip(" Array of party members. Can be changed to accodomadate Unit Party or other data types.")] [SerializeField] private Minion[] _partyIndex;
     [Tooltip("New databse representing cards.")] [SerializeField] public Array2D _cardPrefabs; //Made public by Ryan 2/8/2025 for shop menu purposes
 
-    private void Start()
+    private void Awake()
     {
         if (_partyIndex.Length != _cardPrefabs._baseArray.Length) Debug.LogWarning("Party size match database.");
 
