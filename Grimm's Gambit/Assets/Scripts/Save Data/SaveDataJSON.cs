@@ -13,7 +13,7 @@ public class SaveDataJSON : MonoBehaviour
     // Check on title screen to load save from JSON
     [SerializeField] public bool gameStart;
     
-    private string mapName = "Map";
+    [SerializeField] string mapName = "Map";
     
     
     private string saveFolder = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves";
@@ -61,7 +61,6 @@ public class SaveDataJSON : MonoBehaviour
 
     // Sets default Save Values
     public void SetDefaultValues() {
-        Debug.Log("Defaults Set!!");
         playerData.SetDefaultHP();
         playerData.SetDefaultCards();
         playerData.ClearHeirlooms();
@@ -94,8 +93,6 @@ public class SaveDataJSON : MonoBehaviour
         if (jsonData == null) return;
 
         JsonUtility.FromJsonOverwrite(jsonData, playerData);
-
-        Debug.Log("Settings Loaded!");
     }
 
     // Sets all relevant internal values to those held by playerData
@@ -117,7 +114,6 @@ public class SaveDataJSON : MonoBehaviour
     }
 
     public void newGame() {
-        Debug.Log("New Game!!");
         SetDefaultValues();
         SceneManager.LoadScene(mapName);
     }

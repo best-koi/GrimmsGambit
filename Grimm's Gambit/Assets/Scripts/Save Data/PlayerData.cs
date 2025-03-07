@@ -29,6 +29,10 @@ public class HPChange {
         maxHP = amount;
     }
 
+    public void SetCurrentHealth(int amount) {
+        currentHP = amount;
+    }
+
     public void RestoreHealth() {
         currentHP = maxHP;
     }
@@ -181,6 +185,11 @@ public class PlayerData : MonoBehaviour
     public void SetHP(PartyMember ms, int current) {
         HPChange character = selectMember(ms);
         character.SetHealth(current);
+    }
+
+    public void SetCurrentHP(PartyMember ms, int current) {
+        HPChange character = selectMember(ms);
+        character.SetCurrentHealth(current);
     }
 
     public void SetDefaultHP() {
