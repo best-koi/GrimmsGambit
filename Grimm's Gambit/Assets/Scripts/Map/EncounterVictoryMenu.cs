@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,8 +40,17 @@ public class EncounterVictoryMenu : MonoBehaviour
             //Sets all valid used database indices to true
             for (int j = 0; j < cardDatabase._cardPrefabs.BaseArray[i].Row.Length; j++)
             {
-                validPairs[i].Add(true); //Initially sets all values to true
-                trueCounters[i] += 1;
+                string cardName = cardDatabase.GetTemplate(i, j).CardName;
+                if(cardName == "Roar" || cardName == "Leader's Might" || cardName == "Clean" || cardName == "Bravado"
+                    || cardName == "Euphoric Frenzy" || cardName == "Fury Swipes" || cardName == "Deadly Elegance" || cardName == "Devastation") //Checks to see if the current card is excluded from the draft
+                {
+                    validPairs[i].Add(false); //Initializes coordinate pair value to false
+                }
+                else
+                {
+                    validPairs[i].Add(true); //Initializes coordinate pair value to true
+                    trueCounters[i] += 1; //Increments the amount of valid cards for this minion
+                }
             }
         }
 
@@ -48,8 +58,11 @@ public class EncounterVictoryMenu : MonoBehaviour
         for (int i = 0; i < currentDeck.m_GameDeck.Count; i++)
         {
             CardData currentData = currentDeck.m_GameDeck[i];
-            validPairs[currentData.ownerIndex][currentData.databaseIndex] = false; //Sets value found in deck to false
-            trueCounters[currentData.ownerIndex] -= 1; //Decrements true count for this row
+            if (validPairs[currentData.ownerIndex][currentData.databaseIndex] != false) //Ensures the pair being set to false isn't already false
+            {
+                validPairs[currentData.ownerIndex][currentData.databaseIndex] = false; //Sets value found in deck to false
+                trueCounters[currentData.ownerIndex] -= 1; //Decrements true count for this row
+            }
         }
     }
 
@@ -70,7 +83,7 @@ public class EncounterVictoryMenu : MonoBehaviour
         }
         for (int i = 0; i < 3; i++) //Chooses three cards
         {
-            int randomMinion = Random.Range(0, cardDatabase._cardPrefabs.BaseArray.Length);
+            int randomMinion = UnityEngine.Random.Range(0, cardDatabase._cardPrefabs.BaseArray.Length);
             //Cycles index if invalid
             while(trueCounters[randomMinion] == 0)
             {
@@ -86,7 +99,7 @@ public class EncounterVictoryMenu : MonoBehaviour
 
             //Sets Display:
             int randomIndex = 0;
-            int randomIndexPre = Random.Range(0, trueCounters[randomMinion]); //Chooses a random card for the given random minion
+            int randomIndexPre = UnityEngine.Random.Range(0, trueCounters[randomMinion]); //Chooses a random card for the given random minion
             while (validPairs[randomMinion][randomIndex] == false)
             {
                 randomIndex++; //Ensures the initial value is valid
