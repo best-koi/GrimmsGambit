@@ -5653,7 +5653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &209535420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32072,6 +32072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
+  mapName: Map
 --- !u!1001 &2077416984
 PrefabInstance:
   m_ObjectHideFlags: 0
