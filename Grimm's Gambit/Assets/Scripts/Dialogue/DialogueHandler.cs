@@ -193,25 +193,25 @@ public class DialogueHandler : BaseDialogueHandler
                     _hideListener(katze);
                     _hideListener(hound);
 
-                    PlayGarble();
+                    PlayHeirGarble();
                     break;
 
                 case "The Seamstress":
                     _showSpeaker(seamstress);
                     _hideListener(heir);
-                    PlayGarble();
+                    PlaySeamstressGarble(); 
                     break;
 
                 case "The Hound":
                     _showSpeaker(hound);
                     _hideListener(heir);
-                    PlayGarble();
+                    PlayHoundGarble();
                     break;
 
                 case "Katze":
                     _showSpeaker(katze);
                     _hideListener(heir);
-                    PlayGarble();
+                    PlayKatzeGarble();
                     break;
 
                 default:
