@@ -99,6 +99,19 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    public void SetDefaultCards() {
+        deck.Clear();
+        deck.Add(new CardData(2,3));
+        deck.Add(new CardData(2,2));
+        deck.Add(new CardData(2,8));
+        deck.Add(new CardData(0,1));
+        deck.Add(new CardData(0,8));
+        deck.Add(new CardData(0,1));
+        deck.Add(new CardData(1,0));
+        deck.Add(new CardData(1,5));
+        deck.Add(new CardData(1,8));
+    }
+
     // Heirloom Functions
     public void SetPlayerHeirlooms(List<Heirloom> heirlooms) {
         this.heirlooms = heirlooms;
@@ -114,6 +127,10 @@ public class PlayerData : MonoBehaviour
 
     public void removeHeirloom(Heirloom heirloom) {
         heirlooms.Remove(heirloom);
+    }
+
+    public void ClearHeirlooms() {
+        heirlooms.Clear();
     }
 
     // Health Functions
@@ -164,6 +181,12 @@ public class PlayerData : MonoBehaviour
     public void SetHP(PartyMember ms, int current) {
         HPChange character = selectMember(ms);
         character.SetHealth(current);
+    }
+
+    public void SetDefaultHP() {
+        seamstressStats.SetHealth(28);
+        katzeStats.SetHealth(33);
+        houndStats.SetHealth(38);
     }
 
     public void restoreAll() {

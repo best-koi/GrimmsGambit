@@ -13,12 +13,20 @@ public class SaveDataJSON : MonoBehaviour
     // Check on title screen to load save from JSON
     [SerializeField] public bool gameStart;
     
+    private string mapName = "Map";
+    
     
     private string saveFolder = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves";
     private string savePath = Application.dataPath + Path.AltDirectorySeparatorChar + "Saves" + Path.AltDirectorySeparatorChar + "SavaData.json";
 
     void Awake()
     {
+        PlayerData[] pdList = FindObjectsOfType<PlayerData>();
+        if (pdList.Length > 1) {
+            for (int i = pdList.Length - 1; i > 0; i--) {
+                Destroy(pdList[i].gameObject);
+            }
+        }
         playerData = FindObjectOfType<PlayerData>();
 
         // For debugging purposes only, prevents issues when starting from scenes other than title screen
@@ -35,6 +43,7 @@ public class SaveDataJSON : MonoBehaviour
         LoadFromPlayerData();
     }
 
+
     // Saves playerData to JSON save file
     public void SaveData() {
         string jsonData = JsonUtility.ToJson(playerData, true);
@@ -48,6 +57,15 @@ public class SaveDataJSON : MonoBehaviour
             writer.Write(jsonData);
             writer.Close();
         }
+    }
+
+    // Sets default Save Values
+    public void SetDefaultValues() {
+        Debug.Log("Defaults Set!!");
+        playerData.SetDefaultHP();
+        playerData.SetDefaultCards();
+        playerData.ClearHeirlooms();
+        playerData.SetPosition(new Vector3(0, 0, 0));
     }
 
     // Upon opening the settings page, all relevant settings will reflect the values stored by playerData
@@ -91,5 +109,21 @@ public class SaveDataJSON : MonoBehaviour
     // Used by music slider to set volume
     public void setVolume(float volume) {
         playerData.setVolume(volume);
+    }
+
+    // Called by Quit button, prevents multiple playerData copies spawning by returning to Start Menu
+    public void DestroyPlayerData() {
+        //Destroy(playerData.gameObject);
+    }
+
+    public void newGame() {
+        Debug.Log("New Game!!");
+        SetDefaultValues();
+        SceneManager.LoadScene(mapName);
+    }
+
+    public void loadGame() {
+        LoadIntoPlayerData();
+        SceneManager.LoadScene(mapName);
     }
 }
