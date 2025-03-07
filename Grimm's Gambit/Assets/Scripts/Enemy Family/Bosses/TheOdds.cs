@@ -287,7 +287,7 @@ public class TheOdds : AoEEnemy
 
 
             case "RollTheDice":
-            moveText.text = $"Rolling the Dice";
+            
             if(hasRolledDice == false){
                 int randomDie1 = Random.Range(0, dice.Count);
                 int randomDie2 = Random.Range(0, dice.Count);
@@ -298,6 +298,21 @@ public class TheOdds : AoEEnemy
                 dieImage2.sprite = dieSprites[randomDie2];
 
                 hasRolledDice = true;
+
+                if(die1 + die2 == 2){
+                    moveText.text = $"Snake Eyes: Taking {3 * attackValue} Damage";
+
+                 } else if (die1 + die2 == 12){
+                    moveText.text = $"Box Cars: Applying {dieStrength} Strength & {dieBlock} Block";
+
+
+                 } else if (die1 + die2 <= 6){
+
+                    moveText.text = $"Afflicting Party with {die1+die2} Vulnerable and Damage Reduction";
+            
+                }else if (die1 + die2 > 6){
+                  moveText.text = $"Applying {die1+die2} Power Burst";
+                }
             }
             
 
