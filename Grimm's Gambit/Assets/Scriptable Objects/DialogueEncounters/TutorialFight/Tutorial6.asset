@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Tutorial6
+  m_EditorClassIdentifier: 
+  speakerName: Katze
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: 'Well, that''s that. I''ll be our vanguard, the Seamstress our support
+      and medic, and the Hound our "lord protector," as it were.
+
+'
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: "Now, let's figure out where\nyou may be wondering where you factor into
+      this equation\u2026\n"
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Since you're not much built for combat, you'll have to be our commander.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Should you want to attack, drag a card over the enemies to deal damage.

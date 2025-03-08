@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Tutorial1
+  m_EditorClassIdentifier: 
+  speakerName: Katze
+  _dialogueLines:
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: "Before embarking on your journey, you notice your party heading towards
+      a small clearing in the forest. \n"
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: Where are you going?
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: There's no chance this ragtag bunch will make it to the Odds, let alone
+      defeat him, the way we are now.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: No harm in figuring out how we all work together before we set out.
+  - _speaker: 2
+    _speakerHidden: 0
+    _line: 'Looking at the clearing you notice what appears to be a formidable scarecrow. '

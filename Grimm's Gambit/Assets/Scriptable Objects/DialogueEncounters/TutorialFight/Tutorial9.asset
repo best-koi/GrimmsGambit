@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
+  m_Name: Tutorial9
+  m_EditorClassIdentifier: 
+  speakerName: 
+  _dialogueLines:
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: Each of your commands consumes a certain amount of Spirit.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: If that runs out, we won't be able to make any more moves until the enemy
+      has a shot at us.
+  - _speaker: 0
+    _speakerHidden: 0
+    _line: As you might guess, it's fairly important to keep an eye on our Spirit
+      count in the bottom left.
+  - _speaker: 1
+    _speakerHidden: 0
+    _line: I see. I'll keep that in mind when I'm deciding our moves.
