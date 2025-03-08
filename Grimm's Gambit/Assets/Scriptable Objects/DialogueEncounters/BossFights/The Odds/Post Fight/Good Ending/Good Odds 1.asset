@@ -12,13 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Good Odds 1
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: The Heir
   _dialogueLines:
   - _speaker: 1
     _speakerHidden: 0
-    _line: FIne. So be it. Run away and never return. We will see what fate has in
+    _line: Fine. So be it. Run away and never return. We will see what fate has in
       store for you...

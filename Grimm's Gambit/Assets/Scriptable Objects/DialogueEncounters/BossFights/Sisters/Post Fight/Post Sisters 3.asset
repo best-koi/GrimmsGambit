@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Post Sisters 3
   m_EditorClassIdentifier: 
-  speakerName: Heir
+  speakerName: The Heir
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0

@@ -22,8 +22,7 @@ MonoBehaviour:
 '
   - _speaker: 0
     _speakerHidden: 0
-    _line: "Now, let's figure out where\nyou may be wondering where you factor into
-      this equation\u2026\n"
+    _line: "Now, let's figure out where you factor into this equation\u2026\n"
   - _speaker: 0
     _speakerHidden: 0
     _line: Since you're not much built for combat, you'll have to be our commander.
