@@ -28,6 +28,7 @@ public class ShopDisplay : MonoBehaviour
 
     [SerializeField] private Button rerollButton;
     [SerializeField] private int rerolls;
+    [SerializeField] private TMP_Text rerollsText;
 
     [SerializeField] private Button[] itemButtons;
 
@@ -38,6 +39,8 @@ public class ShopDisplay : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        rerollsText.text = rerolls.ToString();
+        
         displayedItems = new ShopItem[numberOfItems, numberOfPages + 1];
         
         heirloomImages = FindAnyObjectByType<HeirloomImageLibrary>();
@@ -190,6 +193,7 @@ public class ShopDisplay : MonoBehaviour
     public void Reroll(){
 
         rerolls--;
+        rerollsText.text = rerolls.ToString();
 
         if (rerolls <= 0)
         {
