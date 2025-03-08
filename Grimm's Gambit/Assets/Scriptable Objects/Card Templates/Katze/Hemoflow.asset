@@ -21,18 +21,11 @@ MonoBehaviour:
   _cardSoundEffect: {fileID: 8300000, guid: 0f281232a97e28d449dc60ccd87744f2, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 927382194915901444
+  - rid: 5554284344014798849
   references:
     version: 2
     RefIds:
-    - rid: 927382194915901444
-      type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
+    - rid: 5554284344014798849
+      type: {class: GougeEffect, ns: , asm: Assembly-CSharp}
       data:
-        _checkedDebuff: 8
-        _checkSelf: 0
-        _removeCheckedDebuff: 0
-        _applyType: 2
-        _newDebuff: 8
-        _amountMultiplier: 2
-        _capValue: -1
-        _applyToSelf: 0
+        _multiplier: 2
