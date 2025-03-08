@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Odds 1
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: The Hound
   _dialogueLines:
   - _speaker: 2
@@ -31,5 +27,5 @@ MonoBehaviour:
     _line: '*Growls in the direction of the strange sound*'
   - _speaker: 1
     _speakerHidden: 0
-    _line: Hmm. It would appear this story wasnt cut short. Tell me. Is it fate or
-      foolishness that permits you to stand before me?
+    _line: Hmm. It would appear this story wasn't cut short. Tell me. Is it fate
+      or foolishness that permits you to stand before me?

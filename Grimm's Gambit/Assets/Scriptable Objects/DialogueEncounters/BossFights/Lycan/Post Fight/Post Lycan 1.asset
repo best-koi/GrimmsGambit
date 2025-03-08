@@ -12,10 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Post Lycan 1
   m_EditorClassIdentifier: 
-  lines: []
-  isBossSpeaking: 
-  isNarratorText: 
-  isSpeakerHidden: 
   speakerName: Katze
   _dialogueLines:
   - _speaker: 2
@@ -24,7 +20,7 @@ MonoBehaviour:
       as if something was crawling under the creature\u2019s skin."
   - _speaker: 2
     _speakerHidden: 0
-    _line: Katze steps forwards, and in a single slash cuts the beast open.
+    _line: Katze steps forward, and in a single slash, cuts the beast open.
   - _speaker: 2
     _speakerHidden: 0
     _line: Inside are a bunch of young teens, each with fear adorning their eyes.
