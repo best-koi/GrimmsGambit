@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c865e522a896d49a043d41cc7b1de2, type: 3}
-  m_Name: Muscle Sweater
+  m_Name: Protector
   m_EditorClassIdentifier: 
-  _cardName: Muscle Sweater
-  _cardDescription: Apply 8 Block. Apply 2 Strength.
+  _cardName: Protector
+  _cardDescription: Apply 14 Block. If target has a debuff, apply 4 more Block.
   _cardCost: 2
   _cardSprite: {fileID: 21300000, guid: b2883bd2a5ce4bd449d1d483b504fd00, type: 3}
   _playerCopyCount: 1
@@ -21,18 +21,24 @@ MonoBehaviour:
   _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 4232165421192839187
-  - rid: 927382194915901450
+  - rid: 4232165570780332040
+  - rid: 4232165570780332038
   references:
     version: 2
     RefIds:
-    - rid: 927382194915901450
-      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
-      data:
-        _debuff: 7
-        _value: 2
-    - rid: 4232165421192839187
+    - rid: 4232165570780332038
       type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
       data:
         _debuff: 1
-        _value: 8
+        _value: 14
+    - rid: 4232165570780332040
+      type: {class: DoOnDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        conditionDebuff: 0
+        _spells:
+        - rid: 4232165570780332041
+    - rid: 4232165570780332041
+      type: {class: ApplyDebuffEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _debuff: 1
+        _value: 4

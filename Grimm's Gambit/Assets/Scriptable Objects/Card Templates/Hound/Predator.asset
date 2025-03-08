@@ -23,7 +23,7 @@ MonoBehaviour:
   _reverseTemplate: {fileID: 0}
   _spells:
   - rid: 927382194184519683
-  - rid: 927382194184519683
+  - rid: 4232165570780332042
   references:
     version: 2
     RefIds:
@@ -33,7 +33,18 @@ MonoBehaviour:
         _checkedDebuff: 3
         _checkSelf: 0
         _removeCheckedDebuff: 0
-        _applyType: 0
+        _applyType: 2
+        _newDebuff: 7
+        _amountMultiplier: 1.5
+        _capValue: -1
+        _applyToSelf: 1
+    - rid: 4232165570780332042
+      type: {class: ApplyBasedOnAffixEffect, ns: , asm: Assembly-CSharp}
+      data:
+        _checkedDebuff: 2
+        _checkSelf: 0
+        _removeCheckedDebuff: 0
+        _applyType: 2
         _newDebuff: 7
         _amountMultiplier: 1.5
         _capValue: -1
