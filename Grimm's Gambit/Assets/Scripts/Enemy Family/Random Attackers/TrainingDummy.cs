@@ -8,6 +8,5 @@ public class TrainingDummy : EnemyRandomTarget
     {
         minion.currentHealth = minion.maxHealth;
         base.Update();
-        
     }
 }
