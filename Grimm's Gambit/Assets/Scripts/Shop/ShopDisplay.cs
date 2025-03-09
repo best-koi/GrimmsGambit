@@ -39,7 +39,7 @@ public class ShopDisplay : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        rerollsText.text = rerolls.ToString();
+        rerollsText.text = $"{rerolls}";
         
         displayedItems = new ShopItem[numberOfItems, numberOfPages + 1];
         

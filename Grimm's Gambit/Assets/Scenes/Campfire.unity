@@ -4755,6 +4755,7 @@ MonoBehaviour:
   defaultText: Nothing Here
   rerollButton: {fileID: 1936064330}
   rerolls: 3
+  rerollsText: {fileID: 2018150827}
   itemButtons:
   - {fileID: 1699534718}
   - {fileID: 73494038}
