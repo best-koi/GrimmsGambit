@@ -364,15 +364,15 @@ protected virtual void SecondAttackPhase(){
                 break;
 
             case "PowerOfFateAll":
-                moveText.text = $"Power of Fate";
+                moveText.text = $"Applying {dieStrength} Strength & {dieBlock} Block";
                 break;
 
             case "PowerOfFateGood":
-                moveText.text = $"Power of Fate";
+                moveText.text = $"Applying {powerOfFateGoodValue} Power Burst";
                 break;
 
             case "PowerOfFateBad":
-                moveText.text = $"Power of Fate";
+                moveText.text = $"Afflicting Party with {(die1+die2)/2} Vulnerable and Damage Reduction";
                 break;
                 
             
@@ -411,7 +411,7 @@ protected virtual void FinalAttackPhase(){
                 break;
 
             case "RollTheDice":
-            moveText.text = $"Rolling the Dice";
+            
             if(hasRolledDice == false){
                 int randomDie1 = Random.Range(0, dice.Count);
                 int randomDie2 = Random.Range(0, dice.Count);
@@ -422,11 +422,28 @@ protected virtual void FinalAttackPhase(){
                 dieImage2.sprite = dieSprites[randomDie2];
 
                 hasRolledDice = true;
+
+                if(die1 + die2 == 2){
+                    moveText.text = $"Snake Eyes: Taking {3 * attackValue} Damage";
+
+                 } else if (die1 + die2 == 12){
+                    moveText.text = $"Box Cars: Applying {dieStrength} Strength & {dieBlock} Block";
+
+
+                 } else if (die1 + die2 <= 6){
+
+                    moveText.text = $"Afflicting Party with {die1+die2} Vulnerable and Damage Reduction";
+            
+                }else if (die1 + die2 > 6){
+                  moveText.text = $"Applying {die1+die2} Power Burst";
+                }
             }
+            
+
             break;
 
             case "PowerOfFateGood":
-                moveText.text = $"Power of Fate";
+                moveText.text = $"Applying {powerOfFateGoodValue} Power Burst";
                 break;
 
             
