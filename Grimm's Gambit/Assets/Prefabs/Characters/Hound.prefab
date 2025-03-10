@@ -10805,7 +10805,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8676853383744705145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.263}
+  m_LocalPosition: {x: 0, y: 0, z: -0.309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10813,7 +10813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00000045821074, y: -3.002}
+  m_AnchoredPosition: {x: -0.805, y: -3.278}
   m_SizeDelta: {x: 4.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7356231141897940894
@@ -10840,3 +10840,5 @@ MonoBehaviour:
   pixelWidth: 5
   tooltipPrefab: {fileID: 0}
   parentCanvas: {fileID: 0}
+  hoverOverImage: {fileID: 0}
+  hoverOverText: {fileID: 0}

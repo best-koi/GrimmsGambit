@@ -19917,7 +19917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.1400001, y: -3.1672482}
+  m_AnchoredPosition: {x: -0.64, y: -4.8}
   m_SizeDelta: {x: 4.5, y: 1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7490147296001765753
@@ -19944,6 +19944,8 @@ MonoBehaviour:
   pixelWidth: 5
   tooltipPrefab: {fileID: 0}
   parentCanvas: {fileID: 0}
+  hoverOverImage: {fileID: 0}
+  hoverOverText: {fileID: 0}
 --- !u!1 &6163780573869900379
 GameObject:
   m_ObjectHideFlags: 0
@@ -20052,7 +20054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minion: {fileID: 5887165854426100928}
-  characterName: Die Katze
+  characterName: Katze
   healthText: {fileID: 8931673747312072328}
   nameText: {fileID: 6481525176744876809}
   characterColor: {r: 0, g: 0.4154258, b: 0.8490566, a: 1}
