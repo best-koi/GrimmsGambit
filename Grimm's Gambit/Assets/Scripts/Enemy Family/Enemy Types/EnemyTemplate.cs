@@ -46,6 +46,8 @@ protected string randomAttackName;//The name of the planned random attack
 
 protected bool hasChosenRandomAttack = false; 
 
+protected bool isBlindfolded = false; 
+
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
@@ -84,12 +86,12 @@ protected bool hasChosenRandomAttack = false;
         HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
         if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
         {
+            isBlindfolded = true;
             moveText.text = "Blindfold Active"; //This could be replaced with simply ""
         }
-        else
-        {
+     
             CheckCurrentAttack();
-        }
+        
     }
 
     //Sets the enemy hp
@@ -176,8 +178,10 @@ protected bool hasChosenRandomAttack = false;
         switch (attacks[currentAttack])
         {
             default:
+            if(!isBlindfolded){
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
+                }
                 break;
         }
 

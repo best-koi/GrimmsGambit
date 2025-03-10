@@ -57,12 +57,11 @@ protected override void Update()
         HeirloomManager heirloomManager = FindObjectOfType<HeirloomManager>();
         if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
         {
+            isBlindfolded = true;
             moveText.text = "Blindfold Active"; //This could be replaced with simply ""
         }
-        else
-        {
             CheckCurrentAttack();
-        }
+        
         
         
 
@@ -177,7 +176,7 @@ protected virtual void FirstAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -194,7 +193,7 @@ protected virtual void FirstAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {strongAttackValue} DMG and Applying {weakShredValue} Vulnerable";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -210,7 +209,7 @@ protected virtual void FirstAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {weakAttackValue} DMG and Applying {strongShredValue} Vulnerable";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -222,7 +221,8 @@ protected virtual void FirstAttackPhase(){
 
             if (attackTarget == null)
                     FindTarget();
-                moveText.text = $"Attacking party for {attackValue} DMG";
+                if (!isBlindfolded)
+                    moveText.text = $"Attacking party for {attackValue} DMG";
                 break;
 
             case "ChargingUp":
@@ -237,7 +237,7 @@ protected virtual void FirstAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else{
+                else if (!isBlindfolded){
                 moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {strongShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
                 }
@@ -250,43 +250,56 @@ protected virtual void FirstAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-            else{
+            else if (!isBlindfolded){
                 moveText.text = $"Shredding {attackTarget.GetCharacterName()} for {weakShredValue} Vulnerable";
                 moveText.color = attackTarget.GetCharacterColor();
             }
                 break;
 
             case "Strength":
+                if (!isBlindfolded){
+
+                
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+                }
                 break;
             case "Block":
+            if (!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "Defend":
+            if (!isBlindfolded){
                 moveText.text = $"Defending for {firstDefend}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "CombinedAttack":
+            if (!isBlindfolded){
                 string display = "Planning to ";
                 for(int i = 0; i < combinedAttacks.Count; i++){
                     if(i == combinedAttacks.Count - 1)
                         display += $"{combinedAttacks[i]}";
                     else
                         display += $"{combinedAttacks[i]} and ";
+                        }
 
-                }
+                
    
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             default:
+            if (!isBlindfolded){
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
         }
 
@@ -304,7 +317,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -321,7 +334,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {strongAttackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -337,7 +350,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if (!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {weakAttackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -349,12 +362,15 @@ protected virtual void SecondAttackPhase(){
 
             if (attackTarget == null)
                     FindTarget();
-                moveText.text = $"Attacking party for {attackValue} DMG";
+                if (!isBlindfolded)
+                    moveText.text = $"Attacking party for {attackValue} DMG";
                 break;
 
             case "ChargingUp":
+            if (!isBlindfolded){
                 moveText.text = $"Charging Up to Attack";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "StrongShred":
@@ -364,7 +380,8 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else{
+                else if (!isBlindfolded){
+
                 moveText.text = $"Applying {strongShredValue} Shred to {attackTarget.GetCharacterName()}";
                 moveText.color = attackTarget.GetCharacterColor();
                 }
@@ -377,29 +394,36 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-            else{
+            else if (!isBlindfolded){
                 moveText.text = $"Applying {weakShredValue} Shred to {attackTarget.GetCharacterName()}";
                 moveText.color = attackTarget.GetCharacterColor();
             }
                 break;
 
             case "Strength":
+            if (!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "Block":
+            if (!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "Defend":
-                if(isSecondPhase)
+                if(isSecondPhase && !isBlindfolded)
                     moveText.text = $"Defending for {secondDefend}";
  
+            if (!isBlindfolded)
                 moveText.color = this.GetEnemyColor();
                 break;
 
             case "CombinedAttack":
+             if (!isBlindfolded){
+
                 string display = "Planning to ";
                 for(int i = 0; i < combinedAttacks.Count; i++){
                     if(i == combinedAttacks.Count - 1)
@@ -408,14 +432,18 @@ protected virtual void SecondAttackPhase(){
                         display += $"{combinedAttacks[i]} and ";
 
                 }
-                    
+                
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
+             }
                 break;
 
             default:
+                if (!isBlindfolded){
+
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
+                }
                 break;
         }
 
