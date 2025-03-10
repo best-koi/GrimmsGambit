@@ -136,11 +136,9 @@ A static variable will be used to ensure both sisters start on the same attack n
         if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
         {
             moveText.text = "Blindfold Active"; //This could be replaced with simply ""
+            isBlindfolded = true;
         }
-        else
-        {
             CheckCurrentAttack();
-        }
         
         
     }
@@ -343,7 +341,7 @@ protected virtual void AoECurse(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -352,12 +350,16 @@ protected virtual void AoECurse(){
                 break;
 
         case "Protect":
+        if(!isBlindfolded){
                 moveText.text = $"Protecting {sisterToDefendName} for {sisterBlock}";
                 moveText.color = sister2Color;
+        }
                 break;
         case "Strengthen":
+        if(!isBlindfolded){
                 moveText.text = $"Strengthening {sisterToDefendName} for {sisterStrength}";
                 moveText.color = sister1Color;
+        }
                 break;
 
             
@@ -370,7 +372,7 @@ protected virtual void AoECurse(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attacking {attackTarget.GetCharacterName()} 3 times for {tripleAttackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -378,13 +380,17 @@ protected virtual void AoECurse(){
                 }
                 break;
         case "HealTwin":
+        if(!isBlindfolded){
                 moveText.text = $"Healing {sisterToDefendName} for {sisterHeal}";
                 moveText.color = sister1Color;
+        }
                 break;
 
             default:
+            if(!isBlindfolded){
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
+            }
                 break;
         }
   
@@ -403,7 +409,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {secondAttackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -417,28 +423,34 @@ protected virtual void SecondAttackPhase(){
 
                 if(usedOneTimeAttack)
                     AdvanceAttack();
-                else
+                else if(!isBlindfolded)
                     moveText.text = $"Cursing party for {curseValue}";
                 break;
 
             case "AoEAttack":
             if (attackTarget == null)
                     FindTarget();
+            if(!isBlindfolded)
                 moveText.text = $"Attacking party for {aoeAttackValue} DMG";
                 break;
 
             case "Strength":
+            if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "CombinedAttack":
                 if (attackTarget == null)
                     FindTarget();
+                if(!isBlindfolded)
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {secondAttackValue} and Defending for {blockValue}";
                 break;
 
@@ -463,7 +475,7 @@ protected virtual void SecondAttackPhaseB(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {bAttack} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -479,7 +491,7 @@ protected virtual void SecondAttackPhaseB(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attacking {attackTarget.GetCharacterName()} 2 times for {doubleAttackValue} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -491,7 +503,7 @@ protected virtual void SecondAttackPhaseB(){
                     FindTarget();
                 if(usedOneTimeAttack)
                     AdvanceAttack();
-                else
+                else if(!isBlindfolded)
                 moveText.text = $"Cursing party for {curseValue}";
                 break;
 
@@ -502,31 +514,39 @@ protected virtual void SecondAttackPhaseB(){
                 break;
 
             case "Protect":
+                if(!isBlindfolded)
                 moveText.text = $"Protecting {sisterToDefendName} for {sisterBlock}";
+
+                if(!isBlindfolded){
 
                 if(sisterToDefendName == "Sister 1")
                     moveText.color = sister1Color;
                 else    
                     moveText.color = sister2Color;
+                }
                 break;
 
             case "Strengthen":
+            if(!isBlindfolded){
                 moveText.text = $"Strengthening {sisterToDefendName} for {sisterStrength}";
                 if(sisterToDefendName == "Sister 1")
                     moveText.color = sister1Color;
                 else    
                     moveText.color = sister2Color;
+            }
 
                 break;
 
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "HealBothTwins":
                 if(usedOneTimeAttack)
                     AdvanceAttack();
-                else
+                else if(!isBlindfolded)
                     moveText.text = $"Healing Both Sisters for {healBothValue}";
                     moveText.color = sister1Color;
                 break;

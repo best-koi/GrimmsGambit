@@ -58,7 +58,7 @@ protected override void Attack()
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                    //Text display for buffs; second if is for non-buff
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
@@ -72,8 +72,10 @@ protected override void Attack()
                 break;
 
             case "Strength":
+            if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
              case "AttackBleed":
              if (attackTarget == null)
@@ -86,7 +88,7 @@ protected override void Attack()
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                 moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Bleed to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
@@ -103,15 +105,17 @@ protected override void Attack()
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                 moveText.text = $"Attacking for {secondaryAttackValue} and applying {buffValue} Gouge to {attackTarget.GetCharacterName()}";
                 moveText.color = this.GetEnemyColor();
                 }
                 break;
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "CombinedAttack":
@@ -123,9 +127,10 @@ protected override void Attack()
                         display += $"{combinedAttacks[i]} and ";
 
                 }
-                    
+                    if(!isBlindfolded){
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
+                    }
                 break;
 
             default:

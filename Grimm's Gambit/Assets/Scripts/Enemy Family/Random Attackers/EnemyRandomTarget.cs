@@ -82,7 +82,7 @@ public class EnemyRandomTarget : EnemyTemplate
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
@@ -95,22 +95,30 @@ public class EnemyRandomTarget : EnemyTemplate
                 break;
 
             case "Strength":
+            if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = Color.white;
+            }
                 break;
             case "RandomAttack":
+            if(!isBlindfolded){
                 moveText.text = $"{randomAttackName}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
                 
 
             default:
+            if(!isBlindfolded){
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
+            }
                 break;
         }
     }

@@ -132,7 +132,7 @@ public class EnemyPositionTarget : EnemyTemplate
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                    //Text display for buffs; second if is for non-buff
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
@@ -146,12 +146,16 @@ public class EnemyPositionTarget : EnemyTemplate
                 break;
 
             case "Strength":
+            if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "CombinedAttack":
@@ -163,9 +167,10 @@ public class EnemyPositionTarget : EnemyTemplate
                         display += $"{combinedAttacks[i]} and ";
 
                 }
-                    
+                    if(!isBlindfolded){
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
+                    }
                 break;
 
             default:

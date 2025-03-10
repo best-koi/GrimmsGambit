@@ -66,7 +66,7 @@ public class RegularBear : EnemyRandomTarget
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + strengthValue} DMG";
@@ -90,7 +90,7 @@ public class RegularBear : EnemyRandomTarget
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {secondAttackValue + buffValue} DMG twice";
@@ -107,29 +107,37 @@ public class RegularBear : EnemyRandomTarget
                 if (attackTarget == null)
                     FindTarget();
 
+                    if(!isBlindfolded){
+
                     if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + strengthValue} and Inflicting Bleed for {bleedValue}";
                         else
                             moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue} and Inflicting Bleed for {bleedValue}";
-
+                    }
                 
                 break;
 
             case "ProtectAndDebuff":
+            if(!isBlindfolded){
                 moveText.text = $"Defending for {blockValue} and Applying {damageReductionValue} Damage Reduction to Party";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "HealAndStrength":
+            if(!isBlindfolded){
                 moveText.text = $"Healing and Applying Strength";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
  
 
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             default:

@@ -59,35 +59,46 @@ public class GrizzlyBear : RegularBear
                 if (attackTarget == null)
                     FindTarget();
 
+                    if(!isBlindfolded)
                     moveText.text = $"Attacking and Bleeding Party";
 
                 
                 break;
 
             case "StrengthAndDebuff":
+            if(!isBlindfolded){
                 moveText.text = $"Applying Damage Reduction to Party and Strengthening Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             case "AOEDefend":
+            if(!isBlindfolded){
                 moveText.text = "Defending Allies";
                 moveText.color = new Color(1.0f, 0.64f, 0.0f);
+            }
                 break;
             
             case "AOEVulnerable":
+            if(!isBlindfolded){
                 moveText.text = $"Applying Vulnerable to Party";
                 moveText.color = new Color(1.0f, 0.64f, 0.0f);
+            }
                 break;
 
 
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             default:
+            if(!isBlindfolded){
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
+            }
                 break;
         }
     }

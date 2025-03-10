@@ -70,15 +70,13 @@ public class Hare : EnemyRandomTarget
         if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
         {
             moveText.text = "Blindfold Active"; //This could be replaced with simply ""
+            isBlindfolded = true;
+            CheckCurrentAttack();
         }
         else if(minion.currentHealth < minion.maxHealth && hasRun == false)
         {
             Run(); 
             hasRun = true; 
-            
-        }else{
-            CheckCurrentAttack();
-
         }
     }
 
@@ -100,7 +98,7 @@ public class Hare : EnemyRandomTarget
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
@@ -124,7 +122,7 @@ public class Hare : EnemyRandomTarget
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG twice";
@@ -139,13 +137,16 @@ public class Hare : EnemyRandomTarget
             case "CombinedAttack":
                 if (attackTarget == null)
                     FindTarget();
+                    if(!isBlindfolded){
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue} and Defending for {secondBlock}";
                 moveText.color = attackTarget.GetCharacterColor();
+                    }
                 break;
 
             case "AttackAndBleed":
                 if (attackTarget == null)
                     FindTarget();
+                if(!isBlindfolded)
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {secondAttackValue} and Inflicting Bleed for {buffValue}";
                 break;
 
@@ -158,8 +159,10 @@ public class Hare : EnemyRandomTarget
             break;
 
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
 
             default:

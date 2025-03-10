@@ -35,21 +35,28 @@ public class AoEEnemy : EnemyRandomTarget
 
             if (attackTarget == null)
                     FindTarget();
+                if(!isBlindfolded)
                 moveText.text = $"Attacking party for {attackValue} DMG";
 
                 break;
 
             case "Strength":
+                if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+                }
                 break;
             case "Block":
+            if(!isBlindfolded){
                 moveText.text = $"Blocking for {blockValue}";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "AOEDefend":
+            if(!isBlindfolded){
                 moveText.text = "Defending Allies";
                 moveText.color = new Color(1.0f, 0.64f, 0.0f);
+            }
                 break;
 
             case "CombinedAttack":
@@ -61,9 +68,10 @@ public class AoEEnemy : EnemyRandomTarget
                         display += $"{combinedAttacks[i]} and ";
 
                 }
-                    
+                if(!isBlindfolded){
                 moveText.text = display; 
                 moveText.color = this.GetEnemyColor();
+                }
                 break;
 
             default:

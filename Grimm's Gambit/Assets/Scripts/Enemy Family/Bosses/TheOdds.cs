@@ -70,11 +70,10 @@ public class TheOdds : AoEEnemy
         if (heirloomManager.ContainsHeirloom(Heirloom.Blindfold))
         {
             moveText.text = "Blindfold Active"; //This could be replaced with simply ""
+            isBlindfolded = true;
         }
-        else
-        {
+    
             CheckCurrentAttack();
-        }
 
     }
 
@@ -261,7 +260,7 @@ public class TheOdds : AoEEnemy
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack1Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -277,7 +276,7 @@ public class TheOdds : AoEEnemy
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attacking Party for {aoeAttackValue1} DMG and Defending for {firstAOEDefend}";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -299,7 +298,10 @@ public class TheOdds : AoEEnemy
 
                 hasRolledDice = true;
 
-                if(die1 + die2 == 2){
+                if(isBlindfolded){
+
+                }
+                else if(die1 + die2 == 2){
                     moveText.text = $"Snake Eyes: Taking {3 * attackValue} Damage";
 
                  } else if (die1 + die2 == 12){
@@ -339,7 +341,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack2Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -355,7 +357,7 @@ protected virtual void SecondAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attacking Party for {aoeAttackValue2} DMG and Defending for {secondAOEDefend}";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -364,19 +366,23 @@ protected virtual void SecondAttackPhase(){
                 break;
 
             case "PowerOfFateAll":
+                if(!isBlindfolded)
                 moveText.text = $"Applying {dieStrength} Strength & {dieBlock} Block";
                 break;
 
             case "PowerOfFateGood":
+                if(!isBlindfolded)
                 moveText.text = $"Applying {powerOfFateGoodValue} Power Burst";
                 break;
 
             case "PowerOfFateBad":
+                if(!isBlindfolded)
                 moveText.text = $"Afflicting Party with {(die1+die2)/2} Vulnerable and Damage Reduction";
                 break;
                 
             
             default:
+      
                 moveText.text = "Upcoming Move: " + attacks[currentAttack];
                 moveText.color = Color.white;
                 break;
@@ -396,7 +402,7 @@ protected virtual void FinalAttackPhase(){
                 {
                     AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                     moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attack3Value} DMG";
                     moveText.color = attackTarget.GetCharacterColor();
@@ -407,6 +413,7 @@ protected virtual void FinalAttackPhase(){
             case "AttackAndDefend":
                 if (attackTarget == null)
                     FindTarget();
+                if(!isBlindfolded)
                 moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attack4Value} and Defending for {finalDefend}";
                 break;
 
@@ -423,7 +430,10 @@ protected virtual void FinalAttackPhase(){
 
                 hasRolledDice = true;
 
-                if(die1 + die2 == 2){
+                if(!isBlindfolded){
+
+                }
+                else if(die1 + die2 == 2){
                     moveText.text = $"Snake Eyes: Taking {3 * attackValue} Damage";
 
                  } else if (die1 + die2 == 12){
@@ -443,6 +453,7 @@ protected virtual void FinalAttackPhase(){
             break;
 
             case "PowerOfFateGood":
+            if(!isBlindfolded)
                 moveText.text = $"Applying {powerOfFateGoodValue} Power Burst";
                 break;
 

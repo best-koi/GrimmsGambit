@@ -34,7 +34,7 @@ public class DireWolf : EnemyRandomTarget
                     else
                         AdvanceAttack();
                 }
-                else
+                else if(!isBlindfolded)
                 {
                         if (minion.currentAffixes.ContainsKey(Affix.Strength))
                             moveText.text = $"Attack {attackTarget.GetCharacterName()} for {attackValue + buffValue} DMG";
@@ -47,8 +47,10 @@ public class DireWolf : EnemyRandomTarget
                 break;
 
             case "Strength":
+            if(!isBlindfolded){
                 moveText.text = $"Applying {buffValue} Strength to Self";
                 moveText.color = this.GetEnemyColor();
+            }
                 break;
             case "RandomAttack":
                 if(hasChosenRandomAttack != true)
@@ -56,7 +58,7 @@ public class DireWolf : EnemyRandomTarget
                 if(randomAttackName == "Block")
                     hasChosenRandomAttack = true; 
 
-                if(randomAttackName == "Block")
+                if(randomAttackName == "Block" && !isBlindfolded)
                     moveText.text = $"Blocking for {blockValue}";
                 else
                 {
@@ -66,15 +68,18 @@ public class DireWolf : EnemyRandomTarget
                         FindTarget();
                     }
                     hasChosenRandomAttack = true; 
-                    moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue}";
+                    if(!isBlindfolded)
+                        moveText.text = $"Attacking {attackTarget.GetCharacterName()} for {attackValue}";
                     
                 }
-                    
-                moveText.color = this.GetEnemyColor();
+                if(!isBlindfolded)
+                    moveText.color = this.GetEnemyColor();
                 break;
             case "Howl":
+            if(!isBlindfolded){
                 moveText.text = "Applying Strength to Allies";
                 moveText.color = new Color(1.0f, 0.64f, 0.0f);
+            }
 
             
 
