@@ -28,6 +28,6 @@ MonoBehaviour:
   - _speaker: 2
     _speakerHidden: 0
     _line: The End.
-  - _speaker: 2
-    _speakerHidden: 0
+  - _speaker: 1
+    _speakerHidden: 1
     _line: Wait... this isn't how this story ends...
