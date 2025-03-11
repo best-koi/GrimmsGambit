@@ -293,7 +293,7 @@ public class Minion : MonoBehaviour
                 if (currentExploitStacks >= 2)
                 {
                     currentAffixes.Add(Affix.Exploit, currentExploitStacks/2); //Readds affix with half the amount of stacks, rounding down
-                    
+                    affixDisplay.UpdateStacks(Affix.Exploit, currentExploitStacks/2); //Adds visual display of affix
                 }
                 else
                 {
@@ -314,11 +314,13 @@ public class Minion : MonoBehaviour
                     DamageToDeal = 0;
                     currentAffixes.Remove(Affix.Block);
                     currentAffixes.Add(Affix.Block, remainingBlock); //Replaces block value with the new remaining value
+                    affixDisplay.UpdateStacks(Affix.Block, remainingBlock); //Adds visual display of affix
                 }
                 else //Case where there isn't any block leftover
                 {
                     DamageToDeal -= currentBlock;
                     RemoveAffix(Affix.Block); //Removes block affix since all charges are used
+                    affixDisplay.RemoveAffix(Affix.Block); //Removes visual portion
                 }
             }
         }
