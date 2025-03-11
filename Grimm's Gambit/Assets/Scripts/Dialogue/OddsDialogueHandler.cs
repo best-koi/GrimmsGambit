@@ -8,15 +8,17 @@ public class OddsDialogueHandler : PostDialogueHandler
 
       [Space] [SerializeField] protected string playerEnding;
 
-    protected void _endPostDialogue()
+    protected override void _endPostDialogue()
     {
         RenderSettings.fog = true;
+        
         SceneManager.UnloadSceneAsync(endingScene);
+        SceneManager.LoadScene(playerEnding);
         
         //MapPlayer.sceneToToggle.SetActive(true);
         SaveDataJSON save = FindObjectOfType<SaveDataJSON>();
         save.LoadFromPlayerData();
-        SceneManager.LoadScene(playerEnding);
+        
 
     }
 }
