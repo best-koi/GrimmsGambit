@@ -10,15 +10,15 @@ public class PostDialogueHandler : BossDialogueHandler
     [Header("Post Dialogue Variables")]
 
     [Header("Ending Dialogue Lists")]
-    [SerializeField] private List<BossDialogue> goodEnding;
-    [SerializeField] private List<BossDialogue> badEnding;
+    [SerializeField] protected List<BossDialogue> goodEnding;
+    [SerializeField] protected List<BossDialogue> badEnding;
 
     [Header("UI References")]
-    [SerializeField] private GameObject choicePanel;
-    [SerializeField] private Button _goodChoiceButton;
-    [SerializeField] private Button _badChoiceButton;
+    [SerializeField] protected GameObject choicePanel;
+    [SerializeField] protected Button _goodChoiceButton;
+    [SerializeField] protected Button _badChoiceButton;
 
-    [Space] [SerializeField] private string endingScene;
+    [Space] [SerializeField] protected string endingScene;
 
     #endregion
 
@@ -71,7 +71,7 @@ public class PostDialogueHandler : BossDialogueHandler
 
     #region Private Fields
 
-    private void _resetDialogue()
+    protected void _resetDialogue()
     {
         advanceButton.gameObject.SetActive(false);
         conversationText.text = string.Empty;
@@ -79,7 +79,7 @@ public class PostDialogueHandler : BossDialogueHandler
         index = 0;
     }
 
-    private void _startDialogue(List<BossDialogue> dialogueList, DialogueCloser newCloser = null)
+    protected void _startDialogue(List<BossDialogue> dialogueList, DialogueCloser newCloser = null)
     {
         _resetDialogue();
         selectedBossConversation = dialogueList[bossIndex];
@@ -93,12 +93,12 @@ public class PostDialogueHandler : BossDialogueHandler
         StartDialogue();
     }
 
-    private void _turnOnChoice()
+    protected void _turnOnChoice()
     {
         choicePanel.SetActive(true);
     }
 
-    private void _endPostDialogue()
+    protected virtual void _endPostDialogue()
     {
         RenderSettings.fog = true;
         SceneManager.UnloadSceneAsync(endingScene);
