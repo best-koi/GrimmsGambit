@@ -46,6 +46,7 @@ public class DialogueHandler : BaseDialogueHandler
     [SerializeField] protected Dialogue selectedConversation; // A conversation selected at random
 
     private bool canTalkSeamstress = true, canTalkHound = true, canTalkKatze = true; 
+    
 
     protected override void Start()
     {
@@ -230,10 +231,16 @@ public class DialogueHandler : BaseDialogueHandler
     {
         StopAllCoroutines();
 
-        if(index < selectedConversation.DialogueLines.Length - 1)
+        if(canDisplayFullLine){
+            conversationText.text = selectedConversation.DialogueLines[index].Line;
+            canDisplayFullLine = false;
+
+        }
+        else if(index < selectedConversation.DialogueLines.Length - 1)
         {
             index++;
             conversationText.text = string.Empty;
+            canDisplayFullLine = true;
             StartCoroutine(_typeLine());
         }
         else

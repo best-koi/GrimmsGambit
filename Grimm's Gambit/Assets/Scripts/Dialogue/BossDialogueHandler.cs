@@ -151,10 +151,15 @@ public class BossDialogueHandler : BaseDialogueHandler
     {
         StopAllCoroutines();
 
-        if (index < selectedBossConversation.DialogueLines.Length - 1)
+        if(canDisplayFullLine){
+            conversationText.text = selectedBossConversation.DialogueLines[index].Line;
+            canDisplayFullLine = false;
+        }
+        else if (index < selectedBossConversation.DialogueLines.Length - 1)
         {
             index++;
             conversationText.text = string.Empty;
+            canDisplayFullLine = true;
             StartCoroutine(_typeLine());
         }
         else
@@ -166,6 +171,7 @@ public class BossDialogueHandler : BaseDialogueHandler
                 conversationText.text = string.Empty;
                 selectedBossConversation = dialogueList[bossIndex];
                 _revealSelectedCharacters();
+                canDisplayFullLine = true;
                 StartCoroutine(_typeLine());
             }
             else

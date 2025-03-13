@@ -33,6 +33,8 @@ public abstract class BaseDialogueHandler : MonoBehaviour
 
     [Space] [SerializeField] protected float textSpeed; //The speed to advance dialogue
 
+    protected bool canDisplayFullLine = true;
+
     #endregion
 
     #region Private Fields
