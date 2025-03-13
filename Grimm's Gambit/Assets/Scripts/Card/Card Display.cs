@@ -25,7 +25,10 @@ public class CardDisplay : MonoBehaviour
     #region Private Fields
 
     private Card _cardReference;
+    private BoxCollider _cardHitbox;
     private Vector3 _startingDisplayScale;
+    private Vector3 _startingHitboxCenter;
+    private Vector3 _startingHitBoxSize;
 
     #endregion
 
@@ -43,9 +46,16 @@ public class CardDisplay : MonoBehaviour
     private void Start()
     {
         _cardReference = GetComponent<Card>();
+        _cardHitbox = GetComponent<BoxCollider>();
 
         if (_cardCanvas != null)
             _startingDisplayScale = _cardCanvas.transform.localScale;
+
+        if (_cardHitbox != null)
+        {
+            _startingHitboxCenter = _cardHitbox.center;
+            _startingHitBoxSize = _cardHitbox.size;
+        }
     }
 
     private void Update()
@@ -75,6 +85,12 @@ public class CardDisplay : MonoBehaviour
 
         if (_cardImage != null)
             _cardImage.sprite = CardReference.CardSprite;
+
+        if (_cardHitbox != null)
+        {
+            _cardHitbox.center = _startingHitboxCenter + _cardDisplayDisplacement;
+            _cardHitbox.size = new Vector3(_startingHitBoxSize.x * _cardDisplayScale.x, _startingHitBoxSize.y * _cardDisplayScale.y, _startingHitBoxSize.z * _cardDisplayScale.z);
+        }
     }
 
     #endregion
