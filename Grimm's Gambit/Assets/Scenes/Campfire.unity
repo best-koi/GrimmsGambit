@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055326815, g: 0.006435362, b: 0.0033321204, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9417,6 +9417,10 @@ PrefabInstance:
     - target: {fileID: 3602023258321748164, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
       propertyPath: m_Name
       value: Talk Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602023258321748164, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3744667566701936231, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
       propertyPath: m_Pivot.x
