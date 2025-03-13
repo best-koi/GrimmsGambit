@@ -76,7 +76,9 @@ public class Hare : EnemyRandomTarget
         else if(minion.currentHealth < minion.maxHealth && hasRun == false)
         {
             Run(); 
-            hasRun = true; 
+            hasRun = true;
+        }else{
+            CheckCurrentAttack();
         }
     }
 
