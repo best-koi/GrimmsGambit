@@ -42,7 +42,7 @@ public class EncounterVictoryMenu : MonoBehaviour
             {
                 string cardName = cardDatabase.GetTemplate(i, j).CardName;
                 if(cardName == "Roar" || cardName == "Leader's Might" || cardName == "Clean" || cardName == "Bravado"
-                    || cardName == "Euphoric Frenzy" || cardName == "Fury Swipes" || cardName == "Deadly Elegance" || cardName == "Devastation") //Checks to see if the current card is excluded from the draft
+                    || cardName == "Euphoric Frenzy" || cardName == "Fury Swipes" || cardName == "Deadly Elegance" || cardName == "Devastation" || cardName == "Scratch") //Checks to see if the current card is excluded from the draft
                 {
                     validPairs[i].Add(false); //Initializes coordinate pair value to false
                 }
