@@ -18,6 +18,12 @@ public class CardHand : ObjectContainer
         base.Awake();
     }
 
+    private void OnDestroy()
+    {
+        Deck.onDraw -= AddCardFromIndex;
+        Deck.onDiscard -= RemoveCardFromIndex;
+    }
+
     private void Start()
     {
         
