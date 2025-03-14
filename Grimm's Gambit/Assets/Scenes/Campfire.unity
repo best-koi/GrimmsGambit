@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
+  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -161,6 +161,7 @@ MonoBehaviour:
   conversationText: {fileID: 1206175803}
   dialogueWindow: {fileID: 730295147}
   advanceButton: {fileID: 1206175802}
+  skipDialogueButton: {fileID: 1206175805}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
   houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
@@ -6497,6 +6498,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1206175805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3444091658218036119, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+  m_PrefabInstance: {fileID: 1206175800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1208127189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8219044806749345803, guid: 204870e4228ba4d079076cdc1f31202a, type: 3}
@@ -8401,6 +8413,7 @@ MonoBehaviour:
   conversationText: {fileID: 1963830401}
   dialogueWindow: {fileID: 1423862019}
   advanceButton: {fileID: 1963830400}
+  skipDialogueButton: {fileID: 1963830403}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
   houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
@@ -9543,6 +9556,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1963830403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3444091658218036119, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+  m_PrefabInstance: {fileID: 1963830398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1978807864

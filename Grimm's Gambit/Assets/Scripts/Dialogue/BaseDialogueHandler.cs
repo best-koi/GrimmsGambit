@@ -21,7 +21,7 @@ public abstract class BaseDialogueHandler : MonoBehaviour
 
     [Header("Object UI References")]
     [SerializeField] protected GameObject dialogueWindow;
-    [SerializeField] protected Button advanceButton;
+    [SerializeField] protected Button advanceButton, skipDialogueButton;
 
     [Header("Object UI References")]
     [SerializeField] protected AudioClip SoundEffect;
@@ -48,6 +48,7 @@ public abstract class BaseDialogueHandler : MonoBehaviour
     protected virtual void Start()
     {
         advanceButton.onClick.AddListener(NextLine);
+        skipDialogueButton.onClick.AddListener(SkipDialogue);
     }
 
     #endregion
@@ -121,4 +122,9 @@ public abstract class BaseDialogueHandler : MonoBehaviour
     protected abstract void _closeDialogueWindow();
 
     #endregion
+
+    public virtual void SkipDialogue(){
+        StopAllCoroutines();
+        _closeDialogueWindow();
+    }
 }

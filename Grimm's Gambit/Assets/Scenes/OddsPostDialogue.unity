@@ -970,6 +970,7 @@ MonoBehaviour:
   conversationText: {fileID: 1600789225}
   dialogueWindow: {fileID: 30174703}
   advanceButton: {fileID: 212040030}
+  skipDialogueButton: {fileID: 1600789222}
   SoundEffect: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
   seamstressSFX: {fileID: 8300000, guid: 234297de78e7645d3b5576ccb25b7faf, type: 3}
   houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
@@ -2343,6 +2344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30174704}
     m_Modifications:
+    - target: {fileID: 2819313291271283294, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3602023258321748164, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
       propertyPath: m_Name
       value: Talk Panel
@@ -2437,6 +2442,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3744667566701936231, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
   m_PrefabInstance: {fileID: 1600789220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1600789222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3444091658218036119, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+  m_PrefabInstance: {fileID: 1600789220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1600789225 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9071602994608988747, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
