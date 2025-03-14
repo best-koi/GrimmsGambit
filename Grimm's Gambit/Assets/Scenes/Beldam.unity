@@ -31729,6 +31729,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 343700815}
+    - target: {fileID: 2819313291271283294, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3602023258321748164, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
       propertyPath: m_Name
       value: TalkPanel
