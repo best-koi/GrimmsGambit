@@ -13,13 +13,14 @@ public class CardHand : ObjectContainer
 
     protected override void Awake()
     {
+        Deck.onDraw += AddCardFromIndex;
+        Deck.onDiscard += RemoveCardFromIndex;
         base.Awake();
     }
 
     private void Start()
     {
-        Deck.onDraw += AddCardFromIndex;
-        Deck.onDiscard += RemoveCardFromIndex;
+        
     }
 
     public void AddCardFromIndex(int owner, int cardIndex)

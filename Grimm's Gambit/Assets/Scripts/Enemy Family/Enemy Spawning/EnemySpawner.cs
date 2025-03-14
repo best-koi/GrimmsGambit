@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject m_SpawnedEnemy; // Reference to spawned enemy
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         renderer.material.color = spawnerColor;
         enemy = Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Count)]);
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
         m_SpawnedEnemy = enemy.gameObject;
         m_SpawnedEnemy.transform.parent = this.transform; 
     }
-         void Update(){
+    void Update(){
         if(enemy == null)
          Destroy(gameObject);
     }

@@ -115,6 +115,7 @@ public class SaveDataJSON : MonoBehaviour
 
     public void newGame() {
         SetDefaultValues();
+        SaveData();
         SceneManager.LoadScene(mapName);
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005473257, g: 0.0064324453, b: 0.0033483207, a: 1}
+  m_IndirectSpecularColor: {r: 0.0055345343, g: 0.006431789, b: 0.0032681464, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8253,7 +8253,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0251d15c955794b32b1084fdb6969bc0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10480,6 +10480,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7294873939457627779}
     m_Modifications:
+    - target: {fileID: 408800105369627076, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1682190481}
+    - target: {fileID: 408800105369627076, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1103642472}
+    - target: {fileID: 408800105369627076, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 408800105369627076, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: setVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 1993850664015941620, guid: b675fdf7e0adc3d4c9b0d447e5e01211, type: 3}
       propertyPath: m_Name
       value: PauseMenu
