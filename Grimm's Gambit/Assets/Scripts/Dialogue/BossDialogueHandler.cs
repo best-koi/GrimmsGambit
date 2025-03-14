@@ -229,5 +229,6 @@ public class BossDialogueHandler : BaseDialogueHandler
         dialogueWindow.SetActive(false); 
     }
 
+
     #endregion
 }

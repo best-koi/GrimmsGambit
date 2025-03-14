@@ -291,5 +291,6 @@ public class DialogueHandler : BaseDialogueHandler
         shopButton.SetActive(false);
         talkPanel.SetActive(true);
     }
+
     //Sets up dialogue panel 
 }

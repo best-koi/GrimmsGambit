@@ -121,4 +121,10 @@ public abstract class BaseDialogueHandler : MonoBehaviour
     protected abstract void _closeDialogueWindow();
 
     #endregion
+
+    public void SkipDialogue(){
+        StopAllCoroutines();
+        _closeDialogueWindow();
+
+    }
 }
