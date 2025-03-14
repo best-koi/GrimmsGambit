@@ -161,9 +161,9 @@ public class PlayerData : MonoBehaviour
 
     public void changeCurrentHP(PartyMember ms, int amount) {
         if (ms == PartyMember.Party) {
-            seamstressStats.AddCurrentHealth(amount);
-            katzeStats.AddCurrentHealth(amount);
-            houndStats.AddCurrentHealth(amount);
+            seamstressStats.currentHP += amount;
+            katzeStats.currentHP += amount;
+            houndStats.currentHP += amount;
         } else {
             HPChange toChange = selectMember(ms);
             toChange.currentHP += amount;
@@ -178,6 +178,7 @@ public class PlayerData : MonoBehaviour
             katzeStats.currentHP += amount;
             houndStats.maxHP += amount;
             houndStats.currentHP += amount;
+            Debug.Log("Party Changed");
         } else {
             HPChange toChange = selectMember(ms);
             toChange.maxHP += amount;
