@@ -19,7 +19,7 @@ public class Hare : EnemyRandomTarget
     {
         controller = FindObjectOfType(typeof(EncounterController)) as EncounterController;
         //Sets color to preset color
-        renderer.material.color = enemyColor;
+        //renderer.material.color = enemyColor;
         //Starts the enemy with a random attack
         currentAttack = 0;
     }

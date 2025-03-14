@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 //Code by Jessie Archer
 public abstract class EnemyTemplate : MonoBehaviour
 {
@@ -61,12 +62,11 @@ protected bool isBlindfolded = false;
         CheckAttackBounds();
     }
 
-
     //A default Start() method 
     protected virtual void Start()
     {
         //Sets color to preset color
-        renderer.material.color = enemyColor;
+        //renderer.material.color = enemyColor;
         //Starts the enemy with a random attack
         currentAttack = Random.Range(0, attacks.Count);
     }

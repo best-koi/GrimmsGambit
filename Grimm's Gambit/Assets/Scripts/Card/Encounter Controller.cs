@@ -115,6 +115,7 @@ public class EncounterController : MonoBehaviour
         {
             m_PlayerDeck.Conjure()
         }*/
+
         EndTurn();
     }
 
@@ -149,8 +150,7 @@ public class EncounterController : MonoBehaviour
                 m_CurrentResources--; //Reduces spirit by one on turn after tired is applied
                 Tired = false; //Removes tired status
                 m_ResourceText.text = $"{m_CurrentResources}"; //changed by Danielle
-            }
-            
+            }  
             if (Greeding)
             {
                 m_PlayerDeck.DrawAmount(false, 8); //Draws 8 cards instead of 6 if the greed turn is active
