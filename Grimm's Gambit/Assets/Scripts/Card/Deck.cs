@@ -33,12 +33,12 @@ public class Deck : MonoBehaviour
 {
     // Triggers on draw, broadcast indice of drawn card
     // Intended to display index in database
-    public static Action<int, int> onDraw;
+    public static Action<int, int> onDraw = null;
 
     // Triggers on discard, broadcast indice of discarded card
     // Intended to display index in database
     // Sometimes will display index in hand
-    public static Action<int> onDiscard;
+    public static Action<int> onDiscard = null;
     
     // References database of all cards in the game
     [SerializeField] internal CardDatabase m_DataBase;
@@ -62,8 +62,8 @@ public class Deck : MonoBehaviour
 
     private void Awake()
     {
-        onDraw = null;
-        onDiscard = null;
+        //onDraw = null;
+        //onDiscard = null;
 
         if (m_GameDeck == null)
             m_GameDeck = new List<CardData>();
