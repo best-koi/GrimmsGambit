@@ -24163,7 +24163,7 @@ MonoBehaviour:
   houndSFX: {fileID: 8300000, guid: d4b561a73aa79418f95c365f927b5e49, type: 3}
   katzeSFX: {fileID: 8300000, guid: 81bfa135e97af43f0a1b408f31450439, type: 3}
   heirSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
-  narratorSFX: {fileID: 0}
+  narratorSFX: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
   textSpeed: 0.05
   boss: {fileID: 2126669530}
   bossDialogue:
