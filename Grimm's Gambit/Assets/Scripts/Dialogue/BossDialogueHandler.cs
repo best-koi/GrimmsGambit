@@ -30,7 +30,7 @@ public class BossDialogueHandler : BaseDialogueHandler
         base.Start();
         conversationText.text = string.Empty; 
         selectedBossConversation = bossDialogue[bossIndex];
-        StartDialogue(); 
+        //StartDialogue(); 
     }
 
     #endregion

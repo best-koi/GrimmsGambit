@@ -6,25 +6,25 @@ using UnityEngine.Video;
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField]
-    private VideoPlayer videoPlayer;//The cutscene VideoPlayer component
+    protected VideoPlayer videoPlayer;//The cutscene VideoPlayer component
 
     [SerializeField]
-    private GameObject cutsceneUI;//The UI object that contains the cutscene and background panel
+    protected GameObject cutsceneUI;//The UI object that contains the cutscene and background panel
 
 //Subscribes to an end event
-    private void Start(){
+    protected void Start(){
         videoPlayer.loopPointReached += OnLoopPointReached; 
     }
 
 
 
 //Used to advance cutscene
-    public void SkipCutscene(){
+    public virtual void SkipCutscene(){
         cutsceneUI.SetActive(false);
     }
 
 //Hides UI when cutscene is over
-    void OnLoopPointReached(VideoPlayer vp)
+    public virtual void OnLoopPointReached(VideoPlayer vp)
     {
         // Play the particle effect when the video reaches the end.  
         SkipCutscene();
