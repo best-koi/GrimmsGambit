@@ -7,9 +7,20 @@ public class BossCutsceneManager : CutsceneManager
 {
     [SerializeField]
     private BossDialogueHandler dialogueHandler; 
+
+    [SerializeField]
+    private AudioSource audioPlayer;
+
+     protected override void Start(){
+        base.Start();
+        audioPlayer.Stop();
+    }
+
     public override void SkipCutscene(){
         cutsceneUI.SetActive(false);
         videoPlayer.Stop();
+        audioPlayer.Play();
+        
         dialogueHandler.StartDialogue(); 
     }
 

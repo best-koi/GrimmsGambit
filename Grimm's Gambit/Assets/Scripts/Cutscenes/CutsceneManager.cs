@@ -12,7 +12,7 @@ public class CutsceneManager : MonoBehaviour
     protected GameObject cutsceneUI;//The UI object that contains the cutscene and background panel
 
 //Subscribes to an end event
-    protected void Start(){
+    protected virtual void Start(){
         videoPlayer.loopPointReached += OnLoopPointReached; 
     }
 

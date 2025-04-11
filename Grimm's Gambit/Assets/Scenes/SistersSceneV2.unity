@@ -7848,6 +7848,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4030983914500185975, guid: 874d1820cb6020f4e8c6020c2bc1e349, type: 3}
   m_PrefabInstance: {fileID: 1332711313}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &741945860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5265397002872905758, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
+  m_PrefabInstance: {fileID: 1323552461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae51d856668b4e3fb968370a4732886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &746488967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8539,7 +8550,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 741945860}
         m_TargetAssemblyTypeName: BossCutsceneManager, Assembly-CSharp
         m_MethodName: SkipCutscene
         m_Mode: 1
@@ -15176,6 +15187,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1854853898}
     - target: {fileID: 5265397002872905758, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1682190481}
+    - target: {fileID: 5265397002872905758, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
       propertyPath: dialogueHandler
       value: 
       objectReference: {fileID: 1437419155}
@@ -15189,7 +15204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5270247751645782696, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
       propertyPath: m_DirectAudioMutes.Array.data[0]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5270247751645782696, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
       propertyPath: m_TargetAudioSources.Array.data[0]

@@ -30630,6 +30630,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1497851668}
     - target: {fileID: 5265397002872905758, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 1682190481}
+    - target: {fileID: 5265397002872905758, guid: 36e060fd27b8f4428a5bc7d83c1f96d5, type: 3}
       propertyPath: dialogueHandler
       value: 
       objectReference: {fileID: 1779372839}
