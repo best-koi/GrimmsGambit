@@ -15830,6 +15830,7 @@ MonoBehaviour:
   bossName: The Sisters
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 1bb7498c17de84370be173e9b5f8db6f, type: 3}
+  notCutsceneDialogue: 0
 --- !u!4 &1437419156
 Transform:
   m_ObjectHideFlags: 0

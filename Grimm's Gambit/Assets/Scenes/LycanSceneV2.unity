@@ -24637,6 +24637,7 @@ MonoBehaviour:
   bossName: The Lycan
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: d58e63ef2006c4563be56f675416653b, type: 3}
+  notCutsceneDialogue: 0
 --- !u!4 &1779372840
 Transform:
   m_ObjectHideFlags: 0

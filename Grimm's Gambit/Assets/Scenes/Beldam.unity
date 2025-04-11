@@ -1080,6 +1080,7 @@ MonoBehaviour:
   bossName: The Beldam
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: bbd8b9d5c95a946f9b139b065541a26b, type: 3}
+  notCutsceneDialogue: 0
   goodEnding:
   - {fileID: 11400000, guid: 8d15ae769bfcb45f587733a7ea82249a, type: 2}
   - {fileID: 11400000, guid: 5a24954c760e0426895e8984dd006016, type: 2}

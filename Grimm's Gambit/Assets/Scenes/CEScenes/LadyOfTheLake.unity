@@ -18551,6 +18551,7 @@ MonoBehaviour:
   bossName: Voice of the Spring
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: c5ce23264888f40f98dc2b0a4226c9f1, type: 3}
+  notCutsceneDialogue: 0
   goodEnding:
   - {fileID: 11400000, guid: bb4090471ec6a4e11a545224b6db0d40, type: 2}
   - {fileID: 11400000, guid: ae2c6187150c04107ab790f96f5298ff, type: 2}
