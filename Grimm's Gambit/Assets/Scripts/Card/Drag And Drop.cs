@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DragAndDropV2 : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class DragAndDropV2 : MonoBehaviour
 
     private Transform _selectedObjectParent;
     private int _selectedChildIndex;
+
+    [SerializeField] private List<Transform> _currentPartyTransforms;
 
     #endregion
 
@@ -153,7 +156,44 @@ public class DragAndDropV2 : MonoBehaviour
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one * _hoverScale;
                 cd.CardDisplayDisplacement = Vector3.up * _hoverPopDistance;
+
+                HighlightTargets(cd.CardReference);
             }
+        }
+    }
+
+    // Added by Dawson as per task
+    // Can be moved to another script if neccessary 
+    private void HighlightTargets(Card c)
+    {
+        if (c.TargetsEnemies)
+        {
+            _currentPartyTransforms = new List<Transform>(_controller.GetPlayerInventory().GetAll());
+
+            HighLightHelper(Color.grey);
+
+            _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
+
+            HighLightHelper(Color.white);
+
+        }
+        else
+        {
+            _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
+
+            HighLightHelper(Color.grey);
+
+            _currentPartyTransforms = new List<Transform>(_controller.GetPlayerInventory().GetAll());
+
+            HighLightHelper(Color.white);
+        }
+    }
+
+    private void HighLightHelper(Color targetColor)
+    {
+        foreach (var e in _currentPartyTransforms)
+        {
+            e.GetComponentInChildren<SpriteRenderer>().color = targetColor;
         }
     }
 
