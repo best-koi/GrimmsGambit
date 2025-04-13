@@ -178,10 +178,12 @@ public class Deck : MonoBehaviour
         DiscardFromHand(randomIndex);   //Removes card from randomly selected index
     }
 
-    public void DiscardHand()
+    public int DiscardHand()
     {
+        int valueToReturn = CurrentCardCount;
         for (int i = CurrentCardCount - 1; i >= 0; i--)
             DiscardFromHand(i);
+        return valueToReturn; //Returns the amount that was discarded to be used by the reconstruct card
     }
 
     public void RemoveCard(Card card)
