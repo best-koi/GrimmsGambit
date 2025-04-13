@@ -157,35 +157,38 @@ public class DragAndDropV2 : MonoBehaviour
                 cd.CardDisplayScale = Vector3.one * _hoverScale;
                 cd.CardDisplayDisplacement = Vector3.up * _hoverPopDistance;
 
-                HighlightTargets(cd.CardReference);
+                HighlightTargets(Color.grey, Color.white, cd.CardReference.TargetsEnemies);
             }
+        }
+        else
+        {
+            HighlightTargets(Color.white, Color.white);
         }
     }
 
     // Added by Dawson as per task
     // Can be moved to another script if neccessary 
-    private void HighlightTargets(Card c)
+    private void HighlightTargets(Color first, Color second, bool targetsEnemies = true)
     {
-        if (c.TargetsEnemies)
+        if (targetsEnemies)
         {
             _currentPartyTransforms = new List<Transform>(_controller.GetPlayerInventory().GetAll());
 
-            HighLightHelper(Color.grey);
+            HighLightHelper(first);
 
             _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
 
-            HighLightHelper(Color.white);
-
+            HighLightHelper(second);
         }
         else
         {
             _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
 
-            HighLightHelper(Color.grey);
+            HighLightHelper(first);
 
             _currentPartyTransforms = new List<Transform>(_controller.GetPlayerInventory().GetAll());
 
-            HighLightHelper(Color.white);
+            HighLightHelper(second);
         }
     }
 
