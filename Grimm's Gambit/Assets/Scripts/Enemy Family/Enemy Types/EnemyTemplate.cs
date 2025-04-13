@@ -205,6 +205,16 @@ public Minion GetAttackTarget(){
     return attackTarget.GetComponent<Minion>();
 }
 
+//Returns false if the target was not changed
+public bool SetAttackTarget(CharacterTemplate newTarget){
+    if (newTarget == attackTarget)
+    {
+        return false;
+    }
+    attackTarget = newTarget;
+    return true;
+}
+
     
 
 
