@@ -13,27 +13,27 @@ MonoBehaviour:
   m_Name: Encaged
   m_EditorClassIdentifier: 
   _cardName: Encaged
-  _cardDescription: "Deal 3 damage. Skip target\u2019s next turn. Once. "
+  _cardDescription: "Deal 3 damage. Skip target\u2019s next turn. Once."
   _cardCost: 2
-  _cardSprite: {fileID: 0}
+  _cardSprite: {fileID: 21300000, guid: 12b680c9a9fd91746808b3e63d7bf552, type: 3}
   _playerCopyCount: 1
   _targetsEnemies: 1
-  _cardSoundEffect: {fileID: 8300000, guid: 696168336ac52d94ea9db8dc6313a129, type: 3}
+  _cardSoundEffect: {fileID: 8300000, guid: 0f281232a97e28d449dc60ccd87744f2, type: 3}
   _reverseTemplate: {fileID: 0}
   _spells:
-  - rid: 927382194915901453
-  - rid: 927382194915901454
-  - rid: 4852468364396986372
+  - rid: 4852468364396986370
+  - rid: 4852468364396986371
+  - rid: 4852468364396986373
   references:
     version: 2
     RefIds:
-    - rid: 927382194915901453
+    - rid: 4852468364396986370
       type: {class: DamageMinionEffect, ns: , asm: Assembly-CSharp}
       data:
         _damage: 3
-    - rid: 927382194915901454
-      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 4852468364396986372
+    - rid: 4852468364396986371
       type: {class: SkipTargetTurn, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 4852468364396986373
+      type: {class: RemoveInsteadOfDiscard, ns: , asm: Assembly-CSharp}
       data: 

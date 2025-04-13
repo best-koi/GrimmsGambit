@@ -45,7 +45,7 @@ public class Minion : MonoBehaviour
 
         
     //Affixes:
-    //public Affixes[] appliedAffixes = new Affixes[1]; //Used for implementing preset affixes in the unity editor
+    public bool DirtInEyes = false; //This is not used as an affix because it will have no visual component - set to true in order to track a minion who is effected by the "dirt in your eyes card"
 
     [SerializeField] 
     public Dictionary<Affix, int> currentAffixes = new Dictionary<Affix, int>(); //Used for recording currently applied affixes without need a foreach loop
@@ -58,6 +58,7 @@ public class Minion : MonoBehaviour
     //Activity:
     private bool usedThisTurn;
     public static Action<Minion> onDeath; //Added by Dawson for Check target death
+    public static Action damageDealt; //Called every time a character deals damage in order to manage the dirt in eyes effect
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +71,7 @@ public class Minion : MonoBehaviour
         */
         affixDisplay = GetComponentInChildren<AffixDisplay>(); //Initializes correct affixDisplay object
         EncounterController.onTurnChanged += TurnStart; // Adjust this code for whatever action is invoked from the game loop
+        Minion.damageDealt += DirtReception;
     }
 
     public void AddAffix(Affix affix, int value)
@@ -127,6 +129,7 @@ public class Minion : MonoBehaviour
 
     private void EstablishNewTurn() //Function called when the signal is sent from the game logic that a new turn has started
     {
+        DirtInEyes = false; //Ends the dirt in eyes effect at turn beginning from the perspective of the one who had the card casted on them
         usedThisTurn = false;       
         //Runs start of turn affixes when the player's turn starts
         if (currentAffixes.ContainsKey(Affix.Block)) //Removing of Block at the start of each new turn (so that when it is used, it can be impactful during the following enemy's turn)
@@ -231,6 +234,7 @@ public class Minion : MonoBehaviour
     //For the following: make DamageToDeal be -10000 to use the default damage value
     public void MinionUsed(Minion enemyTarget, int Damage) //Function to be called when the game logic uses this minion - It is expected that this is used even for cards that make a minion attack, if that is a thing, so that parasite and thorns function correctly
     {
+        damageDealt?.Invoke(); //Sends a message to all other instances of minions that someone has dealt damage in order to manage the dirt in your eyes effect
         int DamageToDeal = Damage;
         Minion targetMinion = enemyTarget;
         if (targetMinion != null && !currentAffixes.ContainsKey(Affix.Threaded)) //Ensures target is valid and minion is not threaded
@@ -544,5 +548,13 @@ public class Minion : MonoBehaviour
             return currentAffixes[checkedAffix];
         else
             return -1;
+    }
+
+    public void DirtReception() //This function is used to manage the dirt in your eyes effect globally
+    {
+        if (DirtInEyes)
+        {
+            AddAffix(Affix.DamageReduction, 1); //Adds 1 stack of damage reduction to this minion when the dirt in eyes effect needs to be applied
+        }
     }
 }

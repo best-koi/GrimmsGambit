@@ -48,18 +48,26 @@ protected string randomAttackName;//The name of the planned random attack
 protected bool hasChosenRandomAttack = false; 
 
 protected bool isBlindfolded = false; 
+protected bool isSkipped = false; //This bool is used when skipping an enemy turn
 
     //AttackPattern() essentially calls the next attack from the list
     //Once the attack is done, it advances to the next attack in the pattern
     //Also, checks for going out of bounds
     public virtual void AttackPattern()
     {
-        CheckAttackBounds();
-        //Calls a method from the list of available attacks
-        Invoke(attacks[currentAttack], 0f);
-        //Moves onto the next attack
-        currentAttack++;
-        CheckAttackBounds();
+        if (isSkipped) //Ensures the enemy isn't being skipped before running this function
+        {
+            isSkipped = false;
+        }
+        else
+        {
+            CheckAttackBounds();
+            //Calls a method from the list of available attacks
+            Invoke(attacks[currentAttack], 0f);
+            //Moves onto the next attack
+            currentAttack++;
+            CheckAttackBounds();
+        }
     }
 
     //A default Start() method 
@@ -205,9 +213,19 @@ public Minion GetAttackTarget(){
     return attackTarget.GetComponent<Minion>();
 }
 
-    
+//Returns false if the target was not changed
+public bool SetAttackTarget(CharacterTemplate newTarget){
+    if (newTarget == attackTarget)
+    {
+        return false;
+    }
+    attackTarget = newTarget;
+    return true;
+}
 
-
-
+public void SkipTurn() //This is called to skip this characters' next attack
+{
+    isSkipped = true;
+}
 
 }
