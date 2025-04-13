@@ -14,6 +14,9 @@ public class BossDialogueHandler : BaseDialogueHandler
     [SerializeField] protected BossDialogue selectedBossConversation;
     [SerializeField] protected AudioClip bossSFX;
 
+    [SerializeField]
+    private bool notCutsceneDialogue = true; 
+
     #endregion
 
     #region Private Fields
@@ -30,7 +33,8 @@ public class BossDialogueHandler : BaseDialogueHandler
         base.Start();
         conversationText.text = string.Empty; 
         selectedBossConversation = bossDialogue[bossIndex];
-        StartDialogue(); 
+        if(notCutsceneDialogue)
+            StartDialogue(); 
     }
 
     #endregion
