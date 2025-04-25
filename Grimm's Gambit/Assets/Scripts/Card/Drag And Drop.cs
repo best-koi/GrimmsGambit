@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class DragAndDropV2 : MonoBehaviour
 {
@@ -91,6 +92,7 @@ public class DragAndDropV2 : MonoBehaviour
                 cd.OrderLayer = 1;
                 cd.CardDisplayScale = Vector3.one;
                 cd.CardDisplayDisplacement = Vector3.zero;
+                HighlightTargets(Color.grey, Color.white, cd.CardReference.TargetsEnemies);
             }
         }
         else if (_selectedObject != null)
@@ -112,17 +114,20 @@ public class DragAndDropV2 : MonoBehaviour
                     _selectedObject.GetComponent<Card>().PlaySound(_audioSource);
 
                     Destroy(_selectedObject.gameObject);
+                    HighlightTargets(Color.white, Color.white); //Resets highlighting when card is used
                 }
                 else
                 {
                     _selectedObject.parent = _selectedObjectParent;
                     _selectedObject.SetSiblingIndex(_selectedChildIndex);
+                    HighlightTargets(Color.white, Color.white); //Resets highlighting when card is used
                 }
             }
             else
             {
                 _selectedObject.parent = _selectedObjectParent;
                 _selectedObject.SetSiblingIndex(_selectedChildIndex);
+                HighlightTargets(Color.white, Color.white); //Resets highlighting when card is used
             }
 
             _selectedObject.localPosition = Vector3.zero;
@@ -160,7 +165,7 @@ public class DragAndDropV2 : MonoBehaviour
                 HighlightTargets(Color.grey, Color.white, cd.CardReference.TargetsEnemies);
             }
         }
-        else
+        else if (_selectedObject == null)
         {
             HighlightTargets(Color.white, Color.white);
         }
@@ -176,13 +181,29 @@ public class DragAndDropV2 : MonoBehaviour
 
             HighLightHelper(first);
 
-            _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
+            _currentPartyTransforms.Clear();
+            Minion[] minionsInGame = GameObject.FindObjectsOfType<Minion>(); 
+            foreach ( Minion minion in minionsInGame)
+            {
+                if (!minion.ownerPlayer)
+                {
+                    _currentPartyTransforms.Add(minion.transform);
+                }
+            }
 
             HighLightHelper(second);
         }
         else
         {
-            _currentPartyTransforms = new List<Transform>(_controller.GetEnemyInventory().GetAll());
+            _currentPartyTransforms.Clear();
+            Minion[] minionsInGame = GameObject.FindObjectsOfType<Minion>(); 
+            foreach ( Minion minion in minionsInGame)
+            {
+                if (!minion.ownerPlayer)
+                {
+                    _currentPartyTransforms.Add(minion.transform);
+                }
+            }
 
             HighLightHelper(first);
 
