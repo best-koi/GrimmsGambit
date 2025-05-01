@@ -1878,6 +1878,7 @@ MonoBehaviour:
   bossName: The  Heir
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 7e8cbe2c9034e409aa6db53361180404, type: 3}
+  notCutsceneDialogue: 1
 --- !u!4 &916725014
 Transform:
   m_ObjectHideFlags: 0
@@ -3047,30 +3048,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1106485495}
     m_Modifications:
-    - target: {fileID: 368856822538759344, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 368856822538759344, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 368856822538759344, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 368856822538759344, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BossDialogueHandler, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3084056192601003861, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3488713571425202448, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3602023258321748164, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
       propertyPath: m_Name
       value: Talk Panel
@@ -3155,18 +3132,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6484654228310989702, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 22.599976
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680272018092884990, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3084056192601003861, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
-    - {fileID: 7680272018092884990, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}

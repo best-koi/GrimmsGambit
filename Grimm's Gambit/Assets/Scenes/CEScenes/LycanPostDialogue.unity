@@ -1244,8 +1244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.237}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -299.71875, y: 75.833664}
-  m_SizeDelta: {x: -599.379, y: -80.38951}
+  m_AnchoredPosition: {x: -299.71878, y: 99.13503}
+  m_SizeDelta: {x: -599.379, y: -121.6804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617471433
 MonoBehaviour:
@@ -1840,7 +1840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 316, y: 75}
+  m_AnchoredPosition: {x: 316, y: 96}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897589573
@@ -2951,6 +2951,7 @@ MonoBehaviour:
   bossName: The Lycan
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: d58e63ef2006c4563be56f675416653b, type: 3}
+  notCutsceneDialogue: 1
   goodEnding:
   - {fileID: 11400000, guid: e82a820816c12174499f897c2c46323e, type: 2}
   badEnding:
@@ -4397,7 +4398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 75}
+  m_AnchoredPosition: {x: -281, y: 98}
   m_SizeDelta: {x: 187.4988, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120171774
