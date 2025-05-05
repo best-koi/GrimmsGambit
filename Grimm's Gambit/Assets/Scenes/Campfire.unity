@@ -175,6 +175,7 @@ MonoBehaviour:
   bossName: Beatrice
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: a2efbd7be24aa48f4af90b3ae3588dc5, type: 3}
+  notCutsceneDialogue: 1
 --- !u!82 &43474058
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4477,7 +4478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_Color: {r: 0.8396226, g: 0.7528651, b: 0.5584282, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
