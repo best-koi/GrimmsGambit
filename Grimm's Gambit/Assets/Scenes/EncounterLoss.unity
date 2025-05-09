@@ -279,6 +279,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97497156}
   m_CullTransparentMesh: 1
+--- !u!114 &550192263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3444091658218036119, guid: 8e4f3bb14a4935046aedbf0a68ab366c, type: 3}
+  m_PrefabInstance: {fileID: 2026566095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &571769719
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +526,7 @@ MonoBehaviour:
   conversationText: {fileID: 2026566098}
   dialogueWindow: {fileID: 97497156}
   advanceButton: {fileID: 2026566097}
+  skipDialogueButton: {fileID: 550192263}
   SoundEffect: {fileID: 0}
   seamstressSFX: {fileID: 0}
   houndSFX: {fileID: 0}
@@ -528,6 +540,7 @@ MonoBehaviour:
   bossName: N/A
   selectedBossConversation: {fileID: 0}
   bossSFX: {fileID: 8300000, guid: 10ee822e3ebcb489d8d23fee8c4999ea, type: 3}
+  notCutsceneDialogue: 1
 --- !u!4 &1200022936
 Transform:
   m_ObjectHideFlags: 0
