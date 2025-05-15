@@ -1301,6 +1301,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 900497776}
+    - target: {fileID: 2963338579552665464, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 43.30005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950625625786609208, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -48.19995
+      objectReference: {fileID: 0}
     - target: {fileID: 8671084846509242251, guid: d94f08d97aa30d74c9df63184782c56d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2953,9 +2961,10 @@ MonoBehaviour:
   bossSFX: {fileID: 8300000, guid: d58e63ef2006c4563be56f675416653b, type: 3}
   notCutsceneDialogue: 1
   goodEnding:
-  - {fileID: 11400000, guid: e82a820816c12174499f897c2c46323e, type: 2}
-  badEnding:
   - {fileID: 11400000, guid: e94cd32e4e64f314cb29db65a21f8c1e, type: 2}
+  badEnding:
+  - {fileID: 11400000, guid: e82a820816c12174499f897c2c46323e, type: 2}
+  - {fileID: 11400000, guid: 79ff06bbb7fb04840aa6fe1f64fe5d86, type: 2}
   choicePanel: {fileID: 1896372323}
   _goodChoiceButton: {fileID: 1486449819}
   _badChoiceButton: {fileID: 1650921844}
@@ -3658,7 +3667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take Deal
+  m_text: Take Wolf Skin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
@@ -3853,7 +3862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Refuse
+  m_text: Take Trophy from Wolf
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
@@ -3880,8 +3889,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

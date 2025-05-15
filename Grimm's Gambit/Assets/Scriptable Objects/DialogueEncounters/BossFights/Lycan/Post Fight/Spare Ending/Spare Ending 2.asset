@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
-  m_Name: Post Lycan 3
+  m_Name: Spare Ending 2
   m_EditorClassIdentifier: 
   speakerName: Katze
   _dialogueLines:
-  - _speaker: 1
-    _speakerHidden: 0
-    _line: "\u201CNO! Spare us, please! Aaagh!!!\u201D"
   - _speaker: 2
     _speakerHidden: 0
-    _line: Katze draws his weapons and begins slicing through the children.
+    _line: Katze draws his weapon and offers alternative motivation to the Seamstress's
+      kind words.
   - _speaker: 2
     _speakerHidden: 0
-    _line: They do their best to try and flee, but he gives each of them a quick
-      and painless death.
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: Afterwards, he cuts a trophy from each of them.
+    _line: The kids hesitate for a moment, but quickly slink into the forest bereft
+      of their disguise.
