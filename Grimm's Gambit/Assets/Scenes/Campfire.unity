@@ -8446,10 +8446,10 @@ MonoBehaviour:
   houndDialogue3Good: {fileID: 0}
   houndDialogue3Bad: {fileID: 0}
   katzeDialogue1: {fileID: 11400000, guid: ec62f22873f2646dc8225ca0adf2e3e6, type: 2}
-  katzeDialogue2Good: {fileID: 0}
-  katzeDialogue2Bad: {fileID: 0}
-  katzeDialogue3Good: {fileID: 0}
-  katzeDialogue3Bad: {fileID: 0}
+  katzeDialogue2Good: {fileID: 11400000, guid: 5dd30717f3ba84c12b752b268173a02d, type: 2}
+  katzeDialogue2Bad: {fileID: 11400000, guid: 5dd30717f3ba84c12b752b268173a02d, type: 2}
+  katzeDialogue3Good: {fileID: 11400000, guid: a50a61bf2f1d240578145cf75a6fdeeb, type: 2}
+  katzeDialogue3Bad: {fileID: 11400000, guid: 224d5d473c5994b188f9750504a139a0, type: 2}
   selectedConversation: {fileID: 0}
 --- !u!4 &1728676239
 Transform:

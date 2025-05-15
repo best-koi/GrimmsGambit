@@ -31,7 +31,7 @@ public class EndingHandler : MonoBehaviour
         //Add these to list once assigned based on choices 
         endingsList.Add(heirEnding1);
         endingsList.Add(seamstressEnding);
-        endingsList.Add(katzeBadEnding);
+        endingsList.Add(katzeEnding);
         endingsList.Add(houndEnding);
         endingsList.Add(heirEnding2);
     }

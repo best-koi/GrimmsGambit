@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Katze Good Campfire 3
+  m_EditorClassIdentifier: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: 'As you turn to look for Katze in his usual spots, you surprisingly find
+      him sitting near the fire. '
+  - _speaker: 2
+    _line: Still a ways away from everyone else, but also not in some shadowy corner
+      like usual.
+  - _speaker: 1
+    _line: "You\u2019re sitting."
+  - _speaker: 0
+    _line: Is such an act prohibited? If so, I believe you should be talking with
+      the Seamstress first.
+  - _speaker: 1
+    _line: "No, it's just\u2026 surprising. I thought you\u2019d be leaning against
+      a tree like usual."
+  - _speaker: 0
+    _line: Huh. I guess I probably should be.
+  - _speaker: 1
+    _line: ...
+  - _speaker: 0
+    _line: ...
+  - _speaker: 1
+    _line: "You\u2019ve changed a lot since we fought the beast. You\u2019re usually
+      a lot more chatty and roundabout with your words."
+  - _speaker: 0
+    _line: "I suppose I have. It\u2019s not everyday that you find out the vile monster
+      you\u2019ve been trying to kill turns out to be seven kids in a wolf-coat."
+  - _speaker: 1
+    _line: Definitely one of the more unexpected outcomes. You think your employer
+      knew about this?
+  - _speaker: 0
+    _line: "Maybe. It just means that I\u2019ll have to use my silver tongue to convince
+      them that the monster is dead."
+  - _speaker: 1
+    _line: You plan on lying to them?
+  - _speaker: 0
+    _line: When have I ever claimed to be honest?
+  - _speaker: 1
+    _line: Heh.
+  - _speaker: 1
+    _line: "Do you think you\u2019re ready for tomorrow\u2019s battle?"
+  - _speaker: 0
+    _line: "As ready as I\u2019ve always been. I gave you my guarantee."
+  - _speaker: 1
+    _line: "Thought you weren\u2019t the honest type?"
+  - _speaker: 0
+    _line: I consider myself a shrewd man when it comes to obligations.
+  - _speaker: 1
+    _line: Fair enough.
+  - _speaker: 0
+    _line: Actually, one more thing before you go.
+  - _speaker: 1
+    _line: Hm?
+  - _speaker: 0
+    _line: Thank you, truthfully. I fear that I may have been on the precipice of
+      making a terrible mistake, and your words swayed my judgement otherwise.

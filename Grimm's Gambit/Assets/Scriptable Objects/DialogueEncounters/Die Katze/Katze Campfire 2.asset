@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Katze Campfire 2
+  m_EditorClassIdentifier: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: You approach Katze who seems to be at attention.
+  - _speaker: 2
+    _line: He seems to be contemplating something important, but resumes his lax
+      nature as he sees you approaching.
+  - _speaker: 0
+    _line: Still curious, are we? I suppose I can indulge your wonder some more.
+  - _speaker: 1
+    _line: "I was thinking. You said you\u2019re a mercenary right? Did someone hire
+      you to escort me?"
+  - _speaker: 0
+    _line: Well, it seems our young royal was smarter than they seemed.
+  - _speaker: 0
+    _line: "I guess it wouldn\u2019t hurt to tell you a bit more as to why I\u2019m
+      here."
+  - _speaker: 0
+    _line: You see, I am actually hunting a monster, one that happens to be under
+      the command of the Red Queen.
+  - _speaker: 0
+    _line: The easiest way to catch prey is to lay a trap, but a trap needs bait.
+  - _speaker: 0
+    _line: Your little stunt back at the palace made it pretty clear that her highness
+      wants you dead, which means she probably sent her beast out to get you.
+  - _speaker: 0
+    _line: "By travelling with you you\u2019ll bring the beast to me, saving me a
+      lot of unnecessary work."
+  - _speaker: 1
+    _line: "So you\u2019re just using me as bait?"
+  - _speaker: 0
+    _line: "Well\u2026 yes. Our interests align after all. I want to kill a foul
+      monster for a bounty, and you don\u2019t want to get eaten by said monster."
+  - _speaker: 0
+    _line: "Rest assured I won\u2019t just throw you to the wolves. You\u2019re doing
+      me a favor, and I\u2019ll return one in kind."
+  - _speaker: 0
+    _line: "I\u2019ll help you reach Sanctuary even after I\u2019ve foiled the beast,
+      a simple courtesy for your support."
+  - _speaker: 1
+    _line: How noble of you. But if we are to travel as allies, could you at least
+      tell me what the monster looks like or who the bounty is for?
+  - _speaker: 0
+    _line: "The monster bears great resemblance to a wolf, though this one is much
+      larger. You\u2019ll definitely recognize it when you see it."
+  - _speaker: 0
+    _line: "As for my employer however, confidentiality I\u2019m afraid is part of
+      my services."
+  - _speaker: 1
+    _line: Your answers are as clear as mud.
+  - _speaker: 0
+    _line: Heh. I strive to do my best.

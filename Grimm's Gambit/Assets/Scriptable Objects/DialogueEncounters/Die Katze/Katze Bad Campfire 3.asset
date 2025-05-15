@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Katze Bad Campfire 3
+  m_EditorClassIdentifier: 
+  _dialogueLines:
+  - _speaker: 2
+    _line: As you turn to look for Katze, you quickly find him by the sound of sharpening
+      steel.
+  - _speaker: 2
+    _line: Katze leans against a tree as usual, though seemingly more threateningly
+      than before with the open knife.
+  - _speaker: 0
+    _line: "Well well well. If it isn\u2019t our resident royal. Here to check if
+      we\u2019re all ready for tomorrow's confrontation?"
+  - _speaker: 1
+    _line: Well, yeah. I also wanted to see how you were doing. You seem a little
+      shaken after our fight with the beast.
+  - _speaker: 0
+    _line: Nothing to chafe about my friend. The ending to our joust was simply unexpected.
+  - _speaker: 0
+    _line: "Even for one seasoned as I would\u2019ve never expected that the imposing
+      beast would actually be made of children."
+  - _speaker: 1
+    _line: Are you concerned about what will happen to them?
+  - _speaker: 0
+    _line: "I\u2026"
+  - _speaker: 2
+    _line: For once, Katze seems to hesitate. But almost as soon as he wavers, he
+      quickly resolves himself.
+  - _speaker: 0
+    _line: It was unavoidable. Either them or the contract. I always knew that someone
+      was going to draw the short stick.
+  - _speaker: 1
+    _line: This employer is that important to you, huh?
+  - _speaker: 0
+    _line: "It\u2019s professionalism. I treat all my clients the same, and that
+      includes you. "
+  - _speaker: 0
+    _line: "Tomorrow, you will celebrate the freedom you\u2019ve always wanted."
+  - _speaker: 1
+    _line: ...I look forward to it.
