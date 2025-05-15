@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
+  m_Name: Katze Campfire 1
+  m_EditorClassIdentifier: 
+  _dialogueLines:
+  - _speaker: 1
+    _line: Good evening. I wanted to talk to you.
+  - _speaker: 0
+    _line: "Curious as to who your ally is? I\u2019ll indulge, though I can\u2019t
+      guarantee any answers."
+  - _speaker: 1
+    _line: Who are you?
+  - _speaker: 0
+    _line: You face Katze, merciless mercenary and roguish rapscallion extraordinaire.
+      I serve at my own pleasure, and I enjoy the thrill of a hunt.
+  - _speaker: 2
+    _line: Katze gives you a courteous bow, before resuming his otherwise unmoving
+      stance.
+  - _speaker: 1
+    _line: "Why did you help me then? I don\u2019t have anything to offer you."
+  - _speaker: 0
+    _line: "I have my own reasons for aiding your flight, though forgive me if I\u2019d
+      rather keep those reasons to myself."
+  - _speaker: 0
+    _line: "Do not fret though, I don\u2019t intend to sell you out to anyone or
+      abandon you. Betrayal isn\u2019t my style."
+  - _speaker: 1
+    _line: "Thank you\u2026?"
+  - _speaker: 2
+    _line: Katze gives you a tip of his hat.

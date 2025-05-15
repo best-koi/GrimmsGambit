@@ -8432,7 +8432,7 @@ MonoBehaviour:
   seamstressConversations:
   - {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
   katzeConversations:
-  - {fileID: 11400000, guid: 4d9f33c73b3904b278d0ac67776110ec, type: 2}
+  - {fileID: 11400000, guid: ec62f22873f2646dc8225ca0adf2e3e6, type: 2}
   houndConversations:
   - {fileID: 11400000, guid: b1a9160aeeccd427b81a42b83d68cf4e, type: 2}
   seamstressDialogue1: {fileID: 11400000, guid: 160447a3faf9847a09391a54f19ea636, type: 2}
@@ -8445,7 +8445,7 @@ MonoBehaviour:
   houndDialogue2Bad: {fileID: 0}
   houndDialogue3Good: {fileID: 0}
   houndDialogue3Bad: {fileID: 0}
-  katzeDialogue1: {fileID: 11400000, guid: 4d9f33c73b3904b278d0ac67776110ec, type: 2}
+  katzeDialogue1: {fileID: 11400000, guid: ec62f22873f2646dc8225ca0adf2e3e6, type: 2}
   katzeDialogue2Good: {fileID: 0}
   katzeDialogue2Bad: {fileID: 0}
   katzeDialogue3Good: {fileID: 0}
