@@ -12,13 +12,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a3eed86c3e1463285f275832a081ae, type: 3}
   m_Name: Hound Test
   m_EditorClassIdentifier: 
-  lines: []
-  isHeirSpeaking: 
-  isNarratorText: 
   _dialogueLines:
+  - _speaker: 2
+    _line: "You approach your loyal companion, a hound. Eager to greet you, he lifts
+      his head up. \n"
+  - _speaker: 2
+    _line: "You reach out to pet him. He lets out a happy \u201Cboof\u201D in response.
+      You let out a small laugh."
   - _speaker: 1
-    _line: Who's a good boy?
+    _line: So tired so soon old man? What would I do without you?
   - _speaker: 0
-    _line: (Excited Barking)
+    _line: He lets out a high pitched yawn and stretches as he gets up.
+  - _speaker: 2
+    _line: You give him an affectionate scratch behind his ears. It used to be so
+      much simpler.
+  - _speaker: 2
+    _line: At least you still have your loyal companion.
+  - _speaker: 2
+    _line: You hear a sound from a nearby bush.
+  - _speaker: 0
+    _line: The Hound jumps up from his comfortable position in response to the sound.
+      He looks in the direction of the noise and growls
+  - _speaker: 2
+    _line: 'There is a sound of quick footsteps of a small creature fleeing.
+
+'
   - _speaker: 1
-    _line: I am glad you are by my side.
+    _line: "It\u2019s okay boy. It's just a rabbit or something."
+  - _speaker: 2
+    _line: "You continue to scritch behind the Hound\u2019s ear, trying to calm him."
+  - _speaker: 0
+    _line: The Hound stands stalwart with eyes darting for any sense of movement.
+      He is dedicated to his vigilance and does not acknowledge your attempts at
+      play.
+  - _speaker: 0
+    _line: Not when there could be danger afoot.
+  - _speaker: 2
+    _line: You give him a gentle hug, placing a kiss on his forehead.
+  - _speaker: 1
+    _line: "Really, it\u2019s okay\u2026"
+  - _speaker: 0
+    _line: He looks towards you, finally breaking his gaze towards the bush, giving
+      you one lick on the nose before relaxing once more.
+  - _speaker: 1
+    _line: "There\u2019s a good boy. Now try to relax and get some sleep. We have
+      a long road ahead."
+  - _speaker: 0
+    _line: "He places his head onto his paws, as if to start the process of falling
+      asleep, but you can\u2019t help but notice his ears twitch at every sound and
+      his eyes darting back towards the bush\u2026"
