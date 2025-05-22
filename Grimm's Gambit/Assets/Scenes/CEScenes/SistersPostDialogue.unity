@@ -2261,9 +2261,9 @@ MonoBehaviour:
   badEnding:
   - {fileID: 11400000, guid: 020fb7710ad99c047a9cddbf4c18d52c, type: 2}
   - {fileID: 11400000, guid: 04d8fa2c264c58b4988b37cec49f7394, type: 2}
-  - {fileID: 11400000, guid: 95070804d4fe3e0488fb46a2c5fca85d, type: 2}
   - {fileID: 11400000, guid: d88290ec60c4bb94aab9781157869d23, type: 2}
   - {fileID: 11400000, guid: b3cae72877ff51246aff40db5b81fbc6, type: 2}
+  - {fileID: 11400000, guid: 27f5fa507af3e4c39868155d83d4cf84, type: 2}
   choicePanel: {fileID: 1896372323}
   _goodChoiceButton: {fileID: 1486449819}
   _badChoiceButton: {fileID: 1650921844}
@@ -5791,7 +5791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take Deal
+  m_text: Walk Path Together
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
@@ -5818,8 +5818,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6065,7 +6065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Refuse
+  m_text: Ignore Path and Leave
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
   m_sharedMaterial: {fileID: 2290462909452053588, guid: 5db984a7a9a844e09a2f0db2f95a42ed, type: 2}
@@ -6092,8 +6092,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

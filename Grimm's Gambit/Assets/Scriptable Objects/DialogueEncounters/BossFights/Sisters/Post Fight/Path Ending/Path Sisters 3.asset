@@ -17,10 +17,3 @@ MonoBehaviour:
   - _speaker: 0
     _speakerHidden: 0
     _line: "Whatever that is better be worth it.\r"
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "You pick up the idol. It is a golden statue of a Buck with two blood
-      red eyes.\r"
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "As you hold it you swear you see a shadow move towards the Hound. \r"

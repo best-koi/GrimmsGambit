@@ -16,5 +16,5 @@ MonoBehaviour:
   _dialogueLines:
   - _speaker: 0
     _speakerHidden: 0
-    _line: "This could be the key to making to sanctuary. You think you can get the
-      idol?\r\r"
+    _line: "This could be the key to making to sanctuary. We shouldn\u2019t leave
+      something like this behind.\r\r"

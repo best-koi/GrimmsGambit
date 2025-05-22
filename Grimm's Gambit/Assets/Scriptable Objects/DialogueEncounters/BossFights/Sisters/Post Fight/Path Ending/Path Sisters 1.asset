@@ -17,27 +17,17 @@ MonoBehaviour:
   - _speaker: 0
     _speakerHidden: 0
     _line: "(The Hound looks towards the idol, unsure for a moment. He then turns
-      towards you with confidence before trudging forward.)\r\r\r"
+      towards you with confidence.)\r\r\r"
   - _speaker: 1
     _speakerHidden: 0
     _line: "Yes\u2026 Good.\r"
   - _speaker: 2
     _speakerHidden: 0
-    _line: "The Hound proceeds through the field carefully and slowly, making his
-      way towards the idol.\r"
+    _line: You and your troop proceed through the field carefully and slowly, making
+      your way towards the idol.
   - _speaker: 2
     _speakerHidden: 0
-    _line: "You lose sight of him through the bramble.\r"
-  - _speaker: 0
-    _speakerHidden: 0
-    _line: (*Yelp*)
+    _line: "You feel bramble slicing into your skin with each step.\r"
   - _speaker: 2
     _speakerHidden: 0
-    _line: "You wait with baited breath for the hound to return.\r"
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "A few moments later you see him push through the bramble. \r"
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "He carries the golden idol in his mouth. Blood trickles from his left
-      eye\u2026\r"
+    _line: You push through the bramble. You see a golden idol buried into the earth.

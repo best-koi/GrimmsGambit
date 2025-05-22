@@ -12,22 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d2375ee9ddd434ba71598abaf34f25, type: 3}
   m_Name: Path Sisters 4
   m_EditorClassIdentifier: 
-  speakerName: The Hound
+  speakerName: The Heir
   _dialogueLines:
-  - _speaker: 0
-    _speakerHidden: 0
-    _line: "(*Whines*)\r\r"
-  - _speaker: 1
-    _speakerHidden: 0
-    _line: "The beast bears the blessing. Our work is done. We must return.\r"
   - _speaker: 2
     _speakerHidden: 0
-    _line: 'The Sisters ascend the tower once more leaving your party to ponder what
-      exactly just happened. '
+    _line: You pick up the idol. It is a golden statue of a Buck with two blood red
+      eyes.
   - _speaker: 2
     _speakerHidden: 0
-    _line: "The seamstress finishes tending to the hound, wrapping a blindfold around
-      the Hound\u2019s now missing eye.\r\r"
-  - _speaker: 2
-    _speakerHidden: 0
-    _line: "You push forward away from this strange place.\r\r"
+    _line: You feel your vision blur for a moment as you hold it in your hand. You
+      feel blood trickling down  from various places.
