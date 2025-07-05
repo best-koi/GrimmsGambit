@@ -117,23 +117,29 @@ public class MapPlayer : MonoBehaviour
 
         }
     }
+
+    //LoadSceneLocation() loads a scene and sets the current spot active
+    private void LoadSceneLocation(string sceneName, bool hasFog){
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        sceneToToggle.SetActive(false);
+        RenderSettings.fog = hasFog;
+
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         switch(collision.gameObject.tag){
             case "Encounter":
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(encounterScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
+            LoadSceneLocation(encounterScene, true);
             break;
             case "Lycan":
              collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(lycanScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
+            LoadSceneLocation(lycanScene, true);
             break;
             case "Sisters":
              collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(sistersScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
+            LoadSceneLocation(sistersScene, true);
             break;
             case "Narrative":
             collision.gameObject.tag = "Inactive";
@@ -141,34 +147,26 @@ public class MapPlayer : MonoBehaviour
             break;
             case "Campfire":
              collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(campfireScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
+            LoadSceneLocation(campfireScene, true);
             break;
             case "Odds":
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(oddsScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
-            RenderSettings.fog = false;
+            LoadSceneLocation(oddsScene, false);
             break;
 
             case "LadyOfLake":
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(ladyScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
-            RenderSettings.fog = false;
+            LoadSceneLocation(ladyScene, false);
             break;
 
             case "Beldam":
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(beldamScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
-            RenderSettings.fog = false;
+            LoadSceneLocation(beldamScene, false);
             break;
 
             case "Tutorial":
             collision.gameObject.tag = "Inactive";
-            SceneManager.LoadScene(tutorialScene, LoadSceneMode.Additive);
-            sceneToToggle.SetActive(false);
+            LoadSceneLocation(tutorialScene, true);
             //RenderSettings.fog = false;
             break;
             
@@ -183,6 +181,7 @@ public class MapPlayer : MonoBehaviour
         }
       
     }
+
 
    
 
